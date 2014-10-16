@@ -1,5 +1,5 @@
 #include "DataPopulator.h"
-#include "I_Data.h"
+#include "I_TelemetryData.h"
 #include "I_DataParser.h"
 
 namespace
@@ -10,7 +10,7 @@ namespace
   };
 }
 
-DataPopulator::DataPopulator(const I_DataParser& dataParser, I_Data& data)
+DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& data)
 : dataParser_(dataParser)
 , data_(data)
 {

@@ -6,6 +6,7 @@
 
 class DataParser : public I_DataParser
 {
+    Q_OBJECT
 public:
   explicit DataParser(QIODevice& device);
   virtual ~DataParser();

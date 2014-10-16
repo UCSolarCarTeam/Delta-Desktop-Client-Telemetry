@@ -15,15 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
     DataPopulator.cpp \
     SolarCarTelemetry.cpp \
-    Data.cpp \
-    DataParser.cpp
+    DataParser.cpp \
+    TelemetryData.cpp
 
 HEADERS  += \
     DataPopulator.h \
     SolarCarTelemetry.h \
     I_DataParser.h \
-    I_Data.h \
-    Data.h \
-    DataParser.h
+    DataParser.h \
+    I_TelemetryData.h \
+    TelemetryData.h
 
 FORMS    +=

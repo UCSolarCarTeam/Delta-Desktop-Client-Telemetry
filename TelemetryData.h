@@ -1,12 +1,12 @@
 #pragma once
 
-#include "I_Data.h"
+#include "I_TelemetryData.h"
 
-class Data : public I_Data
+class TelemetryData : public I_TelemetryData
 {
 public:
-  Data();
-  virtual ~Data();
+  TelemetryData();
+  virtual ~TelemetryData();
 
   double vehicleVelocity() const;
   void setVehicleVelocity(double vehicleVelocity);

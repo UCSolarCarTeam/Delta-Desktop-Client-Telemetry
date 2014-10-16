@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QScopedPointer>
-class Data;
+class TelemetryData;
 class DataParser;
 class DataPopulator;
 class QSerialPort;
@@ -13,7 +13,7 @@ public:
   ~SolarCarTelemetry();
 
 private:
-  QScopedPointer<Data> data_;
+  QScopedPointer<TelemetryData> data_;
   QScopedPointer<QSerialPort> port_;
   QScopedPointer<DataParser> dataParser_;
   QScopedPointer<DataPopulator> dataPopulator_;
