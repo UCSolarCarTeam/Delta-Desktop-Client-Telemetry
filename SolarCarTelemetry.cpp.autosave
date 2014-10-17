@@ -5,7 +5,6 @@
 #include "DataParser.h"
 #include "DataPopulator.h"
 #include "I_ConnectionService.h"
-#include "I_SerialPortConnectionService.h"
 
 SolarCarTelemetry::SolarCarTelemetry()
 : data_(new TelemetryData())
