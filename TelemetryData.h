@@ -22,7 +22,7 @@ public:
   double ipmHeatSinkTemp() const;
   double dspBoardTemp() const;
   double dcBusAmpHours() const;
-  double recievedErrorCount() const;
+  double receivedErrorCount() const;
   double transmittedErrorCount() const;
 
   int mod0PcbTemperature() const;
@@ -70,7 +70,7 @@ public:
   int mod3CellVoltage7() const;
 
   int batteryVoltage() const;
-  int batteryCurent() const;
+  int batteryCurrent() const;
   int batteryVoltageThresholdRising() const;
   int batteryVoltageThresholdFalling() const;
 
@@ -88,7 +88,7 @@ public:
    void setIpmHeatSinkTemp(double ipmHeatSinkTemp);
    void setDspBoardTemp(double dspBoardTemp);
    void setDcBusAmpHours(double dcBusAmpHours);
-   void setReceivedErrorCount(double recievedErrorCount);
+   void setReceivedErrorCount(double ReceivedErrorCount);
    void setTransmittedErrorCount(double transmittedErrorCount);
 
    void setMod0PcbTemperature(int mod0PcbTemperature);
@@ -136,7 +136,7 @@ public:
    void setMod3CellVoltage7(int mod3CellVoltage7);
 
    void setBatteryVoltage(int batteryVoltage);
-   void setBatteryCurent(int batteryCurrent);
+   void setBatteryCurrent(int batteryCurrent);
    void setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising);
    void setBatteryVoltageThresholdFalling(int batteryVoltageThresholdFalling);
 

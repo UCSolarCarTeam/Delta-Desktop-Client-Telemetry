@@ -33,8 +33,8 @@ double TelemetryData::dspBoardTemp() const
 {              return dspBoardTemp_;}
 double TelemetryData::dcBusAmpHours() const
 {              return dcBusAmpHours_;}
-double TelemetryData::recievedErrorCount() const
-{              return recievedErrorCount_;}
+double TelemetryData::receivedErrorCount() const
+{              return receivedErrorCount_;}
 double TelemetryData::transmittedErrorCount() const
 {              return transmittedErrorCount_;}
 
@@ -124,7 +124,7 @@ int TelemetryData::mod3CellVoltage7() const
 
 int TelemetryData::batteryVoltage() const
 {           return batteryVoltage_;}
-int TelemetryData::batteryCurent() const
+int TelemetryData::batteryCurrent() const
 {           return batteryCurrent_;}
 int TelemetryData::batteryVoltageThresholdRising() const
 {           return batteryVoltageThresholdRising_;}
@@ -134,17 +134,17 @@ int TelemetryData::batteryVoltageThresholdFalling() const
 /************Solar Car Driver************/
 void TelemetryData::setDriverSetSpeedRPM(double driverSetSpeedRPM){
    driverSetSpeedRPM_ = driverSetSpeedRPM;
-   emit setDriverSetSpeedRPMRecieved(driverSetSpeedRPM_);
+   emit driverSetSpeedRPMReceived(driverSetSpeedRPM_);
 }
 void TelemetryData::setDriverSetCurrent(double driverSetCurrent){
    driverSetCurrent_ = driverSetCurrent;
-   emit setDriverSetCurrentRecieved(driverSetCurrent_);
+   emit driverSetCurrentReceived(driverSetCurrent_);
 }
 
 /************Solar Car Readings************/
 void TelemetryData::setVehicleVelocityKph(double vehicleVelocityKph){
-   vehicleVelocityKph_ = vehicleVelocity;
-   emit vehicleVelocityReceived(vehicleVelocity_);
+   vehicleVelocityKph_ = vehicleVelocityKph;
+   emit vehicleVelocityKphReceived(vehicleVelocityKph_);
 }
 void TelemetryData::setBusCurrentA(double busCurrentA){
    busCurrentA_ = busCurrentA;
@@ -160,7 +160,7 @@ void TelemetryData::setMotorVelocityRpm(double motorVelocityRpm){
 }
 void TelemetryData::setMotorVoltageReal(double motorVoltageReal){
    motorVoltageReal_ = motorVoltageReal;
-   emit motorVoltageRealReceived(motorVoltageReal_)
+   emit motorVoltageRealReceived(motorVoltageReal_);
 }
 void TelemetryData::setMotorCurrentReal(double motorCurrentReal){
    motorCurrentReal_ = motorCurrentReal;
@@ -171,7 +171,7 @@ void TelemetryData::setBackEmfImaginary(double backEmfImaginary){
    emit backEmfImaginaryReceived(backEmfImaginary_);
 }
 void TelemetryData::setIpmHeatSinkTemp(double ipmHeatSinkTemp){
-   IpmHeatSinkTemp_ = ipmHeatSinkTemp;
+   ipmHeatSinkTemp_ = ipmHeatSinkTemp;
    emit ipmHeatSinkTempReceived(ipmHeatSinkTemp_);
 }
 void TelemetryData::setDspBoardTemp(double dspBoardTemp){
@@ -184,10 +184,10 @@ void TelemetryData::setDcBusAmpHours(double dcBusAmpHours){
 }
 void TelemetryData::setReceivedErrorCount(double receivedErrorCount){
    receivedErrorCount_ = receivedErrorCount;
-   emit receivedErrorCount(receivedErrorCount_);
+   emit receivedErrorCountReceived(receivedErrorCount_);
 }
 void TelemetryData::setTransmittedErrorCount(double transmittedErrorCount){
-   transmittedErrorCount_ = transmittedErrorcount;
+   transmittedErrorCount_ = transmittedErrorCount;
    emit transmittedErrorCountReceived(transmittedErrorCount_);
 }
 
@@ -217,11 +217,11 @@ void TelemetryData::setMod0CellVoltage3(int mod0CellVoltage3){
    emit mod0CellVoltage3Received(mod0CellVoltage3_);
 }
 void TelemetryData::setMod0CellVoltage4(int mod0CellVoltage4){
-   mod0CellVoltage4_ = mod0CellVoltage;
+   mod0CellVoltage4_ = mod0CellVoltage4;
    emit mod0CellVoltage4Received(mod0CellVoltage4_);
 }
 void TelemetryData::setMod0CellVoltage5(int mod0CellVoltage5){
-   mod0CellVoltage5_ = mod0cellVoltage5;
+   mod0CellVoltage5_ = mod0CellVoltage5;
    emit mod0CellVoltage5Received(mod0CellVoltage5_);
 }
 void TelemetryData::setMod0CellVoltage6(int mod0CellVoltage6){
@@ -259,11 +259,11 @@ void TelemetryData::setMod1CellVoltage3(int mod1CellVoltage3){
    emit mod1CellVoltage3Received(mod1CellVoltage3_);
 }
 void TelemetryData::setMod1CellVoltage4(int mod1CellVoltage4){
-   mod1CellVoltage4_ = mod1CellVoltage;
+   mod1CellVoltage4_ = mod1CellVoltage4;
    emit mod1CellVoltage4Received(mod1CellVoltage4_);
 }
 void TelemetryData::setMod1CellVoltage5(int mod1CellVoltage5){
-   mod1CellVoltage5_ = mod1cellVoltage5;
+   mod1CellVoltage5_ = mod1CellVoltage5;
    emit mod1CellVoltage5Received(mod1CellVoltage5_);
 }
 void TelemetryData::setMod1CellVoltage6(int mod1CellVoltage6){
@@ -301,11 +301,11 @@ void TelemetryData::setMod2CellVoltage3(int mod2CellVoltage3){
    emit mod2CellVoltage3Received(mod2CellVoltage3_);
 }
 void TelemetryData::setMod2CellVoltage4(int mod2CellVoltage4){
-   mod2CellVoltage4_ = mod2CellVoltage;
+   mod2CellVoltage4_ = mod2CellVoltage4;
    emit mod2CellVoltage4Received(mod2CellVoltage4_);
 }
 void TelemetryData::setMod2CellVoltage5(int mod2CellVoltage5){
-   mod2CellVoltage5_ = mod2cellVoltage5;
+   mod2CellVoltage5_ = mod2CellVoltage5;
    emit mod2CellVoltage5Received(mod2CellVoltage5_);
 }
 void TelemetryData::setMod2CellVoltage6(int mod2CellVoltage6){
@@ -344,11 +344,11 @@ void TelemetryData::setMod3CellVoltage3(int mod3CellVoltage3){
    emit mod3CellVoltage3Received(mod3CellVoltage3_);
 }
 void TelemetryData::setMod3CellVoltage4(int mod3CellVoltage4){
-   mod3CellVoltage4_ = mod3CellVoltage;
+   mod3CellVoltage4_ = mod3CellVoltage4;
    emit mod3CellVoltage4Received(mod3CellVoltage4_);
 }
 void TelemetryData::setMod3CellVoltage5(int mod3CellVoltage5){
-   mod3CellVoltage5_ = mod3cellVoltage5;
+   mod3CellVoltage5_ = mod3CellVoltage5;
    emit mod3CellVoltage5Received(mod3CellVoltage5_);
 }
 void TelemetryData::setMod3CellVoltage6(int mod3CellVoltage6){
@@ -365,10 +365,11 @@ void TelemetryData::setBatteryVoltage(int batteryVoltage)
    batteryVoltage_ = batteryVoltage;
    emit batteryVoltageReceived(batteryVoltage_);
 }
-void TelemetryData::setBatteryCurent(int batteryCurrent)
+
+void TelemetryData::setBatteryCurrent(int batteryCurrent)
 {
    batteryCurrent_ = batteryCurrent;
-   emit batterCurrentReceived(batteryCurrent_)
+   emit batteryCurrentReceived(batteryCurrent_);
 }
 
 void TelemetryData::setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising)
@@ -377,7 +378,7 @@ void TelemetryData::setBatteryVoltageThresholdRising(int batteryVoltageThreshold
    emit batteryVoltageThresholdRisingReceived(batteryVoltageThresholdRising_);
 }
 
-void TelemetryData::setBatteryVoltageThresholdFalling(batteryVoltageThresholdFalling)
+void TelemetryData::setBatteryVoltageThresholdFalling(int batteryVoltageThresholdFalling)
 {
    batteryVoltageThresholdFalling_ = batteryVoltageThresholdFalling;
    emit batteryVoltageThresholdFallingReceived(batteryVoltageThresholdFalling_);

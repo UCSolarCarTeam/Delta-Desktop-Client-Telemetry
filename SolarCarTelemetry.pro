@@ -12,7 +12,7 @@ TARGET = SolarCarTelemetry
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES += main.cpp \
     DataPopulator.cpp \
     SolarCarTelemetry.cpp \
     DataParser.cpp \
@@ -21,6 +21,7 @@ SOURCES += main.cpp\
 
 HEADERS  += \
     DataPopulator.h \
+    DataParser.h \
     SolarCarTelemetry.h \
     I_DataParser.h \
     I_TelemetryData.h \
