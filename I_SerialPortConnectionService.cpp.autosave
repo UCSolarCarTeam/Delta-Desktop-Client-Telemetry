@@ -11,6 +11,7 @@ void  I_SerialPortConnectionService::connectDataSource()
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
       setStatus(failed());
    }
+   
 }
 
 QString I_SerialPortConnectionService::checkStatus()

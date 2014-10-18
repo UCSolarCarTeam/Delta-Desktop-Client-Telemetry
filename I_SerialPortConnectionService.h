@@ -12,7 +12,7 @@ class I_SerialPortConnectionService : public I_ConnectionService
 public:
    I_SerialPortConnectionService();
    I_SerialPortConnectionService(QString portName, int baudrate);
-   QString failed();
+   char* failed();
    void succeeded();
    void setStatus(char*);
 
