@@ -8,7 +8,7 @@ class I_ConnectionService : public QObject
     Q_OBJECT
 
 signals:
-   void failed(QString failureReason);
+   QString failed();
    void succeeded();
 
 public slots:

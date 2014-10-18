@@ -12,13 +12,15 @@ class I_SerialPortConnectionService : public I_ConnectionService
 public:
    I_SerialPortConnectionService();
    I_SerialPortConnectionService(QString portName, int baudrate);
+   void setStatus(char*);
 
 public slots:
    void connectDataSource();
-   bool checkStatus();
+   QString checkStatus();
 
 private:
    QSerialPort serialPort_ = new QSerialPort();
+   QString status_ = QString();
 
 };
 
