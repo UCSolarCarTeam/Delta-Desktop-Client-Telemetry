@@ -60,5 +60,5 @@ QString I_SerialPortConnectionService::failed()
 
 void I_SerialPortConnectionService::succeeded()
 {
-
+   setStatus("Connected");
 }
