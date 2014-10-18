@@ -54,8 +54,10 @@ QString I_SerialPortConnectionService::failed()
       case 12:
          return "Timeout error";
       case 13:
-         return "Port not open"
+         return "Port not open";
    }
+
+   return "check I_SerialPortConnectionService class";
 }
 
 void I_SerialPortConnectionService::succeeded()
