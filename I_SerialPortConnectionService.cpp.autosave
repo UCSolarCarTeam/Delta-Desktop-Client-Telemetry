@@ -2,12 +2,16 @@
 
 I_SerialPortConnectionService::I_SerialPortConnectionService(QString portName, int baudrate)
 {
-      
+   serialPort_.setBaudRate(baudrate);
+   serialPort_.setPortName(portName);
 }
 
 void  I_SerialPortConnectionService::connectDataSource()
 {
-
+   if (serialPort_.open() == 0){
+      this->failed();
+   }
+   
 }
 
 bool I_SerialPortConnectionService::checkStatus()
@@ -15,9 +19,31 @@ bool I_SerialPortConnectionService::checkStatus()
 
 }
 
-void I_SerialPortConnectionService::failed(QString failureReason)
+QString I_SerialPortConnectionService::failed()
 {
-
+   switch (serialPort_.error())
+   {
+      case 0: 
+         return "No serialport error, code logic problem";
+      case 1: 
+         return "No device found!";
+      case 2:
+         return "Permission error, port open in another process?";
+      case 3:
+         return "Port open already!";
+      case 4:
+         return "Parity error";
+      case 5: 
+         return "Framing error";
+      case 6: 
+         return "Break condition detected by hardware on input line";
+      case 7:
+         return "I/O error while writing data";
+      case 8:
+         return "I/O error while reading data";
+      case 9:
+         return ""
+   }
 }
 
 void I_SerialPortConnectionService::succeeded()
