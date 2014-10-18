@@ -8,7 +8,6 @@ TelemetryData::~TelemetryData()
 {
 }
 
-
 double TelemetryData::driverSetSpeedRPM() const
 {              return driverSetSpeedRPM_;}
 double TelemetryData::driverSetCurrent() const
@@ -132,78 +131,254 @@ int TelemetryData::batteryVoltageThresholdRising() const
 int TelemetryData::batteryVoltageThresholdFalling() const
 {           return batteryVoltageThresholdFalling_;}
 
+/************Solar Car Driver************/
+void TelemetryData::setDriverSetSpeedRPM(double driverSetSpeedRPM){
+   driverSetSpeedRPM_ = driverSetSpeedRPM;
+   emit setDriverSetSpeedRPMRecieved(driverSetSpeedRPM_);
+}
+void TelemetryData::setDriverSetCurrent(double driverSetCurrent){
+   driverSetCurrent_ = driverSetCurrent;
+   emit setDriverSetCurrentRecieved(driverSetCurrent_);
+}
 
-void setDriverSetSpeedRPM(double driverSetSpeedRPM);
-void setDriverSetCurrent(double driverSetCurrent);
-
-void TelemetryData::setVehicleVelocityKph(double vehicleVelocityKph)
-{
-   vehicleVelocity_ = vehicleVelocity;
+/************Solar Car Readings************/
+void TelemetryData::setVehicleVelocityKph(double vehicleVelocityKph){
+   vehicleVelocityKph_ = vehicleVelocity;
    emit vehicleVelocityReceived(vehicleVelocity_);
 }
-
-void setBusCurrentA(double busCurrentA)
-{
+void TelemetryData::setBusCurrentA(double busCurrentA){
    busCurrentA_ = busCurrentA;
-   emit busCurrentARecieved(busCurrentA_);
+   emit busCurrentAReceived(busCurrentA_);
+}
+void TelemetryData::setBusVoltage(double busVoltage){
+   busVoltage_ = busVoltage;
+   emit busVoltageReceived(busVoltage_);
+}
+void TelemetryData::setMotorVelocityRpm(double motorVelocityRpm){
+   motorVelocityRpm_ = motorVelocityRpm;
+   emit motorVelocityRpmReceived(motorVelocityRpm_);
+}
+void TelemetryData::setMotorVoltageReal(double motorVoltageReal){
+   motorVoltageReal_ = motorVoltageReal;
+   emit motorVoltageRealReceived(motorVoltageReal_)
+}
+void TelemetryData::setMotorCurrentReal(double motorCurrentReal){
+   motorCurrentReal_ = motorCurrentReal;
+   emit motorCurrentRealReceived(motorCurrentReal_);
+}
+void TelemetryData::setBackEmfImaginary(double backEmfImaginary){
+   backEmfImaginary_ = backEmfImaginary;
+   emit backEmfImaginaryReceived(backEmfImaginary_);
+}
+void TelemetryData::setIpmHeatSinkTemp(double ipmHeatSinkTemp){
+   IpmHeatSinkTemp_ = ipmHeatSinkTemp;
+   emit ipmHeatSinkTempReceived(ipmHeatSinkTemp_);
+}
+void TelemetryData::setDspBoardTemp(double dspBoardTemp){
+   dspBoardTemp_ = dspBoardTemp;
+   emit dspBoardTempReceived(dspBoardTemp_);
+}
+void TelemetryData::setDcBusAmpHours(double dcBusAmpHours){
+   dcBusAmpHours_ = dcBusAmpHours;
+   emit dcBusAmpHoursReceived(dcBusAmpHours_);
+}
+void TelemetryData::setReceivedErrorCount(double receivedErrorCount){
+   receivedErrorCount_ = receivedErrorCount;
+   emit receivedErrorCount(receivedErrorCount_);
+}
+void TelemetryData::setTransmittedErrorCount(double transmittedErrorCount){
+   transmittedErrorCount_ = transmittedErrorcount;
+   emit transmittedErrorCountReceived(transmittedErrorCount_);
 }
 
-void setBusVoltage(double busVoltage);
-void setMotorVelocityRpm(double motorVelocityRpm);
-void setMotorVoltageReal(double motorVoltageReal);
-void setMotorCurrentReal(double motorCurrentReal);
-void setBackEmfImaginary(double backEmfImaginary);
-void setIpmHeatSinkTemp(double ipmHeatSinkTemp);
-void setDspBoardTemp(double dspBoardTemp);
-void setDcBusAmpHours(double dcBusAmpHours);
-void setRecievedErrorCount(double recievedErrorCount);
-void setTransmittedErrorCount(double transmittedErrorCount);
+/************Battery Module 0************/
+void TelemetryData::setMod0PcbTemperature(int mod0PcbTemperature){
+   mod0PcbTemperature_ = mod0PcbTemperature;
+   emit mod0PcbTemperatureReceived(mod0PcbTemperature_);
+}
+void TelemetryData::setMod0CellTemperature(int mod0CellTemperature){
+   mod0CellTemperature_ = mod0CellTemperature;
+   emit mod0PcbTemperatureReceived(mod0CellTemperature_);
+}
+void TelemetryData::setMod0CellVoltage0(int mod0CellVoltage0){
+   mod0CellVoltage0_ = mod0CellVoltage0;
+   emit mod0CellVoltage0Received(mod0CellVoltage0_);
+}
+void TelemetryData::setMod0CellVoltage1(int mod0CellVoltage1){
+   mod0CellVoltage1_ = mod0CellVoltage1;
+   emit mod0CellVoltage1Received(mod0CellVoltage1_);
+}
+void TelemetryData::setMod0CellVoltage2(int mod0CellVoltage2){
+   mod0CellVoltage2_ = mod0CellVoltage2;
+   emit mod0CellVoltage2Received(mod0CellVoltage2_);
+}
+void TelemetryData::setMod0CellVoltage3(int mod0CellVoltage3){
+   mod0CellVoltage3_ = mod0CellVoltage3;
+   emit mod0CellVoltage3Received(mod0CellVoltage3_);
+}
+void TelemetryData::setMod0CellVoltage4(int mod0CellVoltage4){
+   mod0CellVoltage4_ = mod0CellVoltage;
+   emit mod0CellVoltage4Received(mod0CellVoltage4_);
+}
+void TelemetryData::setMod0CellVoltage5(int mod0CellVoltage5){
+   mod0CellVoltage5_ = mod0cellVoltage5;
+   emit mod0CellVoltage5Received(mod0CellVoltage5_);
+}
+void TelemetryData::setMod0CellVoltage6(int mod0CellVoltage6){
+   mod0CellVoltage6_ = mod0CellVoltage6;
+   emit mod0CellVoltage6Received(mod0CellVoltage6_);
+}
+void TelemetryData::setMod0CellVoltage7(int mod0CellVoltage7){
+   mod0CellVoltage7_ = mod0CellVoltage7;
+   emit mod0CellVoltage7Received(mod0CellVoltage7_);
+}
 
-void setMod0PcbTemperature(int mod0PcbTemperature);
-void setMod0CellTemperature(int mod0CellTemperature);
-void setMod0CellVoltage0(int mod0CellVoltage0);
-void setMod0CellVoltage1(int mod0cellVoltage1);
-void setMod0CellVoltage2(int mod0cellVoltage2);
-void setMod0CellVoltage3(int mod0cellVoltage3);
-void setMod0CellVoltage4(int mod0cellVoltage4);
-void setMod0CellVoltage5(int mod0cellVoltage5);
-void setMod0CellVoltage6(int mod0cellVoltage6);
-void setMod0CellVoltage7(int mod0cellVoltage7);
+/************Battery Module 1************/
+void TelemetryData::setMod1PcbTemperature(int mod1PcbTemperature){
+   mod1PcbTemperature_ = mod1PcbTemperature;
+   emit mod1PcbTemperatureReceived(mod1PcbTemperature_);
+}
+void TelemetryData::setMod1CellTemperature(int mod1CellTemperature){
+   mod1CellTemperature_ = mod1CellTemperature;
+   emit mod1PcbTemperatureReceived(mod1CellTemperature_);
+}
+void TelemetryData::setMod1CellVoltage0(int mod1CellVoltage0){
+   mod1CellVoltage0_ = mod1CellVoltage0;
+   emit mod1CellVoltage0Received(mod1CellVoltage0_);
+}
+void TelemetryData::setMod1CellVoltage1(int mod1CellVoltage1){
+   mod1CellVoltage1_ = mod1CellVoltage1;
+   emit mod1CellVoltage1Received(mod1CellVoltage1_);
+}
+void TelemetryData::setMod1CellVoltage2(int mod1CellVoltage2){
+   mod1CellVoltage2_ = mod1CellVoltage2;
+   emit mod1CellVoltage2Received(mod1CellVoltage2_);
+}
+void TelemetryData::setMod1CellVoltage3(int mod1CellVoltage3){
+   mod1CellVoltage3_ = mod1CellVoltage3;
+   emit mod1CellVoltage3Received(mod1CellVoltage3_);
+}
+void TelemetryData::setMod1CellVoltage4(int mod1CellVoltage4){
+   mod1CellVoltage4_ = mod1CellVoltage;
+   emit mod1CellVoltage4Received(mod1CellVoltage4_);
+}
+void TelemetryData::setMod1CellVoltage5(int mod1CellVoltage5){
+   mod1CellVoltage5_ = mod1cellVoltage5;
+   emit mod1CellVoltage5Received(mod1CellVoltage5_);
+}
+void TelemetryData::setMod1CellVoltage6(int mod1CellVoltage6){
+   mod1CellVoltage6_ = mod1CellVoltage6;
+   emit mod1CellVoltage6Received(mod1CellVoltage6_);
+}
+void TelemetryData::setMod1CellVoltage7(int mod1CellVoltage7){
+   mod1CellVoltage7_ = mod1CellVoltage7;
+   emit mod1CellVoltage7Received(mod1CellVoltage7_);
+}
 
-void setMod1PcbTemperature(int mod1pcbTemperature);
-void setMod1CellTemperature(int mod1cellTemperature);
-void setMod1CellVoltage0(int mod1cellVoltage0);
-void setMod1CellVoltage1(int mod1cellVoltage1);
-void setMod1CellVoltage2(int mod1cellVoltage2);
-void setMod1CellVoltage3(int mod1cellVoltage3);
-void setMod1CellVoltage4(int mod1cellVoltage4);
-void setMod1CellVoltage5(int mod1cellVoltage5);
-void setMod1CellVoltage6(int mod1cellVoltage6);
-void setMod1CellVoltage7(int mod1cellVoltage7);
+/************Battery Module 2************/
+void TelemetryData::setMod2PcbTemperature(int mod2PcbTemperature){
+   mod2PcbTemperature_ = mod2PcbTemperature;
+   emit mod2PcbTemperatureReceived(mod2PcbTemperature_);
+}
+void TelemetryData::setMod2CellTemperature(int mod2CellTemperature){
+   mod2CellTemperature_ = mod2CellTemperature;
+   emit mod2PcbTemperatureReceived(mod2CellTemperature_);
+}
+void TelemetryData::setMod2CellVoltage0(int mod2CellVoltage0){
+   mod2CellVoltage0_ = mod2CellVoltage0;
+   emit mod2CellVoltage0Received(mod2CellVoltage0_);
+}
+void TelemetryData::setMod2CellVoltage1(int mod2CellVoltage1){
+   mod2CellVoltage1_ = mod2CellVoltage1;
+   emit mod2CellVoltage1Received(mod2CellVoltage1_);
+}
+void TelemetryData::setMod2CellVoltage2(int mod2CellVoltage2){
+   mod2CellVoltage2_ = mod2CellVoltage2;
+   emit mod2CellVoltage2Received(mod2CellVoltage2_);
+}
+void TelemetryData::setMod2CellVoltage3(int mod2CellVoltage3){
+   mod2CellVoltage3_ = mod2CellVoltage3;
+   emit mod2CellVoltage3Received(mod2CellVoltage3_);
+}
+void TelemetryData::setMod2CellVoltage4(int mod2CellVoltage4){
+   mod2CellVoltage4_ = mod2CellVoltage;
+   emit mod2CellVoltage4Received(mod2CellVoltage4_);
+}
+void TelemetryData::setMod2CellVoltage5(int mod2CellVoltage5){
+   mod2CellVoltage5_ = mod2cellVoltage5;
+   emit mod2CellVoltage5Received(mod2CellVoltage5_);
+}
+void TelemetryData::setMod2CellVoltage6(int mod2CellVoltage6){
+   mod2CellVoltage6_ = mod2CellVoltage6;
+   emit mod2CellVoltage6Received(mod2CellVoltage6_);
+}
+void TelemetryData::setMod2CellVoltage7(int mod2CellVoltage7){
+   mod2CellVoltage7_ = mod2CellVoltage7;
+   emit mod2CellVoltage7Received(mod2CellVoltage7_);
+}
 
-void setMod2PcbTemperature(int mod2pcbTemperature);
-void setMod2CellTemperature(int mod2cellTemperature);
-void setMod2CellVoltage0(int mod2cellVoltage0);
-void setMod2CellVoltage1(int mod2cellVoltage1);
-void setMod2CellVoltage2(int mod2cellVoltage2);
-void setMod2CellVoltage3(int mod2cellVoltage3);
-void setMod2CellVoltage4(int mod2cellVoltage4);
-void setMod2CellVoltage5(int mod2cellVoltage5);
-void setMod2CellVoltage6(int mod2cellVoltage6);
-void setMod2CellVoltage7(int mod2cellVoltage7);
+/************Battery Module 3************/
+void TelemetryData::setMod3PcbTemperature(int mod3PcbTemperature){
+   mod3PcbTemperature_ = mod3PcbTemperature;
+   emit mod3PcbTemperatureReceived(mod3PcbTemperature_);
+}
 
-void setMod3PcbTemperature(int mod3pcbTemperature);
-void setMod3CellTemperature(int mod3cellTemperature);
-void setMod3CellVoltage0(int mod3cellVoltage0);
-void setMod3CellVoltage1(int mod3cellVoltage1);
-void setMod3CellVoltage2(int mod3cellVoltage2);
-void setMod3CellVoltage3(int mod3cellVoltage3);
-void setMod3CellVoltage4(int mod3cellVoltage4);
-void setMod3CellVoltage5(int mod3cellVoltage5);
-void setMod3CellVoltage6(int mod3cellVoltage6);
-void setMod3CellVoltage7(int mod3cellVoltage7);
+void TelemetryData::setMod3CellTemperature(int mod3CellTemperature){
+   mod3CellTemperature_ = mod3CellTemperature;
+   emit mod3PcbTemperatureReceived(mod3CellTemperature_);
+}
+void TelemetryData::setMod3CellVoltage0(int mod3CellVoltage0){
+   mod3CellVoltage0_ = mod3CellVoltage0;
+   emit mod3CellVoltage0Received(mod3CellVoltage0_);
+}
+void TelemetryData::setMod3CellVoltage1(int mod3CellVoltage1){
+   mod3CellVoltage1_ = mod3CellVoltage1;
+   emit mod3CellVoltage1Received(mod3CellVoltage1_);
+}
+void TelemetryData::setMod3CellVoltage2(int mod3CellVoltage2){
+   mod3CellVoltage2_ = mod3CellVoltage2;
+   emit mod3CellVoltage2Received(mod3CellVoltage2_);
+}
+void TelemetryData::setMod3CellVoltage3(int mod3CellVoltage3){
+   mod3CellVoltage3_ = mod3CellVoltage3;
+   emit mod3CellVoltage3Received(mod3CellVoltage3_);
+}
+void TelemetryData::setMod3CellVoltage4(int mod3CellVoltage4){
+   mod3CellVoltage4_ = mod3CellVoltage;
+   emit mod3CellVoltage4Received(mod3CellVoltage4_);
+}
+void TelemetryData::setMod3CellVoltage5(int mod3CellVoltage5){
+   mod3CellVoltage5_ = mod3cellVoltage5;
+   emit mod3CellVoltage5Received(mod3CellVoltage5_);
+}
+void TelemetryData::setMod3CellVoltage6(int mod3CellVoltage6){
+   mod3CellVoltage6_ = mod3CellVoltage6;
+   emit mod3CellVoltage6Received(mod3CellVoltage6_);
+}
+void TelemetryData::setMod3CellVoltage7(int mod3CellVoltage7){
+   mod3CellVoltage7_ = mod3CellVoltage7;
+   emit mod3CellVoltage7Received(mod3CellVoltage7_);
+}
 
-void setBatteryVoltage(int batteryVoltage) const;
-void setBatteryCurent(int batterCurrent) const;
-void setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising) const;
-void setBatteryVoltageThresholdFalling(batteryVoltageThresholdFalling) const;
+void TelemetryData::setBatteryVoltage(int batteryVoltage)
+{
+   batteryVoltage_ = batteryVoltage;
+   emit batteryVoltageReceived(batteryVoltage_);
+}
+void TelemetryData::setBatteryCurent(int batteryCurrent)
+{
+   batteryCurrent_ = batteryCurrent;
+   emit batterCurrentReceived(batteryCurrent_)
+}
+
+void TelemetryData::setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising)
+{
+   batteryVoltageThresholdRising_ = batteryVoltageThresholdRising;
+   emit batteryVoltageThresholdRisingReceived(batteryVoltageThresholdRising_);
+}
+
+void TelemetryData::setBatteryVoltageThresholdFalling(batteryVoltageThresholdFalling)
+{
+   batteryVoltageThresholdFalling_ = batteryVoltageThresholdFalling;
+   emit batteryVoltageThresholdFallingReceived(batteryVoltageThresholdFalling_);
+}

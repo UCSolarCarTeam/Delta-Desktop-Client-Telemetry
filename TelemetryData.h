@@ -8,6 +8,7 @@ public:
   TelemetryData();
   virtual ~TelemetryData();
 
+  /*Data "Gets"*/
   double driverSetSpeedRPM() const;
   double driverSetCurrent() const;
 
@@ -73,6 +74,7 @@ public:
   int batteryVoltageThresholdRising() const;
   int batteryVoltageThresholdFalling() const;
 
+   /*Data "Sets"*/
    void setDriverSetSpeedRPM(double driverSetSpeedRPM);
    void setDriverSetCurrent(double driverSetCurrent);
 
@@ -86,57 +88,57 @@ public:
    void setIpmHeatSinkTemp(double ipmHeatSinkTemp);
    void setDspBoardTemp(double dspBoardTemp);
    void setDcBusAmpHours(double dcBusAmpHours);
-   void setRecievedErrorCount(double recievedErrorCount);
+   void setReceivedErrorCount(double recievedErrorCount);
    void setTransmittedErrorCount(double transmittedErrorCount);
 
    void setMod0PcbTemperature(int mod0PcbTemperature);
    void setMod0CellTemperature(int mod0CellTemperature);
    void setMod0CellVoltage0(int mod0CellVoltage0);
-   void setMod0CellVoltage1(int mod0cellVoltage1);
-   void setMod0CellVoltage2(int mod0cellVoltage2);
-   void setMod0CellVoltage3(int mod0cellVoltage3);
-   void setMod0CellVoltage4(int mod0cellVoltage4);
-   void setMod0CellVoltage5(int mod0cellVoltage5);
-   void setMod0CellVoltage6(int mod0cellVoltage6);
-   void setMod0CellVoltage7(int mod0cellVoltage7);
+   void setMod0CellVoltage1(int mod0CellVoltage1);
+   void setMod0CellVoltage2(int mod0CellVoltage2);
+   void setMod0CellVoltage3(int mod0CellVoltage3);
+   void setMod0CellVoltage4(int mod0CellVoltage4);
+   void setMod0CellVoltage5(int mod0CellVoltage5);
+   void setMod0CellVoltage6(int mod0CellVoltage6);
+   void setMod0CellVoltage7(int mod0CellVoltage7);
 
-   void setMod1PcbTemperature(int mod1pcbTemperature);
-   void setMod1CellTemperature(int mod1cellTemperature);
-   void setMod1CellVoltage0(int mod1cellVoltage0);
-   void setMod1CellVoltage1(int mod1cellVoltage1);
-   void setMod1CellVoltage2(int mod1cellVoltage2);
-   void setMod1CellVoltage3(int mod1cellVoltage3);
-   void setMod1CellVoltage4(int mod1cellVoltage4);
-   void setMod1CellVoltage5(int mod1cellVoltage5);
-   void setMod1CellVoltage6(int mod1cellVoltage6);
-   void setMod1CellVoltage7(int mod1cellVoltage7);
+   void setMod1PcbTemperature(int mod1PcbTemperature);
+   void setMod1CellTemperature(int mod1CellTemperature);
+   void setMod1CellVoltage0(int mod1CellVoltage0);
+   void setMod1CellVoltage1(int mod1CellVoltage1);
+   void setMod1CellVoltage2(int mod1CellVoltage2);
+   void setMod1CellVoltage3(int mod1CellVoltage3);
+   void setMod1CellVoltage4(int mod1CellVoltage4);
+   void setMod1CellVoltage5(int mod1CellVoltage5);
+   void setMod1CellVoltage6(int mod1CellVoltage6);
+   void setMod1CellVoltage7(int mod1CellVoltage7);
 
-   void setMod2PcbTemperature(int mod2pcbTemperature);
-   void setMod2CellTemperature(int mod2cellTemperature);
-   void setMod2CellVoltage0(int mod2cellVoltage0);
-   void setMod2CellVoltage1(int mod2cellVoltage1);
-   void setMod2CellVoltage2(int mod2cellVoltage2);
-   void setMod2CellVoltage3(int mod2cellVoltage3);
-   void setMod2CellVoltage4(int mod2cellVoltage4);
-   void setMod2CellVoltage5(int mod2cellVoltage5);
-   void setMod2CellVoltage6(int mod2cellVoltage6);
-   void setMod2CellVoltage7(int mod2cellVoltage7);
+   void setMod2PcbTemperature(int mod2PcbTemperature);
+   void setMod2CellTemperature(int mod2CellTemperature);
+   void setMod2CellVoltage0(int mod2CellVoltage0);
+   void setMod2CellVoltage1(int mod2CellVoltage1);
+   void setMod2CellVoltage2(int mod2CellVoltage2);
+   void setMod2CellVoltage3(int mod2CellVoltage3);
+   void setMod2CellVoltage4(int mod2CellVoltage4);
+   void setMod2CellVoltage5(int mod2CellVoltage5);
+   void setMod2CellVoltage6(int mod2CellVoltage6);
+   void setMod2CellVoltage7(int mod2CellVoltage7);
 
-   void setMod3PcbTemperature(int mod3pcbTemperature);
-   void setMod3CellTemperature(int mod3cellTemperature);
-   void setMod3CellVoltage0(int mod3cellVoltage0);
-   void setMod3CellVoltage1(int mod3cellVoltage1);
-   void setMod3CellVoltage2(int mod3cellVoltage2);
-   void setMod3CellVoltage3(int mod3cellVoltage3);
-   void setMod3CellVoltage4(int mod3cellVoltage4);
-   void setMod3CellVoltage5(int mod3cellVoltage5);
-   void setMod3CellVoltage6(int mod3cellVoltage6);
-   void setMod3CellVoltage7(int mod3cellVoltage7);
+   void setMod3PcbTemperature(int mod3PcbTemperature);
+   void setMod3CellTemperature(int mod3CellTemperature);
+   void setMod3CellVoltage0(int mod3CellVoltage0);
+   void setMod3CellVoltage1(int mod3CellVoltage1);
+   void setMod3CellVoltage2(int mod3CellVoltage2);
+   void setMod3CellVoltage3(int mod3CellVoltage3);
+   void setMod3CellVoltage4(int mod3CellVoltage4);
+   void setMod3CellVoltage5(int mod3CellVoltage5);
+   void setMod3CellVoltage6(int mod3CellVoltage6);
+   void setMod3CellVoltage7(int mod3CellVoltage7);
 
-   void setBatteryVoltage(int batteryVoltage) const;
-   void setBatteryCurent(int batterCurrent) const;
-   void setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising) const;
-   void setBatteryVoltageThresholdFalling(batteryVoltageThresholdFalling) const;
+   void setBatteryVoltage(int batteryVoltage);
+   void setBatteryCurent(int batteryCurrent);
+   void setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising);
+   void setBatteryVoltageThresholdFalling(int batteryVoltageThresholdFalling);
 
 private:
    double driverSetSpeedRPM_;
@@ -152,7 +154,7 @@ private:
    double ipmHeatSinkTemp_;
    double dspBoardTemp_;
    double dcBusAmpHours_;
-   double recievedErrorCount_;
+   double receivedErrorCount_;
    double transmittedErrorCount_;
 
    int mod0PcbTemperature_;
