@@ -1,10 +1,10 @@
 #pragma once
 
-
 #include "I_ConnectionService.h"
 #include <QObject>
 #include <QSerialPort>
 #include <QString>
+#include <QTime>
 
 class SerialPortConnectionService : public I_ConnectionService
 {
@@ -23,7 +23,7 @@ public slots:
 
 private:
    QSerialPort serialPort_ = new QSerialPort();
-   QString status_ = QString();
+   QString status_;
    void setStatus(QString);
    QString failed();
    void succeeded();

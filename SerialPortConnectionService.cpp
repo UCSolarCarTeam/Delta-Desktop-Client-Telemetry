@@ -15,12 +15,7 @@ bool  SerialPortConnectionService::connectDataSource()
 {
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
       setStatus(failed());
-      return 0;
-   }
-
-   if (serialPort_.write("AT") == -1){
-      setStatus(failed());
-      return 0;
+      return false;
    }
 
 }
@@ -33,26 +28,28 @@ bool SerialPortConnectionService::communicateWithPort(QString message,
 
    if (serialPort_.write(qPrintable(message)) == -1){
       setStatus(failed());
-      return 0;
+      return false;
    }
    if (serialPort_.waitForReadyRead(maxWaitTime)){
       if (serialPort_.canReadLine()){
          response = serialPort_.readLine();
-         if (QString(response) != expectedResponse){
-            setStatus("Did not receive " + expectedResponse + " after " + message);
-            return 0;
+         if (QString(response) == expectedResponse){
+            return true;
          }
          else{
-            return 1;
+            setStatus("Did not receive " + expectedResponse + " after " + message);
+            return false;
          }
       }
    }
    else {
       setStatus("Timeout for " + expectedResponse);
-      return 0;
+      return false;
    }
 
 }
+
+
 
 void SerialPortConnectionService::disconnectDataSource()
 {
