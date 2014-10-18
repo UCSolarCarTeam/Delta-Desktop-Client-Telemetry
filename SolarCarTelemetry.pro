@@ -15,17 +15,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
     DataPopulator.cpp \
     SolarCarTelemetry.cpp \
-    Data.cpp \
     DataParser.cpp \
-    i_connectionservice.cpp
+    TelemetryData.cpp \
+    SerialPortConnectionService.cpp
 
 HEADERS  += \
     DataPopulator.h \
     SolarCarTelemetry.h \
     I_DataParser.h \
-    I_Data.h \
-    Data.h \
-    DataParser.h \
-    i_connectionservice.h
+    I_TelemetryData.h \
+    TelemetryData.h \
+    I_ConnectionService.h \
+    SerialPortConnectionService.h
+
 
 FORMS    +=

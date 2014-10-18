@@ -2,11 +2,11 @@
 
 #include <QObject>
 
-class I_Data : public QObject
+class I_TelemetryData : public QObject
 {
   Q_OBJECT
 public:
-  virtual ~I_Data() {}
+  virtual ~I_TelemetryData() {}
 
   virtual double vehicleVelocity() const = 0;
   virtual void setVehicleVelocity(double vehicleVelocity) = 0;

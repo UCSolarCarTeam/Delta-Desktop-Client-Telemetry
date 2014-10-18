@@ -2,16 +2,15 @@
 #define I_CONNECTIONSERVICE_H
 
 #include <QObject>
+#include <QIODevice>
+#include <QString>
 
 class I_ConnectionService : public QObject
 {
     Q_OBJECT
-public:
-    explicit I_ConnectionService(QObject *parent = 0);
-
-signals:
-
 public slots:
+   virtual bool connectDataSource() = 0;
+   virtual QString checkStatus() = 0;
 
 };
 
