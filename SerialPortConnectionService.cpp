@@ -9,15 +9,18 @@ SerialPortConnectionService::SerialPortConnectionService(QString portName, int b
 {
    serialPort_.setBaudRate(baudrate);
    serialPort_.setPortName(portName);
+   connected_ = false;
 }
 
-bool  SerialPortConnectionService::connectDataSource()
+void  SerialPortConnectionService::connectDataSource()
 {
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
-      setStatus(failed());
-      return false;
+      connected_ = false;
+      emit connectionFailed(failed());
+      return;
    }
 
+   //talk to port code
 }
 
 bool SerialPortConnectionService::communicateWithPort(QString message,

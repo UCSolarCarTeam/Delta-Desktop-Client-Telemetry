@@ -8,9 +8,18 @@
 class I_ConnectionService : public QObject
 {
     Q_OBJECT
+
+public:
+   bool connected();
+
+signals:
+   void connectionFailed(QString);
+   void connectionSucceeded();
+
 public slots:
-   virtual bool connectDataSource() = 0;
+   virtual void connectDataSource() = 0;
    virtual QString checkStatus() = 0;
+
 
 };
 

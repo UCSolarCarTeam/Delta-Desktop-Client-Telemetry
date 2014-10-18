@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QSerialPort>
 #include <QString>
-#include <QTime>
+#include <QTimer>
 
 class SerialPortConnectionService : public I_ConnectionService
 {
@@ -18,14 +18,16 @@ public:
                             int maxWaitTime); //in milliseconds
 
 public slots:
-   bool connectDataSource();
+   void connectDataSource();
    void disconnectDataSource();
 
 private:
-   QSerialPort serialPort_ = new QSerialPort();
-   QString status_;
    void setStatus(QString);
    QString failed();
    void succeeded();
+   QTimer responseTimer_;
+   QSerialPort serialPort_;
+   bool connected_ = false;
+
 };
 
