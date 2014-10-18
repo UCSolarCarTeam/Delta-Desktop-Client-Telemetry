@@ -2,7 +2,16 @@
 
 namespace
 {
-   const char* CAR_PORT_ADDRESS = 000;
+   const QByteArray CAR_PORT_ADDRESS = "00:07:80:6E:F7:E4";
+   const QByteArray FIRST_COMMAND = "AT";
+   const QByteArray FIRST_RESPONSE = "OK";
+   const int FIRST_REPONSE_MAXTIME = 100;
+   const QByteArray SECOND_COMMAND = "PAIR " + CAR_PORT_ADDRESS;
+   const QByteArray SECOND_RESPONSE = "PAIR " + CAR_PORT_ADDRESS + " OK";
+   const int SECOND_RESPONSE_MAXTIME = 5000;
+   const QByteArray THIRD_COMMAND = "CALL " + CAR_PORT_ADDRESS + " 1101 RFCOMM";
+   const QByteArray THIRD_RESPONSE = "CALL 0";
+   const int THIRD_RESPONSE_MAXTIME = 5000;
 }
 
 SerialPortConnectionService::SerialPortConnectionService(QString portName, int baudrate)
@@ -25,40 +34,86 @@ void  SerialPortConnectionService::connectDataSource()
       return;
    }
 
-   //talk to port code
+   setUpBlueGigaWT41Connection();
 }
 
-/*
-bool SerialPortConnectionService::communicateWithPort(QString message,
-                                                      QString expectedResponse,
-                                                      int maxWaitTime)
+void SerialPortConnectionService::firstStep()
 {
-   QByteArray response;
+   if (serialPort_.canReadLine())
+   {
+      if (serialPort_.readLine() == FIRST_RESPONSE){
+         serialPort_.write(SECOND_COMMAND);
+         responseTimer_.start(SECOND_RESPONSE_MAXTIME);
+         disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
+         connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(secondStep()));
 
-   if (serialPort_.write(qPrintable(message)) == -1){
-      setStatus(failed());
-      return false;
-   }
-   if (serialPort_.waitForReadyRead(maxWaitTime)){
-      if (serialPort_.canReadLine()){
-         response = serialPort_.readLine();
-         if (QString(response) == expectedResponse){
-            return true;
-         }
-         else{
-            setStatus("Did not receive " + expectedResponse + " after " + message);
-            return false;
-         }
+      }
+      else{
+         disconnect(&serialPort_, 0, this, 0);
+         disconnect(&responseTimer_, 0, this, 0);
+         responseTimer_.stop();
+         emit connectionFailed("Did not receive " + FIRST_RESPONSE
+                               + " after " + FIRST_COMMAND);
       }
    }
-   else {
-      setStatus("Timeout for " + expectedResponse);
-      return false;
-   }
-
 }
-*/
 
+void SerialPortConnectionService::secondStep()
+{
+   if (serialPort_.canReadLine())
+   {
+      if (serialPort_.readLine() == SECOND_RESPONSE){
+         serialPort_.write(THIRD_COMMAND);
+         responseTimer_.start(THIRD_RESPONSE_MAXTIME);
+         disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(secondStep()));
+         connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(thirdStep()));
+
+      }
+      else{
+         disconnect(&serialPort_, 0, this, 0);
+         disconnect(&responseTimer_, 0, this, 0);
+         responseTimer_.stop();
+         emit connectionFailed("Did not receive " + SECOND_RESPONSE
+                               + " after " + SECOND_COMMAND);
+      }
+   }
+}
+
+
+void SerialPortConnectionService::thirdStep()
+{
+   if (serialPort_.canReadLine())
+   {
+      if (serialPort_.readLine() == THIRD_RESPONSE){
+         connected_ = true;
+         emit connectionSucceeded();
+      }
+      else{
+         responseTimer_.stop();
+         emit connectionFailed("Did not receive " + THIRD_RESPONSE
+                               + " after " + THIRD_COMMAND);
+      }
+      disconnect(&serialPort_, 0, this, 0);
+      disconnect(&responseTimer_, 0, this, 0);
+   }
+}
+
+void SerialPortConnectionService::responseTimedOut()
+{
+   emit connectionFailed("Response Timed Out");
+   disconnect(&serialPort_, 0, this, 0);
+   disconnect(&responseTimer_, 0, this, 0);
+}
+
+//For use only with the BlueGiga WT41 bluetooth chip
+//This code was written for the Schulich Delta
+void SerialPortConnectionService::setUpBlueGigaWT41Connection()
+{
+   serialPort_.write(FIRST_COMMAND);
+   responseTimer_.start(FIRST_REPONSE_MAXTIME);
+   connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
+   connect(&responseTimer_, SIGNAL(timeout()), this, SLOT(responseTimedOut()));
+}
 
 void SerialPortConnectionService::disconnectDataSource()
 {

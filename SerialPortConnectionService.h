@@ -13,15 +13,19 @@ public:
    SerialPortConnectionService(QString portName, int baudrate);
    ~SerialPortConnectionService();
    bool isConnected();
-   /*bool communicateWithPort(QString message,
-                            QString expectedResponse,
-                            int maxWaitTime); //in milliseconds 8*/
 
 public slots:
    void connectDataSource();
    void disconnectDataSource();
 
+private slots:
+   void firstStep();
+   void secondStep();
+   void thirdStep();
+   void responseTimedOut();
+
 private:
+   void setUpBlueGigaWT41Connection();
    QString failed();
    void succeeded();
    QTimer responseTimer_;
