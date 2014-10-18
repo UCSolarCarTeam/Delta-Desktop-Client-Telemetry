@@ -22,7 +22,7 @@ void DataPopulator::handleDataReceived(int id, int value)
   switch(id)
   {
   case VehicleVelocity:
-    data_.setVehicleVelocity(value);
+    data_.setVehicleVelocityKph(value);
     break;
   }
 }
