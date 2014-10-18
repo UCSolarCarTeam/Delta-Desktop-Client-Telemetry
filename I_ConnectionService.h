@@ -3,13 +3,15 @@
 
 #include <QObject>
 #include <QIODevice>
+#include <QString>
 
 class I_ConnectionService : public QObject
 {
     Q_OBJECT
 
 public slots:
-   virtual void connectDataSource() = 0;
+   virtual bool connectDataSource() = 0;
+   virtual QString checkStatus() = 0;
 
 };
 

@@ -1,15 +1,18 @@
-#include "I_SerialPortConnectionService.h"
+#include "SerialPortConnectionService.h"
 
-I_SerialPortConnectionService::I_SerialPortConnectionService(QString portName, int baudrate)
+namespace
+{
+   const char* CAR_PORT_ADDRESS = 000;
+}
+
+SerialPortConnectionService::SerialPortConnectionService(QString portName, int baudrate)
 {
    serialPort_.setBaudRate(baudrate);
    serialPort_.setPortName(portName);
 }
 
-bool  I_SerialPortConnectionService::connectDataSource()
+bool  SerialPortConnectionService::connectDataSource()
 {
-   char receivedPortLine[100];
-
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
       setStatus(failed());
       return 0;
@@ -19,42 +22,55 @@ bool  I_SerialPortConnectionService::connectDataSource()
       setStatus(failed());
       return 0;
    }
-   if (serialPort_.waitForReadyRead(5000)){
-      if (serialPort_.readLine(
-             receivedPortLine, sizeof receivedPortLine) == -1){
-         setStatus("No bytes read");
-         return 0;
-      }
-      else if(receivedPortLine != "OK"){
-         setStatus("Did not received OK after AT");
-         return 0;
+
+}
+
+bool SerialPortConnectionService::communicateWithPort(QString message,
+                                                      QString expectedResponse,
+                                                      int maxWaitTime)
+{
+   QByteArray response;
+
+   if (serialPort_.write(qPrintable(message)) == -1){
+      setStatus(failed());
+      return 0;
+   }
+   if (serialPort_.waitForReadyRead(maxWaitTime)){
+      if (serialPort_.canReadLine()){
+         response = serialPort_.readLine();
+         if (QString(response) != expectedResponse){
+            setStatus("Did not receive " + expectedResponse + " after " + message);
+            return 0;
+         }
+         else{
+            return 1;
+         }
       }
    }
    else {
-      setStatus("Timeout for OK");
-      return;
+      setStatus("Timeout for " + expectedResponse);
+      return 0;
    }
 
 }
 
-void I_SerialPortConnectionService::disconnectDataSource()
+void SerialPortConnectionService::disconnectDataSource()
 {
    serialPort_.close();
    setStatus("Disconnected");
 }
 
-QString I_SerialPortConnectionService::checkStatus()
+QString SerialPortConnectionService::checkStatus()
 {
    return status_;
 }
 
-void I_SerialPortConnectionService::setStatus(char* status)
+void SerialPortConnectionService::setStatus(QString status)
 {
-   status_.clear();
-   status_.append(status);
+   status_ = status;
 }
 
-char* I_SerialPortConnectionService::failed()
+QString SerialPortConnectionService::failed()
 {
    //Cases notated in ct.org/doc/qt-5/qserialport.html#SerialPortError-enum
    switch (serialPort_.error())
@@ -89,10 +105,10 @@ char* I_SerialPortConnectionService::failed()
          return "Port not open";
    }
 
-   return "check I_SerialPortConnectionService class";
+   return "check SerialPortConnectionService class";
 }
 
-void I_SerialPortConnectionService::succeeded()
+void SerialPortConnectionService::succeeded()
 {
    setStatus("Connected");
 }

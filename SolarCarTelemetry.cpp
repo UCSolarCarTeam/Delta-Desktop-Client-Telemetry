@@ -4,7 +4,6 @@
 #include "TelemetryData.h"
 #include "DataParser.h"
 #include "DataPopulator.h"
-#include "I_ConnectionService.h"
 
 SolarCarTelemetry::SolarCarTelemetry()
 : data_(new TelemetryData())

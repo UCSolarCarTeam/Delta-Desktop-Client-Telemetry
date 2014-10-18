@@ -17,7 +17,7 @@ SOURCES += main.cpp\
     SolarCarTelemetry.cpp \
     DataParser.cpp \
     TelemetryData.cpp \
-    I_SerialPortConnectionService.cpp
+    SerialPortConnectionService.cpp
 
 HEADERS  += \
     DataPopulator.h \
@@ -27,6 +27,6 @@ HEADERS  += \
     I_TelemetryData.h \
     TelemetryData.h \
     I_ConnectionService.h \
-    I_SerialPortConnectionService.h
+    SerialPortConnectionService.h
 
 FORMS    +=
