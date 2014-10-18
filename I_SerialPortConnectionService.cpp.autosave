@@ -2,7 +2,7 @@
 
 I_SerialPortConnectionService::I_SerialPortConnectionService(QString portName, int baudrate)
 {
-
+      
 }
 
 void  I_SerialPortConnectionService::connectDataSource()
