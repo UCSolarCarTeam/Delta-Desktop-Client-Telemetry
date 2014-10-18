@@ -8,9 +8,35 @@ I_SerialPortConnectionService::I_SerialPortConnectionService(QString portName, i
 
 void  I_SerialPortConnectionService::connectDataSource()
 {
+   char receivedPortLine[100];
+
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
       setStatus(failed());
+      return;
    }
+
+   if (serialPort_.write("AT") == -1){
+      setStatus(failed());
+      return;
+   }
+   if (serialPort_.waitForReadyRead(5000)){
+      if (serialPort_.readLine(
+             receivedPortLine, sizeof receivedPortLine) == -1){
+         setStatus("No bytes read");
+         return;
+      }
+   }
+   else {
+      setStatus("Timeout for OK");
+      return;
+   }
+
+}
+
+void I_SerialPortConnectionService::disconnectDataSource()
+{
+   serialPort_.close();
+   setStatus("Disconnected");
 }
 
 QString I_SerialPortConnectionService::checkStatus()

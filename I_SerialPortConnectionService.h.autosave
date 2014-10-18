@@ -16,7 +16,7 @@ public:
    void succeeded();
 
 public slots:
-   void connectDataSource();
+   bool connectDataSource();
    void disconnectDataSource();
    QString checkStatus();
 
@@ -24,6 +24,7 @@ private:
    QSerialPort serialPort_ = new QSerialPort();
    QString status_ = QString();
    void setStatus(char*);
+   const char* CARPORTADDRESS = "";
 
 };
 

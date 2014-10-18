@@ -2,6 +2,7 @@
 #define I_CONNECTIONSERVICE_H
 
 #include <QObject>
+#include <QIODevice>
 
 class I_ConnectionService : public QObject
 {
