@@ -10,19 +10,18 @@ class SerialPortConnectionService : public I_ConnectionService
 {
    Q_OBJECT
 public:
-   SerialPortConnectionService();
    SerialPortConnectionService(QString portName, int baudrate);
-   QString checkStatus();
-   bool communicateWithPort(QString message,
+   ~SerialPortConnectionService();
+   bool isConnected();
+   /*bool communicateWithPort(QString message,
                             QString expectedResponse,
-                            int maxWaitTime); //in milliseconds
+                            int maxWaitTime); //in milliseconds 8*/
 
 public slots:
    void connectDataSource();
    void disconnectDataSource();
 
 private:
-   void setStatus(QString);
    QString failed();
    void succeeded();
    QTimer responseTimer_;

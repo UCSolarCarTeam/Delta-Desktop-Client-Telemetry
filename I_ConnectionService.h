@@ -10,7 +10,7 @@ class I_ConnectionService : public QObject
     Q_OBJECT
 
 public:
-   bool connected();
+   bool isConnected();
 
 signals:
    void connectionFailed(QString);
@@ -18,7 +18,6 @@ signals:
 
 public slots:
    virtual void connectDataSource() = 0;
-   virtual QString checkStatus() = 0;
 
 
 };

@@ -12,6 +12,11 @@ SerialPortConnectionService::SerialPortConnectionService(QString portName, int b
    connected_ = false;
 }
 
+SerialPortConnectionService::~SerialPortConnectionService()
+{
+   disconnectDataSource();
+}
+
 void  SerialPortConnectionService::connectDataSource()
 {
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
@@ -23,6 +28,7 @@ void  SerialPortConnectionService::connectDataSource()
    //talk to port code
 }
 
+/*
 bool SerialPortConnectionService::communicateWithPort(QString message,
                                                       QString expectedResponse,
                                                       int maxWaitTime)
@@ -51,23 +57,13 @@ bool SerialPortConnectionService::communicateWithPort(QString message,
    }
 
 }
-
+*/
 
 
 void SerialPortConnectionService::disconnectDataSource()
 {
    serialPort_.close();
-   setStatus("Disconnected");
-}
-
-QString SerialPortConnectionService::checkStatus()
-{
-   return status_;
-}
-
-void SerialPortConnectionService::setStatus(QString status)
-{
-   status_ = status;
+   connected_ = false;
 }
 
 QString SerialPortConnectionService::failed()
@@ -110,5 +106,10 @@ QString SerialPortConnectionService::failed()
 
 void SerialPortConnectionService::succeeded()
 {
-   setStatus("Connected");
+   connected_ = false;
+}
+
+bool SerialPortConnectionService::isConnected()
+{
+   return connected_;
 }
