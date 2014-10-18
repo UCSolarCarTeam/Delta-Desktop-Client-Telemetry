@@ -100,7 +100,7 @@ void SerialPortConnectionService::thirdStep()
 
 void SerialPortConnectionService::responseTimedOut()
 {
-   emit connectionFailed("Response Timed Out");
+   emit connectionFailed("Response timed out");
    disconnect(&serialPort_, 0, this, 0);
    disconnect(&responseTimer_, 0, this, 0);
 }
@@ -156,7 +156,7 @@ QString SerialPortConnectionService::failed()
          return "Port not open";
    }
 
-   return "check SerialPortConnectionService class";
+   return "Check SerialPortConnectionService class";
 }
 
 void SerialPortConnectionService::succeeded()
