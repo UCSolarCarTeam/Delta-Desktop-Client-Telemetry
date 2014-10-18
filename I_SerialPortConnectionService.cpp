@@ -13,7 +13,7 @@ void  I_SerialPortConnectionService::connectDataSource()
 
 QString I_SerialPortConnectionService::checkStatus()
 {
-
+   return status_;
 }
 
 void I_SerialPortConnectionService::setStatus(char* status)
