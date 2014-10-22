@@ -34,7 +34,18 @@ void  SerialPortConnectionService::connectDataSource()
       return;
    }
 
+   //Bluetooth Connection
    setUpBlueGigaWT41Connection();
+}
+
+//For use only with the BlueGiga WT41 bluetooth chip
+//This code was written for the Schulich Delta
+void SerialPortConnectionService::setUpBlueGigaWT41Connection()
+{
+   serialPort_.write(FIRST_COMMAND);
+   responseTimer_.start(FIRST_REPONSE_MAXTIME);
+   connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
+   connect(&responseTimer_, SIGNAL(timeout()), this, SLOT(responseTimedOut()));
 }
 
 void SerialPortConnectionService::firstStep()
@@ -85,8 +96,9 @@ void SerialPortConnectionService::thirdStep()
    if (serialPort_.canReadLine())
    {
       if (serialPort_.readLine() == THIRD_RESPONSE){
-         connected_ = true;
-         emit connectionSucceeded();
+         responseTimer_.start(THIRD_RESPONSE_MAXTIME);
+         disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(thirdStep()));
+         connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(fourthStep()));
       }
       else{
          responseTimer_.stop();
@@ -98,6 +110,24 @@ void SerialPortConnectionService::thirdStep()
    }
 }
 
+void SerialPortConnectionService::fourthStep()
+{
+   if (serialPort_.canReadLine())
+   {
+      //Throws away first line to ensure all the following
+      //serialPort.readLine()'s are not cut off.
+      serialPort_.readLine();
+      connected_ = true;
+      emit connectionSucceeded();
+
+      disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(fourthStep()));
+      responseTimer_.stop();
+      disconnect(&responseTimer_, 0, this, 0);
+   }
+
+
+}
+
 void SerialPortConnectionService::responseTimedOut()
 {
    emit connectionFailed("Response timed out");
@@ -105,15 +135,6 @@ void SerialPortConnectionService::responseTimedOut()
    disconnect(&responseTimer_, 0, this, 0);
 }
 
-//For use only with the BlueGiga WT41 bluetooth chip
-//This code was written for the Schulich Delta
-void SerialPortConnectionService::setUpBlueGigaWT41Connection()
-{
-   serialPort_.write(FIRST_COMMAND);
-   responseTimer_.start(FIRST_REPONSE_MAXTIME);
-   connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
-   connect(&responseTimer_, SIGNAL(timeout()), this, SLOT(responseTimedOut()));
-}
 
 void SerialPortConnectionService::disconnectDataSource()
 {

@@ -6,6 +6,7 @@
 #include <QString>
 #include <QTimer>
 
+
 class SerialPortConnectionService : public I_ConnectionService
 {
    Q_OBJECT
@@ -15,6 +16,8 @@ public:
    bool isConnected();
 
 public slots:
+   /*connectDataSource() will ensure connection is complete
+     and that the first readLine will return a full valid line. */
    void connectDataSource();
    void disconnectDataSource();
 
@@ -22,6 +25,7 @@ private slots:
    void firstStep();
    void secondStep();
    void thirdStep();
+   void fourthStep();
    void responseTimedOut();
 
 private:
@@ -30,7 +34,7 @@ private:
    void succeeded();
    QTimer responseTimer_;
    QSerialPort serialPort_;
-   bool connected_ = false;
+   bool connected_;
 
 };
 
