@@ -9,6 +9,7 @@ class I_TelemetryData : public QObject
 public:
    virtual ~I_TelemetryData() {}
 
+   /*Data "Gets"*/
    virtual double driverSetSpeedRPM() const = 0;
    virtual double driverSetCurrent() const = 0;
 
@@ -74,7 +75,71 @@ public:
    virtual int batteryVoltageThresholdRising() const = 0;
    virtual int batteryVoltageThresholdFalling() const = 0;
 
-   virtual void setVehicleVelocityKph(double vehicleVelocity) = 0;
+   /*Data "Sets"*/
+   virtual void setDriverSetSpeedRPM(double driverSetSpeedRPM) = 0;
+   virtual void setDriverSetCurrent(double driverSetCurrent) = 0;
+
+   virtual void setVehicleVelocityKph(double vehicleVelocityKph) = 0;
+   virtual void setBusCurrentA(double busCurrentA) = 0;
+   virtual void setBusVoltage(double busVoltage) = 0;
+   virtual void setMotorVelocityRpm(double motorVelocityRpm) = 0;
+   virtual void setMotorVoltageReal(double motorVoltageReal) = 0;
+   virtual void setMotorCurrentReal(double motorCurrentReal) = 0;
+   virtual void setBackEmfImaginary(double backEmfImaginary) = 0;
+   virtual void setIpmHeatSinkTemp(double ipmHeatSinkTemp) = 0;
+   virtual void setDspBoardTemp(double dspBoardTemp) = 0;
+   virtual void setDcBusAmpHours(double dcBusAmpHours) = 0;
+   virtual void setReceivedErrorCount(double ReceivedErrorCount) = 0;
+   virtual void setTransmittedErrorCount(double transmittedErrorCount) = 0;
+
+   virtual void setMod0PcbTemperature(int mod0PcbTemperature) = 0;
+   virtual void setMod0CellTemperature(int mod0CellTemperature) = 0;
+   virtual void setMod0CellVoltage0(int mod0CellVoltage0) = 0;
+   virtual void setMod0CellVoltage1(int mod0CellVoltage1) = 0;
+   virtual void setMod0CellVoltage2(int mod0CellVoltage2) = 0;
+   virtual void setMod0CellVoltage3(int mod0CellVoltage3) = 0;
+   virtual void setMod0CellVoltage4(int mod0CellVoltage4) = 0;
+   virtual void setMod0CellVoltage5(int mod0CellVoltage5) = 0;
+   virtual void setMod0CellVoltage6(int mod0CellVoltage6) = 0;
+   virtual void setMod0CellVoltage7(int mod0CellVoltage7) = 0;
+
+   virtual void setMod1PcbTemperature(int mod1PcbTemperature) = 0;
+   virtual void setMod1CellTemperature(int mod1CellTemperature) = 0;
+   virtual void setMod1CellVoltage0(int mod1CellVoltage0) = 0;
+   virtual void setMod1CellVoltage1(int mod1CellVoltage1) = 0;
+   virtual void setMod1CellVoltage2(int mod1CellVoltage2) = 0;
+   virtual void setMod1CellVoltage3(int mod1CellVoltage3) = 0;
+   virtual void setMod1CellVoltage4(int mod1CellVoltage4) = 0;
+   virtual void setMod1CellVoltage5(int mod1CellVoltage5) = 0;
+   virtual void setMod1CellVoltage6(int mod1CellVoltage6) = 0;
+   virtual void setMod1CellVoltage7(int mod1CellVoltage7) = 0;
+
+   virtual void setMod2PcbTemperature(int mod2PcbTemperature) = 0;
+   virtual void setMod2CellTemperature(int mod2CellTemperature) = 0;
+   virtual void setMod2CellVoltage0(int mod2CellVoltage0) = 0;
+   virtual void setMod2CellVoltage1(int mod2CellVoltage1) = 0;
+   virtual void setMod2CellVoltage2(int mod2CellVoltage2) = 0;
+   virtual void setMod2CellVoltage3(int mod2CellVoltage3) = 0;
+   virtual void setMod2CellVoltage4(int mod2CellVoltage4) = 0;
+   virtual void setMod2CellVoltage5(int mod2CellVoltage5) = 0;
+   virtual void setMod2CellVoltage6(int mod2CellVoltage6) = 0;
+   virtual void setMod2CellVoltage7(int mod2CellVoltage7) = 0;
+
+   virtual void setMod3PcbTemperature(int mod3PcbTemperature) = 0;
+   virtual void setMod3CellTemperature(int mod3CellTemperature) = 0;
+   virtual void setMod3CellVoltage0(int mod3CellVoltage0) = 0;
+   virtual void setMod3CellVoltage1(int mod3CellVoltage1) = 0;
+   virtual void setMod3CellVoltage2(int mod3CellVoltage2) = 0;
+   virtual void setMod3CellVoltage3(int mod3CellVoltage3) = 0;
+   virtual void setMod3CellVoltage4(int mod3CellVoltage4) = 0;
+   virtual void setMod3CellVoltage5(int mod3CellVoltage5) = 0;
+   virtual void setMod3CellVoltage6(int mod3CellVoltage6) = 0;
+   virtual void setMod3CellVoltage7(int mod3CellVoltage7) = 0;
+
+   virtual void setBatteryVoltage(int batteryVoltage) = 0;
+   virtual void setBatteryCurrent(int batteryCurrent) = 0;
+   virtual void setBatteryVoltageThresholdRising(int batteryVoltageThresholdRising) = 0;
+   virtual void setBatteryVoltageThresholdFalling(int batteryVoltageThresholdFalling) = 0;
 
 signals:
    void driverSetSpeedRPMReceived(double driverSetSpeedRPM);
