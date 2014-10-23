@@ -10,7 +10,7 @@ DataParser::~DataParser()
 {
 }
 
-void DataParser::handleInformationIncomming()
+void DataParser::handleInformationIncoming()
 {
   while(ioDevice_.canReadLine())
   {
