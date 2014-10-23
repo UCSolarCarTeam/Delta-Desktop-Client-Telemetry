@@ -120,7 +120,7 @@ void SerialPortConnectionService::fourthStep()
       connected_ = true;
       emit connectionSucceeded();
 
-      disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(fourthStep()));
+      disconnect(&serialPort_, 0, this, 0);
       responseTimer_.stop();
       disconnect(&responseTimer_, 0, this, 0);
    }
