@@ -12,8 +12,10 @@ public:
   virtual ~DataParser();
 
 private slots:
-  void handleInformationIncomming();
+  void connectionOK();
+  void handleInformationIncoming();
 
 private:
   QIODevice& ioDevice_;
+  I_ConnectionService& connectionService_;
 };
