@@ -27,7 +27,7 @@ void DataParser::handleInformationIncoming()
     if(!data.isNull() && string.at(0) == '#')
     {
       int id = string.mid(1,2).toInt();
-      int value = string.mid(2).toInt();
+      int value = string.mid(3).toInt();
       emit dataReceived(id, value);
     }
   }
