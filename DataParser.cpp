@@ -23,10 +23,10 @@ void DataParser::handleInformationIncoming()
   while(ioDevice_.canReadLine())
   {
     QByteArray data = ioDevice_.readLine();
-    if(!data.isNull())
+    QString string(data);
+    if(!data.isNull() && string.at(0) == '#')
     {
-      QString string(data);
-      int id = string.left(2).toInt();
+      int id = string.mid(1,2).toInt();
       int value = string.mid(2).toInt();
       emit dataReceived(id, value);
     }
