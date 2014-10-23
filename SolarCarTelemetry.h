@@ -6,6 +6,7 @@ class TelemetryData;
 class DataParser;
 class DataPopulator;
 class QSerialPort;
+class I_ConnectionService;
 
 class SolarCarTelemetry : public QApplication
 {
@@ -15,6 +16,7 @@ public:
    ~SolarCarTelemetry();
 
 private:
+   QScopedPointer<I_ConnectionService> connectionService_;
    QScopedPointer<TelemetryData> data_;
    QScopedPointer<QSerialPort> port_;
    QScopedPointer<DataParser> dataParser_;

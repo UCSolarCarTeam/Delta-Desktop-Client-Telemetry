@@ -1,13 +1,21 @@
 #include "DataParser.h"
 
-DataParser::DataParser(QIODevice& device)
+DataParser::DataParser(QIODevice& device, I_ConnectionService& connectionService)
 : ioDevice_(device)
+, connectionService_ (connectionService)
 {
-  connect(&ioDevice_, SIGNAL(readyRead()), this, SLOT(handleInformationIncomming()));
+  connect(&connectionService, SIGNAL(connectionSucceeded()),
+          this, SLOT (connectionOK()));
 }
 
 DataParser::~DataParser()
 {
+}
+
+void DataParser::connectionOK()
+{
+   connect(&ioDevice_, SIGNAL(readyRead()),
+           this, SLOT(handleInformationIncomming()));
 }
 
 void DataParser::handleInformationIncoming()
