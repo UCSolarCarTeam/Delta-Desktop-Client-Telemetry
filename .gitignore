@@ -1,3 +1,5 @@
 SolarCarTelemetry.pro.*
 *.autosave
 Makefile
+*.o
+moc_*

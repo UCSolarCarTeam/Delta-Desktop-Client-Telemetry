@@ -11,7 +11,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = SolarCarTelemetry
 TEMPLATE = app
 
-
 SOURCES += main.cpp \
     DataPopulator.cpp \
     SolarCarTelemetry.cpp \
@@ -28,6 +27,5 @@ HEADERS  += \
     TelemetryData.h \
     I_ConnectionService.h \
     SerialPortConnectionService.h
-
 
 FORMS    +=
