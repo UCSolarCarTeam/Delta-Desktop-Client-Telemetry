@@ -8,8 +8,15 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = SolarCarTelemetry
+TARGET = ../release/SolarCarTelemetry
 TEMPLATE = app
+
+RCC_DIR= ../release
+DESTDIR = ../release
+OBJECTS_DIR = ../release/.obj
+MOC_DIR = ../release/.moc
+RCC_DIR = ../release/.rcc
+UI_DIR = ../release/.ui
 
 SOURCES += main.cpp \
     DataPopulator.cpp \
