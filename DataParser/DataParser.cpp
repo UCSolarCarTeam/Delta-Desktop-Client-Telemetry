@@ -1,5 +1,5 @@
 #include "DataParser.h"
-#include "ConnectionService/I_ConnectionService.h"
+#include "../ConnectionService/I_ConnectionService.h"
 
 DataParser::DataParser(QIODevice& device, I_ConnectionService& connectionService)
 : ioDevice_(device)
