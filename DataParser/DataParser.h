@@ -3,7 +3,7 @@
 #include <QIODevice>
 
 #include "I_DataParser.h"
-#include "I_ConnectionService.h"
+class I_ConnectionService;
 
 class DataParser : public I_DataParser
 {

@@ -1,5 +1,5 @@
 #include "DisplayPresenter.h"
-#include "I_TelemetryData.h"
+#include "TelemetryData/I_TelemetryData.h"
 
 DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData)
 : telemetryData_(telemetryData)
