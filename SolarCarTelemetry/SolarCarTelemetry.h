@@ -2,13 +2,14 @@
 
 #include <QApplication>
 #include <QScopedPointer>
-class TelemetryData;
 class DataParser;
 class DataPopulator;
-class QSerialPort;
-class I_ConnectionService;
-class SolarCarTestUI;
 class DisplayPresenter;
+class DisplayView;
+class I_ConnectionService;
+class QSerialPort;
+class SolarCarTestUI;
+class TelemetryData;
 
 class SolarCarTelemetry : public QApplication
 {
@@ -25,5 +26,5 @@ private:
    QScopedPointer<DataPopulator> dataPopulator_;
    QScopedPointer<DisplayPresenter> displayPresenter_;
    QScopedPointer<SolarCarTestUI> mainWindow_;
-
+   QScopedPointer<DisplayView> displayView_;
 };

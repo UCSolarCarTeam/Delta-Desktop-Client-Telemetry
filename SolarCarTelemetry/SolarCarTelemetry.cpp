@@ -1,12 +1,13 @@
 #include <QtSerialPort/QSerialPort>
 
-#include "SolarCarTelemetry.h"
-#include "../TelemetryData/TelemetryData.h"
+#include "../ConnectionService/SerialPortConnectionService.h"
 #include "../DataParser/DataParser.h"
 #include "../DataPopulator/DataPopulator.h"
-#include "../ConnectionService/SerialPortConnectionService.h"
-#include "../SolarCarTestUi/SolarCarTestUI.h"
 #include "../DisplayPresenter/DisplayPresenter.h"
+#include "../DisplayView/DisplayView.h"
+#include "../SolarCarTestUi/SolarCarTestUI.h"
+#include "../TelemetryData/TelemetryData.h"
+#include "SolarCarTelemetry.h"
 
 namespace
 {
@@ -22,8 +23,8 @@ SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 , dataPopulator_(new DataPopulator(*dataParser_, *data_))
 , displayPresenter_(new DisplayPresenter(*data_, *connectionService_))
 , mainWindow_(new SolarCarTestUI())
+, displayView_(new DisplayView(*displayPresenter_, *mainWindow_))
 {
-   mainWindow_->show();
 }
 
 SolarCarTelemetry::~SolarCarTelemetry()

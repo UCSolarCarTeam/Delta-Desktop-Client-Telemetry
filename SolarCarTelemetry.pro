@@ -18,26 +18,29 @@ MOC_DIR = ../release/.moc
 RCC_DIR = ../release/.rcc
 UI_DIR = ../release/.ui
 
-SOURCES += SolarCarTelemetry/main.cpp \
-    DataPopulator/DataPopulator.cpp \
-    SolarCarTelemetry/SolarCarTelemetry.cpp \
-    DataParser/DataParser.cpp \
-    TelemetryData/TelemetryData.cpp \
+SOURCES += \
     ConnectionService/SerialPortConnectionService.cpp \
+    DataParser/DataParser.cpp \
+    DataPopulator/DataPopulator.cpp \
     DisplayPresenter/DisplayPresenter.cpp \
-    SolarCarTestUi/SolarCarTestUI.cpp
+    DisplayView/DisplayView.cpp \
+    SolarCarTelemetry/main.cpp \
+    SolarCarTelemetry/SolarCarTelemetry.cpp \
+    SolarCarTestUi/SolarCarTestUI.cpp \
+    TelemetryData/TelemetryData.cpp
 
 HEADERS  += \
-    DataPopulator/DataPopulator.h \
-    DataParser/DataParser.h \
-    SolarCarTelemetry/SolarCarTelemetry.h \
-    DataParser/I_DataParser.h \
-    TelemetryData/I_TelemetryData.h \
-    TelemetryData/TelemetryData.h \
     ConnectionService/I_ConnectionService.h \
     ConnectionService/SerialPortConnectionService.h \
+    DataParser/DataParser.h \
+    DataParser/I_DataParser.h \
+    DataPopulator/DataPopulator.h \
     DisplayPresenter/DisplayPresenter.h \
-    SolarCarTestUi/SolarCarTestUI.h
+    DisplayView/DisplayView.h \
+    SolarCarTelemetry/SolarCarTelemetry.h \
+    SolarCarTestUi/SolarCarTestUI.h \
+    TelemetryData/I_TelemetryData.h \
+    TelemetryData/TelemetryData.h \
 
 FORMS    += \
     SolarCarTestUI.ui
