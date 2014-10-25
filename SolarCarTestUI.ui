@@ -32,7 +32,7 @@
    <string>Solar Car Test UI</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="SolarCarUIResources.qrc">
     <normaloff>:/SolarCarTestUI/Resources/Solar Car Team Icon.ico</normaloff>:/SolarCarTestUI/Resources/Solar Car Team Icon.ico</iconset>
   </property>
   <property name="autoFillBackground">
@@ -286,7 +286,7 @@ color: white;</string>
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Minimum</enum>
+           <enum>QSizePolicy::Expanding</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -600,6 +600,46 @@ color: white;</string>
         <item>
          <layout class="QVBoxLayout" name="StatusLayout">
           <item>
+           <widget class="QPushButton" name="connectButton">
+            <property name="font">
+             <font>
+              <family>Courier</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+color: black</string>
+            </property>
+            <property name="text">
+             <string>Connect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="disconnectButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+font: 8pt &quot;Courier&quot;;
+color: black;</string>
+            </property>
+            <property name="text">
+             <string>Disconnect</string>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="pack4Header_2">
             <property name="font">
              <font>
@@ -711,7 +751,7 @@ color: white;</string>
              </font>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -723,7 +763,7 @@ color: white;</string>
              </font>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -753,7 +793,7 @@ color: white;</string>
              </font>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -765,7 +805,7 @@ color: white;</string>
              </font>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;CMU2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -1166,7 +1206,7 @@ color: white;</string>
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Minimum</enum>
+           <enum>QSizePolicy::Expanding</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -1181,111 +1221,11 @@ color: white;</string>
      </layout>
     </item>
    </layout>
-   <zorder>mainTelemetryHeader</zorder>
-   <zorder>arrayTelemetryHeader</zorder>
-   <zorder>batteryTelemetryHeader</zorder>
-   <zorder>MPPT1Header</zorder>
-   <zorder>MPPT2Header</zorder>
-   <zorder>MPPT3Header</zorder>
-   <zorder>setSpeedHeader</zorder>
-   <zorder>setCurrentHeader</zorder>
-   <zorder>actualSpeedHeader</zorder>
-   <zorder>busVoltageHeader</zorder>
-   <zorder>arrayCurrentInHeader</zorder>
-   <zorder>arrayCurrentOutHeader</zorder>
-   <zorder>netCurrentHeader</zorder>
-   <zorder>batteryTemperaturesHeader</zorder>
-   <zorder>pack1Header</zorder>
-   <zorder>pack4Header_2</zorder>
-   <zorder>cmu1Header</zorder>
-   <zorder>cmu2Header</zorder>
-   <zorder>cmu3Header</zorder>
-   <zorder>cmu4Header</zorder>
-   <zorder>Cell1Header</zorder>
-   <zorder>Cell2Header</zorder>
-   <zorder>Cell3Header</zorder>
-   <zorder>Cell4Header</zorder>
-   <zorder>Cell5Header</zorder>
-   <zorder>Cell6Header</zorder>
-   <zorder>Cell7Header</zorder>
-   <zorder>Cell8Header</zorder>
-   <zorder>line</zorder>
-   <zorder>line_2</zorder>
-   <zorder>line_3</zorder>
-   <zorder>line_5</zorder>
-   <zorder>line_6</zorder>
-   <zorder>line_7</zorder>
-   <zorder>line_8</zorder>
-   <zorder>line_9</zorder>
-   <zorder>line_10</zorder>
-   <zorder>line_11</zorder>
-   <zorder>line_12</zorder>
-   <zorder>line_13</zorder>
-   <zorder>line_14</zorder>
-   <zorder>driverSetSpeedValue</zorder>
-   <zorder>driverSetCurrentValue</zorder>
-   <zorder>busVoltageValue</zorder>
-   <zorder>arrayCurrentInValue</zorder>
-   <zorder>arrayCurrentOutValue</zorder>
-   <zorder>netCurrentValue</zorder>
-   <zorder>mod0PcbTemperatureValue</zorder>
-   <zorder>mod1PcbTemperatureValue</zorder>
-   <zorder>mod3PcbTemperatureValue</zorder>
-   <zorder>mod4PcbTemperatureValue</zorder>
-   <zorder>mod0CellVoltage0Value</zorder>
-   <zorder>mod0CellVoltage1Value</zorder>
-   <zorder>mod0CellVoltage2Value</zorder>
-   <zorder>mod0CellVoltage3Value</zorder>
-   <zorder>mod0CellVoltage4Value</zorder>
-   <zorder>mod0CellVoltage5Value</zorder>
-   <zorder>cmuTempHeader</zorder>
-   <zorder>line_15</zorder>
-   <zorder>mainStatus</zorder>
-   <zorder>mod0CellVoltage6Value</zorder>
-   <zorder>mod0CellVoltage7Value</zorder>
-   <zorder>mod0PcbTemperatureGridValue</zorder>
-   <zorder>mod1PcbTemperatureGridValue</zorder>
-   <zorder>mod2PcbTemperatureGrid</zorder>
-   <zorder>mod3PcbTemperatureGrid</zorder>
-   <zorder>mod1CellVoltage0Value</zorder>
-   <zorder>mod1CellVoltage1Value</zorder>
-   <zorder>mod1CellVoltage2Value</zorder>
-   <zorder>mod1CellVoltage3Value</zorder>
-   <zorder>mod1CellVoltage4Value</zorder>
-   <zorder>mod1CellVoltage5Value</zorder>
-   <zorder>mod1CellVoltage6Value</zorder>
-   <zorder>mod1CellVoltage7Value</zorder>
-   <zorder>mod2CellVoltage0Value</zorder>
-   <zorder>mod2CellVoltage1Value</zorder>
-   <zorder>mod2CellVoltage2Value</zorder>
-   <zorder>mod2CellVoltage3Value</zorder>
-   <zorder>mod2CellVoltage4Value</zorder>
-   <zorder>mod2CellVoltage5Value</zorder>
-   <zorder>mod2CellVoltage6Value</zorder>
-   <zorder>mod2CellVoltage7Value</zorder>
-   <zorder>mod3CellVoltage0Value</zorder>
-   <zorder>mod3CellVoltage1Value</zorder>
-   <zorder>mod3CellVoltage2Value</zorder>
-   <zorder>mod3CellVoltage3Value</zorder>
-   <zorder>mod3CellVoltage4Value</zorder>
-   <zorder>mod3CellVoltage5Value</zorder>
-   <zorder>mod3CellVoltage6Value</zorder>
-   <zorder>mod3CellVoltage7Value</zorder>
-   <zorder>mod0PcbTemperatureValue</zorder>
-   <zorder>mod1PcbTemperatureValue</zorder>
-   <zorder>mod3PcbTemperatureValue</zorder>
-   <zorder>batteryTemperaturesHeader</zorder>
-   <zorder>mod3PcbTemperatureValue</zorder>
-   <zorder>setSpeedHeader</zorder>
-   <zorder>driverSetSpeedValue</zorder>
-   <zorder>actualSpeedHeader</zorder>
-   <zorder>gridLayoutWidget</zorder>
-   <zorder>gridLayoutWidget_2</zorder>
-   <zorder>gridLayoutWidget_3</zorder>
-   <zorder>gridLayoutWidget</zorder>
    <zorder></zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="SolarCarUIResources.qrc"/>
+ </resources>
  <connections/>
 </ui>
