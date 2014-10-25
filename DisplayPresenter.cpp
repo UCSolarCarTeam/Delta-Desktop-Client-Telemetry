@@ -1,13 +1,13 @@
-#include "MainDisplayPresenter.h"
+#include "DisplayPresenter.h"
 #include "I_TelemetryData.h"
 
-MainDisplayPresenter::MainDisplayPresenter(const I_TelemetryData& telemetryData)
+DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData)
 : telemetryData_(telemetryData)
 {
 
 }
 
-void MainDisplayPresenter::relayTelemetryData()
+void DisplayPresenter::relayTelemetryData()
 {
    connect(&telemetryData_, SIGNAL(driverSetSpeedRPMReceived(double)),
            this, SIGNAL(driverSetSpeedRPMReceived(double)));

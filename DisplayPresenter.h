@@ -3,11 +3,11 @@
 #include <QObject>
 class I_TelemetryData;
 
-class MainDisplayPresenter : public QObject
+class DisplayPresenter : public QObject
 {
    Q_OBJECT
 public:
-   explicit MainDisplayPresenter(const I_TelemetryData& telemetryData);
+   explicit DisplayPresenter(const I_TelemetryData& telemetryData);
 
 signals:
 
