@@ -1,6 +1,6 @@
 #include "DataPopulator.h"
-#include "I_TelemetryData.h"
-#include "I_DataParser.h"
+#include "TelemetryData/I_TelemetryData.h"
+#include "DataParser/I_DataParser.h"
 
 namespace
 {

@@ -1,11 +1,11 @@
 #include <QtSerialPort/QSerialPort>
 
-#include "SolarCarTelemetry.h"
-#include "TelemetryData.h"
-#include "DataParser.h"
-#include "DataPopulator.h"
-#include "SerialPortConnectionService.h"
-#include "SolarCarTestUI.h"
+#include "SolarCarTelemetry/SolarCarTelemetry.h"
+#include "TelemetryData/TelemetryData.h"
+#include "DataParser/DataParser.h"
+#include "DataPopulator/DataPopulator.h"
+#include "ConnectionService/SerialPortConnectionService.h"
+#include "SolarCarTestUi/SolarCarTestUI.h"
 
 namespace
 {
