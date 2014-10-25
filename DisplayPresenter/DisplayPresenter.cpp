@@ -1,10 +1,24 @@
 #include "DisplayPresenter.h"
 #include "../TelemetryData/I_TelemetryData.h"
+#include "../ConnectionService/I_ConnectionService.h"
 
-DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData)
-: telemetryData_(telemetryData)
+
+DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData, I_ConnectionService& connectionService)
+: telemetryData_(telemetryData), connectionService_(connectionService)
 {
+    relayConnectionStatus();
+    relayTelemetryData();
+}
 
+void DisplayPresenter::connectDataSource()
+{
+    connectionService_.connectDataSource();
+}
+
+void DisplayPresenter::relayConnectionStatus()
+{
+    connect(&connectionService_, SIGNAL(connectionFailed(QString)), this, SIGNAL(relayConnectionFailed(QString)));
+    connect(&connectionService_, SIGNAL(connectionSucceeded()), this, SIGNAL(relayConnectionSucceeded()));
 }
 
 void DisplayPresenter::relayTelemetryData()

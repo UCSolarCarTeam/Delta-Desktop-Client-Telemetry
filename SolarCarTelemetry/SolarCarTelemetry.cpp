@@ -6,6 +6,7 @@
 #include "../DataPopulator/DataPopulator.h"
 #include "../ConnectionService/SerialPortConnectionService.h"
 #include "../SolarCarTestUi/SolarCarTestUI.h"
+#include "../DisplayPresenter/DisplayPresenter.h"
 
 namespace
 {
@@ -19,6 +20,7 @@ SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 , port_(new QSerialPort)
 , dataParser_(new DataParser(*port_, *connectionService_))
 , dataPopulator_(new DataPopulator(*dataParser_, *data_))
+, displayPresenter_(new DisplayPresenter(*data_, *connectionService_))
 , mainWindow_(new SolarCarTestUI())
 {
    mainWindow_->show();
