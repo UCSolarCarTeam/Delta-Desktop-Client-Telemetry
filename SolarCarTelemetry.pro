@@ -44,3 +44,6 @@ HEADERS  += \
 
 FORMS    += \
     SolarCarTestUI.ui
+
+RESOURCES += \
+    SolarCarUIResources.qrc
