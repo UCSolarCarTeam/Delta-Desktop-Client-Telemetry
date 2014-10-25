@@ -10,8 +10,18 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Solar Car Test UI</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="SolarCarUIResources.qrc">
+    <normaloff>:/SolarCarTestUI/Resources/Solar Car Team Icon.ico</normaloff>:/SolarCarTestUI/Resources/Solar Car Team Icon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -25,6 +35,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="SolarCarUIResources.qrc"/>
+ </resources>
  <connections/>
 </ui>
