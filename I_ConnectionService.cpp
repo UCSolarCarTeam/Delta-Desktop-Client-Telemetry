@@ -1,4 +1,4 @@
-#include "I_ConnectionService.h"
+#include "i_connectionservice.h"
 
 I_ConnectionService::I_ConnectionService(QObject *parent) :
     QObject(parent)
