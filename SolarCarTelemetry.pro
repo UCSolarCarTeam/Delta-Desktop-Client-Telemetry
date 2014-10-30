@@ -41,6 +41,7 @@ HEADERS  += \
     SolarCarTestUi/SolarCarTestUI.h \
     TelemetryData/I_TelemetryData.h \
     TelemetryData/TelemetryData.h \
+    SolarCarTestUi/I_SolarCarTestUI.h
 
 FORMS    += \
     SolarCarTestUI.ui
