@@ -87,7 +87,7 @@ QLCDNumber& SolarCarTestUI::setBusVoltage()
 /*---------mod0---------*/
 QLCDNumber& SolarCarTestUI::setMod0PcbTemperature()
 {
-   return *ui->mod0PcbTemperatureValue;
+    return *ui->mod0PcbTemperatureValue; \
 }
 
 //QLCDNumber& SolarCarTestUI::setMod0CellTemperature()
