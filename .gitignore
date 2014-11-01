@@ -3,3 +3,4 @@ SolarCarTelemetry.pro.*
 Makefile
 *.o
 moc_*
+.tags*

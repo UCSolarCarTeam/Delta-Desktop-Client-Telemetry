@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QLCDNumber>
+#include <QPushButton>
 
 class I_SolarCarTestUI
 {
@@ -73,4 +74,5 @@ public:
 //    virtual QLCDNumber& setBatteryVoltageThresholdRising() = 0;
 //    virtual QLCDNumber& setBatteryVoltageThresholdFalling() = 0;
 
+    virtual QPushButton& connectButton() = 0;
 };
