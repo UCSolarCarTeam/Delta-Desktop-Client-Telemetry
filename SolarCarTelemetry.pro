@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = ../release/SolarCarTelemetry
 TEMPLATE = app
 
-QMAKE_CXXFLAGS += -Wall -Werror
+QMAKE_CXXFLAGS += -Wall
 
 RCC_DIR= ../release
 DESTDIR = ../release
