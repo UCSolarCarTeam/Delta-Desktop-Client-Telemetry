@@ -22,22 +22,11 @@ private slots:
            void driverSetSpeedRPMReceived(double);
            void driverSetCurrentReceived(double);
 
-
            void vehicleVelocityKphReceived(double);
            void busCurrentAReceived(double);
            void busVoltageReceived(double);
-           void motorVelocityRpmReceived(double);
-           void motorVoltageRealReceived(double);
-           void motorCurrentRealReceived(double);
-           void backEmfImaginaryReceived(double);
-           void ipmHeatSinkTempReceived(double);
-           void dspBoardTempReceived(double);
-           void dcBusAmpHoursReceived(double);
-           void receivedErrorCountReceived(double);
-           void transmittedErrorCountReceived(double);
 
            void mod0PcbTemperatureReceived(int);
-           void mod0CellTemperatureReceived(int);
            void mod0CellVoltage0Received(int);
            void mod0CellVoltage1Received(int);
            void mod0CellVoltage2Received(int);
@@ -48,7 +37,6 @@ private slots:
            void mod0CellVoltage7Received(int);
 
            void mod1PcbTemperatureReceived(int);
-           void mod1CellTemperatureReceived(int);
            void mod1CellVoltage0Received(int);
            void mod1CellVoltage1Received(int);
            void mod1CellVoltage2Received(int);
@@ -59,7 +47,6 @@ private slots:
            void mod1CellVoltage7Received(int);
 
            void mod2PcbTemperatureReceived(int);
-           void mod2CellTemperatureReceived(int);
            void mod2CellVoltage0Received(int);
            void mod2CellVoltage1Received(int);
            void mod2CellVoltage2Received(int);
@@ -70,7 +57,6 @@ private slots:
            void mod2CellVoltage7Received(int);
 
            void mod3PcbTemperatureReceived(int);
-           void mod3CellTemperatureReceived(int);
            void mod3CellVoltage0Received(int);
            void mod3CellVoltage1Received(int);
            void mod3CellVoltage2Received(int);
@@ -79,12 +65,5 @@ private slots:
            void mod3CellVoltage5Received(int);
            void mod3CellVoltage6Received(int);
            void mod3CellVoltage7Received(int);
-
-           void batteryVoltageReceived(int);
-           void batteryCurrentReceived(int);
-           void batteryVoltageThresholdRisingReceived(int);
-           void batteryVoltageThresholdFallingReceived(int);
-
-
 
 };
