@@ -96,6 +96,7 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
     connect(&presenter_, SIGNAL(mod3CellVoltage7Received(int)),
             this, SLOT(mod3CellVoltage7Received(int)));
 
+    connect(&ui.connectButton(), SIGNAL(clicked()), this, SLOT(handleConnectButtonClicked()));
 }
 
 void DisplayView::driverSetSpeedRPMReceived(double driverSetSpeedRPMReceived)
@@ -189,4 +190,10 @@ void DisplayView::mod3CellVoltage7Received(int mod3CellVoltage7)
 DisplayView::~DisplayView()
 {
 }
+
+void DisplayView::handleConnectButtonClicked()
+{
+    presenter_.connectDataSource();
+}
+
 
