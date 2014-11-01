@@ -29,10 +29,10 @@ QLCDNumber& SolarCarTestUI::setVehicleVelocityKph()
     return *ui->vehicleVelocityKphValue;
 }
 
-//QLCDNumber& SolarCarTestUI::setBusCurrentA()
-//{
-//    return *ui->busVoltageValue;
-//}
+QLCDNumber& SolarCarTestUI::setBusCurrentA()
+{
+    return *ui->busVoltageValue;
+}
 
 QLCDNumber& SolarCarTestUI::setBusVoltage()
 {
@@ -42,47 +42,47 @@ QLCDNumber& SolarCarTestUI::setBusVoltage()
 //QLCDNumber& SolarCarTestUI::setMotorVelocityRpm()
 //{
 
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setMotorVoltageReal()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setMotorCurrentReal()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setBackEmfImaginary()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setIpmHeatSinkTemp()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setDspBoardTemp()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setDcBusAmpHours()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setReceivedErrorCount()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setTransmittedErrorCount()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 /*---------mod0---------*/
@@ -93,7 +93,7 @@ QLCDNumber& SolarCarTestUI::setMod0PcbTemperature()
 
 //QLCDNumber& SolarCarTestUI::setMod0CellTemperature()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 QLCDNumber& SolarCarTestUI::setMod0CellVoltage0()
@@ -144,7 +144,7 @@ QLCDNumber& SolarCarTestUI::setMod1PcbTemperature()
 
 //QLCDNumber& SolarCarTestUI::setMod1CellTemperature()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 QLCDNumber& SolarCarTestUI::setMod1CellVoltage0()
@@ -195,7 +195,7 @@ QLCDNumber& SolarCarTestUI::setMod2PcbTemperature()
 
 //QLCDNumber& SolarCarTestUI::setMod2CellTemperature()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 QLCDNumber& SolarCarTestUI::setMod2CellVoltage0()
@@ -246,7 +246,7 @@ QLCDNumber& SolarCarTestUI::setMod3PcbTemperature()
 
 //QLCDNumber& SolarCarTestUI::setMod3CellTemperature()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 QLCDNumber& SolarCarTestUI::setMod3CellVoltage0()
@@ -292,21 +292,21 @@ QLCDNumber& SolarCarTestUI::setMod3CellVoltage7()
 
 //QLCDNumber& SolarCarTestUI::setBatteryVoltage()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setBatteryCurrent()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setBatteryVoltageThresholdRising()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
 //QLCDNumber& SolarCarTestUI::setBatteryVoltageThresholdFalling()
 //{
-//    return *ui->driverSetSpeedValue;
+//    return *ui->NONEXISTENTLABEL;
 //}
 
