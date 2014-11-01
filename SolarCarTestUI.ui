@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>485</height>
+    <height>526</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -723,7 +723,7 @@ color: black;</string>
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QLCDNumber" name="mod1PcbTemperatureGridValue">
+           <widget class="QLCDNumber" name="mod1PcbTemperatureValue_2">
             <property name="font">
              <font>
               <family>Courier</family>
@@ -768,7 +768,7 @@ color: black;</string>
            </widget>
           </item>
           <item row="1" column="4">
-           <widget class="QLCDNumber" name="mod3PcbTemperatureGrid">
+           <widget class="QLCDNumber" name="mod3PcbTemperatureValue_2">
             <property name="font">
              <font>
               <family>Courier</family>
@@ -777,7 +777,7 @@ color: black;</string>
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QLCDNumber" name="mod2PcbTemperatureGrid">
+           <widget class="QLCDNumber" name="mod2PcbTemperatureValue">
             <property name="font">
              <font>
               <family>Courier</family>
@@ -1122,7 +1122,7 @@ color: black;</string>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLCDNumber" name="mod0PcbTemperatureGridValue">
+           <widget class="QLCDNumber" name="mod0PcbTemperatureValue_2">
             <property name="font">
              <font>
               <family>Courier</family>
