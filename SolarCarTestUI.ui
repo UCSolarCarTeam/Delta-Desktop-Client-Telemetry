@@ -619,6 +619,9 @@ text-decoration: underline;</string>
              <string notr="true">font: 8pt &quot;Courier&quot;;
 </string>
             </property>
+            <property name="text">
+             <string>COM</string>
+            </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
