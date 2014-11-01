@@ -7,6 +7,12 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
 , ui_(ui)
 {
    ui_.show();
+    connect(&presenter, SIGNAL(driverSetSpeedRPMReceived(double)), this, SLOT(driverSetSpeedRPMReceived(double)));
+}
+
+DisplayView::driverSetSpeedRPMReceived(double RPMReceived)
+{
+    ui_.setDriverSetSpeedRPM().display(RPMReceived);
 }
 
 DisplayView::~DisplayView()
