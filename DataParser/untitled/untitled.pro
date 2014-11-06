@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick widgets
+QT += core gui testlib
 
 SOURCES += \
     ../../TestDataParser.cpp \
@@ -12,9 +12,8 @@ HEADERS += \
     ../DataParser.h \
     ../../ConnectionService/FakeConnectionService.h
 
+TARGET = dataParserTest
 
-# Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
 
 # Default rules for deployment.
 
