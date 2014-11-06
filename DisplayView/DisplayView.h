@@ -67,4 +67,7 @@ private slots:
    void mod3CellVoltage7Received(int);
 
    void handleConnectButtonClicked();
+   void handleDisconnectButtonClicked();
+   void connectionFailed(QString failureMessage);
+   void connectionSucceeded();
 };

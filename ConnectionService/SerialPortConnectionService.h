@@ -18,7 +18,7 @@ public:
 public slots:
    /*connectDataSource() will ensure connection is complete
      and that the first readLine will return a full valid line. */
-   void connectDataSource();
+   void connectDataSource(QString serialPortName, int baudRate);
    void disconnectDataSource();
 
 private slots:

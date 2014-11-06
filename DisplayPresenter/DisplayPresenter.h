@@ -9,8 +9,8 @@ class DisplayPresenter : public QObject
    Q_OBJECT
 public:
    explicit DisplayPresenter(const I_TelemetryData& telemetryData, I_ConnectionService& connectionService);
-   void connectDataSource();
-
+   void connectDataSource(QString portName, int baudRate);
+   void disconnectDataSource();
 
 public slots:
 
@@ -90,5 +90,9 @@ signals:
    void batteryCurrentReceived(int batteryCurent);
    void batteryVoltageThresholdRisingReceived(int batteryVoltageThresholdRising);
    void batteryVoltageThresholdFallingReceived(int batteryVoltageThresholdFalling);
+
+   void connectionFailed(QString failureMessage);
+   void connectionSucceeded();
+
 };
 

@@ -3,20 +3,20 @@
 namespace
 {
    const QByteArray CAR_PORT_ADDRESS = "00:07:80:6E:F7:E4";
-   const QByteArray FIRST_COMMAND = "AT";
+   const QByteArray FIRST_COMMAND = "AT\n";
    const QByteArray FIRST_RESPONSE = "OK";
-   const int FIRST_REPONSE_MAXTIME = 100;
-   const QByteArray SECOND_COMMAND = "PAIR " + CAR_PORT_ADDRESS;
+   const int FIRST_REPONSE_MAXTIME = 1000;
+   const QByteArray SECOND_COMMAND = "PAIR " + CAR_PORT_ADDRESS + "\n";
    const QByteArray SECOND_RESPONSE = "PAIR " + CAR_PORT_ADDRESS + " OK";
    const int SECOND_RESPONSE_MAXTIME = 5000;
-   const QByteArray THIRD_COMMAND = "CALL " + CAR_PORT_ADDRESS + " 1101 RFCOMM";
+   const QByteArray THIRD_COMMAND = "CALL " + CAR_PORT_ADDRESS + " 1101 RFCOMM\n";
    const QByteArray THIRD_RESPONSE = "CALL 0";
    const int THIRD_RESPONSE_MAXTIME = 5000;
 }
 
-SerialPortConnectionService::SerialPortConnectionService(QString portName, int baudrate)
+SerialPortConnectionService::SerialPortConnectionService(QString portName, int baudRate)
 {
-   serialPort_.setBaudRate(baudrate);
+   serialPort_.setBaudRate(baudRate);
    serialPort_.setPortName(portName);
    connected_ = false;
 }
@@ -26,8 +26,12 @@ SerialPortConnectionService::~SerialPortConnectionService()
    disconnectDataSource();
 }
 
-void  SerialPortConnectionService::connectDataSource()
+void  SerialPortConnectionService::connectDataSource(QString portName, int baudRate)
 {
+   if(!portName.isEmpty()){
+      serialPort_.setPortName(portName);
+   }
+   serialPort_.setBaudRate(baudRate);
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
       connected_ = false;
       emit connectionFailed(failed());
@@ -52,7 +56,9 @@ void SerialPortConnectionService::firstStep()
 {
    if (serialPort_.canReadLine())
    {
-      if (serialPort_.readLine() == FIRST_RESPONSE){
+      QString receivedResponse = QString(serialPort_.readAll());
+
+      if (receivedResponse == FIRST_RESPONSE){
          serialPort_.write(SECOND_COMMAND);
          responseTimer_.start(SECOND_RESPONSE_MAXTIME);
          disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
@@ -64,7 +70,9 @@ void SerialPortConnectionService::firstStep()
          disconnect(&responseTimer_, 0, this, 0);
          responseTimer_.stop();
          emit connectionFailed("Did not receive " + FIRST_RESPONSE
-                               + " after " + FIRST_COMMAND);
+                               + " after " + FIRST_COMMAND
+                               + "\nReceived " + receivedResponse);
+         disconnectDataSource();
       }
    }
 }
@@ -86,6 +94,7 @@ void SerialPortConnectionService::secondStep()
          responseTimer_.stop();
          emit connectionFailed("Did not receive " + SECOND_RESPONSE
                                + " after " + SECOND_COMMAND);
+         disconnectDataSource();
       }
    }
 }
@@ -104,6 +113,7 @@ void SerialPortConnectionService::thirdStep()
          responseTimer_.stop();
          emit connectionFailed("Did not receive " + THIRD_RESPONSE
                                + " after " + THIRD_COMMAND);
+         disconnectDataSource();
       }
       disconnect(&serialPort_, 0, this, 0);
       disconnect(&responseTimer_, 0, this, 0);
@@ -133,6 +143,7 @@ void SerialPortConnectionService::responseTimedOut()
    emit connectionFailed("Response timed out");
    disconnect(&serialPort_, 0, this, 0);
    disconnect(&responseTimer_, 0, this, 0);
+   disconnectDataSource();
 }
 
 

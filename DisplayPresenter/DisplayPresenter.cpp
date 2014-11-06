@@ -10,9 +10,13 @@ DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData, I_Conne
     relayTelemetryData();
 }
 
-void DisplayPresenter::connectDataSource()
+void DisplayPresenter::connectDataSource(QString portName, int baudRate)
 {
-    connectionService_.connectDataSource();
+    connectionService_.connectDataSource(portName, baudRate);
+}
+void DisplayPresenter::disconnectDataSource()
+{
+   connectionService_.disconnectDataSource();
 }
 
 void DisplayPresenter::relayConnectionStatus()
@@ -145,4 +149,10 @@ void DisplayPresenter::relayTelemetryData()
            this, SIGNAL(batteryVoltageThresholdRisingReceived(int)));
    connect(&telemetryData_, SIGNAL(batteryVoltageThresholdFallingReceived(int)),
            this, SIGNAL(batteryVoltageThresholdFallingReceived(int)));
+
+   connect(&connectionService_, SIGNAL(connectionFailed(QString)),
+           this, SIGNAL(connectionFailed(QString)));
+   connect(&connectionService_, SIGNAL(connectionSucceeded()),
+           this, SIGNAL(connectionSucceeded()));
+
 }

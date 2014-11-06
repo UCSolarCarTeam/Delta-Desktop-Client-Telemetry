@@ -96,7 +96,13 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
     connect(&presenter_, SIGNAL(mod3CellVoltage7Received(int)),
             this, SLOT(mod3CellVoltage7Received(int)));
 
-    connect(&ui.connectButton(), SIGNAL(clicked()), this, SLOT(handleConnectButtonClicked()));
+    connect(&ui.connectButton(), SIGNAL(clicked()),
+            this, SLOT(handleConnectButtonClicked()));
+
+    connect(&presenter_, SIGNAL(connectionFailed(QString)),
+            this, SLOT(connectionFailed(QString)));
+    connect(&presenter_, SIGNAL(connectionSucceeded()),
+            this, SLOT(connectionSucceeded()));
 }
 
 void DisplayView::driverSetSpeedRPMReceived(double driverSetSpeedRPMReceived)
@@ -193,7 +199,21 @@ DisplayView::~DisplayView()
 
 void DisplayView::handleConnectButtonClicked()
 {
-    presenter_.connectDataSource();
+    presenter_.connectDataSource(ui_.getSerialPortName().text(),
+                                 ui_.getBaudRate().text().toInt());
+}
+void DisplayView::handleDisconnectButtonClicked()
+{
+   presenter_.disconnectDataSource();
 }
 
+void DisplayView::connectionFailed(QString failureMessage)
+{
+   ui_.setMainStatus().setText(failureMessage);
+}
+
+void DisplayView::connectionSucceeded()
+{
+   ui_.setMainStatus().setText("Connection Succeeded");
+}
 

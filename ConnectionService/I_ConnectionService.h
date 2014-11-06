@@ -17,7 +17,8 @@ signals:
    void connectionSucceeded();
 
 public slots:
-   virtual void connectDataSource() = 0;
+   virtual void connectDataSource(QString, int) = 0;
+   virtual void disconnectDataSource() = 0;
 
 
 };

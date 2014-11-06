@@ -288,11 +288,6 @@ QLCDNumber& SolarCarTestUI::setMod3CellVoltage7()
    return *ui->mod3CellVoltage7Value;
 }
 
-QPushButton& SolarCarTestUI::connectButton()
-{
-   return *ui->connectButton; 
-}
-
 
 //QLCDNumber& SolarCarTestUI::setBatteryVoltage()
 //{
@@ -314,3 +309,26 @@ QPushButton& SolarCarTestUI::connectButton()
 //   return *ui->NONEXISTENTLABEL;
 //}
 
+QLabel& SolarCarTestUI::setMainStatus()
+{
+   return *ui->mainStatus;
+}
+
+QPushButton& SolarCarTestUI::connectButton()
+{
+   return *ui->connectButton;
+}
+QPushButton& SolarCarTestUI::disconnectButton()
+{
+   return *ui->disconnectButton;
+}
+
+QLineEdit& SolarCarTestUI::getSerialPortName()
+{
+   return *ui->SerialPortNameBox;
+}
+
+QLineEdit& SolarCarTestUI::getBaudRate()
+{
+   return *ui->baudRateBox;
+}

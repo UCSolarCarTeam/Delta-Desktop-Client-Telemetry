@@ -80,7 +80,12 @@ public:
 //     QLCDNumber& setBatteryVoltageThresholdRising();
 //     QLCDNumber& setBatteryVoltageThresholdFalling();
 
+   QLabel& setMainStatus();
+
    QPushButton& connectButton();
+   QPushButton& disconnectButton();
+   QLineEdit& getSerialPortName();
+   QLineEdit& getBaudRate();
 
 private:
    Ui::SolarCarTestUI *ui;
