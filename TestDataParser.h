@@ -14,9 +14,13 @@ private slots:
     void cleanup();
 
     void willEmitDataReceived();
+    void willEmitDataReceived_data();
+
+//    void willNotEmitDataReceivedMoreThanOneHash();
+
 
 private:
-    QScopedPointer<DataParser> patient_;
+    QScopedPointer<DataParser> patient_;  //testing this.
     QScopedPointer<FakeConnectionService> connection_;
     QScopedPointer<QBuffer> device_;
 };
