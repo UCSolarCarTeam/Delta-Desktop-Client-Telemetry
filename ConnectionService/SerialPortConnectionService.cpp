@@ -1,17 +1,18 @@
 #include "SerialPortConnectionService.h"
+#include <QDebug>
 
 namespace
 {
    const QByteArray CAR_PORT_ADDRESS = "00:07:80:6E:F7:E4";
    const QByteArray FIRST_COMMAND = "AT\n";
-   const QByteArray FIRST_RESPONSE = "OK";
+   const QByteArray FIRST_RESPONSE = "OK\n";
    const int FIRST_REPONSE_MAXTIME = 1000;
    const QByteArray SECOND_COMMAND = "PAIR " + CAR_PORT_ADDRESS + "\n";
-   const QByteArray SECOND_RESPONSE = "PAIR " + CAR_PORT_ADDRESS + " OK";
-   const int SECOND_RESPONSE_MAXTIME = 5000;
+   const QByteArray SECOND_RESPONSE = "PAIR " + CAR_PORT_ADDRESS + " OK\n";
+   const int SECOND_RESPONSE_MAXTIME = 10000;
    const QByteArray THIRD_COMMAND = "CALL " + CAR_PORT_ADDRESS + " 1101 RFCOMM\n";
-   const QByteArray THIRD_RESPONSE = "CALL 0";
-   const int THIRD_RESPONSE_MAXTIME = 5000;
+   const QByteArray THIRD_RESPONSE = "CALL 0\n";
+   const int THIRD_RESPONSE_MAXTIME = 10000;
 }
 
 SerialPortConnectionService::SerialPortConnectionService(QString portName, int baudRate)
@@ -56,8 +57,8 @@ void SerialPortConnectionService::firstStep()
 {
    if (serialPort_.canReadLine())
    {
-      QString receivedResponse = QString(serialPort_.readAll());
-
+      QByteArray receivedResponse = serialPort_.readLine(); //throw away FIRST_COMMAND
+      receivedResponse = serialPort_.readLine();
       if (receivedResponse == FIRST_RESPONSE){
          serialPort_.write(SECOND_COMMAND);
          responseTimer_.start(SECOND_RESPONSE_MAXTIME);
@@ -81,7 +82,9 @@ void SerialPortConnectionService::secondStep()
 {
    if (serialPort_.canReadLine())
    {
-      if (serialPort_.readLine() == SECOND_RESPONSE){
+      QString receivedResponse = QString(serialPort_.readLine()); //throw away SECOND_COMMAND
+      receivedResponse = QString(serialPort_.readLine());
+      if (receivedResponse.contains(SECOND_RESPONSE)){
          serialPort_.write(THIRD_COMMAND);
          responseTimer_.start(THIRD_RESPONSE_MAXTIME);
          disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(secondStep()));
@@ -93,7 +96,8 @@ void SerialPortConnectionService::secondStep()
          disconnect(&responseTimer_, 0, this, 0);
          responseTimer_.stop();
          emit connectionFailed("Did not receive " + SECOND_RESPONSE
-                               + " after " + SECOND_COMMAND);
+                               + " after " + SECOND_COMMAND
+                               + "\nReceived " + receivedResponse);
          disconnectDataSource();
       }
    }
@@ -104,19 +108,22 @@ void SerialPortConnectionService::thirdStep()
 {
    if (serialPort_.canReadLine())
    {
-      if (serialPort_.readLine() == THIRD_RESPONSE){
+      QString receivedResponse = QString(serialPort_.readLine()); //throw away THIRD_COMMAND
+      receivedResponse = QString(serialPort_.readLine());
+      qDebug() << receivedResponse;
+      if (receivedResponse.contains(THIRD_RESPONSE)){
          responseTimer_.start(THIRD_RESPONSE_MAXTIME);
+         qDebug() << receivedResponse;
          disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(thirdStep()));
          connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(fourthStep()));
       }
       else{
          responseTimer_.stop();
          emit connectionFailed("Did not receive " + THIRD_RESPONSE
-                               + " after " + THIRD_COMMAND);
+                               + " after " + THIRD_COMMAND
+                               + "\nReceived " + receivedResponse);
          disconnectDataSource();
       }
-      disconnect(&serialPort_, 0, this, 0);
-      disconnect(&responseTimer_, 0, this, 0);
    }
 }
 
@@ -126,7 +133,7 @@ void SerialPortConnectionService::fourthStep()
    {
       //Throws away first line to ensure all the following
       //serialPort.readLine()'s are not cut off.
-      serialPort_.readLine();
+      qDebug() << serialPort_.readLine();
       connected_ = true;
       emit connectionSucceeded();
 

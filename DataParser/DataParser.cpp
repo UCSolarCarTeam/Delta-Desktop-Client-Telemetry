@@ -1,5 +1,6 @@
 #include "DataParser.h"
 #include "../ConnectionService/I_ConnectionService.h"
+#include <QDebug>
 
 
 DataParser::DataParser(QIODevice& device, I_ConnectionService& connectionService)
@@ -17,7 +18,7 @@ DataParser::~DataParser()
 void DataParser::connectionOK()
 {
    connect(&ioDevice_, SIGNAL(readyRead()),
-           this, SLOT(handleInformationIncomming()));
+           this, SLOT(handleInformationIncoming()));
 }
 
 void DataParser::handleInformationIncoming()
