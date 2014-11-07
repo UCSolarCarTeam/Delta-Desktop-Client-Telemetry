@@ -50,17 +50,3 @@ FORMS    += \
 
 RESOURCES += \
     SolarCarUIResources.qrc
-
-test_conf{
-TARGET = dataParserTest
-QT += testlib
-SOURCES += \
-    TestDataParser.cpp \
-    DataParser/DataParser.cpp \
-    ConnectionService/FakeConnectionService.cpp
-
-HEADERS += \
-    TestDataParser.h \
-    DataParser/DataParser.h \
-    ConnectionService/FakeConnectionService.h
-}

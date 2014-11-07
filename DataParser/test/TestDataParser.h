@@ -1,11 +1,12 @@
 #pragma once
 
 #include <QtTest/QtTest>
-#include "DataParser/DataParser.h"
-#include "ConnectionService/FakeConnectionService.h"
+#include "../../DataParser/DataParser.h"
+#include "../../ConnectionService/FakeConnectionService.h"
 
-class TestDataParser
+class TestDataParser : public QObject
 {
+   Q_OBJECT
 public:
     TestDataParser();
 
@@ -18,11 +19,8 @@ private slots:
 
 //    void willNotEmitDataReceivedMoreThanOneHash();
 
-
 private:
     QScopedPointer<DataParser> patient_;  //testing this.
     QScopedPointer<FakeConnectionService> connection_;
     QScopedPointer<QBuffer> device_;
 };
-
-#endif // TESTDATAPARSER_H

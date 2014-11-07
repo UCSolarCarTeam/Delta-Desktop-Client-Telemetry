@@ -20,7 +20,7 @@ void TestDataParser::init()
 {
    connection_.reset(new FakeConnectionService);
    device_.reset(new QBuffer);
-   patient_.reset(new DataParser(device_, connection_));
+   patient_.reset(new DataParser(*device_, *connection_));
 }
 
 void TestDataParser::cleanup()
@@ -30,41 +30,38 @@ void TestDataParser::cleanup()
    patient_.reset();
 }
 
-
-
 /**
  * Test Condition:       Given a valid transmission
  * Appropriate Response: Should Emit dataReceived
  */
 void TestDataParser::willEmitDataReceived()
 {
-   QSignalSpy spy(patient_, SIGNAL(dataReceived(id, value)));
+   QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
                                                    //DataParser should now run connectionOK()
-   QFETCH(QString, Transmission);
+   QFETCH(QString, transmission);
    QFETCH(int, id);
    QFETCH(int, value);
-   QFETCH(int, count);
 
-   device_->write(Transmission);
+   device_->open(QIODevice::ReadWrite);
+   device_->write(transmission.toLocal8Bit());
+
+   QCOMPARE(spy.count(), 1); // make sure the signal was received.
    QList<QVariant> signalReturn = spy.takeFirst();
-
-   QCOMPARE(spy.count(), count); // make sure the signal was 'count' times.
    QCOMPARE(signalReturn.at(0).toInt(), id); // verify the id;
    QCOMPARE(signalReturn.at(1).toInt(), value); // verify the value;
 }
 void TestDataParser::willEmitDataReceived_data()
 {
-   QTest::addColumn<QString>("Transmission");
+   QTest::addColumn<QString>("transmission");
    QTest::addColumn<int>("id");
    QTest::addColumn<int>("value");
-   QTest::addColumn<int>("count");
 
-   QTest::newRow("Perfect1") << "#01817\n"      << 01 << 17       << 1;
-   QTest::newRow("Perfect2") << "#01999\n"      << 01 << 99       << 2;
-   QTest::newRow("Perfect3") << "#99999\n"      << 99 << 99       << 3;
-   QTest::newRow("Perfect4") << "#0056\n"       << 99 << 99       << 4;
-   QTest::newRow("Perfect5") << "#255667889\n"  << 25 << 5667889  << 4;
+   QTest::newRow("Perfect1") << "#01817\n"      << 01 << 817;
+   QTest::newRow("Perfect2") << "#01-999\n"      << 01 << -999;
+   QTest::newRow("Perfect3") << "#99999\n"      << 99 << 999;
+   QTest::newRow("Perfect4") << "#0056\n"       << 00 << 56;
+   QTest::newRow("Perfect5") << "#255667889\n"  << 25 << 5667889;
 }
 
 

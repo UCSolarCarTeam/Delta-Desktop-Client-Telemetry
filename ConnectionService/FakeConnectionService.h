@@ -1,20 +1,17 @@
-#ifndef FAKECONNECTIONSERVICE_H
-#define FAKECONNECTIONSERVICE_H
+#pragma once
+
+#include "I_ConnectionService.h"
 
 class FakeConnectionService : public I_ConnectionService
 {
    Q_OBJECT
-
 public:
    FakeConnectionService();
-public:
-      bool isConnected();
-      void emitSignalConnectionSucceeded();
+
+   bool isConnected();
+   void emitSignalConnectionSucceeded();
 
 public slots:
-      void connectDataSource();
-
-
+      void connectDataSource(QString portName, int baudRate);
+      void disconnectDataSource();
 };
-
-#endif // FAKECONNECTIONSERVICE_H
