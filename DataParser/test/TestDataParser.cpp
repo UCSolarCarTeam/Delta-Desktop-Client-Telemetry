@@ -38,13 +38,18 @@ void TestDataParser::willEmitDataReceived()
 {
    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
-                                                   //DataParser should now run connectionOK()
+   QTest::qWait(1);                                //DataParser should now run connectionOK()
+
    QFETCH(QString, transmission);
    QFETCH(int, id);
    QFETCH(int, value);
 
    device_->open(QIODevice::ReadWrite);
+   device_->setTextModeEnabled(true);
    device_->write(transmission.toLocal8Bit());
+   QTest::qWait(1); // These waits are needed when dealing with
+                    // signals and slots. Whenever you want
+                    // a signal and slot to perform you need a qWait in tests.
 
    QCOMPARE(spy.count(), 1); // make sure the signal was received.
    QList<QVariant> signalReturn = spy.takeFirst();
