@@ -5,7 +5,7 @@ namespace
 {
    const QByteArray CAR_PORT_ADDRESS = "00:07:80:6E:F7:E4";
    const QByteArray FIRST_COMMAND = "AT\n";
-   const QByteArray FIRST_RESPONSE = "OK\n";
+   const QByteArray FIRST_RESPONSE = "OK\r\n";
    const int FIRST_REPONSE_MAXTIME = 1000;
    const QByteArray SECOND_COMMAND = "PAIR " + CAR_PORT_ADDRESS + "\n";
    const QByteArray SECOND_RESPONSE = "PAIR " + CAR_PORT_ADDRESS + " OK\n";
