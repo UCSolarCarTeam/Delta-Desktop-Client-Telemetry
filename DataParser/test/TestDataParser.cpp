@@ -10,9 +10,15 @@ QTEST_MAIN(TestDataParser)
  *    3) No "#"
  *    4) No ascii numbers
  *    5) no emitSignalConnectionSucceeded
- *    6) Test for chars
+ *    6) Invalid chars
  */
 
+
+/*  PLEASE FIX: -Tested if the transmissions with more than 1 "#" would be ignored,
+ *              and all tests failed.
+ *              -Tested if the transmissions with invalid chars would be ignored,
+ *              and all tests failed.
+ */
 TestDataParser::TestDataParser()
 {
 }
@@ -30,6 +36,8 @@ void TestDataParser::cleanup()
    device_.reset();
    patient_.reset();
 }
+
+
 
 /**
  * Test Condition:       Given a valid transmission
@@ -74,6 +82,152 @@ void TestDataParser::willEmitDataReceived_data()
  * Test Condition:       Given a transmission with more than one "#"
  * Appropriate Response: Should ignore the line with more than one "#"
  */
+void TestDataParser::moreThanOneHash()
+{
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
+    QTest::qWait(1);                                //DataParser should now run connectionOK()
+
+    QFETCH(QString, transmission);
+    device_->open(QIODevice::ReadWrite);
+    device_->setTextModeEnabled(true);
+    device_->write(transmission.toLocal8Bit());
+    QTest::qWait(1); // These waits are needed when dealing with
+                     // signals and slots. Whenever you want
+                     // a signal and slot to perform you need a qWait in tests.
+
+    QCOMPARE(spy.count(), 0); //check dataParser sent dataReceived
+}
+void TestDataParser::moreThanOneHash_data()
+{
+    QTest::addColumn<QString>("transmission");
+
+    QTest::newRow("MoreHash1") << "##01817\n";
+    QTest::newRow("MoreHash2") << "#0#-999\n";
+    QTest::newRow("MoreHash3") << "#999#9\n";
+    QTest::newRow("MoreHash4") << "#00#6\n";
+    QTest::newRow("MoreHash5") << "####255667889##\n";
+}
+
+
+
+/**
+ * Test Condition:       Given a transmission with no "#"
+ * Appropriate Response: Should ignore the line with no "#"
+ */
+void TestDataParser::noHash()
+{
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
+    QTest::qWait(1);                                //DataParser should now run connectionOK()
+
+    QFETCH(QString, transmission);
+    device_->open(QIODevice::ReadWrite);
+    device_->setTextModeEnabled(true);
+    device_->write(transmission.toLocal8Bit());
+    QTest::qWait(1); // These waits are needed when dealing with
+                     // signals and slots. Whenever you want
+                     // a signal and slot to perform you need a qWait in tests.
+
+    QCOMPARE(spy.count(), 0); //check dataParser sent dataReceived
+}
+void TestDataParser::noHash_data()
+{
+    QTest::addColumn<QString>("transmission");
+
+    QTest::newRow("NoHash") << "01817\n";
+}
+
+
+
+/**
+ * Test Condition:       Given a transmission with no ASCII numbers
+ * Appropriate Response: Should ignore the line with no ASCII numbers
+ */
+void TestDataParser::noASCIINumbers()
+{
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
+    QTest::qWait(1);                                //DataParser should now run connectionOK()
+
+    QFETCH(QString, transmission);
+    device_->open(QIODevice::ReadWrite);
+    device_->setTextModeEnabled(true);
+    device_->write(transmission.toLocal8Bit());
+    QTest::qWait(1); // These waits are needed when dealing with
+                     // signals and slots. Whenever you want
+                     // a signal and slot to perform you need a qWait in tests.
+
+    QCOMPARE(spy.count(), 0); //check dataParser sent dataReceived
+}
+void TestDataParser::noASCIINumbers_data()
+{
+    QTest::addColumn<QString>("transmission");
+
+    QTest::newRow("NoASCII") << "#";
+}
+
+
+
+/**
+ * Test Condition:       Given a transmission with no emitSignalConnectionSucceeded
+ * Appropriate Response: Should ignore the line with no emitSignalConnectionSucceeded
+ */
+void TestDataParser::noEmitSignalConnectionSucceeded()
+{
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    QTest::qWait(1);                                //DataParser should now run connectionOK()
+
+    QFETCH(QString, transmission);
+    device_->open(QIODevice::ReadWrite);
+    device_->setTextModeEnabled(true);
+    device_->write(transmission.toLocal8Bit());
+    QTest::qWait(1); // These waits are needed when dealing with
+                     // signals and slots. Whenever you want
+                     // a signal and slot to perform you need a qWait in tests.
+
+    QCOMPARE(spy.count(), 0); //check dataParser sent dataReceived
+}
+void TestDataParser::noEmitSignalConnectionSucceeded_data()
+{
+    QTest::addColumn<QString>("transmission");
+
+    QTest::newRow("NoSucced") << "#01817\n";
+}
+
+
+
+/**
+ * Test Condition:       Given a transmission with invalid chars
+ * Appropriate Response: Should ignore the line with invalid chars
+ */
+void TestDataParser::invalidChars()
+{
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
+    QTest::qWait(1);                                //DataParser should now run connectionOK()
+
+    QFETCH(QString, transmission);
+    device_->open(QIODevice::ReadWrite);
+    device_->setTextModeEnabled(true);
+    device_->write(transmission.toLocal8Bit());
+    QTest::qWait(1); // These waits are needed when dealing with
+                     // signals and slots. Whenever you want
+                     // a signal and slot to perform you need a qWait in tests.
+
+    QCOMPARE(spy.count(), 0); //check dataParser sent dataReceived
+}
+void TestDataParser::invalidChars_data()
+{
+    QTest::addColumn<QString>("transmission");
+
+    QTest::newRow("InvalidChars1") << "#j1817\n";
+    QTest::newRow("InvalidChars2") << "#j!-999\n";
+    QTest::newRow("InvalidChars3") << "#99j9\n";
+    QTest::newRow("InvalidChars4") << "#00j!\n";
+    QTest::newRow("InvalidChars5") << "#jjjj\n";
+}
+
 /*
 void TestDataParser::willNotEmitDataReceivedMoreThanOneHash()
 {

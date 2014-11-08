@@ -17,6 +17,23 @@ private slots:
     void willEmitDataReceived();
     void willEmitDataReceived_data();
 
+    //SAMS FUNCTIONS <
+    void moreThanOneHash();
+    void moreThanOneHash_data();
+
+    void noHash();
+    void noHash_data();
+
+    void noASCIINumbers();
+    void noASCIINumbers_data();
+
+    void noEmitSignalConnectionSucceeded();
+    void noEmitSignalConnectionSucceeded_data();
+
+    void invalidChars();
+    void invalidChars_data();
+    //>
+
 //    void willNotEmitDataReceivedMoreThanOneHash();
 
 private:
