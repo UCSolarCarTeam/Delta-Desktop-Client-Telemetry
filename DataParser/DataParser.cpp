@@ -23,6 +23,7 @@ void DataParser::connectionOK()
 
 void DataParser::handleInformationIncoming()
 {
+  ioDevice_.seek(0);
   while(ioDevice_.canReadLine())
   {
     QByteArray data = ioDevice_.readLine();

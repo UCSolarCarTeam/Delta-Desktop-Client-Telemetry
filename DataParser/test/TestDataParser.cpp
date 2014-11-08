@@ -1,5 +1,6 @@
 #include "TestDataParser.h"
 #include <QSignalSpy>
+#include <QDebug>
 
 QTEST_MAIN(TestDataParser)
 
@@ -43,7 +44,6 @@ void TestDataParser::willEmitDataReceived()
    QFETCH(QString, transmission);
    QFETCH(int, id);
    QFETCH(int, value);
-
    device_->open(QIODevice::ReadWrite);
    device_->setTextModeEnabled(true);
    device_->write(transmission.toLocal8Bit());
@@ -51,7 +51,7 @@ void TestDataParser::willEmitDataReceived()
                     // signals and slots. Whenever you want
                     // a signal and slot to perform you need a qWait in tests.
 
-   QCOMPARE(spy.count(), 1); // make sure the signal was received.
+   QCOMPARE(spy.count(), 1); //check dataParser sent dataReceived
    QList<QVariant> signalReturn = spy.takeFirst();
    QCOMPARE(signalReturn.at(0).toInt(), id); // verify the id;
    QCOMPARE(signalReturn.at(1).toInt(), value); // verify the value;
