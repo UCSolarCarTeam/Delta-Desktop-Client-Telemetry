@@ -6,6 +6,7 @@
 DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData, I_ConnectionService& connectionService)
 : telemetryData_(telemetryData), connectionService_(connectionService)
 {
+    relayDebugMessage();
     relayConnectionStatus();
     relayTelemetryData();
 }
@@ -19,10 +20,15 @@ void DisplayPresenter::disconnectDataSource()
    connectionService_.disconnectDataSource();
 }
 
+void DisplayPresenter::relayDebugMessage()
+{
+   connect(&connectionService_, SIGNAL(sendDebugMessage(QString)), this, SIGNAL(sendDebugMessage(QString)));
+}
+
 void DisplayPresenter::relayConnectionStatus()
 {
-    connect(&connectionService_, SIGNAL(connectionFailed(QString)), this, SIGNAL(relayConnectionFailed(QString)));
-    connect(&connectionService_, SIGNAL(connectionSucceeded()), this, SIGNAL(relayConnectionSucceeded()));
+    connect(&connectionService_, SIGNAL(connectionFailed(QString)), this, SIGNAL(connectionFailed(QString)));
+    connect(&connectionService_, SIGNAL(connectionSucceeded(QString)), this, SIGNAL(connectionSucceeded(QString)));
 }
 
 void DisplayPresenter::relayTelemetryData()
@@ -152,7 +158,7 @@ void DisplayPresenter::relayTelemetryData()
 
    connect(&connectionService_, SIGNAL(connectionFailed(QString)),
            this, SIGNAL(connectionFailed(QString)));
-   connect(&connectionService_, SIGNAL(connectionSucceeded()),
-           this, SIGNAL(connectionSucceeded()));
+   connect(&connectionService_, SIGNAL(connectionSucceeded(QString)),
+           this, SIGNAL(connectionSucceeded(QString)));
 
 }

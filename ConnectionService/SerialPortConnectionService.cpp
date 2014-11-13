@@ -19,7 +19,7 @@ SerialPortConnectionService::SerialPortConnectionService(QString portName, int b
 {
    serialPort_.setBaudRate(baudRate);
    serialPort_.setPortName(portName);
-   connected_ = false;
+   sendDebugMessage("Port " + portName +" created with baudrate of " + baudRate);
 }
 
 SerialPortConnectionService::~SerialPortConnectionService()
@@ -34,11 +34,10 @@ void  SerialPortConnectionService::connectDataSource(QString portName, int baudR
    }
    serialPort_.setBaudRate(baudRate);
    if (serialPort_.open(QIODevice::ReadWrite) == 0){
-      connected_ = false;
       emit connectionFailed(failed());
       return;
    }
-
+   emit sendDebugMessage("Port name set to " + portName + " with baudrate of " + baudRate);
    //Bluetooth Connection
    setUpBlueGigaWT41Connection();
 }
@@ -47,6 +46,7 @@ void  SerialPortConnectionService::connectDataSource(QString portName, int baudR
 //This code was written for the Schulich Delta
 void SerialPortConnectionService::setUpBlueGigaWT41Connection()
 {
+   emit sendDebugMessage("Beginning connection setup with BlueGigaWT41");
    serialPort_.write(FIRST_COMMAND);
    responseTimer_.start(FIRST_REPONSE_MAXTIME);
    connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
@@ -71,6 +71,9 @@ void SerialPortConnectionService::firstStep()
          disconnect(&responseTimer_, 0, this, 0);
          responseTimer_.stop();
          emit connectionFailed("Did not receive " + FIRST_RESPONSE
+                               + " after " + FIRST_COMMAND
+                               + "\nReceived " + receivedResponse);
+         emit sendDebugMessage("Did not receive " + FIRST_RESPONSE
                                + " after " + FIRST_COMMAND
                                + "\nReceived " + receivedResponse);
          disconnectDataSource();
@@ -98,6 +101,9 @@ void SerialPortConnectionService::secondStep()
          emit connectionFailed("Did not receive " + SECOND_RESPONSE
                                + " after " + SECOND_COMMAND
                                + "\nReceived " + receivedResponse);
+         emit sendDebugMessage("Did not receive " + SECOND_RESPONSE
+                               + " after " + SECOND_COMMAND
+                               + "\nReceived " + receivedResponse);
          disconnectDataSource();
       }
    }
@@ -122,6 +128,9 @@ void SerialPortConnectionService::thirdStep()
          emit connectionFailed("Did not receive " + THIRD_RESPONSE
                                + " after " + THIRD_COMMAND
                                + "\nReceived " + receivedResponse);
+         emit sendDebugMessage("Did not receive " + THIRD_RESPONSE
+                               + " after " + THIRD_COMMAND
+                               + "\nReceived " + receivedResponse);
          disconnectDataSource();
       }
    }
@@ -133,9 +142,7 @@ void SerialPortConnectionService::fourthStep()
    {
       //Throws away first line to ensure all the following
       //serialPort.readLine()'s are not cut off.
-      qDebug() << serialPort_.readLine();
-      connected_ = true;
-      emit connectionSucceeded();
+      emit connectionSucceeded("Connected");
 
       disconnect(&serialPort_, 0, this, 0);
       responseTimer_.stop();
@@ -157,7 +164,8 @@ void SerialPortConnectionService::responseTimedOut()
 void SerialPortConnectionService::disconnectDataSource()
 {
    serialPort_.close();
-   connected_ = false;
+   emit sendDebugMessage("Disconnected");
+   emit connectionFailed("Disconnected");
 }
 
 QString SerialPortConnectionService::failed()
@@ -196,14 +204,4 @@ QString SerialPortConnectionService::failed()
    }
 
    return "Check SerialPortConnectionService class";
-}
-
-void SerialPortConnectionService::succeeded()
-{
-   connected_ = false;
-}
-
-bool SerialPortConnectionService::isConnected()
-{
-   return connected_;
 }

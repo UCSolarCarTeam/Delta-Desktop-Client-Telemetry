@@ -101,8 +101,10 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
 
     connect(&presenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
-    connect(&presenter_, SIGNAL(connectionSucceeded()),
-            this, SLOT(connectionSucceeded()));
+    connect(&presenter_, SIGNAL(connectionSucceeded(QString)),
+            this, SLOT(connectionSucceeded(QString)));
+    connect(&presenter_, SIGNAL(sendDebugMessage(QString)),
+            this, SLOT(writeToDebugLog(QString)));
 }
 
 void DisplayView::driverSetSpeedRPMReceived(double driverSetSpeedRPMReceived)
@@ -212,8 +214,18 @@ void DisplayView::connectionFailed(QString failureMessage)
    ui_.setMainStatus().setText(failureMessage);
 }
 
-void DisplayView::connectionSucceeded()
+void DisplayView::connectionSucceeded(QString successMessage)
 {
-   ui_.setMainStatus().setText("Connection Succeeded");
+   ui_.setMainStatus().setText(successMessage);
+}
+
+void DisplayView::clearDebugLog()
+{
+   ui_.setDebugLog().clear();
+}
+
+void DisplayView::writeToDebugLog(QString message)
+{
+   ui_.setDebugLog().append(message);
 }
 

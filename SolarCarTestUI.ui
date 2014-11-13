@@ -352,6 +352,50 @@ text-decoration: underline;</string>
           </property>
          </widget>
         </item>
+        <item>
+         <layout class="QVBoxLayout" name="StatusLayout">
+          <item>
+           <widget class="QPushButton" name="connectButton">
+            <property name="font">
+             <font>
+              <family>Courier</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+color: black</string>
+            </property>
+            <property name="text">
+             <string>Connect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="disconnectButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+font: 8pt &quot;Courier&quot;;
+color: black;</string>
+            </property>
+            <property name="text">
+             <string>Disconnect</string>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </item>
       <item>
@@ -664,47 +708,33 @@ text-decoration: underline;</string>
             </property>
            </spacer>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="StatusLayout">
           <item>
-           <widget class="QPushButton" name="connectButton">
+           <widget class="QLabel" name="mainStatusLabel">
             <property name="font">
              <font>
               <family>Courier</family>
              </font>
             </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: white;
-color: black</string>
-            </property>
             <property name="text">
-             <string>Connect</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="disconnectButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: white;
-font: 8pt &quot;Courier&quot;;
-color: black;</string>
+           <widget class="QLabel" name="mainStatus">
+            <property name="font">
+             <font>
+              <family>Courier</family>
+             </font>
             </property>
             <property name="text">
-             <string>Disconnect</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Not Connected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-            <property name="default">
-             <bool>false</bool>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -1262,32 +1292,24 @@ color: black;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="mainStatusLabel">
-          <property name="font">
-           <font>
-            <family>Courier</family>
-           </font>
+         <widget class="QTextEdit" name="debugLog">
+          <property name="styleSheet">
+           <string notr="true">font: 8pt &quot;Courier&quot;;</string>
           </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
+          <property name="documentTitle">
+           <string/>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="mainStatus">
-          <property name="font">
-           <font>
-            <family>Courier</family>
-           </font>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Not Connected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <property name="acceptRichText">
+           <bool>false</bool>
           </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
+          <property name="textInteractionFlags">
+           <set>Qt::NoTextInteraction</set>
           </property>
          </widget>
         </item>
