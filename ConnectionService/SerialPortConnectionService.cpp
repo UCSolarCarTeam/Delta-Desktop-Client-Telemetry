@@ -3,10 +3,11 @@
 
 namespace
 {
+   const int READING_FREQUENCY = 500;
    const QByteArray CAR_PORT_ADDRESS = "00:07:80:6E:F7:E4";
    const QByteArray FIRST_COMMAND = "AT\n";
    const QByteArray FIRST_RESPONSE = "OK\r\n";
-   const int FIRST_REPONSE_MAXTIME = 1000;
+   const int FIRST_RESPONSE_MAXTIME = 1000;
    const QByteArray SECOND_COMMAND = "PAIR " + CAR_PORT_ADDRESS + "\n";
    const QByteArray SECOND_RESPONSE = "PAIR " + CAR_PORT_ADDRESS + " OK\n";
    const int SECOND_RESPONSE_MAXTIME = 10000;
@@ -48,91 +49,110 @@ void SerialPortConnectionService::setUpBlueGigaWT41Connection()
 {
    emit sendDebugMessage("Beginning connection setup with BlueGigaWT41");
    serialPort_.write(FIRST_COMMAND);
-   responseTimer_.start(FIRST_REPONSE_MAXTIME);
-   connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
+   responseTimer_.start(FIRST_RESPONSE_MAXTIME);
+   firstStep();
+   connect(&readingTimer_, SIGNAL(timeout()), this, SLOT(firstStep()));
    connect(&responseTimer_, SIGNAL(timeout()), this, SLOT(responseTimedOut()));
 }
 
 void SerialPortConnectionService::firstStep()
 {
+   readingTimer_.start(READING_FREQUENCY);
    if (serialPort_.canReadLine())
    {
-      QByteArray receivedResponse = serialPort_.readLine(); //throw away FIRST_COMMAND
-      receivedResponse = serialPort_.readLine();
+      QByteArray receivedResponse = serialPort_.readLine();
       if (receivedResponse == FIRST_RESPONSE){
          serialPort_.write(SECOND_COMMAND);
          responseTimer_.start(SECOND_RESPONSE_MAXTIME);
-         disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(firstStep()));
-         connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(secondStep()));
 
+         emit sendDebugMessage("Successfully received " + receivedResponse);
+         emit sendDebugMessage("Wrote " + SECOND_COMMAND + " to port");
+
+         disconnect(&readingTimer_, SIGNAL(timeout()), this, SLOT(firstStep()));
+         connect(&readingTimer_, SIGNAL(timeout()), this, SLOT(secondStep()));
+         secondStep();
       }
-      else{
-         disconnect(&serialPort_, 0, this, 0);
-         disconnect(&responseTimer_, 0, this, 0);
-         responseTimer_.stop();
-         emit connectionFailed("Did not receive " + FIRST_RESPONSE
-                               + " after " + FIRST_COMMAND
-                               + "\nReceived " + receivedResponse);
-         emit sendDebugMessage("Did not receive " + FIRST_RESPONSE
-                               + " after " + FIRST_COMMAND
-                               + "\nReceived " + receivedResponse);
-         disconnectDataSource();
-      }
+      sendDebugMessage("Received " + receivedResponse);
+      return;
+   }
+   else
+   {
+      disconnect(&serialPort_, 0, this, 0);
+      disconnect(&readingTimer_, 0, this, 0);
+      disconnect(&responseTimer_, 0, this, 0);
+
+      readingTimer_.stop();
+      responseTimer_.stop();
+
+      sendDebugMessage("Could not read line");
+      connectionFailed("Could not read line");
+      disconnectDataSource();
    }
 }
+
 
 void SerialPortConnectionService::secondStep()
 {
+   readingTimer_.start(READING_FREQUENCY);
    if (serialPort_.canReadLine())
    {
-      QString receivedResponse = QString(serialPort_.readLine()); //throw away SECOND_COMMAND
-      receivedResponse = QString(serialPort_.readLine());
-      if (receivedResponse.contains(SECOND_RESPONSE)){
+      QByteArray receivedResponse = serialPort_.readLine();
+      if (receivedResponse == SECOND_RESPONSE){
          serialPort_.write(THIRD_COMMAND);
          responseTimer_.start(THIRD_RESPONSE_MAXTIME);
-         disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(secondStep()));
-         connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(thirdStep()));
 
+         emit sendDebugMessage("Successfully received " + receivedResponse);
+         emit sendDebugMessage("Wrote " + THIRD_COMMAND + " to port");
+
+         disconnect(&readingTimer_, SIGNAL(timeout()), this, SLOT(secondStep()));
+         connect(&readingTimer_, SIGNAL(timeout()), this, SLOT(thirdStep()));
+         thirdStep();
       }
-      else{
-         disconnect(&serialPort_, 0, this, 0);
-         disconnect(&responseTimer_, 0, this, 0);
-         responseTimer_.stop();
-         emit connectionFailed("Did not receive " + SECOND_RESPONSE
-                               + " after " + SECOND_COMMAND
-                               + "\nReceived " + receivedResponse);
-         emit sendDebugMessage("Did not receive " + SECOND_RESPONSE
-                               + " after " + SECOND_COMMAND
-                               + "\nReceived " + receivedResponse);
-         disconnectDataSource();
-      }
+      sendDebugMessage("Received " + receivedResponse);
+      return;
+   }
+   else
+   {
+      disconnect(&serialPort_, 0, this, 0);
+      disconnect(&readingTimer_, 0, this, 0);
+      disconnect(&responseTimer_, 0, this, 0);
+
+      readingTimer_.stop();
+      responseTimer_.stop();
+
+      sendDebugMessage("Could not read line");
+      connectionFailed("Could not read line");
+      disconnectDataSource();
    }
 }
 
-
 void SerialPortConnectionService::thirdStep()
 {
+   readingTimer_.start(READING_FREQUENCY);
    if (serialPort_.canReadLine())
    {
-      QString receivedResponse = QString(serialPort_.readLine()); //throw away THIRD_COMMAND
-      receivedResponse = QString(serialPort_.readLine());
-      qDebug() << receivedResponse;
-      if (receivedResponse.contains(THIRD_RESPONSE)){
-         responseTimer_.start(THIRD_RESPONSE_MAXTIME);
-         qDebug() << receivedResponse;
-         disconnect(&serialPort_, SIGNAL(readyRead()), this, SLOT(thirdStep()));
-         connect(&serialPort_, SIGNAL(readyRead()), this, SLOT(fourthStep()));
+      QByteArray receivedResponse = serialPort_.readLine();
+      if (receivedResponse == THIRD_RESPONSE){
+         emit sendDebugMessage("Successfully received " + receivedResponse);
+
+         disconnect(&readingTimer_, SIGNAL(timeout()), this, SLOT(secondStep()));
+         fourthStep();
       }
-      else{
-         responseTimer_.stop();
-         emit connectionFailed("Did not receive " + THIRD_RESPONSE
-                               + " after " + THIRD_COMMAND
-                               + "\nReceived " + receivedResponse);
-         emit sendDebugMessage("Did not receive " + THIRD_RESPONSE
-                               + " after " + THIRD_COMMAND
-                               + "\nReceived " + receivedResponse);
-         disconnectDataSource();
-      }
+      sendDebugMessage("Received " + receivedResponse);
+      return;
+   }
+   else
+   {
+      disconnect(&serialPort_, 0, this, 0);
+      disconnect(&readingTimer_, 0, this, 0);
+      disconnect(&responseTimer_, 0, this, 0);
+
+      readingTimer_.stop();
+      responseTimer_.stop();
+
+      sendDebugMessage("Could not read line");
+      connectionFailed("Could not read line");
+      disconnectDataSource();
    }
 }
 
@@ -140,8 +160,6 @@ void SerialPortConnectionService::fourthStep()
 {
    if (serialPort_.canReadLine())
    {
-      //Throws away first line to ensure all the following
-      //serialPort.readLine()'s are not cut off.
       emit connectionSucceeded("Connected");
 
       disconnect(&serialPort_, 0, this, 0);

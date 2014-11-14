@@ -31,6 +31,7 @@ private:
    void setUpBlueGigaWT41Connection();
    QString failed();
    QTimer responseTimer_;
+   QTimer readingTimer_;
    QSerialPort serialPort_;
 
 
