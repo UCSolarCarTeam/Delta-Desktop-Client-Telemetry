@@ -13,12 +13,6 @@ QTEST_MAIN(TestDataParser)
  *    6) Invalid chars
  */
 
-
-/*  PLEASE FIX: -Tested if the transmissions with more than 1 "#" would be ignored,
- *              and all tests failed.
- *              -Tested if the transmissions with invalid chars would be ignored,
- *              and all tests failed.
- */
 TestDataParser::TestDataParser()
 {
 }
