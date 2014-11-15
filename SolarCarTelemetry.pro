@@ -29,7 +29,8 @@ SOURCES += \
     SolarCarTelemetry/main.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
     SolarCarTestUi/SolarCarTestUI.cpp \
-    TelemetryData/TelemetryData.cpp
+    TelemetryData/TelemetryData.cpp \
+    DebugHandler/DebugHandler.cpp
 
 HEADERS  += \
     ConnectionService/I_ConnectionService.h \
@@ -43,7 +44,8 @@ HEADERS  += \
     SolarCarTestUi/SolarCarTestUI.h \
     TelemetryData/I_TelemetryData.h \
     TelemetryData/TelemetryData.h \
-    SolarCarTestUi/I_SolarCarTestUI.h
+    SolarCarTestUi/I_SolarCarTestUI.h \
+    DebugHandler/DebugHandler.h
 
 FORMS    += \
     SolarCarTestUI.ui
