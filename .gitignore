@@ -6,3 +6,4 @@ moc_*
 .tags*
 build*
 *.user*
+*.orig

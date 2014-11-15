@@ -81,6 +81,7 @@ public:
 //     QLCDNumber& setBatteryVoltageThresholdFalling();
 
    QLabel& setMainStatus();
+   QTextEdit& setDebugLog();
 
    QPushButton& connectButton();
    QPushButton& disconnectButton();

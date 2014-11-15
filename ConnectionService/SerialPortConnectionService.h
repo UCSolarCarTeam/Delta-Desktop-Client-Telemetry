@@ -13,7 +13,6 @@ class SerialPortConnectionService : public I_ConnectionService
 public:
    SerialPortConnectionService(QString portName, int baudrate);
    ~SerialPortConnectionService();
-   bool isConnected();
 
 public slots:
    /*connectDataSource() will ensure connection is complete
@@ -31,10 +30,10 @@ private slots:
 private:
    void setUpBlueGigaWT41Connection();
    QString failed();
-   void succeeded();
    QTimer responseTimer_;
+   QTimer readingTimer_;
    QSerialPort serialPort_;
-   bool connected_;
+
 
 };
 

@@ -313,6 +313,10 @@ QLabel& SolarCarTestUI::setMainStatus()
 {
    return *ui->mainStatus;
 }
+QTextEdit& SolarCarTestUI::setDebugLog()
+{
+   return *ui->debugLog;
+}
 
 QPushButton& SolarCarTestUI::connectButton()
 {

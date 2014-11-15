@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QLabel>
+#include <QTextEdit>
 
 class I_SolarCarTestUI
 {
@@ -77,8 +78,10 @@ public:
 //    virtual QLCDNumber& setBatteryVoltageThresholdFalling() = 0;
 
     virtual QLabel& setMainStatus() = 0;
+    virtual QTextEdit& setDebugLog() = 0;
 
     virtual QPushButton& connectButton() = 0;
+    virtual QPushButton& disconnectButton() = 0;
     virtual QLineEdit& getSerialPortName() = 0;
     virtual QLineEdit& getBaudRate() = 0;
 };

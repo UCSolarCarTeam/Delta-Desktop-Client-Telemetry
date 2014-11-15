@@ -7,15 +7,15 @@ DataParser::DataParser(QIODevice& device, I_ConnectionService& connectionService
 : ioDevice_(device)
 , connectionService_ (connectionService)
 {
-  connect(&connectionService, SIGNAL(connectionSucceeded()),
-          this, SLOT (connectionOK()));
+  connect(&connectionService, SIGNAL(connectionSucceeded(QString)),
+          this, SLOT (connectionOK(QString)));
 }
 
 DataParser::~DataParser()
 {
 }
 
-void DataParser::connectionOK()
+void DataParser::connectionOK(QString)
 {
    connect(&ioDevice_, SIGNAL(readyRead()),
            this, SLOT(handleInformationIncoming()));

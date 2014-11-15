@@ -17,14 +17,14 @@ public slots:
 private:
     void relayTelemetryData();
     void relayConnectionStatus();
+    void relayDebugMessage();
 
 private:
    const I_TelemetryData& telemetryData_;
    I_ConnectionService& connectionService_;
 
 signals:
-   void relayConnectionFailed(QString);
-   void relayConnectionSucceeded();
+
 
    void driverSetSpeedRPMReceived(double driverSetSpeedRPM);
    void driverSetCurrentReceived(double driverSetCurrent);
@@ -92,7 +92,8 @@ signals:
    void batteryVoltageThresholdFallingReceived(int batteryVoltageThresholdFalling);
 
    void connectionFailed(QString failureMessage);
-   void connectionSucceeded();
+   void connectionSucceeded(QString successMessage);
+   void sendDebugMessage(QString message);
 
 };
 

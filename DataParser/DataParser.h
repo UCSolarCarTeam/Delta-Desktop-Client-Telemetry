@@ -13,7 +13,7 @@ public:
   virtual ~DataParser();
 
 private slots:
-  void connectionOK();
+  void connectionOK(QString);
   void handleInformationIncoming();
 
 private:

@@ -68,6 +68,8 @@ private slots:
 
    void handleConnectButtonClicked();
    void handleDisconnectButtonClicked();
-   void connectionFailed(QString failureMessage);
-   void connectionSucceeded();
+   void connectionFailed(QString);
+   void connectionSucceeded(QString);
+   void clearDebugLog();
+   void writeToDebugLog(QString);
 };
