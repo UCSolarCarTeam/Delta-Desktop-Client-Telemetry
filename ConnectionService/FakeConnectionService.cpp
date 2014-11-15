@@ -24,6 +24,6 @@ void FakeConnectionService::disconnectDataSource()
 
 void FakeConnectionService::emitSignalConnectionSucceeded()
 {
-   emit connectionSucceeded();
+   emit connectionSucceeded("Connected");
 }
 
