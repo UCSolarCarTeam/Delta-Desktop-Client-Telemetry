@@ -98,6 +98,8 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
             this, SLOT(handleConnectButtonClicked()));
+    connect(&ui_.disconnectButton(), SIGNAL(clicked()),
+            this, SLOT(handleDisconnectButtonClicked()));
 
     connect(&presenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
@@ -201,8 +203,10 @@ DisplayView::~DisplayView()
 
 void DisplayView::handleConnectButtonClicked()
 {
-    presenter_.connectDataSource(ui_.getSerialPortName().text(),
-                                 ui_.getBaudRate().text().toInt());
+   clearDebugLog();
+   ui_.setMainStatus().setText("Connecting...");
+   presenter_.connectDataSource(ui_.getSerialPortName().text(),
+                                ui_.getBaudRate().text().toInt());
 }
 void DisplayView::handleDisconnectButtonClicked()
 {
