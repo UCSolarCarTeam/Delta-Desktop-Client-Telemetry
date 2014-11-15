@@ -1,4 +1,5 @@
 #include "TelemetryData.h"
+#include <stdio.h>
 
 TelemetryData::TelemetryData()
 {
@@ -9,7 +10,8 @@ TelemetryData::~TelemetryData()
 }
 
 double TelemetryData::driverSetSpeedRPM() const
-{              return driverSetSpeedRPM_;}
+{   printf("driverSetSpeedRPM_: %lf\n",driverSetSpeedRPM_);
+    return driverSetSpeedRPM_;}
 double TelemetryData::driverSetCurrent() const
 {              return driverSetCurrent_;}
 
@@ -133,6 +135,7 @@ int TelemetryData::batteryVoltageThresholdFalling() const
 
 /************Solar Car Driver************/
 void TelemetryData::setDriverSetSpeedRPM(double driverSetSpeedRPM){
+   printf("driverSetSpeedRPM: %lf\n",driverSetSpeedRPM);
    driverSetSpeedRPM_ = driverSetSpeedRPM;
    emit driverSetSpeedRPMReceived(driverSetSpeedRPM_);
 }

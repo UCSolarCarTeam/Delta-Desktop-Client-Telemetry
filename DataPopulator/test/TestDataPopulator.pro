@@ -13,18 +13,15 @@ UI_DIR = ../../../release/.ui
 SOURCES += \
     TestDataPopulator.cpp \
     ../DataPopulator.cpp \
-    ../../DataParser/FakeDataParser.cpp \
-    ../../ConnectionService/I_ConnectionService.cpp \
-    ../../ConnectionService/SerialPortConnectionService.cpp \
-    TestDataPopulator.cpp
+    ../../TelemetryData/TelemetryData.cpp \
+    ../../DataParser/FakeDataParser.cpp
 
 HEADERS += \
     TestDataPopulator.h \
     ../DataPopulator.h \
     ../I_DataPopulator.h \
-    ../../ConnectionService/I_ConnectionService.h \
     ../../DataParser/FakeDataParser.h \
-    TestDataPopulator.h \
-    ../../ConnectionService/SerialPortConnectionService.h \
+    ../../TelemetryData/TelemetryData.h \
+    ../../TelemetryData/I_TelemetryData.h \
     ../../DataParser/I_DataParser.h
 
