@@ -1,7 +1,7 @@
 #include "DataPopulator.h"
 #include "../TelemetryData/I_TelemetryData.h"
 #include "../DataParser/I_DataParser.h"
-
+#include <stdio.h>
 namespace
 {
   enum Ids
@@ -82,43 +82,49 @@ DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& da
 //id will start with 1 instead of 0.
 void DataPopulator::handleDataReceived(int id, int value)
 {
+    double doublevalue;
+   if(id<=14){
+       doublevalue=(double)value/1000.0;
+   }
+
    switch(id)
    {
    case DriverSetSpeedRPM:
-      data_.setDriverSetSpeedRPM(value);
+      data_.setDriverSetSpeedRPM( doublevalue);
+      printf("value: %lf\n", doublevalue);
       break;
    case DriverSetCurrent:
-      data_.setDriverSetCurrent(value);
+      data_.setDriverSetCurrent( doublevalue);
       break;
    case VehicleVelocity:
-      data_.setVehicleVelocityKph(value);
+      data_.setVehicleVelocityKph( doublevalue);
       break;
    case BusCurrentA:
-      data_.setBusCurrentA(value);
+      data_.setBusCurrentA( doublevalue);
       break;
    case BusVoltage:
-      data_.setBusVoltage(value);
+      data_.setBusVoltage( doublevalue);
       break;
    case MotorVelocityRpm:
-      data_.setMotorVelocityRpm(value);
+      data_.setMotorVelocityRpm( doublevalue);
       break;
    case MotorVoltageReal:
-      data_.setMotorVoltageReal(value);
+      data_.setMotorVoltageReal( doublevalue);
       break;
    case MotorCurrentReal:
-      data_.setMotorCurrentReal(value);
+      data_.setMotorCurrentReal( doublevalue);
       break;
    case BackEmfImaginary:
-      data_.setBackEmfImaginary(value);
+      data_.setBackEmfImaginary( doublevalue);
       break;
    case IpmHeatSinkTemp:
-      data_.setIpmHeatSinkTemp(value);
+      data_.setIpmHeatSinkTemp( doublevalue);
       break;
    case DspBoardTemp:
-      data_.setDspBoardTemp(value);
+      data_.setDspBoardTemp( doublevalue);
       break;
    case DcBusAmpHours:
-      data_.setDcBusAmpHours(value);
+      data_.setDcBusAmpHours( doublevalue);
       break;
    case ReceivedErrorCount:
       data_.setReceivedErrorCount(value);
