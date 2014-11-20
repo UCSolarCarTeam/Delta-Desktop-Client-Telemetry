@@ -23,7 +23,7 @@ SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 , dataParser_(new DataParser(*port_, *connectionService_))
 , dataPopulator_(new DataPopulator(*dataParser_, *data_))
 , debugHandler_(new DebugHandler(*connectionService_, *dataParser_))
-, displayPresenter_(new DisplayPresenter(*data_, *connectionService_))
+, displayPresenter_(new DisplayPresenter(*data_, *connectionService_, *debugHandler_))
 , mainWindow_(new SolarCarTestUI())
 , displayView_(new DisplayView(*displayPresenter_, *mainWindow_))
 {

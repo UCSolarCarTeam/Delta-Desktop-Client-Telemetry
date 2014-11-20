@@ -27,7 +27,7 @@ void DisplayPresenter::disconnectDataSource()
 
 void DisplayPresenter::relayDebugMessage()
 {
-   connect(&debugHandler_, SIGNAL(sendDebugMessagetoPresenter(QString)), this, SIGNAL(sendDebugMessage(QString)));
+   connect(&debugHandler_, SIGNAL(sendDebugMessageToPresenter(QString)), this, SIGNAL(sendDebugMessage(QString)));
 }
 
 void DisplayPresenter::relayConnectionStatus()
