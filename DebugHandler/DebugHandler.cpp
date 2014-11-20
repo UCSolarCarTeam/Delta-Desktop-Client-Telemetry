@@ -9,7 +9,7 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedConnectionService(QString)));
 
-   connect(&dataParser, SIGNAL(sendDebugMessage),
+   connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedDataParser(QString)));
 }
 
