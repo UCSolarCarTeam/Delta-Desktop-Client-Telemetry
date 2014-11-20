@@ -15,7 +15,7 @@ public:
    virtual ~DebugHandler();
 
 signals:
-   void sendDebugMessageToUI(QString);
+   void sendDebugMessageToPresenter(QString);
 
 private slots:
    void receivedConnectionService(QString);

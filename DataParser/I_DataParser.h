@@ -10,5 +10,5 @@ public:
 
 signals:
    void dataReceived(int id, int value);
-   void sendDebugMessage(QString); //hi enoch
+   void sendDebugMessage(QString);
 };

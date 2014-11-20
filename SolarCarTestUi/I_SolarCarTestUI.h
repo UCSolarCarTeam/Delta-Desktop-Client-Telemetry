@@ -77,7 +77,7 @@ public:
 //    virtual QLCDNumber& setBatteryVoltageThresholdRising() = 0;
 //    virtual QLCDNumber& setBatteryVoltageThresholdFalling() = 0;
 
-    virtual QLabel& setMainStatus() = 0;
+    virtual QLabel& setConnectionStatus() = 0;
     virtual QTextEdit& setDebugLog() = 0;
 
     virtual QPushButton& connectButton() = 0;

@@ -3,6 +3,7 @@
 #include "../ConnectionService/SerialPortConnectionService.h"
 #include "../DataParser/DataParser.h"
 #include "../DataPopulator/DataPopulator.h"
+#include "../DebugHandler/DebugHandler.h"
 #include "../DisplayPresenter/DisplayPresenter.h"
 #include "../DisplayView/DisplayView.h"
 #include "../SolarCarTestUi/SolarCarTestUI.h"
@@ -21,7 +22,8 @@ SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 , port_(new QSerialPort)
 , dataParser_(new DataParser(*port_, *connectionService_))
 , dataPopulator_(new DataPopulator(*dataParser_, *data_))
-, displayPresenter_(new DisplayPresenter(*data_, *connectionService_))
+, debugHandler_(new DebugHandler(*connectionService_, *dataParser_))
+, displayPresenter_(new DisplayPresenter(*data_, *connectionService_, *debugHandler_))
 , mainWindow_(new SolarCarTestUI())
 , displayView_(new DisplayView(*displayPresenter_, *mainWindow_))
 {
