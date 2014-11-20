@@ -3,12 +3,15 @@
 #include <QObject>
 class I_TelemetryData;
 class I_ConnectionService;
+class DebugHandler;
 
 class DisplayPresenter : public QObject
 {
    Q_OBJECT
 public:
-   explicit DisplayPresenter(const I_TelemetryData& telemetryData, I_ConnectionService& connectionService);
+   explicit DisplayPresenter(const I_TelemetryData& telemetryData,
+                             I_ConnectionService& connectionService,
+                             DebugHandler& debugHandler);
    void connectDataSource(QString portName, int baudRate);
    void disconnectDataSource();
 
@@ -22,6 +25,7 @@ private:
 private:
    const I_TelemetryData& telemetryData_;
    I_ConnectionService& connectionService_;
+   DebugHandler& debugHandler_;
 
 signals:
 
