@@ -51,79 +51,113 @@ void DebugHandler::writeToDebugLogFile(QString debugMessage)
 
 QString DebugHandler::convertIDtoString(int id)
 {
-   QString convertedID;
+   QString convertedID("");//Optional String appending Converted ID.
 
    switch(id)
    {
    case DataPopulator::DriverSetSpeedRPM:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::DriverSetCurrent:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::VehicleVelocity:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::BusCurrentA:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::BusVoltage:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::MotorVelocityRpm:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::MotorVoltageReal:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::MotorCurrentReal:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::BackEmfImaginary:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::IpmHeatSinkTemp:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::DspBoardTemp:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::DcBusAmpHours:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::ReceivedErrorCount:
+      convertedID.append("DriverSetSpeedRPM");
       break;
    case DataPopulator::TransmittedErrorCount:
+      convertedID.append("DriverSetSpeedRPM");
       break;
 
    case DataPopulator::Mod0PcbTemperature:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellTemperature:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage0:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage1:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage2:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage3:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage4:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage5:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage6:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod0CellVoltage7:
+      convertedID.append("Mod0PcbTemperature");
       break;
 
    case DataPopulator::Mod1PcbTemperature:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellTemperature:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage0:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage1:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage2:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage3:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage4:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage5:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage6:
+      convertedID.append("Mod0PcbTemperature");
       break;
    case DataPopulator::Mod1CellVoltage7:
+      convertedID.append("Mod0PcbTemperature");
       break;
 
    case DataPopulator::Mod2PcbTemperature:
