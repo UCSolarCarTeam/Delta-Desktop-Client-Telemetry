@@ -57,6 +57,7 @@ QString DebugHandler::convertIDtoString(int id)
    }
 
    QString convertedID;
+
    switch(id)
    {
    case DriverSetSpeedRPM:

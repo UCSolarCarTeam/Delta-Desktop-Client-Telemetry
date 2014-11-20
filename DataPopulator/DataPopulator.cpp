@@ -13,7 +13,7 @@ DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& da
 //id will start with 1 instead of 0.
 void DataPopulator::handleDataReceived(int id, int value)
 {
-    double doublevalue;
+   double doublevalue;
    if(id<=14){
        doublevalue=(double)value/1000.0;
    }
