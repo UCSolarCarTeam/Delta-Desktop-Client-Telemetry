@@ -15,14 +15,16 @@ public:
    virtual ~DebugHandler();
 
 signals:
-   void sendDebugMessageToUI(QString);
+   void sendDebugMessageToPresenter(QString);
 
 private slots:
    void receivedConnectionService(QString);
-   void receivedDataParser(QString);
+   void receivedDebugDataParser(QString);
+   void receivedParsedDataParser(int, int);
 
 private:
    void writeToDebugLogFile(QString);
+   QString convertIDtoString(int);
 
    I_ConnectionService& connectionService_;
    I_DataParser& dataParser_;
