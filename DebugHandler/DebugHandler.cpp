@@ -51,198 +51,134 @@ void DebugHandler::writeToDebugLogFile(QString debugMessage)
 
 QString DebugHandler::convertIDtoString(int id)
 {
-   double doublevalue;
-   if(id<=14){
-       doublevalue=(double)value/1000.0;
-   }
-
    QString convertedID;
 
    switch(id)
    {
-   case DriverSetSpeedRPM:
-      data_.setDriverSetSpeedRPM( doublevalue);
-      printf("value: %lf\n", doublevalue);
+   case DataPopulator::DriverSetSpeedRPM:
       break;
-   case DriverSetCurrent:
-      data_.setDriverSetCurrent( doublevalue);
+   case DataPopulator::DriverSetCurrent:
       break;
-   case VehicleVelocity:
-      data_.setVehicleVelocityKph( doublevalue);
+   case DataPopulator::VehicleVelocity:
       break;
-   case BusCurrentA:
-      data_.setBusCurrentA( doublevalue);
+   case DataPopulator::BusCurrentA:
       break;
-   case BusVoltage:
-      data_.setBusVoltage( doublevalue);
+   case DataPopulator::BusVoltage:
       break;
-   case MotorVelocityRpm:
-      data_.setMotorVelocityRpm( doublevalue);
+   case DataPopulator::MotorVelocityRpm:
       break;
-   case MotorVoltageReal:
-      data_.setMotorVoltageReal( doublevalue);
+   case DataPopulator::MotorVoltageReal:
       break;
-   case MotorCurrentReal:
-      data_.setMotorCurrentReal( doublevalue);
+   case DataPopulator::MotorCurrentReal:
       break;
-   case BackEmfImaginary:
-      data_.setBackEmfImaginary( doublevalue);
+   case DataPopulator::BackEmfImaginary:
       break;
-   case IpmHeatSinkTemp:
-      data_.setIpmHeatSinkTemp( doublevalue);
+   case DataPopulator::IpmHeatSinkTemp:
       break;
-   case DspBoardTemp:
-      data_.setDspBoardTemp( doublevalue);
+   case DataPopulator::DspBoardTemp:
       break;
-   case DcBusAmpHours:
-      data_.setDcBusAmpHours( doublevalue);
+   case DataPopulator::DcBusAmpHours:
       break;
-   case ReceivedErrorCount:
-      data_.setReceivedErrorCount(value);
+   case DataPopulator::ReceivedErrorCount:
       break;
-   case TransmittedErrorCount:
-      data_.setTransmittedErrorCount(value);
+   case DataPopulator::TransmittedErrorCount:
       break;
 
-   case Mod0PcbTemperature:
-      data_.setMod0PcbTemperature(value);
+   case DataPopulator::Mod0PcbTemperature:
       break;
-   case Mod0CellTemperature:
-      data_.setMod0CellTemperature(value);
+   case DataPopulator::Mod0CellTemperature:
       break;
-   case Mod0CellVoltage0:
-      data_.setMod0CellVoltage0(value);
+   case DataPopulator::Mod0CellVoltage0:
       break;
-   case Mod0CellVoltage1:
-      data_.setMod0CellVoltage1(value);
+   case DataPopulator::Mod0CellVoltage1:
       break;
-   case Mod0CellVoltage2:
-      data_.setMod0CellVoltage2(value);
+   case DataPopulator::Mod0CellVoltage2:
       break;
-   case Mod0CellVoltage3:
-      data_.setMod0CellVoltage3(value);
+   case DataPopulator::Mod0CellVoltage3:
       break;
-   case Mod0CellVoltage4:
-      data_.setMod0CellVoltage4(value);
+   case DataPopulator::Mod0CellVoltage4:
       break;
-   case Mod0CellVoltage5:
-      data_.setMod0CellVoltage5(value);
+   case DataPopulator::Mod0CellVoltage5:
       break;
-   case Mod0CellVoltage6:
-      data_.setMod0CellVoltage6(value);
+   case DataPopulator::Mod0CellVoltage6:
       break;
-   case Mod0CellVoltage7:
-      data_.setMod0CellVoltage7(value);
+   case DataPopulator::Mod0CellVoltage7:
       break;
 
-   case Mod1PcbTemperature:
-      data_.setMod1PcbTemperature(value);
+   case DataPopulator::Mod1PcbTemperature:
       break;
-   case Mod1CellTemperature:
-      data_.setMod1CellTemperature(value);
+   case DataPopulator::Mod1CellTemperature:
       break;
-   case Mod1CellVoltage0:
-      data_.setMod1CellVoltage0(value);
+   case DataPopulator::Mod1CellVoltage0:
       break;
-   case Mod1CellVoltage1:
-      data_.setMod1CellVoltage1(value);
+   case DataPopulator::Mod1CellVoltage1:
       break;
-   case Mod1CellVoltage2:
-      data_.setMod1CellVoltage2(value);
+   case DataPopulator::Mod1CellVoltage2:
       break;
-   case Mod1CellVoltage3:
-      data_.setMod1CellVoltage3(value);
+   case DataPopulator::Mod1CellVoltage3:
       break;
-   case Mod1CellVoltage4:
-      data_.setMod1CellVoltage4(value);
+   case DataPopulator::Mod1CellVoltage4:
       break;
-   case Mod1CellVoltage5:
-      data_.setMod1CellVoltage5(value);
+   case DataPopulator::Mod1CellVoltage5:
       break;
-   case Mod1CellVoltage6:
-      data_.setMod1CellVoltage6(value);
+   case DataPopulator::Mod1CellVoltage6:
       break;
-   case Mod1CellVoltage7:
-      data_.setMod1CellVoltage7(value);
+   case DataPopulator::Mod1CellVoltage7:
       break;
 
-   case Mod2PcbTemperature:
-      data_.setMod2PcbTemperature(value);
+   case DataPopulator::Mod2PcbTemperature:
       break;
-   case Mod2CellTemperature:
-      data_.setMod2CellTemperature(value);
+   case DataPopulator::Mod2CellTemperature:
       break;
-   case Mod2CellVoltage0:
-      data_.setMod2CellVoltage0(value);
+   case DataPopulator::Mod2CellVoltage0:
       break;
-   case Mod2CellVoltage1:
-      data_.setMod2CellVoltage1(value);
+   case DataPopulator::Mod2CellVoltage1:
       break;
-   case Mod2CellVoltage2:
-      data_.setMod2CellVoltage2(value);
+   case DataPopulator::Mod2CellVoltage2:
       break;
-   case Mod2CellVoltage3:
-      data_.setMod2CellVoltage3(value);
+   case DataPopulator::Mod2CellVoltage3:
       break;
-   case Mod2CellVoltage4:
-      data_.setMod2CellVoltage4(value);
+   case DataPopulator::Mod2CellVoltage4:
       break;
-   case Mod2CellVoltage5:
-      data_.setMod2CellVoltage5(value);
+   case DataPopulator::Mod2CellVoltage5:
       break;
-   case Mod2CellVoltage6:
-      data_.setMod2CellVoltage6(value);
+   case DataPopulator::Mod2CellVoltage6:
       break;
-   case Mod2CellVoltage7:
-      data_.setMod2CellVoltage7(value);
+   case DataPopulator::Mod2CellVoltage7:
       break;
 
-   case Mod3PcbTemperature:
-      data_.setMod3PcbTemperature(value);
+   case DataPopulator::Mod3PcbTemperature:
       break;
-   case Mod3CellTemperature:
-      data_.setMod3CellTemperature(value);
+   case DataPopulator::Mod3CellTemperature:
       break;
-   case Mod3CellVoltage0:
-      data_.setMod3CellVoltage0(value);
+   case DataPopulator::Mod3CellVoltage0:
       break;
-   case Mod3CellVoltage1:
-      data_.setMod3CellVoltage1(value);
+   case DataPopulator::Mod3CellVoltage1:
       break;
-   case Mod3CellVoltage2:
-      data_.setMod3CellVoltage2(value);
+   case DataPopulator::Mod3CellVoltage2:
       break;
-   case Mod3CellVoltage3:
-      data_.setMod3CellVoltage3(value);
+   case DataPopulator::Mod3CellVoltage3:
       break;
-   case Mod3CellVoltage4:
-      data_.setMod3CellVoltage4(value);
+   case DataPopulator::Mod3CellVoltage4:
       break;
-   case Mod3CellVoltage5:
-      data_.setMod3CellVoltage5(value);
+   case DataPopulator::Mod3CellVoltage5:
       break;
-   case Mod3CellVoltage6:
-      data_.setMod3CellVoltage6(value);
+   case DataPopulator::Mod3CellVoltage6:
       break;
-   case Mod3CellVoltage7:
-      data_.setMod3CellVoltage7(value);
+   case DataPopulator::Mod3CellVoltage7:
       break;
 
-   case BatteryVoltage:
-      data_.setBatteryVoltage(value);
+   case DataPopulator::BatteryVoltage:
       break;
-   case BatteryCurrent:
-      data_.setBatteryCurrent(value);
+   case DataPopulator::BatteryCurrent:
       break;
-   case BatteryVoltageThresholdRising:
-      data_.setBatteryVoltageThresholdRising(value);
+   case DataPopulator::BatteryVoltageThresholdRising:
       break;
-   case BatteryVoltageThresholdFalling:
-      data_.setBatteryVoltageThresholdFalling(value);
+   case DataPopulator::BatteryVoltageThresholdFalling:
       break;
 
 
    }
 
-
+return convertedID;
 }
