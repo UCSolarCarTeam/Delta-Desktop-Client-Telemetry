@@ -22,7 +22,6 @@ DebugHandler::~DebugHandler()
 void DebugHandler::receivedConnectionService(QString debugMessage)
 {
    emit sendDebugMessageToUI(debugMessage);
-
 }
 
 void DebugHandler::receivedDataParser(QString debugMessage)

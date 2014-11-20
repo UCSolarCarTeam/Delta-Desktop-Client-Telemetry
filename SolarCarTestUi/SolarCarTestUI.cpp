@@ -309,9 +309,9 @@ QLCDNumber& SolarCarTestUI::setMod3CellVoltage7()
 //   return *ui->NONEXISTENTLABEL;
 //}
 
-QLabel& SolarCarTestUI::setMainStatus()
+QLabel& SolarCarTestUI::setConnectionStatus()
 {
-   return *ui->mainStatus;
+   return *ui->connectionStatus;
 }
 QTextEdit& SolarCarTestUI::setDebugLog()
 {
