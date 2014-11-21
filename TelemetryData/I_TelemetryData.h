@@ -23,8 +23,9 @@ public:
    virtual double ipmHeatSinkTemp() const = 0;
    virtual double dspBoardTemp() const = 0;
    virtual double dcBusAmpHours() const = 0;
-   virtual double receivedErrorCount() const = 0;
-   virtual double transmittedErrorCount() const = 0;
+   
+   virtual int receivedErrorCount() const = 0;
+   virtual int transmittedErrorCount() const = 0;
 
    virtual int mod0PcbTemperature() const = 0;
    virtual int mod0CellTemperature() const = 0;
@@ -89,8 +90,9 @@ public:
    virtual void setIpmHeatSinkTemp(double ipmHeatSinkTemp) = 0;
    virtual void setDspBoardTemp(double dspBoardTemp) = 0;
    virtual void setDcBusAmpHours(double dcBusAmpHours) = 0;
-   virtual void setReceivedErrorCount(double ReceivedErrorCount) = 0;
-   virtual void setTransmittedErrorCount(double transmittedErrorCount) = 0;
+   
+   virtual void setReceivedErrorCount(int receivedErrorCount) = 0;
+   virtual void setTransmittedErrorCount(int transmittedErrorCount) = 0;
 
    virtual void setMod0PcbTemperature(int mod0PcbTemperature) = 0;
    virtual void setMod0CellTemperature(int mod0CellTemperature) = 0;

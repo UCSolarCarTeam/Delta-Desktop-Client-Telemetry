@@ -22,8 +22,9 @@ public:
   double ipmHeatSinkTemp() const;
   double dspBoardTemp() const;
   double dcBusAmpHours() const;
-  double receivedErrorCount() const;
-  double transmittedErrorCount() const;
+
+  int receivedErrorCount() const;
+  int transmittedErrorCount() const;
 
   int mod0PcbTemperature() const;
   int mod0CellTemperature() const;
@@ -88,8 +89,9 @@ public:
    void setIpmHeatSinkTemp(double ipmHeatSinkTemp);
    void setDspBoardTemp(double dspBoardTemp);
    void setDcBusAmpHours(double dcBusAmpHours);
-   void setReceivedErrorCount(double ReceivedErrorCount);
-   void setTransmittedErrorCount(double transmittedErrorCount);
+
+   void setReceivedErrorCount(int receivedErrorCount);
+   void setTransmittedErrorCount(int transmittedErrorCount);
 
    void setMod0PcbTemperature(int mod0PcbTemperature);
    void setMod0CellTemperature(int mod0CellTemperature);
@@ -154,8 +156,9 @@ private:
    double ipmHeatSinkTemp_;
    double dspBoardTemp_;
    double dcBusAmpHours_;
-   double receivedErrorCount_;
-   double transmittedErrorCount_;
+   
+   int receivedErrorCount_;
+   int transmittedErrorCount_;
 
    int mod0PcbTemperature_;
    int mod0CellTemperature_;

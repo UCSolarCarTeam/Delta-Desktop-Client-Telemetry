@@ -83,7 +83,7 @@ DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& da
 void DataPopulator::handleDataReceived(int id, int value)
 {
    double doubleValue;
-   if(id<=14){
+   if(id<=12){
        doubleValue= static_cast<double>(value) / 1000.0;
    }
 

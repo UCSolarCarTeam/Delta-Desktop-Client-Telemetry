@@ -7,6 +7,10 @@ QTEST_MAIN(TestDataPopulator)
 Q_DECLARE_METATYPE(GetterFunctionInt)
 Q_DECLARE_METATYPE(GetterFunctionDouble)
 
+#define FUZZY_COMPARE(actual, expected, epsilon) \
+{\
+    QVERIFY(qAbs(actual - expected) <= epsilon);\
+}
 
 TestDataPopulator::TestDataPopulator()
 {
@@ -39,6 +43,8 @@ void TestDataPopulator::functionTestsInt_data()
     QTest::addColumn<int>("id");
     QTest::addColumn<GetterFunctionInt>("function");
 
+    QTest::newRow("receivedErrorCount") << 13 << &TelemetryData::receivedErrorCount;
+    QTest::newRow("transmittedErrorCount") << 14 << &TelemetryData::transmittedErrorCount;
     QTest::newRow("mod0PCBTemperature") << 15 << &TelemetryData::mod0PcbTemperature;
     QTest::newRow("mod0CellTemperature") << 16 << &TelemetryData::mod0CellTemperature;
     QTest::newRow("mod0CellVoltage0") << 17 << &TelemetryData::mod0CellVoltage0;
@@ -86,12 +92,12 @@ void TestDataPopulator::functionTestsInt_data()
 }
 void TestDataPopulator::functionTestsDouble()
 {
-    double value = ((double)qrand()/(double)RAND_MAX);
+    double value = ((double)qrand() / (double)RAND_MAX);
     QFETCH(int,id);
-    dataParser_->emitDataReceiver(id,value*1000);
+    dataParser_->emitDataReceiver(id, value * 1000);
 
-    QFETCH(GetterFunctionDouble,function);
-    qFuzzyCompare((telemetry_.data()->*function)(), value);
+    QFETCH(GetterFunctionDouble, function);
+    FUZZY_COMPARE((telemetry_.data()->*function)(), value, 0.001);
 }
 void TestDataPopulator::functionTestsDouble_data()
 {
@@ -110,7 +116,5 @@ void TestDataPopulator::functionTestsDouble_data()
     QTest::newRow("ipmHeatSinkTemp") << 10 << &TelemetryData::ipmHeatSinkTemp;
     QTest::newRow("dspBoardTemp") << 11 << &TelemetryData::dspBoardTemp;
     QTest::newRow("dcBusAmpHours") << 12 << &TelemetryData::dcBusAmpHours;
-    QTest::newRow("receivedErrorCount") << 13 << &TelemetryData::receivedErrorCount;
-    QTest::newRow("transmittedErrorCount") << 14 << &TelemetryData::transmittedErrorCount;
 }
 

@@ -19,7 +19,6 @@ SOURCES += \
 HEADERS += \
     TestDataPopulator.h \
     ../DataPopulator.h \
-    ../I_DataPopulator.h \
     ../../DataParser/FakeDataParser.h \
     ../../TelemetryData/TelemetryData.h \
     ../../TelemetryData/I_TelemetryData.h \

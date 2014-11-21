@@ -59,11 +59,11 @@ double TelemetryData::dcBusAmpHours() const
 {
    return dcBusAmpHours_;
 }
-double TelemetryData::receivedErrorCount() const
+int TelemetryData::receivedErrorCount() const
 {
    return receivedErrorCount_;
 }
-double TelemetryData::transmittedErrorCount() const
+int TelemetryData::transmittedErrorCount() const
 {
    return transmittedErrorCount_;
 }
@@ -312,12 +312,12 @@ void TelemetryData::setDcBusAmpHours(double dcBusAmpHours)
    dcBusAmpHours_ = dcBusAmpHours;
    emit dcBusAmpHoursReceived(dcBusAmpHours_);
 }
-void TelemetryData::setReceivedErrorCount(double receivedErrorCount)
+void TelemetryData::setReceivedErrorCount(int receivedErrorCount)
 {
    receivedErrorCount_ = receivedErrorCount;
    emit receivedErrorCountReceived(receivedErrorCount_);
 }
-void TelemetryData::setTransmittedErrorCount(double transmittedErrorCount)
+void TelemetryData::setTransmittedErrorCount(int transmittedErrorCount)
 {
    transmittedErrorCount_ = transmittedErrorCount;
    emit transmittedErrorCountReceived(transmittedErrorCount_);
