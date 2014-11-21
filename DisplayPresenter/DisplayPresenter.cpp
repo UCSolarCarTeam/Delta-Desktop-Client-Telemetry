@@ -160,5 +160,4 @@ void DisplayPresenter::relayTelemetryData()
            this, SIGNAL(connectionFailed(QString)));
    connect(&connectionService_, SIGNAL(connectionSucceeded(QString)),
            this, SIGNAL(connectionSucceeded(QString)));
-
 }

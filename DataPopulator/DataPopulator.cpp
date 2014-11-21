@@ -1,7 +1,7 @@
 #include "DataPopulator.h"
 #include "../TelemetryData/I_TelemetryData.h"
 #include "../DataParser/I_DataParser.h"
-#include <stdio.h>
+
 namespace
 {
   enum Ids
@@ -82,49 +82,48 @@ DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& da
 //id will start with 1 instead of 0.
 void DataPopulator::handleDataReceived(int id, int value)
 {
-    double doublevalue;
+   double doubleValue;
    if(id<=14){
-       doublevalue=(double)value/1000.0;
+       doubleValue= static_cast<double>(value) / 1000.0;
    }
 
    switch(id)
    {
    case DriverSetSpeedRPM:
-      data_.setDriverSetSpeedRPM( doublevalue);
-      printf("value: %lf\n", doublevalue);
+      data_.setDriverSetSpeedRPM(doubleValue);
       break;
    case DriverSetCurrent:
-      data_.setDriverSetCurrent( doublevalue);
+      data_.setDriverSetCurrent(doubleValue);
       break;
    case VehicleVelocity:
-      data_.setVehicleVelocityKph( doublevalue);
+      data_.setVehicleVelocityKph(doubleValue);
       break;
    case BusCurrentA:
-      data_.setBusCurrentA( doublevalue);
+      data_.setBusCurrentA(doubleValue);
       break;
    case BusVoltage:
-      data_.setBusVoltage( doublevalue);
+      data_.setBusVoltage(doubleValue);
       break;
    case MotorVelocityRpm:
-      data_.setMotorVelocityRpm( doublevalue);
+      data_.setMotorVelocityRpm(doubleValue);
       break;
    case MotorVoltageReal:
-      data_.setMotorVoltageReal( doublevalue);
+      data_.setMotorVoltageReal(doubleValue);
       break;
    case MotorCurrentReal:
-      data_.setMotorCurrentReal( doublevalue);
+      data_.setMotorCurrentReal(doubleValue);
       break;
    case BackEmfImaginary:
-      data_.setBackEmfImaginary( doublevalue);
+      data_.setBackEmfImaginary(doubleValue);
       break;
    case IpmHeatSinkTemp:
-      data_.setIpmHeatSinkTemp( doublevalue);
+      data_.setIpmHeatSinkTemp(doubleValue);
       break;
    case DspBoardTemp:
-      data_.setDspBoardTemp( doublevalue);
+      data_.setDspBoardTemp(doubleValue);
       break;
    case DcBusAmpHours:
-      data_.setDcBusAmpHours( doublevalue);
+      data_.setDcBusAmpHours(doubleValue);
       break;
    case ReceivedErrorCount:
       data_.setReceivedErrorCount(value);
@@ -269,8 +268,5 @@ void DataPopulator::handleDataReceived(int id, int value)
    case BatteryVoltageThresholdFalling:
       data_.setBatteryVoltageThresholdFalling(value);
       break;
-
-
    }
-
 }
