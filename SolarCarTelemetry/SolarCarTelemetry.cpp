@@ -16,9 +16,9 @@ namespace
 }
 SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 : QApplication(argc, argv)
-, connectionService_(new SerialPortConnectionService(defaultPortName, defaultBaudrate))
-, data_(new TelemetryData())
 , port_(new QSerialPort)
+, connectionService_(new SerialPortConnectionService(defaultPortName, defaultBaudrate, *port_))
+, data_(new TelemetryData())
 , dataParser_(new DataParser(*port_, *connectionService_))
 , dataPopulator_(new DataPopulator(*dataParser_, *data_))
 , displayPresenter_(new DisplayPresenter(*data_, *connectionService_))

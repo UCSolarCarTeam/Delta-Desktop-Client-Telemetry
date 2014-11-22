@@ -11,7 +11,7 @@ class SerialPortConnectionService : public I_ConnectionService
 {
    Q_OBJECT
 public:
-   SerialPortConnectionService(QString portName, int baudrate);
+   SerialPortConnectionService(QString portName, int baudrate, QSerialPort& serialPort_);
    ~SerialPortConnectionService();
 
 public slots:
@@ -32,7 +32,7 @@ private:
    QString failed();
    QTimer responseTimer_;
    QTimer readingTimer_;
-   QSerialPort serialPort_;
+   QSerialPort &serialPort_;
 
 
 };

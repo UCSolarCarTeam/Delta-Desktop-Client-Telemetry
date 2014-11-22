@@ -19,9 +19,9 @@ public:
    ~SolarCarTelemetry();
 
 private:
+   QScopedPointer<QSerialPort> port_;
    QScopedPointer<I_ConnectionService> connectionService_;
    QScopedPointer<TelemetryData> data_;
-   QScopedPointer<QSerialPort> port_;
    QScopedPointer<DataParser> dataParser_;
    QScopedPointer<DataPopulator> dataPopulator_;
    QScopedPointer<DisplayPresenter> displayPresenter_;
