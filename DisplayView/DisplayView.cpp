@@ -122,7 +122,8 @@ void DisplayView::busVoltageReceived(double busVoltage)
 {   ui_.setBusVoltage().display(busVoltage);    }
 
 void DisplayView::mod0PcbTemperatureReceived(int mod0PcbTemperature)
-{   ui_.setMod0PcbTemperature().display(mod0PcbTemperature);  }
+{   ui_.setMod0PcbTemperature().display(mod0PcbTemperature);
+    ui_.setMod0PcbTemperature_2().display(mod0PcbTemperature);}
 void DisplayView::mod0CellVoltage0Received(int mod0CellVoltage0)
 {   ui_.setMod0CellVoltage0().display(mod0CellVoltage0);  }
 void DisplayView::mod0CellVoltage1Received(int mod0CellVoltage1)
@@ -141,7 +142,8 @@ void DisplayView::mod0CellVoltage7Received(int mod0CellVoltage7)
 {   ui_.setMod0CellVoltage7().display(mod0CellVoltage7);  }
 
 void DisplayView::mod1PcbTemperatureReceived(int mod1PcbTemperature)
-{   ui_.setMod1PcbTemperature().display(mod1PcbTemperature);  }
+{   ui_.setMod1PcbTemperature().display(mod1PcbTemperature);
+    ui_.setMod1PcbTemperature_2().display(mod1PcbTemperature);}
 void DisplayView::mod1CellVoltage0Received(int mod1CellVoltage0)
 {   ui_.setMod1CellVoltage0().display(mod1CellVoltage0);  }
 void DisplayView::mod1CellVoltage1Received(int mod1CellVoltage1)
@@ -160,7 +162,8 @@ void DisplayView::mod1CellVoltage7Received(int mod1CellVoltage7)
 {   ui_.setMod1CellVoltage7().display(mod1CellVoltage7);  }
 
 void DisplayView::mod2PcbTemperatureReceived(int mod2PcbTemperature)
-{   ui_.setMod2PcbTemperature().display(mod2PcbTemperature);  }
+{   ui_.setMod2PcbTemperature().display(mod2PcbTemperature);
+    ui_.setMod2PcbTemperature_2().display(mod2PcbTemperature);}
 void DisplayView::mod2CellVoltage0Received(int mod2CellVoltage0)
 {   ui_.setMod2CellVoltage0().display(mod2CellVoltage0);  }
 void DisplayView::mod2CellVoltage1Received(int mod2CellVoltage1)
@@ -179,7 +182,8 @@ void DisplayView::mod2CellVoltage7Received(int mod2CellVoltage7)
 {   ui_.setMod2CellVoltage7().display(mod2CellVoltage7);  }
 
 void DisplayView::mod3PcbTemperatureReceived(int mod3PcbTemperature)
-{   ui_.setMod3PcbTemperature().display(mod3PcbTemperature);  }
+{   ui_.setMod3PcbTemperature().display(mod3PcbTemperature);
+    ui_.setMod3PcbTemperature_2().display(mod3PcbTemperature);}
 void DisplayView::mod3CellVoltage0Received(int mod3CellVoltage0)
 {   ui_.setMod3CellVoltage0().display(mod3CellVoltage0);  }
 void DisplayView::mod3CellVoltage1Received(int mod3CellVoltage1)

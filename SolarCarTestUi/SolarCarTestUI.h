@@ -32,6 +32,7 @@ public:
 //     QLCDNumber& setTransmittedErrorCount();
 
    QLCDNumber& setMod0PcbTemperature();
+   QLCDNumber& setMod0PcbTemperature_2();
    //QLCDNumber& setMod0CellTemperature();
    QLCDNumber& setMod0CellVoltage0();
    QLCDNumber& setMod0CellVoltage1();
@@ -43,6 +44,7 @@ public:
    QLCDNumber& setMod0CellVoltage7();
 
    QLCDNumber& setMod1PcbTemperature();
+   QLCDNumber& setMod1PcbTemperature_2();
    //QLCDNumber& setMod1CellTemperature();
    QLCDNumber& setMod1CellVoltage0();
    QLCDNumber& setMod1CellVoltage1();
@@ -54,6 +56,7 @@ public:
    QLCDNumber& setMod1CellVoltage7();
 
    QLCDNumber& setMod2PcbTemperature();
+   QLCDNumber& setMod2PcbTemperature_2();
    //QLCDNumber& setMod2CellTemperature();
    QLCDNumber& setMod2CellVoltage0();
    QLCDNumber& setMod2CellVoltage1();
@@ -65,6 +68,7 @@ public:
    QLCDNumber& setMod2CellVoltage7();
 
    QLCDNumber& setMod3PcbTemperature();
+   QLCDNumber& setMod3PcbTemperature_2();
    //QLCDNumber& setMod3CellTemperature();
    QLCDNumber& setMod3CellVoltage0();
    QLCDNumber& setMod3CellVoltage1();

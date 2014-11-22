@@ -90,6 +90,11 @@ QLCDNumber& SolarCarTestUI::setMod0PcbTemperature()
     return *ui->mod0PcbTemperatureValue; \
 }
 
+QLCDNumber& SolarCarTestUI::setMod0PcbTemperature_2()
+{
+   return *ui->mod0PcbTemperatureValue_2;
+}
+
 //QLCDNumber& SolarCarTestUI::setMod0CellTemperature()
 //{
 //   return *ui->NONEXISTENTLABEL;
@@ -139,6 +144,11 @@ QLCDNumber& SolarCarTestUI::setMod0CellVoltage7()
 QLCDNumber& SolarCarTestUI::setMod1PcbTemperature()
 {
    return *ui->mod1PcbTemperatureValue;
+}
+
+QLCDNumber& SolarCarTestUI::setMod1PcbTemperature_2()
+{
+   return *ui->mod1PcbTemperatureValue_2;
 }
 
 //QLCDNumber& SolarCarTestUI::setMod1CellTemperature()
@@ -192,6 +202,11 @@ QLCDNumber& SolarCarTestUI::setMod2PcbTemperature()
    return *ui->mod2PcbTemperatureValue;
 }
 
+QLCDNumber& SolarCarTestUI::setMod2PcbTemperature_2()
+{
+   return *ui->mod2PcbTemperatureValue_2;
+}
+
 //QLCDNumber& SolarCarTestUI::setMod2CellTemperature()
 //{
 //   return *ui->NONEXISTENTLABEL;
@@ -241,6 +256,11 @@ QLCDNumber& SolarCarTestUI::setMod2CellVoltage7()
 QLCDNumber& SolarCarTestUI::setMod3PcbTemperature()
 {
    return *ui->mod3PcbTemperatureValue;
+}
+
+QLCDNumber& SolarCarTestUI::setMod3PcbTemperature_2()
+{
+   return *ui->mod3PcbTemperatureValue_2;
 }
 
 //QLCDNumber& SolarCarTestUI::setMod3CellTemperature()

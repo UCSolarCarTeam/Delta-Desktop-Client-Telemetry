@@ -23,7 +23,7 @@ void DataParser::connectionOK(QString)
 
 void DataParser::handleInformationIncoming()
 {
-  ioDevice_.seek(0);
+  ioDevice_.seek(0); //For qbuffer in testing, not required for serialport
   while(ioDevice_.canReadLine())
   {
     QByteArray data = ioDevice_.readLine();

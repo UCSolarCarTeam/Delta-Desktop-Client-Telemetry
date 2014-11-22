@@ -619,7 +619,7 @@ color: black;</string>
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QLCDNumber" name="mod4PcbTemperatureValue">
+             <widget class="QLCDNumber" name="mod3PcbTemperatureValue">
               <property name="font">
                <font>
                 <family>Courier</family>
@@ -649,7 +649,7 @@ color: black;</string>
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QLCDNumber" name="mod3PcbTemperatureValue">
+             <widget class="QLCDNumber" name="mod2PcbTemperatureValue">
               <property name="font">
                <font>
                 <family>Courier</family>
@@ -852,7 +852,7 @@ color: black;</string>
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QLCDNumber" name="mod2PcbTemperatureValue">
+           <widget class="QLCDNumber" name="mod2PcbTemperatureValue_2">
             <property name="font">
              <font>
               <family>Courier</family>
