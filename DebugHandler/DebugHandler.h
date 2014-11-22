@@ -5,6 +5,7 @@
 #include <Qfile>
 #include <qdebug.h>
 #include <QTextStream>
+#include <QDate>
 
 class I_ConnectionService;
 class I_DataParser;

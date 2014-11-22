@@ -11,9 +11,11 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
 , dataParser_(dataParser)
 , logFile_(filename)
 {
+   QString DebugFilePath("../gen-4.5-telemetry-c/DebugHandler/");
+
+
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedConnectionService(QString)));
-
    //RAW String
    connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedDebugDataParser(QString)));
@@ -21,6 +23,9 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
    connect(&dataParser, SIGNAL(dataReceived(int,int)),
            this, SLOT (receivedParsedDataParser(int, int)));
 
+
+    //filename.prepend(DebugFilePath + DebugTimeStamp);
+    logFile_.setFileName(filename);
     if(logFile_.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         qDebug() << "Opened File";
@@ -44,7 +49,6 @@ void DebugHandler::receivedConnectionService(QString debugMessage)
 //gets the original RAW string that dataparse receieves (this will just be sent to the debugLogFile)
 void DebugHandler::receivedDebugDataParser(QString debugMessage)
 {
-    qDebug() << "RawString";
     QString messageToFile("RAW-STRING:    "); //Optional String prepending Message
     messageToFile.append(debugMessage);
 
@@ -55,7 +59,6 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 //and sends it to the debugLogFile
 void DebugHandler::receivedParsedDataParser(int id, int value)
 {
-    qDebug() << "ParsedString";
     QString messageToFile("PARSED-STRING: "); //Optional String prepending Message.
 
     messageToFile.append(convertIDtoString(id));
