@@ -39,6 +39,7 @@ void DataParser::handleInformationIncoming()
       int id = string.mid(1,2).toInt();
       int value = string.mid(3).toInt();
       emit dataReceived(id, value);
+      emit sendDebugMessage(data);
     }
   }
 }
