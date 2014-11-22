@@ -11,26 +11,32 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
 , dataParser_(dataParser)
 , logFile_(filename)
 {
-   QString DebugFilePath("../gen-4.5-telemetry-c/DebugHandler/");
+    /********************Connections********************/
+    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
+            this, SLOT (receivedConnectionService(QString)));
+    //RAW String
+    connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
+            this, SLOT (receivedDebugDataParser(QString)));
+    //PARSED values
+    connect(&dataParser, SIGNAL(dataReceived(int,int)),
+            this, SLOT (receivedParsedDataParser(int, int)));
 
+    /********************File Initializing********************/
+    QDateTime date = QDateTime::currentDateTime();
+    QString DebugFilePath("../gen-4.5-telemetry-c/DebugHandler/");
 
-   connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
-           this, SLOT (receivedConnectionService(QString)));
-   //RAW String
-   connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
-           this, SLOT (receivedDebugDataParser(QString)));
-   //PARSED values
-   connect(&dataParser, SIGNAL(dataReceived(int,int)),
-           this, SLOT (receivedParsedDataParser(int, int)));
+    filename.prepend(date.toString("yyyy.MM.dd_hh.mm.ss")); //following Canadian Standard 'ISO 8601'
+    filename.prepend(DebugFilePath);
 
-
-    //filename.prepend(DebugFilePath + DebugTimeStamp);
     logFile_.setFileName(filename);
     if(logFile_.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qDebug() << "Opened File";
         QTextStream writer(&logFile_);
-        writer << "*****************SOLARCAR  DEBUG  LOG*********************" << endl;
+        writer << "|======================";
+        writer << date.toString("ddd MMM d yyyy");
+        writer << "======================|" << endl;
+        writer <<  "                     SOLARCAR  DEBUG  LOG" << endl;
+        writer << "|===========================================================|" << endl;
     }
 
 }
@@ -49,7 +55,7 @@ void DebugHandler::receivedConnectionService(QString debugMessage)
 //gets the original RAW string that dataparse receieves (this will just be sent to the debugLogFile)
 void DebugHandler::receivedDebugDataParser(QString debugMessage)
 {
-    QString messageToFile("RAW-STRING:    "); //Optional String prepending Message
+    QString messageToFile("             | RAW-STRING   : "); //Optional String prepending Message
     messageToFile.append(debugMessage);
 
     printlnToDebugLogFile(messageToFile);
@@ -59,7 +65,11 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 //and sends it to the debugLogFile
 void DebugHandler::receivedParsedDataParser(int id, int value)
 {
-    QString messageToFile("PARSED-STRING: "); //Optional String prepending Message.
+    QDateTime date = QDateTime::currentDateTime();
+
+    QString messageToFile(" | PARSED-STRING: "); //Optional String prepending Message.
+
+    messageToFile.prepend(date.toString("hh:mm:ss:zzz"));
 
     messageToFile.append(convertIDtoString(id));
     messageToFile.append(QString::number(value)); //May need to change this if we don't want raw 'value' going in.
@@ -71,7 +81,9 @@ void DebugHandler::receivedParsedDataParser(int id, int value)
 /** private **/
 void DebugHandler::printlnToDebugLogFile(QString debugMessage)
 {
+
         QTextStream writer(&logFile_);
+
         writer << debugMessage << endl;
 
 }
