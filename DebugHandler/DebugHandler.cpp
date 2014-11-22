@@ -14,13 +14,13 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedConnectionService(QString)));
 
+   //RAW String
    connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedDebugDataParser(QString)));
-
+   //PARSED values
    connect(&dataParser, SIGNAL(dataReceived(int,int)),
            this, SLOT (receivedParsedDataParser(int, int)));
 
-    //file.setFileName();
     if(logFile_.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         qDebug() << "Opened File";
