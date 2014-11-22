@@ -23,7 +23,7 @@ private slots:
    void receivedParsedDataParser(int, int);
 
 private:
-   void writeToDebugLogFile(QString);
+   void printlnToDebugLogFile(QString);
    QString convertIDtoString(int);
 
    I_ConnectionService& connectionService_;
