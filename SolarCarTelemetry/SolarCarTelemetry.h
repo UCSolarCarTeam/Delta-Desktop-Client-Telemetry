@@ -10,6 +10,7 @@ class I_ConnectionService;
 class QSerialPort;
 class SolarCarTestUI;
 class TelemetryData;
+class DebugHandler;
 
 class SolarCarTelemetry : public QApplication
 {
@@ -24,6 +25,7 @@ private:
    QScopedPointer<TelemetryData> data_;
    QScopedPointer<DataParser> dataParser_;
    QScopedPointer<DataPopulator> dataPopulator_;
+   QScopedPointer<DebugHandler> debugHandler_;
    QScopedPointer<DisplayPresenter> displayPresenter_;
    QScopedPointer<SolarCarTestUI> mainWindow_;
    QScopedPointer<DisplayView> displayView_;

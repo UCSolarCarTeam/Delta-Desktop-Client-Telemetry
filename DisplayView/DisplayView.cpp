@@ -208,7 +208,7 @@ DisplayView::~DisplayView()
 void DisplayView::handleConnectButtonClicked()
 {
    clearDebugLog();
-   ui_.setMainStatus().setText("Connecting...");
+   ui_.setConnectionStatus().setText("Connecting...");
    presenter_.connectDataSource(ui_.getSerialPortName().text(),
                                 ui_.getBaudRate().text().toInt());
 }
@@ -219,12 +219,12 @@ void DisplayView::handleDisconnectButtonClicked()
 
 void DisplayView::connectionFailed(QString failureMessage)
 {
-   ui_.setMainStatus().setText(failureMessage);
+   ui_.setConnectionStatus().setText(failureMessage);
 }
 
 void DisplayView::connectionSucceeded(QString successMessage)
 {
-   ui_.setMainStatus().setText(successMessage);
+   ui_.setConnectionStatus().setText(successMessage);
 }
 
 void DisplayView::clearDebugLog()

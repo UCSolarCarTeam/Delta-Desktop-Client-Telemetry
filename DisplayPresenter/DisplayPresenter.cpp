@@ -1,10 +1,15 @@
 #include "DisplayPresenter.h"
 #include "../TelemetryData/I_TelemetryData.h"
 #include "../ConnectionService/I_ConnectionService.h"
+#include "../DebugHandler/DebugHandler.h"
 
 
-DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData, I_ConnectionService& connectionService)
-: telemetryData_(telemetryData), connectionService_(connectionService)
+DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData,
+                                   I_ConnectionService& connectionService,
+                                   DebugHandler& debugHandler)
+: telemetryData_(telemetryData)
+, connectionService_(connectionService)
+, debugHandler_(debugHandler)
 {
     relayDebugMessage();
     relayConnectionStatus();
@@ -22,7 +27,7 @@ void DisplayPresenter::disconnectDataSource()
 
 void DisplayPresenter::relayDebugMessage()
 {
-   connect(&connectionService_, SIGNAL(sendDebugMessage(QString)), this, SIGNAL(sendDebugMessage(QString)));
+   connect(&debugHandler_, SIGNAL(sendDebugMessageToPresenter(QString)), this, SIGNAL(sendDebugMessage(QString)));
 }
 
 void DisplayPresenter::relayConnectionStatus()
