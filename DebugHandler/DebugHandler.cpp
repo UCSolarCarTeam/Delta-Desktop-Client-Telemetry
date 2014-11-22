@@ -3,13 +3,13 @@
 #include "../DataParser/I_DataParser.h"
 #include "../DataPopulator/DataPopulator.h"
 
-#include <Qfile>
-#include <QTextStream>
 
 
-DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser& dataParser)
+
+DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser& dataParser, QString filename)
 : connectionService_(connectionService)
 , dataParser_(dataParser)
+, logFile_(filename)
 {
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedConnectionService(QString)));
@@ -18,12 +18,21 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
            this, SLOT (receivedDebugDataParser(QString)));
 
    connect(&dataParser, SIGNAL(dataReceived(int,int)),
-           this, SLOT (receivedDataParser(int, int)));
+           this, SLOT (receivedParsedDataParser(int, int)));
+
+    //file.setFileName();
+    if(logFile_.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "Opened File";
+        QTextStream writer(&logFile_);
+        writer << "*****************SOLARCAR  DEBUG  LOG*********************" << endl;
+    }
+
 }
 
 DebugHandler::~DebugHandler()
 {
-
+    logFile_.close();
 }
 
 /** public functions **/
@@ -35,6 +44,7 @@ void DebugHandler::receivedConnectionService(QString debugMessage)
 //gets the original RAW string that dataparse receieves (this will just be sent to the debugLogFile)
 void DebugHandler::receivedDebugDataParser(QString debugMessage)
 {
+    qDebug() << "RawString";
     QString messageToFile("RAW-STRING:    "); //Optional String prepending Message
     messageToFile.append(debugMessage);
 
@@ -45,10 +55,11 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 //and sends it to the debugLogFile
 void DebugHandler::receivedParsedDataParser(int id, int value)
 {
+    qDebug() << "ParsedString";
     QString messageToFile("PARSED-STRING: "); //Optional String prepending Message.
 
     messageToFile.append(convertIDtoString(id));
-    messageToFile.append(value); //May need to change this if we don't want raw 'value' going in.
+    messageToFile.append(QString::number(value)); //May need to change this if we don't want raw 'value' going in.
 
     printlnToDebugLogFile(messageToFile);
 }
@@ -57,14 +68,9 @@ void DebugHandler::receivedParsedDataParser(int id, int value)
 /** private **/
 void DebugHandler::printlnToDebugLogFile(QString debugMessage)
 {
-    QString filename = "SolarCarDebugLog.txt";
-    QFile file(filename);
-    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        QTextStream writer(&file);
+        QTextStream writer(&logFile_);
         writer << debugMessage << endl;
-    }
-    file.close();
+
 }
 
 QString DebugHandler::convertIDtoString(int id)
