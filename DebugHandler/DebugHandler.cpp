@@ -36,7 +36,6 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
 
     }
 
-
     /*Log Text File*/
     logTxtFile_.setFileName(filename + ".txt");
     if(logTxtFile_.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -48,27 +47,11 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
         writer <<  "                     SOLARCAR  DEBUG  LOG" << endl;
         writer << "|===========================================================|" << endl;
     }
-    /*
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(22,22);
-    storeCsv2DArray(24,24);
-    storeCsv2DArray(24,24);
-    storeCsv2DArray(25,25);
-    storeCsv2DArray(25,25);
-    storeCsv2DArray(25,25);
-    int temp = (csv2DArray_[5][0]);
-    printf("csv2DArray_[0].at(0) = %d\n",temp);
-    */
-
 }
 
 DebugHandler::~DebugHandler()
 {
     /*write to file before closing*/
-    printf("Writing to File\n");
     printToDebuglogCsvFile();
     logTxtFile_.close();
     logCsvFile_.close();
@@ -136,17 +119,18 @@ void DebugHandler::printToDebuglogCsvFile(void)
 {
 
     QTextStream writer(&logCsvFile_);
-    QString messageToFile(""); //Optional String prepending Message.
+    QString messageToFile;
+
     int numOfColumns = csv2DArray_.length();
     int longestColumnLength = 0;
 
     messageToFile.clear();
     for(int i = 0; i < numOfColumns; i++)
     {
-       // messageToFile.append(QString::number(i));
        messageToFile.append(convertIDtoString(i));
        messageToFile.append(",");
     }
+
     messageToFile.append("\n");
     writer << messageToFile;
 
@@ -157,7 +141,7 @@ void DebugHandler::printToDebuglogCsvFile(void)
             longestColumnLength = csv2DArray_.at(i).length();
 
     }
-    printf("The Longest Length was: %d\n",longestColumnLength);
+    /*write the values into the csv*/
     for(int currentRow = 0; currentRow < longestColumnLength; currentRow++)
     {
         messageToFile.clear();
@@ -165,13 +149,11 @@ void DebugHandler::printToDebuglogCsvFile(void)
         {
             if(csv2DArray_[index].length() > currentRow) //if true,[index].at(currentRow) exists
             {
-                printf("Value found at: csv2DArray[%d][%d] = %d\n",index, currentRow,csv2DArray_[index][currentRow] );
                 messageToFile.append(QString::number(csv2DArray_[index].at(currentRow)));
             }
             messageToFile.append(",");
         }
         messageToFile.append("\n");
-        printf("writing string: %s\n", messageToFile.toStdString().c_str());
         writer << messageToFile;
     }
 }
@@ -361,7 +343,26 @@ QString DebugHandler::convertIDtoString(int id)
    case DataPopulator::BatteryVoltageThresholdFalling:
         convertedID.append("BatteryVoltageThresholdFalling:");
       break;
+   default:
+       convertedID.append("**NO ID**");
+       break;
    }
 
 return convertedID;
 }
+
+    /*
+     * tester to put into constructor
+    storeCsv2DArray(0,5);
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(22,22);
+    storeCsv2DArray(24,24);
+    storeCsv2DArray(24,24);
+    storeCsv2DArray(25,25);
+    storeCsv2DArray(25,25);
+    storeCsv2DArray(25,25);
+    int temp = (csv2DArray_[5][0]);
+    printf("csv2DArray_[0].at(0) = %d\n",temp);
+    */
