@@ -3,14 +3,11 @@
 #include "../DataParser/I_DataParser.h"
 #include "../DataPopulator/DataPopulator.h"
 
-
-
-
 DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser& dataParser, QString filename)
-: connectionService_(connectionService)
-, dataParser_(dataParser)
-, logTxtFile_(filename)
+: logTxtFile_(filename)
 , logCsvFile_(filename)
+, connectionService_(connectionService)
+, dataParser_(dataParser)
 {
     /********************Connections********************/
     connect(&connectionService, SIGNAL(sendDebugMessage(QString)),

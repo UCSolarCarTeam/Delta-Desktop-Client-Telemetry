@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include <QString>
-#include <Qfile>
+#include <QFile>
 #include <qdebug.h>
 #include <QTextStream>
 #include <QDateTime>
@@ -39,5 +39,4 @@ private:
 
    I_ConnectionService& connectionService_;
    I_DataParser& dataParser_;
-
 };
