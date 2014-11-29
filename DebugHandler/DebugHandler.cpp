@@ -17,14 +17,14 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
             this, SLOT (receivedConnectionService(QString)));
     //RAW String
     connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
-            this, SLOT (receivedDebugDataParser(QString)));
+            this, SLOT (receivedDebugDataParser(QString)));                 //notes, RAW string ends with a \n
     //PARSED values
     connect(&dataParser, SIGNAL(dataReceived(int,int)),
             this, SLOT (receivedParsedDataParser(int, int)));
 
     /********************File Initializing********************/
     QDateTime date = QDateTime::currentDateTime();
-    QString DebugFilePath("../gen-4.5-telemetry-c/DebugHandler/DebugLogs/"); //can only create ONE NEW folder.
+    QString DebugFilePath("DebugLogs/"); //can only create ONE NEW folder.
     if(!QDir(DebugFilePath).exists())
         QDir().mkdir(DebugFilePath);
 
@@ -34,7 +34,7 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
 
     /*Log Csv File*/
     logCsvFile_.setFileName(filename + ".csv");
-    if(logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text))
+    if(logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text))    //optional text can go be initialized here
     {
 
     }
@@ -70,7 +70,6 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 {
     QString messageToFile("             | RAW-STRING   : "); //Optional String prepending Message
     messageToFile.append(debugMessage);
-
     printlnToDebuglogTxtFile(messageToFile);
 }
 
