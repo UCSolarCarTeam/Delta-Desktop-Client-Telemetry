@@ -20,8 +20,8 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
     connect(&presenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
 
-    connect(&presenter_, SIGNAL(mod0PcbTemperatureReceived(int)),
-            this, SLOT(mod0PcbTemperatureReceived(int)));
+    connect(&presenter_, SIGNAL(mod0CellTemperatureReceived(int)),
+            this, SLOT(mod0CellTemperatureReceived(int)));
     connect(&presenter_, SIGNAL(mod0CellVoltage0Received(int)),
             this, SLOT(mod0CellVoltage0Received(int)));
     connect(&presenter_, SIGNAL(mod0CellVoltage1Received(int)),
@@ -39,8 +39,8 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
     connect(&presenter_, SIGNAL(mod0CellVoltage7Received(int)),
             this, SLOT(mod0CellVoltage7Received(int)));
 
-    connect(&presenter_, SIGNAL(mod1PcbTemperatureReceived(int)),
-            this, SLOT(mod1PcbTemperatureReceived(int)));
+    connect(&presenter_, SIGNAL(mod1CellTemperatureReceived(int)),
+            this, SLOT(mod1CellTemperatureReceived(int)));
     connect(&presenter_, SIGNAL(mod1CellVoltage0Received(int)),
             this, SLOT(mod1CellVoltage0Received(int)));
     connect(&presenter_, SIGNAL(mod1CellVoltage1Received(int)),
@@ -58,8 +58,8 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
     connect(&presenter_, SIGNAL(mod1CellVoltage7Received(int)),
             this, SLOT(mod1CellVoltage7Received(int)));
 
-    connect(&presenter_, SIGNAL(mod2PcbTemperatureReceived(int)),
-            this, SLOT(mod2PcbTemperatureReceived(int)));
+    connect(&presenter_, SIGNAL(mod2CellTemperatureReceived(int)),
+            this, SLOT(mod2CellTemperatureReceived(int)));
     connect(&presenter_, SIGNAL(mod2CellVoltage0Received(int)),
             this, SLOT(mod2CellVoltage0Received(int)));
     connect(&presenter_, SIGNAL(mod2CellVoltage1Received(int)),
@@ -77,8 +77,8 @@ DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI
     connect(&presenter_, SIGNAL(mod2CellVoltage7Received(int)),
             this, SLOT(mod2CellVoltage7Received(int)));
 
-    connect(&presenter_, SIGNAL(mod3PcbTemperatureReceived(int)),
-            this, SLOT(mod3PcbTemperatureReceived(int)));
+    connect(&presenter_, SIGNAL(mod3CellTemperatureReceived(int)),
+            this, SLOT(mod3CellTemperatureReceived(int)));
     connect(&presenter_, SIGNAL(mod3CellVoltage0Received(int)),
             this, SLOT(mod3CellVoltage0Received(int)));
     connect(&presenter_, SIGNAL(mod3CellVoltage1Received(int)),
@@ -121,9 +121,9 @@ void DisplayView::busCurrentAReceived(double busCurrentA)
 void DisplayView::busVoltageReceived(double busVoltage)
 {   ui_.setBusVoltage().display(busVoltage);    }
 
-void DisplayView::mod0PcbTemperatureReceived(int mod0PcbTemperature)
-{   ui_.setMod0PcbTemperature().display(mod0PcbTemperature);
-    ui_.setMod0PcbTemperature_2().display(mod0PcbTemperature);}
+void DisplayView::mod0CellTemperatureReceived(int mod0PcbTemperature)
+{   ui_.setMod0CellTemperature().display(mod0PcbTemperature);
+    ui_.setMod0CellTemperature_2().display(mod0PcbTemperature);}
 void DisplayView::mod0CellVoltage0Received(int mod0CellVoltage0)
 {   ui_.setMod0CellVoltage0().display(mod0CellVoltage0);  }
 void DisplayView::mod0CellVoltage1Received(int mod0CellVoltage1)
@@ -141,9 +141,9 @@ void DisplayView::mod0CellVoltage6Received(int mod0CellVoltage6)
 void DisplayView::mod0CellVoltage7Received(int mod0CellVoltage7)
 {   ui_.setMod0CellVoltage7().display(mod0CellVoltage7);  }
 
-void DisplayView::mod1PcbTemperatureReceived(int mod1PcbTemperature)
-{   ui_.setMod1PcbTemperature().display(mod1PcbTemperature);
-    ui_.setMod1PcbTemperature_2().display(mod1PcbTemperature);}
+void DisplayView::mod1CellTemperatureReceived(int mod1PcbTemperature)
+{   ui_.setMod1CellTemperature().display(mod1PcbTemperature);
+    ui_.setMod1CellTemperature_2().display(mod1PcbTemperature);}
 void DisplayView::mod1CellVoltage0Received(int mod1CellVoltage0)
 {   ui_.setMod1CellVoltage0().display(mod1CellVoltage0);  }
 void DisplayView::mod1CellVoltage1Received(int mod1CellVoltage1)
@@ -161,9 +161,9 @@ void DisplayView::mod1CellVoltage6Received(int mod1CellVoltage6)
 void DisplayView::mod1CellVoltage7Received(int mod1CellVoltage7)
 {   ui_.setMod1CellVoltage7().display(mod1CellVoltage7);  }
 
-void DisplayView::mod2PcbTemperatureReceived(int mod2PcbTemperature)
-{   ui_.setMod2PcbTemperature().display(mod2PcbTemperature);
-    ui_.setMod2PcbTemperature_2().display(mod2PcbTemperature);}
+void DisplayView::mod2CellTemperatureReceived(int mod2PcbTemperature)
+{   ui_.setMod2CellTemperature().display(mod2PcbTemperature);
+    ui_.setMod2CellTemperature_2().display(mod2PcbTemperature);}
 void DisplayView::mod2CellVoltage0Received(int mod2CellVoltage0)
 {   ui_.setMod2CellVoltage0().display(mod2CellVoltage0);  }
 void DisplayView::mod2CellVoltage1Received(int mod2CellVoltage1)
@@ -181,9 +181,9 @@ void DisplayView::mod2CellVoltage6Received(int mod2CellVoltage6)
 void DisplayView::mod2CellVoltage7Received(int mod2CellVoltage7)
 {   ui_.setMod2CellVoltage7().display(mod2CellVoltage7);  }
 
-void DisplayView::mod3PcbTemperatureReceived(int mod3PcbTemperature)
-{   ui_.setMod3PcbTemperature().display(mod3PcbTemperature);
-    ui_.setMod3PcbTemperature_2().display(mod3PcbTemperature);}
+void DisplayView::mod3CellTemperatureReceived(int mod3PcbTemperature)
+{   ui_.setMod3CellTemperature().display(mod3PcbTemperature);
+    ui_.setMod3CellTemperature_2().display(mod3PcbTemperature);}
 void DisplayView::mod3CellVoltage0Received(int mod3CellVoltage0)
 {   ui_.setMod3CellVoltage0().display(mod3CellVoltage0);  }
 void DisplayView::mod3CellVoltage1Received(int mod3CellVoltage1)

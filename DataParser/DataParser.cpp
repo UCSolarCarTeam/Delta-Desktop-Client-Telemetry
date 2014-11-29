@@ -43,3 +43,4 @@ void DataParser::handleInformationIncoming()
     }
   }
 }
+
