@@ -19,8 +19,8 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
     connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
             this, SLOT (receivedDebugDataParser(QString)));                 //notes, RAW string ends with a \n
     //PARSED values
-    connect(&dataParser, SIGNAL(dataReceived(int,int)),
-            this, SLOT (receivedParsedDataParser(int, int)));
+    connect(&dataParser, SIGNAL(dataReceived(int,double)),
+            this, SLOT (receivedParsedDataParser(int, double)));
 
     /********************File Initializing********************/
     QDateTime date = QDateTime::currentDateTime();
@@ -75,7 +75,7 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 
 //gets the parsed values that dataparser emits and translates it to a human readable format
 //and sends it to the debuglogTxtFile
-void DebugHandler::receivedParsedDataParser(int id, int value)
+void DebugHandler::receivedParsedDataParser(int id, double value)
 {
     QDateTime date = QDateTime::currentDateTime();
 

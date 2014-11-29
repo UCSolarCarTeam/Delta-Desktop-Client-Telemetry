@@ -39,13 +39,13 @@ void TestDataParser::cleanup()
  */
 void TestDataParser::willEmitDataReceived()
 {
-   QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+   QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, double)));
    connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
    QTest::qWait(1);                                //DataParser should now run connectionOK()
 
    QFETCH(QString, transmission);
    QFETCH(int, id);
-   QFETCH(int, value);
+   QFETCH(double, value);
    device_->open(QIODevice::ReadWrite);
    device_->setTextModeEnabled(true);
    device_->write(transmission.toLocal8Bit());
@@ -56,19 +56,19 @@ void TestDataParser::willEmitDataReceived()
    QCOMPARE(spy.count(), 1); //check dataParser sent dataReceived
    QList<QVariant> signalReturn = spy.takeFirst();
    QCOMPARE(signalReturn.at(0).toInt(), id); // verify the id;
-   QCOMPARE(signalReturn.at(1).toInt(), value); // verify the value;
+   QCOMPARE(signalReturn.at(1).toDouble(), value); // verify the value;
 }
 void TestDataParser::willEmitDataReceived_data()
 {
    QTest::addColumn<QString>("transmission");
    QTest::addColumn<int>("id");
-   QTest::addColumn<int>("value");
+   QTest::addColumn<double>("value");
 
-   QTest::newRow("Perfect1") << "#01817\n"      << 01 << 817;
-   QTest::newRow("Perfect2") << "#01-999\n"      << 01 << -999;
-   QTest::newRow("Perfect3") << "#99999\n"      << 99 << 999;
-   QTest::newRow("Perfect4") << "#0056\n"       << 00 << 56;
-   QTest::newRow("Perfect5") << "#255667889\n"  << 25 << 5667889;
+   QTest::newRow("Perfect1") << "#01817\n"      << 01 << 817.0;
+   QTest::newRow("Perfect2") << "#01-999\n"      << 01 << -999.0;
+   QTest::newRow("Perfect3") << "#99999\n"      << 99 << 999.0;
+   QTest::newRow("Perfect4") << "#0056\n"       << 00 << 56.0;
+   QTest::newRow("Perfect5") << "#255667889\n"  << 25 << 5667889.0;
 }
 
 
@@ -78,7 +78,7 @@ void TestDataParser::willEmitDataReceived_data()
  */
 void TestDataParser::moreThanOneHash()
 {
-    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, double)));
     connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
     QTest::qWait(1);                                //DataParser should now run connectionOK()
 
@@ -111,7 +111,7 @@ void TestDataParser::moreThanOneHash_data()
  */
 void TestDataParser::noHash()
 {
-    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, double)));
     connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
     QTest::qWait(1);                                //DataParser should now run connectionOK()
 
@@ -129,7 +129,7 @@ void TestDataParser::noHash_data()
 {
     QTest::addColumn<QString>("transmission");
 
-    QTest::newRow("NoHash") << "01817\n";
+    QTest::newRow("NoHash") << "01817.0\n";
 }
 
 
@@ -140,7 +140,7 @@ void TestDataParser::noHash_data()
  */
 void TestDataParser::noASCIINumbers()
 {
-    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, double)));
     connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
     QTest::qWait(1);                                //DataParser should now run connectionOK()
 
@@ -169,7 +169,7 @@ void TestDataParser::noASCIINumbers_data()
  */
 void TestDataParser::noEmitSignalConnectionSucceeded()
 {
-    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, double)));
     QTest::qWait(1);                                //DataParser should now run connectionOK()
 
     QFETCH(QString, transmission);
@@ -186,7 +186,7 @@ void TestDataParser::noEmitSignalConnectionSucceeded_data()
 {
     QTest::addColumn<QString>("transmission");
 
-    QTest::newRow("NoSucced") << "#01817\n";
+    QTest::newRow("NoSucced") << "#01817.0\n";
 }
 
 
@@ -197,7 +197,7 @@ void TestDataParser::noEmitSignalConnectionSucceeded_data()
  */
 void TestDataParser::invalidChars()
 {
-    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, int)));
+    QSignalSpy spy(patient_.data(), SIGNAL(dataReceived(int, double)));
     connection_->emitSignalConnectionSucceeded();   //emits the "connectionSucceeded()" signal
     QTest::qWait(1);                                //DataParser should now run connectionOK()
 

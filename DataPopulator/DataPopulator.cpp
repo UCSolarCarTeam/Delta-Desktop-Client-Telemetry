@@ -8,54 +8,48 @@ DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& da
 : dataParser_(dataParser)
 , data_(data)
 {
-   connect(&dataParser, SIGNAL(dataReceived(int, int)), this, SLOT(handleDataReceived(int, int)));
+   connect(&dataParser, SIGNAL(dataReceived(int, double)), this, SLOT(handleDataReceived(int, double)));
 }
 
-//id will start with 1 instead of 0.
-void DataPopulator::handleDataReceived(int id, int value)
+void DataPopulator::handleDataReceived(int id, double value)
 {
-   double doubleValue;
-   if(id<=12){
-       doubleValue= static_cast<double>(value) / 1000.0;
-   }
-
    switch(id)
    {
    case DriverSetSpeedRPM:
-      data_.setDriverSetSpeedRPM(doubleValue);
+      data_.setDriverSetSpeedRPM(value);
       break;
    case DriverSetCurrent:
-      data_.setDriverSetCurrent(doubleValue);
+      data_.setDriverSetCurrent(value);
       break;
    case VehicleVelocity:
-      data_.setVehicleVelocityKph(doubleValue);
+      data_.setVehicleVelocityKph(value);
       break;
    case BusCurrentA:
-      data_.setBusCurrentA(doubleValue);
+      data_.setBusCurrentA(value);
       break;
    case BusVoltage:
-      data_.setBusVoltage(doubleValue);
+      data_.setBusVoltage(value);
       break;
    case MotorVelocityRpm:
-      data_.setMotorVelocityRpm(doubleValue);
+      data_.setMotorVelocityRpm(value);
       break;
    case MotorVoltageReal:
-      data_.setMotorVoltageReal(doubleValue);
+      data_.setMotorVoltageReal(value);
       break;
    case MotorCurrentReal:
-      data_.setMotorCurrentReal(doubleValue);
+      data_.setMotorCurrentReal(value);
       break;
    case BackEmfImaginary:
-      data_.setBackEmfImaginary(doubleValue);
+      data_.setBackEmfImaginary(value);
       break;
    case IpmHeatSinkTemp:
-      data_.setIpmHeatSinkTemp(doubleValue);
+      data_.setIpmHeatSinkTemp(value);
       break;
    case DspBoardTemp:
-      data_.setDspBoardTemp(doubleValue);
+      data_.setDspBoardTemp(value);
       break;
    case DcBusAmpHours:
-      data_.setDcBusAmpHours(doubleValue);
+      data_.setDcBusAmpHours(value);
       break;
    case ReceivedErrorCount:
       data_.setReceivedErrorCount(value);

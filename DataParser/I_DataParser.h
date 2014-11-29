@@ -9,6 +9,6 @@ public:
    virtual ~I_DataParser() {}
 
 signals:
-   void dataReceived(int id, int value);
+   void dataReceived(int id, double value);
    void sendDebugMessage(QString);
 };

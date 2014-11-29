@@ -81,7 +81,7 @@ public:
   };
 
 private slots:
-  void handleDataReceived(int id, int value);
+  void handleDataReceived(int id, double value);
 
 private:
   const I_DataParser& dataParser_;

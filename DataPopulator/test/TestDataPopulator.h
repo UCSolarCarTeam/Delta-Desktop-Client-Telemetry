@@ -15,13 +15,8 @@ private slots:
     void init();
     void cleanup();
 
-    void functionTestsInt();
-    void functionTestsInt_data();
-
     void functionTestsDouble();
     void functionTestsDouble_data();
-
-
 
 private:
     QScopedPointer<DataPopulator> patient_;  //testing this.

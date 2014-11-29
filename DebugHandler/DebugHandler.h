@@ -27,7 +27,7 @@ signals:
 private slots:
    void receivedConnectionService(QString);
    void receivedDebugDataParser(QString);
-   void receivedParsedDataParser(int, int);
+   void receivedParsedDataParser(int, double);
 
 private:
    void printlnToDebuglogTxtFile(QString);

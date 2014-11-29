@@ -7,7 +7,7 @@ class FakeDataParser : public I_DataParser
 {
 public:
     FakeDataParser();
-    void emitDataReceiver(int id, int value);
+    void emitDataReceiver(int id, double value);
 };
 
 

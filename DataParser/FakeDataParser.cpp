@@ -4,7 +4,6 @@
 FakeDataParser::FakeDataParser()
 {  
 }
-void FakeDataParser::emitDataReceiver(int id, int value){
+void FakeDataParser::emitDataReceiver(int id, double value){
     emit dataReceived(id, value);
-    printf("Fake value: %d\n", value);
 }
