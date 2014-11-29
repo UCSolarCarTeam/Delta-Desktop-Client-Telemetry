@@ -48,13 +48,32 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
         writer <<  "                     SOLARCAR  DEBUG  LOG" << endl;
         writer << "|===========================================================|" << endl;
     }
+    /*
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(5,5);
+    storeCsv2DArray(22,22);
+    storeCsv2DArray(24,24);
+    storeCsv2DArray(24,24);
+    storeCsv2DArray(25,25);
+    storeCsv2DArray(25,25);
+    storeCsv2DArray(25,25);
+    int temp = (csv2DArray_[5][0]);
+    printf("csv2DArray_[0].at(0) = %d\n",temp);
+    */
+
 }
 
 DebugHandler::~DebugHandler()
 {
+    /*write to file before closing*/
+    printf("Writing to File\n");
+    printToDebuglogCsvFile();
     logTxtFile_.close();
     logCsvFile_.close();
 }
+
 
 /** public functions **/
 void DebugHandler::receivedConnectionService(QString debugMessage)
@@ -75,30 +94,86 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 void DebugHandler::receivedParsedDataParser(int id, double value)
 {
     QDateTime date = QDateTime::currentDateTime();
-
     QString messageToFile(" | PARSED-STRING: "); //Optional String prepending Message.
-
     messageToFile.prepend(date.toString("hh:mm:ss:zzz"));
 
     messageToFile.append(convertIDtoString(id));
     messageToFile.append(QString::number(value)); //May need to change this if we don't want raw 'value' going in.
 
     printlnToDebuglogTxtFile(messageToFile);
+
+    storeCsv2DArray(id, value);
 }
 
 
 /** private **/
+
+//Orientation of the Vectors is Vectors pointing downwards. Each Vector represents a columnn
+void DebugHandler::storeCsv2DArray(int id, int value)
+{
+    int currentMaxId = csv2DArray_.length(); //Number of Columns there are.
+    int missing = id - currentMaxId + 1;
+
+    if(missing > 0)    //if missing is postive, id doesn't have a spot within the array yet
+    {
+        for(int i = 0; i < missing; i++)
+        {
+            QVector<int> newColumn;
+            csv2DArray_.push_back(newColumn);
+        }
+    }
+
+    csv2DArray_[id].push_back(value);
+}
+
 void DebugHandler::printlnToDebuglogTxtFile(QString debugMessage)
 {
     QTextStream writer(&logTxtFile_);
     writer << debugMessage << endl;
 }
 
-void DebugHandler::printlnToDebuglogCsvFile(QString debugMessage)
+void DebugHandler::printToDebuglogCsvFile(void)
 {
-    QTextStream writer(&logCsvFile_);
-    writer << debugMessage << endl;
 
+    QTextStream writer(&logCsvFile_);
+    QString messageToFile(""); //Optional String prepending Message.
+    int numOfColumns = csv2DArray_.length();
+    int longestColumnLength = 0;
+
+    messageToFile.clear();
+    for(int i = 0; i < numOfColumns; i++)
+    {
+       // messageToFile.append(QString::number(i));
+       messageToFile.append(convertIDtoString(i));
+       messageToFile.append(",");
+    }
+    messageToFile.append("\n");
+    writer << messageToFile;
+
+    /*finds longest column*/
+    for(int i = 0; i < numOfColumns; i++)
+    {
+        if(longestColumnLength < csv2DArray_.at(i).length())
+            longestColumnLength = csv2DArray_.at(i).length();
+
+    }
+    printf("The Longest Length was: %d\n",longestColumnLength);
+    for(int currentRow = 0; currentRow < longestColumnLength; currentRow++)
+    {
+        messageToFile.clear();
+        for(int index = 0; index < numOfColumns; index++)
+        {
+            if(csv2DArray_[index].length() > currentRow) //if true,[index].at(currentRow) exists
+            {
+                printf("Value found at: csv2DArray[%d][%d] = %d\n",index, currentRow,csv2DArray_[index][currentRow] );
+                messageToFile.append(QString::number(csv2DArray_[index].at(currentRow)));
+            }
+            messageToFile.append(",");
+        }
+        messageToFile.append("\n");
+        printf("writing string: %s\n", messageToFile.toStdString().c_str());
+        writer << messageToFile;
+    }
 }
 
 QString DebugHandler::convertIDtoString(int id)

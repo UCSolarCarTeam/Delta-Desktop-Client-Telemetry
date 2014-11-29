@@ -7,6 +7,7 @@
 #include <QTextStream>
 #include <QDateTime>
 #include <QDir>
+#include <QVector>
 
 class I_ConnectionService;
 class I_DataParser;
@@ -30,12 +31,15 @@ private slots:
    void receivedParsedDataParser(int, double);
 
 private:
+   void storeCsv2DArray(int id, int value);
    void printlnToDebuglogTxtFile(QString);
-   void printlnToDebuglogCsvFile(QString);
+   void printToDebuglogCsvFile(void);
    QString convertIDtoString(int);
 
    QFile logTxtFile_;
    QFile logCsvFile_;
+   QVector< QVector<int> > csv2DArray_;
+
 
    I_ConnectionService& connectionService_;
    I_DataParser& dataParser_;
