@@ -85,20 +85,21 @@ QLCDNumber& SolarCarTestUI::setBusVoltage()
 //}
 
 /*---------mod0---------*/
-QLCDNumber& SolarCarTestUI::setMod0PcbTemperature()
-{
-    return *ui->mod0PcbTemperatureValue; \
-}
 
-QLCDNumber& SolarCarTestUI::setMod0PcbTemperature_2()
-{
-   return *ui->mod0PcbTemperatureValue_2;
-}
-
-//QLCDNumber& SolarCarTestUI::setMod0CellTemperature()
+//QLCDNumber& SolarCarTestUI::setMod0PcbTemperature()
 //{
 //   return *ui->NONEXISTENTLABEL;
 //}
+
+QLCDNumber& SolarCarTestUI::setMod0CellTemperature()
+{
+    return *ui->mod0CellTemperatureValue; \
+}
+
+QLCDNumber& SolarCarTestUI::setMod0CellTemperature_2()
+{
+   return *ui->mod0CellTemperatureValue_2;
+}
 
 QLCDNumber& SolarCarTestUI::setMod0CellVoltage0()
 {
@@ -141,20 +142,20 @@ QLCDNumber& SolarCarTestUI::setMod0CellVoltage7()
 }
 
 /*---------mod1---------*/
-QLCDNumber& SolarCarTestUI::setMod1PcbTemperature()
-{
-   return *ui->mod1PcbTemperatureValue;
-}
-
-QLCDNumber& SolarCarTestUI::setMod1PcbTemperature_2()
-{
-   return *ui->mod1PcbTemperatureValue_2;
-}
-
-//QLCDNumber& SolarCarTestUI::setMod1CellTemperature()
+//QLCDNumber& SolarCarTestUI::setMod1PcbTemperature()
 //{
 //   return *ui->NONEXISTENTLABEL;
 //}
+
+QLCDNumber& SolarCarTestUI::setMod1CellTemperature()
+{
+   return *ui->mod1CellTemperatureValue;
+}
+
+QLCDNumber& SolarCarTestUI::setMod1CellTemperature_2()
+{
+   return *ui->mod1CellTemperatureValue_2;
+}
 
 QLCDNumber& SolarCarTestUI::setMod1CellVoltage0()
 {
@@ -197,20 +198,20 @@ QLCDNumber& SolarCarTestUI::setMod1CellVoltage7()
 }
 
 /*---------mod2---------*/
-QLCDNumber& SolarCarTestUI::setMod2PcbTemperature()
-{
-   return *ui->mod2PcbTemperatureValue;
-}
-
-QLCDNumber& SolarCarTestUI::setMod2PcbTemperature_2()
-{
-   return *ui->mod2PcbTemperatureValue_2;
-}
-
-//QLCDNumber& SolarCarTestUI::setMod2CellTemperature()
+//QLCDNumber& SolarCarTestUI::setMod2PcbTemperature()
 //{
 //   return *ui->NONEXISTENTLABEL;
 //}
+
+QLCDNumber& SolarCarTestUI::setMod2CellTemperature()
+{
+   return *ui->mod2CellTemperatureValue;
+}
+
+QLCDNumber& SolarCarTestUI::setMod2CellTemperature_2()
+{
+   return *ui->mod2CellTemperatureValue_2;
+}
 
 QLCDNumber& SolarCarTestUI::setMod2CellVoltage0()
 {
@@ -253,20 +254,20 @@ QLCDNumber& SolarCarTestUI::setMod2CellVoltage7()
 }
 
 /*---------mod3---------*/
-QLCDNumber& SolarCarTestUI::setMod3PcbTemperature()
-{
-   return *ui->mod3PcbTemperatureValue;
-}
-
-QLCDNumber& SolarCarTestUI::setMod3PcbTemperature_2()
-{
-   return *ui->mod3PcbTemperatureValue_2;
-}
-
-//QLCDNumber& SolarCarTestUI::setMod3CellTemperature()
+//QLCDNumber& SolarCarTestUI::setMod3PcbTemperature()
 //{
 //   return *ui->NONEXISTENTLABEL;
 //}
+
+QLCDNumber& SolarCarTestUI::setMod3CellTemperature()
+{
+   return *ui->mod3CellTemperatureValue;
+}
+
+QLCDNumber& SolarCarTestUI::setMod3CellTemperature_2()
+{
+   return *ui->mod3CellTemperatureValue_2;
+}
 
 QLCDNumber& SolarCarTestUI::setMod3CellVoltage0()
 {

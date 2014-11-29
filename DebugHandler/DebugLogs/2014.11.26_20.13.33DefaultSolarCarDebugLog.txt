@@ -1,0 +1,402 @@
+|======================Wed Nov 26 2014======================|
+                     SOLARCAR  DEBUG  LOG
+|===========================================================|
+20:13:46:306 | PARSED-STRING: Mod1CellTemperature:9737
+             | RAW-STRING   : #269737
+
+20:13:46:370 | PARSED-STRING: Mod1CellVoltage0:167
+             | RAW-STRING   : #27167
+
+20:13:46:434 | PARSED-STRING: Mod1CellVoltage1:3898
+             | RAW-STRING   : #283898
+
+20:13:46:498 | PARSED-STRING: Mod1CellVoltage2:3895
+             | RAW-STRING   : #293895
+
+20:13:46:561 | PARSED-STRING: Mod1CellVoltage3:3898
+             | RAW-STRING   : #303898
+
+20:13:46:610 | PARSED-STRING: Mod1CellVoltage4:3895
+             | RAW-STRING   : #313895
+
+20:13:46:674 | PARSED-STRING: Mod1CellVoltage5:3905
+             | RAW-STRING   : #323905
+
+20:13:46:738 | PARSED-STRING: Mod1CellVoltage6:3915
+             | RAW-STRING   : #333915
+
+20:13:46:802 | PARSED-STRING: Mod1CellVoltage7:3905
+             | RAW-STRING   : #343905
+
+20:13:46:850 | PARSED-STRING: Mod2PcbTemperature:3915
+             | RAW-STRING   : #353915
+
+20:13:46:930 | PARSED-STRING: Mod2CellTemperature:3035
+             | RAW-STRING   : #363035
+
+20:13:46:993 | PARSED-STRING: Mod2CellVoltage0:178
+             | RAW-STRING   : #37178
+
+20:13:47:057 | PARSED-STRING: Mod2CellVoltage1:3893
+             | RAW-STRING   : #383893
+
+20:13:47:106 | PARSED-STRING: Mod2CellVoltage2:3894
+             | RAW-STRING   : #393894
+
+20:13:47:169 | PARSED-STRING: Mod2CellVoltage3:3893
+             | RAW-STRING   : #403893
+
+20:13:47:233 | PARSED-STRING: Mod2CellVoltage4:3894
+             | RAW-STRING   : #413894
+
+20:13:47:297 | PARSED-STRING: Mod2CellVoltage5:3895
+             | RAW-STRING   : #423895
+
+20:13:47:361 | PARSED-STRING: Mod2CellVoltage6:3876
+             | RAW-STRING   : #433876
+
+20:13:47:425 | PARSED-STRING: Mod2CellVoltage7:3895
+             | RAW-STRING   : #443895
+
+20:13:47:489 | PARSED-STRING: Mod3PcbTemperature:3876
+             | RAW-STRING   : #453876
+
+20:13:47:553 | PARSED-STRING: Mod3CellTemperature:3039
+             | RAW-STRING   : #463039
+
+20:13:47:601 | PARSED-STRING: Mod3CellVoltage0:182
+             | RAW-STRING   : #47182
+
+20:13:47:665 | PARSED-STRING: Mod3CellVoltage1:3887
+             | RAW-STRING   : #483887
+
+20:13:47:729 | PARSED-STRING: Mod3CellVoltage2:3890
+             | RAW-STRING   : #493890
+
+20:13:47:793 | PARSED-STRING: Mod3CellVoltage3:3887
+             | RAW-STRING   : #503887
+
+20:13:47:872 | PARSED-STRING: Mod3CellVoltage4:3890
+             | RAW-STRING   : #513890
+
+20:13:47:937 | PARSED-STRING: Mod3CellVoltage5:3893
+             | RAW-STRING   : #523893
+
+20:13:47:985 | PARSED-STRING: Mod3CellVoltage6:3914
+             | RAW-STRING   : #533914
+
+20:13:48:049 | PARSED-STRING: Mod3CellVoltage7:3893
+             | RAW-STRING   : #543893
+
+20:13:48:113 | PARSED-STRING: BatteryVoltage:3914
+             | RAW-STRING   : #553914
+
+20:13:48:177 | PARSED-STRING: BatteryCurrent:37368
+             | RAW-STRING   : #5637368
+
+20:13:48:241 | PARSED-STRING: BatteryVoltageThresholdRising:25
+             | RAW-STRING   : #5725
+
+20:13:48:305 | PARSED-STRING: BatteryVoltageThresholdFalling:235933700
+             | RAW-STRING   : #58235933700
+
+20:13:48:417 | PARSED-STRING: 57279619
+             | RAW-STRING   : #5957279619
+
+20:13:48:480 | PARSED-STRING: 0
+             | RAW-STRING   : #000
+
+20:13:48:544 | PARSED-STRING: DriverSetSpeedRPM:0
+             | RAW-STRING   : #010
+
+20:13:48:608 | PARSED-STRING: DriverSetCurrent:10799
+             | RAW-STRING   : #0210799
+
+20:13:48:673 | PARSED-STRING: VehicleVelocity:0
+             | RAW-STRING   : #030
+
+20:13:48:736 | PARSED-STRING: BusCurrentA:27142
+             | RAW-STRING   : #0427142
+
+20:13:48:801 | PARSED-STRING: BusVoltage:105123
+             | RAW-STRING   : #05105123
+
+20:13:48:864 | PARSED-STRING: MotorVelocityRpm:137
+             | RAW-STRING   : #06137
+
+20:13:48:928 | PARSED-STRING: MotorVoltageReal:0
+             | RAW-STRING   : #070
+
+20:13:48:992 | PARSED-STRING: MotorCurrentReal:7146
+             | RAW-STRING   : #087146
+
+20:13:49:056 | PARSED-STRING: BackEmfImaginary:29777
+             | RAW-STRING   : #0929777
+
+20:13:49:104 | PARSED-STRING: DspBoardTemp:31672
+             | RAW-STRING   : #1131672
+
+20:13:49:168 | PARSED-STRING: TransmittedErrorCount:0
+             | RAW-STRING   : #140
+
+20:13:49:232 | PARSED-STRING: Mod0PcbTemperature:0
+             | RAW-STRING   : #150
+
+20:13:49:296 | PARSED-STRING: Mod0CellTemperature:3038
+             | RAW-STRING   : #163038
+
+20:13:49:360 | PARSED-STRING: Mod0CellVoltage0:164
+             | RAW-STRING   : #17164
+
+20:13:49:424 | PARSED-STRING: Mod0CellVoltage1:3896
+             | RAW-STRING   : #183896
+
+20:13:49:488 | PARSED-STRING: Mod0CellVoltage2:3902
+             | RAW-STRING   : #193902
+
+20:13:49:552 | PARSED-STRING: Mod0PcbTemperature:3896
+             | RAW-STRING   : #203896
+
+20:13:49:600 | PARSED-STRING: Mod0CellVoltage4:3902
+             | RAW-STRING   : #213902
+
+20:13:49:680 | PARSED-STRING: Mod0CellVoltage5:8204
+             | RAW-STRING   : #228204
+
+20:13:49:728 | PARSED-STRING: Mod0CellVoltage6:3908
+             | RAW-STRING   : #233908
+
+20:13:49:808 | PARSED-STRING: Mod0CellVoltage7:8204
+             | RAW-STRING   : #248204
+
+20:13:49:872 | PARSED-STRING: Mod1PcbTemperature:3908
+             | RAW-STRING   : #253908
+
+20:13:49:936 | PARSED-STRING: Mod1CellTemperature:9737
+             | RAW-STRING   : #269737
+
+20:13:49:999 | PARSED-STRING: Mod1CellVoltage0:168
+             | RAW-STRING   : #27168
+
+20:13:50:047 | PARSED-STRING: Mod1CellVoltage1:3898
+             | RAW-STRING   : #283898
+
+20:13:50:111 | PARSED-STRING: Mod1CellVoltage2:3895
+             | RAW-STRING   : #293895
+
+20:13:50:191 | PARSED-STRING: Mod1CellVoltage3:3898
+             | RAW-STRING   : #303898
+
+20:13:50:239 | PARSED-STRING: Mod1CellVoltage4:3895
+             | RAW-STRING   : #313895
+
+20:13:50:304 | PARSED-STRING: Mod1CellVoltage5:3906
+             | RAW-STRING   : #323906
+
+20:13:50:351 | PARSED-STRING: Mod1CellVoltage6:3916
+             | RAW-STRING   : #333916
+
+20:13:50:415 | PARSED-STRING: Mod1CellVoltage7:3906
+             | RAW-STRING   : #343906
+
+20:13:50:479 | PARSED-STRING: Mod2PcbTemperature:3916
+             | RAW-STRING   : #353916
+
+20:13:50:543 | PARSED-STRING: Mod2CellTemperature:3035
+             | RAW-STRING   : #363035
+
+20:13:50:607 | PARSED-STRING: Mod2CellVoltage0:179
+             | RAW-STRING   : #37179
+
+20:13:50:671 | PARSED-STRING: Mod2CellVoltage1:3894
+             | RAW-STRING   : #383894
+
+20:13:50:751 | PARSED-STRING: Mod2CellVoltage2:3895
+             | RAW-STRING   : #393895
+
+20:13:50:799 | PARSED-STRING: Mod2CellVoltage3:3894
+             | RAW-STRING   : #403894
+
+20:13:50:846 | PARSED-STRING: Mod2CellVoltage4:3895
+             | RAW-STRING   : #413895
+
+20:13:50:958 | PARSED-STRING: Mod2CellVoltage5:3896
+             | RAW-STRING   : #423896
+
+20:13:50:991 | PARSED-STRING: Mod2CellVoltage6:3877
+             | RAW-STRING   : #433877
+
+20:13:51:054 | PARSED-STRING: Mod2CellVoltage7:3896
+             | RAW-STRING   : #443896
+
+20:13:51:118 | PARSED-STRING: Mod3PcbTemperature:3877
+             | RAW-STRING   : #453877
+
+20:13:51:183 | PARSED-STRING: Mod3CellTemperature:3039
+             | RAW-STRING   : #463039
+
+20:13:51:230 | PARSED-STRING: Mod3CellVoltage0:182
+             | RAW-STRING   : #47182
+
+20:13:51:311 | PARSED-STRING: Mod3CellVoltage1:3888
+             | RAW-STRING   : #483888
+
+20:13:51:358 | PARSED-STRING: Mod3CellVoltage2:3891
+             | RAW-STRING   : #493891
+
+20:13:51:422 | PARSED-STRING: Mod3CellVoltage3:3888
+             | RAW-STRING   : #503888
+
+20:13:51:487 | PARSED-STRING: Mod3CellVoltage4:3891
+             | RAW-STRING   : #513891
+
+20:13:51:550 | PARSED-STRING: Mod3CellVoltage5:3893
+             | RAW-STRING   : #523893
+
+20:13:51:614 | PARSED-STRING: Mod3CellVoltage6:3915
+             | RAW-STRING   : #533915
+
+20:13:51:679 | PARSED-STRING: Mod3CellVoltage7:3893
+             | RAW-STRING   : #543893
+
+20:13:51:726 | PARSED-STRING: BatteryVoltage:3915
+             | RAW-STRING   : #553915
+
+20:13:51:806 | PARSED-STRING: BatteryCurrent:26459
+             | RAW-STRING   : #5626459
+
+20:13:51:854 | PARSED-STRING: BatteryVoltageThresholdRising:23
+             | RAW-STRING   : #5723
+
+20:13:51:934 | PARSED-STRING: BatteryVoltageThresholdFalling:235933700
+             | RAW-STRING   : #58235933700
+
+20:13:51:982 | PARSED-STRING: 57279619
+             | RAW-STRING   : #5957279619
+
+20:13:52:110 | PARSED-STRING: 0
+             | RAW-STRING   : #000
+
+20:13:52:190 | PARSED-STRING: DriverSetSpeedRPM:0
+             | RAW-STRING   : #010
+
+20:13:52:254 | PARSED-STRING: DriverSetCurrent:553
+             | RAW-STRING   : #02553
+
+20:13:52:286 | PARSED-STRING: VehicleVelocity:0
+             | RAW-STRING   : #030
+
+20:13:52:366 | PARSED-STRING: BusCurrentA:18489
+             | RAW-STRING   : #0418489
+
+20:13:52:430 | PARSED-STRING: BusVoltage:5388
+             | RAW-STRING   : #055388
+
+20:13:52:477 | PARSED-STRING: MotorVelocityRpm:-5
+             | RAW-STRING   : #06-5
+
+20:13:52:542 | PARSED-STRING: MotorVoltageReal:0
+             | RAW-STRING   : #070
+
+20:13:52:605 | PARSED-STRING: MotorCurrentReal:320
+             | RAW-STRING   : #08320
+
+20:13:52:685 | PARSED-STRING: BackEmfImaginary:29851
+             | RAW-STRING   : #0929851
+
+20:13:52:750 | PARSED-STRING: DspBoardTemp:31738
+             | RAW-STRING   : #1131738
+
+20:13:52:798 | PARSED-STRING: TransmittedErrorCount:0
+             | RAW-STRING   : #140
+
+20:13:52:862 | PARSED-STRING: Mod0PcbTemperature:0
+             | RAW-STRING   : #150
+
+20:13:52:925 | PARSED-STRING: Mod0CellTemperature:3038
+             | RAW-STRING   : #163038
+
+20:13:52:990 | PARSED-STRING: Mod0CellVoltage0:164
+             | RAW-STRING   : #17164
+
+20:13:53:053 | PARSED-STRING: Mod0CellVoltage1:3897
+             | RAW-STRING   : #183897
+
+20:13:53:101 | PARSED-STRING: Mod0CellVoltage2:3903
+             | RAW-STRING   : #193903
+
+20:13:53:165 | PARSED-STRING: Mod0PcbTemperature:3897
+             | RAW-STRING   : #203897
+
+20:13:53:230 | PARSED-STRING: Mod0CellVoltage4:3903
+             | RAW-STRING   : #213903
+
+20:13:53:309 | PARSED-STRING: Mod0CellVoltage5:8206
+             | RAW-STRING   : #228206
+
+20:13:53:357 | PARSED-STRING: Mod0CellVoltage6:3909
+             | RAW-STRING   : #233909
+
+20:13:53:437 | PARSED-STRING: Mod0CellVoltage7:8206
+             | RAW-STRING   : #248206
+
+20:13:53:501 | PARSED-STRING: Mod1PcbTemperature:3909
+             | RAW-STRING   : #253909
+
+20:13:53:549 | PARSED-STRING: Mod1CellTemperature:9737
+             | RAW-STRING   : #269737
+
+20:13:53:613 | PARSED-STRING: Mod1CellVoltage0:167
+             | RAW-STRING   : #27167
+
+20:13:53:677 | PARSED-STRING: Mod1CellVoltage1:3899
+             | RAW-STRING   : #283899
+
+20:13:53:741 | PARSED-STRING: Mod1CellVoltage2:3896
+             | RAW-STRING   : #293896
+
+20:13:53:805 | PARSED-STRING: Mod1CellVoltage3:3899
+             | RAW-STRING   : #303899
+
+20:13:53:869 | PARSED-STRING: Mod1CellVoltage4:3896
+             | RAW-STRING   : #313896
+
+20:13:53:933 | PARSED-STRING: Mod1CellVoltage5:3906
+             | RAW-STRING   : #323906
+
+20:13:53:981 | PARSED-STRING: Mod1CellVoltage6:3917
+             | RAW-STRING   : #333917
+
+20:13:54:045 | PARSED-STRING: Mod1CellVoltage7:3906
+             | RAW-STRING   : #343906
+
+20:13:54:125 | PARSED-STRING: Mod2PcbTemperature:3917
+             | RAW-STRING   : #353917
+
+20:13:54:189 | PARSED-STRING: Mod2CellTemperature:3035
+             | RAW-STRING   : #363035
+
+20:13:54:237 | PARSED-STRING: Mod2CellVoltage0:178
+             | RAW-STRING   : #37178
+
+20:13:54:301 | PARSED-STRING: Mod2CellVoltage1:3895
+             | RAW-STRING   : #383895
+
+20:13:54:365 | PARSED-STRING: Mod2CellVoltage2:3896
+             | RAW-STRING   : #393896
+
+20:13:54:428 | PARSED-STRING: Mod2CellVoltage3:3895
+             | RAW-STRING   : #403895
+
+20:13:54:492 | PARSED-STRING: Mod2CellVoltage4:3896
+             | RAW-STRING   : #413896
+
+20:13:54:557 | PARSED-STRING: Mod2CellVoltage5:3897
+             | RAW-STRING   : #423897
+
+20:13:54:604 | PARSED-STRING: Mod2CellVoltage6:3878
+             | RAW-STRING   : #433878
+
+20:13:54:684 | PARSED-STRING: Mod2CellVoltage7:3897
+             | RAW-STRING   : #443897
+

@@ -6,6 +6,7 @@
 #include <qdebug.h>
 #include <QTextStream>
 #include <QDateTime>
+#include <QDir>
 
 class I_ConnectionService;
 class I_DataParser;
@@ -29,10 +30,12 @@ private slots:
    void receivedParsedDataParser(int, int);
 
 private:
-   void printlnToDebugLogFile(QString);
+   void printlnToDebuglogTxtFile(QString);
+   void printlnToDebuglogCsvFile(QString);
    QString convertIDtoString(int);
 
-   QFile logFile_;
+   QFile logTxtFile_;
+   QFile logCsvFile_;
 
    I_ConnectionService& connectionService_;
    I_DataParser& dataParser_;

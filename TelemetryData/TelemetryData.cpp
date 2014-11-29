@@ -332,7 +332,7 @@ void TelemetryData::setMod0PcbTemperature(int mod0PcbTemperature)
 void TelemetryData::setMod0CellTemperature(int mod0CellTemperature)
 {
    mod0CellTemperature_ = mod0CellTemperature;
-   emit mod0PcbTemperatureReceived(mod0CellTemperature_);
+   emit mod0CellTemperatureReceived(mod0CellTemperature_);
 }
 void TelemetryData::setMod0CellVoltage0(int mod0CellVoltage0)
 {
@@ -384,7 +384,7 @@ void TelemetryData::setMod1PcbTemperature(int mod1PcbTemperature)
 void TelemetryData::setMod1CellTemperature(int mod1CellTemperature)
 {
    mod1CellTemperature_ = mod1CellTemperature;
-   emit mod1PcbTemperatureReceived(mod1CellTemperature_);
+   emit mod1CellTemperatureReceived(mod1CellTemperature_);
 }
 void TelemetryData::setMod1CellVoltage0(int mod1CellVoltage0)
 {
@@ -436,7 +436,7 @@ void TelemetryData::setMod2PcbTemperature(int mod2PcbTemperature)
 void TelemetryData::setMod2CellTemperature(int mod2CellTemperature)
 {
    mod2CellTemperature_ = mod2CellTemperature;
-   emit mod2PcbTemperatureReceived(mod2CellTemperature_);
+   emit mod2CellTemperatureReceived(mod2CellTemperature_);
 }
 void TelemetryData::setMod2CellVoltage0(int mod2CellVoltage0)
 {
@@ -489,7 +489,7 @@ void TelemetryData::setMod3PcbTemperature(int mod3PcbTemperature)
 void TelemetryData::setMod3CellTemperature(int mod3CellTemperature)
 {
    mod3CellTemperature_ = mod3CellTemperature;
-   emit mod3PcbTemperatureReceived(mod3CellTemperature_);
+   emit mod3CellTemperatureReceived(mod3CellTemperature_);
 }
 void TelemetryData::setMod3CellVoltage0(int mod3CellVoltage0)
 {

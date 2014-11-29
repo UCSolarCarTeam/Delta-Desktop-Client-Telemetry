@@ -1,0 +1,75 @@
+|======================Wed Nov 26 2014======================|
+                     SOLARCAR  DEBUG  LOG
+|===========================================================|
+20:13:07:875 | PARSED-STRING: Mod3CellVoltage2:3845
+             | RAW-STRING   : #493845
+
+20:13:07:923 | PARSED-STRING: Mod3CellVoltage3:3845
+             | RAW-STRING   : #503845
+
+20:13:07:987 | PARSED-STRING: Mod3CellVoltage4:3845
+             | RAW-STRING   : #513845
+
+20:13:08:051 | PARSED-STRING: Mod3CellVoltage5:3848
+             | RAW-STRING   : #523848
+
+20:13:08:115 | PARSED-STRING: Mod3CellVoltage6:3804
+             | RAW-STRING   : #533804
+
+20:13:08:179 | PARSED-STRING: Mod3CellVoltage7:3848
+             | RAW-STRING   : #543848
+
+20:13:08:227 | PARSED-STRING: BatteryVoltage:3804
+             | RAW-STRING   : #553804
+
+20:13:08:307 | PARSED-STRING: BatteryCurrent:122121
+             | RAW-STRING   : #56122121
+
+20:13:08:355 | PARSED-STRING: BatteryVoltageThresholdRising:-25412
+             | RAW-STRING   : #57-25412
+
+20:13:08:419 | PARSED-STRING: BatteryVoltageThresholdFalling:235933700
+             | RAW-STRING   : #58235933700
+
+20:13:08:499 | PARSED-STRING: 57279624
+             | RAW-STRING   : #5957279624
+
+20:13:08:611 | PARSED-STRING: 234774
+             | RAW-STRING   : #00234774
+
+20:13:08:674 | PARSED-STRING: DriverSetSpeedRPM:817
+             | RAW-STRING   : #01817
+
+20:13:08:722 | PARSED-STRING: DriverSetCurrent:23421
+             | RAW-STRING   : #0223421
+
+20:13:08:803 | PARSED-STRING: VehicleVelocity:13379
+             | RAW-STRING   : #0313379
+
+20:13:08:866 | PARSED-STRING: BusCurrentA:122282
+             | RAW-STRING   : #04122282
+
+20:13:08:930 | PARSED-STRING: BusVoltage:227990
+             | RAW-STRING   : #05227990
+
+20:13:08:978 | PARSED-STRING: MotorVelocityRpm:1521
+             | RAW-STRING   : #061521
+
+20:13:09:042 | PARSED-STRING: MotorVoltageReal:-35
+             | RAW-STRING   : #07-35
+
+20:13:09:106 | PARSED-STRING: MotorCurrentReal:12317
+             | RAW-STRING   : #0812317
+
+20:13:09:171 | PARSED-STRING: BackEmfImaginary:28308
+             | RAW-STRING   : #0928308
+
+20:13:09:250 | PARSED-STRING: DspBoardTemp:31177
+             | RAW-STRING   : #1131177
+
+20:13:09:298 | PARSED-STRING: TransmittedErrorCount:0
+             | RAW-STRING   : #140
+
+20:13:09:362 | PARSED-STRING: Mod0PcbTemperature:0
+             | RAW-STRING   : #150
+

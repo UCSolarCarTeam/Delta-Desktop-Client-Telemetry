@@ -28,9 +28,9 @@ public:
 //    virtual QLCDNumber& setReceivedErrorCount() = 0;
 //    virtual QLCDNumber& setTransmittedErrorCount() = 0;
 
-    virtual QLCDNumber& setMod0PcbTemperature() = 0;
-    virtual QLCDNumber& setMod0PcbTemperature_2() = 0;
-//    virtual QLCDNumber& setMod0CellTemperature() = 0;
+//    virtual QLCDNumber& setMod0PcbTemperature() = 0;
+    virtual QLCDNumber& setMod0CellTemperature() = 0;
+    virtual QLCDNumber& setMod0CellTemperature_2() = 0;
     virtual QLCDNumber& setMod0CellVoltage0() = 0;
     virtual QLCDNumber& setMod0CellVoltage1() = 0;
     virtual QLCDNumber& setMod0CellVoltage2() = 0;
@@ -40,9 +40,9 @@ public:
     virtual QLCDNumber& setMod0CellVoltage6() = 0;
     virtual QLCDNumber& setMod0CellVoltage7() = 0;
 
-    virtual QLCDNumber& setMod1PcbTemperature() = 0;
-    virtual QLCDNumber& setMod1PcbTemperature_2() = 0;
-//    virtual QLCDNumber& setMod1CellTemperature() = 0;
+//    virtual QLCDNumber& setMod1PcbTemperature() = 0;
+    virtual QLCDNumber& setMod1CellTemperature() = 0;
+    virtual QLCDNumber& setMod1CellTemperature_2() = 0;
     virtual QLCDNumber& setMod1CellVoltage0() = 0;
     virtual QLCDNumber& setMod1CellVoltage1() = 0;
     virtual QLCDNumber& setMod1CellVoltage2() = 0;
@@ -52,9 +52,9 @@ public:
     virtual QLCDNumber& setMod1CellVoltage6() = 0;
     virtual QLCDNumber& setMod1CellVoltage7() = 0;
 
-    virtual QLCDNumber& setMod2PcbTemperature() = 0;
-    virtual QLCDNumber& setMod2PcbTemperature_2() = 0;
-//    virtual QLCDNumber& setMod2CellTemperature() = 0;
+//    virtual QLCDNumber& setMod2PcbTemperature() = 0;
+    virtual QLCDNumber& setMod2CellTemperature() = 0;
+    virtual QLCDNumber& setMod2CellTemperature_2() = 0;
     virtual QLCDNumber& setMod2CellVoltage0() = 0;
     virtual QLCDNumber& setMod2CellVoltage1() = 0;
     virtual QLCDNumber& setMod2CellVoltage2() = 0;
@@ -64,9 +64,9 @@ public:
     virtual QLCDNumber& setMod2CellVoltage6() = 0;
     virtual QLCDNumber& setMod2CellVoltage7() = 0;
 
-    virtual QLCDNumber& setMod3PcbTemperature() = 0;
-    virtual QLCDNumber& setMod3PcbTemperature_2() = 0;
-//    virtual QLCDNumber& setMod3CellTemperature() = 0;
+//    virtual QLCDNumber& setMod3PcbTemperature() = 0;
+    virtual QLCDNumber& setMod3CellTemperature() = 0;
+    virtual QLCDNumber& setMod3CellTemperature_2() = 0;
     virtual QLCDNumber& setMod3CellVoltage0() = 0;
     virtual QLCDNumber& setMod3CellVoltage1() = 0;
     virtual QLCDNumber& setMod3CellVoltage2() = 0;
