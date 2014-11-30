@@ -4,18 +4,17 @@
 #include <QScopedPointer>
 class DataParser;
 class DataPopulator;
+class DebugHandler;
 class DisplayPresenter;
 class DisplayView;
 class I_ConnectionService;
 class QSerialPort;
 class SolarCarTestUI;
 class TelemetryData;
-class DebugHandler;
 
 class SolarCarTelemetry : public QApplication
 {
 public:
-
    explicit SolarCarTelemetry(int &argc, char **argv);
    ~SolarCarTelemetry();
 

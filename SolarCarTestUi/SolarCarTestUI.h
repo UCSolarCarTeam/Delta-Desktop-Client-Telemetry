@@ -3,13 +3,12 @@
 #include <QMainWindow>
 #include "I_SolarCarTestUI.h"
 namespace Ui {
-class SolarCarTestUI;
+   class SolarCarTestUI;
 }
 
 class SolarCarTestUI : public QMainWindow, public I_SolarCarTestUI
 {
    Q_OBJECT
-
 public:
    explicit SolarCarTestUI(QWidget *parent = 0);
    ~SolarCarTestUI();

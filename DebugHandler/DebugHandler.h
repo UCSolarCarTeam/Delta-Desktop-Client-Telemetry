@@ -17,9 +17,9 @@ class DebugHandler : public QObject
    Q_OBJECT
 
 public:
-   explicit DebugHandler(I_ConnectionService& connectionService,
-                         I_DataParser& dataParser,
-                         QString filename);
+   DebugHandler(I_ConnectionService& connectionService,
+                I_DataParser& dataParser,
+                QString filename);
    virtual ~DebugHandler();
 
 signals:
@@ -34,12 +34,11 @@ private:
    void storeCsv2DArray(int id, int value);
    void printlnToDebuglogTxtFile(QString);
    void printToDebuglogCsvFile(void);
-   QString convertIDtoString(int);
 
+   QString convertIDtoString(int);
    QFile logTxtFile_;
    QFile logCsvFile_;
    QVector< QVector<int> > csv2DArray_;
-
 
    I_ConnectionService& connectionService_;
    I_DataParser& dataParser_;

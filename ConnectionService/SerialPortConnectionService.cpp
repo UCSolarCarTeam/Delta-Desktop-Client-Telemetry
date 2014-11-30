@@ -33,7 +33,7 @@ SerialPortConnectionService::~SerialPortConnectionService()
 
 void  SerialPortConnectionService::connectDataSource(QString portName, int baudRate)
 {
-   if(!portName.isEmpty()){
+   if (!portName.isEmpty()){
       serialPort_.setPortName(portName);
    }
    serialPort_.setBaudRate(baudRate);
@@ -41,8 +41,9 @@ void  SerialPortConnectionService::connectDataSource(QString portName, int baudR
       emit connectionFailed(failed());
       return;
    }
-   emit sendDebugMessage("Port name set to " + portName + " with baudrate of " + QString::number(baudRate));
-   //Bluetooth Connection
+   emit sendDebugMessage("Port name set to " + portName +
+                         " with baudrate of " + QString::number(baudRate));
+
    setUpBlueGigaWT41Connection();
 }
 
@@ -184,6 +185,5 @@ QString SerialPortConnectionService::failed()
       case 13:
          return "Port not open";
    }
-
    return "Check SerialPortConnectionService class";
 }

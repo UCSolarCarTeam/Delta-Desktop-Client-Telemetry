@@ -22,24 +22,20 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
     /********************File Initializing********************/
     QDateTime date = QDateTime::currentDateTime();
     QString DebugFilePath("DebugLogs/"); //can only create ONE NEW folder.
-    if(!QDir(DebugFilePath).exists())
-        QDir().mkdir(DebugFilePath);
-
+    if(!QDir(DebugFilePath).exists()){
+       QDir().mkdir(DebugFilePath);
+    }
 
     filename.prepend(date.toString("yyyy.MM.dd_hh.mm.ss")); //following Canadian Standard 'ISO 8601'
     filename.prepend(DebugFilePath);
 
     /*Log Csv File*/
     logCsvFile_.setFileName(filename + ".csv");
-    if(logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text))    //optional text can go be initialized here
-    {
-
-    }
+    logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text);
 
     /*Log Text File*/
     logTxtFile_.setFileName(filename + ".txt");
-    if(logTxtFile_.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
+    if(logTxtFile_.open(QIODevice::WriteOnly | QIODevice::Text)){
         QTextStream writer(&logTxtFile_);
         writer << "|======================";
         writer << date.toString("ddd MMM d yyyy");
@@ -51,54 +47,48 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
 
 DebugHandler::~DebugHandler()
 {
-    /*write to file before closing*/
     printToDebuglogCsvFile();
     logTxtFile_.close();
     logCsvFile_.close();
 }
 
-
-/** public functions **/
 void DebugHandler::receivedConnectionService(QString debugMessage)
 {
    emit sendDebugMessageToPresenter(debugMessage);
 }
 
-//gets the original RAW string that dataparse receieves (this will just be sent to the debuglogTxtFile)
+// gets the original RAW string that dataparse receieves
+// (this will just be sent to the debuglogTxtFile)
 void DebugHandler::receivedDebugDataParser(QString debugMessage)
 {
-    QString messageToFile("             | RAW-STRING   : "); //Optional String prepending Message
-    messageToFile.append(debugMessage);
-    printlnToDebuglogTxtFile(messageToFile);
+   QString messageToFile("             | RAW-STRING   : "); //Optional String prepending Message
+   messageToFile.append(debugMessage);
+   printlnToDebuglogTxtFile(messageToFile);
 }
 
-//gets the parsed values that dataparser emits and translates it to a human readable format
-//and sends it to the debuglogTxtFile
+// gets the parsed values that dataparser emits and translates it to a human readable format
+// and sends it to the debuglogTxtFile
 void DebugHandler::receivedParsedDataParser(int id, double value)
 {
-    QDateTime date = QDateTime::currentDateTime();
-    QString messageToFile(" | PARSED-STRING: "); //Optional String prepending Message.
-    messageToFile.prepend(date.toString("hh:mm:ss:zzz"));
+   QDateTime date = QDateTime::currentDateTime();
+   QString messageToFile(" | PARSED-STRING: "); //Optional String prepending Message.
+   messageToFile.prepend(date.toString("hh:mm:ss:zzz"));
 
-    messageToFile.append(convertIDtoString(id));
-    messageToFile.append(QString::number(value)); //May need to change this if we don't want raw 'value' going in.
+   messageToFile.append(convertIDtoString(id));
+   messageToFile.append(QString::number(value)); //May need to change this if we don't want raw 'value' going in.
 
-    printlnToDebuglogTxtFile(messageToFile);
+   printlnToDebuglogTxtFile(messageToFile);
 
-    storeCsv2DArray(id, value);
+   storeCsv2DArray(id, value);
 }
 
-
-/** private **/
-
-//Orientation of the Vectors is Vectors pointing downwards. Each Vector represents a columnn
+// Orientation of the Vectors is Vectors pointing downwards. Each Vector represents a columnn
 void DebugHandler::storeCsv2DArray(int id, int value)
 {
-    int currentMaxId = csv2DArray_.length(); //Number of Columns there are.
+    int currentMaxId = csv2DArray_.length(); // Number of Columns there are.
     int missing = id - currentMaxId + 1;
 
-    if(missing > 0)    //if missing is postive, id doesn't have a spot within the array yet
-    {
+    if(missing > 0){    // if missing is postive, id doesn't have a spot within the array yet
         for(int i = 0; i < missing; i++)
         {
             QVector<int> newColumn;
@@ -137,18 +127,18 @@ void DebugHandler::printToDebuglogCsvFile(void)
     /*finds longest column*/
     for(int i = 0; i < numOfColumns; i++)
     {
-        if(longestColumnLength < csv2DArray_.at(i).length())
-            longestColumnLength = csv2DArray_.at(i).length();
-
+        if(longestColumnLength < csv2DArray_.at(i).length()){
+           longestColumnLength = csv2DArray_.at(i).length();
+        }
     }
+
     /*write the values into the csv*/
     for(int currentRow = 0; currentRow < longestColumnLength; currentRow++)
     {
         messageToFile.clear();
         for(int index = 0; index < numOfColumns; index++)
         {
-            if(csv2DArray_[index].length() > currentRow) //if true,[index].at(currentRow) exists
-            {
+            if(csv2DArray_[index].length() > currentRow){
                 messageToFile.append(QString::number(csv2DArray_[index].at(currentRow)));
             }
             messageToFile.append(",");
@@ -160,7 +150,7 @@ void DebugHandler::printToDebuglogCsvFile(void)
 
 QString DebugHandler::convertIDtoString(int id)
 {
-   QString convertedID("");//Optional String prepending Converted ID.
+   QString convertedID;
 
    switch(id)
    {
@@ -347,22 +337,6 @@ QString DebugHandler::convertIDtoString(int id)
        convertedID.append("**NO ID**");
        break;
    }
-
 return convertedID;
 }
 
-    /*
-     * tester to put into constructor
-    storeCsv2DArray(0,5);
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(5,5);
-    storeCsv2DArray(22,22);
-    storeCsv2DArray(24,24);
-    storeCsv2DArray(24,24);
-    storeCsv2DArray(25,25);
-    storeCsv2DArray(25,25);
-    storeCsv2DArray(25,25);
-    int temp = (csv2DArray_[5][0]);
-    printf("csv2DArray_[0].at(0) = %d\n",temp);
-    */

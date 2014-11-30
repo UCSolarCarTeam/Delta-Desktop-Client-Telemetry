@@ -12,6 +12,6 @@ public:
    void emitSignalConnectionSucceeded();
 
 public slots:
-      void connectDataSource(QString portName, int baudRate);
-      void disconnectDataSource();
+   void connectDataSource(QString portName, int baudRate);
+   void disconnectDataSource();
 };

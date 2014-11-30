@@ -1,11 +1,10 @@
-#include "DataParser.h"
 #include "../ConnectionService/I_ConnectionService.h"
+#include "DataParser.h"
 #include <QDebug>
-
 
 DataParser::DataParser(QIODevice& device, I_ConnectionService& connectionService)
 : ioDevice_(device)
-, connectionService_ (connectionService)
+, connectionService_(connectionService)
 {
   connect(&connectionService, SIGNAL(connectionSucceeded(QString)),
           this, SLOT (connectionOK(QString)));
@@ -30,8 +29,8 @@ void DataParser::handleInformationIncoming()
     QString string(data);
     if(!data.isNull() && string.at(0) == '#')
     {
-      for(int i = 1; i <string.length()-1; i++){
-          if(string.at(i) < 48||string.at(i) > 57){
+      for(int i = 1; i < string.length() - 1; i++){
+          if(string.at(i) < 48 || string.at(i) > 57){
               if(string.at(i) != 45)
               return;
           }

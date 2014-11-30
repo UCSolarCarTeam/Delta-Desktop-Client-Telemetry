@@ -1,8 +1,7 @@
-#ifndef I_CONNECTIONSERVICE_H
-#define I_CONNECTIONSERVICE_H
+#pragma once
 
-#include <QObject>
 #include <QIODevice>
+#include <QObject>
 #include <QString>
 
 class I_ConnectionService : public QObject
@@ -10,15 +9,11 @@ class I_ConnectionService : public QObject
     Q_OBJECT
 
 signals:
-   void connectionFailed(QString);
-   void connectionSucceeded(QString);
-   void sendDebugMessage(QString);
+   void connectionFailed(QString failureMessage);
+   void connectionSucceeded(QString successMessage);
+   void sendDebugMessage(QString debugMessage);
 
 public slots:
    virtual void connectDataSource(QString portName, int baudRate) = 0;
    virtual void disconnectDataSource() = 0;
-
-
 };
-
-#endif // I_CONNECTIONSERVICE_H

@@ -15,8 +15,6 @@ public:
    void connectDataSource(QString portName, int baudRate);
    void disconnectDataSource();
 
-public slots:
-
 private:
     void relayTelemetryData();
     void relayConnectionStatus();
@@ -28,8 +26,6 @@ private:
    DebugHandler& debugHandler_;
 
 signals:
-
-
    void driverSetSpeedRPMReceived(double driverSetSpeedRPM);
    void driverSetCurrentReceived(double driverSetCurrent);
 
@@ -98,6 +94,5 @@ signals:
    void connectionFailed(QString failureMessage);
    void connectionSucceeded(QString successMessage);
    void sendDebugMessage(QString message);
-
 };
 

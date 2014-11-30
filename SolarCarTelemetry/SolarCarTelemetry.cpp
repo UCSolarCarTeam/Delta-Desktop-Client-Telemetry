@@ -12,10 +12,11 @@
 
 namespace
 {
-   const QString defaultPortName = "COM1";
+   const QString defaultPortName = "COM";
    const int defaultBaudrate = 115200;
-   const QString defaultFilename = "DefaultSolarCarDebugLog";
+   const QString defaultFilename = "SolarCarDebugLog";
 }
+
 SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 : QApplication(argc, argv)
 , port_(new QSerialPort)

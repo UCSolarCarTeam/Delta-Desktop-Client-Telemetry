@@ -12,8 +12,6 @@ public:
    DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI& ui);
    ~DisplayView();
 
-
-   
 private:
    DisplayPresenter& presenter_;
    SolarCarTestUI& ui_;
