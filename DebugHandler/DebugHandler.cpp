@@ -9,47 +9,47 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser&
 , connectionService_(connectionService)
 , dataParser_(dataParser)
 {
-    /********************Connections********************/
-    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
-            this, SLOT (receivedConnectionService(QString)));
-    //RAW String
-    connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
-            this, SLOT (receivedDebugDataParser(QString)));                 //notes, RAW string ends with a \n
-    //PARSED values
-    connect(&dataParser, SIGNAL(dataReceived(int,double)),
-            this, SLOT (receivedParsedDataParser(int, double)));
+   /********************Connections********************/
+   connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
+           this, SLOT (receivedDebugDataParserConnectionService(QString)));
+   //RAW String
+   connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
+           this, SLOT (receivedDebugDataParser(QString)));  //notes, RAW string ends with a \n
+   //PARSED values
+   connect(&dataParser, SIGNAL(dataReceived(int,double)),
+           this, SLOT (receivedParsedDataParser(int, double)));
 
-    /********************File Initializing********************/
-    QDateTime date = QDateTime::currentDateTime();
-    QString DebugFilePath("DebugLogs/"); //can only create ONE NEW folder.
-    if(!QDir(DebugFilePath).exists()){
-       QDir().mkdir(DebugFilePath);
-    }
+   /********************File Initializing********************/
+   QDateTime date = QDateTime::currentDateTime();
+   QString DebugFilePath("DebugLogs/"); //can only create ONE NEW folder.
+   if(!QDir(DebugFilePath).exists()){
+      QDir().mkdir(DebugFilePath);
+   }
 
-    filename.prepend(date.toString("yyyy.MM.dd_hh.mm.ss")); //following Canadian Standard 'ISO 8601'
-    filename.prepend(DebugFilePath);
+   filename.prepend(date.toString("yyyy.MM.dd_hh.mm.ss")); //following Canadian Standard 'ISO 8601'
+   filename.prepend(DebugFilePath);
 
-    /*Log Csv File*/
-    logCsvFile_.setFileName(filename + ".csv");
-    logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text);
+   /*Log Csv File*/
+   logCsvFile_.setFileName(filename + ".csv");
+   logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text);
 
-    /*Log Text File*/
-    logTxtFile_.setFileName(filename + ".txt");
-    if(logTxtFile_.open(QIODevice::WriteOnly | QIODevice::Text)){
-        QTextStream writer(&logTxtFile_);
-        writer << "|======================";
-        writer << date.toString("ddd MMM d yyyy");
-        writer << "======================|" << endl;
-        writer <<  "                     SOLARCAR  DEBUG  LOG" << endl;
-        writer << "|===========================================================|" << endl;
-    }
+   /*Log Text File*/
+   logTxtFile_.setFileName(filename + ".txt");
+   if(logTxtFile_.open(QIODevice::WriteOnly | QIODevice::Text)){
+      QTextStream writer(&logTxtFile_);
+      writer << "|======================";
+      writer << date.toString("ddd MMM d yyyy");
+      writer << "======================|" << endl;
+      writer <<  "                     SOLARCAR  DEBUG  LOG" << endl;
+      writer << "|===========================================================|" << endl;
+   }
 }
 
 DebugHandler::~DebugHandler()
 {
-    printToDebuglogCsvFile();
-    logTxtFile_.close();
-    logCsvFile_.close();
+   printToDebuglogCsvFile();
+   logTxtFile_.close();
+   logCsvFile_.close();
 }
 
 void DebugHandler::receivedConnectionService(QString debugMessage)
@@ -85,67 +85,66 @@ void DebugHandler::receivedParsedDataParser(int id, double value)
 // Orientation of the Vectors is Vectors pointing downwards. Each Vector represents a columnn
 void DebugHandler::storeCsv2DArray(int id, int value)
 {
-    int currentMaxId = csv2DArray_.length(); // Number of Columns there are.
-    int missing = id - currentMaxId + 1;
+   int currentMaxId = csv2DArray_.length(); // Number of Columns there are.
+   int missing = id - currentMaxId + 1;
 
-    if(missing > 0){    // if missing is postive, id doesn't have a spot within the array yet
-        for(int i = 0; i < missing; i++)
-        {
-            QVector<int> newColumn;
-            csv2DArray_.push_back(newColumn);
-        }
-    }
+   if(missing > 0){    // if missing is postive, id doesn't have a spot within the array yet
+     for(int i = 0; i < missing; i++)
+     {
+         QVector<int> newColumn;
+         csv2DArray_.push_back(newColumn);
+      }
+   }
 
-    csv2DArray_[id].push_back(value);
+   csv2DArray_[id].push_back(value);
 }
 
 void DebugHandler::printlnToDebuglogTxtFile(QString debugMessage)
 {
-    QTextStream writer(&logTxtFile_);
-    writer << debugMessage << endl;
+   QTextStream writer(&logTxtFile_);
+   writer << debugMessage << endl;
 }
 
 void DebugHandler::printToDebuglogCsvFile(void)
 {
+   QTextStream writer(&logCsvFile_);
+   QString messageToFile;
 
-    QTextStream writer(&logCsvFile_);
-    QString messageToFile;
+   int numOfColumns = csv2DArray_.length();
+   int longestColumnLength = 0;
 
-    int numOfColumns = csv2DArray_.length();
-    int longestColumnLength = 0;
+   messageToFile.clear();
+   for(int i = 0; i < numOfColumns; i++)
+   {
+      messageToFile.append(convertIDtoString(i));
+      messageToFile.append(",");
+   }
 
-    messageToFile.clear();
-    for(int i = 0; i < numOfColumns; i++)
-    {
-       messageToFile.append(convertIDtoString(i));
-       messageToFile.append(",");
-    }
+   messageToFile.append("\n");
+   writer << messageToFile;
 
-    messageToFile.append("\n");
-    writer << messageToFile;
+   /*finds longest column*/
+   for(int i = 0; i < numOfColumns; i++)
+   {
+      if(longestColumnLength < csv2DArray_.at(i).length()){
+         longestColumnLength = csv2DArray_.at(i).length();
+      }
+   }
 
-    /*finds longest column*/
-    for(int i = 0; i < numOfColumns; i++)
-    {
-        if(longestColumnLength < csv2DArray_.at(i).length()){
-           longestColumnLength = csv2DArray_.at(i).length();
-        }
-    }
-
-    /*write the values into the csv*/
-    for(int currentRow = 0; currentRow < longestColumnLength; currentRow++)
-    {
-        messageToFile.clear();
-        for(int index = 0; index < numOfColumns; index++)
-        {
-            if(csv2DArray_[index].length() > currentRow){
-                messageToFile.append(QString::number(csv2DArray_[index].at(currentRow)));
-            }
-            messageToFile.append(",");
-        }
-        messageToFile.append("\n");
-        writer << messageToFile;
-    }
+   /*write the values into the csv*/
+   for(int currentRow = 0; currentRow < longestColumnLength; currentRow++)
+   {
+      messageToFile.clear();
+      for(int index = 0; index < numOfColumns; index++)
+      {
+         if(csv2DArray_[index].length() > currentRow){
+            messageToFile.append(QString::number(csv2DArray_[index].at(currentRow)));
+         }
+         messageToFile.append(",");
+      }
+      messageToFile.append("\n");
+      writer << messageToFile;
+   }
 }
 
 QString DebugHandler::convertIDtoString(int id)
@@ -260,83 +259,83 @@ QString DebugHandler::convertIDtoString(int id)
       break;
 
    case DataPopulator::Mod2PcbTemperature:
-       convertedID.append("Mod2PcbTemperature:");
-       break;
+      convertedID.append("Mod2PcbTemperature:");
+      break;
    case DataPopulator::Mod2CellTemperature:
-        convertedID.append("Mod2CellTemperature:");
+      convertedID.append("Mod2CellTemperature:");
       break;
    case DataPopulator::Mod2CellVoltage0:
-        convertedID.append("Mod2CellVoltage0:");
+      convertedID.append("Mod2CellVoltage0:");
       break;
    case DataPopulator::Mod2CellVoltage1:
-        convertedID.append("Mod2CellVoltage1:");
+      convertedID.append("Mod2CellVoltage1:");
       break;
    case DataPopulator::Mod2CellVoltage2:
-        convertedID.append("Mod2CellVoltage2:");
+      convertedID.append("Mod2CellVoltage2:");
       break;
    case DataPopulator::Mod2CellVoltage3:
-        convertedID.append("Mod2CellVoltage3:");
+      convertedID.append("Mod2CellVoltage3:");
       break;
    case DataPopulator::Mod2CellVoltage4:
-        convertedID.append("Mod2CellVoltage4:");
+      convertedID.append("Mod2CellVoltage4:");
       break;
    case DataPopulator::Mod2CellVoltage5:
-        convertedID.append("Mod2CellVoltage5:");
+      convertedID.append("Mod2CellVoltage5:");
       break;
    case DataPopulator::Mod2CellVoltage6:
-        convertedID.append("Mod2CellVoltage6:");
+      convertedID.append("Mod2CellVoltage6:");
       break;
    case DataPopulator::Mod2CellVoltage7:
-        convertedID.append("Mod2CellVoltage7:");
+      convertedID.append("Mod2CellVoltage7:");
       break;
 
    case DataPopulator::Mod3PcbTemperature:
-        convertedID.append("Mod3PcbTemperature:");
+      convertedID.append("Mod3PcbTemperature:");
       break;
    case DataPopulator::Mod3CellTemperature:
-        convertedID.append("Mod3CellTemperature:");
+      convertedID.append("Mod3CellTemperature:");
       break;
    case DataPopulator::Mod3CellVoltage0:
-        convertedID.append("Mod3CellVoltage0:");
+      convertedID.append("Mod3CellVoltage0:");
       break;
    case DataPopulator::Mod3CellVoltage1:
-        convertedID.append("Mod3CellVoltage1:");
+      convertedID.append("Mod3CellVoltage1:");
       break;
    case DataPopulator::Mod3CellVoltage2:
-        convertedID.append("Mod3CellVoltage2:");
+      convertedID.append("Mod3CellVoltage2:");
       break;
    case DataPopulator::Mod3CellVoltage3:
-        convertedID.append("Mod3CellVoltage3:");
+      convertedID.append("Mod3CellVoltage3:");
       break;
    case DataPopulator::Mod3CellVoltage4:
-        convertedID.append("Mod3CellVoltage4:");
+      convertedID.append("Mod3CellVoltage4:");
       break;
    case DataPopulator::Mod3CellVoltage5:
-        convertedID.append("Mod3CellVoltage5:");
+      convertedID.append("Mod3CellVoltage5:");
       break;
    case DataPopulator::Mod3CellVoltage6:
-        convertedID.append("Mod3CellVoltage6:");
+      convertedID.append("Mod3CellVoltage6:");
       break;
    case DataPopulator::Mod3CellVoltage7:
-        convertedID.append("Mod3CellVoltage7:");
+      convertedID.append("Mod3CellVoltage7:");
       break;
 
    case DataPopulator::BatteryVoltage:
-        convertedID.append("BatteryVoltage:");
+      convertedID.append("BatteryVoltage:");
       break;
    case DataPopulator::BatteryCurrent:
-        convertedID.append("BatteryCurrent:");
+      convertedID.append("BatteryCurrent:");
       break;
    case DataPopulator::BatteryVoltageThresholdRising:
-        convertedID.append("BatteryVoltageThresholdRising:");
+      convertedID.append("BatteryVoltageThresholdRising:");
       break;
    case DataPopulator::BatteryVoltageThresholdFalling:
-        convertedID.append("BatteryVoltageThresholdFalling:");
+      convertedID.append("BatteryVoltageThresholdFalling:");
       break;
    default:
-       convertedID.append("**NO ID**");
-       break;
+      convertedID.append("**NO ID**");
+      break;
    }
-return convertedID;
+   return convertedID;
 }
 
