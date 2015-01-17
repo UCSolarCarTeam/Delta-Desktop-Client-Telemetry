@@ -21,31 +21,31 @@ RCC_DIR = ../release/.rcc
 UI_DIR = ../release/.ui
 
 SOURCES += \
-    ConnectionService/SerialPortConnectionService.cpp \
-    DataParser/DataParser.cpp \
-    DataPopulator/DataPopulator.cpp \
-    DisplayPresenter/DisplayPresenter.cpp \
-    DisplayView/DisplayView.cpp \
+    DataLayer/ConnectionService/SerialPortConnectionService.cpp \
+    DataLayer/DataParser/DataParser.cpp \
+    DataLayer/DataPopulator/DataPopulator.cpp \
+    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/main.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
-    SolarCarTestUi/SolarCarTestUI.cpp \
-    TelemetryData/TelemetryData.cpp \
-    DebugHandler/DebugHandler.cpp
+    ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
+    BusinessLayer/TelemetryData/TelemetryData.cpp \
+    BusinessLayer/DebugHandler/DebugHandler.cpp
 
 HEADERS  += \
-    ConnectionService/I_ConnectionService.h \
-    ConnectionService/SerialPortConnectionService.h \
-    DataParser/DataParser.h \
-    DataParser/I_DataParser.h \
-    DataPopulator/DataPopulator.h \
-    DisplayPresenter/DisplayPresenter.h \
-    DisplayView/DisplayView.h \
+    DataLayer/ConnectionService/I_ConnectionService.h \
+    DataLayer/ConnectionService/SerialPortConnectionService.h \
+    DataLayer/DataParser/DataParser.h \
+    DataLayer/DataParser/I_DataParser.h \
+    DataLayer/DataPopulator/DataPopulator.h \
+    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    ViewLayer/DisplayView/DisplayView.h \
     SolarCarTelemetry/SolarCarTelemetry.h \
     SolarCarTestUi/SolarCarTestUI.h \
-    TelemetryData/I_TelemetryData.h \
-    TelemetryData/TelemetryData.h \
-    SolarCarTestUi/I_SolarCarTestUI.h \
-    DebugHandler/DebugHandler.h
+    BusinessLayer/TelemetryData/I_TelemetryData.h \
+    BusinessLayer/TelemetryData/TelemetryData.h \
+    ViewLayer/SolarCarTestUi/I_SolarCarTestUI.h \
+    BusinessLayer/DebugHandler/DebugHandler.h
 
 FORMS    += \
     SolarCarTestUI.ui
