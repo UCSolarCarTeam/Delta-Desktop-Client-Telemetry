@@ -1,7 +1,7 @@
 #include "DisplayPresenter.h"
-#include "../TelemetryData/I_TelemetryData.h"
-#include "../ConnectionService/I_ConnectionService.h"
-#include "../DebugHandler/DebugHandler.h"
+#include "../../BusinessLayer/TelemetryData/I_TelemetryData.h"
+#include "../../DataLayer/ConnectionService/I_ConnectionService.h"
+#include "../../BusinessLayer/DebugHandler/DebugHandler.h"
 
 
 DisplayPresenter::DisplayPresenter(const I_TelemetryData& telemetryData,

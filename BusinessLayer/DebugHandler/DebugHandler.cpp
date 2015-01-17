@@ -1,7 +1,7 @@
 #include "DebugHandler.h"
-#include "../ConnectionService/I_ConnectionService.h"
-#include "../DataParser/I_DataParser.h"
-#include "../DataPopulator/DataPopulator.h"
+#include "../../DataLayer/ConnectionService/I_ConnectionService.h"
+#include "../../DataLayer/DataParser/I_DataParser.h"
+#include "../../DataLayer/DataPopulator/DataPopulator.h"
 
 DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser& dataParser, QString filename)
 : logTxtFile_(filename)
