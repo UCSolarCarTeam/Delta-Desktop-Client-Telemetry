@@ -44,6 +44,7 @@ HEADERS  += \
     SolarCarTestUi/SolarCarTestUI.h \
     BusinessLayer/TelemetryData/I_TelemetryData.h \
     BusinessLayer/TelemetryData/TelemetryData.h \
+    ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
     ViewLayer/SolarCarTestUi/I_SolarCarTestUI.h \
     BusinessLayer/DebugHandler/DebugHandler.h
 
