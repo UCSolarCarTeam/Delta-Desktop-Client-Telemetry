@@ -30,7 +30,11 @@ SOURCES += \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
     ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
     BusinessLayer/TelemetryData/TelemetryData.cpp \
-    BusinessLayer/DebugHandler/DebugHandler.cpp
+    BusinessLayer/DebugHandler/DebugHandler.cpp \
+    BusinessLayer/BatteryData/BatteryData.cpp \
+    BusinessLayer/ArrayData/ArrayData.cpp \
+    BusinessLayer/PowerData/PowerData.cpp \
+    BusinessLayer/VehicleData/VehicleData.cpp
 
 HEADERS  += \
     DataLayer/ConnectionService/I_ConnectionService.h \
@@ -46,7 +50,11 @@ HEADERS  += \
     BusinessLayer/TelemetryData/TelemetryData.h \
     ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
     ViewLayer/SolarCarTestUi/I_SolarCarTestUI.h \
-    BusinessLayer/DebugHandler/DebugHandler.h
+    BusinessLayer/DebugHandler/DebugHandler.h \
+    BusinessLayer/BatteryData/BatteryData.h \
+    BusinessLayer/ArrayData/ArrayData.h \
+    BusinessLayer/PowerData/PowerData.h \
+    BusinessLayer/VehicleData/VehicleData.h
 
 FORMS    += \
     SolarCarTestUI.ui
