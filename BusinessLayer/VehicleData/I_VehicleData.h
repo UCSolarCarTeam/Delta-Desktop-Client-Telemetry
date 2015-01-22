@@ -1,0 +1,5 @@
+#ifndef I_VEHICLEDATA
+#define I_VEHICLEDATA
+
+#endif // I_VEHICLEDATA
+

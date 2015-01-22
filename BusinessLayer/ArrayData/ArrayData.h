@@ -1,12 +1,10 @@
-#ifndef BATTERYDATA_H
-#define BATTERYDATA_H
+#pragma once
 
 
-class BatteryData
+class ArrayData
 {
 public:
-    BatteryData();
-    ~BatteryData();
+    ArrayData();
+    ~ArrayData();
 };
 
-#endif // BATTERYDATA_H

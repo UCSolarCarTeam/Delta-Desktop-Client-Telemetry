@@ -1,0 +1,5 @@
+#ifndef I_BATTERYDATA
+#define I_BATTERYDATA
+
+#endif // I_BATTERYDATA
+

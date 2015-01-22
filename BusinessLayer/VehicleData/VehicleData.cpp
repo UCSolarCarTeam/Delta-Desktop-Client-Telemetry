@@ -1,11 +1,11 @@
-#include "batterydata.h"
+#include "VehicleData.h"
 
-BatteryData::BatteryData()
+VehicleData::VehicleData()
 {
 
 }
 
-BatteryData::~BatteryData()
+VehicleData::~VehicleData()
 {
 
 }

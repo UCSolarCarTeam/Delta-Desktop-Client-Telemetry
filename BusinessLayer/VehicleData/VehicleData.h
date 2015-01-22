@@ -1,12 +1,9 @@
-#ifndef BATTERYDATA_H
-#define BATTERYDATA_H
+#pragma once
 
-
-class BatteryData
+class VehicleData
 {
 public:
-    BatteryData();
-    ~BatteryData();
+    VehicleData();
+    ~VehicleData();
 };
 
-#endif // BATTERYDATA_H

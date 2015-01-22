@@ -1,11 +1,11 @@
-#include "batterydata.h"
+#include "ArrayData.h"
 
-BatteryData::BatteryData()
+ArrayData::ArrayData()
 {
 
 }
 
-BatteryData::~BatteryData()
+ArrayData::~ArrayData()
 {
 
 }

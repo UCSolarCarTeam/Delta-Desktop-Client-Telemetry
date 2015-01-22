@@ -54,7 +54,11 @@ HEADERS  += \
     BusinessLayer/BatteryData/BatteryData.h \
     BusinessLayer/ArrayData/ArrayData.h \
     BusinessLayer/PowerData/PowerData.h \
-    BusinessLayer/VehicleData/VehicleData.h
+    BusinessLayer/VehicleData/VehicleData.h \
+    BusinessLayer/BatteryData/I_BatteryData.h \
+    BusinessLayer/ArrayData/I_ArrayData.h \
+    BusinessLayer/PowerData/I_PowerData.h \
+    BusinessLayer/VehicleData/I_VehicleData.h
 
 FORMS    += \
     SolarCarTestUI.ui
