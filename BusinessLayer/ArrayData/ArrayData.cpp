@@ -2,11 +2,9 @@
 
 ArrayData::ArrayData()
 {
-
 }
 
 ArrayData::~ArrayData()
 {
-
 }
 

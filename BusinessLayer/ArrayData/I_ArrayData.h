@@ -1,5 +1,17 @@
-#ifndef I_ARRAYDATA
-#define I_ARRAYDATA
+#pragma once
 
-#endif // I_ARRAYDATA
+#include <QObject>
+
+class I_Arraydata : public QObject
+{
+   Q_OBJECT
+
+public:
+   virtual ~I_Arraydata() {}
+
+   /*ArrayData "Gets"*/
+
+   /*ArrayData "Sets"*/
+};
+
 

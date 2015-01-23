@@ -1,10 +1,15 @@
 #pragma once
 
+#include "I_ArrayData.h"
 
-class ArrayData
+class ArrayData : public I_ArrayData
 {
 public:
     ArrayData();
-    ~ArrayData();
+    virtual ~ArrayData();
+
+    /*ArrayData "Gets"*/
+
+    /*ArrayData "Sets"*/
 };
 
