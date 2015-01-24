@@ -34,7 +34,11 @@ SOURCES += \
     BusinessLayer/BatteryData/BatteryData.cpp \
     BusinessLayer/ArrayData/ArrayData.cpp \
     BusinessLayer/PowerData/PowerData.cpp \
-    BusinessLayer/VehicleData/VehicleData.cpp
+    BusinessLayer/VehicleData/VehicleData.cpp \
+    BusinessLayer/BusinessContainer.cpp \
+    DataLayer/DataContainer.cpp \
+    PresenterLayer/DisplayPresenter/PresenterContainer.cpp \
+    ViewLayer/ViewContainer.cpp
 
 HEADERS  += \
     DataLayer/ConnectionService/I_ConnectionService.h \
@@ -58,7 +62,11 @@ HEADERS  += \
     BusinessLayer/BatteryData/I_BatteryData.h \
     BusinessLayer/ArrayData/I_ArrayData.h \
     BusinessLayer/PowerData/I_PowerData.h \
-    BusinessLayer/VehicleData/I_VehicleData.h
+    BusinessLayer/VehicleData/I_VehicleData.h \
+    BusinessLayer/BusinessContainer.h \
+    DataLayer/DataContainer.h \
+    PresenterLayer/DisplayPresenter/PresenterContainer.h \
+    ViewLayer/ViewContainer.h
 
 FORMS    += \
     SolarCarTestUI.ui
