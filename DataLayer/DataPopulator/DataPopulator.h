@@ -2,13 +2,21 @@
 #include <QObject>
 
 class I_DataParser;
-class I_TelemetryData;
+class I_ArrayData;
+class I_PowerData;
+class I_VehicleData;
+class I_BatteryData;
 
 class DataPopulator : public QObject
 {
   Q_OBJECT
 public:
-  DataPopulator(const I_DataParser& dataParser, I_TelemetryData& data);
+  DataPopulator(const I_DataParser& dataParser, 
+                I_ArrayData& ArrayData,
+                I_PowerData& PowerData,
+                I_VehicleData& VehicleData,
+                I_BatteryData& BatteryData);
+
 
   enum Ids
   {

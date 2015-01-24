@@ -4,9 +4,16 @@
 #include <stdio.h>
 
 
-DataPopulator::DataPopulator(const I_DataParser& dataParser, I_TelemetryData& data)
+DataPopulator::DataPopulator(const I_DataParser& dataParser, 
+                             I_ArrayData& arrayData,
+                             I_PowerData& powerData,
+                             I_VehicleData& vehicleData,
+                             I_BatteryData& batteryData)
 : dataParser_(dataParser)
-, data_(data)
+, arrayData_(arrayData)
+, powerData_(powerData)
+, vehicleData_(vehicleData)
+, batteryData_(batteryData)
 {
    connect(&dataParser, SIGNAL(dataReceived(int, double)), this, SLOT(handleDataReceived(int, double)));
 }

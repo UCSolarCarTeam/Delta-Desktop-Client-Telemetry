@@ -27,35 +27,35 @@ DataContainer::DataContainer()
 {
 }
 
-QSerialPort port()
+QSerialPort& port()
 {
 	return port_;
 }
-I_ConnectionService connectionService()
+I_ConnectionService& connectionService()
 {
 	return connectionService_;
 }
-DataParser dataParser()
+DataParser& dataParser()
 {
 	return dataParser_;
 }
-DataPopulator dataPopulator()
+DataPopulator& dataPopulator()
 {
 	return dataPopulator_;
 }
-ArrayData arrayData()
+ArrayData& arrayData()
 {
 	return arrayData_;
 }
-PowerData powerData()
+PowerData& powerData()
 {
 	return powerData_;
 }
-VehicleData vehicleData()
+VehicleData& vehicleData()
 {
 	return vehicleData_;
 }
-BatteryData batteryData()
+BatteryData& batteryData()
 {
 	return batteryData_;
 }
