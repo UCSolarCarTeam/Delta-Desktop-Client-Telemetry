@@ -1,6 +1,5 @@
 #pragma once
 
-#include <QSerialPort>
 #include <QScopedPointer>
 
 class DataParser;
@@ -14,12 +13,21 @@ class BatteryData;
 class DataContainer
 {
 public:
+	QSerialPort port();
+	I_ConnectionService connectionService();
+	DataParser dataParser();
+	DataPopulator dataPopulator();
+	ArrayData arrayData();
+	PowerData powerData();
+	VehicleData vehicleData();
+	BatteryData batteryData();
+
  	explicit DataContainer();
     ~DataContainer();
 
 private:
-    QScopedPointer<QSerialPort> port_;
-    QScopedPointer<I_ConnectionService> connectionService_;
+	QScopedPointer<QserialPort> port_;
+	QScopedPointer<I_ConnectionService> connectionService;
 	QScopedPointer<DataParser> dataParser_;
 	QScopedPointer<DataPopulator> dataPopulator_;
 	QScopedPointer<ArrayData> arrayData_;

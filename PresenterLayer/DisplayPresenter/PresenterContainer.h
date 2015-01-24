@@ -8,8 +8,6 @@ class DisplayPresenter;
 class PresenterContainer
 {
 public:
-	DisplayPresenter& displayPresenter();
-
     explicit PresenterContainer();
     ~PresenterContainer();
 

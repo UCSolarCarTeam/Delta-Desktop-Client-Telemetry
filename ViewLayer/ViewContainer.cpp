@@ -11,6 +11,15 @@ ViewContainer::ViewContainer()
 {
 }
 
+SolarCarTestUI& mainWindow()
+{
+	return mainWindow_;
+}
+DisplayView displayView()
+{
+	return displayView_;
+}
+
 ViewContainer::~ViewContainer()
 {
 }

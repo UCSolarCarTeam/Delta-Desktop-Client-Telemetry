@@ -18,6 +18,11 @@ BusinessContainer::BusinessContainer()
 {
 }
 
+DebugHandler& debugHandler()
+{
+	return debugHandler_;
+} 
+
 BusinessContainer::~BusinessContainer()
 {
 }

@@ -8,7 +8,9 @@ class DebugHandler;
 class BusinessContainer
 {
 public:
-    BusinessContain2er();
+	DebugHandler& debugHandler();
+
+    BusinessContainer();
     ~BusinessContainer();
 
 private:

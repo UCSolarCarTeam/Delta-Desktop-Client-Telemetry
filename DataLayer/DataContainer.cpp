@@ -27,6 +27,39 @@ DataContainer::DataContainer()
 {
 }
 
+QSerialPort port()
+{
+	return port_;
+}
+I_ConnectionService connectionService()
+{
+	return connectionService_;
+}
+DataParser dataParser()
+{
+	return dataParser_;
+}
+DataPopulator dataPopulator()
+{
+	return dataPopulator_;
+}
+ArrayData arrayData()
+{
+	return arrayData_;
+}
+PowerData powerData()
+{
+	return powerData_;
+}
+VehicleData vehicleData()
+{
+	return vehicleData_;
+}
+BatteryData batteryData()
+{
+	return batteryData_;
+}
+
 DataContainer::~DataContainer()
 {
 }

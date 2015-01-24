@@ -9,6 +9,9 @@ class PresenterContainer;
 class ViewContainer
 {
 public:
+	SolarCarTestUI& mainWindow();
+	DisplayView& displayView();
+
     explicit ViewContainer();
     ~ViewContainer();
 

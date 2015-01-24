@@ -82,5 +82,8 @@ private slots:
 
 private:
   const I_DataParser& dataParser_;
-  I_TelemetryData& data_;
+  I_ArrayData& arrayData_;  
+  I_PowerData& powerData_;
+  I_VehicleData& vehicleData_;
+  I_BatteryData& batteryData_;
 };
