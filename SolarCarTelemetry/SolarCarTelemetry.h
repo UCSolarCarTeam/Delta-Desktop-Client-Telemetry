@@ -2,6 +2,7 @@
 
 #include <QApplication>
 #include <QScopedPointer>
+
 class DataParser;
 class DataPopulator;
 class DebugHandler;

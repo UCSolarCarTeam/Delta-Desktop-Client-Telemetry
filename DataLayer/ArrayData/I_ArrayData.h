@@ -2,12 +2,12 @@
 
 #include <QObject>
 
-class I_Arraydata : public QObject
+class I_ArrayData : public QObject
 {
    Q_OBJECT
 
 public:
-   virtual ~I_Arraydata() {}
+   virtual ~I_ArrayData() {}
 
    /*ArrayData "Gets"*/
 

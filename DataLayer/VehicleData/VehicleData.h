@@ -1,6 +1,6 @@
 #pragma once
 
-#include "I_PowerData.h"
+#include "I_VehicleData.h"
 
 class VehicleData : public I_PowerData
 {

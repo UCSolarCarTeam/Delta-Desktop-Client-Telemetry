@@ -30,6 +30,6 @@ private:
     double motorVoltageReal_;
     double motorCurrentReal_;
     double backEmfImaginary_;
-    double dcBusAmpHours_
+    double dcBusAmpHours_;
 };
 

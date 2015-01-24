@@ -21,52 +21,52 @@ RCC_DIR = ../release/.rcc
 UI_DIR = ../release/.ui
 
 SOURCES += \
+    DataLayer/DataContainer.cpp \
     DataLayer/ConnectionService/SerialPortConnectionService.cpp \
     DataLayer/DataParser/DataParser.cpp \
     DataLayer/DataPopulator/DataPopulator.cpp \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
-    ViewLayer/DisplayView/DisplayView.cpp \
-    SolarCarTelemetry/main.cpp \
-    SolarCarTelemetry/SolarCarTelemetry.cpp \
-    ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
+    DataLayer/ArrayData/ArrayData.cpp \
+    DataLayer/PowerData/PowerData.cpp \
+    DataLayer/BatteryData/BatteryData.cpp \
+    DataLayer/VehicleData/VehicleData.cpp \
+    BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/TelemetryData/TelemetryData.cpp \
     BusinessLayer/DebugHandler/DebugHandler.cpp \
-    BusinessLayer/BatteryData/BatteryData.cpp \
-    BusinessLayer/ArrayData/ArrayData.cpp \
-    BusinessLayer/PowerData/PowerData.cpp \
-    BusinessLayer/VehicleData/VehicleData.cpp \
-    BusinessLayer/BusinessContainer.cpp \
-    DataLayer/DataContainer.cpp \
-    PresenterLayer/DisplayPresenter/PresenterContainer.cpp \
-    ViewLayer/ViewContainer.cpp
+    SolarCarTelemetry/main.cpp \
+    PresenterLayer/PresenterContainer.cpp \
+    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    ViewLayer/ViewContainer.cpp \
+    ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
+    ViewLayer/DisplayView/DisplayView.cpp \
+    SolarCarTelemetry/SolarCarTelemetry.cpp
 
 HEADERS  += \
+    DataLayer/DataContainer.h \
     DataLayer/ConnectionService/I_ConnectionService.h \
     DataLayer/ConnectionService/SerialPortConnectionService.h \
     DataLayer/DataParser/DataParser.h \
     DataLayer/DataParser/I_DataParser.h \
     DataLayer/DataPopulator/DataPopulator.h \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
-    ViewLayer/DisplayView/DisplayView.h \
-    SolarCarTelemetry/SolarCarTelemetry.h \
-    SolarCarTestUi/SolarCarTestUI.h \
+    DataLayer/ArrayData/ArrayData.h \
+    DataLayer/PowerData/PowerData.h \
+    DataLayer/VehicleData/VehicleData.h \
+    DataLayer/BatteryData/I_BatteryData.h \
+    DataLayer/ArrayData/I_ArrayData.h \
+    DataLayer/PowerData/I_PowerData.h \
+    DataLayer/VehicleData/I_VehicleData.h \
+    DataLayer/BatteryData/BatteryData.h \
+    BusinessLayer/BusinessContainer.h \
+    BusinessLayer/DebugHandler/DebugHandler.h \
     BusinessLayer/TelemetryData/I_TelemetryData.h \
     BusinessLayer/TelemetryData/TelemetryData.h \
-    ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
+    PresenterLayer/PresenterContainer.h \
+    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    ViewLayer/ViewContainer.h \
+    ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/SolarCarTestUi/I_SolarCarTestUI.h \
-    BusinessLayer/DebugHandler/DebugHandler.h \
-    BusinessLayer/BatteryData/BatteryData.h \
-    BusinessLayer/ArrayData/ArrayData.h \
-    BusinessLayer/PowerData/PowerData.h \
-    BusinessLayer/VehicleData/VehicleData.h \
-    BusinessLayer/BatteryData/I_BatteryData.h \
-    BusinessLayer/ArrayData/I_ArrayData.h \
-    BusinessLayer/PowerData/I_PowerData.h \
-    BusinessLayer/VehicleData/I_VehicleData.h \
-    BusinessLayer/BusinessContainer.h \
-    DataLayer/DataContainer.h \
-    PresenterLayer/DisplayPresenter/PresenterContainer.h \
-    ViewLayer/ViewContainer.h
+    ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
+    SolarCarTelemetry/SolarCarTelemetry.h
+    
 
 FORMS    += \
     SolarCarTestUI.ui
