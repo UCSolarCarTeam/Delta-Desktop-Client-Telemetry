@@ -9,6 +9,11 @@ PresenterContainer::PresenterContainer()
 {
 }
 
+DisplayPresenter& displayPresenter()
+{
+	return displayPresenter_;
+}
+
 PresenterContainer::~PresenterContainer()
 {
 }

@@ -49,6 +49,7 @@ double BatteryData::mod0CellVoltage7() const
 {           
    return mod0CellVoltage7_;
 }
+    void setDspBoardTemp(double dspBoardTemp);
 
 double BatteryData::mod1PcbTemperature() const
 {           

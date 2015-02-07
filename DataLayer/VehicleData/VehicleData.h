@@ -2,7 +2,7 @@
 
 #include "I_VehicleData.h"
 
-class VehicleData : public I_PowerData
+class VehicleData : public I_VehicleData
 {
 public:
     VehicleData();

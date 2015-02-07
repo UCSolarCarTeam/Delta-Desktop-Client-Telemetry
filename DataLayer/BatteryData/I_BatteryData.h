@@ -158,6 +158,5 @@ public:
    void batteryCurrentReceived(double batteryCurent);
    void batteryVoltageThresholdRisingReceived(double batteryVoltageThresholdRising);
    void batteryVoltageThresholdFallingReceived(double batteryVoltageThresholdFalling);
-
 };
 

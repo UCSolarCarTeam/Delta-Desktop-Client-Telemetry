@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QScopedPointer>
+#include <QSharedPointer>
 
 class DataContainer;
 class DebugHandler;
@@ -14,8 +14,8 @@ public:
     ~BusinessContainer();
 
 private:
-	QScopedPointer<DataContainer> dataContainer_;
-	QScopedPointer<DebugHandler> debugHandler_;	
+    QSharedPointer<DataContainer> dataContainer_;
+    QSharedPointer<DebugHandler> debugHandler_;
 };
 
 

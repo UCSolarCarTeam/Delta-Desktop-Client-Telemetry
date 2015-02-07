@@ -1,40 +1,40 @@
 #pragma once
 
-#include <QScopedPointer>
+#include <QSharedPointer>
 #include <QSerialPort>
 
 class DataParser;
-class DataPopulator;
 class I_ConnectionService;
 class ArrayData;
 class VehicleData;
 class PowerData;
 class BatteryData;
+class DataPopulator;
 
 class DataContainer
 {
 public:
-	QSerialPort& port();
-	I_ConnectionService& connectionService();
-	DataParser& dataParser();
-	DataPopulator& dataPopulator();
-	ArrayData& arrayData();
-	PowerData& powerData();
-	VehicleData& vehicleData();
-	BatteryData& batteryData();
+    QSharedPointer<QSerialPort> port();
+    QSharedPointer<I_ConnectionService> connectionService();
+    QSharedPointer<DataParser> dataParser();
+    QSharedPointer<DataPopulator> dataPopulator();
+    QSharedPointer<ArrayData> arrayData();
+    QSharedPointer<PowerData> powerData();
+    QSharedPointer<VehicleData> vehicleData();
+    QSharedPointer<BatteryData> batteryData();
 
  	explicit DataContainer();
     ~DataContainer();
 
 private:
-	QScopedPointer<QSerialPort> port_;
-    QScopedPointer<I_ConnectionService> connectionService_;
-	QScopedPointer<DataParser> dataParser_;
-	QScopedPointer<DataPopulator> dataPopulator_;
-	QScopedPointer<ArrayData> arrayData_;
-	QScopedPointer<VehicleData> vehicleData_; 
-	QScopedPointer<PowerData> powerData_;
-	QScopedPointer<BatteryData> batteryData_;
+    QSharedPointer<QSerialPort> port_;
+    QSharedPointer<I_ConnectionService> connectionService_;
+	QSharedPointer<DataParser> dataParser_;
+	QSharedPointer<ArrayData> arrayData_;
+	QSharedPointer<VehicleData> vehicleData_; 
+	QSharedPointer<PowerData> powerData_;
+	QSharedPointer<BatteryData> batteryData_;
+    QSharedPointer<DataPopulator> dataPopulator_;
 
 };
 

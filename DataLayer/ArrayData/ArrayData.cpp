@@ -7,4 +7,3 @@ ArrayData::ArrayData()
 ArrayData::~ArrayData()
 {
 }
-

@@ -1,14 +1,15 @@
-#include "DataContainer.h"
 #include <QtSerialPort/QSerialPort>
+#include <QSharedPointer>
 
-#include "DataParser/DataParser.h"
-#include "DataPopulator/DataPopulator.h"
 #include "ConnectionService/SerialPortConnectionService.h"
+#include "DataParser/DataParser.h"
 #include "ArrayData/ArrayData.h"
-#include "PowerData/PowerData.h"
 #include "VehicleData/VehicleData.h"
-#include "ArrayData/ArrayData.h"
+#include "PowerData/PowerData.h"
+#include "BatteryData/BatteryData.h"
+#include "DataPopulator/DataPopulator.h"
 
+#include "DataContainer.h"
 namespace
 {
     const QString defaultPortName = "COM";
@@ -19,43 +20,46 @@ DataContainer::DataContainer()
 : port_(new QSerialPort)
 , connectionService_(new SerialPortConnectionService(defaultPortName, defaultBaudrate, *port_))
 , dataParser_(new DataParser(*port_, *connectionService_))
-, dataPopulator_(new DataPopulator(*dataParser_, *data_))
 , arrayData_(new ArrayData())
 , vehicleData_(new VehicleData())
 , powerData_(new PowerData())
 , batteryData_(new BatteryData()) 
+, dataPopulator_(new DataPopulator(*dataParser_,
+                                   *arrayData_,
+                                   *powerData_,
+                                   *vehicleData_,
+                                   *batteryData_))
 {
 }
-
-QSerialPort& port()
+QSharedPointer<QSerialPort> DataContainer::port()
 {
-	return port_;
+    return port_;
 }
-I_ConnectionService& connectionService()
+QSharedPointer<I_ConnectionService> DataContainer::connectionService()
 {
 	return connectionService_;
 }
-DataParser& dataParser()
+QSharedPointer<DataParser> DataContainer::dataParser()
 {
 	return dataParser_;
 }
-DataPopulator& dataPopulator()
+QSharedPointer<DataPopulator> DataContainer::dataPopulator()
 {
 	return dataPopulator_;
 }
-ArrayData& arrayData()
+QSharedPointer<ArrayData> DataContainer::arrayData()
 {
 	return arrayData_;
 }
-PowerData& powerData()
+QSharedPointer<PowerData> DataContainer::powerData()
 {
 	return powerData_;
 }
-VehicleData& vehicleData()
+QSharedPointer<VehicleData> DataContainer::vehicleData()
 {
 	return vehicleData_;
 }
-BatteryData& batteryData()
+QSharedPointer<BatteryData> DataContainer::batteryData()
 {
 	return batteryData_;
 }

@@ -1,10 +1,6 @@
 #include "BusinessContainer.h"
 
 #include "DataLayer/DataContainer.h"
-#include "ArrayData/ArrayData.h"
-#include "VehicleData/VehicleData.h"
-#include "PowerData/PowerData.h"
-#include "BatteryData/BatteryData.h"
 #include "DebugHandler/DebugHandler.h"
 
 namespace
@@ -14,7 +10,9 @@ namespace
 
 BusinessContainer::BusinessContainer()
 : dataContainer_(new DataContainer())
-, debugHandler_(new DebugHandler(*connectionservice_, *dataParser_, defaultFilename))
+, debugHandler_(new DebugHandler(dataContainer_->connectionService(),
+                                 dataContainer_->dataParser(),
+                                 defaultFilename))
 {
 }
 

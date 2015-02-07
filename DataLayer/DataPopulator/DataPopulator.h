@@ -1,4 +1,5 @@
 #pragma once
+
 #include <QObject>
 
 class I_DataParser;
@@ -12,10 +13,10 @@ class DataPopulator : public QObject
   Q_OBJECT
 public:
   DataPopulator(const I_DataParser& dataParser, 
-                I_ArrayData& ArrayData,
-                I_PowerData& PowerData,
-                I_VehicleData& VehicleData,
-                I_BatteryData& BatteryData);
+                I_ArrayData& arrayData,
+                I_PowerData& powerData,
+                I_VehicleData& vehicleData,
+                I_BatteryData& batteryData);
 
 
   enum Ids
@@ -90,7 +91,7 @@ private slots:
 
 private:
   const I_DataParser& dataParser_;
-  I_ArrayData& arrayData_;  
+  I_ArrayData& arrayData_;
   I_PowerData& powerData_;
   I_VehicleData& vehicleData_;
   I_BatteryData& batteryData_;
