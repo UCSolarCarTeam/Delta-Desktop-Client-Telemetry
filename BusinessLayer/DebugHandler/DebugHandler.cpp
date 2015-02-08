@@ -3,7 +3,9 @@
 #include "../../DataLayer/DataParser/I_DataParser.h"
 #include "../../DataLayer/DataPopulator/DataPopulator.h"
 
-DebugHandler::DebugHandler(I_ConnectionService& connectionService, I_DataParser& dataParser, QString filename)
+DebugHandler::DebugHandler(I_ConnectionService& connectionService,
+                           I_DataParser& dataParser,
+                           QString filename)
 : logTxtFile_(filename)
 , logCsvFile_(filename)
 , connectionService_(connectionService)

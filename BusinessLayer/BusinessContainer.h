@@ -8,7 +8,7 @@ class DebugHandler;
 class BusinessContainer
 {
 public:
-	DebugHandler& debugHandler();
+    QSharedPointer<DebugHandler> debugHandler();
 
     BusinessContainer();
     ~BusinessContainer();
