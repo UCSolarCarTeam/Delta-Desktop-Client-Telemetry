@@ -1,21 +1,24 @@
-#include "ViewContainer.h"
+#include <QSharedPointer>
 
 #include "PresenterLayer/PresenterContainer.h"
-#include "SolarCarTestUI/SolarCarTestUI.h"
+#include "SolarCarTestUi/SolarCarTestUI.h"
 #include "DisplayView/DisplayView.h"
 
-ViewContainer::ViewContainer()
-: presenterLayer_(new PresenterContainer())
+#include "ViewContainer.h"
+
+ViewContainer::ViewContainer(QSharedPointer<PresenterContainer> presenterContainer)
+: presenterContainer_(presenterContainer)
 , mainWindow_(new SolarCarTestUI())
-, displayView_(new DisplayView(*displayPresenter_, *mainWindow_))
+, displayView_(new DisplayView(*(presenterContainer->displayPresenter()), 
+			  				   *mainWindow_))
 {
 }
 
-SolarCarTestUI& mainWindow()
+QSharedPointer<SolarCarTestUI> ViewContainer::mainWindow()
 {
 	return mainWindow_;
 }
-DisplayView displayView()
+QSharedPointer<DisplayView> ViewContainer::displayView()
 {
 	return displayView_;
 }

@@ -22,31 +22,27 @@ UI_DIR = ../release/.ui
 
 SOURCES += \
     DataLayer/DataContainer.cpp \
-    DataLayer/ConnectionService/SerialPortConnectionService.cpp \
-    DataLayer/DataParser/DataParser.cpp \
-    DataLayer/DataPopulator/DataPopulator.cpp \
     DataLayer/ArrayData/ArrayData.cpp \
     DataLayer/PowerData/PowerData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/VehicleData/VehicleData.cpp \
+    CommunicationLayer/CommunicationContainer.cpp \
+    CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
+    CommunicationLayer/DataParser/DataParser.cpp \
+    CommunicationLayer/DataPopulator/DataPopulator.cpp \
     BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/TelemetryData/TelemetryData.cpp \
     BusinessLayer/DebugHandler/DebugHandler.cpp \
-    SolarCarTelemetry/main.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
-    SolarCarTelemetry/SolarCarTelemetry.cpp
+    SolarCarTelemetry/SolarCarTelemetry.cpp \
+    SolarCarTelemetry/main.cpp
 
 HEADERS  += \
     DataLayer/DataContainer.h \
-    DataLayer/ConnectionService/I_ConnectionService.h \
-    DataLayer/ConnectionService/SerialPortConnectionService.h \
-    DataLayer/DataParser/DataParser.h \
-    DataLayer/DataParser/I_DataParser.h \
-    DataLayer/DataPopulator/DataPopulator.h \
     DataLayer/ArrayData/ArrayData.h \
     DataLayer/PowerData/PowerData.h \
     DataLayer/VehicleData/VehicleData.h \
@@ -55,6 +51,12 @@ HEADERS  += \
     DataLayer/PowerData/I_PowerData.h \
     DataLayer/VehicleData/I_VehicleData.h \
     DataLayer/BatteryData/BatteryData.h \
+    CommunicationLayer/CommunicationContainer.h \
+    CommunicationLayer/ConnectionService/I_ConnectionService.h \
+    CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
+    CommunicationLayer/DataParser/DataParser.h \
+    CommunicationLayer/DataParser/I_DataParser.h \
+    CommunicationLayer/DataPopulator/DataPopulator.h \
     BusinessLayer/BusinessContainer.h \
     BusinessLayer/DebugHandler/DebugHandler.h \
     BusinessLayer/TelemetryData/I_TelemetryData.h \
@@ -67,7 +69,6 @@ HEADERS  += \
     ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
     SolarCarTelemetry/SolarCarTelemetry.h
     
-
 FORMS    += \
     SolarCarTestUI.ui
 

@@ -1,6 +1,7 @@
 #include <QSharedPointer>
 
 #include "DataLayer/DataContainer.h"
+#include "CommunicationLayer/CommunicationContainer.h"
 #include "DebugHandler/DebugHandler.h"
 
 #include "BusinessContainer.h"
@@ -10,10 +11,12 @@ namespace
 	const QString defaultFilename = "SolarCarDebugLog";
 }
 
-BusinessContainer::BusinessContainer()
-: dataContainer_(new DataContainer())
-, debugHandler_(new DebugHandler(*(dataContainer_->connectionService()),
-                                 *(dataContainer_->dataParser()),
+BusinessContainer::BusinessContainer(QSharedPointer<DataContainer> dataContainer,
+									 QSharedPointer<CommunicationContainer> communicationContainer)
+: dataContainer_(dataContainer)
+, communicationContainer_(communicationContainer)
+, debugHandler_(new DebugHandler(*(communicationContainer_->connectionService()),
+                                 *(communicationContainer_->dataParser()),
                                  defaultFilename))
 {
 }

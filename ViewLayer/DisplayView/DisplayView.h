@@ -9,7 +9,7 @@ class DisplayView : public QObject
 {
    Q_OBJECT
 public:
-   DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI& ui);
+   DisplayView(DisplayPresenter& presenter, SolarCarTestUI& ui);
    ~DisplayView();
 
 private:

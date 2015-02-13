@@ -1,7 +1,10 @@
 #pragma once
 
 #include <QObject>
-class I_TelemetryData;
+class I_ArrayData;
+class I_VehicleData;
+class I_PowerData;
+class I_BatteryData;
 class I_ConnectionService;
 class DebugHandler;
 
@@ -9,19 +12,28 @@ class DisplayPresenter : public QObject
 {
    Q_OBJECT
 public:
-   explicit DisplayPresenter(const I_TelemetryData& telemetryData,
+   explicit DisplayPresenter(const I_ArrayData& arrayData,
+                             const I_PowerData& powerData,
+                             const I_VehicleData& vehicleData,
+                             const I_BatteryData& batteryData,                             
                              I_ConnectionService& connectionService,
                              DebugHandler& debugHandler);
    void connectDataSource(QString portName, int baudRate);
    void disconnectDataSource();
 
 private:
-    void relayTelemetryData();
+    void relayArrayData();
+    void relayPowerData();
+    void relayVehicleData();
+    void relayBatteryData();
     void relayConnectionStatus();
     void relayDebugMessage();
 
 private:
-   const I_TelemetryData& telemetryData_;
+   const I_ArrayData& arrayData_;
+   const I_PowerData& powerData_;
+   const I_VehicleData& vehicleData_;
+   const I_BatteryData& batteryData_;                             
    I_ConnectionService& connectionService_;
    DebugHandler& debugHandler_;
 

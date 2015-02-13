@@ -1,15 +1,26 @@
 #include "PresenterContainer.h"
 
+#include "DataLayer/DataContainer.h"
+#include "CommunicationLayer/CommunicationContainer.h"
 #include "BusinessLayer/BusinessContainer.h"
 #include "DisplayPresenter/DisplayPresenter.h"
 
-PresenterContainer::PresenterContainer()
-: businessLayer_(new BusinessContainer())
-, displayPresenter_(new DisplayPresenter(*data_, *connectionService_, *debugHandler))
+PresenterContainer::PresenterContainer(QSharedPointer<DataContainer> dataContainer,
+									   QSharedPointer<CommunicationContainer> communicationContainer,
+									   QSharedPointer<BusinessContainer> businessContainer)
+: dataContainer_(dataContainer)
+, communicationContainer_(communicationContainer)
+, businessContainer_(businessContainer)
+, displayPresenter_(new DisplayPresenter(*(dataContainer->arrayData()),
+										 *(dataContainer->powerData()),
+										 *(dataContainer->vehicleData()),
+										 *(dataContainer->batteryData()),
+										 *(communicationContainer->connectionService()),
+										 *(businessContainer->debugHandler())))
 {
 }
 
-DisplayPresenter& displayPresenter()
+QSharedPointer<DisplayPresenter> PresenterContainer::displayPresenter()
 {
 	return displayPresenter_;
 }

@@ -1,7 +1,7 @@
 #include "DebugHandler.h"
-#include "../../DataLayer/ConnectionService/I_ConnectionService.h"
-#include "../../DataLayer/DataParser/I_DataParser.h"
-#include "../../DataLayer/DataPopulator/DataPopulator.h"
+#include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
+#include "../../CommunicationLayer/DataParser/I_DataParser.h"
+#include "../../CommunicationLayer/DataPopulator/DataPopulator.h"
 
 DebugHandler::DebugHandler(I_ConnectionService& connectionService,
                            I_DataParser& dataParser,

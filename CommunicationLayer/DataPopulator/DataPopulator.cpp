@@ -1,8 +1,8 @@
 #include "../DataParser/I_DataParser.h"
-#include "../ArrayData/I_ArrayData.h"
-#include "../PowerData/I_PowerData.h"
-#include "../VehicleData/I_VehicleData.h"
-#include "../BatteryData/I_BatteryData.h"
+#include "../../DataLayer/ArrayData/I_ArrayData.h"
+#include "../../DataLayer/PowerData/I_PowerData.h"
+#include "../../DataLayer/VehicleData/I_VehicleData.h"
+#include "../../DataLayer/BatteryData/I_BatteryData.h"
 #include "DataPopulator.h"
 #include <stdio.h>
 

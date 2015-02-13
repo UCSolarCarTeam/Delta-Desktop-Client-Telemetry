@@ -1,23 +1,23 @@
 #pragma once
 
-#include <QScopedPointer>
+#include <QSharedPointer>
 
+class PresenterContainer;
 class SolarCarTestUI;
 class DisplayView;
-class PresenterContainer;
 
 class ViewContainer
 {
 public:
-	SolarCarTestUI& mainWindow();
-	DisplayView& displayView();
+	QSharedPointer<SolarCarTestUI> mainWindow();
+	QSharedPointer<DisplayView> displayView();
 
-    explicit ViewContainer();
+    explicit ViewContainer(QSharedPointer<PresenterContainer> presenterContainer);
     ~ViewContainer();
 
 private:
-	QScopedPointer<PresenterContainer> presenterLayer_;
-	QScopedPointer<SolarCarTestUI> mainWindow_;
-	QScopedPointer<DisplayView> displayView_;
+	QSharedPointer<PresenterContainer> presenterContainer_;
+	QSharedPointer<SolarCarTestUI> mainWindow_;
+	QSharedPointer<DisplayView> displayView_;
 };
 

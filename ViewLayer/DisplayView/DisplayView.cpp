@@ -1,8 +1,8 @@
+#include "DisplayView.h"
 #include "../../PresenterLayer/DisplayPresenter/DisplayPresenter.h"
 #include "../SolarCarTestUi/SolarCarTestUI.h"
-#include "DisplayView.h"
 
-DisplayView::DisplayView(class DisplayPresenter& presenter, class SolarCarTestUI& ui)
+DisplayView::DisplayView(DisplayPresenter& presenter, SolarCarTestUI& ui)
 : presenter_(presenter)
 , ui_(ui)
 {
