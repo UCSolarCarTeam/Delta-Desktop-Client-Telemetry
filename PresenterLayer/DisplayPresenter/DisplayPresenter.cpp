@@ -4,7 +4,7 @@
 #include "../../DataLayer/PowerData/I_PowerData.h"
 #include "../../DataLayer/BatteryData/I_BatteryData.h"
 #include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
-#include "../../BusinessLayer/DebugHandler/DebugHandler.h"
+#include "../../BusinessLayer/LoggerService/LoggerService.h"
 
 
 DisplayPresenter::DisplayPresenter(const I_ArrayData& arrayData,
@@ -12,13 +12,13 @@ DisplayPresenter::DisplayPresenter(const I_ArrayData& arrayData,
                                    const I_VehicleData& vehicleData,
                                    const I_BatteryData& batteryData,
                                    I_ConnectionService& connectionService,
-                                   DebugHandler& debugHandler)
+                                   LoggerService& loggerService)
 : arrayData_(arrayData)
 , powerData_(powerData)
 , vehicleData_(vehicleData)
 , batteryData_(batteryData)
 , connectionService_(connectionService)
-, debugHandler_(debugHandler)
+, loggerService_(loggerService)
 {
     relayArrayData();
     relayPowerData();
@@ -39,7 +39,7 @@ void DisplayPresenter::disconnectDataSource()
 
 void DisplayPresenter::relayDebugMessage()
 {
-   connect(&debugHandler_, SIGNAL(sendDebugMessageToPresenter(QString)), this, SIGNAL(sendDebugMessage(QString)));
+   connect(&loggerService_, SIGNAL(sendDebugMessageToPresenter(QString)), this, SIGNAL(sendDebugMessage(QString)));
 }
 
 void DisplayPresenter::relayConnectionStatus()

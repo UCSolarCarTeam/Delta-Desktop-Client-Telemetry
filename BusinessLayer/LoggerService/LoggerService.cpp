@@ -1,9 +1,9 @@
-#include "DebugHandler.h"
+#include "LoggerService.h"
 #include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
 #include "../../CommunicationLayer/DataParser/I_DataParser.h"
 #include "../../CommunicationLayer/DataPopulator/DataPopulator.h"
 
-DebugHandler::DebugHandler(I_ConnectionService& connectionService,
+LoggerService::LoggerService(I_ConnectionService& connectionService,
                            I_DataParser& dataParser,
                            QString filename)
 : logTxtFile_(filename)
@@ -47,21 +47,21 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService,
    }
 }
 
-DebugHandler::~DebugHandler()
+LoggerService::~LoggerService()
 {
    printToDebuglogCsvFile();
    logTxtFile_.close();
    logCsvFile_.close();
 }
 
-void DebugHandler::receivedConnectionService(QString debugMessage)
+void LoggerService::receivedConnectionService(QString debugMessage)
 {
    emit sendDebugMessageToPresenter(debugMessage);
 }
 
 // gets the original RAW string that dataparse receieves
 // (this will just be sent to the debuglogTxtFile)
-void DebugHandler::receivedDebugDataParser(QString debugMessage)
+void LoggerService::receivedDebugDataParser(QString debugMessage)
 {
    QString messageToFile("             | RAW-STRING   : "); //Optional String prepending Message
    messageToFile.append(debugMessage);
@@ -70,7 +70,7 @@ void DebugHandler::receivedDebugDataParser(QString debugMessage)
 
 // gets the parsed values that dataparser emits and translates it to a human readable format
 // and sends it to the debuglogTxtFile
-void DebugHandler::receivedParsedDataParser(int id, double value)
+void LoggerService::receivedParsedDataParser(int id, double value)
 {
    QDateTime date = QDateTime::currentDateTime();
    QString messageToFile(" | PARSED-STRING: "); //Optional String prepending Message.
@@ -85,7 +85,7 @@ void DebugHandler::receivedParsedDataParser(int id, double value)
 }
 
 // Orientation of the Vectors is Vectors pointing downwards. Each Vector represents a columnn
-void DebugHandler::storeCsv2DArray(int id, int value)
+void LoggerService::storeCsv2DArray(int id, int value)
 {
    int currentMaxId = csv2DArray_.length(); // Number of Columns there are.
    int missing = id - currentMaxId + 1;
@@ -101,13 +101,13 @@ void DebugHandler::storeCsv2DArray(int id, int value)
    csv2DArray_[id].push_back(value);
 }
 
-void DebugHandler::printlnToDebuglogTxtFile(QString debugMessage)
+void LoggerService::printlnToDebuglogTxtFile(QString debugMessage)
 {
    QTextStream writer(&logTxtFile_);
    writer << debugMessage << endl;
 }
 
-void DebugHandler::printToDebuglogCsvFile(void)
+void LoggerService::printToDebuglogCsvFile(void)
 {
    QTextStream writer(&logCsvFile_);
    QString messageToFile;
@@ -149,7 +149,7 @@ void DebugHandler::printToDebuglogCsvFile(void)
    }
 }
 
-QString DebugHandler::convertIDtoString(int id)
+QString LoggerService::convertIDtoString(int id)
 {
    QString convertedID;
 

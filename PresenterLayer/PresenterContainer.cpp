@@ -16,7 +16,7 @@ PresenterContainer::PresenterContainer(QSharedPointer<DataContainer> dataContain
 										 *(dataContainer->vehicleData()),
 										 *(dataContainer->batteryData()),
 										 *(communicationContainer->connectionService()),
-										 *(businessContainer->debugHandler())))
+										 *(businessContainer->loggerService())))
 {
 }
 

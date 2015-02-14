@@ -6,7 +6,7 @@ class I_VehicleData;
 class I_PowerData;
 class I_BatteryData;
 class I_ConnectionService;
-class DebugHandler;
+class LoggerService;
 
 class DisplayPresenter : public QObject
 {
@@ -17,7 +17,7 @@ public:
                              const I_VehicleData& vehicleData,
                              const I_BatteryData& batteryData,                             
                              I_ConnectionService& connectionService,
-                             DebugHandler& debugHandler);
+                             LoggerService& loggerService);
    void connectDataSource(QString portName, int baudRate);
    void disconnectDataSource();
 
@@ -35,7 +35,7 @@ private:
    const I_VehicleData& vehicleData_;
    const I_BatteryData& batteryData_;                             
    I_ConnectionService& connectionService_;
-   DebugHandler& debugHandler_;
+   LoggerService& loggerService_;
 
 signals:
    void driverSetSpeedRPMReceived(double driverSetSpeedRPM);

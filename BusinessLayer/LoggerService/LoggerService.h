@@ -12,15 +12,15 @@
 class I_ConnectionService;
 class I_DataParser;
 
-class DebugHandler : public QObject
+class LoggerService : public QObject
 {
    Q_OBJECT
 
 public:
-   DebugHandler(I_ConnectionService& connectionService,
+   LoggerService(I_ConnectionService& connectionService,
                 I_DataParser& dataParser,
                 QString filename);
-   virtual ~DebugHandler();
+   virtual ~LoggerService();
 
 signals:
    void sendDebugMessageToPresenter(QString);

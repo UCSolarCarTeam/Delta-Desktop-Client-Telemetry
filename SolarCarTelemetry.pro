@@ -31,7 +31,7 @@ SOURCES += \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
     BusinessLayer/BusinessContainer.cpp \
-    BusinessLayer/DebugHandler/DebugHandler.cpp \
+    BusinessLayer/LoggerService/LoggerService.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
     ViewLayer/ViewContainer.cpp \
@@ -57,7 +57,7 @@ HEADERS  += \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
     BusinessLayer/BusinessContainer.h \
-    BusinessLayer/DebugHandler/DebugHandler.h \
+    BusinessLayer/LoggerService/LoggerService.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
     ViewLayer/ViewContainer.h \

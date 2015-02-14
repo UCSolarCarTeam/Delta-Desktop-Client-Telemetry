@@ -4,12 +4,12 @@
 
 class DataContainer;
 class CommunicationContainer;
-class DebugHandler;
+class LoggerService;
 
 class BusinessContainer
 {
 public:
-    QSharedPointer<DebugHandler> debugHandler();
+    QSharedPointer<LoggerService> loggerService();
 
     explicit BusinessContainer(QSharedPointer<DataContainer> dataContainer, 
     						   QSharedPointer<CommunicationContainer> communicationContainer);
@@ -18,7 +18,7 @@ public:
 private:
     QSharedPointer<DataContainer> dataContainer_;
     QSharedPointer<CommunicationContainer> communicationContainer_;
-    QSharedPointer<DebugHandler> debugHandler_;
+    QSharedPointer<LoggerService> loggerService_;
 };
 
 

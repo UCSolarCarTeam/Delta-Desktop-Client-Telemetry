@@ -2,7 +2,7 @@
 
 #include "DataLayer/DataContainer.h"
 #include "CommunicationLayer/CommunicationContainer.h"
-#include "DebugHandler/DebugHandler.h"
+#include "LoggerService/LoggerService.h"
 
 #include "BusinessContainer.h"
 
@@ -15,15 +15,15 @@ BusinessContainer::BusinessContainer(QSharedPointer<DataContainer> dataContainer
 									 QSharedPointer<CommunicationContainer> communicationContainer)
 : dataContainer_(dataContainer)
 , communicationContainer_(communicationContainer)
-, debugHandler_(new DebugHandler(*(communicationContainer_->connectionService()),
+, loggerService_(new LoggerService(*(communicationContainer_->connectionService()),
                                  *(communicationContainer_->dataParser()),
                                  defaultFilename))
 {
 }
 
-QSharedPointer<DebugHandler> BusinessContainer::debugHandler()
+QSharedPointer<LoggerService> BusinessContainer::loggerService()
 {
-	return debugHandler_;
+	return loggerService_;
 } 
 
 BusinessContainer::~BusinessContainer()
