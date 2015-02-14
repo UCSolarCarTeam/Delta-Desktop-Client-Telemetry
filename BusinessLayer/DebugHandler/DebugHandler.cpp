@@ -13,7 +13,7 @@ DebugHandler::DebugHandler(I_ConnectionService& connectionService,
 {
    /********************Connections********************/
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
-           this, SLOT (receivedDebugDataParserConnectionService(QString)));
+           this, SLOT (receivedConnectionService(QString)));
    //RAW String
    connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedDebugDataParser(QString)));  //notes, RAW string ends with a \n
