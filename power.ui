@@ -390,8 +390,15 @@ QLabel {
                <property name="spacing">
                 <number>0</number>
                </property>
+               <item row="4" column="3">
+                <widget class="QLabel" name="batteryCMU2Cell3Voltage">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="4">
-                <widget class="QLabel" name="label_3">
+                <widget class="QLabel" name="batteryCMU3Label">
                  <property name="minimumSize">
                   <size>
                    <width>100</width>
@@ -407,14 +414,14 @@ QLabel {
                 </widget>
                </item>
                <item row="5" column="2">
-                <widget class="QLabel" name="label_17">
+                <widget class="QLabel" name="batteryCMU1Cell4Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="2">
-                <widget class="QLabel" name="label_2">
+                <widget class="QLabel" name="batteryCMU1Label">
                  <property name="minimumSize">
                   <size>
                    <width>100</width>
@@ -430,7 +437,7 @@ QLabel {
                 </widget>
                </item>
                <item row="0" column="5">
-                <widget class="QLabel" name="label_4">
+                <widget class="QLabel" name="batteryCMU4Label">
                  <property name="minimumSize">
                   <size>
                    <width>100</width>
@@ -446,14 +453,14 @@ QLabel {
                 </widget>
                </item>
                <item row="8" column="4">
-                <widget class="QLabel" name="label_43">
+                <widget class="QLabel" name="batteryCMU3Cell7Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="3">
-                <widget class="QLabel" name="label_5">
+                <widget class="QLabel" name="batteryCMU2Temp">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -466,7 +473,7 @@ QLabel {
                 </widget>
                </item>
                <item row="0" column="3">
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="batteryCMU2Label">
                  <property name="minimumSize">
                   <size>
                    <width>100</width>
@@ -482,7 +489,7 @@ QLabel {
                 </widget>
                </item>
                <item row="2" column="2">
-                <widget class="QLabel" name="label_10">
+                <widget class="QLabel" name="batteryCMU1Cell1Voltage">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -495,7 +502,7 @@ QLabel {
                 </widget>
                </item>
                <item row="1" column="2">
-                <widget class="QLabel" name="label_6">
+                <widget class="QLabel" name="batteryCMU1Temp">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -503,12 +510,19 @@ QLabel {
                   </size>
                  </property>
                  <property name="text">
-                  <string>0 </string>
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QLabel" name="batteryCMU2Cell1Voltage">
+                 <property name="text">
+                  <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="4">
-                <widget class="QLabel" name="label_8">
+                <widget class="QLabel" name="batteryCMU3Temp">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -520,8 +534,15 @@ QLabel {
                  </property>
                 </widget>
                </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="batteryCMU1Cell2Voltage">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
                <item row="1" column="5">
-                <widget class="QLabel" name="label_9">
+                <widget class="QLabel" name="batteryCMU4Temp">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -536,29 +557,22 @@ QLabel {
                  </property>
                 </widget>
                </item>
-               <item row="2" column="3">
-                <widget class="QLabel" name="label_11">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="label_12">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
                <item row="4" column="2">
-                <widget class="QLabel" name="label_13">
+                <widget class="QLabel" name="batteryCMU1Cell3Voltage">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="2">
+                <widget class="QLabel" name="batteryCMU1Cell6Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="9" column="2">
-                <widget class="QLabel" name="label_15">
+                <widget class="QLabel" name="batteryCMU1Cell8Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-bottom: none;</string>
                  </property>
@@ -567,67 +581,39 @@ QLabel {
                  </property>
                 </widget>
                </item>
-               <item row="7" column="2">
-                <widget class="QLabel" name="label_14">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
                <item row="8" column="2">
-                <widget class="QLabel" name="label_16">
+                <widget class="QLabel" name="batteryCMU1Cell7Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="6" column="2">
-                <widget class="QLabel" name="label_18">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="4">
-                <widget class="QLabel" name="label_19">
+                <widget class="QLabel" name="batteryCMU1Cell5Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="5">
-                <widget class="QLabel" name="label_20">
+                <widget class="QLabel" name="batteryCMU4Cell1Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="3">
-                <widget class="QLabel" name="label_21">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="4">
-                <widget class="QLabel" name="label_22">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="3" column="3">
-                <widget class="QLabel" name="label_23">
+                <widget class="QLabel" name="batteryCMU2Cell2Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="3" column="5">
-                <widget class="QLabel" name="label_24">
+                <widget class="QLabel" name="batteryCMU4Cell2Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
@@ -636,8 +622,15 @@ QLabel {
                  </property>
                 </widget>
                </item>
+               <item row="3" column="4">
+                <widget class="QLabel" name="batteryCMU3Cell2Voltage">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="1">
-                <widget class="QLabel" name="label_25">
+                <widget class="QLabel" name="batteryCell1Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -647,7 +640,7 @@ QLabel {
                 </widget>
                </item>
                <item row="3" column="1">
-                <widget class="QLabel" name="label_26">
+                <widget class="QLabel" name="batteryCell2Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -657,7 +650,7 @@ QLabel {
                 </widget>
                </item>
                <item row="5" column="1">
-                <widget class="QLabel" name="label_28">
+                <widget class="QLabel" name="batteryCell4Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -667,7 +660,7 @@ QLabel {
                 </widget>
                </item>
                <item row="4" column="1">
-                <widget class="QLabel" name="label_27">
+                <widget class="QLabel" name="batteryCell3Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -677,7 +670,7 @@ QLabel {
                 </widget>
                </item>
                <item row="6" column="1">
-                <widget class="QLabel" name="label_29">
+                <widget class="QLabel" name="batteryCell5Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -687,7 +680,7 @@ QLabel {
                 </widget>
                </item>
                <item row="7" column="1">
-                <widget class="QLabel" name="label_30">
+                <widget class="QLabel" name="batteryCell6Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -696,18 +689,8 @@ QLabel {
                  </property>
                 </widget>
                </item>
-               <item row="9" column="1">
-                <widget class="QLabel" name="label_32">
-                 <property name="styleSheet">
-                  <string notr="true">border-bottom: none;</string>
-                 </property>
-                 <property name="text">
-                  <string>Cell 8</string>
-                 </property>
-                </widget>
-               </item>
                <item row="8" column="1">
-                <widget class="QLabel" name="label_31">
+                <widget class="QLabel" name="batteryCell7Label">
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
@@ -716,43 +699,53 @@ QLabel {
                  </property>
                 </widget>
                </item>
+               <item row="9" column="1">
+                <widget class="QLabel" name="batteryCell8Label">
+                 <property name="styleSheet">
+                  <string notr="true">border-bottom: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Cell 8</string>
+                 </property>
+                </widget>
+               </item>
                <item row="6" column="3">
-                <widget class="QLabel" name="label_34">
+                <widget class="QLabel" name="batteryCMU2Cell5Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="5" column="3">
-                <widget class="QLabel" name="label_33">
+                <widget class="QLabel" name="batteryCMU2Cell4Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="7" column="3">
-                <widget class="QLabel" name="label_35">
+                <widget class="QLabel" name="batteryCMU2Cell6Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="8" column="3">
-                <widget class="QLabel" name="label_36">
+                <widget class="QLabel" name="batteryCMU2Cell7Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="5" column="4">
-                <widget class="QLabel" name="label_40">
+                <widget class="QLabel" name="batteryCMU3Cell4Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="9" column="3">
-                <widget class="QLabel" name="label_37">
+                <widget class="QLabel" name="batteryCMU2Cell8Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-bottom: none;</string>
                  </property>
@@ -762,14 +755,14 @@ QLabel {
                 </widget>
                </item>
                <item row="4" column="4">
-                <widget class="QLabel" name="label_38">
+                <widget class="QLabel" name="batteryCMU3Cell3Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="4" column="5">
-                <widget class="QLabel" name="label_39">
+                <widget class="QLabel" name="batteryCMU4Cell3Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
@@ -779,14 +772,14 @@ QLabel {
                 </widget>
                </item>
                <item row="7" column="4">
-                <widget class="QLabel" name="label_42">
+                <widget class="QLabel" name="batteryCMU3Cell6Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="9" column="4">
-                <widget class="QLabel" name="label_44">
+                <widget class="QLabel" name="batteryCMU3Cell8Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-bottom: none;</string>
                  </property>
@@ -796,7 +789,7 @@ QLabel {
                 </widget>
                </item>
                <item row="5" column="5">
-                <widget class="QLabel" name="label_45">
+                <widget class="QLabel" name="batteryCMU4Cell4Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
@@ -806,7 +799,7 @@ QLabel {
                 </widget>
                </item>
                <item row="6" column="5">
-                <widget class="QLabel" name="label_46">
+                <widget class="QLabel" name="batteryCMU4Cell5Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
@@ -816,14 +809,14 @@ QLabel {
                 </widget>
                </item>
                <item row="6" column="4">
-                <widget class="QLabel" name="label_41">
+                <widget class="QLabel" name="batteryCMU3Cell5Voltage">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="7" column="5">
-                <widget class="QLabel" name="label_47">
+                <widget class="QLabel" name="batteryCMU4Cell6Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
@@ -833,7 +826,7 @@ QLabel {
                 </widget>
                </item>
                <item row="8" column="5">
-                <widget class="QLabel" name="label_48">
+                <widget class="QLabel" name="batteryCMU4Cell7Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; </string>
                  </property>
@@ -843,7 +836,7 @@ QLabel {
                 </widget>
                </item>
                <item row="9" column="5">
-                <widget class="QLabel" name="label_49">
+                <widget class="QLabel" name="batteryCMU4Cell8Voltage">
                  <property name="styleSheet">
                   <string notr="true">border-right: none; border-bottom: none;</string>
                  </property>
@@ -852,21 +845,8 @@ QLabel {
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0" rowspan="8">
-                <widget class="QLabel" name="label_50">
-                 <property name="styleSheet">
-                  <string notr="true">border-left: none; border-bottom: none;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voltages&lt;/p&gt;&lt;p&gt;mV&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                 <property name="textFormat">
-                  <enum>Qt::RichText</enum>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="0" colspan="2">
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="batteryTemperatureLabel">
                  <property name="minimumSize">
                   <size>
                    <width>120</width>
@@ -889,6 +869,26 @@ border-left: none;</string>
                  </property>
                  <property name="text">
                   <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" rowspan="8">
+                <widget class="QLabel" name="batteryVoltageLabel">
+                 <property name="styleSheet">
+                  <string notr="true">border-left: none; border-bottom: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voltages&lt;/p&gt;&lt;p&gt;mV&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="textFormat">
+                  <enum>Qt::RichText</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="4">
+                <widget class="QLabel" name="batteryCMU3Cell1Voltage">
+                 <property name="text">
+                  <string>0</string>
                  </property>
                 </widget>
                </item>
@@ -990,20 +990,23 @@ border-left: none;</string>
           <item>
            <layout class="QGridLayout" name="mainValuesContentLayout" columnstretch="0">
             <property name="leftMargin">
-             <number>9</number>
+             <number>0</number>
             </property>
             <property name="topMargin">
-             <number>9</number>
+             <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>9</number>
+             <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>9</number>
+             <number>0</number>
             </property>
             <property name="spacing">
-             <number>9</number>
+             <number>0</number>
             </property>
+            <item row="0" column="0">
+             <widget class="QWidget" name="mainTable" native="true"/>
+            </item>
            </layout>
           </item>
          </layout>
