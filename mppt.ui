@@ -164,7 +164,7 @@ border: none;</string>
 }
 </string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -352,7 +352,7 @@ QLabel {
 	padding: 2px;
 }</string>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <layout class="QHBoxLayout" name="horizontalLayout">
              <property name="spacing">
               <number>9</number>
              </property>
@@ -374,7 +374,7 @@ QLabel {
                 <string notr="true">border-style: none;</string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Array Values&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MPPT Input Output Values&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -450,12 +450,12 @@ QLabel {
                   </widget>
                  </item>
                  <item row="2" column="3">
-                  <layout class="QGridLayout" name="array2InLayout">
+                  <layout class="QGridLayout" name="mppt2InLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array2CurrentIn">
+                    <widget class="QLabel" name="mppt2CurrentIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -465,7 +465,7 @@ QLabel {
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array2VoltageIn">
+                    <widget class="QLabel" name="mppt2VoltageIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -475,7 +475,7 @@ QLabel {
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array2PowerIn">
+                    <widget class="QLabel" name="mppt2PowerIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -501,12 +501,12 @@ border-right: none;</string>
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <layout class="QGridLayout" name="array1InLayout">
+                  <layout class="QGridLayout" name="mppt1InLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array1PowerIn">
+                    <widget class="QLabel" name="mppt1PowerIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -516,7 +516,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array1VoltageIn">
+                    <widget class="QLabel" name="mppt1VoltageIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -526,7 +526,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array1CurrentIn">
+                    <widget class="QLabel" name="mppt1CurrentIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -538,12 +538,12 @@ border-right: none;</string>
                   </layout>
                  </item>
                  <item row="5" column="3">
-                  <layout class="QGridLayout" name="array5InLayout">
+                  <layout class="QGridLayout" name="mppt5InLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array5PowerIn">
+                    <widget class="QLabel" name="mppt5PowerIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -553,7 +553,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array5VoltageIn">
+                    <widget class="QLabel" name="mppt5VoltageIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -563,7 +563,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array5CurrentIn">
+                    <widget class="QLabel" name="mppt5CurrentIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -575,12 +575,12 @@ border-right: none;</string>
                   </layout>
                  </item>
                  <item row="6" column="3">
-                  <layout class="QGridLayout" name="array6InLayout">
+                  <layout class="QGridLayout" name="mppt6InLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array6VoltageIn">
+                    <widget class="QLabel" name="mppt6VoltageIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -590,7 +590,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array6PowerIn">
+                    <widget class="QLabel" name="mppt6PowerIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -600,7 +600,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array6CurrentIn">
+                    <widget class="QLabel" name="mppt6CurrentIn">
                      <property name="styleSheet">
                       <string notr="true">border-bottom: none;</string>
                      </property>
@@ -615,12 +615,12 @@ border-right: none;</string>
                   </layout>
                  </item>
                  <item row="6" column="2">
-                  <layout class="QGridLayout" name="array6ArrayLayout">
+                  <layout class="QGridLayout" name="mppt6ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array6PowerLabel">
+                    <widget class="QLabel" name="mppt6PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -630,7 +630,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array6CurrentLabel">
+                    <widget class="QLabel" name="mppt6CurrentLabel">
                      <property name="styleSheet">
                       <string notr="true">border-bottom: none;</string>
                      </property>
@@ -643,7 +643,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array6VoltageLabel">
+                    <widget class="QLabel" name="mppt6VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -653,7 +653,7 @@ border-right: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array6Label">
+                    <widget class="QLabel" name="mppt6Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 padding-right: 5px;</string>
@@ -688,12 +688,12 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="2" column="2">
-                  <layout class="QGridLayout" name="array2ArrayLayout">
+                  <layout class="QGridLayout" name="mppt2ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array2PowerLabel">
+                    <widget class="QLabel" name="mppt2PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -703,7 +703,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array2VoltageLabel">
+                    <widget class="QLabel" name="mppt2VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -713,7 +713,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array2CurrentLabel">
+                    <widget class="QLabel" name="mppt2CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -723,7 +723,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array2Label">
+                    <widget class="QLabel" name="mppt2Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 padding-right: 5px;</string>
@@ -739,12 +739,12 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="5" column="2">
-                  <layout class="QGridLayout" name="array5ArrayLayout">
+                  <layout class="QGridLayout" name="mppt5ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array5VoltageLabel">
+                    <widget class="QLabel" name="mppt5VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -754,7 +754,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array5PowerLabel">
+                    <widget class="QLabel" name="mppt5PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -764,7 +764,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array5CurrentLabel">
+                    <widget class="QLabel" name="mppt5CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -774,7 +774,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array5Label">
+                    <widget class="QLabel" name="mppt5Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 padding-right: 5px;</string>
@@ -790,12 +790,12 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="4" column="3">
-                  <layout class="QGridLayout" name="array4InLayout">
+                  <layout class="QGridLayout" name="mppt4InLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="3" column="0">
-                    <widget class="QLabel" name="array4VoltageIn">
+                    <widget class="QLabel" name="mppt4VoltageIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -805,7 +805,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array4PowerIn">
+                    <widget class="QLabel" name="mppt4PowerIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -815,7 +815,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="4" column="0">
-                    <widget class="QLabel" name="array4CurrentIn">
+                    <widget class="QLabel" name="mppt4CurrentIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -827,7 +827,7 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="0" column="2">
-                  <widget class="QLabel" name="valuesArrayLabel">
+                  <widget class="QLabel" name="valuesMPPTLabel">
                    <property name="maximumSize">
                     <size>
                      <width>999999</width>
@@ -839,7 +839,7 @@ padding-right: 5px;</string>
 border-left: none;</string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Array&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MPPT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="textFormat">
                     <enum>Qt::RichText</enum>
@@ -850,12 +850,12 @@ border-left: none;</string>
                   </widget>
                  </item>
                  <item row="3" column="3">
-                  <layout class="QGridLayout" name="array3InLayout">
+                  <layout class="QGridLayout" name="mppt3InLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array3CurrentIn">
+                    <widget class="QLabel" name="mppt3CurrentIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -865,7 +865,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array3VoltageIn">
+                    <widget class="QLabel" name="mppt3VoltageIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -875,7 +875,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array3PowerIn">
+                    <widget class="QLabel" name="mppt3PowerIn">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -887,12 +887,12 @@ border-left: none;</string>
                   </layout>
                  </item>
                  <item row="1" column="2">
-                  <layout class="QGridLayout" name="array1ArrayLayout">
+                  <layout class="QGridLayout" name="mppt1ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="3" column="1">
-                    <widget class="QLabel" name="array1CurrentLabel">
+                    <widget class="QLabel" name="mppt1CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -902,7 +902,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array1VoltageLabel">
+                    <widget class="QLabel" name="mppt1VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -912,7 +912,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array1PowerLabel">
+                    <widget class="QLabel" name="mppt1PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -922,7 +922,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="0" rowspan="3">
-                    <widget class="QLabel" name="array1Label">
+                    <widget class="QLabel" name="mppt1Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 padding-right: 5px;</string>
@@ -938,12 +938,12 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="3" column="2">
-                  <layout class="QGridLayout" name="array3ArrayLayout">
+                  <layout class="QGridLayout" name="mppt3ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array3PowerLabel">
+                    <widget class="QLabel" name="mppt3PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -953,7 +953,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array3VoltageLabel">
+                    <widget class="QLabel" name="mppt3VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -963,7 +963,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array3CurrentLabel">
+                    <widget class="QLabel" name="mppt3CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -973,7 +973,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array3Label">
+                    <widget class="QLabel" name="mppt3Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 padding-right: 5px;</string>
@@ -989,26 +989,26 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="1" column="4">
-                  <layout class="QGridLayout" name="array1OutLayout">
+                  <layout class="QGridLayout" name="mppt1OutLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array1VoltageOut">
+                    <widget class="QLabel" name="mppt1VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="3" column="0">
-                    <widget class="QLabel" name="array1CurrentOut">
+                    <widget class="QLabel" name="mppt1CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array1PowerOut">
+                    <widget class="QLabel" name="mppt1PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1017,26 +1017,26 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="2" column="4">
-                  <layout class="QGridLayout" name="array2OutLayout">
+                  <layout class="QGridLayout" name="mppt2OutLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array2CurrentOut">
+                    <widget class="QLabel" name="mppt2CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array2PowerOut">
+                    <widget class="QLabel" name="mppt2PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array2VoltageOut">
+                    <widget class="QLabel" name="mppt2VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1045,26 +1045,26 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="3" column="4">
-                  <layout class="QGridLayout" name="array3OutLayout">
+                  <layout class="QGridLayout" name="mppt3OutLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array3PowerOut">
+                    <widget class="QLabel" name="mppt3PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array3VoltageOut">
+                    <widget class="QLabel" name="mppt3VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array3CurrentOut">
+                    <widget class="QLabel" name="mppt3CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1073,26 +1073,26 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="4" column="4">
-                  <layout class="QGridLayout" name="array4OutLayout">
+                  <layout class="QGridLayout" name="mppt4OutLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array4VoltageOut">
+                    <widget class="QLabel" name="mppt4VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array4PowerOut">
+                    <widget class="QLabel" name="mppt4PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array4CurrentOut">
+                    <widget class="QLabel" name="mppt4CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1101,26 +1101,26 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="5" column="4">
-                  <layout class="QGridLayout" name="array5OutLayout">
+                  <layout class="QGridLayout" name="mppt5OutLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array5VoltageOut">
+                    <widget class="QLabel" name="mppt5VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array5PowerOut">
+                    <widget class="QLabel" name="mppt5PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array5CurrentOut">
+                    <widget class="QLabel" name="mppt5CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1129,19 +1129,19 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="6" column="4">
-                  <layout class="QGridLayout" name="array6OutLayout">
+                  <layout class="QGridLayout" name="mppt6OutLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="array6VoltageOut">
+                    <widget class="QLabel" name="mppt6VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="array6CurrentOut">
+                    <widget class="QLabel" name="mppt6CurrentOut">
                      <property name="styleSheet">
                       <string notr="true">border-bottom: none;
 </string>
@@ -1152,7 +1152,7 @@ padding-right: 5px;</string>
                     </widget>
                    </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="array6PowerOut">
+                    <widget class="QLabel" name="mppt6PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1161,7 +1161,7 @@ padding-right: 5px;</string>
                   </layout>
                  </item>
                  <item row="1" column="5">
-                  <widget class="QLabel" name="array1Efficiency">
+                  <widget class="QLabel" name="mppt1Efficiency">
                    <property name="styleSheet">
                     <string notr="true">border-right: none;</string>
                    </property>
@@ -1171,7 +1171,7 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="2" column="5">
-                  <widget class="QLabel" name="array2Efficiency">
+                  <widget class="QLabel" name="mppt2Efficiency">
                    <property name="styleSheet">
                     <string notr="true">border-right: none;</string>
                    </property>
@@ -1181,7 +1181,7 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="3" column="5">
-                  <widget class="QLabel" name="array3Efficiency">
+                  <widget class="QLabel" name="mppt3Efficiency">
                    <property name="styleSheet">
                     <string notr="true">border-right: none;</string>
                    </property>
@@ -1191,7 +1191,7 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="4" column="5">
-                  <widget class="QLabel" name="array4Efficiency">
+                  <widget class="QLabel" name="mppt4Efficiency">
                    <property name="styleSheet">
                     <string notr="true">border-right: none;</string>
                    </property>
@@ -1201,7 +1201,7 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="5" column="5">
-                  <widget class="QLabel" name="array5Efficiency">
+                  <widget class="QLabel" name="mppt5Efficiency">
                    <property name="styleSheet">
                     <string notr="true">border-right: none;</string>
                    </property>
@@ -1211,7 +1211,7 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="6" column="5">
-                  <widget class="QLabel" name="array6Efficiency">
+                  <widget class="QLabel" name="mppt6Efficiency">
                    <property name="styleSheet">
                     <string notr="true">border-right: none; 
  border-bottom: none;</string>
@@ -1222,33 +1222,33 @@ padding-right: 5px;</string>
                   </widget>
                  </item>
                  <item row="4" column="2">
-                  <layout class="QGridLayout" name="array4ArrayLayout">
+                  <layout class="QGridLayout" name="mppt4ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array4PowerLabel">
+                    <widget class="QLabel" name="mppt4PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array4VoltageLabel">
+                    <widget class="QLabel" name="mppt4VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array4CurrentLabel">
+                    <widget class="QLabel" name="mppt4CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array4Label">
+                    <widget class="QLabel" name="mppt4Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 padding-right: 5px;</string>
@@ -1416,12 +1416,12 @@ QLabel {
                   </widget>
                  </item>
                  <item row="6" column="0">
-                  <layout class="QGridLayout" name="array6ArrayLayout_2">
+                  <layout class="QGridLayout" name="power6ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array6PowerLabel_2">
+                    <widget class="QLabel" name="power6PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -1431,7 +1431,7 @@ QLabel {
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array6CurrentLabel_2">
+                    <widget class="QLabel" name="power6CurrentLabel">
                      <property name="styleSheet">
                       <string notr="true">border-bottom: none;</string>
                      </property>
@@ -1444,7 +1444,7 @@ QLabel {
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array6VoltageLabel_2">
+                    <widget class="QLabel" name="power6VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -1454,7 +1454,7 @@ QLabel {
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array6Label_2">
+                    <widget class="QLabel" name="power6Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;
 border-bottom: none;</string>
@@ -1470,12 +1470,12 @@ border-bottom: none;</string>
                   </layout>
                  </item>
                  <item row="2" column="0">
-                  <layout class="QGridLayout" name="array2ArrayLayout_2">
+                  <layout class="QGridLayout" name="power2ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array2PowerLabel_2">
+                    <widget class="QLabel" name="power2PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -1485,7 +1485,7 @@ border-bottom: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array2VoltageLabel_2">
+                    <widget class="QLabel" name="power2VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -1495,7 +1495,7 @@ border-bottom: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array2CurrentLabel_2">
+                    <widget class="QLabel" name="power2CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -1505,7 +1505,7 @@ border-bottom: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array2Label_2">
+                    <widget class="QLabel" name="power2Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;</string>
                      </property>
@@ -1520,12 +1520,12 @@ border-bottom: none;</string>
                   </layout>
                  </item>
                  <item row="5" column="0">
-                  <layout class="QGridLayout" name="array5ArrayLayout_2">
+                  <layout class="QGridLayout" name="power5ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array5VoltageLabel_2">
+                    <widget class="QLabel" name="power5VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -1535,7 +1535,7 @@ border-bottom: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array5PowerLabel_2">
+                    <widget class="QLabel" name="power5PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -1545,7 +1545,7 @@ border-bottom: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array5CurrentLabel_2">
+                    <widget class="QLabel" name="power5CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -1555,7 +1555,7 @@ border-bottom: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array5Label_2">
+                    <widget class="QLabel" name="power5Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;</string>
                      </property>
@@ -1582,7 +1582,7 @@ border-bottom: none;</string>
 border-left: none;</string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Array&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MPPT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="textFormat">
                     <enum>Qt::RichText</enum>
@@ -1593,12 +1593,12 @@ border-left: none;</string>
                   </widget>
                  </item>
                  <item row="1" column="0">
-                  <layout class="QGridLayout" name="array1ArrayLayout_2">
+                  <layout class="QGridLayout" name="power1ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="3" column="1">
-                    <widget class="QLabel" name="array1CurrentLabel_2">
+                    <widget class="QLabel" name="power1CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -1608,7 +1608,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array1VoltageLabel_2">
+                    <widget class="QLabel" name="power1VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -1618,7 +1618,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array1PowerLabel_2">
+                    <widget class="QLabel" name="power1PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -1628,7 +1628,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="0" rowspan="3">
-                    <widget class="QLabel" name="array1Label_2">
+                    <widget class="QLabel" name="power1Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;</string>
                      </property>
@@ -1643,12 +1643,12 @@ border-left: none;</string>
                   </layout>
                  </item>
                  <item row="3" column="0">
-                  <layout class="QGridLayout" name="array3ArrayLayout_2">
+                  <layout class="QGridLayout" name="power3ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array3PowerLabel_2">
+                    <widget class="QLabel" name="power3PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -1658,7 +1658,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array3VoltageLabel_2">
+                    <widget class="QLabel" name="power3VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -1668,7 +1668,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array3CurrentLabel_2">
+                    <widget class="QLabel" name="power3CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -1678,7 +1678,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array3Label_2">
+                    <widget class="QLabel" name="power3Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;</string>
                      </property>
@@ -1693,12 +1693,12 @@ border-left: none;</string>
                   </layout>
                  </item>
                  <item row="4" column="0">
-                  <layout class="QGridLayout" name="array4ArrayLayout_2">
+                  <layout class="QGridLayout" name="power4ArrayLayout">
                    <property name="spacing">
                     <number>0</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QLabel" name="array4PowerLabel_2">
+                    <widget class="QLabel" name="power4PowerLabel">
                      <property name="text">
                       <string>Power (W)</string>
                      </property>
@@ -1708,7 +1708,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QLabel" name="array4CurrentLabel_2">
+                    <widget class="QLabel" name="power4CurrentLabel">
                      <property name="text">
                       <string>Current (A)</string>
                      </property>
@@ -1718,7 +1718,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLabel" name="array4VoltageLabel_2">
+                    <widget class="QLabel" name="power4VoltageLabel">
                      <property name="text">
                       <string>Voltage (V)</string>
                      </property>
@@ -1728,7 +1728,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item row="0" column="0" rowspan="3">
-                    <widget class="QLabel" name="array4Label_2">
+                    <widget class="QLabel" name="power4Label">
                      <property name="styleSheet">
                       <string notr="true">border-left: none;</string>
                      </property>
@@ -1748,21 +1748,21 @@ border-left: none;</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="array1PowerOut_2">
+                    <widget class="QLabel" name="mppt1PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array1VoltageOut_2">
+                    <widget class="QLabel" name="mppt1VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array1CurrentOut_2">
+                    <widget class="QLabel" name="mppt1CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1804,21 +1804,21 @@ border-left: none;</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="array3PowerOut_2">
+                    <widget class="QLabel" name="mppt3PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array3VoltageOut_2">
+                    <widget class="QLabel" name="mppt3VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array3CurrentOut_2">
+                    <widget class="QLabel" name="mppt3CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1832,21 +1832,21 @@ border-left: none;</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="array4PowerOut_2">
+                    <widget class="QLabel" name="mppt4PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array4VoltageOut_2">
+                    <widget class="QLabel" name="mppt4VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array4CurrentOut_2">
+                    <widget class="QLabel" name="mppt4CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1860,21 +1860,21 @@ border-left: none;</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="array5PowerOut_2">
+                    <widget class="QLabel" name="mppt5PowerOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array5VoltageOut_2">
+                    <widget class="QLabel" name="mppt5VoltageOut">
                      <property name="text">
                       <string>0</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="array5CurrentOut_2">
+                    <widget class="QLabel" name="mppt5CurrentOut">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -1902,7 +1902,7 @@ border-left: none;</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_2">
+                    <widget class="QLabel" name="label">
                      <property name="text">
                       <string>0</string>
                      </property>
@@ -2193,7 +2193,7 @@ QLabel {
              <number>9</number>
             </property>
             <item row="1" column="0">
-             <widget class="QComboBox" name="comboBox_2">
+             <widget class="QComboBox" name="comboBox">
               <property name="styleSheet">
                <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
@@ -2235,7 +2235,7 @@ padding: 3px;</string>
              </widget>
             </item>
             <item row="4" column="0">
-             <widget class="QWebView" name="webView_2">
+             <widget class="QWebView" name="webView">
               <property name="url">
                <url>
                 <string>about:blank</string>

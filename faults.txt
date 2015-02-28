@@ -15,19 +15,19 @@
 
 ==== MOTOR STATUS ====
 Error Flags
-	- Desaturation fault (MOSFET driver UVLO)
-	- 15V rail under voltage lock out (UVLO)
-	- Config read error (some values may be reset to defaults)4
+	- Desaturation fault 
+	- 15V rail under voltage lock out 
+	- Config read error
 	- Watchdog caused last reset
 	- Bad motor position hall sequence
 	- DC Bus over voltage
 	- Software over current
 	- Hardware over current
 Limit Flags
-	IPM Temperature or Motor Temperature
-	Bus Voltage Lower Limit
-	Bus Voltage Upper Limit
-	Bus current
-	Velocity
-	Motor Current
-	Output Voltage PWM
+	- IPM Temperature or Motor Temperature
+	- Bus Voltage Lower Limit
+	- Bus Voltage Upper Limit
+	- Bus current
+	- Velocity
+	- Motor Current
+	- Output Voltage PWM
