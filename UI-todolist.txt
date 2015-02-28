@@ -1,0 +1,8 @@
+MPPT
+- Graphs Window (new window)
+	- IV Curve and PV Curve (Same graph)
+- Power Draw (new window) 
+	- Each MPPT
+		- Power 
+		- Voltage 
+		- Current

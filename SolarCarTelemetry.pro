@@ -67,7 +67,9 @@ HEADERS  += \
     SolarCarTelemetry/SolarCarTelemetry.h
     
 FORMS    += \
-    SolarCarTestUI.ui
+    SolarCarTestUI.ui \
+    mppt.ui \
+    power.ui
 
 RESOURCES += \
     SolarCarUIResources.qrc
