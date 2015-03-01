@@ -31,3 +31,9 @@ Limit Flags
 	- Velocity
 	- Motor Current
 	- Output Voltage PWM
+
+==== FAULT HISTORY ====
+New log when a fault switches from off to on
+CSV file 
+readable text file
+TIME | FAULT  format
