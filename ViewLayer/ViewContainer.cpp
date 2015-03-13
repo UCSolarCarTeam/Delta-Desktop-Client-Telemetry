@@ -1,6 +1,7 @@
 #include <QSharedPointer>
 
 #include "PresenterLayer/PresenterContainer.h"
+#include "PowerUI/PowerUI.h"
 #include "SolarCarTestUi/SolarCarTestUI.h"
 #include "DisplayView/DisplayView.h"
 
@@ -8,10 +9,16 @@
 
 ViewContainer::ViewContainer(QSharedPointer<PresenterContainer> presenterContainer)
 : presenterContainer_(presenterContainer)
+, powerWidget_(new PowerUI())
 , mainWindow_(new SolarCarTestUI())
 , displayView_(new DisplayView(*(presenterContainer->displayPresenter()), 
 			  				   *mainWindow_))
 {
+}
+
+QSharedPointer<PowerUI> ViewContainer::powerWidget()
+{
+	return powerWidget_;
 }
 
 QSharedPointer<SolarCarTestUI> ViewContainer::mainWindow()

@@ -36,6 +36,7 @@ SOURCES += \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
+    ViewLayer/PowerUI/PowerUI.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
     SolarCarTelemetry/main.cpp
@@ -62,15 +63,17 @@ HEADERS  += \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
     ViewLayer/ViewContainer.h \
     ViewLayer/DisplayView/DisplayView.h \
+    ViewLayer/PowerUI/I_PowerUI.h \
+    ViewLayer/PowerUI/PowerUI.h \
     ViewLayer/SolarCarTestUi/I_SolarCarTestUI.h \
     ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
     SolarCarTelemetry/SolarCarTelemetry.h
     
 FORMS    += \
     SolarCarTestUI.ui \
-    mppt.ui \
-    power.ui \
-    faults.ui
+    FaultsUI.ui \
+    MpptUI.ui \
+    PowerUI.ui
 
 RESOURCES += \
     SolarCarUIResources.qrc
