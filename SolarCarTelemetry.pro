@@ -69,7 +69,8 @@ HEADERS  += \
 FORMS    += \
     SolarCarTestUI.ui \
     mppt.ui \
-    power.ui
+    power.ui \
+    faults.ui
 
 RESOURCES += \
     SolarCarUIResources.qrc
