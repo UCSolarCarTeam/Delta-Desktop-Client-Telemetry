@@ -1534,7 +1534,7 @@ background-color: rgb(70,70,70);</string>
                   <enum>QFrame::NoFrame</enum>
                  </property>
                  <property name="text">
-                  <string>ARRAY CURRENT IN (mA)</string>
+                  <string>Array Current In (mA)</string>
                  </property>
                  <property name="textFormat">
                   <enum>Qt::PlainText</enum>
@@ -1596,7 +1596,7 @@ background-color: rgb(70,70,70);</string>
                   <enum>QFrame::NoFrame</enum>
                  </property>
                  <property name="text">
-                  <string>ARRAY CURRENT OUT (mA)</string>
+                  <string>Array Current Out (mA)</string>
                  </property>
                  <property name="textFormat">
                   <enum>Qt::PlainText</enum>
