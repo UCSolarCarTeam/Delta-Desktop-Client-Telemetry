@@ -1,11 +1,20 @@
 #pragma once
 
 #include <QLabel>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QTextEdit>
 
 class I_PowerUI
 {
 public:
 	virtual ~I_PowerUI() {}
+
+    virtual QPushButton& connectButton() = 0;
+    virtual QLabel& setConnectionStatus() = 0;
+    virtual QLineEdit& getSerialPortName() = 0;
+    virtual QLineEdit& getBaudRate() = 0;
+    virtual QTextEdit& setDebugLog() = 0;
 
     virtual QLabel& setBatteryCMU1Temp() = 0;
     virtual QLabel& setBatteryCMU1Cell1Voltage() = 0;

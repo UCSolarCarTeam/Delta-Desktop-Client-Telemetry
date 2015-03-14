@@ -9,22 +9,22 @@
 
 ViewContainer::ViewContainer(QSharedPointer<PresenterContainer> presenterContainer)
 : presenterContainer_(presenterContainer)
-, powerWidget_(new PowerUI())
-, mainWindow_(new SolarCarTestUI())
+, mainWindow_(new PowerUI())
 , displayView_(new DisplayView(*(presenterContainer->displayPresenter()), 
 			  				   *mainWindow_))
 {
 }
 
-QSharedPointer<PowerUI> ViewContainer::powerWidget()
-{
-	return powerWidget_;
-}
+// QSharedPointer<PowerUI> ViewContainer::powerWidget()
+// {
+// 	return powerWidget_;
+// }
 
-QSharedPointer<SolarCarTestUI> ViewContainer::mainWindow()
+QSharedPointer<PowerUI> ViewContainer::mainWindow()
 {
 	return mainWindow_;
 }
+
 QSharedPointer<DisplayView> ViewContainer::displayView()
 {
 	return displayView_;

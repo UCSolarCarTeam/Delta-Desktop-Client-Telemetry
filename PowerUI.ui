@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PowerTelemetry</class>
- <widget class="QWidget" name="PowerTelemetry">
+ <class>PowerUI</class>
+ <widget class="QWidget" name="PowerUI">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
@@ -263,6 +263,13 @@ padding: 3px;</string>
                <string notr="true">font-size: 14px;</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QLabel" name="connectionStatusPlaceHolder">
+                 <property name="text">
+                  <string>connectionStatus</string>
+                 </property>
+                </widget>
+               </item>
                <item>
                 <widget class="QLabel" name="serialPortNameLabel">
                  <property name="text">
@@ -842,8 +849,7 @@ background-color: rgb(70,70,70);</string>
                <item row="9" column="2">
                 <widget class="QLabel" name="batteryCMU1Cell8Voltage">
                  <property name="styleSheet">
-                  <string notr="true">border-bottom: none;
-background-color: rgb(70,70,70);</string>
+                  <string notr="true">background-color: rgb(70,70,70);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -919,7 +925,7 @@ background-color: rgb(70,70,70);</string>
                <item row="2" column="1">
                 <widget class="QLabel" name="batteryCell1Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Cell 1</string>
@@ -929,7 +935,7 @@ background-color: rgb(70,70,70);</string>
                <item row="3" column="1">
                 <widget class="QLabel" name="batteryCell2Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-top: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 2</string>
@@ -939,7 +945,7 @@ background-color: rgb(70,70,70);</string>
                <item row="5" column="1">
                 <widget class="QLabel" name="batteryCell4Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-top: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 4</string>
@@ -949,7 +955,7 @@ background-color: rgb(70,70,70);</string>
                <item row="4" column="1">
                 <widget class="QLabel" name="batteryCell3Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-top: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 3</string>
@@ -959,7 +965,7 @@ background-color: rgb(70,70,70);</string>
                <item row="6" column="1">
                 <widget class="QLabel" name="batteryCell5Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-top: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 5</string>
@@ -969,7 +975,7 @@ background-color: rgb(70,70,70);</string>
                <item row="7" column="1">
                 <widget class="QLabel" name="batteryCell6Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-top: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 6</string>
@@ -979,7 +985,7 @@ background-color: rgb(70,70,70);</string>
                <item row="8" column="1">
                 <widget class="QLabel" name="batteryCell7Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-top: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 7</string>
@@ -989,7 +995,7 @@ background-color: rgb(70,70,70);</string>
                <item row="9" column="1">
                 <widget class="QLabel" name="batteryCell8Label">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-bottom: none;</string>
                  </property>
                  <property name="text">
                   <string>Cell 8</string>
@@ -1054,8 +1060,7 @@ background-color: rgb(70,70,70);</string>
                <item row="9" column="3">
                 <widget class="QLabel" name="batteryCMU2Cell8Voltage">
                  <property name="styleSheet">
-                  <string notr="true">border-bottom: none;
-background-color: rgb(70,70,70);</string>
+                  <string notr="true">background-color: rgb(70,70,70);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -1098,8 +1103,7 @@ background-color: rgb(70,70,70);</string>
                <item row="9" column="4">
                 <widget class="QLabel" name="batteryCMU3Cell8Voltage">
                  <property name="styleSheet">
-                  <string notr="true">border-bottom: none;
-background-color: rgb(70,70,70);</string>
+                  <string notr="true">background-color: rgb(70,70,70);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -1164,8 +1168,7 @@ background-color: rgb(70,70,70);</string>
                <item row="9" column="5">
                 <widget class="QLabel" name="batteryCMU4Cell8Voltage">
                  <property name="styleSheet">
-                  <string notr="true">border-bottom: none;
-background-color: rgb(70,70,70);</string>
+                  <string notr="true">background-color: rgb(70,70,70);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -1181,7 +1184,7 @@ background-color: rgb(70,70,70);</string>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none;</string>
+                  <string notr="true">border-left: none;  </string>
                  </property>
                  <property name="text">
                   <string>Temperature (°C)</string>
@@ -1202,7 +1205,7 @@ border-left: none;</string>
                <item row="2" column="0" rowspan="8">
                 <widget class="QLabel" name="batteryVoltageLabel">
                  <property name="styleSheet">
-                  <string notr="true">border-right: none;  border-top: none; text-transform:none;</string>
+                  <string notr="true">border-left: none;  border-bottom: none; text-transform:none;</string>
                  </property>
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VOLTAGES&lt;/p&gt;&lt;p&gt;(mV)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

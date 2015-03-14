@@ -3,26 +3,26 @@
 #include <QObject>
 
 class DisplayPresenter;
-class SolarCarTestUI;
+class PowerUI;
 
 class DisplayView : public QObject
 {
    Q_OBJECT
 public:
-   DisplayView(DisplayPresenter& presenter, SolarCarTestUI& ui);
+   DisplayView(DisplayPresenter& presenter, PowerUI& ui);
    ~DisplayView();
 
 private:
    DisplayPresenter& presenter_;
-   SolarCarTestUI& ui_;
+   PowerUI& ui_;
 
 private slots:
-   void driverSetSpeedRPMReceived(double);
-   void driverSetCurrentReceived(double);
-
-   void vehicleVelocityKphReceived(double);
-   void busCurrentAReceived(double);
-   void busVoltageReceived(double);
+   // void driverSetSpeedRPMReceived(double);
+   // void driverSetCurrentReceived(double);
+// 
+   // void vehicleVelocityKphReceived(double);
+   // void busCurrentAReceived(double);
+   // void busVoltageReceived(double);
 
    void mod0CellTemperatureReceived(double);
    void mod0CellVoltage0Received(double);
@@ -65,7 +65,7 @@ private slots:
    void mod3CellVoltage7Received(double);
 
    void handleConnectButtonClicked();
-   void handleDisconnectButtonClicked();
+   // void handleDisconnectButtonClicked();
    void connectionFailed(QString);
    void connectionSucceeded(QString);
    void clearDebugLog();

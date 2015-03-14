@@ -1,18 +1,24 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QWidget>
 #include "I_PowerUI.h"
-
 namespace Ui {
 	class PowerUI;
 }
 
-class PowerUI : public QMainWindow, public I_PowerUI
+class PowerUI : public QWidget, public I_PowerUI
 {
 	Q_OBJECT
 public:
 	explicit PowerUI(QWidget *parent = 0);
 	~PowerUI();
+
+    QPushButton& connectButton();
+    QLabel& setConnectionStatus();
+    QLineEdit& getSerialPortName();
+    QLineEdit& getBaudRate();
+    QTextEdit& setDebugLog();
 
     QLabel& setBatteryCMU1Temp();
     QLabel& setBatteryCMU1Cell1Voltage();
@@ -56,4 +62,5 @@ public:
 
 private:
    Ui::PowerUI *ui;
+
 };
