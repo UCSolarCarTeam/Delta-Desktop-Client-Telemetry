@@ -76,4 +76,6 @@ FORMS    += \
     PowerUI.ui
 
 RESOURCES += \
-    SolarCarUIResources.qrc
+    uiresources.qrc
+
+DISTFILES +=

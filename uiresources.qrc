@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/MainTitleBar.png</file>
+        <file>Resources/Solar Car Team Icon.ico</file>
+        <file>Resources/Solar Car Team Logo.png</file>
+        <file>Resources/Solar Car Team Symbol.png</file>
+        <file>Resources/SubTitleBar.png</file>
+        <file>Resources/Background1.png</file>
+    </qresource>
+</RCC>
