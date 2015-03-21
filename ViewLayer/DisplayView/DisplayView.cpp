@@ -114,172 +114,172 @@ DisplayView::DisplayView(DisplayPresenter& presenter, PowerUI& ui)
 
 void DisplayView::driverSetSpeedRPMReceived(double driverSetSpeedRPMReceived)
 {
-    ui_.setSetSpeed().setText(QString::number(driverSetSpeedRPMReceived));
+    ui_.setSetSpeed().setNum(driverSetSpeedRPMReceived);
 }
 void DisplayView::driverSetCurrentReceived(double driverSetCurrentReceived)
 {
-    ui_.setSetCurrent().setText(QString::number(driverSetCurrentReceived));
+    ui_.setSetCurrent().setNum(driverSetCurrentReceived);
 } 
 void DisplayView::vehicleVelocityKphReceived(double vehicleVelocityKphReceived)
 {
-    ui_.setActualSpeed().setText(QString::number(vehicleVelocityKphReceived));
+    ui_.setActualSpeed().setNum(vehicleVelocityKphReceived);
 }
 // void DisplayView::busCurrentAReceived(double busCurrentA)
 // {
-//    ui_.setSetSpeed().setText(QString::number(busCurrentA));
+//    ui_.setSetSpeed().setNum(busCurrentA);
 // }
 void DisplayView::busVoltageReceived(double busVoltage)
 {
-    ui_.setBusVoltage().setText(QString::number(busVoltage));
+    ui_.setBusVoltage().setNum(busVoltage);
 }
 
 
 void DisplayView::mod0CellTemperatureReceived(double mod0PcbTemperature)
 {   
-    ui_.setBatteryCMU1Temp().setText(QString::number(mod0PcbTemperature));
+    ui_.setBatteryCMU1Temp().setNum(mod0PcbTemperature);
 }
 void DisplayView::mod0CellVoltage0Received(double mod0CellVoltage0)
 {
-    ui_.setBatteryCMU1Cell1Voltage().setText(QString::number(mod0CellVoltage0));
+    ui_.setBatteryCMU1Cell1Voltage().setNum(mod0CellVoltage0);
 }
 void DisplayView::mod0CellVoltage1Received(double mod0CellVoltage1)
 {
-    ui_.setBatteryCMU1Cell2Voltage().setText(QString::number(mod0CellVoltage1));
+    ui_.setBatteryCMU1Cell2Voltage().setNum(mod0CellVoltage1);
 }
 void DisplayView::mod0CellVoltage2Received(double mod0CellVoltage2)
 {
-    ui_.setBatteryCMU1Cell3Voltage().setText(QString::number(mod0CellVoltage2));
+    ui_.setBatteryCMU1Cell3Voltage().setNum(mod0CellVoltage2);
 }
 void DisplayView::mod0CellVoltage3Received(double mod0CellVoltage3)
 {
-    ui_.setBatteryCMU1Cell4Voltage().setText(QString::number(mod0CellVoltage3));
+    ui_.setBatteryCMU1Cell4Voltage().setNum(mod0CellVoltage3);
 }
 void DisplayView::mod0CellVoltage4Received(double mod0CellVoltage4)
 {
-    ui_.setBatteryCMU1Cell5Voltage().setText(QString::number(mod0CellVoltage4));
+    ui_.setBatteryCMU1Cell5Voltage().setNum(mod0CellVoltage4);
 }
 void DisplayView::mod0CellVoltage5Received(double mod0CellVoltage5)
 {
-    ui_.setBatteryCMU1Cell6Voltage().setText(QString::number(mod0CellVoltage5));
+    ui_.setBatteryCMU1Cell6Voltage().setNum(mod0CellVoltage5);
 }
 void DisplayView::mod0CellVoltage6Received(double mod0CellVoltage6)
 {
-    ui_.setBatteryCMU1Cell7Voltage().setText(QString::number(mod0CellVoltage6));
+    ui_.setBatteryCMU1Cell7Voltage().setNum(mod0CellVoltage6);
 }
 void DisplayView::mod0CellVoltage7Received(double mod0CellVoltage7)
 {
-    ui_.setBatteryCMU1Cell8Voltage().setText(QString::number(mod0CellVoltage7));
+    ui_.setBatteryCMU1Cell8Voltage().setNum(mod0CellVoltage7);
 }
 
 void DisplayView::mod1CellTemperatureReceived(double mod1PcbTemperature)
 {
-     ui_.setBatteryCMU2Temp().setText(QString::number(mod1PcbTemperature));
+     ui_.setBatteryCMU2Temp().setNum(mod1PcbTemperature);
 }
 void DisplayView::mod1CellVoltage0Received(double mod1CellVoltage0)
 {
-    ui_.setBatteryCMU2Cell1Voltage().setText(QString::number(mod1CellVoltage0));
+    ui_.setBatteryCMU2Cell1Voltage().setNum(mod1CellVoltage0);
 }
 void DisplayView::mod1CellVoltage1Received(double mod1CellVoltage1)
 {
-    ui_.setBatteryCMU2Cell2Voltage().setText(QString::number(mod1CellVoltage1));
+    ui_.setBatteryCMU2Cell2Voltage().setNum(mod1CellVoltage1);
 }
 void DisplayView::mod1CellVoltage2Received(double mod1CellVoltage2)
 {
-    ui_.setBatteryCMU2Cell3Voltage().setText(QString::number(mod1CellVoltage2));
+    ui_.setBatteryCMU2Cell3Voltage().setNum(mod1CellVoltage2);
 }
 void DisplayView::mod1CellVoltage3Received(double mod1CellVoltage3)
 {
-    ui_.setBatteryCMU2Cell4Voltage().setText(QString::number(mod1CellVoltage3));
+    ui_.setBatteryCMU2Cell4Voltage().setNum(mod1CellVoltage3);
 }
 void DisplayView::mod1CellVoltage4Received(double mod1CellVoltage4)
 {
-    ui_.setBatteryCMU2Cell5Voltage().setText(QString::number(mod1CellVoltage4));
+    ui_.setBatteryCMU2Cell5Voltage().setNum(mod1CellVoltage4);
 }
 void DisplayView::mod1CellVoltage5Received(double mod1CellVoltage5)
 {
-    ui_.setBatteryCMU2Cell6Voltage().setText(QString::number(mod1CellVoltage5));
+    ui_.setBatteryCMU2Cell6Voltage().setNum(mod1CellVoltage5);
 }
 void DisplayView::mod1CellVoltage6Received(double mod1CellVoltage6)
 {
-    ui_.setBatteryCMU2Cell7Voltage().setText(QString::number(mod1CellVoltage6));
+    ui_.setBatteryCMU2Cell7Voltage().setNum(mod1CellVoltage6);
 }
 void DisplayView::mod1CellVoltage7Received(double mod1CellVoltage7)
 {
-    ui_.setBatteryCMU2Cell8Voltage().setText(QString::number(mod1CellVoltage7));
+    ui_.setBatteryCMU2Cell8Voltage().setNum(mod1CellVoltage7);
 } 
 
 void DisplayView::mod2CellTemperatureReceived(double mod2PcbTemperature)
 {
-    ui_.setBatteryCMU3Temp().setText(QString::number(mod2PcbTemperature));
+    ui_.setBatteryCMU3Temp().setNum(mod2PcbTemperature);
 }
 void DisplayView::mod2CellVoltage0Received(double mod2CellVoltage0)
 {
-    ui_.setBatteryCMU3Cell1Voltage().setText(QString::number(mod2CellVoltage0));
+    ui_.setBatteryCMU3Cell1Voltage().setNum(mod2CellVoltage0);
 }
 void DisplayView::mod2CellVoltage1Received(double mod2CellVoltage1)
 {
-    ui_.setBatteryCMU3Cell2Voltage().setText(QString::number(mod2CellVoltage1));
+    ui_.setBatteryCMU3Cell2Voltage().setNum(mod2CellVoltage1);
 }
 void DisplayView::mod2CellVoltage2Received(double mod2CellVoltage2)
 {
-    ui_.setBatteryCMU3Cell3Voltage().setText(QString::number(mod2CellVoltage2));
+    ui_.setBatteryCMU3Cell3Voltage().setNum(mod2CellVoltage2);
 }
 void DisplayView::mod2CellVoltage3Received(double mod2CellVoltage3)
 {
-    ui_.setBatteryCMU3Cell4Voltage().setText(QString::number(mod2CellVoltage3));
+    ui_.setBatteryCMU3Cell4Voltage().setNum(mod2CellVoltage3);
 }
 void DisplayView::mod2CellVoltage4Received(double mod2CellVoltage4)
 {
-    ui_.setBatteryCMU3Cell5Voltage().setText(QString::number(mod2CellVoltage4));
+    ui_.setBatteryCMU3Cell5Voltage().setNum(mod2CellVoltage4);
 }
 void DisplayView::mod2CellVoltage5Received(double mod2CellVoltage5)
 {
-    ui_.setBatteryCMU3Cell6Voltage().setText(QString::number(mod2CellVoltage5));
+    ui_.setBatteryCMU3Cell6Voltage().setNum(mod2CellVoltage5);
 }
 void DisplayView::mod2CellVoltage6Received(double mod2CellVoltage6)
 {
-    ui_.setBatteryCMU3Cell7Voltage().setText(QString::number(mod2CellVoltage6));
+    ui_.setBatteryCMU3Cell7Voltage().setNum(mod2CellVoltage6);
 }
 void DisplayView::mod2CellVoltage7Received(double mod2CellVoltage7)
 {
-    ui_.setBatteryCMU3Cell8Voltage().setText(QString::number(mod2CellVoltage7));
+    ui_.setBatteryCMU3Cell8Voltage().setNum(mod2CellVoltage7);
 } 
 
 void DisplayView::mod3CellTemperatureReceived(double mod3PcbTemperature)
 {   
-    ui_.setBatteryCMU4Temp().setText(QString::number(mod3PcbTemperature));
+    ui_.setBatteryCMU4Temp().setNum(mod3PcbTemperature);
 }
 void DisplayView::mod3CellVoltage0Received(double mod3CellVoltage0)
 {
-    ui_.setBatteryCMU4Cell1Voltage().setText(QString::number(mod3CellVoltage0));
+    ui_.setBatteryCMU4Cell1Voltage().setNum(mod3CellVoltage0);
 }
 void DisplayView::mod3CellVoltage1Received(double mod3CellVoltage1)
 {
-    ui_.setBatteryCMU4Cell2Voltage().setText(QString::number(mod3CellVoltage1));
+    ui_.setBatteryCMU4Cell2Voltage().setNum(mod3CellVoltage1);
 }
 void DisplayView::mod3CellVoltage2Received(double mod3CellVoltage2)
 {
-    ui_.setBatteryCMU4Cell3Voltage().setText(QString::number(mod3CellVoltage2));
+    ui_.setBatteryCMU4Cell3Voltage().setNum(mod3CellVoltage2);
 }
 void DisplayView::mod3CellVoltage3Received(double mod3CellVoltage2)
 {
-    ui_.setBatteryCMU4Cell4Voltage().setText(QString::number(mod3CellVoltage2));
+    ui_.setBatteryCMU4Cell4Voltage().setNum(mod3CellVoltage2);
 }
 void DisplayView::mod3CellVoltage4Received(double mod3CellVoltage4)
 {
-    ui_.setBatteryCMU4Cell5Voltage().setText(QString::number(mod3CellVoltage4));
+    ui_.setBatteryCMU4Cell5Voltage().setNum(mod3CellVoltage4);
 }
 void DisplayView::mod3CellVoltage5Received(double mod3CellVoltage5)
 {
-    ui_.setBatteryCMU4Cell6Voltage().setText(QString::number(mod3CellVoltage5));
+    ui_.setBatteryCMU4Cell6Voltage().setNum(mod3CellVoltage5);
 }
 void DisplayView::mod3CellVoltage6Received(double mod3CellVoltage6)
 {
-    ui_.setBatteryCMU4Cell7Voltage().setText(QString::number(mod3CellVoltage6));
+    ui_.setBatteryCMU4Cell7Voltage().setNum(mod3CellVoltage6);
 }
 void DisplayView::mod3CellVoltage7Received(double mod3CellVoltage7)
 {
-    ui_.setBatteryCMU4Cell8Voltage().setText(QString::number(mod3CellVoltage7));
+    ui_.setBatteryCMU4Cell8Voltage().setNum(mod3CellVoltage7);
 }
 
 DisplayView::~DisplayView()
@@ -290,7 +290,8 @@ void DisplayView::handleConnectButtonClicked()
 {
     if(ui_.connectButton().text() == "Connect"){
         clearDebugLog();
-        ui_.setConnectionStatus().setText("Connecting...");
+        ui_.setConnectionStatus().setText("CONNECTING...");
+        ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
         presenter_.connectDataSource(ui_.getSerialPortName().text(),
                                      ui_.getBaudRate().text().toDouble());
     }
@@ -303,12 +304,15 @@ void DisplayView::connectionFailed(QString failureMessage)
 {
     ui_.connectButton().setText("Connect");
     ui_.setConnectionStatus().setText(failureMessage);
+    ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(255, 40, 40); background-color: rgb(70,70,70);"); // red text
 }
 
 void DisplayView::connectionSucceeded(QString successMessage)
 {
     ui_.connectButton().setText("Disconnect");
     ui_.setConnectionStatus().setText(successMessage);
+    ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
+
 }
 
 void DisplayView::clearDebugLog()

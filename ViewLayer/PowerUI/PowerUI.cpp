@@ -19,7 +19,7 @@ QPushButton& PowerUI::connectButton()
 }
 QLabel& PowerUI::setConnectionStatus()
 {
-    return *ui->connectionStatusPlaceHolder;
+    return *ui->connectionStatus;
 }
 QLineEdit& PowerUI::getSerialPortName()
 {

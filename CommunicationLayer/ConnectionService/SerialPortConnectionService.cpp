@@ -55,7 +55,7 @@ void SerialPortConnectionService::disconnectDataSource()
 
    serialPort_.close();
    emit sendDebugMessage("Disconnected");
-   emit connectionFailed("Disconnected");
+   emit connectionFailed("DISCONNECTED");
 }
 
 //For use only with the BlueGiga WT41 bluetooth chip
@@ -132,7 +132,7 @@ void SerialPortConnectionService::thirdStep()
 void SerialPortConnectionService::fourthStep()
 {
    emit sendDebugMessage("Connected");
-   emit connectionSucceeded("Connected");
+   emit connectionSucceeded("CONNECTED");
 
    disconnect(&serialPort_, 0, this, 0);
    disconnect(&responseTimer_, 0, this, 0);
