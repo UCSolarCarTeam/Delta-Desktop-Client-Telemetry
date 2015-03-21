@@ -20,6 +20,14 @@ public:
     QLineEdit& getBaudRate();
     QTextEdit& setDebugLog();
 
+    QLabel& setSetSpeed();
+    QLabel& setSetCurrent();
+    QLabel& setActualSpeed();
+    QLabel& setBusVoltage();
+    // QLabel& ArrayCurrentIn();
+    // QLabel& ArrayCurrentOut();
+    // QLabel& NetCurrent();
+
     QLabel& setBatteryCMU1Temp();
     QLabel& setBatteryCMU1Cell1Voltage();
     QLabel& setBatteryCMU1Cell2Voltage();

@@ -17,12 +17,11 @@ private:
    PowerUI& ui_;
 
 private slots:
-   // void driverSetSpeedRPMReceived(double);
-   // void driverSetCurrentReceived(double);
-// 
-   // void vehicleVelocityKphReceived(double);
+   void driverSetSpeedRPMReceived(double);
+   void driverSetCurrentReceived(double);
+   void vehicleVelocityKphReceived(double);
    // void busCurrentAReceived(double);
-   // void busVoltageReceived(double);
+   void busVoltageReceived(double);
 
    void mod0CellTemperatureReceived(double);
    void mod0CellVoltage0Received(double);
