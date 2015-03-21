@@ -114,7 +114,7 @@ border: none;</string>
    <item row="1" column="0">
     <widget class="QWidget" name="backgroundWidget" native="true">
      <property name="styleSheet">
-      <string notr="true">background: url(/home/sam/SolarCar/schulich-delta-telemetry-gui/geometricPattern.jpg);</string>
+      <string notr="true">background: url(/home/sam/SolarCar/schulich-delta-telemetry-gui/Background1);</string>
      </property>
      <layout class="QGridLayout" name="centralLayout">
       <property name="leftMargin">
