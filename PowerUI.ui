@@ -48,6 +48,9 @@ font-family: &quot;Arial Condensed&quot;;
    <property name="bottomMargin">
     <number>0</number>
    </property>
+   <property name="verticalSpacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QWidget" name="mpptTitleBar" native="true">
      <property name="maximumSize">
