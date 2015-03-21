@@ -6,3 +6,9 @@ MPPT
 		- Power 
 		- Voltage 
 		- Current
+
+Images
+	- Load subtitlebar images
+	- Load background images
+	- Load Main titlebar images 
+	- Load icon
