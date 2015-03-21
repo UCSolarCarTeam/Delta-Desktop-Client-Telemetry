@@ -78,7 +78,7 @@ font-family: &quot;Arial Condensed&quot;;
          <string notr="true">QFrame {
 	background-color: rgb(51, 51, 51);
 	border-color: rgb(51, 51, 51);
-	border-bottom: 4px solid rgb(68, 68, 68);
+background: url(/home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/MainTitleBar);
 }</string>
         </property>
         <property name="frameShape">
@@ -94,7 +94,7 @@ font-family: &quot;Arial Condensed&quot;;
          <item>
           <widget class="QLabel" name="mpptTitleLabel">
            <property name="styleSheet">
-            <string notr="true">background: rgb(51, 51, 51);
+            <string notr="true">background: none;
 border: none;</string>
            </property>
            <property name="text">
@@ -114,7 +114,7 @@ border: none;</string>
    <item row="1" column="0">
     <widget class="QWidget" name="backgroundWidget" native="true">
      <property name="styleSheet">
-      <string notr="true">background: url(/home/sam/SolarCar/schulich-delta-telemetry-gui/Background1);</string>
+      <string notr="true">background: url(/home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/Background1);</string>
      </property>
      <layout class="QGridLayout" name="centralLayout">
       <property name="leftMargin">
@@ -1310,7 +1310,9 @@ background-color: rgb(70,70,70);</string>
              <property name="styleSheet">
               <string notr="true">QWidget {
 	background: rgb(85, 85, 85);
-	border-color: rgb(85, 85, 85);
+	background: url(/home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/SubTitleBar.png);
+border-color: none;
+border: none;
 	padding: 2px;
 }</string>
              </property>
@@ -1839,8 +1841,53 @@ QLabel {
              <property name="verticalSpacing">
               <number>9</number>
              </property>
+             <item row="6" column="0">
+              <widget class="QWebView" name="webView_4">
+               <property name="url">
+                <url>
+                 <string>about:blank</string>
+                </url>
+               </property>
+              </widget>
+             </item>
              <item row="2" column="0">
               <widget class="QWebView" name="webView_2">
+               <property name="url">
+                <url>
+                 <string>about:blank</string>
+                </url>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QComboBox" name="comboBox_4">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QComboBox" name="comboBox_3">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QComboBox" name="comboBox_2">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QWebView" name="webView_3">
                <property name="url">
                 <url>
                  <string>about:blank</string>
@@ -1864,53 +1911,8 @@ padding: 3px;</string>
                </property>
                <property name="url">
                 <url>
-                 <string>about:blank</string>
+                 <string>file:///home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/BusinessLayer/GraphingService/Graphs/testPage.html</string>
                 </url>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QComboBox" name="comboBox_2">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QWebView" name="webView_3">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="0">
-              <widget class="QWebView" name="webView_4">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="0">
-              <widget class="QComboBox" name="comboBox_3">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="0">
-              <widget class="QComboBox" name="comboBox_4">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
                </property>
               </widget>
              </item>
