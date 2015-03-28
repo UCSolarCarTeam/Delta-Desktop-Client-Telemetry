@@ -23,8 +23,8 @@
    <string> MPPT Telemetry</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>Resources/Solar Car Team Icon.ico</normaloff>Resources/Solar Car Team Icon.ico</iconset>
+   <iconset resource="uiresources.qrc">
+    <normaloff>:/Resources/Solar Car Team Icon.ico</normaloff>:/Resources/Solar Car Team Icon.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -276,7 +276,7 @@ padding: 3px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>180</width>
+                    <width>16777215</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -1938,6 +1938,8 @@ padding: 3px;</string>
    <header>QtWebKitWidgets/QWebView</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="uiresources.qrc"/>
+ </resources>
  <connections/>
 </ui>
