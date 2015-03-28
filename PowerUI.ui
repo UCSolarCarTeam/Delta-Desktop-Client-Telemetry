@@ -52,7 +52,7 @@ font-family: &quot;Arial Condensed&quot;;
     <number>0</number>
    </property>
    <item row="0" column="0">
-    <widget class="QWidget" name="mpptTitleBar" native="true">
+    <widget class="QWidget" name="powerTitleBar" native="true">
      <property name="maximumSize">
       <size>
        <width>16777215</width>
@@ -95,7 +95,7 @@ background: url(/home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/Main
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="mpptTitleLabel">
+          <widget class="QLabel" name="powerTitleLabel">
            <property name="styleSheet">
             <string notr="true">background: none;
 border: none;</string>
