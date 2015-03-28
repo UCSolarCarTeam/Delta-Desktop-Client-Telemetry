@@ -507,6 +507,9 @@ background-color: rgb(70,70,70);
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(130,130,130);</string>
                   </property>
+                  <property name="text">
+                   <string>115200</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
