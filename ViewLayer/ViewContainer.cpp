@@ -2,29 +2,57 @@
 
 #include "PresenterLayer/PresenterContainer.h"
 #include "PowerUI/PowerUI.h"
-#include "SolarCarTestUi/SolarCarTestUI.h"
+// #include "MpptUI/MpptUI.h"
+// #include "FaultsUI/FaultsUI.h"
+#include "PowerView/PowerView.h"
+// #include "MpptView/MpptView.h"
+// #include "FaultsView/FaultsView.h"
+#include "OverlordWidget/OverlordWidget.h"
 #include "DisplayView/DisplayView.h"
 
 #include "ViewContainer.h"
 
 ViewContainer::ViewContainer(QSharedPointer<PresenterContainer> presenterContainer)
 : presenterContainer_(presenterContainer)
-, mainWindow_(new PowerUI())
-, displayView_(new DisplayView(*(presenterContainer->displayPresenter()), 
-			  				   *mainWindow_))
+, powerUI_(new PowerUI())
+// , mpptUI_(new mpptUI())
+// , FaultsUI_(new FaultsUI())
+, powerView_(new PowerView(*(presenterContainer_->displayPresenter()), *powerUI_))
+// , mpptView_(new mpptView())
+// , faultsView_(new faultsView())
+, overlordWidget_(new OverlordWidget(QList<QWidget*>() << powerUI_))
+, displayView_(new DisplayView(*(presenterContainer_->displayPresenter()), *overlordWidget_))
 {
 }
 
-// QSharedPointer<PowerUI> ViewContainer::powerWidget()
+PowerUI* ViewContainer::powerUI()
+{
+	return powerUI_;
+}
+// QSharedPointer<MpptUI> ViewContainer::mpptUI()
 // {
-// 	return powerWidget_;
+	// return mpptUI_;
 // }
-
-QSharedPointer<PowerUI> ViewContainer::mainWindow()
+// QSharedPointer<FaultUI> ViewContainer::FaultsUI()
+// {
+	// return FaultsUI_;
+// }
+QSharedPointer<PowerView> ViewContainer::powerView()
 {
-	return mainWindow_;
+	return powerView_;
 }
-
+// QSharedPointer<MpptView> ViewContainer::mpptView()
+// {
+	// return mpptView_;
+// }
+// QSharedPointer<FaultsView> ViewContainer::faultsView()
+// {
+	// return faultsView_;
+// }
+QSharedPointer<OverlordWidget> ViewContainer::overlordWidget()
+{
+	return overlordWidget_;
+}
 QSharedPointer<DisplayView> ViewContainer::displayView()
 {
 	return displayView_;

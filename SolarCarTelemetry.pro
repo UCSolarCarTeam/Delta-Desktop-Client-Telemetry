@@ -35,11 +35,12 @@ SOURCES += \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
     ViewLayer/ViewContainer.cpp \
-    ViewLayer/SolarCarTestUi/SolarCarTestUI.cpp \
     ViewLayer/PowerUI/PowerUI.cpp \
+    ViewLayer/PowerView/PowerView.cpp \
+    ViewLayer/OverlordWidget/OverlordWidget.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
-    SolarCarTelemetry/main.cpp
+    SolarCarTelemetry/main.cpp \
 
 HEADERS  += \
     DataLayer/DataContainer.h \
@@ -62,12 +63,15 @@ HEADERS  += \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
     ViewLayer/ViewContainer.h \
-    ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/PowerUI/I_PowerUI.h \
     ViewLayer/PowerUI/PowerUI.h \
-    ViewLayer/SolarCarTestUi/I_SolarCarTestUI.h \
-    ViewLayer/SolarCarTestUi/SolarCarTestUI.h \
-    SolarCarTelemetry/SolarCarTelemetry.h
+    ViewLayer/PowerView/PowerView.h \
+    ViewLayer/PowerView/I_PowerView.h \
+    ViewLayer/OverlordWidget/OverlordWidget.h \
+    ViewLayer/OverlordWidget/I_OverlordWidget.h \
+    ViewLayer/DisplayView/DisplayView.h \
+    SolarCarTelemetry/SolarCarTelemetry.h \
+    ViewLayer/PowerView/PowerView.h
     
 FORMS    += \
     SolarCarTestUI.ui \

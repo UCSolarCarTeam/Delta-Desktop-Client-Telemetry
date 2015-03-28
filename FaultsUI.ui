@@ -20,7 +20,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string> MPPT Telemetry</string>
+   <string>Faults</string>
   </property>
   <property name="windowIcon">
    <iconset>
