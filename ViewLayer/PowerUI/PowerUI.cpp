@@ -6,6 +6,7 @@ QWidget(parent),
 ui(new Ui::PowerUI)
 {
     ui->setupUi(this);
+    showFullScreen();
 }
 
 PowerUI::~PowerUI()
