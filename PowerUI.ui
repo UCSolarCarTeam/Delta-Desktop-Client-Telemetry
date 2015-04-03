@@ -2021,9 +2021,9 @@ padding: 3px;</string>
        <widget class="QFrame" name="frame">
         <property name="styleSheet">
          <string notr="true">QFrame {
+	background-image: url(:/Resources/MainTitleBar.png);
 	background-color: rgb(51, 51, 51);
 	border-color: rgb(51, 51, 51);
-background: url(/home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/MainTitleBar);
 }</string>
         </property>
         <property name="frameShape">

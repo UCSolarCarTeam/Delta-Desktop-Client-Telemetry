@@ -17,7 +17,7 @@ OverlordWidget::OverlordWidget(QList<QWidget*> viewWindows,
 	foreach(QWidget* window, viewWindows_){
 		tabBar->addTab(window, window->windowTitle());
 	}
-	tabBar->setStyleSheet("QTabBar::tab { height: 50px;\n width: 175px; \nbackground: rgb(180, 180, 180);\nfont-size: 20px; }");
+    tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\nbackground-image: url(:/Resources/MainTitleBar.png);\nfont-size: 20px;\ncolor: white;border: 1px solid rgb(50,50,50); }");
 	overlordLayout->addWidget(tabBar);
 	setLayout(overlordLayout);
     showFullScreen();
