@@ -41,6 +41,8 @@ SOURCES += \
     ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
     SolarCarTelemetry/main.cpp \
+    ViewLayer/MpptUI/MpptUI.cpp \
+    ViewLayer/MpptView/MpptView.cpp
 
 HEADERS  += \
     DataLayer/DataContainer.h \
@@ -71,7 +73,10 @@ HEADERS  += \
     ViewLayer/OverlordWidget/I_OverlordWidget.h \
     ViewLayer/DisplayView/DisplayView.h \
     SolarCarTelemetry/SolarCarTelemetry.h \
-    ViewLayer/PowerView/PowerView.h
+    ViewLayer/PowerView/PowerView.h \
+    ViewLayer/MpptUI/MpptUI.h \
+    ViewLayer/MpptUI/I_MpptUI.h \
+    ViewLayer/MpptView/MpptView.h
     
 FORMS    += \
     SolarCarTestUI.ui \
