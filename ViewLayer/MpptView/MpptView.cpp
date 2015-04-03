@@ -1,4 +1,4 @@
-#include "mpptview.h"
+#include "MpptView.h"
 
 mpptView::mpptView()
 {
