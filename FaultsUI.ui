@@ -53,11 +53,23 @@ font-family: &quot;Helvetica&quot;;
    </property>
    <item>
     <widget class="QWidget" name="faultsTitleBar" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>80</height>
+       <height>45</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: url(:/Resources/MainTitleBar.png);
+border: 1px;
+border-color: rgb(40,40,40);
+</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <property name="spacing">
@@ -80,8 +92,9 @@ font-family: &quot;Helvetica&quot;;
         <property name="styleSheet">
          <string notr="true">QFrame {
 	background-color: rgb(51, 51, 51);
-	border-color: rgb(51, 51, 51);
-	border-bottom: 4px solid rgb(68, 68, 68);
+border-width: 1px;
+border-style:1px;
+border-color: rgb(50,50,50);
 }</string>
         </property>
         <property name="frameShape">
@@ -97,11 +110,11 @@ font-family: &quot;Helvetica&quot;;
          <item>
           <widget class="QLabel" name="faultTitleLabel">
            <property name="styleSheet">
-            <string notr="true">background: rgb(51, 51, 51);
+            <string notr="true">background: none;
 border: none;</string>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Faults&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Faults&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="textFormat">
             <enum>Qt::RichText</enum>
@@ -117,7 +130,8 @@ border: none;</string>
    <item>
     <widget class="QWidget" name="backgroundWidget" native="true">
      <property name="styleSheet">
-      <string notr="true">background: url(/home/sam/SolarCar/schulich-delta-telemetry-gui/geometricPattern.jpg);</string>
+      <string notr="true">border-image: url(:/Resources/Background1.png);
+</string>
      </property>
      <layout class="QGridLayout" name="centralLayout">
       <property name="leftMargin">
@@ -155,10 +169,10 @@ border: none;</string>
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
 	border-style:solid;
-	border-width: 2px;
-	border-radius: 5px;
-	border-color: rgb(51, 51, 51);
+	border-width: 1px;
+	border-color: rgb(40,40,40);
 	padding: 9px;
+border-image: none;
 }
 
 QLabel {
@@ -184,6 +198,12 @@ QLabel {
            </property>
            <item>
             <widget class="QWidget" name="batteryTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -192,8 +212,9 @@ QLabel {
              </property>
              <property name="styleSheet">
               <string notr="true">QWidget {
-	background: rgb(85, 85, 85);
-	border-color: rgb(85, 85, 85);
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
 	padding: 2px;
 }</string>
              </property>
@@ -216,7 +237,8 @@ QLabel {
               <item>
                <widget class="QLabel" name="batteryTitleLabel">
                 <property name="styleSheet">
-                 <string notr="true">border-style: none;</string>
+                 <string notr="true">border-style: none;
+background: none;</string>
                 </property>
                 <property name="text">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Battery Pack Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -401,10 +423,10 @@ QLabel {
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
 	border-style:solid;
-	border-width: 2px;
-	border-radius: 5px;
-	border-color: rgb(51, 51, 51);
+	border-width: 1px;
+	border-color: rgb(40,40,40);
 	padding: 9px;
+border-image:none;
 }
 
 QLabel {
@@ -430,6 +452,12 @@ QLabel {
            </property>
            <item>
             <widget class="QWidget" name="historyTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -438,8 +466,9 @@ QLabel {
              </property>
              <property name="styleSheet">
               <string notr="true">QWidget {
-	background: rgb(85, 85, 85);
-	border-color: rgb(85, 85, 85);
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
 	padding: 2px;
 }</string>
              </property>
@@ -462,7 +491,8 @@ QLabel {
               <item>
                <widget class="QLabel" name="historyTitleLabel">
                 <property name="styleSheet">
-                 <string notr="true">border-style: none;</string>
+                 <string notr="true">border-style: none;
+background: none;</string>
                 </property>
                 <property name="text">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fault History&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -513,10 +543,10 @@ QLabel {
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
 	border-style:solid;
-	border-width: 2px;
-	border-radius: 5px;
-	border-color: rgb(51, 51, 51);
+	border-width: 1px;
+	border-color: rgb(40,40,40);
 	padding: 9px;
+border-image: none;
 }
 </string>
           </property>
@@ -538,6 +568,12 @@ QLabel {
            </property>
            <item>
             <widget class="QWidget" name="motorTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -546,8 +582,9 @@ QLabel {
              </property>
              <property name="styleSheet">
               <string notr="true">QWidget {
-	background: rgb(85, 85, 85);
-	border-color: rgb(85, 85, 85);
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
 	padding: 2px;
 }</string>
              </property>
@@ -576,6 +613,10 @@ QLabel {
                 </property>
                 <property name="contextMenuPolicy">
                  <enum>Qt::PreventContextMenu</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:none;
+background: none;</string>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
