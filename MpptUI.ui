@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MpptTelemetry</class>
- <widget class="QWidget" name="MpptTelemetry">
+ <class>MpptUI</class>
+ <widget class="QWidget" name="MpptUI">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>

@@ -1,9 +1,9 @@
 #include "PowerUI.h"
 #include "ui_PowerUI.h"
 
-PowerUI::PowerUI(QWidget *parent) :
-QWidget(parent),
-ui(new Ui::PowerUI)
+PowerUI::PowerUI(QWidget *parent) 
+: QWidget(parent)
+, ui(new Ui::PowerUI)
 {
     ui->setupUi(this);
 }

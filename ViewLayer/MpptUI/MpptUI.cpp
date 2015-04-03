@@ -1,12 +1,15 @@
 #include "MpptUI.h"
+#include "ui_MpptUI.h"
 
-mpptUI::mpptUI()
+MpptUI::MpptUI(QWidget *parent)
+: QWidget(parent)
+, ui(new Ui::MpptUI)
 {
-
+	ui->setupUi(this);
 }
 
-mpptUI::~mpptUI()
+MpptUI::~MpptUI()
 {
-
+	delete ui;
 }
 
