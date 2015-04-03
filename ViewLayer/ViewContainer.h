@@ -4,11 +4,11 @@
 
 class PresenterContainer;
 class PowerUI;
-// class MpptUI;
-// class FaultsUI;
+class MpptUI;
+class FaultsUI;
 class PowerView;
-// class MpptView;
-// class FaultsView;
+class MpptView;
+class FaultsView;
 class OverlordWidget;
 class DisplayView;
 
@@ -16,11 +16,11 @@ class ViewContainer
 {
 public:
 	QSharedPointer<PowerView> powerView();
-	// QSharedPointer<MpptView> mpptView();
-	// QSharedPointer<FaultsView> faultsView();
+	QSharedPointer<MpptView> mpptView();
+	QSharedPointer<FaultsView> faultsView();
 	PowerUI* powerUI();
-	// QSharedPointer<MpptUI> mpptUI();
-	// QSharedPointer<FaultUI> FaultsUI();
+	MpptUI* mpptUI();
+	FaultsUI* faultsUI();
 	QSharedPointer<OverlordWidget> overlordWidget();
 	QSharedPointer<DisplayView> displayView();
 
@@ -30,11 +30,11 @@ public:
 private:
 	QSharedPointer<PresenterContainer> presenterContainer_;
 	PowerUI* powerUI_; 
-	// QSharedPointer<MpptUI> mpptUI_;
-	// QSharedPointer<FaultsUI> faultsUI_;
+	MpptUI* mpptUI_;
+	FaultsUI* faultsUI_;
 	QSharedPointer<PowerView> powerView_;
-	// QSharedPointer<MpptView> mpptView_;
-	// QSharedPointer<FaultsView> faultsView_;
+	QSharedPointer<MpptView> mpptView_;
+	QSharedPointer<FaultsView> faultsView_;
 	QSharedPointer<OverlordWidget> overlordWidget_;
 	QSharedPointer<DisplayView> displayView_; 
 };

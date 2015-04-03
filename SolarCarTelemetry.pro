@@ -37,12 +37,14 @@ SOURCES += \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/PowerUI/PowerUI.cpp \
     ViewLayer/PowerView/PowerView.cpp \
+    ViewLayer/MpptUI/MpptUI.cpp \
+    ViewLayer/MpptView/MpptView.cpp \ 
+    ViewLayer/FaultsUI/FaultsUI.cpp \
+    ViewLayer/FaultsView/FaultsView.cpp \ 
     ViewLayer/OverlordWidget/OverlordWidget.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
-    SolarCarTelemetry/main.cpp \
-    ViewLayer/MpptUI/MpptUI.cpp \
-    ViewLayer/MpptView/MpptView.cpp
+    SolarCarTelemetry/main.cpp 
 
 HEADERS  += \
     DataLayer/DataContainer.h \
@@ -69,14 +71,17 @@ HEADERS  += \
     ViewLayer/PowerUI/PowerUI.h \
     ViewLayer/PowerView/PowerView.h \
     ViewLayer/PowerView/I_PowerView.h \
+    ViewLayer/MpptUI/MpptUI.h \
+    ViewLayer/MpptUI/I_MpptUI.h \
+    ViewLayer/MpptView/MpptView.h \ 
+    ViewLayer/FaultsUI/FaultsUI.h \
+    ViewLayer/FaultsUI/I_FaultsUI.h \
+    ViewLayer/FaultsView/FaultsView.h \ 
     ViewLayer/OverlordWidget/OverlordWidget.h \
     ViewLayer/OverlordWidget/I_OverlordWidget.h \
     ViewLayer/DisplayView/DisplayView.h \
-    SolarCarTelemetry/SolarCarTelemetry.h \
     ViewLayer/PowerView/PowerView.h \
-    ViewLayer/MpptUI/MpptUI.h \
-    ViewLayer/MpptUI/I_MpptUI.h \
-    ViewLayer/MpptView/MpptView.h
+    SolarCarTelemetry/SolarCarTelemetry.h 
     
 FORMS    += \
     SolarCarTestUI.ui \

@@ -1,9 +1,19 @@
 #pragma once
 
-class mpptView
+#include <QObject>
+
+class DisplayPresenter;
+class MpptUI;
+
+class MpptView : public QObject
 {
+	Q_OBJECT
 public:
-    mpptView();
-    ~mpptView();
+    MpptView(DisplayPresenter& presenter, MpptUI& ui);
+    ~MpptView();
+
+private:
+	DisplayPresenter& presenter_;
+	MpptUI& ui_;
 };
 
