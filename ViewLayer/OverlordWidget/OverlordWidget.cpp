@@ -13,6 +13,7 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 // , escWindow_(escWindow)
 {
 	QVBoxLayout* overlordLayout = new QVBoxLayout;
+	setWindowIcon(QIcon(":/Resources/Solar Car Team Icon.ico"));
 	QTabWidget* tabBar = new QTabWidget();
 	overlordLayout->setContentsMargins(0, 0, 0, 0);
 	foreach(I_SolarCarWindow* window, viewWindows_){
