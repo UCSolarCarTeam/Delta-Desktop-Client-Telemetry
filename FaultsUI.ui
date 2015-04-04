@@ -302,7 +302,7 @@ background: none;</string>
                  </widget>
                 </item>
                 <item row="6" column="0">
-                 <widget class="QLabel" name="bmuInSetupModeLabe">
+                 <widget class="QLabel" name="bmuInSetupModeLabel">
                   <property name="text">
                    <string>BMU in Setup Mode</string>
                   </property>
@@ -333,7 +333,7 @@ background: none;</string>
                  </widget>
                 </item>
                 <item row="11" column="0">
-                 <widget class="QLabel" name="can12vSupplyLowLabe">
+                 <widget class="QLabel" name="can12vSupplyLowLabel">
                   <property name="text">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Can 12V Supply Low (Shutdown Imminent)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
