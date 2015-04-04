@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>Resources/Background1.png</file>
         <file>Resources/MainTitleBar.png</file>
+        <file>Resources/MenuButton.png</file>
         <file>Resources/Solar Car Team Icon.ico</file>
         <file>Resources/Solar Car Team Logo.png</file>
         <file>Resources/Solar Car Team Symbol.png</file>

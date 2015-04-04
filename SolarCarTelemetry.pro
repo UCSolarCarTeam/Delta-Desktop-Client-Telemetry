@@ -89,9 +89,19 @@ FORMS    += \
     FaultsUI.ui \
     MpptUI.ui \
     PowerUI.ui \
-    Escapeui.ui
+    EscapeDialog.ui
 
 RESOURCES += \
     uiresources.qrc
 
-DISTFILES +=
+DISTFILES += \
+    Resources/Background1.png \
+    Resources/MainTitleBar.png \
+    Resources/MenuButton.png \
+    Resources/Solar Car Team Logo.png \
+    Resources/Solar Car Team Symbol.png \
+    Resources/SubTitleBar.png \
+    Resources/Solar Car Team Icon.ico \
+    Resources/Solar Car Team Logo.png \
+    Resources/Solar Car Team Symbol.png \
+    Resources/Solar Car Team Icon.ico
