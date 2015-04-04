@@ -1,18 +1,20 @@
 #pragma once
 
-#include <QWidget>
 #include "I_FaultsUI.h"
+#include "../I_SolarCarWindow/I_SolarCarWindow.h"
 
 namespace Ui {
 	class FaultsUI;
 }
 
-class FaultsUI : public QWidget, public I_FaultsUI 
+class FaultsUI : public I_SolarCarWindow, public I_FaultsUI 
 {
 	Q_OBJECT
 public:
-    explicit FaultsUI(QWidget *parent = 0);
+    explicit FaultsUI();
     ~FaultsUI();
+
+    void hideHeaderBar();
 
 private:
 	Ui::FaultsUI *ui;

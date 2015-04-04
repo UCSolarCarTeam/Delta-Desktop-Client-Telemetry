@@ -77,6 +77,7 @@ HEADERS  += \
     ViewLayer/FaultsUI/FaultsUI.h \
     ViewLayer/FaultsUI/I_FaultsUI.h \
     ViewLayer/FaultsView/FaultsView.h \ 
+    ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
     ViewLayer/OverlordWidget/OverlordWidget.h \
     ViewLayer/OverlordWidget/I_OverlordWidget.h \
     ViewLayer/DisplayView/DisplayView.h \

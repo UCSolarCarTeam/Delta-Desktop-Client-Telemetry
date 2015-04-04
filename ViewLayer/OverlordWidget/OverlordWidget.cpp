@@ -2,8 +2,9 @@
 #include <QTabWidget>
 #include <QWidget>
 #include "OverlordWidget.h"
+#include "../I_SolarCarWindow/I_SolarCarWindow.h"
 
-OverlordWidget::OverlordWidget(QList<QWidget*> viewWindows,
+OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 							   QWidget *parent)
 : QWidget(parent)
 , viewWindows_(viewWindows)
@@ -14,8 +15,9 @@ OverlordWidget::OverlordWidget(QList<QWidget*> viewWindows,
 	QVBoxLayout* overlordLayout = new QVBoxLayout;
 	QTabWidget* tabBar = new QTabWidget();
 	overlordLayout->setContentsMargins(0, 0, 0, 0);
-	foreach(QWidget* window, viewWindows_){
+	foreach(I_SolarCarWindow* window, viewWindows_){
 		tabBar->addTab(window, window->windowTitle());
+		window->hideHeaderBar();
 	}
     tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\nbackground-image: url(:/Resources/MainTitleBar.png);\nfont-size: 20px;\ncolor: white;"
                           "border: 1px solid rgb(30,30,30);border-left: 1px solid rgb(120,120,120) }");
