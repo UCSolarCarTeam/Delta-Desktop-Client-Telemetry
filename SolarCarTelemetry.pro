@@ -87,7 +87,8 @@ FORMS    += \
     SolarCarTestUI.ui \
     FaultsUI.ui \
     MpptUI.ui \
-    PowerUI.ui
+    PowerUI.ui \
+    Escapeui.ui
 
 RESOURCES += \
     uiresources.qrc

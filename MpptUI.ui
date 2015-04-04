@@ -2271,7 +2271,7 @@ background: none;</string>
               <number>9</number>
              </property>
              <item row="1" column="0">
-              <widget class="QComboBox" name="comboBox">
+              <widget class="QComboBox" name="graphSelector1">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
@@ -2295,7 +2295,7 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QWebView" name="graphOne">
+              <widget class="QWebView" name="graph1">
                <property name="url">
                 <url>
                  <string>about:blank</string>
@@ -2304,7 +2304,7 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="2" column="0">
-              <widget class="QWebView" name="webView">
+              <widget class="QWebView" name="graph3">
                <property name="url">
                 <url>
                  <string>about:blank</string>
@@ -2313,7 +2313,7 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="4" column="0">
-              <widget class="QWebView" name="webView">
+              <widget class="QWebView" name="graph2">
                <property name="url">
                 <url>
                  <string>about:blank</string>
@@ -2322,11 +2322,14 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="3" column="0">
-              <widget class="QComboBox" name="comboBox_5">
+              <widget class="QComboBox" name="graphSelector2">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
 padding: 3px;</string>
+               </property>
+               <property name="currentText">
+                <string>Graph Two</string>
                </property>
                <item>
                 <property name="text">
@@ -2346,7 +2349,7 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="5" column="0">
-              <widget class="QComboBox" name="comboBox_6">
+              <widget class="QComboBox" name="graphSelector3">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
