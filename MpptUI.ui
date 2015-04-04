@@ -286,10 +286,10 @@ background: none;</string>
               <number>9</number>
              </property>
              <item row="0" column="1">
-              <widget class="QGraphicsView" name="graphicsView"/>
+              <widget class="QGraphicsView" name="graphicalViewContent"/>
              </item>
              <item row="1" column="1">
-              <widget class="QComboBox" name="comboBox">
+              <widget class="QComboBox" name="graphicalViewSelector">
                <property name="focusPolicy">
                 <enum>Qt::NoFocus</enum>
                </property>
@@ -1807,21 +1807,21 @@ border-left: none;</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="power1PowerOut">
+                     <widget class="QLabel" name="power1PowerValue">
                       <property name="text">
                        <string>0</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="power1VoltageOut">
+                     <widget class="QLabel" name="power1VoltageValue">
                       <property name="text">
                        <string>0</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="power1CurrentOut">
+                     <widget class="QLabel" name="power1CurrentValue">
                       <property name="text">
                        <string>0</string>
                       </property>
@@ -2094,7 +2094,7 @@ border:none;</string>
               <number>9</number>
              </property>
              <item row="0" column="0">
-              <widget class="QComboBox" name="algorithmComboBox">
+              <widget class="QComboBox" name="algorithmSelector">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
@@ -2329,7 +2329,7 @@ border-radius: 0px;
 padding: 3px;</string>
                </property>
                <property name="currentText">
-                <string>Graph Two</string>
+                <string>Graph One</string>
                </property>
                <item>
                 <property name="text">

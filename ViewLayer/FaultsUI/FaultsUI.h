@@ -16,6 +16,36 @@ public:
 
     void hideHeaderBar();
 
+	QLabel& cellOverVoltageLabel();
+	QLabel& bmuInSetupModeLabel();
+	QLabel& cellOverTemperatureLabel();
+	QLabel& softwareOverCurrentMeasurementNotValidLabel();
+	QLabel& cellUnderVoltageLabel();
+	QLabel& can12vSupplyLowLabel();
+	QLabel& vehicleCommunicationsTimeoutLabel();
+	QLabel& packIsolationTestFailureLabel();
+	QLabel& contactorStuckOrNotEngagedLabel();
+	QLabel& cmuCanBusPowerStatusLabel();
+	QLabel& measurementUntrustedLabel();
+	QLabel& cmuDetectedExtraCellLabel();
+	QLabel& ipmTemperatureOrMotorTemperatureLabel();
+	QLabel& busVoltageUpperLimitLabel();
+	QLabel& motorCurrentLabel();
+	QLabel& busVoltageLowerLimitLabel();
+	QLabel& outputVoltagePwmLabel();
+	QLabel& busCurrentLabel();
+	QLabel& velocityLabel();
+	QLabel& desaturationFaultLabel();
+	QLabel& badMotorPositionHallSequence();
+	QLabel& fifteenVoltRailUnderVoltageLockoutLabel();
+	QLabel& configReadErrorLabel();
+	QLabel& watchDogCausedLastResetLabel();
+	QLabel& dcBusOverVoltageLabel();
+	QLabel& softwareOverCurrentLabel();
+	QLabel& hardwareOverCurrentLabel();
+
+	QTextBrowser& historyTextBrowser();
+
 private:
 	Ui::FaultsUI *ui;
 };
