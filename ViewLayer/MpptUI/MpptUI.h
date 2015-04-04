@@ -1,18 +1,20 @@
 #pragma once
 
-#include <QWidget>
+#include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "I_MpptUI.h"
 
 namespace Ui {
 	class MpptUI;
 }
 
-class MpptUI : public QWidget, public I_MpptUI 
+class MpptUI : public I_SolarCarWindow, public I_MpptUI 
 {
 	Q_OBJECT
 public:
-    explicit MpptUI(QWidget *parent = 0);
+    explicit MpptUI();
     ~MpptUI();
+
+    void hideHeaderBar();
 
 private:
 	Ui::MpptUI *ui;

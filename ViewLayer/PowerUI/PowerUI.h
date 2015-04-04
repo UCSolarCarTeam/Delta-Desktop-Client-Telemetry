@@ -1,18 +1,20 @@
 #pragma once
 
 #include <QMainWindow>
-#include <QWidget>
+#include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "I_PowerUI.h"
 namespace Ui {
 	class PowerUI;
 }
 
-class PowerUI : public QWidget, public I_PowerUI
+class PowerUI : public I_SolarCarWindow, public I_PowerUI
 {
 	Q_OBJECT
 public:
-	explicit PowerUI(QWidget *parent = 0);
+	explicit PowerUI();
 	~PowerUI();
+
+    void hideHeaderBar();
 
     QPushButton& connectButton();
     QLabel& setConnectionStatus();

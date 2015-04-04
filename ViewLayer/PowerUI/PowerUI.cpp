@@ -1,9 +1,10 @@
 #include "PowerUI.h"
 #include "ui_PowerUI.h"
+#include <QDebug>
 
-PowerUI::PowerUI(QWidget *parent) 
-: QWidget(parent)
-, ui(new Ui::PowerUI)
+
+PowerUI::PowerUI() 
+: ui(new Ui::PowerUI)
 {
     ui->setupUi(this);
 }
@@ -11,6 +12,11 @@ PowerUI::PowerUI(QWidget *parent)
 PowerUI::~PowerUI()
 {
     delete ui;
+}
+
+void PowerUI::hideHeaderBar()
+{
+    ui->powerTitleBar->hide();
 }
 
 QPushButton& PowerUI::connectButton()

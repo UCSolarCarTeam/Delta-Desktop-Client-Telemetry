@@ -4,6 +4,7 @@
 #include "PowerUI/PowerUI.h"
 #include "MpptUI/MpptUI.h"
 #include "FaultsUI/FaultsUI.h"
+#include "I_SolarCarWindow/I_SolarCarWindow.h"
 #include "PowerView/PowerView.h"
 #include "MpptView/MpptView.h"
 #include "FaultsView/FaultsView.h"
@@ -20,7 +21,7 @@ ViewContainer::ViewContainer(QSharedPointer<PresenterContainer> presenterContain
 , powerView_(new PowerView(*(presenterContainer_->displayPresenter()), *powerUI_))
 , mpptView_(new MpptView(*(presenterContainer_->displayPresenter()), *mpptUI_))
 , faultsView_(new FaultsView(*(presenterContainer_->displayPresenter()), *faultsUI_))
-, overlordWidget_(new OverlordWidget(QList<QWidget*>() << powerUI_ << mpptUI_ << faultsUI_))
+, overlordWidget_(new OverlordWidget(QList<I_SolarCarWindow*>() << powerUI_ << mpptUI_ << faultsUI_))
 , displayView_(new DisplayView(*(presenterContainer_->displayPresenter()), *overlordWidget_))
 {
 }
