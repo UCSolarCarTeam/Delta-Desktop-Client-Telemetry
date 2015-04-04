@@ -1,4 +1,4 @@
-#pragma onces
+#pragma once
 
 #include <QLabel>
 #include <QPushButton>
