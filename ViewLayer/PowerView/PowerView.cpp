@@ -303,6 +303,7 @@ void PowerView::connectionFailed(QString failureMessage)
     ui_.connectButton().setText("Connect");
     ui_.setConnectionStatus().setText(failureMessage);
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(255, 40, 40); background-color: rgb(70,70,70);"); // red text
+    ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth0of5.png);");
 }
 
 void PowerView::connectionSucceeded(QString successMessage)
@@ -310,7 +311,7 @@ void PowerView::connectionSucceeded(QString successMessage)
     ui_.connectButton().setText("Disconnect");
     ui_.setConnectionStatus().setText(successMessage);
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
-
+    ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
 }
 
 void PowerView::clearDebugLog()

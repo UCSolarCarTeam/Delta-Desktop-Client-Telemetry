@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QWidget>
 
 class I_PowerUI
 {
@@ -12,6 +13,7 @@ public:
 
     virtual QPushButton& connectButton() = 0;
     virtual QLabel& setConnectionStatus() = 0;
+    virtual QWidget& setConnectionHealth() = 0;
     virtual QLineEdit& getSerialPortName() = 0;
     virtual QLineEdit& getBaudRate() = 0;
     virtual QTextEdit& setDebugLog() = 0;

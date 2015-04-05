@@ -18,6 +18,7 @@ public:
 
     QPushButton& connectButton();
     QLabel& setConnectionStatus();
+    QWidget& setConnectionHealth();
     QLineEdit& getSerialPortName();
     QLineEdit& getBaudRate();
     QTextEdit& setDebugLog();

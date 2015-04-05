@@ -1,18 +1,22 @@
 #include <QVBoxLayout>
 #include <QTabWidget>
 #include <QWidget>
+#include <QKeyEvent>
 #include "OverlordWidget.h"
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
+#include "../EscapeDialog/EscapeDialog.h"
 
 OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
-							   QWidget *parent)
+                               EscapeDialog* escapeDialog,
+                               QWidget *parent)
 : QWidget(parent)
 , viewWindows_(viewWindows)
 , state_("Single")
 // , settingsWindow_(settings)
-// , escWindow_(escWindow)
+, escapeDialog_(escapeDialog)
 {
-	QVBoxLayout* overlordLayout = new QVBoxLayout;
+    escapeDialog_->hide();
+    QVBoxLayout* overlordLayout = new QVBoxLayout;
 	setWindowIcon(QIcon(":/Resources/Solar Car Team Icon.ico"));
 	QTabWidget* tabBar = new QTabWidget();
 	overlordLayout->setContentsMargins(0, 0, 0, 0);
@@ -30,6 +34,13 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 
 OverlordWidget::~OverlordWidget()
 {
+}
+
+
+void OverlordWidget::keyPressEvent(QKeyEvent * event){
+    if (event->key() == Qt::Key_Escape){
+        escapeDialog_->show();
+    }
 }
 
 QString OverlordWidget::changeState()

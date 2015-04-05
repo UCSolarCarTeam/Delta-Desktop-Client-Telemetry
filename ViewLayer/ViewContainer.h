@@ -3,9 +3,11 @@
 #include <QSharedPointer>
 
 class PresenterContainer;
+class EscapeDialog;
 class PowerUI;
 class MpptUI;
 class FaultsUI;
+class EscapeDialogView;
 class PowerView;
 class MpptView;
 class FaultsView;
@@ -15,9 +17,11 @@ class DisplayView;
 class ViewContainer
 {
 public:
+    QSharedPointer<EscapeDialogView> escapeDialogView();
 	QSharedPointer<PowerView> powerView();
 	QSharedPointer<MpptView> mpptView();
 	QSharedPointer<FaultsView> faultsView();
+    EscapeDialog* escapeDialog();
 	PowerUI* powerUI();
 	MpptUI* mpptUI();
 	FaultsUI* faultsUI();
@@ -29,9 +33,11 @@ public:
 
 private:
 	QSharedPointer<PresenterContainer> presenterContainer_;
+    EscapeDialog* escapeDialog_;
 	PowerUI* powerUI_; 
 	MpptUI* mpptUI_;
 	FaultsUI* faultsUI_;
+    QSharedPointer<EscapeDialogView> escapeDialogView_;
 	QSharedPointer<PowerView> powerView_;
 	QSharedPointer<MpptView> mpptView_;
 	QSharedPointer<FaultsView> faultsView_;

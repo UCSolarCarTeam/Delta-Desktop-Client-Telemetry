@@ -34,6 +34,8 @@ SOURCES += \
     BusinessLayer/LoggerService/LoggerService.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    ViewLayer/EscapeDialog/EscapeDialog.cpp \
+    ViewLayer/EscapeDialogView/EscapeDialogView.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/PowerUI/PowerUI.cpp \
     ViewLayer/PowerView/PowerView.cpp \
@@ -44,7 +46,7 @@ SOURCES += \
     ViewLayer/OverlordWidget/OverlordWidget.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
-    SolarCarTelemetry/main.cpp 
+    SolarCarTelemetry/main.cpp
 
 HEADERS  += \
     DataLayer/DataContainer.h \
@@ -67,6 +69,9 @@ HEADERS  += \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
     ViewLayer/ViewContainer.h \
+    ViewLayer/EscapeDialogView/EscapeDialogView.h \
+    ViewLayer/EscapeDialog/I_EscapeDialog.h \
+    ViewLayer/EscapeDialog/EscapeDialog.h \
     ViewLayer/PowerUI/I_PowerUI.h \
     ViewLayer/PowerUI/PowerUI.h \
     ViewLayer/PowerView/PowerView.h \

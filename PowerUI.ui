@@ -226,52 +226,8 @@ QWidget {
 
 </string>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_6">
-                <item>
-                 <widget class="QLabel" name="connectionStatus">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>35</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">text-align: centre;
-color: rgb(255, 40, 40);
-background-color: rgb(70,70,70);
-</string>
-                  </property>
-                  <property name="text">
-                   <string>DISCONNECTED</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::RichText</enum>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="serialPortNameLabel">
-                  <property name="text">
-                   <string>Serial Port Name</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="3" column="0">
                  <widget class="QLineEdit" name="serialPortName">
                   <property name="palette">
                    <palette>
@@ -453,14 +409,86 @@ background-color: rgb(70,70,70);
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="serialPortNameLabel">
+                  <property name="text">
+                   <string>Serial Port Name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
                  <widget class="QLabel" name="baudrateLabel">
                   <property name="text">
                    <string>Baudrate</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="0" column="0">
+                 <widget class="QWidget" name="connectionStatusWidget" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">border:none;</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_6">
+                   <item row="0" column="0" rowspan="2" colspan="2">
+                    <widget class="QLabel" name="connectionStatus">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="layoutDirection">
+                      <enum>Qt::LeftToRight</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">text-align: centre;
+color: rgb(255, 40, 40);
+background-color: rgb(70,70,70);
+</string>
+                     </property>
+                     <property name="text">
+                      <string>DISCONNECTED</string>
+                     </property>
+                     <property name="textFormat">
+                      <enum>Qt::RichText</enum>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2" rowspan="2">
+                    <widget class="QWidget" name="connectionHealthImage" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>36</width>
+                       <height>36</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>36</width>
+                       <height>36</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background: url(:/Resources/ConnectionHealth0of5.png);</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="5" column="0">
                  <widget class="QLineEdit" name="baudrate">
                   <property name="autoFillBackground">
                    <bool>false</bool>

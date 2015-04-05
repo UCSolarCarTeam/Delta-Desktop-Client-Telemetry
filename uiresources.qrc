@@ -1,6 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>Resources/Background1.png</file>
+        <file>Resources/ConnectionHealth0of5.png</file>
+        <file>Resources/ConnectionHealth1of5.png</file>
+        <file>Resources/ConnectionHealth2of5.png</file>
+        <file>Resources/ConnectionHealth3of5.png</file>
+        <file>Resources/ConnectionHealth4of5.png</file>
+        <file>Resources/ConnectionHealth5of5.png</file>
         <file>Resources/MainTitleBar.png</file>
         <file>Resources/MenuButton.png</file>
         <file>Resources/Solar Car Team Icon.ico</file>

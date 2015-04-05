@@ -27,6 +27,10 @@ QLabel& PowerUI::setConnectionStatus()
 {
     return *ui->connectionStatus;
 }
+QWidget& PowerUI::setConnectionHealth()
+{
+    return *ui->connectionHealthImage;
+}
 QLineEdit& PowerUI::getSerialPortName()
 {
    return *ui->serialPortName;
