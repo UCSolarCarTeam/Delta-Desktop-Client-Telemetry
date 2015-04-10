@@ -2,6 +2,7 @@
 #include <QTabWidget>
 #include <QWidget>
 #include <QKeyEvent>
+#include <QFontDatabase>
 #include "OverlordWidget.h"
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "../EscapeDialog/EscapeDialog.h"
@@ -24,6 +25,19 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 		tabBar->addTab(window, window->windowTitle());
 		window->hideHeaderBar();
 	}
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Roman.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Oblique.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-MediumOblique.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Medium.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-LightOblique.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Light.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-HeavyOblique.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Heavy.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BookOblique.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Book.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BlackOblique.otf");
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Black.otf");
+
     tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\nbackground-image: url(:/Resources/MainTitleBar.png);\nfont-size: 20px;\ncolor: white;"
                           "border: 1px solid rgb(30,30,30);border-left: 1px solid rgb(120,120,120) }");
     setStyleSheet("background-color: rgb(30,30,30);");
