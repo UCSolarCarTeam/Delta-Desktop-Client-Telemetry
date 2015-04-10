@@ -7,6 +7,7 @@ class I_EscapeDialog
 public:
     virtual ~I_EscapeDialog() {}
 
+    void keyPressEvent(QKeyEvent * event);
     virtual QPushButton& settingsButton() = 0;
     virtual QPushButton& aboutButton() = 0;
     virtual QPushButton& returnButton() = 0;

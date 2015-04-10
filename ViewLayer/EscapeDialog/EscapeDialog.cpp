@@ -14,6 +14,10 @@ EscapeDialog::~EscapeDialog()
     delete ui;
 }
 
+void EscapeDialog::keyPressEvent(QKeyEvent * event){
+	hide();
+}
+
 void EscapeDialog::hideHeaderBar()
 {
     ui->escapeTitleBarWidget->hide();
