@@ -15,7 +15,7 @@ public:
     ~EscapeDialog();
 
     void hideHeaderBar();
-
+    void keyPressEvent(QKeyEvent * event);
     QPushButton& settingsButton();
     QPushButton& returnButton();
     QPushButton& aboutButton();

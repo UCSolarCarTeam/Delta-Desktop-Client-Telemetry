@@ -1,8 +1,12 @@
+#include <QApplication>
+#include <QDesktopWidget>
 #include <QVBoxLayout>
 #include <QTabWidget>
 #include <QWidget>
 #include <QKeyEvent>
 #include <QFontDatabase>
+#include <QDebug>
+
 #include "OverlordWidget.h"
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "../EscapeDialog/EscapeDialog.h"
@@ -17,8 +21,13 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 , escapeDialog_(escapeDialog)
 {
     escapeDialog_->hide();
+    escapeDialog_->setParent(this, Qt::Popup | Qt::CustomizeWindowHint);
+    escapeDialog_->move(QApplication::desktop()->screen()->rect().center() 
+    					- escapeDialog_->rect().center());
+
     QVBoxLayout* overlordLayout = new QVBoxLayout;
 	setWindowIcon(QIcon(":/Resources/Solar Car Team Icon.ico"));
+	
 	QTabWidget* tabBar = new QTabWidget();
 	overlordLayout->setContentsMargins(0, 0, 0, 0);
 	foreach(I_SolarCarWindow* window, viewWindows_){
@@ -50,10 +59,10 @@ OverlordWidget::~OverlordWidget()
 {
 }
 
-
 void OverlordWidget::keyPressEvent(QKeyEvent * event){
     if (event->key() == Qt::Key_Escape){
         escapeDialog_->show();
+        escapeDialog_->setFocus();
     }
 }
 
