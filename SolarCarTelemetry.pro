@@ -46,12 +46,7 @@ SOURCES += \
     ViewLayer/OverlordWidget/OverlordWidget.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     SolarCarTelemetry/SolarCarTelemetry.cpp \
-    SolarCarTelemetry/main.cpp \
-    CommunicationLayer/ConnectionService/FakeConnectionService.cpp \
-    CommunicationLayer/ConnectionService/I_ConnectionService.cpp \
-    CommunicationLayer/DataParser/test/TestDataParser.cpp \
-    CommunicationLayer/DataParser/FakeDataParser.cpp \
-    CommunicationLayer/DataPopulator/test/TestDataPopulator.cpp
+    SolarCarTelemetry/main.cpp
 
 HEADERS  += \
     DataLayer/DataContainer.h \
@@ -92,11 +87,7 @@ HEADERS  += \
     ViewLayer/OverlordWidget/I_OverlordWidget.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/PowerView/PowerView.h \
-    SolarCarTelemetry/SolarCarTelemetry.h \ 
-    CommunicationLayer/ConnectionService/FakeConnectionService.h \
-    CommunicationLayer/DataParser/test/TestDataParser.h \
-    CommunicationLayer/DataParser/FakeDataParser.h \
-    CommunicationLayer/DataPopulator/test/TestDataPopulator.h
+    SolarCarTelemetry/SolarCarTelemetry.h
     
 FORMS    += \
     SolarCarTestUI.ui \
