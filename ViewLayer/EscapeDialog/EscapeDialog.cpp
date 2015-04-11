@@ -1,5 +1,6 @@
 #include "EscapeDialog.h"
 #include "ui_EscapeDialog.h"
+#include <QPainter>
 #include <QDebug>
 
 
@@ -23,19 +24,27 @@ void EscapeDialog::hideHeaderBar()
     ui->escapeTitleBarWidget->hide();
 }
 
+void EscapeDialog::paintEvent(QPaintEvent* e)
+{
+	QColor backgroundColor = palette().light().color();
+    backgroundColor.setAlpha(100);
+    QPainter customPainter(this);
+    customPainter.fillRect(rect(), backgroundColor);
+}
+
 QPushButton& EscapeDialog::settingsButton()
 {
-   return *ui->settingsButton;
+   return *ui->settingsPushButton;
 }
 QPushButton& EscapeDialog::aboutButton()
 {
-   return *ui->aboutButton;
+   return *ui->aboutPushButton;
 }
 QPushButton& EscapeDialog::returnButton()
 {
-   return *ui->returnButton;
+   return *ui->returnPushButton;
 }
 QPushButton& EscapeDialog::exitButton()
 {
-   return *ui->exitButton;
+   return *ui->exitPushButton;
 }

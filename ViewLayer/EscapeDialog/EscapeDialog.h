@@ -16,6 +16,7 @@ public:
 
     void hideHeaderBar();
     void keyPressEvent(QKeyEvent * event);
+    void paintEvent(QPaintEvent* e);
     QPushButton& settingsButton();
     QPushButton& returnButton();
     QPushButton& aboutButton();
