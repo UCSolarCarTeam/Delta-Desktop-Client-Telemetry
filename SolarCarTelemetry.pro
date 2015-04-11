@@ -87,7 +87,7 @@ HEADERS  += \
     ViewLayer/OverlordWidget/I_OverlordWidget.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/PowerView/PowerView.h \
-    SolarCarTelemetry/SolarCarTelemetry.h 
+    SolarCarTelemetry/SolarCarTelemetry.h
     
 FORMS    += \
     SolarCarTestUI.ui \
