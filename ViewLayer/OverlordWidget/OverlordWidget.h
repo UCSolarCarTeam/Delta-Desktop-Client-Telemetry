@@ -12,21 +12,24 @@ class OverlordWidget : public QWidget, public I_OverlordWidget
 {
 	Q_OBJECT
 public:
-	explicit OverlordWidget(QList<I_SolarCarWindow*> viewWindows, 
+    explicit OverlordWidget(QList<I_SolarCarWindow*> viewWindows, 
                             EscapeDialog* escapeDialog,
                             QWidget *parent = 0);
-	~OverlordWidget();
+	  ~OverlordWidget();
 
     void keyPressEvent(QKeyEvent * event);
-
+    
     QString changeState();
     QString getState();
     // void showSettings();
 
 private:
+    void setupEscapeDialog();
+    QTabWidget* createTabWidget();
     void addFonts();
-   QList<I_SolarCarWindow*> viewWindows_;
-   QString state_;
-   // QWidget* settingsWindow_;
-   EscapeDialog* escapeDialog_;
+
+     QList<I_SolarCarWindow*> viewWindows_;
+     QString state_;
+     // QWidget* settingsWindow_;
+     EscapeDialog* escapeDialog_;
 };
