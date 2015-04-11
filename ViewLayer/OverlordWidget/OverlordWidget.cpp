@@ -22,7 +22,10 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 {
     escapeDialog_->hide();
     escapeDialog_->setParent(this, Qt::Popup | Qt::CustomizeWindowHint);
-    //escapeDialog_->resize(1920, 1080);
+    QRect rec = QApplication::desktop()->screenGeometry();
+    int height = rec.height();
+    int width = rec.width();
+    escapeDialog_->resize(width, height);
     escapeDialog_->move(QApplication::desktop()->screen()->rect().center() 
     					- escapeDialog_->rect().center());
 
