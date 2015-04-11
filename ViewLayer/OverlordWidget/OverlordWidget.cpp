@@ -6,11 +6,6 @@
 #include <QKeyEvent>
 #include <QFontDatabase>
 #include <QDebug>
-<<<<<<< HEAD
-#include <QFontDatabase>
-=======
-
->>>>>>> 0eae67c7d7f3d1651698e50f4fdaddb1fd078963
 #include "OverlordWidget.h"
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "../EscapeDialog/EscapeDialog.h"
@@ -38,26 +33,10 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 		tabBar->addTab(window, window->windowTitle());
 		window->hideHeaderBar();
 	}
-<<<<<<< HEAD
     addFonts();
 
     tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\nbackground-image: url(:/Resources/MainTitleBar.png);font-family: \"AvenirLTStd\";\nfont-size: 20px;\ncolor: white;"
-=======
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Roman.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Oblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-MediumOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Medium.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-LightOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Light.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-HeavyOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Heavy.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BookOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Book.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BlackOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Black.otf");
 
-    tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\nbackground-image: url(:/Resources/MainTitleBar.png);\nfont-size: 20px;\ncolor: white;"
->>>>>>> 0eae67c7d7f3d1651698e50f4fdaddb1fd078963
                           "border: 1px solid rgb(30,30,30);border-left: 1px solid rgb(120,120,120) }");
     setStyleSheet("background-color: rgb(30,30,30);");
     overlordLayout->addWidget(tabBar);
