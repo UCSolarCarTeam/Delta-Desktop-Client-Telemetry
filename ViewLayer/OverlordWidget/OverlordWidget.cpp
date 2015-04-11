@@ -5,6 +5,8 @@
 #include <QWidget>
 #include <QKeyEvent>
 #include <QFontDatabase>
+#include <QDir>
+// #include <QStringList>
 #include <QDebug>
 #include "OverlordWidget.h"
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
@@ -72,18 +74,24 @@ QString OverlordWidget::getState()
 }
 
 void OverlordWidget::addFonts(){
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Black.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BlackOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Book.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BookOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Heavy.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-HeavyOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Light.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-LightOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Medium.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-MediumOblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Oblique.otf");
-    QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Roman.otf");
+    QDir fontDirectory = QDir(":/Resources/Fonts/");
+
+    QStringList fonts =  fontDirectory.entryList();
+    foreach(QString font, fonts){
+        QFontDatabase::addApplicationFont(":/Resources/Fonts/" + font);
+    }
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Black.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BlackOblique.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Book.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-BookOblique.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Heavy.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-HeavyOblique.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Light.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-LightOblique.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Medium.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-MediumOblique.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Oblique.otf");
+    // QFontDatabase::addApplicationFont(":/Resources/Fonts/AvenirLTStd-Roman.otf");
 }
 
 // void OverlordWidget::showSettings()
