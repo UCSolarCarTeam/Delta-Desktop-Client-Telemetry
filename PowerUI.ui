@@ -32,7 +32,8 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(102, 102, 102);
 color: white;
-font-family: &quot;Arial Condensed&quot;;
+font-family: &quot;AvenirLTStd&quot;;
+font-size: 17px;
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
@@ -162,7 +163,8 @@ border-bottom-color: rgb(40,40,40);
                <widget class="QLabel" name="commsTitleLabel">
                 <property name="font">
                  <font>
-                  <family>Arial Condensed</family>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -637,7 +639,7 @@ background: none;</string>
 	padding: 5px;
 	border-radius: 0px;
 	qproperty-alignment: AlignCenter;
-	font-size: 14px;
+	font-size: 17px;
 	background: url(&quot;background.jpg&quot;);
 }</string>
                </property>
@@ -1353,7 +1355,8 @@ background: url(:/Resources/SubTitleBar.png);
                <widget class="QLabel" name="mainValuesTitleLabel">
                 <property name="font">
                  <font>
-                  <family>Arial Condensed</family>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
                  </font>
                 </property>
                 <property name="contextMenuPolicy">
@@ -1397,7 +1400,7 @@ border:none;</string>
                 <string notr="true">QLabel {
 	border-bottom: 1px solid rgb(85, 85, 85);
 	qproperty-alignment: AlignCenter;
-	font-size: 14px;
+	font-size: 17px;
 	padding: 0px;
 	border-left: none;
 	border-right: none;
@@ -1424,7 +1427,7 @@ border-top: none;
                  <widget class="QLabel" name="actualSpeedLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1455,7 +1458,7 @@ border-top: none;
                  <widget class="QLabel" name="arrayCurrentOutLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1486,7 +1489,7 @@ border-top: none;
                  <widget class="QLabel" name="busVoltageLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1517,7 +1520,7 @@ border-top: none;
                  <widget class="QLabel" name="setCurrentLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1548,7 +1551,7 @@ border-top: none;
                  <widget class="QLabel" name="setSpeed">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1564,7 +1567,7 @@ border-top: none;
                  <widget class="QLabel" name="setSpeedLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1589,7 +1592,7 @@ border-top: none;
                  <widget class="QLabel" name="actualSpeed">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1608,7 +1611,7 @@ border-top: none;
                  <widget class="QLabel" name="arrayCurrentIn">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1624,7 +1627,7 @@ border-top: none;
                  <widget class="QLabel" name="busVoltage">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1640,7 +1643,7 @@ border-top: none;
                  <widget class="QLabel" name="setCurrent">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1656,7 +1659,7 @@ border-top: none;
                  <widget class="QLabel" name="netCurrent">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1675,7 +1678,7 @@ border-top: none;
                  <widget class="QLabel" name="arrayCurrentOut">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1691,7 +1694,7 @@ border-top: none;
                  <widget class="QLabel" name="netCurrentLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1716,7 +1719,7 @@ border-top: none;
                  <widget class="QLabel" name="arrayCurrentInLabel">
                   <property name="font">
                    <font>
-                    <family>Arial Condensed</family>
+                    <family>AvenirLTStd</family>
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
@@ -1820,6 +1823,7 @@ border-image: none;
 	border-bottom-color:rgb(40,40,40);
 	padding: 2px;
 background: url(:/Resources/SubTitleBar.png);
+font-size: 22px;
 }</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -1840,9 +1844,16 @@ background: url(:/Resources/SubTitleBar.png);
               </property>
               <item>
                <widget class="QLabel" name="graphsTitleLabel">
+                <property name="font">
+                 <font>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
+                 </font>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">border-style: none;
-background: none;</string>
+background: none;
+</string>
                 </property>
                 <property name="text">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1853,7 +1864,7 @@ background: none;</string>
             </widget>
            </item>
            <item>
-            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0,0,0">
+            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0">
              <property name="leftMargin">
               <number>9</number>
              </property>
@@ -1869,30 +1880,12 @@ background: none;</string>
              <property name="verticalSpacing">
               <number>9</number>
              </property>
-             <item row="6" column="0">
-              <widget class="QWebView" name="webView_4">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
              <item row="2" column="0">
               <widget class="QWebView" name="webView_2">
                <property name="url">
                 <url>
                  <string>about:blank</string>
                 </url>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="0">
-              <widget class="QComboBox" name="comboBox_4">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
                </property>
               </widget>
              </item>
@@ -1914,21 +1907,21 @@ padding: 3px;</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
-              <widget class="QWebView" name="webView_3">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="0">
               <widget class="QComboBox" name="comboBox">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
 padding: 3px;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QWebView" name="webView_3">
+               <property name="url">
+                <url>
+                 <string>about:blank</string>
+                </url>
                </property>
               </widget>
              </item>

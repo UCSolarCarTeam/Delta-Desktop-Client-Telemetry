@@ -13,5 +13,17 @@
         <file>Resources/Solar Car Team Logo.png</file>
         <file>Resources/Solar Car Team Symbol.png</file>
         <file>Resources/SubTitleBar.png</file>
+        <file>Resources/Fonts/AvenirLTStd-Black.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-BlackOblique.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-Book.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-BookOblique.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-Heavy.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-HeavyOblique.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-Light.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-LightOblique.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-Medium.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-MediumOblique.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-Oblique.otf</file>
+        <file>Resources/Fonts/AvenirLTStd-Roman.otf</file>
     </qresource>
 </RCC>

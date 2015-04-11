@@ -24,6 +24,7 @@ public:
     // void showSettings();
 
 private:
+    void addFonts();
    QList<I_SolarCarWindow*> viewWindows_;
    QString state_;
    // QWidget* settingsWindow_;

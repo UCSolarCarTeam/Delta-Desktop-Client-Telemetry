@@ -32,7 +32,8 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(51,51,51);
 color: white;
-font-family: &quot;Helvetica&quot;;
+font-family: &quot;AvenirLTStd&quot;;
+font-size: 17px;
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -277,7 +278,7 @@ QLabel {
 	padding: 5px;
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
-	font-size: 12px;
+	font-size: 14px;
 	margin-left: 20px;	
 	margin-right: 20px;
 	font: italic;
@@ -616,7 +617,8 @@ border-image: none;
                <widget class="QLabel" name="motorTitleLabel">
                 <property name="font">
                  <font>
-                  <family>Helvetica</family>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
                  </font>
                 </property>
                 <property name="contextMenuPolicy">
@@ -666,7 +668,7 @@ QLabel {
 	padding: 5px;
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
-	font-size: 12px;
+	font-size: 14px;
 	margin-left: 20px;	
 	margin-right: 20px;
 	font: italic;
@@ -791,7 +793,7 @@ QLabel {
 	padding: 5px;
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
-	font-size: 12px;
+	font-size: 14px;
 	margin-left: 20px;	
 	margin-right: 20px;
 	font: italic;
