@@ -1,10 +1,12 @@
 #include "PowerView.h"
 #include "../../PresenterLayer/DisplayPresenter/DisplayPresenter.h"
+#include "../../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
 #include "../PowerUI/PowerUI.h"
 #include <QDebug>
 
-PowerView::PowerView(DisplayPresenter& presenter, PowerUI& ui)
+PowerView::PowerView(DisplayPresenter& presenter, BatteryPresenter& batteryPresenter, PowerUI& ui)
 : presenter_(presenter)
+, batteryPresenter_(batteryPresenter)
 , ui_(ui)
 {
 #ifdef _WIN32
@@ -24,80 +26,80 @@ PowerView::PowerView(DisplayPresenter& presenter, PowerUI& ui)
     connect(&presenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
 
-    connect(&presenter_, SIGNAL(mod0CellTemperatureReceived(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage0Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage0Received(double)),
             this, SLOT(mod0CellVoltage0Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage1Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage1Received(double)),
             this, SLOT(mod0CellVoltage1Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage2Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage2Received(double)),
             this, SLOT(mod0CellVoltage2Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage3Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage3Received(double)),
             this, SLOT(mod0CellVoltage3Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage4Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage4Received(double)),
             this, SLOT(mod0CellVoltage4Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage5Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage5Received(double)),
             this, SLOT(mod0CellVoltage5Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage6Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage6Received(double)),
             this, SLOT(mod0CellVoltage6Received(double)));
-    connect(&presenter_, SIGNAL(mod0CellVoltage7Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltage7Received(double)),
             this, SLOT(mod0CellVoltage7Received(double)));
 
-    connect(&presenter_, SIGNAL(mod1CellTemperatureReceived(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellTemperatureReceived(double)),
             this, SLOT(mod1CellTemperatureReceived(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage0Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage0Received(double)),
             this, SLOT(mod1CellVoltage0Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage1Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage1Received(double)),
             this, SLOT(mod1CellVoltage1Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage2Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage2Received(double)),
             this, SLOT(mod1CellVoltage2Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage3Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage3Received(double)),
             this, SLOT(mod1CellVoltage3Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage4Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage4Received(double)),
             this, SLOT(mod1CellVoltage4Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage5Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage5Received(double)),
             this, SLOT(mod1CellVoltage5Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage6Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage6Received(double)),
             this, SLOT(mod1CellVoltage6Received(double)));
-    connect(&presenter_, SIGNAL(mod1CellVoltage7Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltage7Received(double)),
             this, SLOT(mod1CellVoltage7Received(double)));
 
-    connect(&presenter_, SIGNAL(mod2CellTemperatureReceived(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellTemperatureReceived(double)),
             this, SLOT(mod2CellTemperatureReceived(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage0Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage0Received(double)),
             this, SLOT(mod2CellVoltage0Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage1Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage1Received(double)),
             this, SLOT(mod2CellVoltage1Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage2Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage2Received(double)),
             this, SLOT(mod2CellVoltage2Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage3Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage3Received(double)),
             this, SLOT(mod2CellVoltage3Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage4Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage4Received(double)),
             this, SLOT(mod2CellVoltage4Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage5Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage5Received(double)),
             this, SLOT(mod2CellVoltage5Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage6Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage6Received(double)),
             this, SLOT(mod2CellVoltage6Received(double)));
-    connect(&presenter_, SIGNAL(mod2CellVoltage7Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltage7Received(double)),
             this, SLOT(mod2CellVoltage7Received(double)));
 
-    connect(&presenter_, SIGNAL(mod3CellTemperatureReceived(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellTemperatureReceived(double)),
             this, SLOT(mod3CellTemperatureReceived(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage0Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage0Received(double)),
             this, SLOT(mod3CellVoltage0Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage1Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage1Received(double)),
             this, SLOT(mod3CellVoltage1Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage2Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage2Received(double)),
             this, SLOT(mod3CellVoltage2Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage3Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage3Received(double)),
             this, SLOT(mod3CellVoltage3Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage4Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage4Received(double)),
             this, SLOT(mod3CellVoltage4Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage5Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage5Received(double)),
             this, SLOT(mod3CellVoltage5Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage6Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage6Received(double)),
             this, SLOT(mod3CellVoltage6Received(double)));
-    connect(&presenter_, SIGNAL(mod3CellVoltage7Received(double)),
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltage7Received(double)),
             this, SLOT(mod3CellVoltage7Received(double)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
