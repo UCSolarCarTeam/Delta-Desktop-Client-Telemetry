@@ -22,10 +22,11 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 {
     escapeDialog_->hide();
     escapeDialog_->setParent(this, Qt::Popup | Qt::CustomizeWindowHint);
-   	escapeDialog_->resize(1920, 1080);
+    //escapeDialog_->resize(1920, 1080);
     escapeDialog_->move(QApplication::desktop()->screen()->rect().center() 
     					- escapeDialog_->rect().center());
 
+    escapeDialog_->setAttribute(Qt::WA_TranslucentBackground);
 
     QVBoxLayout* overlordLayout = new QVBoxLayout;
 	setWindowIcon(QIcon(":/Resources/Solar Car Team Icon.ico"));

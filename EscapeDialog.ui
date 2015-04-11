@@ -24,12 +24,14 @@
     <normaloff>:/Resources/Solar Car Team Icon.ico</normaloff>:/Resources/Solar Car Team Icon.ico</iconset>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">color: white;
 font-family: &quot;Helvetica&quot;;
-border: 1px solid rgb(50,50,50);</string>
+border: 1px solid rgb(50,50,50);
+background: transparent;
+background-color:rgba(30,30,30,20);</string>
   </property>
   <layout class="QGridLayout" name="escapeLayout">
    <property name="leftMargin">
