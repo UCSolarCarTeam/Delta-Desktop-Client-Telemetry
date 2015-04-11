@@ -18,7 +18,7 @@ public:
 	~OverlordWidget();
 
     void keyPressEvent(QKeyEvent * event);
-
+    
     QString changeState();
     QString getState();
     // void showSettings();

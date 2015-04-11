@@ -23,8 +23,14 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 {
     escapeDialog_->hide();
     escapeDialog_->setParent(this, Qt::Popup | Qt::CustomizeWindowHint);
+    QRect rec = QApplication::desktop()->screenGeometry();
+    int height = rec.height();
+    int width = rec.width();
+    escapeDialog_->resize(width, height);
     escapeDialog_->move(QApplication::desktop()->screen()->rect().center() 
     					- escapeDialog_->rect().center());
+
+    escapeDialog_->setAttribute(Qt::WA_TranslucentBackground);
 
     QVBoxLayout* overlordLayout = new QVBoxLayout;
 	setWindowIcon(QIcon(":/Resources/Solar Car Team Icon.ico"));
@@ -53,7 +59,6 @@ OverlordWidget::~OverlordWidget()
 void OverlordWidget::keyPressEvent(QKeyEvent * event){
     if (event->key() == Qt::Key_Escape){
         escapeDialog_->show();
-        escapeDialog_->setFocus();
     }
 }
 
