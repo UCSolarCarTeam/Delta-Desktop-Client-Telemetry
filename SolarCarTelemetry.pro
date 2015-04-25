@@ -21,80 +21,88 @@ RCC_DIR = ../release/.rcc
 UI_DIR = ../release/.ui
 
 SOURCES += \
-    DataLayer/DataContainer.cpp \
-    DataLayer/ArrayData/ArrayData.cpp \
-    DataLayer/PowerData/PowerData.cpp \
-    DataLayer/BatteryData/BatteryData.cpp \
-    DataLayer/VehicleData/VehicleData.cpp \
+    BusinessLayer/BusinessContainer.cpp \
+    BusinessLayer/LoggerService/LoggerService.cpp \
     CommunicationLayer/CommunicationContainer.cpp \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
-    BusinessLayer/BusinessContainer.cpp \
-    BusinessLayer/LoggerService/LoggerService.cpp \
-    PresenterLayer/PresenterContainer.cpp \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
+    DataLayer/ArrayData/ArrayData.cpp \
+    DataLayer/BatteryData/BatteryData.cpp \
+    DataLayer/DataContainer.cpp \
+    DataLayer/PowerData/PowerData.cpp \
+    DataLayer/VehicleData/VehicleData.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
-    PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \    
-    PresenterLayer/MpptPresenter/MpptPresenter.cpp \    
+    PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.cpp \
+    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    PresenterLayer/FaultsPresenter/FaultsPresenter.cpp \
+    PresenterLayer/GraphsPresenter/GraphsPresenter.cpp \
+    PresenterLayer/MpptPresenter/MpptPresenter.cpp \
+    PresenterLayer/PowerPresenter/PowerPresenter.cpp \
+    PresenterLayer/PresenterContainer.cpp \
+    PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
+    SolarCarTelemetry/main.cpp \
+    SolarCarTelemetry/SolarCarTelemetry.cpp \
+    ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/EscapeDialog/EscapeDialog.cpp \
     ViewLayer/EscapeDialogView/EscapeDialogView.cpp \
-    ViewLayer/ViewContainer.cpp \
+    ViewLayer/FaultsUI/FaultsUI.cpp \
+    ViewLayer/FaultsView/FaultsView.cpp \
+    ViewLayer/MpptUI/MpptUI.cpp \
+    ViewLayer/MpptView/MpptView.cpp \
+    ViewLayer/OverlordWidget/OverlordWidget.cpp \
     ViewLayer/PowerUI/PowerUI.cpp \
     ViewLayer/PowerView/PowerView.cpp \
-    ViewLayer/MpptUI/MpptUI.cpp \
-    ViewLayer/MpptView/MpptView.cpp \ 
-    ViewLayer/FaultsUI/FaultsUI.cpp \
-    ViewLayer/FaultsView/FaultsView.cpp \ 
-    ViewLayer/OverlordWidget/OverlordWidget.cpp \
-    ViewLayer/DisplayView/DisplayView.cpp \
-    SolarCarTelemetry/SolarCarTelemetry.cpp \
-    SolarCarTelemetry/main.cpp
+    ViewLayer/ViewContainer.cpp
 
 HEADERS  += \
-    DataLayer/DataContainer.h \
-    DataLayer/ArrayData/ArrayData.h \
-    DataLayer/PowerData/PowerData.h \
-    DataLayer/VehicleData/VehicleData.h \
-    DataLayer/BatteryData/BatteryData.h \
-    DataLayer/BatteryData/I_BatteryData.h \
-    DataLayer/ArrayData/I_ArrayData.h \
-    DataLayer/PowerData/I_PowerData.h \
-    DataLayer/VehicleData/I_VehicleData.h \
+    BusinessLayer/BusinessContainer.h \
+    BusinessLayer/LoggerService/LoggerService.h \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
-    BusinessLayer/BusinessContainer.h \
-    BusinessLayer/LoggerService/LoggerService.h \
-    PresenterLayer/PresenterContainer.h \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
+    CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
+    DataLayer/ArrayData/ArrayData.h \
+    DataLayer/ArrayData/I_ArrayData.h \
+    DataLayer/BatteryData/BatteryData.h \
+    DataLayer/BatteryData/I_BatteryData.h \
+    DataLayer/DataContainer.h \
+    DataLayer/PowerData/I_PowerData.h \
+    DataLayer/PowerData/PowerData.h \
+    DataLayer/VehicleData/I_VehicleData.h \
+    DataLayer/VehicleData/VehicleData.h \
     PresenterLayer/BatteryPresenter/BatteryPresenter.h \
-    PresenterLayer/VehiclePresenter/VehiclePresenter.h \
+    PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.h \
+    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    PresenterLayer/FaultsPresenter/FaultsPresenter.h \
+    PresenterLayer/GraphsPresenter/GraphsPresenter.h \
     PresenterLayer/MpptPresenter/MpptPresenter.h \
-    ViewLayer/ViewContainer.h \
-    ViewLayer/EscapeDialogView/EscapeDialogView.h \
-    ViewLayer/EscapeDialog/I_EscapeDialog.h \
+    PresenterLayer/PowerPresenter/PowerPresenter.h \
+    PresenterLayer/PresenterContainer.h \
+    PresenterLayer/VehiclePresenter/VehiclePresenter.h \
+    SolarCarTelemetry/SolarCarTelemetry.h \
+    ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/EscapeDialog/EscapeDialog.h \
+    ViewLayer/EscapeDialog/I_EscapeDialog.h \
+    ViewLayer/EscapeDialogView/EscapeDialogView.h \
+    ViewLayer/FaultsUI/FaultsUI.h \
+    ViewLayer/FaultsUI/I_FaultsUI.h \
+    ViewLayer/FaultsView/FaultsView.h \
+    ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
+    ViewLayer/MpptUI/I_MpptUI.h \
+    ViewLayer/MpptUI/MpptUI.h \
+    ViewLayer/MpptView/MpptView.h \
+    ViewLayer/OverlordWidget/I_OverlordWidget.h \
+    ViewLayer/OverlordWidget/OverlordWidget.h \
     ViewLayer/PowerUI/I_PowerUI.h \
     ViewLayer/PowerUI/PowerUI.h \
     ViewLayer/PowerView/PowerView.h \
-    ViewLayer/PowerView/I_PowerView.h \
-    ViewLayer/MpptUI/MpptUI.h \
-    ViewLayer/MpptUI/I_MpptUI.h \
-    ViewLayer/MpptView/MpptView.h \ 
-    ViewLayer/FaultsUI/FaultsUI.h \
-    ViewLayer/FaultsUI/I_FaultsUI.h \
-    ViewLayer/FaultsView/FaultsView.h \ 
-    ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
-    ViewLayer/OverlordWidget/OverlordWidget.h \
-    ViewLayer/OverlordWidget/I_OverlordWidget.h \
-    ViewLayer/DisplayView/DisplayView.h \
-    ViewLayer/PowerView/PowerView.h \
-    SolarCarTelemetry/SolarCarTelemetry.h
-    
+
 FORMS    += \
     SolarCarTestUI.ui \
     FaultsUI.ui \
