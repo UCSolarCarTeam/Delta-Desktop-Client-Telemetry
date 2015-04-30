@@ -2,9 +2,8 @@
 
 #include <QObject>
 class I_ArrayData;
-class I_VehicleData;
 class I_PowerData;
-class I_BatteryData;
+class I_VehicleData;
 class I_ConnectionService;
 class LoggerService;
 

@@ -24,7 +24,9 @@ ViewContainer::ViewContainer(QSharedPointer<PresenterContainer> presenterContain
 , faultsUI_(new FaultsUI())
 , escapeDialogView_(new EscapeDialogView(*escapeDialog_))
 , powerView_(new PowerView(*(presenterContainer_->displayPresenter()), 
-					       *(presenterContainer_->batteryPresenter()), *powerUI_))
+					       *(presenterContainer_->batteryPresenter()), 
+					       *(presenterContainer_->vehiclePresenter()),
+					       *powerUI_))
 , mpptView_(new MpptView(*(presenterContainer_->displayPresenter()), *mpptUI_))
 , faultsView_(new FaultsView(*(presenterContainer_->displayPresenter()), *faultsUI_))
 , overlordWidget_(new OverlordWidget(QList<I_SolarCarWindow*>() << powerUI_ << mpptUI_ << faultsUI_,

@@ -1,8 +1,8 @@
 #include "DisplayPresenter.h"
 #include "../../DataLayer/ArrayData/I_ArrayData.h"
-#include "../../DataLayer/VehicleData/I_VehicleData.h"
 #include "../../DataLayer/PowerData/I_PowerData.h"
-#include "../../DataLayer/BatteryData/I_BatteryData.h"
+#include "../../DataLayer/VehicleData/I_VehicleData.h"
+// #include "../../DataLayer/BatteryData/I_BatteryData.h"
 #include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
 #include "../../BusinessLayer/LoggerService/LoggerService.h"
 

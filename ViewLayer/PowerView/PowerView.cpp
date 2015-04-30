@@ -1,12 +1,17 @@
 #include "PowerView.h"
 #include "../../PresenterLayer/DisplayPresenter/DisplayPresenter.h"
 #include "../../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
+#include "../../PresenterLayer/VehiclePresenter/VehiclePresenter.h"
 #include "../PowerUI/PowerUI.h"
 #include <QDebug>
 
-PowerView::PowerView(DisplayPresenter& presenter, BatteryPresenter& batteryPresenter, PowerUI& ui)
+PowerView::PowerView(DisplayPresenter& presenter, 
+                     BatteryPresenter& batteryPresenter, 
+                     VehiclePresenter& vehiclePresenter,
+                     PowerUI& ui)
 : presenter_(presenter)
 , batteryPresenter_(batteryPresenter)
+, vehiclePresenter_(vehiclePresenter)
 , ui_(ui)
 {
 #ifdef _WIN32
