@@ -3,17 +3,24 @@
 #include <QObject>
 
 class DisplayPresenter;
+class BatteryPresenter;
+class VehiclePresenter;
 class PowerUI;
 
 class PowerView : public QObject
 {
    Q_OBJECT
 public:
-   PowerView(DisplayPresenter& presenter, PowerUI& ui);
+   PowerView(DisplayPresenter& presenter, 
+             BatteryPresenter& batteryPresenter, 
+             VehiclePresenter& vehiclePresenter,
+             PowerUI& ui);
    ~PowerView();
 
 private:
    DisplayPresenter& presenter_;
+   BatteryPresenter& batteryPresenter_;
+   VehiclePresenter& vehiclePresenter_;
    PowerUI& ui_;
 
 private slots:

@@ -34,6 +34,9 @@ SOURCES += \
     BusinessLayer/LoggerService/LoggerService.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
+    PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \    
+    PresenterLayer/MpptPresenter/MpptPresenter.cpp \    
     ViewLayer/EscapeDialog/EscapeDialog.cpp \
     ViewLayer/EscapeDialogView/EscapeDialogView.cpp \
     ViewLayer/ViewContainer.cpp \
@@ -53,11 +56,11 @@ HEADERS  += \
     DataLayer/ArrayData/ArrayData.h \
     DataLayer/PowerData/PowerData.h \
     DataLayer/VehicleData/VehicleData.h \
+    DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/ArrayData/I_ArrayData.h \
     DataLayer/PowerData/I_PowerData.h \
     DataLayer/VehicleData/I_VehicleData.h \
-    DataLayer/BatteryData/BatteryData.h \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
@@ -68,6 +71,9 @@ HEADERS  += \
     BusinessLayer/LoggerService/LoggerService.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    PresenterLayer/BatteryPresenter/BatteryPresenter.h \
+    PresenterLayer/VehiclePresenter/VehiclePresenter.h \
+    PresenterLayer/MpptPresenter/MpptPresenter.h \
     ViewLayer/ViewContainer.h \
     ViewLayer/EscapeDialogView/EscapeDialogView.h \
     ViewLayer/EscapeDialog/I_EscapeDialog.h \
