@@ -1,20 +1,16 @@
 #include "DisplayPresenter.h"
-#include "../../DataLayer/ArrayData/I_ArrayData.h"
 #include "../../DataLayer/PowerData/I_PowerData.h"
 #include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
 #include "../../BusinessLayer/LoggerService/LoggerService.h"
 
 
-DisplayPresenter::DisplayPresenter(const I_ArrayData& arrayData,
-                                   const I_PowerData& powerData,
+DisplayPresenter::DisplayPresenter(const I_PowerData& powerData,
                                    I_ConnectionService& connectionService,
                                    LoggerService& loggerService)
-: arrayData_(arrayData)
-, powerData_(powerData)
+: powerData_(powerData)
 , connectionService_(connectionService)
 , loggerService_(loggerService)
 {
-    relayArrayData();
     relayPowerData();
     relayConnectionStatus();
     relayDebugMessage();
@@ -40,10 +36,6 @@ void DisplayPresenter::relayConnectionStatus()
             this, SIGNAL(connectionFailed(QString)));
     connect(&connectionService_, SIGNAL(connectionSucceeded(QString)), 
             this, SIGNAL(connectionSucceeded(QString)));
-}
-
-void DisplayPresenter::relayArrayData()
-{
 }
 
 void DisplayPresenter::relayPowerData()

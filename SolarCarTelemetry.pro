@@ -36,6 +36,7 @@ SOURCES += \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \    
+    PresenterLayer/MpptPresenter/MpptPresenter.cpp \    
     ViewLayer/EscapeDialog/EscapeDialog.cpp \
     ViewLayer/EscapeDialogView/EscapeDialogView.cpp \
     ViewLayer/ViewContainer.cpp \
@@ -72,6 +73,7 @@ HEADERS  += \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
     PresenterLayer/BatteryPresenter/BatteryPresenter.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
+    PresenterLayer/MpptPresenter/MpptPresenter.h \
     ViewLayer/ViewContainer.h \
     ViewLayer/EscapeDialogView/EscapeDialogView.h \
     ViewLayer/EscapeDialog/I_EscapeDialog.h \

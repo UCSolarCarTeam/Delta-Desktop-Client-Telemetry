@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QObject>
-class I_ArrayData;
 class I_PowerData;
 class I_ConnectionService;
 class LoggerService;
@@ -10,21 +9,18 @@ class DisplayPresenter : public QObject
 {
    Q_OBJECT
 public:
-   explicit DisplayPresenter(const I_ArrayData& arrayData,
-                             const I_PowerData& powerData,
+   explicit DisplayPresenter(const I_PowerData& powerData,
                              I_ConnectionService& connectionService,
                              LoggerService& loggerService);
    void connectDataSource(QString portName, int baudRate);
    void disconnectDataSource();
 
 private:
-    void relayArrayData();
     void relayPowerData();
     void relayConnectionStatus();
     void relayDebugMessage();
 
 private:
-   const I_ArrayData& arrayData_;
    const I_PowerData& powerData_;
    I_ConnectionService& connectionService_;
    LoggerService& loggerService_;
