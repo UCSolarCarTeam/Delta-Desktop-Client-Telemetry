@@ -201,11 +201,11 @@ border-bottom: 1px solid rgb(70,70,70);
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="backgroundWidget" native="true">
+       <widget class="QWidget" name="escapeBackgroundWidget" native="true">
         <property name="styleSheet">
          <string notr="true">background: rgb(51,51,51);</string>
         </property>
-        <layout class="QGridLayout" name="backgroundWidgetLayout">
+        <layout class="QGridLayout" name="escapeBackgroundWidgetLayout">
          <property name="leftMargin">
           <number>0</number>
          </property>
