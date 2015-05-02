@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>768</height>
+    <height>793</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -2134,11 +2134,15 @@ padding: 3px;</string>
 	padding: 3px;
 }
 
-QPushButton#commsSendButton: pressed {
-	background-color: black;
-	border-style: inset;
+QPushButton:hover:!pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
 }
-</string>
+
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
+}</string>
                </property>
                <property name="text">
                 <string>Send</string>
