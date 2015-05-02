@@ -31,7 +31,9 @@ SOURCES += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
     CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \
     CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \
     CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \
     CommunicationLayer/MessagingFramework/FaultsMessage.cpp \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
@@ -81,7 +83,9 @@ HEADERS  += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
     CommunicationLayer/DataPopulators/FaultsPopulator.h \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.h \
     CommunicationLayer/MessagingFramework/BatteryFaults.h \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.h \
     CommunicationLayer/MessagingFramework/DriverControlDetails.h \
     CommunicationLayer/MessagingFramework/FaultsMessage.h \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h \
