@@ -16,14 +16,9 @@ namespace
    const int THIRD_RESPONSE_MAXTIME = 10000;
 }
 
-SerialPortConnectionService::SerialPortConnectionService(QString portName,
-                                                         int baudRate,
-                                                         QSerialPort& serialPort)
+SerialPortConnectionService::SerialPortConnectionService(QSerialPort& serialPort)
 : serialPort_(serialPort)
 {
-   serialPort_.setBaudRate(baudRate);
-   serialPort_.setPortName(portName);
-   sendDebugMessage("Port " + portName +" created with baudrate of " + baudRate);
 }
 
 SerialPortConnectionService::~SerialPortConnectionService()

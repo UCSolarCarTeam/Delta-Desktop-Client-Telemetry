@@ -7,16 +7,11 @@
 #include "DataPopulator/DataPopulator.h"
 
 #include "CommunicationContainer.h"
-namespace
-{
-    const QString defaultPortName = "COM";
-	const int defaultBaudrate = 115200;
-}
 
 CommunicationContainer::CommunicationContainer(QSharedPointer<DataContainer> dataContainer)
 : dataContainer_(dataContainer)
 , port_(new QSerialPort)
-, connectionService_(new SerialPortConnectionService(defaultPortName, defaultBaudrate, *port_))
+, connectionService_(new SerialPortConnectionService(*port_))
 , dataParser_(new DataParser(*port_, *connectionService_))
 , dataPopulator_(new DataPopulator(*dataParser_,
                                    *(dataContainer_->arrayData()),

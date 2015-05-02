@@ -25,6 +25,7 @@ SOURCES += \
     BusinessLayer/LoggerService/LoggerService.cpp \
     CommunicationLayer/CommunicationContainer.cpp \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
+    CommunicationLayer/ConnectionService/RadioConnectionService.cpp \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
@@ -62,6 +63,7 @@ HEADERS  += \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
+    CommunicationLayer/ConnectionService/RadioConnectionService.h \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
