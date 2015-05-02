@@ -267,14 +267,15 @@ background: none;</string>
               <number>9</number>
              </property>
              <item row="0" column="0">
-              <widget class="QWidget" name="motorErrorFlags" native="true">
+              <widget class="QWidget" name="batteryPackstatusFlags" native="true">
                <property name="styleSheet">
                 <string notr="true">QWidget{
 border:none;
 }
 QLabel {
 	border: 1px solid rgb(30,30,30);
-	background: rgb(40,176,13);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
 	padding: 5px;
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
@@ -664,7 +665,8 @@ border:none;
 }
 QLabel {
 	border: 1px solid rgb(30,30,30);
-	background: rgb(40,176,13);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
 	padding: 5px;
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
@@ -782,14 +784,15 @@ color:white;</string>
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QWidget" name="motorErrorFlags_2" native="true">
+              <widget class="QWidget" name="motorErrorFlags" native="true">
                <property name="styleSheet">
                 <string notr="true">QWidget{
 border:none;
 }
 QLabel {
 	border: 1px solid rgb(30,30,30);
-	background: rgb(40, 176, 13);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
 	padding: 5px;
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
