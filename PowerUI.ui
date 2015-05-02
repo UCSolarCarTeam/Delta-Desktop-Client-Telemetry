@@ -34,7 +34,10 @@
 color: white;
 font-family: &quot;AvenirLTStd&quot;;
 font-size: 17px;
-</string>
+
+QPushButton#connectButton:hover{
+	background-color: red;
+}r</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <property name="leftMargin">
@@ -200,10 +203,25 @@ border-bottom-color: rgb(40,40,40);
              </property>
              <item>
               <widget class="QPushButton" name="connectButton">
+               <property name="cursor">
+                <cursorShape>IBeamCursor</cursorShape>
+               </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(90, 90, 90);
-border-radius: 1px;
-padding: 3px;</string>
+                <string notr="true">QPushButton {
+    background-color: rgb(90, 90, 90);
+	border-radius: 1px;
+	padding: 3px;
+}
+
+QPushButton:hover:!pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
+}</string>
                </property>
                <property name="text">
                 <string>Connect</string>
@@ -431,6 +449,25 @@ QWidget {
                    <string notr="true">border:none;</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_6">
+                   <item row="0" column="2" rowspan="2">
+                    <widget class="QWidget" name="connectionHealthImage" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>36</width>
+                       <height>36</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>36</width>
+                       <height>36</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background: url(:/Resources/ConnectionHealth0of5.png);</string>
+                     </property>
+                    </widget>
+                   </item>
                    <item row="0" column="0" rowspan="2" colspan="2">
                     <widget class="QLabel" name="connectionStatus">
                      <property name="minimumSize">
@@ -465,25 +502,6 @@ background-color: rgb(70,70,70);
                      </property>
                      <property name="wordWrap">
                       <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="2" rowspan="2">
-                    <widget class="QWidget" name="connectionHealthImage" native="true">
-                     <property name="minimumSize">
-                      <size>
-                       <width>36</width>
-                       <height>36</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>36</width>
-                       <height>36</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">background: url(:/Resources/ConnectionHealth0of5.png);</string>
                      </property>
                     </widget>
                    </item>
