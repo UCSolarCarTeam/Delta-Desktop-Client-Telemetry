@@ -69,8 +69,8 @@ HEADERS  += \
     BusinessLayer/LoggerService/LoggerService.h \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
-    CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
     CommunicationLayer/ConnectionService/RadioConnectionService.h \
+    CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
@@ -82,6 +82,7 @@ HEADERS  += \
     CommunicationLayer/MessagingFramework/MessageDecodingHelpers.h \
     CommunicationLayer/MessagingFramework/MessageDefines.h \
     CommunicationLayer/MessagingFramework/MotorFaults.h \
+    CommunicationLayer/PacketDecoder/I_PacketDecoder.h \
     CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     DataLayer/ArrayData/ArrayData.h \
