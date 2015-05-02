@@ -28,6 +28,9 @@ SOURCES += \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
+    CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
+    CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
+    CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
     CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
     CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \
     CommunicationLayer/MessagingFramework/FaultsMessage.cpp \
@@ -39,6 +42,7 @@ SOURCES += \
     DataLayer/ArrayData/ArrayData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/DataContainer.cpp \
+    DataLayer/FaultsData/FaultsData.cpp \
     DataLayer/PowerData/PowerData.cpp \
     DataLayer/VehicleData/VehicleData.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
@@ -74,6 +78,9 @@ HEADERS  += \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
+    CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
+    CommunicationLayer/DataPopulators/FaultsPopulator.h \
+    CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
     CommunicationLayer/MessagingFramework/BatteryFaults.h \
     CommunicationLayer/MessagingFramework/DriverControlDetails.h \
     CommunicationLayer/MessagingFramework/FaultsMessage.h \
@@ -90,6 +97,8 @@ HEADERS  += \
     DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/DataContainer.h \
+    DataLayer/FaultsData/I_FaultsData.h \
+    DataLayer/FaultsData/FaultsData.h \
     DataLayer/PowerData/I_PowerData.h \
     DataLayer/PowerData/PowerData.h \
     DataLayer/VehicleData/I_VehicleData.h \
