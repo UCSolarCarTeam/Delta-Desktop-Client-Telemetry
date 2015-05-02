@@ -1,6 +1,5 @@
 #pragma once
 
-
 namespace MessageDefines
 {
    enum Type

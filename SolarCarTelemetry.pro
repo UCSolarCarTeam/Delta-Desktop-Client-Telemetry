@@ -28,7 +28,9 @@ SOURCES += \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \
     CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \
     CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \
     CommunicationLayer/MessagingFramework/FaultsMessage.cpp \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
@@ -74,7 +76,9 @@ HEADERS  += \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.h \
     CommunicationLayer/MessagingFramework/BatteryFaults.h \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.h \
     CommunicationLayer/MessagingFramework/DriverControlDetails.h \
     CommunicationLayer/MessagingFramework/FaultsMessage.h \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h \
