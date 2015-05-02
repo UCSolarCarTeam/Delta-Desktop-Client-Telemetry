@@ -39,7 +39,7 @@ QPushButton#connectButton:hover{
 	background-color: red;
 }r</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_4">
+  <layout class="QGridLayout" name="powerUILayout">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -62,7 +62,7 @@ QPushButton#connectButton:hover{
 
 </string>
      </property>
-     <layout class="QGridLayout" name="centralLayout">
+     <layout class="QGridLayout" name="backgroundWidgetLayout">
       <property name="leftMargin">
        <number>9</number>
       </property>
@@ -76,7 +76,7 @@ QPushButton#connectButton:hover{
        <number>9</number>
       </property>
       <item row="1" column="0">
-       <layout class="QGridLayout" name="gridLayout_3">
+       <layout class="QGridLayout" name="backgroundWidgetLayout_2">
         <property name="leftMargin">
          <number>40</number>
         </property>
@@ -108,7 +108,7 @@ QLabel {
 
 </string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
+          <layout class="QVBoxLayout" name="commsWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -146,7 +146,7 @@ border-bottom-color: rgb(40,40,40);
 	padding: 2px;
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout">
+             <layout class="QHBoxLayout" name="commsTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -246,7 +246,7 @@ QWidget {
 
 </string>
                </property>
-               <layout class="QGridLayout" name="gridLayout_5">
+               <layout class="QGridLayout" name="connectionInfoLayoutLayout">
                 <item row="3" column="0">
                  <widget class="QLineEdit" name="serialPortName">
                   <property name="palette">
@@ -448,7 +448,7 @@ QWidget {
                   <property name="styleSheet">
                    <string notr="true">border:none;</string>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_6">
+                  <layout class="QGridLayout" name="connectionStatusWidgetLayout">
                    <item row="0" column="2" rowspan="2">
                     <widget class="QWidget" name="connectionHealthImage" native="true">
                      <property name="minimumSize">
@@ -563,7 +563,7 @@ QLabel {
 border-image: none;
 }</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
+          <layout class="QVBoxLayout" name="batteryWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -602,7 +602,7 @@ border-image: none;
 border-bottom:none;
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <layout class="QHBoxLayout" name="batteryTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -661,7 +661,7 @@ background: none;</string>
 	background: url(&quot;background.jpg&quot;);
 }</string>
                </property>
-               <layout class="QGridLayout" name="gridLayout">
+               <layout class="QGridLayout" name="batteryTableLayout">
                 <property name="leftMargin">
                  <number>14</number>
                 </property>
@@ -1314,7 +1314,7 @@ border-image: none;
 
 </string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <layout class="QVBoxLayout" name="mainValuesWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -1353,7 +1353,7 @@ border-color:rgb(70,70,70);
 background: url(:/Resources/SubTitleBar.png);
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <layout class="QHBoxLayout" name="mainValuesTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -1425,7 +1425,7 @@ border:none;</string>
 border-top: none;
 }</string>
                </property>
-               <layout class="QGridLayout" name="gridLayout_2">
+               <layout class="QGridLayout" name="mainTableLayout">
                 <property name="leftMargin">
                  <number>14</number>
                 </property>
@@ -1804,7 +1804,7 @@ QLabel {
 border-image: none;
 }</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <layout class="QVBoxLayout" name="graphsWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -1844,7 +1844,7 @@ background: url(:/Resources/SubTitleBar.png);
 font-size: 22px;
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <layout class="QHBoxLayout" name="graphsTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -1973,7 +1973,7 @@ padding: 3px;</string>
        <height>80</height>
       </size>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="powerTitleBarLayout">
       <property name="spacing">
        <number>6</number>
       </property>
@@ -1990,7 +1990,7 @@ padding: 3px;</string>
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="powerTitleBarFrame">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -2010,7 +2010,7 @@ padding: 3px;</string>
         <property name="lineWidth">
          <number>5</number>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QHBoxLayout" name="powerTitleBarFrameLayout">
          <item>
           <widget class="QLabel" name="powerTitleLabel">
            <property name="styleSheet">

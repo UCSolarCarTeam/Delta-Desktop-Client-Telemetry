@@ -36,7 +36,7 @@ font-family: &quot;AvenirLTStd&quot;;
 font-size: 17px;
 </string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="faultUILayout">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -72,7 +72,7 @@ border: 1px;
 border-color: rgb(40,40,40);
 </string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="faultsTitleBarLayout">
       <property name="spacing">
        <number>6</number>
       </property>
@@ -107,7 +107,7 @@ border-color: rgb(50,50,50);
         <property name="lineWidth">
          <number>5</number>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QHBoxLayout" name="faultsTitleFrameLayout">
          <item>
           <widget class="QLabel" name="faultTitleLabel">
            <property name="styleSheet">
@@ -134,7 +134,7 @@ border: none;</string>
       <string notr="true">border-image: url(:/Resources/Background1.png);
 </string>
      </property>
-     <layout class="QGridLayout" name="centralLayout">
+     <layout class="QGridLayout" name="backgroundWidgetLayout">
       <property name="leftMargin">
        <number>9</number>
       </property>
@@ -148,7 +148,7 @@ border: none;</string>
        <number>9</number>
       </property>
       <item row="0" column="0">
-       <layout class="QGridLayout" name="contentLayout">
+       <layout class="QGridLayout" name="backgroundWidgetContentLayout">
         <property name="leftMargin">
          <number>40</number>
         </property>
@@ -181,7 +181,7 @@ QLabel {
 	padding: 1px;
 }</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
+          <layout class="QVBoxLayout" name="batteryWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -219,7 +219,7 @@ QLabel {
 	padding: 2px;
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <layout class="QHBoxLayout" name="batteryTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -267,7 +267,7 @@ background: none;</string>
               <number>9</number>
              </property>
              <item row="0" column="0">
-              <widget class="QWidget" name="batteryPackstatusFlags" native="true">
+              <widget class="QWidget" name="batteryPackStatusFlags" native="true">
                <property name="styleSheet">
                 <string notr="true">QWidget{
 border:none;
@@ -287,7 +287,7 @@ QLabel {
 }
 </string>
                </property>
-               <layout class="QGridLayout" name="gridLayout">
+               <layout class="QGridLayout" name="batteryPackStatusFlagsLayout">
                 <property name="spacing">
                  <number>14</number>
                 </property>
@@ -441,7 +441,7 @@ QLabel {
 	padding: 1px;
 }</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_8">
+          <layout class="QVBoxLayout" name="historyWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -479,7 +479,7 @@ QLabel {
 	padding: 2px;
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <layout class="QHBoxLayout" name="historyTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -560,7 +560,7 @@ border-image: none;
 }
 </string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <layout class="QVBoxLayout" name="motorWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -598,7 +598,7 @@ border-image: none;
 	padding: 2px;
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <layout class="QHBoxLayout" name="motorTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -804,7 +804,7 @@ QLabel {
 }
 </string>
                </property>
-               <layout class="QGridLayout" name="gridLayout_4">
+               <layout class="QGridLayout" name="motorErrorFlagsLayout">
                 <property name="spacing">
                  <number>14</number>
                 </property>
