@@ -24,10 +24,17 @@ SOURCES += \
     BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/LoggerService/LoggerService.cpp \
     CommunicationLayer/CommunicationContainer.cpp \
-    CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/ConnectionService/RadioConnectionService.cpp \
+    CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
+    CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
+    CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \
+    CommunicationLayer/MessagingFramework/FaultsMessage.cpp \
+    CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
+    CommunicationLayer/MessagingFramework/LimitFlags.cpp \
+    CommunicationLayer/MessagingFramework/MessageDecodingHelpers.cpp \
+    CommunicationLayer/MessagingFramework/MotorFaults.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
     DataLayer/ArrayData/ArrayData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
@@ -67,6 +74,14 @@ HEADERS  += \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
+    CommunicationLayer/MessagingFramework/BatteryFaults.h \
+    CommunicationLayer/MessagingFramework/DriverControlDetails.h \
+    CommunicationLayer/MessagingFramework/FaultsMessage.h \
+    CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h \
+    CommunicationLayer/MessagingFramework/LimitFlags.h \
+    CommunicationLayer/MessagingFramework/MessageDecodingHelpers.h \
+    CommunicationLayer/MessagingFramework/MessageDefines.h \
+    CommunicationLayer/MessagingFramework/MotorFaults.h \
     CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     DataLayer/ArrayData/ArrayData.h \
