@@ -1,24 +1,17 @@
 #pragma once
 
-#include <QSharedPointer>
-
-class DataContainer;
+#include <QScopedPointer>
 class CommunicationContainer;
 class LoggerService;
 
 class BusinessContainer
 {
 public:
-    QSharedPointer<LoggerService> loggerService();
+   explicit BusinessContainer(CommunicationContainer& communicationContainer);
+   ~BusinessContainer();
 
-    explicit BusinessContainer(QSharedPointer<DataContainer> dataContainer, 
-    						   QSharedPointer<CommunicationContainer> communicationContainer);
-    ~BusinessContainer();
+   LoggerService& loggerService();
 
 private:
-    QSharedPointer<DataContainer> dataContainer_;
-    QSharedPointer<CommunicationContainer> communicationContainer_;
-    QSharedPointer<LoggerService> loggerService_;
+    QScopedPointer<LoggerService> loggerService_;
 };
-
-

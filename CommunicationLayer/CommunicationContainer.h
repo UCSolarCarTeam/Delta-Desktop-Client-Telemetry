@@ -1,8 +1,8 @@
 #pragma once
 
-#include <QSharedPointer>
-#include <QSerialPort>
+#include <QScopedPointer>
 
+class QSerialPort;
 class DataContainer;
 class I_ConnectionService;
 class I_DataParser;
@@ -11,20 +11,15 @@ class DataPopulator;
 class CommunicationContainer
 {
 public:
-    QSharedPointer<QSerialPort> port();
-    QSharedPointer<I_ConnectionService> connectionService();
-    QSharedPointer<I_DataParser> dataParser();
-    QSharedPointer<DataPopulator> dataPopulator();
+   explicit CommunicationContainer(DataContainer& dataContainer);
+   ~CommunicationContainer();
 
- 	explicit CommunicationContainer(QSharedPointer<DataContainer> dataContainer);
-    ~CommunicationContainer();
+   I_ConnectionService& connectionService();
+   I_DataParser& dataParser();
 
 private:
-	QSharedPointer<DataContainer> dataContainer_;    
-    QSharedPointer<QSerialPort> port_;
-    QSharedPointer<I_ConnectionService> connectionService_;
-	QSharedPointer<I_DataParser> dataParser_;
-    QSharedPointer<DataPopulator> dataPopulator_;
-
+   QScopedPointer<QSerialPort> port_;
+   QScopedPointer<I_ConnectionService> connectionService_;
+   QScopedPointer<I_DataParser> dataParser_;
+   QScopedPointer<DataPopulator> dataPopulator_;
 };
-

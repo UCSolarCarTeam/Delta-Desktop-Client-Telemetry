@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QSharedPointer>
+#include <QScopedPointer>
 
 class DataContainer;
 class CommunicationContainer;
@@ -13,23 +13,19 @@ class MpptPresenter;
 class PresenterContainer
 {
 public:
-	QSharedPointer<DisplayPresenter> displayPresenter();
-	QSharedPointer<BatteryPresenter> batteryPresenter();
-	QSharedPointer<VehiclePresenter> vehiclePresenter();
-	QSharedPointer<MpptPresenter> mpptPresenter();
+   PresenterContainer(DataContainer& dataContainer,
+         CommunicationContainer& communicationContainer,
+         BusinessContainer& businessContainer);
+   ~PresenterContainer();
 
-    explicit PresenterContainer(QSharedPointer<DataContainer> dataContainer,
-    							QSharedPointer<CommunicationContainer> communicationContainer,
-    							QSharedPointer<BusinessContainer> businessContainer);
-    ~PresenterContainer();
+   DisplayPresenter& displayPresenter();
+   BatteryPresenter& batteryPresenter();
+   VehiclePresenter& vehiclePresenter();
+   MpptPresenter& mpptPresenter();
 
 private:
-	QSharedPointer<DataContainer> dataContainer_;
-	QSharedPointer<CommunicationContainer> communicationContainer_;
-	QSharedPointer<BusinessContainer> businessContainer_;
-	QSharedPointer<DisplayPresenter> displayPresenter_;
-	QSharedPointer<BatteryPresenter> batteryPresenter_;
-	QSharedPointer<VehiclePresenter> vehiclePresenter_;
-	QSharedPointer<MpptPresenter> mpptPresenter_;
+   QScopedPointer<DisplayPresenter> displayPresenter_;
+   QScopedPointer<BatteryPresenter> batteryPresenter_;
+   QScopedPointer<VehiclePresenter> vehiclePresenter_;
+   QScopedPointer<MpptPresenter> mpptPresenter_;
 };
-
