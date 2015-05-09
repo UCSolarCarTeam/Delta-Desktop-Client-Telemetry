@@ -28,6 +28,8 @@ SOURCES += \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/DataParser/DataParser.cpp \
     CommunicationLayer/DataPopulator/DataPopulator.cpp \
+    CommunicationLayer/DataPopulators/BatteryPopulator.cpp \
+    CommunicationLayer/DataPopulators/CmuPopulator.cpp \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
     CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
@@ -80,6 +82,8 @@ HEADERS  += \
     CommunicationLayer/DataParser/DataParser.h \
     CommunicationLayer/DataParser/I_DataParser.h \
     CommunicationLayer/DataPopulator/DataPopulator.h \
+    CommunicationLayer/DataPopulators/BatteryPopulator.h \
+    CommunicationLayer/DataPopulators/CmuPopulator.h \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
     CommunicationLayer/DataPopulators/FaultsPopulator.h \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
