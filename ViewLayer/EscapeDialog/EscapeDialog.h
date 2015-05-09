@@ -20,6 +20,7 @@ public:
     QPushButton& settingsButton();
     QPushButton& returnButton();
     QPushButton& aboutButton();
+    QPushButton& toggleFullscreenPushButton();
     QPushButton& exitButton();
 
 private:

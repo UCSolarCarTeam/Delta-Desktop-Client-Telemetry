@@ -44,6 +44,10 @@ QPushButton& EscapeDialog::returnButton()
 {
    return *ui->returnPushButton;
 }
+QPushButton& EscapeDialog::toggleFullscreenPushButton()
+{
+   return *ui->toggleFullscreenPushButton;
+}
 QPushButton& EscapeDialog::exitButton()
 {
    return *ui->exitPushButton;

@@ -21,6 +21,8 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 , escapeDialog_(escapeDialog)
 {
     setupEscapeDialog();
+    connect(&escapeDialog_->toggleFullscreenPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleToggleFullscreenButtonClicked()));
     
     QTabWidget* tabBar = createTabWidget();
 
@@ -85,6 +87,23 @@ void OverlordWidget::setupEscapeDialog()
     escapeDialog_->move(QApplication::desktop()->screen()->rect().center() 
                         - escapeDialog_->rect().center());
 }
+
+void OverlordWidget::handleToggleFullscreenButtonClicked()
+{
+    bool isMax = isMaximized();
+    if(isMax){
+        showFullScreen();
+        //toggleOverlordState(OverlordState::MAXIMIZED);
+    }
+    else{
+        showMaximized();
+       // toggleOverlordState(OverlordState::FULLSCREEN);
+    }
+
+
+    qDebug() <<"happy ham";
+}
+//void toggleOverlordState(StateFlags flag){}
 
 QTabWidget* OverlordWidget::createTabWidget()
 {
