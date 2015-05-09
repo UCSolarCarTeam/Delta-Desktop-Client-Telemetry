@@ -26,8 +26,6 @@ SOURCES += \
     CommunicationLayer/CommunicationContainer.cpp \
     CommunicationLayer/ConnectionService/RadioConnectionService.cpp \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
-    CommunicationLayer/DataParser/DataParser.cpp \
-    CommunicationLayer/DataPopulator/DataPopulator.cpp \
     CommunicationLayer/DataPopulators/BatteryPopulator.cpp \
     CommunicationLayer/DataPopulators/CmuPopulator.cpp \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
@@ -81,9 +79,6 @@ HEADERS  += \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
     CommunicationLayer/ConnectionService/RadioConnectionService.h \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
-    CommunicationLayer/DataParser/DataParser.h \
-    CommunicationLayer/DataParser/I_DataParser.h \
-    CommunicationLayer/DataPopulator/DataPopulator.h \
     CommunicationLayer/DataPopulators/BatteryPopulator.h \
     CommunicationLayer/DataPopulators/CmuPopulator.h \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
