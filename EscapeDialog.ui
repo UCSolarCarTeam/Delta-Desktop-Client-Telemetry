@@ -282,7 +282,7 @@ margin-right: 20px;</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
+            <item row="4" column="0">
              <widget class="QPushButton" name="exitPushButton">
               <property name="minimumSize">
                <size>
@@ -313,6 +313,19 @@ margin-right: 20px;</string>
               </property>
               <property name="text">
                <string>About</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="toggleFullscreenPushButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Toggle Fullscreen</string>
               </property>
              </widget>
             </item>
