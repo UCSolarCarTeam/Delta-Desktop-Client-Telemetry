@@ -17,19 +17,19 @@ private:
 signals:
    void mod0PcbTemperatureReceived(double mod0PcbTemperature);
    void mod0CellTemperatureReceived(double mod0CellTemperature);
-   void mod0CellVoltagesReceived(double mod0CellVoltages);
+   void mod0CellVoltagesReceived(QList<double> mod0CellVoltages);
 
    void mod1PcbTemperatureReceived(double mod1PcbTemperature);
    void mod1CellTemperatureReceived(double mod1CellTemperature);
-   void mod1CellVoltagesReceived(double mod1CellVoltages);
+   void mod1CellVoltagesReceived(QList<double> mod1CellVoltages);
 
    void mod2PcbTemperatureReceived(double mod2PcbTemperature);
    void mod2CellTemperatureReceived(double mod2CellTemperature);
-   void mod2CellVoltagesReceived(double mod2CellVoltages);
+   void mod2CellVoltagesReceived(QList<double> mod2CellVoltages);
 
    void mod3PcbTemperatureReceived(double mod3PcbTemperature);
    void mod3CellTemperatureReceived(double mod3CellTemperature);
-   void mod3CellVoltagesReceived(double mod3CellVoltages);
+   void mod3CellVoltagesReceived(QList<double> mod3CellVoltages);
 
    void batteryVoltageReceived(double batteryVoltage);
    void batteryCurrentReceived(double batteryCurent);

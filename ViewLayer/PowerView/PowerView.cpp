@@ -33,29 +33,29 @@ PowerView::PowerView(DisplayPresenter& presenter,
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
-    connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(double)),
-            this, SLOT(mod0CellVoltagesReceived(double)));
-    connect(&batteryPresenter_, SIGNAL(mod1CellTemperatureRecei0ved(double)),
-            this, SLOT(mod1CellTemperatureRecei0ved(double)));
-    connect(&batteryPresenter_, SIGNAL(mod1CellVolt0agesRecei0ved(double)),
-            this, SLOT(mod1CellVoltagesRecei0ved(double)));
-    connect(&batteryPresenter_, SIGNAL(mod2CellTempera0tureRecei0ved(double)),
-            this, SLOT(mod2CellTemperatureRecei0ved(double)));
-    connect(&batteryPresenter_, SIGNAL(mod2CellVolt0agesRecei0ved(double)),
-            this, SLOT(mod2CellVoltagesRecei0ved(double)));
-    connect(&batteryPresenter_, SIGNAL(mod3CellTempera0tureRecei0ved(double)),
-            this, SLOT(mod3CellTemperatureRecei0ved(double)));
-    connect(&batteryPresenter_, SIGNAL(mod3CellVolt0agesRecei0ved(double)),
-            this, SLOT(mod3CellVoltagesRecei0ved(double)));
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
+            this, SLOT(mod0CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod1CellTemperatureReceived(double)),
+            this, SLOT(mod1CellTemperatureReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltagesReceived(QList<double>)),
+            this, SLOT(mod1CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod2CellTemperatureReceived(double)),
+            this, SLOT(mod2CellTemperatureReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltagesReceived(QList<double>)),
+            this, SLOT(mod2CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod3CellTemperatureReceived(double)),
+            this, SLOT(mod3CellTemperatureReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
+            this, SLOT(mod3CellVoltagesReceived(QList<double>)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
-            this, SLOT(handleConnectButto0nClicked()));
-    connect(&presenter_, SIGNAL(connectionFail0ed(QString)),
-            this, SLOT(connectionFail0ed(QString)));
-    connect(&presenter_, SIGNAL(connectionSucceed0ed(QString)),
-            this, SLOT(connectionSucceed0ed(QString)));
-    connect(&presenter_, SIGNAL(sendDebugMessa0ge(QString)),
-            this, SLOT(writeToDebugL0og(QString)));
+            this, SLOT(handleConnectButtonClicked()));
+    connect(&presenter_, SIGNAL(connectionFailed(QString)),
+            this, SLOT(connectionFailed(QString)));
+    connect(&presenter_, SIGNAL(connectionSucceeded(QString)),
+            this, SLOT(connectionSucceeded(QString)));
+    connect(&presenter_, SIGNAL(sendDebugMessage(QString)),
+            this, SLOT(writeToDebugLog(QString)));
 }
 
 void PowerView::driverSetSpeedRPMReceived(double driverSetSpeedRPMReceived)
