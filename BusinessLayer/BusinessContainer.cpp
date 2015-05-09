@@ -4,7 +4,7 @@
 
 namespace
 {
-	const QString defaultFilename = "SolarCarDebugLog";
+   const QString defaultFilename = "SolarCarDebugLog";
 }
 
 BusinessContainer::BusinessContainer(CommunicationContainer& communicationContainer)

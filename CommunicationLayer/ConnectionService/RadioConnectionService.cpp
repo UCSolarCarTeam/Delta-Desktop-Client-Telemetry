@@ -7,7 +7,7 @@ RadioConnectionService::RadioConnectionService(QSerialPort& serialPort)
 
 RadioConnectionService::~RadioConnectionService()
 {
-	disconnectDataSource();
+   disconnectDataSource();
 }
 
 void RadioConnectionService::connectDataSource(QString portName, int baudRate)

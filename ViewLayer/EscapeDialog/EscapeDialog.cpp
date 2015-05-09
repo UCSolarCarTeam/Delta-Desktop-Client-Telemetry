@@ -16,7 +16,7 @@ EscapeDialog::~EscapeDialog()
 }
 
 void EscapeDialog::keyPressEvent(QKeyEvent * event){
-	hide();
+   hide();
 }
 
 void EscapeDialog::hideHeaderBar()
@@ -26,7 +26,7 @@ void EscapeDialog::hideHeaderBar()
 
 void EscapeDialog::paintEvent(QPaintEvent* e)
 {
-	QColor backgroundColor = palette().light().color();
+   QColor backgroundColor = palette().light().color();
     backgroundColor.setAlpha(50);
     QPainter customPainter(this);
     customPainter.fillRect(rect(), backgroundColor);

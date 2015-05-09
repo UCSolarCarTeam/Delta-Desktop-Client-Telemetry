@@ -4,10 +4,10 @@
 MpptPresenter::MpptPresenter(const I_ArrayData& arrayData)
 : arrayData_(arrayData)
 {
-	relayArrayData();
+   relayArrayData();
 }
 
 void MpptPresenter::relayArrayData()
 {
-	//nothing to connect
+   //nothing to connect
 }

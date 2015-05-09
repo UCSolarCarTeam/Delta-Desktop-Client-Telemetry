@@ -3,8 +3,8 @@
 
 BatteryPresenter::BatteryPresenter(const I_BatteryData& batteryData)
 : batteryData_(batteryData)
-{	
-	relayBatteryData();
+{
+   relayBatteryData();
 }
 
 void BatteryPresenter::relayBatteryData()

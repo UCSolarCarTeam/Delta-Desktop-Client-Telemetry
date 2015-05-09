@@ -4,130 +4,130 @@
 FaultsUI::FaultsUI()
 : ui(new Ui::FaultsUI)
 {
-	ui->setupUi(this);
+   ui->setupUi(this);
 }
 
 FaultsUI::~FaultsUI()
 {
-	delete ui;
+   delete ui;
 }
 
 void FaultsUI::hideHeaderBar()
 {
-	ui->faultsTitleBar->hide();
+   ui->faultsTitleBar->hide();
 }
 
 
 QLabel& FaultsUI::cellOverVoltageLabel()
 {
-	return *ui->cellOverVoltageLabel;
+   return *ui->cellOverVoltageLabel;
 }
 QLabel& FaultsUI::bmuInSetupModeLabel()
 {
-	return *ui->bmuInSetupModeLabel;
+   return *ui->bmuInSetupModeLabel;
 }
 QLabel& FaultsUI::cellOverTemperatureLabel()
 {
-	return *ui->cellOverTemperatureLabel;
+   return *ui->cellOverTemperatureLabel;
 }
 QLabel& FaultsUI::softwareOverCurrentMeasurementNotValidLabel()
 {
-	return *ui->softwareOverCurrentMeasurementNotValidLabel;
+   return *ui->softwareOverCurrentMeasurementNotValidLabel;
 }
 QLabel& FaultsUI::cellUnderVoltageLabel()
 {
-	return *ui->cellUnderVoltageLabel;
+   return *ui->cellUnderVoltageLabel;
 }
 QLabel& FaultsUI::can12vSupplyLowLabel()
 {
-	return *ui->can12vSupplyLowLabel;
+   return *ui->can12vSupplyLowLabel;
 }
 QLabel& FaultsUI::vehicleCommunicationsTimeoutLabel()
 {
-	return *ui->vehicleCommunicationsTimeoutLabel;
+   return *ui->vehicleCommunicationsTimeoutLabel;
 }
 QLabel& FaultsUI::packIsolationTestFailureLabel()
 {
-	return *ui->packIsolationTestFailureLabel;
+   return *ui->packIsolationTestFailureLabel;
 }
 QLabel& FaultsUI::contactorStuckOrNotEngagedLabel()
 {
-	return *ui->contactorStuckOrNotEngagedLabel;
+   return *ui->contactorStuckOrNotEngagedLabel;
 }
 QLabel& FaultsUI::cmuCanBusPowerStatusLabel()
 {
-	return *ui->cmuCanBusPowerStatusLabel;
+   return *ui->cmuCanBusPowerStatusLabel;
 }
 QLabel& FaultsUI::measurementUntrustedLabel()
 {
-	return *ui->measurementUntrustedLabel;
+   return *ui->measurementUntrustedLabel;
 }
 QLabel& FaultsUI::cmuDetectedExtraCellLabel()
 {
-	return *ui->cmuDetectedExtraCellLabel;
+   return *ui->cmuDetectedExtraCellLabel;
 }
 QLabel& FaultsUI::ipmTemperatureOrMotorTemperatureLabel()
 {
-	return *ui->ipmTemperatureOrMotorTemperatureLabel;
+   return *ui->ipmTemperatureOrMotorTemperatureLabel;
 }
 QLabel& FaultsUI::busVoltageUpperLimitLabel()
 {
-	return *ui->busVoltageUpperLimitLabel;
+   return *ui->busVoltageUpperLimitLabel;
 }
 QLabel& FaultsUI::motorCurrentLabel()
 {
-	return *ui->motorCurrentLabel;
+   return *ui->motorCurrentLabel;
 }
 QLabel& FaultsUI::busVoltageLowerLimitLabel()
 {
-	return *ui->busVoltageLowerLimitLabel;
+   return *ui->busVoltageLowerLimitLabel;
 }
 QLabel& FaultsUI::outputVoltagePwmLabel()
 {
-	return *ui->outputVoltagePwmLabel;
+   return *ui->outputVoltagePwmLabel;
 }
 QLabel& FaultsUI::busCurrentLabel()
 {
-	return *ui->busCurrentLabel;
+   return *ui->busCurrentLabel;
 }
 QLabel& FaultsUI::velocityLabel()
 {
-	return *ui->velocityLabel;
+   return *ui->velocityLabel;
 }
 QLabel& FaultsUI::desaturationFaultLabel()
 {
-	return *ui->desaturationFaultLabel;
+   return *ui->desaturationFaultLabel;
 }
 QLabel& FaultsUI::badMotorPositionHallSequence()
 {
-	return *ui->badMotorPositionHallSequence;
+   return *ui->badMotorPositionHallSequence;
 }
 QLabel& FaultsUI::fifteenVoltRailUnderVoltageLockoutLabel()
 {
-	return *ui->fifteenVoltRailUnderVoltageLockoutLabel;
+   return *ui->fifteenVoltRailUnderVoltageLockoutLabel;
 }
 QLabel& FaultsUI::configReadErrorLabel()
 {
-	return *ui->configReadErrorLabel;
+   return *ui->configReadErrorLabel;
 }
 QLabel& FaultsUI::watchDogCausedLastResetLabel()
 {
-	return *ui->watchDogCausedLastResetLabel;
+   return *ui->watchDogCausedLastResetLabel;
 }
 QLabel& FaultsUI::dcBusOverVoltageLabel()
 {
-	return *ui->dcBusOverVoltageLabel;
+   return *ui->dcBusOverVoltageLabel;
 }
 QLabel& FaultsUI::softwareOverCurrentLabel()
 {
-	return *ui->softwareOverCurrentLabel;
+   return *ui->softwareOverCurrentLabel;
 }
 QLabel& FaultsUI::hardwareOverCurrentLabel()
 {
-	return *ui->hardwareOverCurrentLabel;
+   return *ui->hardwareOverCurrentLabel;
 }
 
 QTextBrowser& FaultsUI::historyTextBrowser()
 {
-	return *ui->historyTextBrowser;
+   return *ui->historyTextBrowser;
 }

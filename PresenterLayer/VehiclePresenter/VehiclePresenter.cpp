@@ -4,7 +4,7 @@
 VehiclePresenter::VehiclePresenter(const I_VehicleData& vehicleData)
 : vehicleData_(vehicleData)
 {
-	relayVehicleData();
+   relayVehicleData();
 }
 
 void VehiclePresenter::relayVehicleData()
@@ -24,5 +24,5 @@ void VehiclePresenter::relayVehicleData()
    connect(&vehicleData_, SIGNAL(receivedErrorCountReceived(double)),
            this, SIGNAL(receivedErrorCountReceived(double)));
    connect(&vehicleData_, SIGNAL(transmittedErrorCountReceived(double)),
-           this, SIGNAL(transmittedErrorCountReceived(double)));  
+           this, SIGNAL(transmittedErrorCountReceived(double)));
 }

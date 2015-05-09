@@ -13,7 +13,7 @@ FaultsData::~FaultsData()
 /* FaultData Gets */
 MotorFaults FaultsData::motorFaults() const
 {
-	return motorFaults_;
+   return motorFaults_;
 }
 LimitFlags FaultsData::limitFlags() const
 {
@@ -21,22 +21,22 @@ LimitFlags FaultsData::limitFlags() const
 }
 BatteryFaults FaultsData::batteryFaults() const
 {
-	return batteryFaults_;
+   return batteryFaults_;
 }
 
 /* FaultData Sets */
 void FaultsData::setMotorFaults(MotorFaults motorFaults)
 {
-	motorFaults_ = motorFaults;
-	emit motorFaultsReceived(motorFaults_);
-}	
+   motorFaults_ = motorFaults;
+   emit motorFaultsReceived(motorFaults_);
+}
 void FaultsData::setLimitFlags(LimitFlags limitFlags)
 {
-	limitFlags_ = limitFlags;
-	emit limitFlagsReceived(limitFlags_);
+   limitFlags_ = limitFlags;
+   emit limitFlagsReceived(limitFlags_);
 }
 void FaultsData::setBatteryFaults(BatteryFaults batteryFaults)
 {
-	batteryFaults_ = batteryFaults;
-	emit batteryFaultsReceived(batteryFaults_);
+   batteryFaults_ = batteryFaults;
+   emit batteryFaultsReceived(batteryFaults_);
 }
