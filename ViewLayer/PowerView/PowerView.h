@@ -24,11 +24,14 @@ private:
    PowerUI& ui_;
 
 private slots:
-   void driverSetSpeedRPMReceived(double);
+   void driverSetSpeedMetersPerSecondReceived(double);
    void driverSetCurrentReceived(double);
-   void vehicleVelocityKphReceived(double);
-   // void busCurrentAReceived(double);
+   void vehicleVelocityMetersPerSecondReceived(double);
+   void busCurrentAReceived(double);
    void busVoltageReceived(double);
+   void arrayCurrentInReceived(double);
+   void arrayCurrentOutReceived(double);
+   void arrayNetCurrentReceived(double);
 
    void mod0CellTemperatureReceived(double);
    void mod0CellVoltagesReceived(QList<double>);
@@ -38,7 +41,7 @@ private slots:
    void mod2CellVoltagesReceived(QList<double>);
    void mod3CellTemperatureReceived(double);
    void mod3CellVoltagesReceived(QList<double>);
-   
+
    void handleConnectButtonClicked();
    // void handleDisconnectButtonClicked();
    void connectionFailed(QString);

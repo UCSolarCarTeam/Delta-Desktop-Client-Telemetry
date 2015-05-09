@@ -20,16 +20,22 @@ PowerView::PowerView(DisplayPresenter& presenter,
     ui.getSerialPortName().setText("/dev/ttyUSB0");
 #endif 
 
-    connect(&presenter_, SIGNAL(driverSetSpeedRPMReceived(double)),
+    connect(&presenter_, SIGNAL(driverSetSpeedMetersPersecondReceived(double)),
             this, SLOT(driverSetSpeedRPMReceived(double)));
     connect(&presenter_, SIGNAL(driverSetCurrentReceived(double)),
             this, SLOT(driverSetCurrentReceived(double)));
     connect(&presenter_, SIGNAL(vehicleVelocityKphReceived(double)),
-            this, SLOT(vehicleVelocityKphReceived(double)));
-    // connect(&presenter_, SIGNAL(busCurrentAReceived(double)),
-    //         this, SLOT(busCurrentAReceived(double)));
+            this, SLOT(vehicleVelocityMetersPerSecondReceived(double)));
+    // connect(&presenter_, SIGNAL(???)),
+            // this, SLOT(busCurrentAReceived(double)));
     connect(&presenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
+    // connect(&presenter_, SIGNAL(???),
+    //         this, SLOT(arrayCurrentInReceived(double)));
+    // connect(&presenter_, SIGNAL(???),
+    //         this, SLOT(arrayCurrenOutReceived(double)));
+    // connect(&presenter_, SIGNAL(???),
+    //         this, SLOT(arrayNetCurrentReceived(double)));
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
@@ -58,25 +64,41 @@ PowerView::PowerView(DisplayPresenter& presenter,
             this, SLOT(writeToDebugLog(QString)));
 }
 
-void PowerView::driverSetSpeedRPMReceived(double driverSetSpeedRPMReceived)
+void PowerView::driverSetSpeedMetersPerSecondReceived(double driverSetSpeedMetersPerSecond)
 {
-    ui_.setSetSpeed().setNum(driverSetSpeedRPMReceived);
+    //Convert meters per second to kilometers per hour
+    double driverSetSpeedKph = driverSetSpeedMetersPerSecond * 3.6; 
+    ui_.setSetSpeed().setNum(driverSetSpeedKph);
 }
-void PowerView::driverSetCurrentReceived(double driverSetCurrentReceived)
+void PowerView::driverSetCurrentReceived(double driverSetCurrent)
 {
-    ui_.setSetCurrent().setNum(driverSetCurrentReceived);
+    ui_.setSetCurrent().setNum(driverSetCurrent);
 } 
-void PowerView::vehicleVelocityKphReceived(double vehicleVelocityKphReceived)
+void PowerView::vehicleVelocityMetersPerSecondReceived(double vehicleVelocityMetersPerSecond)
 {
-    ui_.setActualSpeed().setNum(vehicleVelocityKphReceived);
+    //Convert meters per second to kilometers per hour
+    double vehicleVelocityKph = vehicleVelocityMetersPerSecond * 3.6;
+    ui_.setActualSpeed().setNum(vehicleVelocityKph);
 }
-// void PowerView::busCurrentAReceived(double busCurrentA)
-// {
-//    ui_.setSetSpeed().setNum(busCurrentA);
-// }
+void PowerView::busCurrentAReceived(double busCurrentA)
+{
+   ui_.setBusCurrent().setNum(busCurrentA);
+}
 void PowerView::busVoltageReceived(double busVoltage)
 {
     ui_.setBusVoltage().setNum(busVoltage);
+}
+void PowerView::arrayCurrentInReceived(double arrayCurrentIn)
+{
+    ui_.setArrayCurrentIn().setNum(arrayCurrentIn);
+}
+void PowerView::arrayCurrentOutReceived(double arrayCurrentOut)
+{
+    ui_.setArrayCurrentOut().setNum(arrayCurrentOut);
+}
+void PowerView::arrayNetCurrentReceived(double arrayNetCurrent)
+{
+    ui_.setArrayNetCurrent().setNum(arrayNetCurrent);
 }
 
 

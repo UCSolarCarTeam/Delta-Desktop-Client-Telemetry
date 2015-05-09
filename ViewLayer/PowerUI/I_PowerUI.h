@@ -21,10 +21,11 @@ public:
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;
     virtual QLabel& setActualSpeed() = 0;    
+    virtual QLabel& setBusCurrent() = 0;
     virtual QLabel& setBusVoltage() = 0;
-    // virtual QLabel& setArrayCurrentIn() = 0;
-    // virtual QLabel& setArrayCurrentOut() = 0;
-    // virtual QLabel& setNetCurrent() = 0;
+    virtual QLabel& setArrayCurrentIn() = 0;
+    virtual QLabel& setArrayCurrentOut() = 0;
+    virtual QLabel& setArrayNetCurrent() = 0;
 
     virtual QLabel& setBatteryCMU1Temp() = 0;
     virtual QLabel& setBatteryCMU1Cell1Voltage() = 0;

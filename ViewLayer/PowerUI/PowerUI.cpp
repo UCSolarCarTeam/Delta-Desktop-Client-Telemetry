@@ -56,22 +56,28 @@ QLabel& PowerUI::setActualSpeed()
 {
     return *ui->actualSpeed;
 }    
+
+QLabel& PowerUI::setBusCurrent()
+{
+    return *ui->busCurrent;
+}
+
 QLabel& PowerUI::setBusVoltage()
 {
     return *ui->busVoltage;
 }
-// QLabel& PowerUI::setArrayCurrentIn()
-// {
-//     return *ui->arrayCurrentIn;
-// }
-// QLabel& PowerUI::setArrayCurrentOut()
-// {
-//     return *ui->arrayCurrentOut;
-// }
-// QLabel& PowerUI::setNetCurrent()
-// {
-//     return *ui->netCurrent;
-// }
+QLabel& PowerUI::setArrayCurrentIn()
+{
+    return *ui->arrayCurrentIn;
+}
+QLabel& PowerUI::setArrayCurrentOut()
+{
+    return *ui->arrayCurrentOut;
+}
+QLabel& PowerUI::setArrayNetCurrent()
+{
+    return *ui->netCurrent;
+}
 
 QLabel& PowerUI::setBatteryCMU1Temp()
 {
