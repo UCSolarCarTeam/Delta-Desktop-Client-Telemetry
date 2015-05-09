@@ -10,4 +10,6 @@ namespace MessageDefines
       BatteryData = 4,
       CmuData = 5
    };
+
+   int getLengthForMessage(Type type);
 }

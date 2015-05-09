@@ -41,7 +41,9 @@ SOURCES += \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
     CommunicationLayer/MessagingFramework/LimitFlags.cpp \
     CommunicationLayer/MessagingFramework/MessageDecodingHelpers.cpp \
+    CommunicationLayer/MessagingFramework/MessageDefines.cpp \
     CommunicationLayer/MessagingFramework/MotorFaults.cpp \
+    CommunicationLayer/PacketDecoder/PacketDecoder.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
     DataLayer/ArrayData/ArrayData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
@@ -98,6 +100,7 @@ HEADERS  += \
     CommunicationLayer/MessagingFramework/MessageDefines.h \
     CommunicationLayer/MessagingFramework/MotorFaults.h \
     CommunicationLayer/PacketDecoder/I_PacketDecoder.h \
+    CommunicationLayer/PacketDecoder/PacketDecoder.h \
     CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     DataLayer/ArrayData/ArrayData.h \

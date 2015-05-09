@@ -14,9 +14,9 @@ public:
    virtual ~I_PacketDecoder() {}
 
 signals:
-   void packetDecoded(const BatteryDataMessage message);
-   void packetDecoded(const CmuDataMessage message);
+   void packetDecoded(const KeyDriverControlTelemetry message);
    void packetDecoded(const DriverControlDetails message);
    void packetDecoded(const FaultsMessage message);
-   void packetDecoded(const KeyDriverControlTelemetry message);
+   void packetDecoded(const BatteryDataMessage message);
+   void packetDecoded(const CmuDataMessage message);
 };
