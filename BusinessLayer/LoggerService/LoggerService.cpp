@@ -4,22 +4,14 @@
 #include "../../CommunicationLayer/DataPopulator/DataPopulator.h"
 
 LoggerService::LoggerService(I_ConnectionService& connectionService,
-                           I_DataParser& dataParser,
                            QString filename)
 : logTxtFile_(filename)
 , logCsvFile_(filename)
 , connectionService_(connectionService)
-, dataParser_(dataParser)
 {
    /********************Connections********************/
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
            this, SLOT (receivedConnectionService(QString)));
-   //RAW String
-   connect(&dataParser, SIGNAL(sendDebugMessage(QString)),
-           this, SLOT (receivedDebugDataParser(QString)));  //notes, RAW string ends with a \n
-   //PARSED values
-   connect(&dataParser, SIGNAL(dataReceived(int,double)),
-           this, SLOT (receivedParsedDataParser(int, double)));
 
    /********************File Initializing********************/
    QDateTime date = QDateTime::currentDateTime();

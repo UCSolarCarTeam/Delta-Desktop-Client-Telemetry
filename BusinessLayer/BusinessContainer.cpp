@@ -9,7 +9,6 @@ namespace
 
 BusinessContainer::BusinessContainer(CommunicationContainer& communicationContainer)
 : loggerService_(new LoggerService(communicationContainer.connectionService(),
-      communicationContainer.dataParser(),
       defaultFilename))
 {
 }

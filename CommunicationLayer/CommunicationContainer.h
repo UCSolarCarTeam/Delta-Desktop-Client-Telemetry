@@ -1,12 +1,17 @@
 #pragma once
 
 #include <QScopedPointer>
-
 class QSerialPort;
+
+class BatteryPopulator;
+class CmuPopulator;
 class DataContainer;
+class DriverDetailsPopulator;
+class FaultsPopulator;
 class I_ConnectionService;
-class I_DataParser;
-class DataPopulator;
+class KeyDriverControlPopulator;
+class PacketDecoder;
+class PacketSynchronizer;
 
 class CommunicationContainer
 {
@@ -15,11 +20,15 @@ public:
    ~CommunicationContainer();
 
    I_ConnectionService& connectionService();
-   I_DataParser& dataParser();
 
 private:
    QScopedPointer<QSerialPort> port_;
    QScopedPointer<I_ConnectionService> connectionService_;
-   QScopedPointer<I_DataParser> dataParser_;
-   QScopedPointer<DataPopulator> dataPopulator_;
+   QScopedPointer<PacketSynchronizer> packetSynchronizer_;
+   QScopedPointer<PacketDecoder> packetDecoder_;
+   QScopedPointer<KeyDriverControlPopulator> keyDriverControlPopulator_;
+   QScopedPointer<DriverDetailsPopulator> driverDetailsPopulator_;
+   QScopedPointer<FaultsPopulator> faultsPopulator_;
+   QScopedPointer<BatteryPopulator> batteryPopulator_;
+   QScopedPointer<CmuPopulator> cmuPopulator_;
 };

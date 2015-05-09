@@ -10,7 +10,6 @@
 #include <QVector>
 
 class I_ConnectionService;
-class I_DataParser;
 
 class LoggerService : public QObject
 {
@@ -18,7 +17,6 @@ class LoggerService : public QObject
 
 public:
    LoggerService(I_ConnectionService& connectionService,
-                I_DataParser& dataParser,
                 QString filename);
    virtual ~LoggerService();
 
@@ -41,5 +39,4 @@ private:
    QVector< QVector<int> > csv2DArray_;
 
    I_ConnectionService& connectionService_;
-   I_DataParser& dataParser_;
 };
