@@ -15,6 +15,7 @@ public slots:
 	void populateData(const CmuDataMessage);
 
 private:
+	QList<double> convertFloatListToDouble(QList<float> floatList);
 	I_PacketDecoder& packetDecoder_;
 	I_BatteryData& batteryData_; 
 };
