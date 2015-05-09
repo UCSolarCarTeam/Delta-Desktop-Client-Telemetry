@@ -2,11 +2,11 @@
 
 BatteryPopulator::BatteryPopulator(I_PacketDecoder& packetDecoder,
                            I_BatteryData& batteryData)
-: packetDecoder_(packetDecoder_)
+: packetDecoder_(packetDecoder)
 , batteryData_(batteryData)
 {
    connect(&packetDecoder_, SIGNAL(packetDecoded(const BatteryDataMessage)),
-         this, SLOT(populateData(const FaultsMessage)));
+         this, SLOT(populateData(const BatteryDataMessage)));
 }
 
 void BatteryPopulator::populateData(const BatteryDataMessage message)
