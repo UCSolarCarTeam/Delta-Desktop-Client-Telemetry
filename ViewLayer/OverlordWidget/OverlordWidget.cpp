@@ -93,17 +93,12 @@ void OverlordWidget::handleToggleFullscreenButtonClicked()
     bool isMax = isMaximized();
     if(isMax){
         showFullScreen();
-        //toggleOverlordState(OverlordState::MAXIMIZED);
     }
     else{
         showMaximized();
-       // toggleOverlordState(OverlordState::FULLSCREEN);
     }
-
-
-    qDebug() <<"happy ham";
 }
-//void toggleOverlordState(StateFlags flag){}
+
 
 QTabWidget* OverlordWidget::createTabWidget()
 {
