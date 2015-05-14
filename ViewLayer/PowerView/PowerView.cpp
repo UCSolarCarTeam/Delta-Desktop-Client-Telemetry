@@ -17,24 +17,24 @@ PowerView::PowerView(DisplayPresenter& presenter,
 #ifdef _WIN32
     ui_.getSerialPortName().setText("COM");
 #else
-    ui.getSerialPortName().setText("/dev/ttyUSB0");
+    ui_.getSerialPortName().setText("/dev/ttyUSB0");
 #endif 
 
-    connect(&presenter_, SIGNAL(driverSetSpeedMetersPersecondReceived(double)),
-            this, SLOT(driverSetSpeedRPMReceived(double)));
-    connect(&presenter_, SIGNAL(driverSetCurrentReceived(double)),
+    connect(&vehiclePresenter_, SIGNAL(driverSetSpeedMetersPerSecondReceived(double)),
+            this, SLOT(driverSetSpeedMetersPerSecondReceived(double)));
+    connect(&vehiclePresenter_, SIGNAL(driverSetCurrentReceived(double)),
             this, SLOT(driverSetCurrentReceived(double)));
-    connect(&presenter_, SIGNAL(vehicleVelocityKphReceived(double)),
+    connect(&vehiclePresenter_, SIGNAL(vehicleVelocityMetersPerSecondReceived(double)),
             this, SLOT(vehicleVelocityMetersPerSecondReceived(double)));
-    // connect(&presenter_, SIGNAL(???)),
+    // connect(&vehiclePresenter_, SIGNAL(???)),
             // this, SLOT(busCurrentAReceived(double)));
-    connect(&presenter_, SIGNAL(busVoltageReceived(double)),
+    connect(&vehiclePresenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
-    // connect(&presenter_, SIGNAL(???),
+    // connect(&vehiclePresenter_, SIGNAL(???),
     //         this, SLOT(arrayCurrentInReceived(double)));
-    // connect(&presenter_, SIGNAL(???),
+    // connect(&vehiclePresenter_, SIGNAL(???),
     //         this, SLOT(arrayCurrenOutReceived(double)));
-    // connect(&presenter_, SIGNAL(???),
+    // connect(&vehiclePresenter_, SIGNAL(???),
     //         this, SLOT(arrayNetCurrentReceived(double)));
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),

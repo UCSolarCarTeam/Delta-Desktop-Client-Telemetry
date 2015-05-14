@@ -9,9 +9,9 @@ VehicleData::~VehicleData()
 }
 
 /*PowerData "Gets"*/
-double VehicleData::driverSetSpeedRPM() const
+double VehicleData::driverSetSpeedMetersPerSecond() const
 {   
-   return driverSetSpeedRPM_;
+   return driverSetSpeedMetersPerSecond_;
 }
 
 double VehicleData::driverSetCurrent() const
@@ -19,9 +19,9 @@ double VehicleData::driverSetCurrent() const
    return driverSetCurrent_;
 }
 
-double VehicleData::vehicleVelocityKph() const
+double VehicleData::vehicleVelocityMetersPerSecond() const
 {
-   return vehicleVelocityKph_;
+   return vehicleVelocityMetersPerSecond_;
 }
 
 double VehicleData::motorVelocityRpm() const
@@ -48,10 +48,10 @@ double VehicleData::transmittedErrorCount() const
 }
 
 /*PowerData "Sets"*/
-void VehicleData::setDriverSetSpeedRPM(double driverSetSpeedRPM)
+void VehicleData::setDriverSetSpeedMetersPerSecond(double driverSetSpeedMetersPerSecond)
 {
-   driverSetSpeedRPM_ = driverSetSpeedRPM;
-   emit driverSetSpeedRPMReceived(driverSetSpeedRPM_);
+   driverSetSpeedMetersPerSecond_ = driverSetSpeedMetersPerSecond;
+   emit driverSetSpeedMetersPerSecondReceived(driverSetSpeedMetersPerSecond_);
 }
 void VehicleData::setDriverSetCurrent(double driverSetCurrent)
 {
@@ -59,10 +59,10 @@ void VehicleData::setDriverSetCurrent(double driverSetCurrent)
    emit driverSetCurrentReceived(driverSetCurrent_);
 }
 
-void VehicleData::setVehicleVelocityKph(double vehicleVelocityKph)
+void VehicleData::setVehicleVelocityMetersPerSecond(double vehicleVelocityMetersPerSecond)
 {
-   vehicleVelocityKph_ = vehicleVelocityKph;
-   emit vehicleVelocityKphReceived(vehicleVelocityKph_);
+   vehicleVelocityMetersPerSecond_ = vehicleVelocityMetersPerSecond;
+   emit vehicleVelocityMetersPerSecondReceived(vehicleVelocityMetersPerSecond_);
 }
 
 void VehicleData::setMotorVelocityRpm(double motorVelocityRpm)

@@ -9,9 +9,9 @@ public:
     virtual ~VehicleData();
 
     /*VehicleData "Gets"*/
-    double driverSetSpeedRPM() const;
+    double driverSetSpeedMetersPerSecond() const;
     double driverSetCurrent() const;
-    double vehicleVelocityKph() const;
+    double vehicleVelocityMetersPerSecond() const;
     double motorVelocityRpm() const;
     double ipmHeatSinkTemp() const;
     double dspBoardTemp() const;
@@ -19,9 +19,9 @@ public:
     double transmittedErrorCount() const;
 
     /*VehicleData "Sets"*/
-    void setDriverSetSpeedRPM(double driverSetSpeedRPM);
+    void setDriverSetSpeedMetersPerSecond(double driverSetSpeedMetersPerSecond);
     void setDriverSetCurrent(double driverSetCurrent);
-    void setVehicleVelocityKph(double vehicleVelocityKph);
+    void setVehicleVelocityMetersPerSecond(double vehicleVelocityMetersPerSecond);
     void setMotorVelocityRpm(double motorVelocityRpm);
     void setIpmHeatSinkTemp(double ipmHeatSinkTemp);
     void setDspBoardTemp(double dspBoardTemp);
@@ -29,9 +29,9 @@ public:
     void setTransmittedErrorCount(double transmittedErrorCount);
 
 private:
-    double driverSetSpeedRPM_;
+    double driverSetSpeedMetersPerSecond_;
     double driverSetCurrent_;
-    double vehicleVelocityKph_;
+    double vehicleVelocityMetersPerSecond_;
     double motorVelocityRpm_;
     double ipmHeatSinkTemp_;
     double dspBoardTemp_;

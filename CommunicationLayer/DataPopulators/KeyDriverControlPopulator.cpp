@@ -13,9 +13,9 @@ KeyDriverControlPopulator::KeyDriverControlPopulator(I_PacketDecoder& packetDeco
 
 void KeyDriverControlPopulator::populateData(const KeyDriverControlTelemetry message)
 {
-   vehicleData_.setDriverSetSpeedRPM(message.setSpeed());
+   vehicleData_.setDriverSetSpeedMetersPerSecond(message.setSpeed());
    vehicleData_.setDriverSetCurrent(message.setCurrent());
-   vehicleData_.setVehicleVelocityKph(message.speed());
+   vehicleData_.setVehicleVelocityMetersPerSecond(message.speed());
    powerData_.setBusCurrentA(message.busCurrent());
    powerData_.setBusVoltage(message.busVoltage());
 
