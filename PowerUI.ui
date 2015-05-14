@@ -1950,7 +1950,7 @@ padding: 3px;</string>
                </property>
                <property name="url">
                 <url>
-                 <string>file:///home/enoch/Documents/SolarCar/schulich-delta-telemetry-gui/BusinessLayer/GraphingService/Graphs/testPage.html</string>
+                 <string>about:blank</string>
                 </url>
                </property>
               </widget>
