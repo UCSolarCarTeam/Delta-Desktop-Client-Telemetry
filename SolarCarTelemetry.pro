@@ -123,4 +123,5 @@ DISTFILES += \
     Resources/Solar Car Team Icon.ico \
     Resources/Solar Car Team Logo.png \
     Resources/Solar Car Team Symbol.png \
-    Resources/Solar Car Team Icon.ico
+    Resources/Solar Car Team Icon.ico \
+    Resources/BrowseButton.png

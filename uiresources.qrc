@@ -25,5 +25,6 @@
         <file>Resources/Fonts/AvenirLTStd-MediumOblique.otf</file>
         <file>Resources/Fonts/AvenirLTStd-Oblique.otf</file>
         <file>Resources/Fonts/AvenirLTStd-Roman.otf</file>
+        <file>Resources/BrowseButton.png</file>
     </qresource>
 </RCC>
