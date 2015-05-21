@@ -127,6 +127,11 @@ QLabel& FaultsUI::hardwareOverCurrentLabel()
    return *ui->hardwareOverCurrentLabel;
 }
 
+QLabel& FaultsUI::cmuCommunicationsTimeoutLabel()
+{
+   return *ui->cmuCommunicationsTimeoutLabel;
+}
+
 QTextEdit& FaultsUI::historyTextEdit()
 {
    return *ui->historyTextEdit;

@@ -141,5 +141,108 @@ void FaultsView::limitFlagsReceived(LimitFlags limitFlags)
 
 void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
 {
+	if(batteryFaults.cellOverVoltage()){
+		ui_.cellOverVoltageLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("cellOverVoltage - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.cellOverVoltageLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.cellUnderVoltage()){
+		ui_.cellUnderVoltageLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("cellUnderVoltage - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.cellUnderVoltageLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.cellOverTemperature()){
+		ui_.cellOverTemperatureLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("cellOverTemperature - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.cellOverTemperatureLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.measurementUntrusted()){
+		ui_.measurementUntrustedLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("measurementUntrusted - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.measurementUntrustedLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.cmuCommTimeout()){
+		ui_.cmuCommunicationsTimeoutLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("cmuCommTimeout - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.cmuCommunicationsTimeoutLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.vehicleCommTimeout()){
+		ui_.vehicleCommunicationsTimeoutLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("vehicleCommTimeout - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.vehicleCommunicationsTimeoutLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.bmuIsInSetupMode()){
+		ui_.bmuInSetupModeLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("bmuIsInSetupMode - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.bmuInSetupModeLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.cmuCanBusPowerStatus()){
+		ui_.cmuCanBusPowerStatusLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("cmuCanBusPowerStatus - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.cmuCanBusPowerStatusLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.packIsolationTestFailure()){
+		ui_.packIsolationTestFailureLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("packIsolationTestFailure - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.packIsolationTestFailureLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.softwareOverCurrentMeasured()){
+		ui_.softwareOverCurrentMeasurementNotValidLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("softwareOverCurrentMeasured - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.softwareOverCurrentMeasurementNotValidLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.canSupplyIsLow()){
+		ui_.can12vSupplyLowLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("canSupplyIsLow - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.can12vSupplyLowLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.contactorIsStuck()){
+		ui_.contactorStuckOrNotEngagedLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("contactorIsStuck - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.contactorStuckOrNotEngagedLabel().setStyleSheet("");
+	}
+
+	if(batteryFaults.cmuDetectedExtraCellPresent()){
+		ui_.cmuDetectedExtraCellLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
+		ui_.historyTextEdit().append("cmuDetectedExtraCellPresent - " + QDateTime::currentDateTime().toString());
+	}
+	else{
+		ui_.cmuDetectedExtraCellLabel().setStyleSheet("");
+	}
 
 }
