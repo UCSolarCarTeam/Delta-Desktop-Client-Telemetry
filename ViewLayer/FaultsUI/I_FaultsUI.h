@@ -28,7 +28,7 @@ public:
 	virtual QLabel& busCurrentLabel() = 0;
 	virtual QLabel& velocityLabel() = 0;
 	virtual QLabel& desaturationFaultLabel() = 0;
-	virtual QLabel& badMotorPositionHallSequence() = 0;
+	virtual QLabel& badMotorPositionHallSequenceLabel() = 0;
 	virtual QLabel& fifteenVoltRailUnderVoltageLockoutLabel() = 0;
 	virtual QLabel& configReadErrorLabel() = 0;
 	virtual QLabel& watchDogCausedLastResetLabel() = 0;

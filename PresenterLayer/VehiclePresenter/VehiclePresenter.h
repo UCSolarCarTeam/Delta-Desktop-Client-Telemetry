@@ -23,4 +23,5 @@ signals:
     void dspBoardTempReceived(double dspBoardTemp);
     void receivedErrorCountReceived(double ReceivedErrorCount);
     void transmittedErrorCountReceived(double transmittedErrorCount);
+    void busVoltageReceived(double busVoltage);
 };

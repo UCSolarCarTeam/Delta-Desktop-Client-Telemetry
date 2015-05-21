@@ -12,7 +12,7 @@ public:
 					I_FaultsData& faultsData);
 
 public slots:
-	void populateData(const FaultsMessage);
+	void populateData(const FaultsMessage&);
 
 private:
 	I_PacketDecoder& packetDecoder_;

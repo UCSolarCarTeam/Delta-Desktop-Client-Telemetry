@@ -24,7 +24,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
       presenterContainer.vehiclePresenter(),
       *powerUI_))
 , mpptView_(new MpptView(presenterContainer.displayPresenter(), *mpptUI_))
-, faultsView_(new FaultsView(presenterContainer.displayPresenter(), *faultsUI_))
+, faultsView_(new FaultsView(presenterContainer.faultsPresenter(), *faultsUI_))
 , overlordWidget_(new OverlordWidget(QList<I_SolarCarWindow*>() << powerUI_ << mpptUI_ << faultsUI_,
       escapeDialog_))
 , displayView_(new DisplayView(presenterContainer.displayPresenter(), *overlordWidget_))

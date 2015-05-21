@@ -98,9 +98,9 @@ QLabel& FaultsUI::desaturationFaultLabel()
 {
    return *ui->desaturationFaultLabel;
 }
-QLabel& FaultsUI::badMotorPositionHallSequence()
+QLabel& FaultsUI::badMotorPositionHallSequenceLabel()
 {
-   return *ui->badMotorPositionHallSequence;
+   return *ui->badMotorPositionHallSequenceLabel;
 }
 QLabel& FaultsUI::fifteenVoltRailUnderVoltageLockoutLabel()
 {

@@ -36,7 +36,7 @@ public:
 	QLabel& busCurrentLabel();
 	QLabel& velocityLabel();
 	QLabel& desaturationFaultLabel();
-	QLabel& badMotorPositionHallSequence();
+	QLabel& badMotorPositionHallSequenceLabel();
 	QLabel& fifteenVoltRailUnderVoltageLockoutLabel();
 	QLabel& configReadErrorLabel();
 	QLabel& watchDogCausedLastResetLabel();

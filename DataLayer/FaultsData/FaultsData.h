@@ -2,9 +2,9 @@
 
 #include "I_FaultsData.h"
 
-#include "../../CommunicationLayer/MessagingFramework/MotorFaults.h"	
-#include "../../CommunicationLayer/MessagingFramework/LimitFlags.h"	
-#include "../../CommunicationLayer/MessagingFramework/BatteryFaults.h"	
+class MotorFaults;	
+class LimitFlags;	
+class BatteryFaults;	
 
 class FaultsData : public I_FaultsData
 {

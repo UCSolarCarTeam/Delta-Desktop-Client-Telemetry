@@ -3,6 +3,7 @@
 #include "CommunicationLayer/CommunicationContainer.h"
 #include "DataLayer/DataContainer.h"
 #include "DisplayPresenter/DisplayPresenter.h"
+#include "FaultsPresenter/FaultsPresenter.h"
 #include "MpptPresenter/MpptPresenter.h"
 #include "PresenterContainer.h"
 #include "VehiclePresenter/VehiclePresenter.h"
@@ -16,6 +17,7 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
 , batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
 , mpptPresenter_(new MpptPresenter(dataContainer.arrayData()))
+, faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
 {
 }
 
@@ -41,4 +43,9 @@ VehiclePresenter& PresenterContainer::vehiclePresenter()
 MpptPresenter& PresenterContainer::mpptPresenter()
 {
    return *mpptPresenter_;
+}
+
+FaultsPresenter& PresenterContainer::faultsPresenter()
+{
+	return *faultsPresenter_;
 }

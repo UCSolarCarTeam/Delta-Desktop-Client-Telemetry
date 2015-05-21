@@ -9,6 +9,7 @@ class DisplayPresenter;
 class BatteryPresenter;
 class VehiclePresenter;
 class MpptPresenter;
+class FaultsPresenter;
 
 class PresenterContainer
 {
@@ -22,10 +23,12 @@ public:
    BatteryPresenter& batteryPresenter();
    VehiclePresenter& vehiclePresenter();
    MpptPresenter& mpptPresenter();
+   FaultsPresenter& faultsPresenter();
 
 private:
    QScopedPointer<DisplayPresenter> displayPresenter_;
    QScopedPointer<BatteryPresenter> batteryPresenter_;
    QScopedPointer<VehiclePresenter> vehiclePresenter_;
    QScopedPointer<MpptPresenter> mpptPresenter_;
+   QScopedPointer<FaultsPresenter> faultsPresenter_;
 };
