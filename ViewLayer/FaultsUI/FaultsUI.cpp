@@ -127,7 +127,7 @@ QLabel& FaultsUI::hardwareOverCurrentLabel()
    return *ui->hardwareOverCurrentLabel;
 }
 
-QTextBrowser& FaultsUI::historyTextBrowser()
+QTextEdit& FaultsUI::historyTextEdit()
 {
-   return *ui->historyTextBrowser;
+   return *ui->historyTextEdit;
 }

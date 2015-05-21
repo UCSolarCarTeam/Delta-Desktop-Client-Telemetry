@@ -44,7 +44,7 @@ public:
 	QLabel& softwareOverCurrentLabel();
 	QLabel& hardwareOverCurrentLabel();
 
-	QTextBrowser& historyTextBrowser();
+	QTextEdit& historyTextEdit();
 
 private:
 	Ui::FaultsUI *ui;

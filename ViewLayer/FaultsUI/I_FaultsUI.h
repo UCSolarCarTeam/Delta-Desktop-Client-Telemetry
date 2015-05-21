@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QLabel>
-#include <QTextBrowser>
+#include <QTextEdit>
 
 class I_FaultsUI
 {
@@ -36,5 +36,5 @@ public:
 	virtual QLabel& softwareOverCurrentLabel() = 0;
 	virtual QLabel& hardwareOverCurrentLabel() = 0;
 
-	virtual QTextBrowser& historyTextBrowser() = 0;
+	virtual QTextEdit& historyTextEdit() = 0;
 }; 

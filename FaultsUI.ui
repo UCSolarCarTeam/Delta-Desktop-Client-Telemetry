@@ -696,12 +696,15 @@ background: none;</string>
               <number>9</number>
              </property>
              <item row="0" column="0">
-              <widget class="QTextBrowser" name="historyTextBrowser">
+              <widget class="QTextEdit" name="historyTextEdit">
                <property name="styleSheet">
                 <string notr="true">border: 1px solid rgb(85, 85, 85);
 padding:9px;
 background-color: rgb(60,60,60);
 </string>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
