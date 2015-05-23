@@ -90,8 +90,6 @@ public:
 	virtual QComboBox& getGraphSelector2() = 0;
 	virtual QComboBox& getGraphSelector3() = 0;
 
-	virtual QGraphicsView& setGraphicalViewContent() = 0;
-	virtual QComboBox& getGraphicalViewSelector() = 0;
 	virtual QComboBox& getAlgorithmSelector() = 0;
 	virtual QPushButton& commsSendButton() = 0;
 }; 

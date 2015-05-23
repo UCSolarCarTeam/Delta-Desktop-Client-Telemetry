@@ -33,11 +33,9 @@ void EscapeDialogView::handleAboutButtonClicked()
 void EscapeDialogView::handleReturnButtonClicked()
 {
     ui_.hide();
-    qDebug() << "return button clicked"; // placeholder code
 }
 
 void EscapeDialogView::handleExitButtonClicked()
 {
     QApplication::exit();
-    qDebug() << "exit button clicked"; // placeholder code
 }

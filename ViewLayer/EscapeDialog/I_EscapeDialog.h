@@ -11,5 +11,6 @@ public:
     virtual QPushButton& settingsButton() = 0;
     virtual QPushButton& aboutButton() = 0;
     virtual QPushButton& returnButton() = 0;
+    virtual QPushButton& toggleFullscreenPushButton() = 0;
     virtual QPushButton& exitButton() = 0;
 };

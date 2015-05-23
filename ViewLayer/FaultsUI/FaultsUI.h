@@ -16,35 +16,41 @@ public:
 
     void hideHeaderBar();
 
-	QLabel& cellOverVoltageLabel();
-	QLabel& bmuInSetupModeLabel();
-	QLabel& cellOverTemperatureLabel();
-	QLabel& softwareOverCurrentMeasurementNotValidLabel();
-	QLabel& cellUnderVoltageLabel();
-	QLabel& can12vSupplyLowLabel();
-	QLabel& vehicleCommunicationsTimeoutLabel();
-	QLabel& packIsolationTestFailureLabel();
-	QLabel& contactorStuckOrNotEngagedLabel();
-	QLabel& cmuCanBusPowerStatusLabel();
-	QLabel& measurementUntrustedLabel();
-	QLabel& cmuDetectedExtraCellLabel();
-	QLabel& ipmTemperatureOrMotorTemperatureLabel();
-	QLabel& busVoltageUpperLimitLabel();
-	QLabel& motorCurrentLabel();
-	QLabel& busVoltageLowerLimitLabel();
-	QLabel& outputVoltagePwmLabel();
-	QLabel& busCurrentLabel();
-	QLabel& velocityLabel();
+    /* Motor Error Flags */
 	QLabel& desaturationFaultLabel();
-	QLabel& badMotorPositionHallSequence();
+	QLabel& badMotorPositionHallSequenceLabel();
 	QLabel& fifteenVoltRailUnderVoltageLockoutLabel();
-	QLabel& configReadErrorLabel();
-	QLabel& watchDogCausedLastResetLabel();
 	QLabel& dcBusOverVoltageLabel();
+	QLabel& configReadErrorLabel();
 	QLabel& softwareOverCurrentLabel();
+	QLabel& watchDogCausedLastResetLabel();
 	QLabel& hardwareOverCurrentLabel();
 
-	QTextBrowser& historyTextBrowser();
+	/* Motor Limit Flags */
+	QLabel& ipmTemperatureOrMotorTemperatureLabel();
+	QLabel& velocityLabel();
+	QLabel& busVoltageUpperLimitLabel();
+	QLabel& busVoltageLowerLimitLabel();
+	QLabel& motorCurrentLabel();
+	QLabel& outputVoltagePwmLabel();
+	QLabel& busCurrentLabel();
+
+	/* Battery Error Flags */
+	QLabel& cellOverVoltageLabel();
+	QLabel& cellUnderVoltageLabel();
+	QLabel& cellOverTemperatureLabel();
+	QLabel& measurementUntrustedLabel();
+	QLabel& vehicleCommunicationsTimeoutLabel();
+	QLabel& bmuInSetupModeLabel();
+	QLabel& cmuCanBusPowerStatusLabel();
+	QLabel& packIsolationTestFailureLabel();
+	QLabel& softwareOverCurrentMeasurementNotValidLabel();
+	QLabel& can12vSupplyLowLabel();
+	QLabel& contactorStuckOrNotEngagedLabel();
+	QLabel& cmuDetectedExtraCellLabel();
+	QLabel& cmuCommunicationsTimeoutLabel();
+
+	QTextEdit& historyTextEdit();
 
 private:
 	Ui::FaultsUI *ui;

@@ -24,13 +24,29 @@ SOURCES += \
     BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/LoggerService/LoggerService.cpp \
     CommunicationLayer/CommunicationContainer.cpp \
+    CommunicationLayer/ConnectionService/RadioConnectionService.cpp \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
-    CommunicationLayer/DataParser/DataParser.cpp \
-    CommunicationLayer/DataPopulator/DataPopulator.cpp \
+    CommunicationLayer/DataPopulators/BatteryPopulator.cpp \
+    CommunicationLayer/DataPopulators/CmuPopulator.cpp \
+    CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
+    CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
+    CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \
+    CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \
+    CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \
+    CommunicationLayer/MessagingFramework/FaultsMessage.cpp \
+    CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
+    CommunicationLayer/MessagingFramework/LimitFlags.cpp \
+    CommunicationLayer/MessagingFramework/MessageDecodingHelpers.cpp \
+    CommunicationLayer/MessagingFramework/MessageDefines.cpp \
+    CommunicationLayer/MessagingFramework/MotorFaults.cpp \
+    CommunicationLayer/PacketDecoder/PacketDecoder.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
     DataLayer/ArrayData/ArrayData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/DataContainer.cpp \
+    DataLayer/FaultsData/FaultsData.cpp \
     DataLayer/PowerData/PowerData.cpp \
     DataLayer/VehicleData/VehicleData.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
@@ -61,10 +77,25 @@ HEADERS  += \
     BusinessLayer/LoggerService/LoggerService.h \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
+    CommunicationLayer/ConnectionService/RadioConnectionService.h \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
-    CommunicationLayer/DataParser/DataParser.h \
-    CommunicationLayer/DataParser/I_DataParser.h \
-    CommunicationLayer/DataPopulator/DataPopulator.h \
+    CommunicationLayer/DataPopulators/BatteryPopulator.h \
+    CommunicationLayer/DataPopulators/CmuPopulator.h \
+    CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
+    CommunicationLayer/DataPopulators/FaultsPopulator.h \
+    CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.h \
+    CommunicationLayer/MessagingFramework/BatteryFaults.h \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.h \
+    CommunicationLayer/MessagingFramework/DriverControlDetails.h \
+    CommunicationLayer/MessagingFramework/FaultsMessage.h \
+    CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h \
+    CommunicationLayer/MessagingFramework/LimitFlags.h \
+    CommunicationLayer/MessagingFramework/MessageDecodingHelpers.h \
+    CommunicationLayer/MessagingFramework/MessageDefines.h \
+    CommunicationLayer/MessagingFramework/MotorFaults.h \
+    CommunicationLayer/PacketDecoder/I_PacketDecoder.h \
+    CommunicationLayer/PacketDecoder/PacketDecoder.h \
     CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     DataLayer/ArrayData/ArrayData.h \
@@ -72,6 +103,8 @@ HEADERS  += \
     DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/DataContainer.h \
+    DataLayer/FaultsData/I_FaultsData.h \
+    DataLayer/FaultsData/FaultsData.h \
     DataLayer/PowerData/I_PowerData.h \
     DataLayer/PowerData/PowerData.h \
     DataLayer/VehicleData/I_VehicleData.h \

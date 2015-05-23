@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QLabel>
-#include <QTextBrowser>
+#include <QTextEdit>
 
 class I_FaultsUI
 {
@@ -28,7 +28,7 @@ public:
 	virtual QLabel& busCurrentLabel() = 0;
 	virtual QLabel& velocityLabel() = 0;
 	virtual QLabel& desaturationFaultLabel() = 0;
-	virtual QLabel& badMotorPositionHallSequence() = 0;
+	virtual QLabel& badMotorPositionHallSequenceLabel() = 0;
 	virtual QLabel& fifteenVoltRailUnderVoltageLockoutLabel() = 0;
 	virtual QLabel& configReadErrorLabel() = 0;
 	virtual QLabel& watchDogCausedLastResetLabel() = 0;
@@ -36,5 +36,5 @@ public:
 	virtual QLabel& softwareOverCurrentLabel() = 0;
 	virtual QLabel& hardwareOverCurrentLabel() = 0;
 
-	virtual QTextBrowser& historyTextBrowser() = 0;
+	virtual QTextEdit& historyTextEdit() = 0;
 }; 

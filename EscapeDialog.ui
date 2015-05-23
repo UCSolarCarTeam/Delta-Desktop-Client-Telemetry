@@ -105,7 +105,7 @@ font-size: 17px;</string>
      <property name="styleSheet">
       <string notr="true">background: rgb(51,51,51);</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_4">
+     <layout class="QGridLayout" name="backgroundWidgetLayout_2">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -132,7 +132,7 @@ font-size: 17px;</string>
        <height>500</height>
       </size>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="escapeWidgetLayout">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -156,7 +156,7 @@ background: url(:/Resources/SubTitleBar.png);
 border-bottom: 1px solid rgb(70,70,70);
 </string>
         </property>
-        <layout class="QGridLayout" name="titleBarLayout_2">
+        <layout class="QGridLayout" name="escapeTitleBarWidgetLayout">
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -201,11 +201,11 @@ border-bottom: 1px solid rgb(70,70,70);
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="backgroundWidget" native="true">
+       <widget class="QWidget" name="escapeBackgroundWidget" native="true">
         <property name="styleSheet">
          <string notr="true">background: rgb(51,51,51);</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
+        <layout class="QGridLayout" name="escapeBackgroundWidgetLayout">
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -249,7 +249,7 @@ QPushButton:pressed {
                                       stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
 }</string>
            </property>
-           <layout class="QGridLayout" name="gridLayout_5">
+           <layout class="QGridLayout" name="optionLayoutLayout">
             <property name="leftMargin">
              <number>0</number>
             </property>
@@ -282,7 +282,7 @@ margin-right: 20px;</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
+            <item row="4" column="0">
              <widget class="QPushButton" name="exitPushButton">
               <property name="minimumSize">
                <size>
@@ -316,6 +316,19 @@ margin-right: 20px;</string>
               </property>
              </widget>
             </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="toggleFullscreenPushButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Toggle Fullscreen</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
@@ -333,9 +346,9 @@ border:none;
 margin: 20px;
 }
 QPushButton{
-background: url(:/Resources/MenuButton.png);
 border: 1px solid rgb(30,30,30);
 font-size: 15px;
+background: url(:/Resources/MenuButton.png)
 }
 QPushButton:hover:!pressed {
 	background: none;
@@ -349,7 +362,7 @@ QPushButton:pressed {
                                       stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
 }</string>
            </property>
-           <layout class="QGridLayout" name="gridLayout_6">
+           <layout class="QGridLayout" name="returnLayoutLayout">
             <property name="leftMargin">
              <number>0</number>
             </property>

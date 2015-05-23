@@ -21,6 +21,9 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 , escapeDialog_(escapeDialog)
 {
     setupEscapeDialog();
+
+    connect(&escapeDialog_->toggleFullscreenPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleToggleFullscreenButtonClicked()));
     
     QTabWidget* tabBar = createTabWidget();
 
@@ -31,9 +34,9 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
     setLayout(overlordLayout);
     setWindowIcon(QIcon(":/Resources/Solar Car Team Icon.ico"));
     setStyleSheet("background-color: rgb(30,30,30);");
-    
+
     overlordLayout->addWidget(tabBar);
-    
+
     addFonts();
 
     showFullScreen();
@@ -52,18 +55,18 @@ void OverlordWidget::keyPressEvent(QKeyEvent * event)
 
 QString OverlordWidget::changeState()
 {
-	if(state_ .compare("Single") == 0){
-		state_ = "Multi";
-	}
-	else if(state_.compare("Multi") == 0){
-		state_ = "Single";
-	}
-	return state_;
+   if(state_ .compare("Single") == 0){
+      state_ = "Multi";
+   }
+   else if(state_.compare("Multi") == 0){
+      state_ = "Single";
+   }
+   return state_;
 }
 
 QString OverlordWidget::getState()
 {
-	return state_;
+   return state_;
 }
 
 void OverlordWidget::addFonts(){
@@ -82,9 +85,21 @@ void OverlordWidget::setupEscapeDialog()
     escapeDialog_->resize(width, height);
     escapeDialog_->hide();
     escapeDialog_->setParent(this, Qt::Popup | Qt::CustomizeWindowHint);
-    escapeDialog_->move(QApplication::desktop()->screen()->rect().center() 
+    escapeDialog_->move(QApplication::desktop()->screen()->rect().center()
                         - escapeDialog_->rect().center());
 }
+
+void OverlordWidget::handleToggleFullscreenButtonClicked()
+{
+    bool isMax = isMaximized();
+    if(isMax){
+        showFullScreen();
+    }
+    else{
+        showMaximized();
+    }
+}
+
 
 QTabWidget* OverlordWidget::createTabWidget()
 {

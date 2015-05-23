@@ -16,7 +16,7 @@ EscapeDialog::~EscapeDialog()
 }
 
 void EscapeDialog::keyPressEvent(QKeyEvent * event){
-	hide();
+   hide();
 }
 
 void EscapeDialog::hideHeaderBar()
@@ -26,7 +26,7 @@ void EscapeDialog::hideHeaderBar()
 
 void EscapeDialog::paintEvent(QPaintEvent* e)
 {
-	QColor backgroundColor = palette().light().color();
+   QColor backgroundColor = palette().light().color();
     backgroundColor.setAlpha(50);
     QPainter customPainter(this);
     customPainter.fillRect(rect(), backgroundColor);
@@ -43,6 +43,10 @@ QPushButton& EscapeDialog::aboutButton()
 QPushButton& EscapeDialog::returnButton()
 {
    return *ui->returnPushButton;
+}
+QPushButton& EscapeDialog::toggleFullscreenPushButton()
+{
+   return *ui->toggleFullscreenPushButton;
 }
 QPushButton& EscapeDialog::exitButton()
 {

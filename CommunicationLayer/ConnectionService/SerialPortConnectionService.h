@@ -10,7 +10,7 @@ class SerialPortConnectionService : public I_ConnectionService
 {
    Q_OBJECT
 public:
-   SerialPortConnectionService(QString portName, int baudrate, QSerialPort& serialPort_);
+   SerialPortConnectionService(QSerialPort& serialPort_);
    ~SerialPortConnectionService();
 
 public slots:

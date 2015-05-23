@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QSharedPointer>
+#include <QScopedPointer>
 
 class PresenterContainer;
 class EscapeDialog;
@@ -17,31 +17,18 @@ class DisplayView;
 class ViewContainer
 {
 public:
-    QSharedPointer<EscapeDialogView> escapeDialogView();
-	QSharedPointer<PowerView> powerView();
-	QSharedPointer<MpptView> mpptView();
-	QSharedPointer<FaultsView> faultsView();
-    EscapeDialog* escapeDialog();
-	PowerUI* powerUI();
-	MpptUI* mpptUI();
-	FaultsUI* faultsUI();
-	QSharedPointer<OverlordWidget> overlordWidget();
-	QSharedPointer<DisplayView> displayView();
-
-    explicit ViewContainer(QSharedPointer<PresenterContainer> presenterContainer);
-    ~ViewContainer();
+   explicit ViewContainer(PresenterContainer& presenterContainer);
+   ~ViewContainer();
 
 private:
-	QSharedPointer<PresenterContainer> presenterContainer_;
-    EscapeDialog* escapeDialog_;
-	PowerUI* powerUI_; 
-	MpptUI* mpptUI_;
-	FaultsUI* faultsUI_;
-    QSharedPointer<EscapeDialogView> escapeDialogView_;
-	QSharedPointer<PowerView> powerView_;
-	QSharedPointer<MpptView> mpptView_;
-	QSharedPointer<FaultsView> faultsView_;
-	QSharedPointer<OverlordWidget> overlordWidget_;
-	QSharedPointer<DisplayView> displayView_; 
+   EscapeDialog* escapeDialog_;
+   PowerUI* powerUI_;
+   MpptUI* mpptUI_;
+   FaultsUI* faultsUI_;
+   QScopedPointer<EscapeDialogView> escapeDialogView_;
+   QScopedPointer<PowerView> powerView_;
+   QScopedPointer<MpptView> mpptView_;
+   QScopedPointer<FaultsView> faultsView_;
+   QScopedPointer<OverlordWidget> overlordWidget_;
+   QScopedPointer<DisplayView> displayView_;
 };
-

@@ -8,6 +8,13 @@
 class I_SolarCarWindow;
 class EscapeDialog;
 
+/*namespace OverlordState{
+enum StateFlags{
+    FULLSCREEN = 0x01,
+    MULTI = 0x02
+};
+}*/
+
 class OverlordWidget : public QWidget, public I_OverlordWidget
 {
 	Q_OBJECT
@@ -32,4 +39,6 @@ private:
      QString state_;
      // QWidget* settingsWindow_;
      EscapeDialog* escapeDialog_;
+private slots:
+     void handleToggleFullscreenButtonClicked();
 };

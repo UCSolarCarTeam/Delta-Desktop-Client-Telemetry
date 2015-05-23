@@ -1,30 +1,34 @@
 #pragma once
 
-#include <QSharedPointer>
-#include <QSerialPort>
+#include <QScopedPointer>
+class QSerialPort;
 
+class BatteryPopulator;
+class CmuPopulator;
 class DataContainer;
+class DriverDetailsPopulator;
+class FaultsPopulator;
 class I_ConnectionService;
-class I_DataParser;
-class DataPopulator;
+class KeyDriverControlPopulator;
+class PacketDecoder;
+class PacketSynchronizer;
 
 class CommunicationContainer
 {
 public:
-    QSharedPointer<QSerialPort> port();
-    QSharedPointer<I_ConnectionService> connectionService();
-    QSharedPointer<I_DataParser> dataParser();
-    QSharedPointer<DataPopulator> dataPopulator();
+   explicit CommunicationContainer(DataContainer& dataContainer);
+   ~CommunicationContainer();
 
- 	explicit CommunicationContainer(QSharedPointer<DataContainer> dataContainer);
-    ~CommunicationContainer();
+   I_ConnectionService& connectionService();
 
 private:
-	QSharedPointer<DataContainer> dataContainer_;    
-    QSharedPointer<QSerialPort> port_;
-    QSharedPointer<I_ConnectionService> connectionService_;
-	QSharedPointer<I_DataParser> dataParser_;
-    QSharedPointer<DataPopulator> dataPopulator_;
-
+   QScopedPointer<QSerialPort> port_;
+   QScopedPointer<I_ConnectionService> connectionService_;
+   QScopedPointer<PacketSynchronizer> packetSynchronizer_;
+   QScopedPointer<PacketDecoder> packetDecoder_;
+   QScopedPointer<KeyDriverControlPopulator> keyDriverControlPopulator_;
+   QScopedPointer<DriverDetailsPopulator> driverDetailsPopulator_;
+   QScopedPointer<FaultsPopulator> faultsPopulator_;
+   QScopedPointer<BatteryPopulator> batteryPopulator_;
+   QScopedPointer<CmuPopulator> cmuPopulator_;
 };
-

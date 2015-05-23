@@ -15,12 +15,13 @@ private:
 	const I_VehicleData& vehicleData_;
 
 signals:
-    void driverSetSpeedRPMReceived(double driverSetSpeedRPM);
+    void driverSetSpeedMetersPerSecondReceived(double driverSetSpeedMetersPerSecond);
     void driverSetCurrentReceived(double driverSetCurrent);
-    void vehicleVelocityKphReceived(double vehicleVelocityKph);
+    void vehicleVelocityMetersPerSecondReceived(double vehicleVelocityMetersPerSecond);
     void motorVelocityRpmReceived(double motorVelocityRpm);
     void ipmHeatSinkTempReceived(double ipmHeatSinkTemp);
     void dspBoardTempReceived(double dspBoardTemp);
     void receivedErrorCountReceived(double ReceivedErrorCount);
     void transmittedErrorCountReceived(double transmittedErrorCount);
+    void busVoltageReceived(double busVoltage);
 };
