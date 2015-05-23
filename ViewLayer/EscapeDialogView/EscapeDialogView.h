@@ -16,8 +16,9 @@ private:
    EscapeDialog& ui_;
 
 private slots:
-   void handleSettingsButtonClicked();
-   void handleAboutButtonClicked();
-   void handleReturnButtonClicked();
-   void handleExitButtonClicked();
+   void handleFileDialogPushButton();
+   void handleSettingsSelectionPushButton();
+   void handleAboutSelectionPushButton();
+   void handleExitPushButton();
+   void handleClosePushButton();
 };

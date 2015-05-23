@@ -176,23 +176,35 @@ border-bottom: 1px solid rgb(70,70,70);
          </property>
          <item row="0" column="1">
           <widget class="QToolButton" name="exitButton">
+           <property name="minimumSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QToolButton{
-background: rgb(70,70,70);
-border:1px solid rgb(90,90,90);
+background-image: url(:/Resources/CloseButton.png);
+border:1px solid rgb(70,70,70);
 border-radius: 5px;
 margin: 3px;
 }
 QToolButton:hover{
-background: rgb(80,80,80);
-border:1px solid rgb(90,90,90);
+background-image: url(:/Resources/CloseButtonHover.png);
+border:1px solid rgb(80,80,80);
 border-radius: 5px;
 margin: 3px;
 }
 QToolButton:pressed{
-background: rgb(60,60,60);
-border:1px solid rgb(90,90,90);
-border-radius: 5px;
+background-image: url(:/Resources/CloseButtonPressed.png);
+border:1px solid rgb(50,50,50);
+border-radius: 3px;
 margin: 3px;
 }
 </string>
@@ -237,9 +249,12 @@ background: none;</string>
       <item>
        <widget class="QWidget" name="backgroundWidget" native="true">
         <property name="styleSheet">
-         <string notr="true">background: rgb(51,51,51);</string>
+         <string notr="true">background: rgb(40,40,40);</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -254,26 +269,88 @@ background: none;</string>
          </property>
          <item>
           <layout class="QHBoxLayout" name="optionslLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <item>
-            <widget class="QListWidget" name="optionsPanelWidget">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
+            <widget class="QWidget" name="optionSelectionWidget" native="true">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>200</width>
                <height>0</height>
               </size>
              </property>
-             <property name="maximumSize">
-              <size>
-               <width>197</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="styleSheet">
-              <string notr="true">margin: 3px;</string>
+              <string notr="true">QWidget{
+background: rgb(50,50,50);
+border:1px solid rgb(30,30,30);
+border-radius: 3px;
+}
+QPushButton{
+border-bottom:none;
+border-top:none;
+}
+</string>
              </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="aboutSelectionPushButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-top:1px solid rgb(30,30,30);</string>
+                </property>
+                <property name="text">
+                 <string>Settings</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="settingsSelectionPushButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>About</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
@@ -290,10 +367,22 @@ background: none;</string>
                <pointsize>-1</pointsize>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border:1px solid rgb(30,30,30);
+border-left:none;
+background-color: rgb(70,70,70);
+border-right:none;
+border-radius: 3px;
+</string>
+             </property>
              <property name="currentIndex">
               <number>1</number>
              </property>
              <widget class="QWidget" name="aboutPageWidget">
+              <property name="styleSheet">
+               <string notr="true">border:none;
+margin: 10px;</string>
+              </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <property name="spacing">
                 <number>0</number>
@@ -312,6 +401,9 @@ background: none;</string>
                </property>
                <item>
                 <widget class="QLabel" name="placeholderTitleBarLabel">
+                 <property name="styleSheet">
+                  <string notr="true">border:none;</string>
+                 </property>
                  <property name="text">
                   <string>Telemetry GUI</string>
                  </property>
@@ -319,6 +411,9 @@ background: none;</string>
                </item>
                <item>
                 <widget class="QTextBrowser" name="placeholderTextBrowser">
+                 <property name="styleSheet">
+                  <string notr="true">border:none;</string>
+                 </property>
                  <property name="html">
                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -332,16 +427,28 @@ p, li { white-space: pre-wrap; }
              </widget>
              <widget class="QWidget" name="settingsPageWidget">
               <property name="styleSheet">
-               <string notr="true">QLabel{
+               <string notr="true">QWidget{
+border:none;
+}
+QLabel{
 padding: 7px;
+border:none;
 }
 QLineEdit{
 margin-right: 250px;
+border:1px solid rgb(255,255,255);
+border-radius:3px;
+background: rgb(100,100,100);
 }
 QPushButton{
 margin-right: 20px;
 padding: 3px;
-}</string>
+border:none;
+}
+QCheckBox{
+border:none;
+}
+</string>
               </property>
               <layout class="QGridLayout" name="gridLayout">
                <property name="leftMargin">
@@ -362,8 +469,7 @@ padding: 3px;
                <item row="0" column="1">
                 <widget class="QLineEdit" name="baudrateText">
                  <property name="styleSheet">
-                  <string notr="true">
-background: rgb(70,70,70);</string>
+                  <string notr="true"/>
                  </property>
                 </widget>
                </item>
@@ -382,13 +488,7 @@ background: rgb(70,70,70);</string>
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QLineEdit" name="portnameText">
-                 <property name="styleSheet">
-                  <string notr="true">
-background: rgb(70,70,70);
-</string>
-                 </property>
-                </widget>
+                <widget class="QLineEdit" name="portnameText"/>
                </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="fullscreenLabel">
@@ -397,10 +497,10 @@ background: rgb(70,70,70);
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QCheckBox" name="multiWindowCheckBox">
+               <item row="4" column="0">
+                <widget class="QLabel" name="logPathLabel">
                  <property name="text">
-                  <string/>
+                  <string>Log Path</string>
                  </property>
                 </widget>
                </item>
@@ -411,10 +511,10 @@ background: rgb(70,70,70);
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="logPathLabel">
+               <item row="3" column="1">
+                <widget class="QCheckBox" name="multiWindowCheckBox">
                  <property name="text">
-                  <string>Log Path</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -435,8 +535,7 @@ background: rgb(70,70,70);
                    <property name="styleSheet">
                     <string notr="true">margin-right: 5px;
 padding-right: none;
-
-background: rgb(70,70,70);</string>
+</string>
                    </property>
                   </widget>
                  </item>
@@ -444,15 +543,16 @@ background: rgb(70,70,70);</string>
                   <widget class="QPushButton" name="fileDIalogPushButton">
                    <property name="maximumSize">
                     <size>
-                     <width>16777215</width>
+                     <width>16777210</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgb(60,60,60);
-border: 1px solid rgb(20,20,20);
+                    <string notr="true">color: rgb(255,255,255);
+border: 1px solid rgb(60,60,60);
 border-radius: 7px;
-background-image: url(:/Resources/BrowseButton.png);</string>
+background-image: url(:/Resources/BrowseButton.png);
+padding: 4px;</string>
                    </property>
                    <property name="text">
                     <string>Browse</string>
@@ -460,6 +560,19 @@ background-image: url(:/Resources/BrowseButton.png);</string>
                   </widget>
                  </item>
                 </layout>
+               </item>
+               <item row="5" column="0">
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -469,6 +582,12 @@ background-image: url(:/Resources/BrowseButton.png);</string>
          </item>
          <item>
           <widget class="QPushButton" name="exitPushButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -485,12 +604,13 @@ background-image: url(:/Resources/BrowseButton.png);</string>
             <enum>Qt::LeftToRight</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">margin: 2px;
+            <string notr="true">padding: 3px;
+margin: 3px;
 margin-left:670px;
-color: rgb(20,20,20);
-background-image: url(:/Resources/BrowseButton.png);
-border: 2px solid rgb(20,20,20);
-border-radius: 7px</string>
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+border-radius: 7px;
+background-image: url(:/Resources/BrowseButton.png);</string>
            </property>
            <property name="text">
             <string>Exit</string>
