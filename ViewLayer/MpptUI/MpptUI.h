@@ -95,8 +95,6 @@ public:
 	QComboBox& getGraphSelector2();
 	QComboBox& getGraphSelector3();
 
-	QGraphicsView& setGraphicalViewContent();
-	QComboBox& getGraphicalViewSelector();
 	QComboBox& getAlgorithmSelector();
 	QPushButton& commsSendButton();
 

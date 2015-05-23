@@ -294,14 +294,6 @@ QComboBox& MpptUI::getGraphSelector3()
    return *ui->graphSelector3;
 }
 
-QGraphicsView& MpptUI::setGraphicalViewContent()
-{
-   return *ui->graphicalViewContent;
-}
-QComboBox& MpptUI::getGraphicalViewSelector()
-{
-   return *ui->graphicalViewSelector;
-}
 QComboBox& MpptUI::getAlgorithmSelector()
 {
    return *ui->algorithmSelector;

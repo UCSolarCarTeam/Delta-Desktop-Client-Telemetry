@@ -167,11 +167,17 @@ border: none;</string>
         <property name="spacing">
          <number>20</number>
         </property>
-        <item row="0" column="0">
-         <widget class="QWidget" name="graphicsWindow" native="true">
+        <item row="0" column="1" rowspan="2">
+         <widget class="QWidget" name="graphsWindow" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>400</width>
+            <width>300</width>
             <height>16777215</height>
            </size>
           </property>
@@ -184,9 +190,13 @@ border: none;</string>
 	padding: 9px;
 border-image: none;
 }
-</string>
+
+QLabel {
+	alignment: center;
+	padding: 1px;
+}</string>
           </property>
-          <layout class="QVBoxLayout" name="graphicsWindowLayout">
+          <layout class="QVBoxLayout" name="graphsWindowLayout">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -203,7 +213,7 @@ border-image: none;
             <number>0</number>
            </property>
            <item>
-            <widget class="QWidget" name="graphicsTitleBar" native="true">
+            <widget class="QWidget" name="graphsTitleBar" native="true">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -216,19 +226,16 @@ border-image: none;
                <height>35</height>
               </size>
              </property>
-             <property name="contextMenuPolicy">
-              <enum>Qt::PreventContextMenu</enum>
-             </property>
              <property name="styleSheet">
               <string notr="true">QWidget {
 	border-color: rgb(85, 85, 85);
 	padding: 2px;
 	background: url(:/Resources/SubTitleBar.png);
 	border-color: rgb(70,70,70);
-	border-bottom-color:rgb(40,40,40);
+	border-bottom-color: rgb(40,40,40);
 }</string>
              </property>
-             <layout class="QHBoxLayout" name="graphicsTitleBarLayout">
+             <layout class="QHBoxLayout" name="graphsTitleBarLayout">
               <property name="spacing">
                <number>9</number>
               </property>
@@ -245,25 +252,13 @@ border-image: none;
                <number>4</number>
               </property>
               <item>
-               <widget class="QLabel" name="graphicsTitleLabel">
-                <property name="font">
-                 <font>
-                  <family>AvenirLTStd</family>
-                  <pointsize>-1</pointsize>
-                 </font>
-                </property>
-                <property name="contextMenuPolicy">
-                 <enum>Qt::PreventContextMenu</enum>
-                </property>
+               <widget class="QLabel" name="graphsTitleLabel">
                 <property name="styleSheet">
-                 <string notr="true">border:none;
+                 <string notr="true">border-style: none;
 background: none;</string>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphical View&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                </widget>
               </item>
@@ -271,7 +266,232 @@ background: none;</string>
             </widget>
            </item>
            <item>
-            <layout class="QGridLayout" name="graphicsContentLayout" columnstretch="0,0">
+            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>9</number>
+             </property>
+             <item row="1" column="0">
+              <widget class="QComboBox" name="graphSelector1">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Graph One</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Two</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Three</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWebView" name="graph1">
+               <property name="url">
+                <url>
+                 <string>about:blank</string>
+                </url>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWebView" name="graph3">
+               <property name="url">
+                <url>
+                 <string>about:blank</string>
+                </url>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QWebView" name="graph2">
+               <property name="url">
+                <url>
+                 <string>about:blank</string>
+                </url>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QComboBox" name="graphSelector2">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+               <property name="currentText">
+                <string>Graph One</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Graph One</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Two</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Three</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QComboBox" name="graphSelector3">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+               <property name="currentText">
+                <string>Graph One</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Graph One</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Two</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Three</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QWidget" name="commsWindow" native="true">
+          <property name="maximumSize">
+           <size>
+            <width>999999</width>
+            <height>500</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget {
+	background: rgb(51, 51, 51);
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(51, 51, 51);
+	padding: 9px;
+border-image: none;
+}
+
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="commsWindowLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="commsTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	border-color: rgb(85, 85, 85);
+	padding: 2px;
+	background: url(:/Resources/SubTitleBar.png);
+border-color: rgb(70,70,70);
+border-bottom-color:rgb(40,40,40);
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="commsTItleBarLayout">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>4</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="commsTitleLabel">
+                <property name="font">
+                 <font>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: none;
+border:none;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Communications&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="commsContentLayout">
              <property name="leftMargin">
               <number>9</number>
              </property>
@@ -287,57 +507,66 @@ background: none;</string>
              <property name="spacing">
               <number>9</number>
              </property>
-             <item row="0" column="1">
-              <widget class="QGraphicsView" name="graphicalViewContent"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QComboBox" name="graphicalViewSelector">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
+             <item row="0" column="0">
+              <widget class="QComboBox" name="algorithmSelector">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
 padding: 3px;</string>
                </property>
                <property name="currentText">
-                <string>Efficiency</string>
+                <string notr="true">Algorithm Name</string>
                </property>
                <item>
                 <property name="text">
-                 <string>Efficiency</string>
+                 <string>Algorithm Name</string>
                 </property>
                </item>
-               <item>
-                <property name="text">
-                 <string>Power In</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Power Out</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Voltage In</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Voltage Out</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Current In</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Current Out</string>
-                </property>
-               </item>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="commsSendButton">
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>AvenirLTStd</family>
+                 <pointsize>-1</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(102, 102, 102);
+	border-radius: 1px;
+	padding: 3px;
+}
+
+QPushButton:hover:!pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
+}</string>
+               </property>
+               <property name="text">
+                <string>Send</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
+               <property name="default">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
             </layout>
@@ -345,7 +574,7 @@ padding: 3px;</string>
           </layout>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="2">
+        <item row="0" column="2" rowspan="3">
          <widget class="QWidget" name="mpptioValuesWindow" native="true">
           <property name="styleSheet">
            <string notr="true">QWidget {
@@ -1327,7 +1556,7 @@ padding-right: 5px;</string>
           </layout>
          </widget>
         </item>
-        <item row="0" column="3" rowspan="2">
+        <item row="0" column="3" rowspan="3">
          <widget class="QWidget" name="powerDrawWindow" native="true">
           <property name="styleSheet">
            <string notr="true">QWidget {
@@ -2038,413 +2267,6 @@ border-left: none;</string>
                  </layout>
                 </item>
                </layout>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QWidget" name="commsWindow" native="true">
-          <property name="maximumSize">
-           <size>
-            <width>999999</width>
-            <height>500</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(51, 51, 51);
-	padding: 9px;
-border-image: none;
-}
-
-</string>
-          </property>
-          <layout class="QVBoxLayout" name="commsWindowLayout">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QWidget" name="commsTitleBar" native="true">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QWidget {
-	border-color: rgb(85, 85, 85);
-	padding: 2px;
-	background: url(:/Resources/SubTitleBar.png);
-border-color: rgb(70,70,70);
-border-bottom-color:rgb(40,40,40);
-}</string>
-             </property>
-             <layout class="QHBoxLayout" name="commsTItleBarLayout">
-              <property name="spacing">
-               <number>9</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>4</number>
-              </property>
-              <property name="rightMargin">
-               <number>4</number>
-              </property>
-              <property name="bottomMargin">
-               <number>4</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="commsTitleLabel">
-                <property name="font">
-                 <font>
-                  <family>AvenirLTStd</family>
-                  <pointsize>-1</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background: none;
-border:none;</string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Communications&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="commsContentLayout">
-             <property name="leftMargin">
-              <number>9</number>
-             </property>
-             <property name="topMargin">
-              <number>9</number>
-             </property>
-             <property name="rightMargin">
-              <number>9</number>
-             </property>
-             <property name="bottomMargin">
-              <number>9</number>
-             </property>
-             <property name="spacing">
-              <number>9</number>
-             </property>
-             <item row="0" column="0">
-              <widget class="QComboBox" name="algorithmSelector">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string notr="true">Algorithm Name</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Algorithm Name</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="commsSendButton">
-               <property name="maximumSize">
-                <size>
-                 <width>200</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>AvenirLTStd</family>
-                 <pointsize>-1</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color: rgb(102, 102, 102);
-	border-radius: 1px;
-	padding: 3px;
-}
-
-QPushButton:hover:!pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
-}
-
-QPushButton:pressed {
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
-}</string>
-               </property>
-               <property name="text">
-                <string>Send</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-               <property name="autoDefault">
-                <bool>true</bool>
-               </property>
-               <property name="default">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1" rowspan="2">
-         <widget class="QWidget" name="graphsWindow" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(40,40,40);
-	padding: 9px;
-border-image: none;
-}
-
-QLabel {
-	alignment: center;
-	padding: 1px;
-}</string>
-          </property>
-          <layout class="QVBoxLayout" name="graphsWindowLayout">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QWidget" name="graphsTitleBar" native="true">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QWidget {
-	border-color: rgb(85, 85, 85);
-	padding: 2px;
-	background: url(:/Resources/SubTitleBar.png);
-	border-color: rgb(70,70,70);
-	border-bottom-color: rgb(40,40,40);
-}</string>
-             </property>
-             <layout class="QHBoxLayout" name="graphsTitleBarLayout">
-              <property name="spacing">
-               <number>9</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>4</number>
-              </property>
-              <property name="rightMargin">
-               <number>9</number>
-              </property>
-              <property name="bottomMargin">
-               <number>4</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="graphsTitleLabel">
-                <property name="styleSheet">
-                 <string notr="true">border-style: none;
-background: none;</string>
-                </property>
-                <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0">
-             <property name="leftMargin">
-              <number>9</number>
-             </property>
-             <property name="topMargin">
-              <number>9</number>
-             </property>
-             <property name="rightMargin">
-              <number>9</number>
-             </property>
-             <property name="bottomMargin">
-              <number>9</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>9</number>
-             </property>
-             <item row="1" column="0">
-              <widget class="QComboBox" name="graphSelector1">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QWebView" name="graph1">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QWebView" name="graph3">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QWebView" name="graph2">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QComboBox" name="graphSelector2">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string>Graph One</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="5" column="0">
-              <widget class="QComboBox" name="graphSelector3">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string>Graph One</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
               </widget>
              </item>
             </layout>
