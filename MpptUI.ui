@@ -169,6 +169,12 @@ border: none;</string>
         </property>
         <item row="0" column="1" rowspan="2">
          <widget class="QWidget" name="graphsWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -177,7 +183,7 @@ border: none;</string>
           </property>
           <property name="maximumSize">
            <size>
-            <width>300</width>
+            <width>600</width>
             <height>16777215</height>
            </size>
           </property>
@@ -266,7 +272,7 @@ background: none;</string>
             </widget>
            </item>
            <item>
-            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0">
+            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0">
              <property name="leftMargin">
               <number>9</number>
              </property>
@@ -282,57 +288,6 @@ background: none;</string>
              <property name="verticalSpacing">
               <number>9</number>
              </property>
-             <item row="1" column="0">
-              <widget class="QComboBox" name="graphSelector1">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QWebView" name="graph1">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QWebView" name="graph3">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QWebView" name="graph2">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
              <item row="3" column="0">
               <widget class="QComboBox" name="graphSelector2">
                <property name="styleSheet">
@@ -360,15 +315,12 @@ padding: 3px;</string>
                </item>
               </widget>
              </item>
-             <item row="5" column="0">
-              <widget class="QComboBox" name="graphSelector3">
+             <item row="1" column="0">
+              <widget class="QComboBox" name="graphSelector1">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
 padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string>Graph One</string>
                </property>
                <item>
                 <property name="text">
@@ -385,6 +337,26 @@ padding: 3px;</string>
                  <string>Graph Three</string>
                 </property>
                </item>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QwtPlot" name="graph1">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QwtPlot" name="graph2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
               </widget>
              </item>
             </layout>
@@ -576,6 +548,18 @@ QPushButton:pressed {
         </item>
         <item row="0" column="2" rowspan="3">
          <widget class="QWidget" name="mpptioValuesWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -1558,6 +1542,18 @@ padding-right: 5px;</string>
         </item>
         <item row="0" column="3" rowspan="3">
          <widget class="QWidget" name="powerDrawWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -2283,9 +2279,9 @@ border-left: none;</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKitWidgets/QWebView</header>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

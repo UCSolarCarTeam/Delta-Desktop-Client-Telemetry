@@ -88,12 +88,10 @@ public:
 	QLabel& setPower6VoltageValue();
 	QLabel& setPower6CurrentValue();
 
-	QWebView& setGraph1();
-	QWebView& setGraph2();
-	QWebView& setGraph3();
+	QwtPlot& setGraph1();
+	QwtPlot& setGraph2();
 	QComboBox& getGraphSelector1();
 	QComboBox& getGraphSelector2();
-	QComboBox& getGraphSelector3();
 
 	QComboBox& getAlgorithmSelector();
 	QPushButton& commsSendButton();
