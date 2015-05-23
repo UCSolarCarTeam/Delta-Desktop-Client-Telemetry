@@ -94,6 +94,18 @@ QPushButton#connectButton:hover{
         </property>
         <item row="0" column="3" rowspan="3">
          <widget class="QWidget" name="commsWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>1</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -547,6 +559,18 @@ background-color: rgb(60,60,60);
         </item>
         <item row="2" column="2">
          <widget class="QWidget" name="batteryWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>2</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>1</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -1277,6 +1301,12 @@ border-left: none;</string>
         </item>
         <item row="0" column="2" rowspan="2">
          <widget class="QWidget" name="mainValuesWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
             <width>700</width>
@@ -1768,6 +1798,12 @@ border-top: none;
         </item>
         <item row="0" column="0" rowspan="3">
          <widget class="QWidget" name="graphsWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>2</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -1879,16 +1915,20 @@ background: none;
               <number>9</number>
              </property>
              <item row="2" column="0">
-              <widget class="QWebView" name="webView_2">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
+              <widget class="QwtPlot" name="graph2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: none;</string>
                </property>
               </widget>
              </item>
              <item row="5" column="0">
-              <widget class="QComboBox" name="comboBox_3">
+              <widget class="QComboBox" name="graphSelector3">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
@@ -1897,7 +1937,7 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="3" column="0">
-              <widget class="QComboBox" name="comboBox_2">
+              <widget class="QComboBox" name="graphSelector2">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
@@ -1906,7 +1946,7 @@ padding: 3px;</string>
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QComboBox" name="comboBox">
+              <widget class="QComboBox" name="graphSelector1">
                <property name="styleSheet">
                 <string notr="true">border: 2px solid rgb(85, 85, 85);
 border-radius: 0px;
@@ -1914,24 +1954,35 @@ padding: 3px;</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
-              <widget class="QWebView" name="webView_3">
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
+             <item row="0" column="0">
+              <widget class="QwtPlot" name="graph1">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: none;</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QWebView" name="webView">
-               <property name="styleSheet">
-                <string notr="true"/>
+             <item row="4" column="0">
+              <widget class="QwtPlot" name="graph3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: none;</string>
                </property>
               </widget>
              </item>
@@ -2015,9 +2066,9 @@ border: none;</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKitWidgets/QWebView</header>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
   </customwidget>
  </customwidgets>
  <resources>

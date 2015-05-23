@@ -72,7 +72,14 @@ public:
     QLabel& setBatteryCMU4Cell7Voltage();
     QLabel& setBatteryCMU4Cell8Voltage();
 
+    QwtPlot& setGraph1();
+    QwtPlot& setGraph2();
+    QwtPlot& setGraph3();
+    QComboBox& getGraphSelector1();
+    QComboBox& getGraphSelector2();    
+    QComboBox& getGraphSelector3();    
+
 private:
-   Ui::PowerUI *ui;
+   Ui::PowerUI *ui_;
 
 };

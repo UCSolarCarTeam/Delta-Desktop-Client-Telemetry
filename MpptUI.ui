@@ -347,6 +347,9 @@ padding: 3px;</string>
                  <height>100</height>
                 </size>
                </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: none;</string>
+               </property>
               </widget>
              </item>
              <item row="2" column="0">
@@ -356,6 +359,9 @@ padding: 3px;</string>
                  <width>0</width>
                  <height>100</height>
                 </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: none;</string>
                </property>
               </widget>
              </item>

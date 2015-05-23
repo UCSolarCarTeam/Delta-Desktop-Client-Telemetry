@@ -1,5 +1,7 @@
 #pragma once
 
+#include "qwt_plot.h"
+#include <QComboBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QLineEdit>
@@ -66,4 +68,11 @@ public:
     virtual QLabel& setBatteryCMU4Cell6Voltage() = 0;
     virtual QLabel& setBatteryCMU4Cell7Voltage() = 0;
     virtual QLabel& setBatteryCMU4Cell8Voltage() = 0;
+
+    virtual QwtPlot& setGraph1() = 0;
+    virtual QwtPlot& setGraph2() = 0;
+    virtual QwtPlot& setGraph3() = 0;
+    virtual QComboBox& getGraphSelector1() = 0;
+    virtual QComboBox& getGraphSelector2() = 0;    
+    virtual QComboBox& getGraphSelector3() = 0;    
 };
