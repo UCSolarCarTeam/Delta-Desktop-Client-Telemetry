@@ -5,6 +5,7 @@
 namespace
 {
    const int INDEX_OF_PACKET_TYPE = 0;
+   const int MINIMUM_LENGTH_OF_A_PACKET = 4;
 }
 
 PacketDecoder::PacketDecoder(const I_PacketSynchronizer& packetSynchronizer)
@@ -15,6 +16,12 @@ PacketDecoder::PacketDecoder(const I_PacketSynchronizer& packetSynchronizer)
 
 void PacketDecoder::handleFramedPacket(QByteArray packet)
 {
+   if (!isPacketAtLeastMinimumSize(packet))
+   {
+      qDebug() << "Incoming packet is less that " << MINIMUM_LENGTH_OF_A_PACKET << " bytes";
+      return;
+   }
+
    QByteArray decodedData = unstuffPacket(packet);
 
    const quint16 checksum = retrieveChecksumFromPacket(decodedData);
@@ -31,6 +38,11 @@ void PacketDecoder::handleFramedPacket(QByteArray packet)
    {
       qDebug() << "Error decoding data, raw data is: " << QString(packet.toHex());
    }
+}
+
+bool PacketDecoder::isPacketAtLeastMinimumSize(const QByteArray& packet)
+{
+   return packet.size() >= MINIMUM_LENGTH_OF_A_PACKET;
 }
 
 QByteArray PacketDecoder::unstuffPacket(const QByteArray& encodedData)

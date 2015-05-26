@@ -18,7 +18,7 @@ private slots:
 
 private:
    bool alignStartOfPacketToBeginningOfBuffer();
-   bool extractPacketIfIsComplete();
+   bool extractPacketIfComplete();
 
 private:
    QIODevice& inputDevice_;

@@ -14,6 +14,7 @@ private slots:
    void handleFramedPacket(QByteArray packet);
 
 private:
+   bool isPacketAtLeastMinimumSize(const QByteArray& packet);
    QByteArray unstuffPacket(const QByteArray& encodedData);
    bool checkChecksum(const QByteArray& messageData, const quint16 checksum);
    quint16 retrieveChecksumFromPacket(const QByteArray& decodedData);

@@ -22,4 +22,4 @@ signals:
 	void motorFaultsReceived(MotorFaults motorFaults);
 	void limitFlagsReceived(LimitFlags limitFlags);
 	void batteryFaultsReceived(BatteryFaults batteryFaults);
-}; 
+};

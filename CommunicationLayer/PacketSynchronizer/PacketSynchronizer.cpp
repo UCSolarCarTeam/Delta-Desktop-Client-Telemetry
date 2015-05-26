@@ -1,9 +1,11 @@
+#include <QChar>
+
 #include "PacketSynchronizer.h"
 #include "../ConnectionService/I_ConnectionService.h"
 
 namespace
 {
-   const char* FRAMING_BYTE = 0x00;
+   const QChar FRAMING_BYTE = 0x00;
 }
 
 PacketSynchronizer::PacketSynchronizer(
@@ -29,6 +31,7 @@ void PacketSynchronizer::handleConnectionCreated()
 void PacketSynchronizer::handleIncommingSerialData()
 {
    QByteArray incommingSerialData = inputDevice_.readAll();
+
    if (incommingSerialData.isEmpty())
    {
       return;
@@ -37,7 +40,7 @@ void PacketSynchronizer::handleIncommingSerialData()
    buffer_.append(incommingSerialData);
    if (alignStartOfPacketToBeginningOfBuffer())
    {
-      while(extractPacketIfIsComplete());
+      while(extractPacketIfComplete());
    }
 }
 
@@ -55,7 +58,7 @@ bool PacketSynchronizer::alignStartOfPacketToBeginningOfBuffer()
    return true;
 }
 
-bool PacketSynchronizer::extractPacketIfIsComplete()
+bool PacketSynchronizer::extractPacketIfComplete()
 {
    int indexOfEndOfPacket = buffer_.indexOf(FRAMING_BYTE, 1); // Find if there is an end.
    if (indexOfEndOfPacket == -1)
@@ -65,6 +68,7 @@ bool PacketSynchronizer::extractPacketIfIsComplete()
 
    QByteArray packet = buffer_.left(indexOfEndOfPacket);
    packet = packet.mid(1); // remove the leading 0x00
+   buffer_.remove(0, indexOfEndOfPacket);
    emit framedPacket(packet);
    return true;
 }
