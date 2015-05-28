@@ -11,7 +11,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkitwidgets
 TARGET = ../release/SolarCarTelemetry
 TEMPLATE = app
 CONFIG += static
+CONFIG += qwt
 
+INCLUDEPATH += /usr/local/qwt-6.1.2/include
+LIBS += -L/usr/local/qwt-6.1.2/lib -lqwt
 QMAKE_CXXFLAGS +=
 RCC_DIR= ../release
 DESTDIR = ../release

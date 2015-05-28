@@ -39,6 +39,7 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 
     addFonts();
 
+    setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     showFullScreen();
 }
 

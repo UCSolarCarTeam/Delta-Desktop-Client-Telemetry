@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QLabel>
-#include <QWebView>
+#include "qwt_plot.h"
 #include <QComboBox>
 #include <QGraphicsView>
 #include <QPushButton>
@@ -83,12 +83,10 @@ public:
 	virtual QLabel& setPower6VoltageValue() = 0;
 	virtual QLabel& setPower6CurrentValue() = 0;
 
-	virtual QWebView& setGraph1() = 0;
-	virtual QWebView& setGraph2() = 0;
-	virtual QWebView& setGraph3() = 0;
+	virtual QwtPlot& setGraph1() = 0;
+	virtual QwtPlot& setGraph2() = 0;
 	virtual QComboBox& getGraphSelector1() = 0;
 	virtual QComboBox& getGraphSelector2() = 0;
-	virtual QComboBox& getGraphSelector3() = 0;
 
 	virtual QComboBox& getAlgorithmSelector() = 0;
 	virtual QPushButton& commsSendButton() = 0;
