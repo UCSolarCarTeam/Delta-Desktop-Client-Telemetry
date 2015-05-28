@@ -81,5 +81,4 @@ public:
 
 private:
    Ui::PowerUI *ui_;
-
 };

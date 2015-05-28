@@ -174,6 +174,20 @@ PowerView::~PowerView()
 {
 }
 
+
+void PowerView::handleGraph1Selected()
+{
+    
+}
+void PowerView::handleGraph2Selected()
+{
+    
+}
+void PowerView::handleGraph3Selected()
+{
+    
+}
+
 void PowerView::handleConnectButtonClicked()
 {
     if(ui_.connectButton().text() == "Connect"){
@@ -213,3 +227,4 @@ void PowerView::writeToDebugLog(QString message)
 {
     ui_.setDebugLog().append(message);
 }
+

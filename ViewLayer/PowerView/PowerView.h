@@ -42,6 +42,10 @@ private slots:
    void mod3CellTemperatureReceived(double);
    void mod3CellVoltagesReceived(QList<double>);
 
+   void handleGraph1Selected();
+   void handleGraph2Selected();
+   void handleGraph3Selected();
+
    void handleConnectButtonClicked();
    // void handleDisconnectButtonClicked();
    void connectionFailed(QString);
