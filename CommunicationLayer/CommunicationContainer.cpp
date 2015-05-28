@@ -8,8 +8,10 @@
 #include "DataPopulators/DriverDetailsPopulator.h"
 #include "DataPopulators/FaultsPopulator.h"
 #include "DataPopulators/KeyDriverControlPopulator.h"
+#include "PacketChecksumChecker/PacketChecksumChecker.h"
 #include "PacketDecoder/PacketDecoder.h"
 #include "PacketSynchronizer/PacketSynchronizer.h"
+#include "PacketUnstuffer/PacketUnstuffer.h"
 
 CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
 : port_(new QSerialPort)
@@ -17,8 +19,12 @@ CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
 , packetSynchronizer_(new PacketSynchronizer(
    *port_,
    *connectionService_))
-, packetDecoder_(new PacketDecoder(
+, packetUnstuffer_(new PacketUnstuffer(
    *packetSynchronizer_))
+, packetChecksumChecker_(new PacketChecksumChecker(
+   *packetUnstuffer_))
+, packetDecoder_(new PacketDecoder(
+   *packetChecksumChecker_))
 , keyDriverControlPopulator_(new KeyDriverControlPopulator(
    *packetDecoder_,
    dataContainer.vehicleData(),
