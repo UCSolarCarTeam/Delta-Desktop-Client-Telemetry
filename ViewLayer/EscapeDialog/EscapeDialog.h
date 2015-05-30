@@ -21,6 +21,7 @@ public:
     QPushButton& settingsSelectionPushButton();
     QPushButton& aboutSelectionPushButton();
     QPushButton& exitPushButton();
+    QPushButton& okPushButton();
     QPushButton& closePushButton();
     QCheckBox& fullscreenCheckBox();
     QCheckBox& multiWindowCheckBox();

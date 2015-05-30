@@ -6,38 +6,55 @@
 EscapeDialogView::EscapeDialogView(EscapeDialog& ui)
 : ui_(ui)
 {
-    connect(&ui.settingsButton(), SIGNAL(clicked()),
-            this, SLOT(handleSettingsButtonClicked()));
-    connect(&ui.aboutButton(), SIGNAL(clicked()),
-            this, SLOT(handleAboutButtonClicked()));
-    connect(&ui.returnButton(), SIGNAL(clicked()),
-            this, SLOT(handleReturnButtonClicked()));
-    connect(&ui.exitButton(), SIGNAL(clicked()),
-            this, SLOT(handleExitButtonClicked()));
+    connect(&ui.settingsSelectionPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleSettingsPushButtonClicked()));
+    connect(&ui.aboutSelectionPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleAboutSelectionPushButtonClicked()));
+    connect(&ui.closePushButton(), SIGNAL(clicked()),
+            this, SLOT(handleClosePushButtonClicked()));
+    connect(&ui.exitPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleExitPushButtonClicked()));
+    connect(&ui.okPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleOkPushButtonClicked()));
 }
 
 EscapeDialogView::~EscapeDialogView()
 {
 }
-
-void EscapeDialogView::handleSettingsButtonClicked()
+void EscapeDialogView::handleFileDialogPushButtonClicked()
+{
+    qDebug() << "file dialog button clicked"; // placeholder code
+}
+void EscapeDialogView::handleSettingsSelectionPushButtonClicked()
 {
     qDebug() << "settings button clicked"; // placeholder code
 }
 
-void EscapeDialogView::handleAboutButtonClicked()
+void EscapeDialogView::handleAboutSelectionPushButtonClicked()
 {
     qDebug() << "about button clicked"; // placeholder code
 }
 
-void EscapeDialogView::handleReturnButtonClicked()
-{
-    ui_.hide();
-    qDebug() << "return button clicked"; // placeholder code
-}
-
-void EscapeDialogView::handleExitButtonClicked()
+void EscapeDialogView::handleExitPushButtonClicked()
 {
     QApplication::exit();
     qDebug() << "exit button clicked"; // placeholder code
 }
+
+void EscapeDialogView::handleClosePushButtonClicked()
+{
+    ui_.hide();
+    qDebug() << "close button clicked"; // placeholder code
+}
+
+void EscapeDialogView::handleOkPushButtonClicked()
+{
+    qDebug() << "ok button clicked"; // placeholder code
+}
+
+//void handleFileDialogPushButton();
+//void handleSettingsSelectionPushButton();
+//void handleAboutSelectionPushButton();
+//void handleExitPushButton();
+//void handleOkPushButton();
+//void handleClosePushButton();
