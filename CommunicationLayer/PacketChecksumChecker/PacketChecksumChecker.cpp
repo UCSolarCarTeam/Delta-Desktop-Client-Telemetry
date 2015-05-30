@@ -16,8 +16,7 @@ PacketChecksumChecker::~PacketChecksumChecker()
 void PacketChecksumChecker::checkChecksum(QByteArray decodedData)
 {
    const quint16 checksum = retrieveChecksumFromPacket(decodedData);
-   const int lastIndexOfData = decodedData.size() - 1;
-   decodedData.truncate(lastIndexOfData - sizeof(checksum));
+   decodedData.chop(sizeof(checksum));
 
    quint16 calculatedChecksum = qChecksum(decodedData.constData(), decodedData.size());
    if (calculatedChecksum == checksum)
@@ -26,13 +25,17 @@ void PacketChecksumChecker::checkChecksum(QByteArray decodedData)
    }
    else
    {
-      qDebug() << "Error decoding data, checksum doesn't match. Data is: " << decodedData.toHex();
+      qDebug() << "Calculated =" << QByteArray::number(calculatedChecksum, 16) << "retrieved ="
+         << QByteArray::number(checksum, 16);
+      qDebug() << "Error decoding data, checksum doesn't match. Data is: " << decodedData;
    }
 }
 
 quint16 PacketChecksumChecker::retrieveChecksumFromPacket(const QByteArray& decodedData)
 {
    const int lastIndexOfData = decodedData.size() - 1;
-   return (decodedData.at(lastIndexOfData) << 8) |
-      decodedData.at(lastIndexOfData - 1);
+   unsigned char upper = decodedData.at(lastIndexOfData);
+   unsigned char lower = decodedData.at(lastIndexOfData - 1);
+   quint16 checksum = ((upper << 8) & 0xFF00) | lower;
+   return checksum;
 }
