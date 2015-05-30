@@ -10,5 +10,5 @@ public:
    virtual ~I_PacketUnstuffer() {}
 
 signals:
-   void packetUnsuffed(QByteArray decodedData);
+   void packetUnstuffed(QByteArray decodedData);
 };

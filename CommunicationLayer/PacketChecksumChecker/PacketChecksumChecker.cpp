@@ -5,7 +5,7 @@
 
 PacketChecksumChecker::PacketChecksumChecker(const I_PacketUnstuffer& unstuffer)
 {
-   connect(&unstuffer, SIGNAL(packetUnsuffed(QByteArray)),
+   connect(&unstuffer, SIGNAL(packetUnstuffed(QByteArray)),
       this, SLOT(checkChecksum(QByteArray)));
 }
 

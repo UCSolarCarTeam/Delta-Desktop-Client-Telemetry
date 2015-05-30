@@ -26,22 +26,23 @@ void PacketUnstuffer::handleFramedPacket(QByteArray packet)
       return;
    }
 
-   const int length = packet.size();
+   const unsigned int length = packet.size();
    QByteArray decodedData;
-   for (int indexOfCode = 0; indexOfCode < length; indexOfCode++)
+   unsigned int indexOfCode = 0;
+   while (indexOfCode < length)
    {
-      int indexOfNextCode = packet.at(indexOfCode) + 1;
-      for (int j = indexOfCode + 1; j < indexOfNextCode && j < length; j++)
+      unsigned int indexOfNextCode = (unsigned)packet.at(indexOfCode) + indexOfCode;
+      for (unsigned int j = indexOfCode + 1; j < indexOfNextCode && j < length; j++)
       {
          decodedData.append(packet.at(j));
       }
-      if (indexOfNextCode < 0xFF)
+      if (indexOfNextCode < 0xFF && indexOfNextCode < length)
       {
          decodedData.append(QChar(0x00));
       }
       indexOfCode = indexOfNextCode;
    }
-   emit packetUnsuffed(decodedData);
+   emit packetUnstuffed(decodedData);
 }
 
 bool PacketUnstuffer::isPacketAtLeastMinimumSize(const QByteArray& packet)
