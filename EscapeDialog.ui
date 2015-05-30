@@ -602,8 +602,7 @@ font-size: 14px;</string>
               <property name="styleSheet">
                <string notr="true">padding: 3px;
 margin: 5px;
-margin-left:30px;
-margin-right: 230px;
+margin-right: 260px;
 color: rgb(255,255,255);
 border: 1px solid rgb(45,45,45);
 border-radius: 7px;

@@ -55,6 +55,7 @@ void EscapeDialogView::handleClosePushButtonClicked()
 
 void EscapeDialogView::handleOkPushButtonClicked()
 {
+    ui_.hide();
     qDebug() << "ok button clicked"; // placeholder code
 }
 
