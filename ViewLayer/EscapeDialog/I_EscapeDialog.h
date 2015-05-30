@@ -2,6 +2,7 @@
 
 #include <QPushButton>
 #include <QCheckBox>
+#include <QStackedWidget>
 
 class I_EscapeDialog
 {
@@ -17,4 +18,5 @@ public:
     virtual QPushButton& closePushButton()=0;
     virtual QCheckBox& fullscreenCheckBox()=0;
     virtual QCheckBox& multiWindowCheckBox()=0;
+    virtual QStackedWidget& optionsDisplayWidget()=0;
 };

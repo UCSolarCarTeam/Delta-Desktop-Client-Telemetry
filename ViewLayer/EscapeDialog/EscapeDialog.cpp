@@ -63,4 +63,8 @@ QCheckBox& EscapeDialog::multiWindowCheckBox()
 {
    return *ui->multiWindowCheckBox;
 }
+QStackedWidget& EscapeDialog::optionsDisplayWidget()
+{
+   return *ui->optionsDisplayWidget;
+}
 

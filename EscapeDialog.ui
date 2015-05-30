@@ -96,7 +96,8 @@ font-size: 17px;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-family: &quot;AvenirLTStd&quot;;</string>
+      <string notr="true">font-family: &quot;AvenirLTStd&quot;;
+border:1px solid rgb(50,50,50);</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
@@ -160,7 +161,8 @@ border-bottom: 1px solid rgb(70,70,70);
            </property>
            <property name="styleSheet">
             <string notr="true">font-size: 18px;
-background: none;</string>
+background: none;
+border:none;</string>
            </property>
            <property name="lineWidth">
             <number>0</number>
@@ -259,8 +261,7 @@ margin: 3px;
              <property name="styleSheet">
               <string notr="true">QWidget{
 background: rgb(50,50,50);
-border:1px solid rgb(30,30,30);
-border-radius: 3px;
+border:1px solid rgb(50,50,50);
 }
 QPushButton{
 border-bottom:none;
@@ -285,7 +286,7 @@ border-top:none;
                <number>0</number>
               </property>
               <item>
-               <widget class="QPushButton" name="aboutSelectionPushButton">
+               <widget class="QPushButton" name="settingsSelectionPushButton">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -293,7 +294,8 @@ border-top:none;
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border-top:1px solid rgb(30,30,30);</string>
+                 <string notr="true">border-top:1px solid rgb(50,50,50);
+background: rgb(100,100,100);</string>
                 </property>
                 <property name="text">
                  <string>Settings</string>
@@ -301,7 +303,7 @@ border-top:none;
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="settingsSelectionPushButton">
+               <widget class="QPushButton" name="aboutSelectionPushButton">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -344,11 +346,10 @@ border-top:none;
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">border:1px solid rgb(30,30,30);
+              <string notr="true">border:1px solid rgb(50,50,50);
 border-left:none;
 background-color: rgb(70,70,70);
-border-right:none;
-border-radius: 3px;
+
 </string>
              </property>
              <property name="currentIndex">
@@ -405,6 +406,7 @@ p, li { white-space: pre-wrap; }
               <property name="styleSheet">
                <string notr="true">QWidget{
 border:none;
+margin: 4px;
 }
 QLabel{
 padding: 7px;
@@ -445,7 +447,7 @@ border:none;
                <item row="0" column="1">
                 <widget class="QLineEdit" name="baudrateText">
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">margin-top:10px;</string>
                  </property>
                 </widget>
                </item>
@@ -458,6 +460,9 @@ border:none;
                </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="baudrateLabel">
+                 <property name="styleSheet">
+                  <string notr="true">margin-top:10px;</string>
+                 </property>
                  <property name="text">
                   <string>Baudrate</string>
                  </property>
@@ -517,10 +522,16 @@ padding-right: none;
                  </item>
                  <item>
                   <widget class="QPushButton" name="fileDialogPushButton">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>33</height>
+                    </size>
+                   </property>
                    <property name="maximumSize">
                     <size>
                      <width>16777210</width>
-                     <height>31</height>
+                     <height>33</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -528,7 +539,10 @@ padding-right: none;
 border: 1px solid rgb(60,60,60);
 border-radius: 7px;
 background-image: url(:/Resources/BrowseButton.png);
-padding: 6px;</string>
+padding: 7px;
+margin-top: 2px;
+margin-bottom:2px;
+font-size: 14px;</string>
                    </property>
                    <property name="text">
                     <string>Browse</string>
@@ -563,6 +577,9 @@ padding: 6px;</string>
              <width>0</width>
              <height>30</height>
             </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-top:none;</string>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <property name="spacing">

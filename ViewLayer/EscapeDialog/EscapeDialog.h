@@ -25,6 +25,7 @@ public:
     QPushButton& closePushButton();
     QCheckBox& fullscreenCheckBox();
     QCheckBox& multiWindowCheckBox();
+    QStackedWidget& optionsDisplayWidget();
 
 private:
    Ui::EscapeDialog *ui;
