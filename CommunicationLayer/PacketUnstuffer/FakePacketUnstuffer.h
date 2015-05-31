@@ -1,3 +1,5 @@
+#pragma once
+
 #include "I_PacketUnstuffer.h"
 
 class FakePacketUnstuffer : public I_PacketUnstuffer

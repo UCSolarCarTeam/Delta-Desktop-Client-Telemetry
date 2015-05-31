@@ -56,3 +56,8 @@ bool MotorFaults::desaturationFault() const
 {
    return static_cast<bool>(flags_ & DESATURATION_FAULT_MASK);
 }
+
+bool MotorFaults::operator==(const MotorFaults& other) const
+{
+   return flags_ == other.flags_;
+}

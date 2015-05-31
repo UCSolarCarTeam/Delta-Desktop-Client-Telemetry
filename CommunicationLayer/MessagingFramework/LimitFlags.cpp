@@ -50,3 +50,8 @@ bool LimitFlags::ipmOrMotorTelemetryLimit() const
 {
    return static_cast<bool>(flags_ & IPM_OR_MOTOR_TEMP);
 }
+
+bool LimitFlags::operator==(const LimitFlags& other) const
+{
+   return flags_ == other.flags_;
+}

@@ -13,6 +13,10 @@ PacketDecoder::PacketDecoder(const I_PacketChecksumChecker& checksumChecker)
       this, SLOT(handleValidData(QByteArray)));
 }
 
+PacketDecoder::~PacketDecoder()
+{
+}
+
 void PacketDecoder::handleValidData(QByteArray messageData)
 {
    MessageDefines::Type messageType =
@@ -38,5 +42,10 @@ void PacketDecoder::handleValidData(QByteArray messageData)
          emit packetDecoded(CmuDataMessage(messageData));
          return;
       }
+   }
+   else
+   {
+      qDebug() << "Message length is not correct for type" << static_cast<quint8>(messageType);
+      qDebug() << "Actual" << messageData.size() << "Expected" << MessageDefines::getLengthForMessage(messageType);
    }
 }

@@ -16,6 +16,8 @@ public:
    bool railUnderVoltageLockOut() const;
    bool desaturationFault() const;
 
+   bool operator==(const MotorFaults& other) const;
+
 private:
    quint8 flags_;
 };

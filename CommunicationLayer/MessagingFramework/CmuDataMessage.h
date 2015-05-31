@@ -8,7 +8,7 @@ class CmuDataMessage
 public:
    CmuDataMessage(const QByteArray& messageData);
 
-   int cellNumber() const;
+   quint8 cellNumber() const;
    float pcbTemperature() const;
    float cellTemperature() const;
    QList<float> cellVoltages() const;

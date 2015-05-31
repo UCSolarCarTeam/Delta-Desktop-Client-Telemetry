@@ -21,6 +21,8 @@ public:
    bool contactorIsStuck() const;
    bool cmuDetectedExtraCellPresent() const;
 
+   bool operator==(const BatteryFaults& other) const;
+
 private:
    quint16 flags_;
 };

@@ -2,11 +2,11 @@
 
 namespace
 {
-   const int KEY_DRIVER_CONTROL_LENGTH = 22;
-   const int DRIVER_CONTROL_DETAILS_LENGTH = 30;
+   const int KEY_DRIVER_CONTROL_LENGTH = 21;
+   const int DRIVER_CONTROL_DETAILS_LENGTH = 29;
    const int FAULTS_LENGTH = 7;
    const int BATTERY_DATA_LENGTH = 18;
-   const int CMU_DATA_LENGTH = 43;
+   const int CMU_DATA_LENGTH = 42;
 }
 
 int MessageDefines::getLengthForMessage(MessageDefines::Type type)

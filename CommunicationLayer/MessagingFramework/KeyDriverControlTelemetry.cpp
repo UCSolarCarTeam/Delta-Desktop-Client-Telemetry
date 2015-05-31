@@ -40,5 +40,5 @@ float KeyDriverControlTelemetry::busVoltage() const
 
 float KeyDriverControlTelemetry::speed() const
 {
-   return getFloat(messageData_, setSpeedIndex);
+   return getFloat(messageData_, speedIndex);
 }

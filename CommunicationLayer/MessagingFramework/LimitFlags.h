@@ -15,6 +15,8 @@ public:
    bool busVoltageLowerLimit() const;
    bool ipmOrMotorTelemetryLimit() const;
 
+   bool operator==(const LimitFlags& other) const;
+
 private:
    quint8 flags_;
 };

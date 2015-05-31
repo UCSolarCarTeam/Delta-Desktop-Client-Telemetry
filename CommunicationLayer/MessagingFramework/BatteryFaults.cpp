@@ -86,3 +86,9 @@ bool BatteryFaults::cmuDetectedExtraCellPresent() const
 {
    return static_cast<bool>(flags_ & CMU_DETECTED_EXTRA_CELL_MASK);
 }
+
+bool BatteryFaults::operator==(const BatteryFaults& other) const
+{
+   return flags_ == other.flags_;
+}
+

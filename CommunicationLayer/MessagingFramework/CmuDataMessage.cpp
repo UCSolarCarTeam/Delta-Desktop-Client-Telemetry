@@ -8,7 +8,7 @@ namespace
    const int CELL_NUMBER_INDEX = 1;
    const int PCB_TEMPERATURE_INDEX = 2;
    const int CELL_TEMPERATURE_INDEX = 6;
-   const int CELL_VOLTAGE_0_INDEX = 13;
+   const int CELL_VOLTAGE_0_INDEX = 10;
    const int NUMBER_OF_CELLS = 8;
    const int NUMBER_OF_BYTES_IN_FLOAT = 4;
 }
@@ -18,7 +18,7 @@ CmuDataMessage::CmuDataMessage(const QByteArray& messageData)
 {
 }
 
-int CmuDataMessage::cellNumber() const
+quint8 CmuDataMessage::cellNumber() const
 {
    return messageData_.at(CELL_NUMBER_INDEX);
 }
