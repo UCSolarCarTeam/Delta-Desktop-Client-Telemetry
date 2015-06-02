@@ -31,12 +31,8 @@ PowerView::PowerView(DisplayPresenter& presenter,
     connect(&vehiclePresenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
     // connect(&vehiclePresenter_, SIGNAL(???),
-    //         this, SLOT(arrayCurrentInReceived(double)));
-    // connect(&vehiclePresenter_, SIGNAL(???),
-    //         this, SLOT(arrayCurrenOutReceived(double)));
-    // connect(&vehiclePresenter_, SIGNAL(???),
-    //         this, SLOT(arrayNetCurrentReceived(double)));
-
+    //         this, SLOT(arrayCurrentReceived(double)));
+ 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
@@ -88,19 +84,10 @@ void PowerView::busVoltageReceived(double busVoltage)
 {
     ui_.setBusVoltage().setNum(busVoltage);
 }
-void PowerView::arrayCurrentInReceived(double arrayCurrentIn)
+void PowerView::arrayCurrentReceived(double arrayCurrentIn)
 {
-    ui_.setArrayCurrentIn().setNum(arrayCurrentIn);
+    ui_.setArrayCurrent().setNum(arrayCurrentIn);
 }
-void PowerView::arrayCurrentOutReceived(double arrayCurrentOut)
-{
-    ui_.setArrayCurrentOut().setNum(arrayCurrentOut);
-}
-void PowerView::arrayNetCurrentReceived(double arrayNetCurrent)
-{
-    ui_.setArrayNetCurrent().setNum(arrayNetCurrent);
-}
-
 
 void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)
 {   

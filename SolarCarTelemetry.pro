@@ -34,7 +34,16 @@ SOURCES += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
     CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
-    CommunicationLayer/MessagingFramework/*.cpp \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \    
+    CommunicationLayer/MessagingFramework/BatteryFaults.cpp \         
+    CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \        
+    CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \  
+    CommunicationLayer/MessagingFramework/FaultsMessage.cpp \         
+    CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
+    CommunicationLayer/MessagingFramework/LimitFlags.cpp \
+    CommunicationLayer/MessagingFramework/MessageDecodingHelpers.cpp \
+    CommunicationLayer/MessagingFramework/MessageDefines.cpp \
+    CommunicationLayer/MessagingFramework/MotorFaults.cpp \
     CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.cpp \
     CommunicationLayer/PacketDecoder/PacketDecoder.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
@@ -80,7 +89,16 @@ HEADERS  += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
     CommunicationLayer/DataPopulators/FaultsPopulator.h \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
-    CommunicationLayer/MessagingFramework/*.h \
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.h \      
+    CommunicationLayer/MessagingFramework/BatteryFaults.h \           
+    CommunicationLayer/MessagingFramework/CmuDataMessage.h \          
+    CommunicationLayer/MessagingFramework/DriverControlDetails.h \    
+    CommunicationLayer/MessagingFramework/FaultsMessage.h \           
+    CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h \
+    CommunicationLayer/MessagingFramework/LimitFlags.h \
+    CommunicationLayer/MessagingFramework/MessageDecodingHelpers.h \
+    CommunicationLayer/MessagingFramework/MessageDefines.h \
+    CommunicationLayer/MessagingFramework/MotorFaults.h \
     CommunicationLayer/PacketChecksumChecker/I_PacketChecksumChecker.h \
     CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.h \
     CommunicationLayer/PacketDecoder/I_PacketDecoder.h \

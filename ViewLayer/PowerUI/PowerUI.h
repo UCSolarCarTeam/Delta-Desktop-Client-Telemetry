@@ -28,9 +28,8 @@ public:
     QLabel& setActualSpeed();
     QLabel& setBusCurrent();
     QLabel& setBusVoltage();
-    QLabel& setArrayCurrentIn();
-    QLabel& setArrayCurrentOut();
-    QLabel& setArrayNetCurrent();
+    QLabel& setArrayCurrent();
+
 
     QLabel& setBatteryCMU1Temp();
     QLabel& setBatteryCMU1Cell1Voltage();

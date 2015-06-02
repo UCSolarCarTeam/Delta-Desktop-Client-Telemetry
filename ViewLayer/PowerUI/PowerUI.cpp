@@ -66,17 +66,9 @@ QLabel& PowerUI::setBusVoltage()
 {
     return *ui_->busVoltage;
 }
-QLabel& PowerUI::setArrayCurrentIn()
+QLabel& PowerUI::setArrayCurrent()
 {
-    return *ui_->arrayCurrentIn;
-}
-QLabel& PowerUI::setArrayCurrentOut()
-{
-    return *ui_->arrayCurrentOut;
-}
-QLabel& PowerUI::setArrayNetCurrent()
-{
-    return *ui_->netCurrent;
+    return *ui_->arrayCurrent;
 }
 
 QLabel& PowerUI::setBatteryCMU1Temp()
