@@ -17,11 +17,15 @@ public:
     void hideHeaderBar();
     void keyPressEvent(QKeyEvent * event);
     void paintEvent(QPaintEvent* e);
-    QPushButton& settingsButton();
-    QPushButton& returnButton();
-    QPushButton& aboutButton();
-    QPushButton& toggleFullscreenPushButton();
-    QPushButton& exitButton();
+    QPushButton& fileDialogPushButton();
+    QPushButton& settingsSelectionPushButton();
+    QPushButton& aboutSelectionPushButton();
+    QPushButton& exitPushButton();
+    QPushButton& okPushButton();
+    QPushButton& closePushButton();
+    QCheckBox& fullscreenCheckBox();
+    QCheckBox& multiWindowCheckBox();
+    QStackedWidget& optionsDisplayWidget();
 
 private:
    Ui::EscapeDialog *ui;

@@ -31,24 +31,41 @@ void EscapeDialog::paintEvent(QPaintEvent* e)
     QPainter customPainter(this);
     customPainter.fillRect(rect(), backgroundColor);
 }
+QPushButton& EscapeDialog::fileDialogPushButton()
+{
+   return *ui->fileDialogPushButton;
+}
+QPushButton& EscapeDialog::settingsSelectionPushButton()
+{
+   return *ui->settingsSelectionPushButton;
+}
+QPushButton& EscapeDialog::aboutSelectionPushButton()
+{
+   return *ui->aboutSelectionPushButton;
+}
 
-QPushButton& EscapeDialog::settingsButton()
-{
-   return *ui->settingsPushButton;
-}
-QPushButton& EscapeDialog::aboutButton()
-{
-   return *ui->aboutPushButton;
-}
-QPushButton& EscapeDialog::returnButton()
-{
-   return *ui->returnPushButton;
-}
-QPushButton& EscapeDialog::toggleFullscreenPushButton()
-{
-   return *ui->toggleFullscreenPushButton;
-}
-QPushButton& EscapeDialog::exitButton()
+QPushButton& EscapeDialog::exitPushButton()
 {
    return *ui->exitPushButton;
 }
+QPushButton& EscapeDialog::okPushButton()
+{
+   return *ui->okPushButton;
+}
+QPushButton& EscapeDialog::closePushButton()
+{
+   return *ui->closePushButton;
+}
+QCheckBox& EscapeDialog::fullscreenCheckBox()
+{
+   return *ui->fullscreenCheckBox;
+}
+QCheckBox& EscapeDialog::multiWindowCheckBox()
+{
+   return *ui->multiWindowCheckBox;
+}
+QStackedWidget& EscapeDialog::optionsDisplayWidget()
+{
+   return *ui->optionsDisplayWidget;
+}
+

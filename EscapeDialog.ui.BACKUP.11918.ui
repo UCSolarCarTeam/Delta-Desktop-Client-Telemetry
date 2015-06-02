@@ -229,10 +229,14 @@ margin: 3px;
         <property name="styleSheet">
          <string notr="true">background: rgb(40,40,40);</string>
         </property>
+<<<<<<< HEAD
+        <layout class="QGridLayout" name="escapeBackgroundWidgetLayout">
+=======
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <property name="spacing">
           <number>0</number>
          </property>
+>>>>>>> version2newsettingswindow
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -279,8 +283,20 @@ border-top:none;
               <property name="topMargin">
                <number>0</number>
               </property>
+<<<<<<< HEAD
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QPushButton" name="exitPushButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+=======
               <property name="rightMargin">
                <number>0</number>
+>>>>>>> version2newsettingswindow
               </property>
               <property name="bottomMargin">
                <number>0</number>
@@ -566,9 +582,28 @@ font-size: 14px;</string>
                </item>
               </layout>
              </widget>
+<<<<<<< HEAD
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="toggleFullscreenPushButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Toggle Fullscreen</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+=======
             </widget>
            </item>
           </layout>
+>>>>>>> version2newsettingswindow
          </item>
          <item>
           <widget class="QWidget" name="bottomBarWidget" native="true">
@@ -579,12 +614,37 @@ font-size: 14px;</string>
             </size>
            </property>
            <property name="styleSheet">
+<<<<<<< HEAD
+            <string notr="true">QWidget{
+border:none;
+margin: 20px;
+}
+QPushButton{
+border: 1px solid rgb(30,30,30);
+font-size: 15px;
+background: url(:/Resources/MenuButton.png)
+}
+QPushButton:hover:!pressed {
+	background: none;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
+}
+
+QPushButton:pressed {
+	background: none;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
+}</string>
+           </property>
+           <layout class="QGridLayout" name="returnLayoutLayout">
+=======
             <string notr="true">border-top:none;</string>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <property name="spacing">
              <number>0</number>
             </property>
+>>>>>>> version2newsettingswindow
             <property name="leftMargin">
              <number>0</number>
             </property>

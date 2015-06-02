@@ -135,7 +135,7 @@ background: url(:/Resources/SubTitleBar.png);
 border-bottom: 1px solid rgb(70,70,70);
 </string>
         </property>
-        <layout class="QGridLayout" name="escapeTitleBarWidgetLayout">
+        <layout class="QGridLayout" name="titleBarLayout_2">
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -225,7 +225,7 @@ margin: 3px;
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="escapeBackgroundWidget" native="true">
+       <widget class="QWidget" name="backgroundWidget" native="true">
         <property name="styleSheet">
          <string notr="true">background: rgb(40,40,40);</string>
         </property>
