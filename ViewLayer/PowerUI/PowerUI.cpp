@@ -227,27 +227,42 @@ QLabel& PowerUI::setBatteryCMU4Cell8Voltage()
     return *ui_->batteryCMU4Cell8Voltage;
 }
 
-QwtPlot& PowerUI::setGraph1()
+QStackedWidget& PowerUI::setGraphsStackedWidget()
 {
-    return *ui_->graph1;
+    return *ui_->graphsStackedWidget;
 }
-QwtPlot& PowerUI::setGraph2()
+
+QwtPlot& PowerUI::setBusCurrentGraph()
 {
-    return *ui_->graph2;
-}
-QwtPlot& PowerUI::setGraph3()
+    return *ui_->busCurrentGraph;
+} 
+
+QwtPlot& PowerUI::setBusVoltageGraph()
 {
-    return *ui_->graph3;
-}
-QComboBox& PowerUI::getGraphSelector1()
+    return *ui_->busVoltageGraph;
+} 
+
+QwtPlot& PowerUI::setBusPowerGraph()
 {
-    return *ui_->graphSelector1;
-}
-QComboBox& PowerUI::getGraphSelector2()
+    return *ui_->busPowerGraph;
+} 
+
+QwtPlot& PowerUI::setDriverCurrentGraph()
 {
-    return *ui_->graphSelector2;
-}    
-QComboBox& PowerUI::getGraphSelector3()
+    return *ui_->driverCurrentGraph;
+} 
+
+QwtPlot& PowerUI::setDriverSpeedGraph()
 {
-    return *ui_->graphSelector3;
-}    
+    return *ui_->driverSpeedGraph;
+} 
+
+QwtPlot& PowerUI::setBatteryCellTempGraph()
+{
+    return *ui_->batteryCellTempGraph;
+} 
+
+QwtPlot& PowerUI::setBatteryCellVoltageGraph()
+{
+    return *ui_->batteryCellVoltageGraph;
+} 

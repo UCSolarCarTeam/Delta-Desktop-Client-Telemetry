@@ -56,7 +56,7 @@ SOURCES += \
     PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.cpp \
     PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
     PresenterLayer/FaultsPresenter/FaultsPresenter.cpp \
-    PresenterLayer/GraphsPresenter/GraphsPresenter.cpp \
+    # PresenterLayer/GraphsPresenter/GraphsPresenter.cpp \
     PresenterLayer/MpptPresenter/MpptPresenter.cpp \
     PresenterLayer/PowerPresenter/PowerPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
@@ -116,7 +116,7 @@ HEADERS  += \
     PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.h \
     PresenterLayer/DisplayPresenter/DisplayPresenter.h \
     PresenterLayer/FaultsPresenter/FaultsPresenter.h \
-    PresenterLayer/GraphsPresenter/GraphsPresenter.h \
+    # PresenterLayer/GraphsPresenter/GraphsPresenter.h \
     PresenterLayer/MpptPresenter/MpptPresenter.h \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
