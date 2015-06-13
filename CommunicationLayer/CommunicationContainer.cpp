@@ -53,3 +53,13 @@ I_ConnectionService& CommunicationContainer::connectionService()
 {
    return *connectionService_;
 }
+
+I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
+{
+   return *packetSynchronizer_;
+}
+
+I_PacketDecoder& CommunicationContainer::packetDecoder()
+{
+   return *packetDecoder_;
+}

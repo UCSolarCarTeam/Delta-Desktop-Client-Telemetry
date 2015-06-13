@@ -1,5 +1,6 @@
 #include "DriverControlDetails.h"
 #include "MessageDecodingHelpers.h"
+#include "MessageDefines.h"
 
 using namespace MessageDecodingHelpers;
 
@@ -53,4 +54,18 @@ float DriverControlDetails::dcBusAmpHours() const
 float DriverControlDetails::odometer() const
 {
    return getFloat(messageData_, odometerIndex);
+}
+
+QString DriverControlDetails::toString() const
+{
+   QString messageString;
+   messageString += QString::number(MessageDefines::DriverControlDetails) + ", ";
+   messageString += QString::number(motorVelocity()) + ", ";
+   messageString += QString::number(motorVoltage()) + ", ";
+   messageString += QString::number(motorCurrentReal()) + ", ";
+   messageString += QString::number(backEmf()) + ", ";
+   messageString += QString::number(dpsBoardTemperature()) + ", ";
+   messageString += QString::number(dcBusAmpHours()) + ", ";
+   messageString += QString::number(odometer()) + ", ";
+   return messageString;
 }

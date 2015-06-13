@@ -1,4 +1,5 @@
 #include "FaultsMessage.h"
+#include "MessageDefines.h"
 
 namespace
 {
@@ -40,4 +41,16 @@ quint8 FaultsMessage::canReceivedErrorCounts() const
 quint8 FaultsMessage::canTransmittedErrorCounts() const
 {
    return messageData_.at(CAN_TX_ERROR_COUNTS_INDEX);
+}
+
+QString FaultsMessage::toString() const
+{
+   QString messageString;
+   messageString += QString::number(MessageDefines::Faults) + ", ";
+   messageString += motorFaults().toString() + ", ";
+   messageString += limitFlags().toString() + ", ";
+   messageString += batteryFaults().toString() + ", ";
+   messageString += QString::number(canReceivedErrorCounts()) + ", ";
+   messageString += QString::number(canTransmittedErrorCounts()) + ", ";
+   return messageString;
 }

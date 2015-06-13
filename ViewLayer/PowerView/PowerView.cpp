@@ -5,8 +5,8 @@
 #include "../PowerUI/PowerUI.h"
 #include <QDebug>
 
-PowerView::PowerView(DisplayPresenter& presenter, 
-                     BatteryPresenter& batteryPresenter, 
+PowerView::PowerView(DisplayPresenter& presenter,
+                     BatteryPresenter& batteryPresenter,
                      VehiclePresenter& vehiclePresenter,
                      PowerUI& ui)
 : presenter_(presenter)
@@ -18,7 +18,7 @@ PowerView::PowerView(DisplayPresenter& presenter,
     ui_.getSerialPortName().setText("COM");
 #else
     ui_.getSerialPortName().setText("/dev/ttyUSB0");
-#endif 
+#endif
 
     connect(&vehiclePresenter_, SIGNAL(driverSetSpeedMetersPerSecondReceived(double)),
             this, SLOT(driverSetSpeedMetersPerSecondReceived(double)));
@@ -32,7 +32,7 @@ PowerView::PowerView(DisplayPresenter& presenter,
             this, SLOT(busVoltageReceived(double)));
     // connect(&vehiclePresenter_, SIGNAL(???),
     //         this, SLOT(arrayCurrentReceived(double)));
- 
+
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
@@ -56,20 +56,18 @@ PowerView::PowerView(DisplayPresenter& presenter,
             this, SLOT(connectionFailed(QString)));
     connect(&presenter_, SIGNAL(connectionSucceeded(QString)),
             this, SLOT(connectionSucceeded(QString)));
-    connect(&presenter_, SIGNAL(sendDebugMessage(QString)),
-            this, SLOT(writeToDebugLog(QString)));
 }
 
 void PowerView::driverSetSpeedMetersPerSecondReceived(double driverSetSpeedMetersPerSecond)
 {
     //Convert meters per second to kilometers per hour
-    double driverSetSpeedKph = driverSetSpeedMetersPerSecond * 3.6; 
+    double driverSetSpeedKph = driverSetSpeedMetersPerSecond * 3.6;
     ui_.setSetSpeed().setNum(driverSetSpeedKph);
 }
 void PowerView::driverSetCurrentReceived(double driverSetCurrent)
 {
     ui_.setSetCurrent().setNum(driverSetCurrent);
-} 
+}
 void PowerView::vehicleVelocityMetersPerSecondReceived(double vehicleVelocityMetersPerSecond)
 {
     //Convert meters per second to kilometers per hour
@@ -90,7 +88,7 @@ void PowerView::arrayCurrentReceived(double arrayCurrentIn)
 }
 
 void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)
-{   
+{
     ui_.setBatteryCMU1Temp().setNum(mod0PcbTemperature);
 }
 
@@ -109,7 +107,7 @@ void PowerView::mod0CellVoltagesReceived(QList<double> mod0CellVoltages)
 void PowerView::mod1CellTemperatureReceived(double mod1PcbTemperature)
 {
      ui_.setBatteryCMU2Temp().setNum(mod1PcbTemperature);
-} 
+}
 
 void PowerView::mod1CellVoltagesReceived(QList<double> mod1CellVoltages)
 {
@@ -126,7 +124,7 @@ void PowerView::mod1CellVoltagesReceived(QList<double> mod1CellVoltages)
 void PowerView::mod2CellTemperatureReceived(double mod2PcbTemperature)
 {
     ui_.setBatteryCMU3Temp().setNum(mod2PcbTemperature);
-} 
+}
 
 void PowerView::mod2CellVoltagesReceived(QList<double> mod2CellVoltages)
 {
@@ -141,7 +139,7 @@ void PowerView::mod2CellVoltagesReceived(QList<double> mod2CellVoltages)
 }
 
 void PowerView::mod3CellTemperatureReceived(double mod3PcbTemperature)
-{   
+{
     ui_.setBatteryCMU4Temp().setNum(mod3PcbTemperature);
 }
 
@@ -164,15 +162,15 @@ PowerView::~PowerView()
 
 void PowerView::handleGraph1Selected()
 {
-    
+
 }
 void PowerView::handleGraph2Selected()
 {
-    
+
 }
 void PowerView::handleGraph3Selected()
 {
-    
+
 }
 
 void PowerView::handleConnectButtonClicked()
@@ -209,9 +207,3 @@ void PowerView::clearDebugLog()
 {
     ui_.setDebugLog().clear();
 }
-
-void PowerView::writeToDebugLog(QString message)
-{
-    ui_.setDebugLog().append(message);
-}
-

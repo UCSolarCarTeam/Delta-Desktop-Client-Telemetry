@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtCore>
+#include <QString>
 
 class LimitFlags
 {
@@ -16,6 +16,7 @@ public:
    bool ipmOrMotorTelemetryLimit() const;
 
    bool operator==(const LimitFlags& other) const;
+   QString toString() const;
 
 private:
    quint8 flags_;

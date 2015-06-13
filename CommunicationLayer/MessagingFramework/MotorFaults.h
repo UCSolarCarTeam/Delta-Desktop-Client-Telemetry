@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtCore>
+#include <QString>
 
 class MotorFaults
 {
@@ -17,6 +17,7 @@ public:
    bool desaturationFault() const;
 
    bool operator==(const MotorFaults& other) const;
+   QString toString() const;
 
 private:
    quint8 flags_;

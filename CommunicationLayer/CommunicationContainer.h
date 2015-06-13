@@ -9,6 +9,8 @@ class DataContainer;
 class DriverDetailsPopulator;
 class FaultsPopulator;
 class I_ConnectionService;
+class I_PacketDecoder;
+class I_PacketSynchronizer;
 class KeyDriverControlPopulator;
 class PacketChecksumChecker;
 class PacketDecoder;
@@ -22,6 +24,8 @@ public:
    ~CommunicationContainer();
 
    I_ConnectionService& connectionService();
+   I_PacketSynchronizer& packetSynchronizer();
+   I_PacketDecoder& packetDecoder();
 
 private:
    QScopedPointer<QSerialPort> port_;

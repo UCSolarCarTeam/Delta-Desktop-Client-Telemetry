@@ -2,6 +2,7 @@
 
 #include <QByteArray>
 #include <QList>
+#include <QString>
 
 class CmuDataMessage
 {
@@ -12,6 +13,8 @@ public:
    float pcbTemperature() const;
    float cellTemperature() const;
    QList<float> cellVoltages() const;
+
+   QString toString() const;
 
 private:
    const QByteArray messageData_;

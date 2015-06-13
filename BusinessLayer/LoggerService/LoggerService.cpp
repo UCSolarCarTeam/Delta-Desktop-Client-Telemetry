@@ -1,154 +1,164 @@
+#include <QDebug>
+
 #include "LoggerService.h"
 #include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
+#include "../../CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
 
-LoggerService::LoggerService(I_ConnectionService& connectionService,
-                           QString filename)
-: logTxtFile_(filename)
-, logCsvFile_(filename)
-, connectionService_(connectionService)
+#define PIPE_DEBUG_OUTPUT_TO_FILE 0
+
+namespace
 {
-   /********************Connections********************/
+   QString printOutContext(const QMessageLogContext& context)
+   {
+      return QString("In File %1, line %2, function %3").arg(context.file).arg(context.line).arg(context.function);
+   }
+
+   const QString LOG_DIRECTORY = "logs";
+   const QString DEBUG_LOG_NAME = LOG_DIRECTORY + "/DebugLog.txt";
+}
+
+void handleQDebugMessages(QtMsgType type,
+   const QMessageLogContext& context, const QString& message)
+{
+   QScopedPointer<QTextStream> debugFileWriter;
+
+#if PIPE_DEBUG_OUTPUT_TO_FILE
+   QFile debugFile(DEBUG_LOG_NAME);
+   if (debugFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
+   {
+      debugFileWriter.reset(new QTextStream(&debugFile));
+   }
+   else
+#endif
+   {
+      debugFileWriter.reset(new QTextStream(stdout));
+   }
+
+   switch (type)
+   {
+   default:
+   case QtDebugMsg:
+      *debugFileWriter << "DEBUG: " << QDateTime::currentDateTime().toString("Thh:mm:ss:zzz: ")
+         << message << endl;
+   break;
+   case QtWarningMsg:
+      *debugFileWriter << "WARNING: " << QDateTime::currentDateTime().toString("Thh:mm:ss:zzz: ")
+         << message << endl << "   " << printOutContext(context) << endl;
+      break;
+   case QtCriticalMsg:
+      *debugFileWriter << "CRITICAL: " << QDateTime::currentDateTime().toString("Thh:mm:ss:zzz: ")
+         << message << endl << "   " << printOutContext(context) << endl;
+      break;
+   case QtFatalMsg:
+      *debugFileWriter << "FATAL: " << QDateTime::currentDateTime().toString("Thh:mm:ss:zzz: ")
+         << message << endl << "   " << printOutContext(context) << endl;
+      abort();
+   }
+}
+
+LoggerService::LoggerService(const I_ConnectionService& connectionService,
+      const I_PacketSynchronizer& packetSynchronizer,
+      const I_PacketDecoder& packetDecoder)
+: connectionService_(connectionService)
+{
    connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
-           this, SLOT (receivedConnectionService(QString)));
+      this, SLOT(handleConnectionServiceDebugMessage(QString)));
+   connectToPacketDecoder(packetDecoder);
+   connect(&packetSynchronizer, SIGNAL(framedPacket(QByteArray)),
+      this, SLOT(handleFramedPacket(QByteArray)));
 
-   /********************File Initializing********************/
+   QDir().mkdir("logs");
+   QDir debugDirectory("logs");
    QDateTime date = QDateTime::currentDateTime();
-   QString DebugFilePath("DebugLogs/"); //can only create ONE NEW folder.
-   if(!QDir(DebugFilePath).exists()){
-      QDir().mkdir(DebugFilePath);
-   }
+   QString currentDataTime(date.toString("yyyy.MM.dd_hh.mm.ss"));
+   debugDirectory.mkdir(currentDataTime);
+   debugDirectory.cd(currentDataTime);
 
-   filename.prepend(date.toString("yyyy.MM.dd_hh.mm.ss")); //following Canadian Standard 'ISO 8601'
-   filename.prepend(DebugFilePath);
+   qInstallMessageHandler(handleQDebugMessages);
+   markStartOfDebugLog();
 
-   /*Log Csv File*/
-   logCsvFile_.setFileName(filename + ".csv");
+   logCsvFile_.setFileName(debugDirectory.filePath("messageData.csv"));
    logCsvFile_.open(QIODevice::WriteOnly | QIODevice::Text);
+   csvFileWriter_.setDevice(&logCsvFile_);
 
-   /*Log Text File*/
-   logTxtFile_.setFileName(filename + ".txt");
-   if(logTxtFile_.open(QIODevice::WriteOnly | QIODevice::Text)){
-      QTextStream writer(&logTxtFile_);
-      writer << "|======================";
-      writer << date.toString("ddd MMM d yyyy");
-      writer << "======================|" << endl;
-      writer <<  "                     SOLARCAR  DEBUG  LOG" << endl;
-      writer << "|===========================================================|" << endl;
-   }
+   rawDataFile_.setFileName(debugDirectory.filePath("rawMessageData.dat"));
+   rawDataFile_.open(QIODevice::WriteOnly);
+   dataWriter_.setDevice(&rawDataFile_);
 }
 
 LoggerService::~LoggerService()
 {
-   printToDebuglogCsvFile();
-   logTxtFile_.close();
-   logCsvFile_.close();
+   markEndOfDebugLog();
 }
 
-void LoggerService::receivedConnectionService(QString debugMessage)
+void LoggerService::handleConnectionServiceDebugMessage(QString message)
 {
-   emit sendDebugMessageToPresenter(debugMessage);
+   qDebug() << message;
 }
 
-// gets the original RAW string that dataparse receieves
-// (this will just be sent to the debuglogTxtFile)
-void LoggerService::receivedDebugDataParser(QString debugMessage)
+void LoggerService::handleFramedPacket(QByteArray packet)
 {
-   QString messageToFile("             | RAW-STRING   : "); //Optional String prepending Message
-   messageToFile.append(debugMessage);
-   printlnToDebuglogTxtFile(messageToFile);
+   dataWriter_ << packet;
 }
 
-// gets the parsed values that dataparser emits and translates it to a human readable format
-// and sends it to the debuglogTxtFile
-void LoggerService::receivedParsedDataParser(int id, double value)
+void LoggerService::handlePacketDecoded(const KeyDriverControlTelemetry message)
+{
+   printReceivedMessage(message);
+}
+
+void LoggerService::handlePacketDecoded(const DriverControlDetails message)
+{
+   printReceivedMessage(message);
+}
+
+void LoggerService::handlePacketDecoded(const FaultsMessage message)
+{
+   printReceivedMessage(message);
+}
+
+void LoggerService::handlePacketDecoded(const BatteryDataMessage message)
+{
+   printReceivedMessage(message);
+}
+
+void LoggerService::handlePacketDecoded(const CmuDataMessage message)
+{
+   printReceivedMessage(message);
+}
+
+template <class T>
+void LoggerService::printReceivedMessage(const T& message)
 {
    QDateTime date = QDateTime::currentDateTime();
-   QString messageToFile(" | PARSED-STRING: "); //Optional String prepending Message.
-   messageToFile.prepend(date.toString("hh:mm:ss:zzz"));
-
-   messageToFile.append(convertIDtoString(id));
-   messageToFile.append(QString::number(value)); //May need to change this if we don't want raw 'value' going in.
-
-   printlnToDebuglogTxtFile(messageToFile);
-
-   storeCsv2DArray(id, value);
+   QString messageToPrint(QDateTime::currentDateTime().toString("hh:mm:ss:zzz") + ", ");
+   messageToPrint.append(message.toString());
+   csvFileWriter_ << messageToPrint << endl;
 }
 
-// Orientation of the Vectors is Vectors pointing downwards. Each Vector represents a columnn
-void LoggerService::storeCsv2DArray(int id, int value)
+void LoggerService::connectToPacketDecoder(const I_PacketDecoder& decoder)
 {
-   int currentMaxId = csv2DArray_.length(); // Number of Columns there are.
-   int missing = id - currentMaxId + 1;
-
-   if(missing > 0){    // if missing is postive, id doesn't have a spot within the array yet
-     for(int i = 0; i < missing; i++)
-     {
-         QVector<int> newColumn;
-         csv2DArray_.push_back(newColumn);
-      }
-   }
-
-   csv2DArray_[id].push_back(value);
+   connect(&decoder, SIGNAL(packetDecoded(const KeyDriverControlTelemetry)),
+      this, SLOT(handlePacketDecoded(const KeyDriverControlTelemetry)));
+   connect(&decoder, SIGNAL(packetDecoded(const DriverControlDetails)),
+      this, SLOT(handlePacketDecoded(const DriverControlDetails)));
+   connect(&decoder, SIGNAL(packetDecoded(const FaultsMessage)),
+      this, SLOT(handlePacketDecoded(const FaultsMessage)));
+   connect(&decoder, SIGNAL(packetDecoded(const BatteryDataMessage)),
+      this, SLOT(handlePacketDecoded(const BatteryDataMessage)));
+   connect(&decoder, SIGNAL(packetDecoded(const CmuDataMessage)),
+      this, SLOT(handlePacketDecoded(const CmuDataMessage)));
 }
 
-void LoggerService::printlnToDebuglogTxtFile(QString debugMessage)
+void LoggerService::markStartOfDebugLog() const
 {
-   QTextStream writer(&logTxtFile_);
-   writer << debugMessage << endl;
+   qDebug() << "===================================================";
+   qDebug() << "             Solar Car Telemetry App Started";
+   qDebug() << "===================================================";
 }
 
-void LoggerService::printToDebuglogCsvFile(void)
+void LoggerService::markEndOfDebugLog() const
 {
-   QTextStream writer(&logCsvFile_);
-   QString messageToFile;
-
-   int numOfColumns = csv2DArray_.length();
-   int longestColumnLength = 0;
-
-   messageToFile.clear();
-   for(int i = 0; i < numOfColumns; i++)
-   {
-      messageToFile.append(convertIDtoString(i));
-      messageToFile.append(",");
-   }
-
-   messageToFile.append("\n");
-   writer << messageToFile;
-
-   /*finds longest column*/
-   for(int i = 0; i < numOfColumns; i++)
-   {
-      if(longestColumnLength < csv2DArray_.at(i).length()){
-         longestColumnLength = csv2DArray_.at(i).length();
-      }
-   }
-
-   /*write the values into the csv*/
-   for(int currentRow = 0; currentRow < longestColumnLength; currentRow++)
-   {
-      messageToFile.clear();
-      for(int index = 0; index < numOfColumns; index++)
-      {
-         if(csv2DArray_[index].length() > currentRow){
-            messageToFile.append(QString::number(csv2DArray_[index].at(currentRow)));
-         }
-         messageToFile.append(",");
-      }
-      messageToFile.append("\n");
-      writer << messageToFile;
-   }
+   qDebug() << "===================================================";
+   qDebug() << "             Solar Car Telemetry App Closed";
+   qDebug() << "===================================================";
 }
-
-QString LoggerService::convertIDtoString(int id)
-{
-   QString convertedID;
-
-   switch(id)
-   {
-   default:
-      convertedID.append("**NO ID**");
-      break;
-   }
-   return convertedID;
-}
-

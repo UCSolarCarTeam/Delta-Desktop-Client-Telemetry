@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtCore>
+#include <QString>
 
 class BatteryFaults
 {
@@ -22,6 +22,7 @@ public:
    bool cmuDetectedExtraCellPresent() const;
 
    bool operator==(const BatteryFaults& other) const;
+   QString toString() const;
 
 private:
    quint16 flags_;

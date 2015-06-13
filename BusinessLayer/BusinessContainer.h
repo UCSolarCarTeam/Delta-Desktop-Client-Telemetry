@@ -10,8 +10,6 @@ public:
    explicit BusinessContainer(CommunicationContainer& communicationContainer);
    ~BusinessContainer();
 
-   LoggerService& loggerService();
-
 private:
-    QScopedPointer<LoggerService> loggerService_;
+   QScopedPointer<LoggerService> loggerService_;
 };

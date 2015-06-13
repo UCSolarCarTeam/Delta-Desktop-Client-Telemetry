@@ -1,5 +1,6 @@
 #include "BatteryDataMessage.h"
 #include "MessageDecodingHelpers.h"
+#include "MessageDefines.h"
 
 using namespace MessageDecodingHelpers;
 
@@ -40,4 +41,16 @@ float BatteryDataMessage::balanceStateOfCharge() const
 bool BatteryDataMessage::secondaryBatteryUnderVoltage() const
 {
    return static_cast<bool>(messageData_.at(SECONDARY_ERROR_INDEX));
+}
+
+QString BatteryDataMessage::toString() const
+{
+   QString messageString;
+   messageString += QString::number(MessageDefines::BatteryData) + ", ";
+   messageString += QString::number(batteryVoltage()) + ", ";
+   messageString += QString::number(batteryCurrent()) + ", ";
+   messageString += QString::number(stateOfCharge()) + ", ";
+   messageString += QString::number(balanceStateOfCharge()) + ", ";
+   messageString += QString::number(secondaryBatteryUnderVoltage()) + ", ";
+   return messageString;
 }

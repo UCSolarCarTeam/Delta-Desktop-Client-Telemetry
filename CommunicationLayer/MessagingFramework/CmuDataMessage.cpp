@@ -1,5 +1,6 @@
 #include "CmuDataMessage.h"
 #include "MessageDecodingHelpers.h"
+#include "MessageDefines.h"
 
 using namespace MessageDecodingHelpers;
 
@@ -42,4 +43,18 @@ QList<float> CmuDataMessage::cellVoltages() const
       cellVoltagesData << getFloat(messageData_, indexOfCell);
    }
    return cellVoltagesData;
+}
+
+QString CmuDataMessage::toString() const
+{
+   QString messageString;
+   messageString += QString::number(MessageDefines::CmuData) + ", ";
+   messageString += QString::number(cellNumber()) + ", ";
+   messageString += QString::number(pcbTemperature()) + ", ";
+   messageString += QString::number(cellTemperature()) + ", ";
+   foreach(const float& cellVoltage, cellVoltages())
+   {
+      messageString += QString::number(cellVoltage) + ", ";
+   }
+   return messageString;
 }

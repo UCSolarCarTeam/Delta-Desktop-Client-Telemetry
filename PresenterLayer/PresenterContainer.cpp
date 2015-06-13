@@ -12,13 +12,13 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
       CommunicationContainer& communicationContainer,
       BusinessContainer& businessContainer)
 : displayPresenter_(new DisplayPresenter(dataContainer.powerData(),
-      communicationContainer.connectionService(),
-      businessContainer.loggerService()))
+      communicationContainer.connectionService()))
 , batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
 , mpptPresenter_(new MpptPresenter(dataContainer.arrayData()))
 , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
 {
+   Q_UNUSED(businessContainer); //TODO
 }
 
 PresenterContainer::~PresenterContainer()

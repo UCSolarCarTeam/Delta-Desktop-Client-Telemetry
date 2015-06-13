@@ -11,8 +11,8 @@ class PowerView : public QObject
 {
    Q_OBJECT
 public:
-   PowerView(DisplayPresenter& presenter, 
-             BatteryPresenter& batteryPresenter, 
+   PowerView(DisplayPresenter& presenter,
+             BatteryPresenter& batteryPresenter,
              VehiclePresenter& vehiclePresenter,
              PowerUI& ui);
    ~PowerView();
@@ -49,5 +49,4 @@ private slots:
    void connectionFailed(QString);
    void connectionSucceeded(QString);
    void clearDebugLog();
-   void writeToDebugLog(QString);
 };

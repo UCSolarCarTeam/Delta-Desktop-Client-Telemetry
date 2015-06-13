@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QByteArray>
+#include <QString>
 #include "BatteryFaults.h"
 #include "LimitFlags.h"
 #include "MotorFaults.h"
@@ -16,6 +17,8 @@ public:
 
    quint8 canReceivedErrorCounts() const;
    quint8 canTransmittedErrorCounts() const;
+
+   QString toString() const;
 
 private:
    const QByteArray messageData_;

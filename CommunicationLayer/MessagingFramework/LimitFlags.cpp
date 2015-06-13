@@ -55,3 +55,8 @@ bool LimitFlags::operator==(const LimitFlags& other) const
 {
    return flags_ == other.flags_;
 }
+
+QString LimitFlags::toString() const
+{
+   return "0x" + QString::number(flags_, 16);
+}

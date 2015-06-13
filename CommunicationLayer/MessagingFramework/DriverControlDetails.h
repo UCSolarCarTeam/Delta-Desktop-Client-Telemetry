@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QByteArray>
+#include <QString>
 
 class DriverControlDetails
 {
@@ -14,6 +15,8 @@ public:
    float dpsBoardTemperature() const;
    float dcBusAmpHours() const;
    float odometer() const;
+
+   QString toString() const;
 
 private:
    const QByteArray messageData_;

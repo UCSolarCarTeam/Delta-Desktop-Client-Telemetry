@@ -3,40 +3,45 @@
 #include <QObject>
 #include <QString>
 #include <QFile>
-#include <qdebug.h>
 #include <QTextStream>
 #include <QDateTime>
 #include <QDir>
-#include <QVector>
 
+#include "../../CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
 class I_ConnectionService;
+class I_PacketDecoder;
+class I_PacketSynchronizer;
 
 class LoggerService : public QObject
 {
    Q_OBJECT
-
 public:
-   LoggerService(I_ConnectionService& connectionService,
-                QString filename);
+   LoggerService(const I_ConnectionService& connectionService,
+      const I_PacketSynchronizer& packetSynchronizer,
+      const I_PacketDecoder& packetDecoder);
    virtual ~LoggerService();
 
-signals:
-   void sendDebugMessageToPresenter(QString);
-
 private slots:
-   void receivedConnectionService(QString);
-   void receivedDebugDataParser(QString);
-   void receivedParsedDataParser(int, double);
+   void handleConnectionServiceDebugMessage(QString message);
+   void handleFramedPacket(QByteArray packet);
+   void handlePacketDecoded(const KeyDriverControlTelemetry message);
+   void handlePacketDecoded(const DriverControlDetails message);
+   void handlePacketDecoded(const FaultsMessage message);
+   void handlePacketDecoded(const BatteryDataMessage message);
+   void handlePacketDecoded(const CmuDataMessage message);
 
 private:
-   void storeCsv2DArray(int id, int value);
-   void printlnToDebuglogTxtFile(QString);
-   void printToDebuglogCsvFile(void);
+   void connectToPacketDecoder(const I_PacketDecoder& decoder);
+   template <class T>
+   void printReceivedMessage(const T& message);
+   void markStartOfDebugLog() const;
+   void markEndOfDebugLog() const;
 
-   QString convertIDtoString(int);
-   QFile logTxtFile_;
    QFile logCsvFile_;
-   QVector< QVector<int> > csv2DArray_;
+   QTextStream csvFileWriter_;
 
-   I_ConnectionService& connectionService_;
+   QFile rawDataFile_;
+   QDataStream dataWriter_;
+
+   const I_ConnectionService& connectionService_;
 };

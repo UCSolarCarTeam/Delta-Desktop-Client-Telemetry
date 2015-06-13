@@ -61,3 +61,8 @@ bool MotorFaults::operator==(const MotorFaults& other) const
 {
    return flags_ == other.flags_;
 }
+
+QString MotorFaults::toString() const
+{
+   return "0x" + QString::number(flags_, 16);
+}

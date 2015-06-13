@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QByteArray>
+#include <QString>
 
 class KeyDriverControlTelemetry
 {
@@ -12,6 +13,8 @@ public:
    float busCurrent() const;
    float busVoltage() const;
    float speed() const;
+
+   QString toString() const;
 
 private:
    const QByteArray messageData_;

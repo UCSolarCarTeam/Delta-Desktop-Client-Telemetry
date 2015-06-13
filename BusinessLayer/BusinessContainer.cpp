@@ -2,22 +2,13 @@
 #include "CommunicationLayer/CommunicationContainer.h"
 #include "LoggerService/LoggerService.h"
 
-namespace
-{
-   const QString defaultFilename = "SolarCarDebugLog";
-}
-
 BusinessContainer::BusinessContainer(CommunicationContainer& communicationContainer)
 : loggerService_(new LoggerService(communicationContainer.connectionService(),
-      defaultFilename))
+   communicationContainer.packetSynchronizer(),
+   communicationContainer.packetDecoder()))
 {
 }
 
 BusinessContainer::~BusinessContainer()
 {
-}
-
-LoggerService& BusinessContainer::loggerService()
-{
-   return *loggerService_;
 }

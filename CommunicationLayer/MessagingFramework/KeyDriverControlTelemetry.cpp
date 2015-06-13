@@ -1,5 +1,6 @@
 #include "KeyDriverControlTelemetry.h"
 #include "MessageDecodingHelpers.h"
+#include "MessageDefines.h"
 
 using namespace MessageDecodingHelpers;
 
@@ -41,4 +42,16 @@ float KeyDriverControlTelemetry::busVoltage() const
 float KeyDriverControlTelemetry::speed() const
 {
    return getFloat(messageData_, speedIndex);
+}
+
+QString KeyDriverControlTelemetry::toString() const
+{
+   QString messageString;
+   messageString += QString::number(MessageDefines::KeyDriverControlTelemetry) + ", ";
+   messageString += QString::number(setSpeed()) + ", ";
+   messageString += QString::number(setCurrent()) + ", ";
+   messageString += QString::number(busCurrent()) + ", ";
+   messageString += QString::number(busVoltage()) + ", ";
+   messageString += QString::number(speed()) + ", ";
+   return messageString;
 }

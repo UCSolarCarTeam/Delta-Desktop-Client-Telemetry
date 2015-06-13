@@ -10,7 +10,7 @@ class I_ConnectionService : public QObject
 
 signals:
    void connectionFailed(QString failureMessage);
-   void connectionSucceeded(QString successMessage2);
+   void connectionSucceeded(QString successMessage);
    void sendDebugMessage(QString debugMessage);
 
 public slots:

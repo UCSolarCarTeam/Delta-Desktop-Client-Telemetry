@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QByteArray>
+#include <QString>
 
 class BatteryDataMessage
 {
@@ -12,6 +13,8 @@ public:
    float stateOfCharge() const;
    float balanceStateOfCharge() const;
    bool secondaryBatteryUnderVoltage() const;
+
+   QString toString() const;
 
 private:
    const QByteArray messageData_;

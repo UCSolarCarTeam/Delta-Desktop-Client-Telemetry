@@ -3,27 +3,23 @@
 #include <QObject>
 class I_PowerData;
 class I_ConnectionService;
-class LoggerService;
 
 class DisplayPresenter : public QObject
 {
    Q_OBJECT
 public:
    explicit DisplayPresenter(const I_PowerData& powerData,
-                             I_ConnectionService& connectionService,
-                             LoggerService& loggerService);
+                             I_ConnectionService& connectionService);
    void connectDataSource(QString portName, int baudRate);
    void disconnectDataSource();
 
 private:
     void relayPowerData();
     void relayConnectionStatus();
-    void relayDebugMessage();
 
 private:
    const I_PowerData& powerData_;
    I_ConnectionService& connectionService_;
-   LoggerService& loggerService_;
 
 signals:
    void busCurrentAReceived(double busCurrentA);
@@ -35,6 +31,4 @@ signals:
 
    void connectionFailed(QString failureMessage);
    void connectionSucceeded(QString successMessage);
-   void sendDebugMessage(QString message);
 };
-

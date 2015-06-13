@@ -92,3 +92,7 @@ bool BatteryFaults::operator==(const BatteryFaults& other) const
    return flags_ == other.flags_;
 }
 
+QString BatteryFaults::toString() const
+{
+   return "0x" + QString::number(flags_, 16);
+}
