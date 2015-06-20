@@ -1,11 +1,13 @@
 #pragma once
-
+#include "../../PresenterLayer/GraphsPresenter/PowerGraphData.h"
 #include <QObject>
 
 class DisplayPresenter;
 class BatteryPresenter;
 class VehiclePresenter;
+class PowerGraphsPresenter;
 class PowerUI;
+class PowerGraphData;
 
 class PowerView : public QObject
 {
@@ -14,6 +16,7 @@ public:
    PowerView(DisplayPresenter& presenter,
              BatteryPresenter& batteryPresenter,
              VehiclePresenter& vehiclePresenter,
+             PowerGraphsPresenter& graphsPresenter_,
              PowerUI& ui);
    ~PowerView();
 
@@ -21,8 +24,9 @@ private:
    DisplayPresenter& presenter_;
    BatteryPresenter& batteryPresenter_;
    VehiclePresenter& vehiclePresenter_;
+   PowerGraphsPresenter& graphsPresenter_;
    PowerUI& ui_;
-
+   
 private slots:
    void driverSetSpeedMetersPerSecondReceived(double);
    void driverSetCurrentReceived(double);
@@ -40,12 +44,18 @@ private slots:
    void mod3CellTemperatureReceived(double);
    void mod3CellVoltagesReceived(QList<double>);
 
-   void handleGraph1Selected();
-   void handleGraph2Selected();
-   void handleGraph3Selected();
+   void updateBusCurrentGraph(PowerGraphData);
+   void updateBusVoltageGraph(PowerGraphData);
+   void updateBusPowerGraph(PowerGraphData);
+   void updateDriverCurrentGraph(PowerGraphData);
+   void updateDriverSpeedGraph(PowerGraphData);
+   void updateBatteryCellTempGraph(PowerGraphData);
+   void updateBatteryCellVoltageGraph(PowerGraphData);
 
    void handleConnectButtonClicked();
-   // void handleDisconnectButtonClicked();
+   void handleBusGraphButtonClicked();
+   void handleDriverGraphButtonClicked();
+   void handleBatteryGraphButtonClicked();
    void connectionFailed(QString);
    void connectionSucceeded(QString);
    void clearDebugLog();

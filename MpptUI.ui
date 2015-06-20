@@ -272,7 +272,7 @@ background: none;</string>
             </widget>
            </item>
            <item>
-            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0">
+            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0,0">
              <property name="leftMargin">
               <number>9</number>
              </property>
@@ -288,6 +288,19 @@ background: none;</string>
              <property name="verticalSpacing">
               <number>9</number>
              </property>
+             <item row="2" column="0">
+              <widget class="QwtPlot" name="graph2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: none;</string>
+               </property>
+              </widget>
+             </item>
              <item row="3" column="0">
               <widget class="QComboBox" name="graphSelector2">
                <property name="styleSheet">
@@ -352,8 +365,35 @@ padding: 3px;</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QwtPlot" name="graph2">
+             <item row="6" column="0">
+              <widget class="QComboBox" name="graphSelector2_2">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+               <property name="currentText">
+                <string>Graph One</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Graph One</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Two</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Graph Three</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QwtPlot" name="graph2_2">
                <property name="minimumSize">
                 <size>
                  <width>0</width>

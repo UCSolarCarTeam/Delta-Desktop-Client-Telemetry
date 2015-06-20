@@ -4,6 +4,7 @@
 #include "DataLayer/DataContainer.h"
 #include "DisplayPresenter/DisplayPresenter.h"
 #include "FaultsPresenter/FaultsPresenter.h"
+#include "GraphsPresenter/PowerGraphsPresenter.h"
 #include "MpptPresenter/MpptPresenter.h"
 #include "PresenterContainer.h"
 #include "VehiclePresenter/VehiclePresenter.h"
@@ -17,6 +18,9 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
 , mpptPresenter_(new MpptPresenter(dataContainer.arrayData()))
 , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
+, powerGraphsPresenter_(new PowerGraphsPresenter(dataContainer.vehicleData(),
+		dataContainer.powerData(),
+		dataContainer.batteryData()))
 {
    Q_UNUSED(businessContainer); //TODO
 }
@@ -48,4 +52,9 @@ MpptPresenter& PresenterContainer::mpptPresenter()
 FaultsPresenter& PresenterContainer::faultsPresenter()
 {
 	return *faultsPresenter_;
+}
+
+PowerGraphsPresenter& PresenterContainer::powerGraphsPresenter()
+{
+	return *powerGraphsPresenter_;
 }

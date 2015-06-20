@@ -2,16 +2,22 @@
 #include "../../PresenterLayer/DisplayPresenter/DisplayPresenter.h"
 #include "../../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
 #include "../../PresenterLayer/VehiclePresenter/VehiclePresenter.h"
+#include "../../PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h"
 #include "../PowerUI/PowerUI.h"
 #include <QDebug>
 
-PowerView::PowerView(DisplayPresenter& presenter,
-                     BatteryPresenter& batteryPresenter,
+#include <qwt_plot.h>
+#include <qwt_plot_curve.h>
+
+PowerView::PowerView(DisplayPresenter& presenter, 
+                     BatteryPresenter& batteryPresenter, 
                      VehiclePresenter& vehiclePresenter,
+                     PowerGraphsPresenter& graphsPresenter,
                      PowerUI& ui)
 : presenter_(presenter)
 , batteryPresenter_(batteryPresenter)
 , vehiclePresenter_(vehiclePresenter)
+, graphsPresenter_(graphsPresenter)
 , ui_(ui)
 {
 #ifdef _WIN32
@@ -50,8 +56,30 @@ PowerView::PowerView(DisplayPresenter& presenter,
     connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
             this, SLOT(mod3CellVoltagesReceived(QList<double>)));
 
+    connect(&graphsPresenter_, SIGNAL(busCurrentGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBusCurrentGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(busVoltageGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBusVoltageGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(busPowerGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBusPowerGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(driverCurrentGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateDriverCurrentGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(driverSpeedGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateDriverSpeedGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(batteryCellTempGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(batteryCellVoltageGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
+
     connect(&ui.connectButton(), SIGNAL(clicked()),
             this, SLOT(handleConnectButtonClicked()));
+    connect(&ui.busGraphButton(), SIGNAL(clicked()),
+            this, SLOT(handleBusGraphButtonClicked()));
+    connect(&ui.driverGraphButton(), SIGNAL(clicked()),
+            this, SLOT(handleDriverGraphButtonClicked()));
+    connect(&ui.batteryGraphButton(), SIGNAL(clicked()),
+            this, SLOT(handleBatteryGraphButtonClicked()));
+    
     connect(&presenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
     connect(&presenter_, SIGNAL(connectionSucceeded(QString)),
@@ -155,22 +183,49 @@ void PowerView::mod3CellVoltagesReceived(QList<double> mod3CellVoltages)
     ui_.setBatteryCMU4Cell8Voltage().setNum(mod3CellVoltages[7]);
 }
 
+void PowerView::updateBusCurrentGraph(PowerGraphData graphData)
+{
+    ui_.setBusCurrentGraph().setTitle("Bus Current Graph");
+    double x[100], y1[100], y2[100];
+    QwtPlotCurve *curve1 = new QwtPlotCurve("Curve 1");
+    QwtPlotCurve *curve2 = new QwtPlotCurve("Curve 2");
+    for(int i = 1; i < 101; i ++)
+    {
+        x[i] = i;
+        y1[i] = i;
+        y2[i] = i*i;
+    }
+    curve1->setSamples(x, y1, 100);
+    curve2->setSamples(x, y2, 100);
+    curve1->setPen(*new QPen(Qt::blue));
+    curve2->setPen(*new QPen(Qt::red));
+    curve1->attach(&(ui_.setBusCurrentGraph()));
+    curve2->attach(&(ui_.setBusCurrentGraph()));
+    ui_.setBusCurrentGraph().replot();
+    curve1->setSamples(x, y2, 100);
+    ui_.setBusCurrentGraph().replot();
+}
+void PowerView::updateBusVoltageGraph(PowerGraphData graphData)
+{
+}
+void PowerView::updateBusPowerGraph(PowerGraphData graphData)
+{
+}
+void PowerView::updateDriverCurrentGraph(PowerGraphData graphData)
+{
+}
+void PowerView::updateDriverSpeedGraph(PowerGraphData graphData)
+{
+}
+void PowerView::updateBatteryCellTempGraph(PowerGraphData graphData)
+{
+}
+void PowerView::updateBatteryCellVoltageGraph(PowerGraphData graphData)
+{
+}
+
 PowerView::~PowerView()
 {
-}
-
-
-void PowerView::handleGraph1Selected()
-{
-
-}
-void PowerView::handleGraph2Selected()
-{
-
-}
-void PowerView::handleGraph3Selected()
-{
-
 }
 
 void PowerView::handleConnectButtonClicked()
@@ -184,13 +239,29 @@ void PowerView::handleConnectButtonClicked()
     }
     else if(ui_.connectButton().text() == "Disconnect"){
         presenter_.disconnectDataSource();
+        graphsPresenter_.stopUpdating();
     }
+}
+
+void PowerView::handleBusGraphButtonClicked()
+{
+    ui_.setGraphsStackedWidget().setCurrentIndex(0); // Bus Graphs Index
+}
+
+void PowerView::handleDriverGraphButtonClicked()
+{
+    ui_.setGraphsStackedWidget().setCurrentIndex(1); // Driver Graphs Index
+}
+
+void PowerView::handleBatteryGraphButtonClicked()
+{
+    ui_.setGraphsStackedWidget().setCurrentIndex(2); // Battery Graphs Index
 }
 
 void PowerView::connectionFailed(QString failureMessage)
 {
     ui_.connectButton().setText("Connect");
-    ui_.setConnectionStatus().setText(failureMessage);
+    ui_.setConnectionStatus().setText(failureMessage);  
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(255, 40, 40); background-color: rgb(70,70,70);"); // red text
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth0of5.png);");
 }
@@ -201,6 +272,7 @@ void PowerView::connectionSucceeded(QString successMessage)
     ui_.setConnectionStatus().setText(successMessage);
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
+    graphsPresenter_.startUpdating();
 }
 
 void PowerView::clearDebugLog()

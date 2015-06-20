@@ -52,9 +52,6 @@ QPushButton#connectButton:hover{
    <property name="bottomMargin">
     <number>0</number>
    </property>
-   <property name="spacing">
-    <number>0</number>
-   </property>
    <item row="1" column="0">
     <widget class="QWidget" name="backgroundWidget" native="true">
      <property name="styleSheet">
@@ -701,43 +698,7 @@ background: none;</string>
                 <property name="spacing">
                  <number>0</number>
                 </property>
-                <item row="3" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell1Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="4">
-                 <widget class="QLabel" name="batteryCMU2Label">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>CMU 2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell3Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="5">
+                <item row="1" column="5">
                  <widget class="QLabel" name="batteryCMU3Label">
                   <property name="minimumSize">
                    <size>
@@ -753,7 +714,28 @@ background: none;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="2">
+                <item row="6" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell3Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell2Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="2">
                  <widget class="QLabel" name="batteryCMU1Cell4Voltage">
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(51,51,51);</string>
@@ -763,24 +745,44 @@ background: none;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="6">
-                 <widget class="QLabel" name="batteryCMU4Label">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
+                <item row="6" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell3Voltage">
                   <property name="styleSheet">
-                   <string notr="true">border-right: none;  border-top: none;</string>
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
                   </property>
                   <property name="text">
-                   <string>CMU 4</string>
+                   <string>0</string>
                   </property>
                  </widget>
                 </item>
-                <item row="9" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell7Voltage">
+                <item row="10" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell7Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell6Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell4Voltage">
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(51,51,51);</string>
                   </property>
@@ -789,7 +791,17 @@ background: none;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="4">
+                <item row="4" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell1Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="4">
                  <widget class="QLabel" name="batteryCMU2Temp">
                   <property name="minimumSize">
                    <size>
@@ -805,7 +817,321 @@ background: none;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="2">
+                <item row="1" column="6">
+                 <widget class="QLabel" name="batteryCMU4Label">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;  border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>CMU 4</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="2">
+                 <widget class="QLabel" name="batteryCMU1Cell2Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="2">
+                 <widget class="QLabel" name="batteryCMU1Cell8Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-bottom: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QLabel" name="batteryCell6Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 6</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QLabel" name="batteryCell7Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 7</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QLabel" name="batteryCell5Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 5</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="5">
+                 <widget class="QLabel" name="batteryCMU3Temp">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0" colspan="2">
+                 <widget class="QLabel" name="batteryTemperatureLabel">
+                  <property name="minimumSize">
+                   <size>
+                    <width>130</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-left: none;  </string>
+                  </property>
+                  <property name="text">
+                   <string>Temperature (°C)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell8Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-bottom: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell7Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="batteryCMU1Label">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"> border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>CMU 1</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell1Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="2">
+                 <widget class="QLabel" name="batteryCMU1Cell7Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLabel" name="batteryCell2Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 2</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell5Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell7Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell1Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell2Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell2Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell6Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell4Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell8Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-bottom: none;
+border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0" rowspan="8">
+                 <widget class="QLabel" name="batteryVoltageLabel">
+                  <property name="styleSheet">
+                   <string notr="true">border-left: none;  border-bottom: none; text-transform:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VOLTAGES&lt;/p&gt;&lt;p&gt;(mV)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="1">
+                 <widget class="QLabel" name="batteryCell8Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-bottom: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 8</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLabel" name="batteryCell4Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 4</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell6Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="4">
+                 <widget class="QLabel" name="batteryCMU2Cell5Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="6">
+                 <widget class="QLabel" name="batteryCMU4Cell5Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-right: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="2">
                  <widget class="QLabel" name="batteryCMU1Cell1Voltage">
                   <property name="minimumSize">
                    <size>
@@ -821,8 +1147,48 @@ background: none;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="2">
-                 <widget class="QLabel" name="batteryCMU1Temp">
+                <item row="4" column="1">
+                 <widget class="QLabel" name="batteryCell1Label">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Cell 1</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="batteryCell3Label">
+                  <property name="styleSheet">
+                   <string notr="true">border-top: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>Cell 3</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell3Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell4Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="4">
+                 <widget class="QLabel" name="batteryCMU2Label">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -830,24 +1196,25 @@ background: none;</string>
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
+                   <string notr="true">border-top: none;</string>
                   </property>
                   <property name="text">
-                   <string>0</string>
+                   <string>CMU 2</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell1Voltage">
+                <item row="1" column="0" colspan="2">
+                 <widget class="QLabel" name="batterySpacerLabel">
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
+                   <string notr="true">border-top: none;
+border-left: none;</string>
                   </property>
                   <property name="text">
-                   <string>0</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="6">
+                <item row="3" column="6">
                  <widget class="QLabel" name="batteryCMU4Temp">
                   <property name="minimumSize">
                    <size>
@@ -864,43 +1231,7 @@ background-color: rgb(51,51,51);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="5">
-                 <widget class="QLabel" name="batteryCMU3Temp">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="2">
-                 <widget class="QLabel" name="batteryCMU1Cell2Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="2">
-                 <widget class="QLabel" name="batteryCMU1Cell6Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="2">
+                <item row="6" column="2">
                  <widget class="QLabel" name="batteryCMU1Cell3Voltage">
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(51,51,51);</string>
@@ -910,28 +1241,7 @@ background-color: rgb(51,51,51);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="10" column="2">
-                 <widget class="QLabel" name="batteryCMU1Cell8Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-bottom: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="9" column="2">
-                 <widget class="QLabel" name="batteryCMU1Cell7Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="2">
+                <item row="8" column="2">
                  <widget class="QLabel" name="batteryCMU1Cell5Voltage">
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(51,51,51);</string>
@@ -941,342 +1251,8 @@ background-color: rgb(51,51,51);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell1Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell2Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell2Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="batteryCell1Label">
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
-                  <property name="text">
-                   <string>Cell 1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell2Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="1">
-                 <widget class="QLabel" name="batteryCell2Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="1">
-                 <widget class="QLabel" name="batteryCell4Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 4</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="1">
-                 <widget class="QLabel" name="batteryCell3Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 3</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="9" column="1">
-                 <widget class="QLabel" name="batteryCell7Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 7</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="1">
-                 <widget class="QLabel" name="batteryCell5Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 5</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="1">
-                 <widget class="QLabel" name="batteryCell6Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 6</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell5Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="10" column="1">
-                 <widget class="QLabel" name="batteryCell8Label">
-                  <property name="styleSheet">
-                   <string notr="true">border-bottom: none;</string>
-                  </property>
-                  <property name="text">
-                   <string>Cell 8</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell4Voltage">
-                  <property name="autoFillBackground">
-                   <bool>false</bool>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell6Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="9" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell7Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell4Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="10" column="4">
-                 <widget class="QLabel" name="batteryCMU2Cell8Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-bottom: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell3Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell3Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell6Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="10" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell8Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-bottom: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell4Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell5Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="5">
-                 <widget class="QLabel" name="batteryCMU3Cell5Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell6Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="9" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell7Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="10" column="6">
-                 <widget class="QLabel" name="batteryCMU4Cell8Voltage">
-                  <property name="styleSheet">
-                   <string notr="true">border-bottom: none;
-border-right: none;
-background-color: rgb(51,51,51);</string>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0" colspan="2">
-                 <widget class="QLabel" name="batteryTemperatureLabel">
-                  <property name="minimumSize">
-                   <size>
-                    <width>130</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border-left: none;  </string>
-                  </property>
-                  <property name="text">
-                   <string>Temperature (°C)</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0" colspan="2">
-                 <widget class="QLabel" name="batterySpacerLabel">
-                  <property name="styleSheet">
-                   <string notr="true">border-top: none;
-border-left: none;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0" rowspan="8">
-                 <widget class="QLabel" name="batteryVoltageLabel">
-                  <property name="styleSheet">
-                   <string notr="true">border-left: none;  border-bottom: none; text-transform:none;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VOLTAGES&lt;/p&gt;&lt;p&gt;(mV)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::RichText</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QLabel" name="batteryCMU1Label">
+                <item row="3" column="2">
+                 <widget class="QLabel" name="batteryCMU1Temp">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -1284,10 +1260,31 @@ border-left: none;</string>
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true"> border-top: none;</string>
+                   <string notr="true">background-color: rgb(51,51,51);</string>
                   </property>
                   <property name="text">
-                   <string>CMU 1</string>
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="2">
+                 <widget class="QLabel" name="batteryCMU1Cell6Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="5">
+                 <widget class="QLabel" name="batteryCMU3Cell8Voltage">
+                  <property name="styleSheet">
+                   <string notr="true">border-bottom: none;
+background-color: rgb(51,51,51);</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
                   </property>
                  </widget>
                 </item>
@@ -1451,8 +1448,8 @@ border-top: none;
                 <property name="spacing">
                  <number>0</number>
                 </property>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="setCurrentLabel">
+                <item row="2" column="0">
+                 <widget class="QLabel" name="actualSpeedLabel">
                   <property name="font">
                    <font>
                     <family>AvenirLTStd</family>
@@ -1466,7 +1463,7 @@ border-top: none;
                    <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="text">
-                   <string>Set Current (A)</string>
+                   <string>Actual Speed (kph)</string>
                   </property>
                   <property name="textFormat">
                    <enum>Qt::PlainText</enum>
@@ -1479,6 +1476,32 @@ border-top: none;
                   </property>
                   <property name="indent">
                    <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="setCurrentLabel">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Set Current (A)</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::PlainText</enum>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="busCurrent">
+                  <property name="text">
+                   <string>0</string>
                   </property>
                  </widget>
                 </item>
@@ -1495,31 +1518,6 @@ border-top: none;
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="setSpeedLabel">
-                  <property name="font">
-                   <font>
-                    <family>AvenirLTStd</family>
-                    <pointsize>-1</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
-                  <property name="text">
-                   <string>Set Speed (kph)</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <property name="indent">
-                   <number>0</number>
                   </property>
                  </widget>
                 </item>
@@ -1554,6 +1552,50 @@ border-top: none;
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="setSpeedLabel">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Set Speed (kph)</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <property name="indent">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="busVoltageLabel">
+                  <property name="text">
+                   <string>Bus Voltage (V)</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::PlainText</enum>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <property name="indent">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="actualSpeedLabel">
                   <property name="font">
@@ -1570,70 +1612,6 @@ border-top: none;
                   </property>
                   <property name="text">
                    <string>Actual Speed (kph)</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::PlainText</enum>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <property name="indent">
-                   <number>0</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="1">
-                 <widget class="QLabel" name="busVoltage">
-                  <property name="font">
-                   <font>
-                    <family>AvenirLTStd</family>
-                    <pointsize>-1</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="busCurrent">
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="busCurrentLabel">
-                  <property name="text">
-                   <string>Bus Current (mA)</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="0">
-                 <widget class="QLabel" name="arrayCurrentLabel">
-                  <property name="font">
-                   <font>
-                    <family>AvenirLTStd</family>
-                    <pointsize>-1</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border-bottom: none;</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="text">
-                   <string>Array Current (mA)</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::PlainText</enum>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1662,22 +1640,10 @@ border-top: none;
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="1">
-                 <widget class="QLabel" name="actualSpeed">
-                  <property name="font">
-                   <font>
-                    <family>AvenirLTStd</family>
-                    <pointsize>-1</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="busCurrentLabel">
                   <property name="text">
-                   <string>0</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
+                   <string>Bus Current (mA)</string>
                   </property>
                  </widget>
                 </item>
@@ -1697,6 +1663,91 @@ border-top: none;
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="busCurrentLabel">
+                  <property name="text">
+                   <string>Bus Current (mA)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="busCurrent">
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="busVoltage">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="setCurrent">
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="actualSpeed">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="arrayCurrentLabel">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">text-transform: none;
+border-bottom: none;</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="text">
+                   <string>Array Current (mA)</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::PlainText</enum>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <property name="indent">
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
@@ -1730,6 +1781,22 @@ QLabel {
 	alignment: center;
 	padding: 1px;
 border-image: none;
+}
+
+QPushButton {
+    background-color: rgb(90, 90, 90);
+	border-radius: 1px;
+	padding: 3px;
+}
+
+QPushButton:hover:!pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
 }</string>
           </property>
           <layout class="QVBoxLayout" name="graphsWindowLayout">
@@ -1764,12 +1831,11 @@ border-image: none;
              </property>
              <property name="styleSheet">
               <string notr="true">QWidget {
-	background: rgb(85, 85, 85);
-	border-color: rgb(70,70,70);
-	border-bottom-color:rgb(40,40,40);
-	padding: 2px;
+border-style:solid;
+border-bottom: none;
+padding: 2px;
+border-color:rgb(70,70,70);
 background: url(:/Resources/SubTitleBar.png);
-font-size: 22px;
 }</string>
              </property>
              <layout class="QHBoxLayout" name="graphsTitleBarLayout">
@@ -1810,7 +1876,7 @@ background: none;
             </widget>
            </item>
            <item>
-            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0">
+            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0">
              <property name="leftMargin">
               <number>9</number>
              </property>
@@ -1823,79 +1889,238 @@ background: none;
              <property name="bottomMargin">
               <number>9</number>
              </property>
-             <property name="verticalSpacing">
-              <number>9</number>
+             <property name="spacing">
+              <number>0</number>
              </property>
-             <item row="2" column="0">
-              <widget class="QwtPlot" name="graph2">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border: none;</string>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="driverGraphButton">
+               <property name="text">
+                <string>Driver</string>
                </property>
               </widget>
              </item>
-             <item row="5" column="0">
-              <widget class="QComboBox" name="graphSelector3">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QComboBox" name="graphSelector2">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QComboBox" name="graphSelector1">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
+             <item row="0" column="2">
+              <widget class="QPushButton" name="batteryGraphButton">
+               <property name="text">
+                <string>Battery</string>
                </property>
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QwtPlot" name="graph1">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
+              <widget class="QPushButton" name="busGraphButton">
                <property name="styleSheet">
-                <string notr="true">border: none;</string>
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Bus</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
-              <widget class="QwtPlot" name="graph3">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                 <horstretch>2</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
+             <item row="1" column="0" colspan="3">
+              <widget class="QStackedWidget" name="graphsStackedWidget">
                <property name="styleSheet">
-                <string notr="true">border: none;</string>
+                <string notr="true">QWidget {
+	border: none;
+}</string>
                </property>
+               <property name="currentIndex">
+                <number>0</number>
+               </property>
+               <widget class="QWidget" name="busGraphsPage">
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QwtPlot" name="busCurrentGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="busGraphLine_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>2</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>2</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(85, 85, 85);
+border: none;</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QwtPlot" name="busVoltageGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="busGraphLine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>2</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>2</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(85, 85, 85);
+border: none;</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QwtPlot" name="busPowerGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="driverGraphsPage">
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <item>
+                  <widget class="QwtPlot" name="driverCurrentGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="driverGraphLine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>2</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>2</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(85, 85, 85);
+border: none;</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QwtPlot" name="driverSpeedGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="batteryGraphsPage">
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="QwtPlot" name="batteryCellTempGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="batteryGraphLine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>2</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>2</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(85, 85, 85);
+border: none;</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QwtPlot" name="batteryCellVoltageGraph">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: none;</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
@@ -1916,10 +2141,7 @@ padding: 3px;</string>
        <height>80</height>
       </size>
      </property>
-     <layout class="QHBoxLayout" name="powerTitleBarLayout">
-      <property name="spacing">
-       <number>6</number>
-      </property>
+     <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -1932,7 +2154,7 @@ padding: 3px;</string>
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item>
+      <item row="0" column="0">
        <widget class="QFrame" name="powerTitleBarFrame">
         <property name="enabled">
          <bool>true</bool>
