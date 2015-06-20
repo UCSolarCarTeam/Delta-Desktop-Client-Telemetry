@@ -1789,11 +1789,7 @@ QPushButton:hover:!pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
 }
-
-QPushButton:pressed {
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
-}</string>
+</string>
           </property>
           <layout class="QVBoxLayout" name="graphsWindowLayout">
            <property name="spacing">
@@ -2199,6 +2195,7 @@ border: none;</string>
    <class>QwtPlot</class>
    <extends>QFrame</extends>
    <header>qwt_plot.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

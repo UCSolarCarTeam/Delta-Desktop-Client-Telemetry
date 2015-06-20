@@ -1,14 +1,14 @@
 #pragma once 
 
 #include <QObject>
-#include "I_GraphsPresenter.h"
+#include "I_PowerGraphsPresenter.h"
 #include "../../DataLayer/VehicleData/I_VehicleData.h"
 #include "../../DataLayer/PowerData/I_PowerData.h"
 #include "../../DataLayer/BatteryData/I_BatteryData.h"
-#include "PowerGraphData.h"
 #include <QTimer>
+#include "PowerGraphData.h"
 
-class PowerGraphsPresenter : public I_GraphsPresenter
+class PowerGraphsPresenter : public I_PowerGraphsPresenter
 {
 	Q_OBJECT
 public:
@@ -36,7 +36,7 @@ private:
 	PowerGraphData batteryCellTempGraphData_;
 	PowerGraphData batteryCellVoltageGraphData_;
 
-	const int BUS_CURRENT_DATA_SETS = 2;
+    const int BUS_CURRENT_DATA_SETS_ = 2;
 	const int BUS_VOLTAGE_DATA_SETS = 2;
 	const int BUS_POWER_DATA_SETS = 2;
 	const int DRIVER_CURRENT_DATA_SETS = 1;

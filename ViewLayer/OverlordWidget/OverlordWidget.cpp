@@ -94,9 +94,19 @@ QTabWidget* OverlordWidget::createTabWidget()
         tabBar->addTab(window, window->windowTitle());
         window->hideHeaderBar();
     }
-    tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\nbackground-image: url(:/Resources/MainTitleBar.png);font-family: \"AvenirLTStd\";\nfont-size: 20px;\ncolor: white;"
-
-                          "border: 1px solid rgb(30,30,30);border-left: 1px solid rgb(120,120,120) }");
+    tabBar->setStyleSheet("QTabBar::tab { height: 40px;\n width: 175px;\n"
+                          "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40,40,40), stop: 1 rgb(60,60,60));"
+                          "font-family: \"AvenirLTStd\";\n"
+                          "font-size: 20px;\n"
+                          "color: white;"
+                          "border: 1px solid rgb(30,30,30);"
+                          "border-left: 1px solid rgb(120,120,120); }"
+                          "QTabBar::tab:selected { height: 40px;\n width: 175px;\n"
+                          "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(90, 90, 90), stop: 1 rgb(120,120,120));"
+                          "font-family: \"AvenirLTStd\";\n"
+                          "font-size: 20px;\ncolor: white;"
+                          "border: 1px solid rgb(30,30,30);"
+                          "border-left: 1px solid rgb(120,120,120); }");
     return tabBar;
 }
 

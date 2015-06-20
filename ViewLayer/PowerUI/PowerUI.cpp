@@ -279,44 +279,51 @@ void PowerUI::setupGraphs()
     int MAX_BUS_CURRENT = 100; // Amperes
     int MAX_BUS_VOLTAGE = 140; // Volts
     int MAX_BUS_POWER = 3000;  // Watts
-    int MAX_DRIVER_CURRENT = 120; // Kilometers per hour
-    int MAX_DRIVER_SPEED = 100;  // Percentage
+    int MAX_DRIVER_CURRENT = 100; // Percentage
+    int MAX_DRIVER_SPEED = 120; // Kilometers per hour
     int MAX_BATTERY_CELL_TEMP = 80; // Degrees Celsius
     int MAX_BATTERY_CELL_VOLTAGE = 4000; // Millivolts
 
     int MAX_SECONDS_ELAPSED = 60; 
 
     ui_->busCurrentGraph->setTitle("Bus Current Graph");
+    ui_->busCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Current (A)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT/5);
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
 
     ui_->busVoltageGraph->setTitle("Bus Voltage Graph");
+    ui_->busVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (V)");
     ui_->busVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_VOLTAGE, MAX_BUS_VOLTAGE/5);
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
 
     ui_->busPowerGraph->setTitle("Bus Power Graph");
+    ui_->busPowerGraph->setAxisTitle(QwtPlot::yLeft, "Power (W)");
     ui_->busPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_POWER, MAX_BUS_POWER/5);
     ui_->busPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
 
     ui_->driverCurrentGraph->setTitle("Driver Current Graph");
+    ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
 
     ui_->driverSpeedGraph->setTitle("Driver Speed Graph");
+    ui_->driverSpeedGraph->setAxisTitle(QwtPlot::yLeft, "Speed (kph)");
     ui_->driverSpeedGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_SPEED, MAX_DRIVER_SPEED/5);
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverSpeedGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
 
     ui_->batteryCellTempGraph->setTitle("Battery Cell Temp Graph");
+    ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::yLeft, "Temperature (C)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP/5);
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
 
     ui_->batteryCellVoltageGraph->setTitle("Battery Cell Voltage Graph");
+    ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (mV)");
     ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_VOLTAGE, MAX_BATTERY_CELL_VOLTAGE/5);
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);

@@ -33,10 +33,10 @@ QList<QVector<double> > PowerGraphData::yDataSets()
 
 void PowerGraphData::addData(double datum[])
 {
-    foreach(QVector<double> dataSet, yDataSets_)
+    for(int i = 0; i < yDataSets_.length(); i++)
     {
-        dataSet.removeLast();
-        yDataSets_ .prepend(dataSet);
+        yDataSets_[i].removeLast();
+        yDataSets_[i].prepend(datum[i]);
     }
 }
 

@@ -20,6 +20,7 @@ PowerView::PowerView(DisplayPresenter& presenter,
 , graphsPresenter_(graphsPresenter)
 , ui_(ui)
 {
+
 #ifdef _WIN32
     ui_.getSerialPortName().setText("COM");
 #else
@@ -243,19 +244,57 @@ void PowerView::handleConnectButtonClicked()
     }
 }
 
+
 void PowerView::handleBusGraphButtonClicked()
 {
     ui_.setGraphsStackedWidget().setCurrentIndex(0); // Bus Graphs Index
+    selectGraphButton(&ui_.busGraphButton());
 }
 
 void PowerView::handleDriverGraphButtonClicked()
 {
     ui_.setGraphsStackedWidget().setCurrentIndex(1); // Driver Graphs Index
+        selectGraphButton(&ui_.driverGraphButton());
 }
 
 void PowerView::handleBatteryGraphButtonClicked()
 {
     ui_.setGraphsStackedWidget().setCurrentIndex(2); // Battery Graphs Index
+        selectGraphButton(&ui_.batteryGraphButton());
+}
+void PowerView::selectGraphButton(QPushButton* selectedGraph)
+{
+    QList<QPushButton*> graphButtons;
+    graphButtons.append(&ui_.batteryGraphButton());
+    graphButtons.append(&ui_.busGraphButton());
+    graphButtons.append(&ui_.driverGraphButton());
+
+    const char *GRAPH_BUTTON_PRESSED =
+    "QPushButton {"
+        "background-color: rgb(130,130,130);"
+        "border-radius: 1px;"
+        "padding: 3px;"
+    "}"
+    "QPushButton:hover:!pressed {"
+        "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                          "stop: 0 rgb(130,130,130), stop: 1 rgb(150,150,150));"
+    "}";
+
+    const char *GRAPH_BUTTON_UNPRESSED =
+    "QPushButton {"
+        "background-color: rgb(90, 90, 90);"
+        "border-radius: 1px;"
+        "padding: 3px;"
+    "}"
+    "QPushButton:hover:!pressed {"
+        "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                                          "stop: 0 rgb(90, 90, 90), stop: 1 rgb(120,120,120));"
+    "}";
+    foreach(QPushButton* button, graphButtons)
+    {
+        button->setStyleSheet(GRAPH_BUTTON_UNPRESSED);
+    }
+    selectedGraph->setStyleSheet(GRAPH_BUTTON_PRESSED);
 }
 
 void PowerView::connectionFailed(QString failureMessage)

@@ -199,19 +199,16 @@ border:none;</string>
             <string notr="true">QPushButton{
 background-image: url(:/Resources/CloseButton.png);
 border:1px solid rgb(70,70,70);
-border-radius: 5px;
 margin: 3px;
 }
 QPushButton:hover{
 background-image: url(:/Resources/CloseButtonHover.png);
 border:1px solid rgb(80,80,80);
-border-radius: 5px;
 margin: 3px;
 }
 QPushButton:pressed{
 background-image: url(:/Resources/CloseButtonPressed.png);
 border:1px solid rgb(50,50,50);
-border-radius: 3px;
 margin: 3px;
 }
 </string>
@@ -537,7 +534,6 @@ padding-right: none;
                    <property name="styleSheet">
                     <string notr="true">color: rgb(255,255,255);
 border: 1px solid rgb(60,60,60);
-border-radius: 7px;
 background-image: url(:/Resources/BrowseButton.png);
 padding: 7px;
 margin-top: 2px;
@@ -605,7 +601,7 @@ margin: 5px;
 margin-right: 260px;
 color: rgb(255,255,255);
 border: 1px solid rgb(45,45,45);
-border-radius: 7px;
+
 background-image: url(:/Resources/BrowseButton.png);</string>
               </property>
               <property name="text">
@@ -638,11 +634,11 @@ background-image: url(:/Resources/BrowseButton.png);</string>
               </property>
               <property name="styleSheet">
                <string notr="true">padding: 3px;
+padding-top:5px;
 margin: 5px;
 margin-left: 270px;
 color: rgb(255,255,255);
 border: 1px solid rgb(45,45,45);
-border-radius: 7px;
 background-image: url(:/Resources/BrowseButton.png);</string>
               </property>
               <property name="text">

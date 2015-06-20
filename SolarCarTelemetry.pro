@@ -148,6 +148,7 @@ HEADERS  += \
     ViewLayer/PowerUI/I_PowerUI.h \
     ViewLayer/PowerUI/PowerUI.h \
     ViewLayer/PowerView/PowerView.h \
+    PresenterLayer/GraphsPresenter/I_PowerGraphsPresenter.h
 
 FORMS    += \
     SolarCarTestUI.ui \

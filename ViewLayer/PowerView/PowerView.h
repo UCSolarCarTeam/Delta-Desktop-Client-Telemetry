@@ -1,6 +1,7 @@
 #pragma once
 #include "../../PresenterLayer/GraphsPresenter/PowerGraphData.h"
 #include <QObject>
+#include <QPushButton>
 
 class DisplayPresenter;
 class BatteryPresenter;
@@ -26,7 +27,7 @@ private:
    VehiclePresenter& vehiclePresenter_;
    PowerGraphsPresenter& graphsPresenter_;
    PowerUI& ui_;
-   
+
 private slots:
    void driverSetSpeedMetersPerSecondReceived(double);
    void driverSetCurrentReceived(double);
@@ -56,6 +57,7 @@ private slots:
    void handleBusGraphButtonClicked();
    void handleDriverGraphButtonClicked();
    void handleBatteryGraphButtonClicked();
+   void selectGraphButton(QPushButton*);
    void connectionFailed(QString);
    void connectionSucceeded(QString);
    void clearDebugLog();
