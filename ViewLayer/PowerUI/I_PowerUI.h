@@ -8,6 +8,7 @@
 #include <QTextEdit>
 #include <QStackedWidget>
 #include <QWidget>
+#include <qwt_plot.h>
 
 class I_PowerUI
 {
@@ -69,6 +70,10 @@ public:
     virtual QLabel& setBatteryCMU4Cell6Voltage() = 0;
     virtual QLabel& setBatteryCMU4Cell7Voltage() = 0;
     virtual QLabel& setBatteryCMU4Cell8Voltage() = 0;
+
+    virtual QPushButton& busGraphButton() = 0;
+    virtual QPushButton& driverGraphButton() = 0;
+    virtual QPushButton& batteryGraphButton() = 0;
 
     virtual QStackedWidget& setGraphsStackedWidget() = 0;
     virtual QwtPlot& setBusCurrentGraph() = 0; 

@@ -22,6 +22,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
       presenterContainer.displayPresenter(),
       presenterContainer.batteryPresenter(),
       presenterContainer.vehiclePresenter(),
+      presenterContainer.powerGraphsPresenter(),
       *powerUI_))
 , mpptView_(new MpptView(presenterContainer.displayPresenter(), *mpptUI_))
 , faultsView_(new FaultsView(presenterContainer.faultsPresenter(), *faultsUI_))

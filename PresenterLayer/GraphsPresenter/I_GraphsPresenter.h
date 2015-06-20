@@ -12,5 +12,5 @@ public:
 	virtual void stopUpdating() = 0;
 
 public slots:
-	virtual void void updateGraphData() = 0;
-}
+	virtual void updateGraphData() = 0;
+};	
