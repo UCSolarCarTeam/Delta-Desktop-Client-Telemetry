@@ -9,9 +9,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>793</height>
+    <width>1437</width>
+    <height>1211</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
@@ -150,7 +156,7 @@ border: none;</string>
       <property name="bottomMargin">
        <number>9</number>
       </property>
-      <item row="0" column="0">
+      <item row="1" column="0">
        <layout class="QGridLayout" name="mpptLayout">
         <property name="leftMargin">
          <number>40</number>
@@ -167,435 +173,10 @@ border: none;</string>
         <property name="spacing">
          <number>20</number>
         </property>
-        <item row="0" column="1" rowspan="2">
-         <widget class="QWidget" name="graphsWindow" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>1</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>600</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(40,40,40);
-	padding: 9px;
-border-image: none;
-}
-
-QLabel {
-	alignment: center;
-	padding: 1px;
-}</string>
-          </property>
-          <layout class="QVBoxLayout" name="graphsWindowLayout">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QWidget" name="graphsTitleBar" native="true">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QWidget {
-	border-color: rgb(85, 85, 85);
-	padding: 2px;
-	background: url(:/Resources/SubTitleBar.png);
-	border-color: rgb(70,70,70);
-	border-bottom-color: rgb(40,40,40);
-}</string>
-             </property>
-             <layout class="QHBoxLayout" name="graphsTitleBarLayout">
-              <property name="spacing">
-               <number>9</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>4</number>
-              </property>
-              <property name="rightMargin">
-               <number>9</number>
-              </property>
-              <property name="bottomMargin">
-               <number>4</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="graphsTitleLabel">
-                <property name="styleSheet">
-                 <string notr="true">border-style: none;
-background: none;</string>
-                </property>
-                <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0,0,0">
-             <property name="leftMargin">
-              <number>9</number>
-             </property>
-             <property name="topMargin">
-              <number>9</number>
-             </property>
-             <property name="rightMargin">
-              <number>9</number>
-             </property>
-             <property name="bottomMargin">
-              <number>9</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>9</number>
-             </property>
-             <item row="2" column="0">
-              <widget class="QwtPlot" name="graph2">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QComboBox" name="graphSelector2">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string>Graph One</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QComboBox" name="graphSelector1">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QwtPlot" name="graph1">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="0">
-              <widget class="QComboBox" name="graphSelector2_2">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string>Graph One</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Graph One</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Two</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Graph Three</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QwtPlot" name="graph2_2">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QWidget" name="commsWindow" native="true">
-          <property name="maximumSize">
-           <size>
-            <width>999999</width>
-            <height>500</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(51, 51, 51);
-	padding: 9px;
-border-image: none;
-}
-
-</string>
-          </property>
-          <layout class="QVBoxLayout" name="commsWindowLayout">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QWidget" name="commsTitleBar" native="true">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>35</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QWidget {
-	border-color: rgb(85, 85, 85);
-	padding: 2px;
-	background: url(:/Resources/SubTitleBar.png);
-border-color: rgb(70,70,70);
-border-bottom-color:rgb(40,40,40);
-}</string>
-             </property>
-             <layout class="QHBoxLayout" name="commsTItleBarLayout">
-              <property name="spacing">
-               <number>9</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>4</number>
-              </property>
-              <property name="rightMargin">
-               <number>4</number>
-              </property>
-              <property name="bottomMargin">
-               <number>4</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="commsTitleLabel">
-                <property name="font">
-                 <font>
-                  <family>AvenirLTStd</family>
-                  <pointsize>-1</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background: none;
-border:none;</string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Communications&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="commsContentLayout">
-             <property name="leftMargin">
-              <number>9</number>
-             </property>
-             <property name="topMargin">
-              <number>9</number>
-             </property>
-             <property name="rightMargin">
-              <number>9</number>
-             </property>
-             <property name="bottomMargin">
-              <number>9</number>
-             </property>
-             <property name="spacing">
-              <number>9</number>
-             </property>
-             <item row="0" column="0">
-              <widget class="QComboBox" name="algorithmSelector">
-               <property name="styleSheet">
-                <string notr="true">border: 2px solid rgb(85, 85, 85);
-border-radius: 0px;
-padding: 3px;</string>
-               </property>
-               <property name="currentText">
-                <string notr="true">Algorithm Name</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Algorithm Name</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="commsSendButton">
-               <property name="maximumSize">
-                <size>
-                 <width>200</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>AvenirLTStd</family>
-                 <pointsize>-1</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color: rgb(102, 102, 102);
-	border-radius: 1px;
-	padding: 3px;
-}
-
-QPushButton:hover:!pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
-}
-
-QPushButton:pressed {
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
-}</string>
-               </property>
-               <property name="text">
-                <string>Send</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-               <property name="autoDefault">
-                <bool>true</bool>
-               </property>
-               <property name="default">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
         <item row="0" column="2" rowspan="3">
          <widget class="QWidget" name="mpptioValuesWindow" native="true">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>1</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1589,7 +1170,7 @@ padding-right: 5px;</string>
         <item row="0" column="3" rowspan="3">
          <widget class="QWidget" name="powerDrawWindow" native="true">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>1</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2309,6 +1890,555 @@ border-left: none;</string>
                  </layout>
                 </item>
                </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="4">
+         <widget class="QWidget" name="graphsWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>600</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget {
+	background: rgb(51, 51, 51);
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(40,40,40);
+	padding: 9px;
+border-image: none;
+}
+
+QLabel {
+	alignment: center;
+	padding: 1px;
+}
+
+QCheckBox{
+	border: none;
+	font-size: 9px;
+	padding: 0px;
+}</string>
+          </property>
+          <layout class="QVBoxLayout" name="graphsWindowLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="graphsTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	border-color: rgb(85, 85, 85);
+	padding: 2px;
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="graphsTitleBarLayout">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="graphsTitleLabel">
+                <property name="styleSheet">
+                 <string notr="true">border-style: none;
+background: none;</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="graphsContentLayout" rowstretch="0,0,0,0,0">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>9</number>
+             </property>
+             <item row="0" column="2">
+              <layout class="QVBoxLayout" name="pvGraphMpptSelectorLayout">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt1CheckBox">
+                 <property name="text">
+                  <string>Mppt1</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt2CheckBox">
+                 <property name="text">
+                  <string>Mppt2</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt3CheckBox">
+                 <property name="text">
+                  <string>Mppt3</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt4CheckBox">
+                 <property name="text">
+                  <string>Mppt4</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt5CheckBox">
+                 <property name="text">
+                  <string>Mppt5</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt6CheckBox">
+                 <property name="text">
+                  <string>Mppt6</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt7CheckBox">
+                 <property name="text">
+                  <string>Mppt7</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="2">
+              <layout class="QVBoxLayout" name="pvGraphMpptSelectorLayout_2">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt1CheckBox_2">
+                 <property name="text">
+                  <string>Mppt1</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt2CheckBox_2">
+                 <property name="text">
+                  <string>Mppt2</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt3CheckBox_2">
+                 <property name="text">
+                  <string>Mppt3</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt4CheckBox_2">
+                 <property name="text">
+                  <string>Mppt4</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt5CheckBox_2">
+                 <property name="text">
+                  <string>Mppt5</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt6CheckBox_2">
+                 <property name="text">
+                  <string>Mppt6</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt7CheckBox_2">
+                 <property name="text">
+                  <string>Mppt7</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="4" column="2">
+              <layout class="QVBoxLayout" name="pvGraphMpptSelectorLayout_3">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt1CheckBox_3">
+                 <property name="text">
+                  <string>Mppt1</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt2CheckBox_3">
+                 <property name="text">
+                  <string>Mppt2</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt3CheckBox_3">
+                 <property name="text">
+                  <string>Mppt3</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt4CheckBox_3">
+                 <property name="text">
+                  <string>Mppt4</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt5CheckBox_3">
+                 <property name="text">
+                  <string>Mppt5</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt6CheckBox_3">
+                 <property name="text">
+                  <string>Mppt6</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="pvGraphMppt7CheckBox_3">
+                 <property name="text">
+                  <string>Mppt7</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="0" colspan="3">
+              <widget class="Line" name="graphSeperator_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(85, 85, 85);
+border: none;</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="3">
+              <widget class="Line" name="graphSeperator">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(85, 85, 85);
+border: none;</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="2">
+              <widget class="QwtPlot" name="pvGraph">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: none;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QwtPlot" name="ivGraph">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: none;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" colspan="2">
+              <widget class="QwtPlot" name="ptGraph">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: none;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="2" colspan="2">
+         <widget class="QWidget" name="commsWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>999999</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget {
+	background: rgb(51, 51, 51);
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(51, 51, 51);
+	padding: 9px;
+border-image: none;
+}
+
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="commsWindowLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="commsTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	border-color: rgb(85, 85, 85);
+	padding: 2px;
+	background: url(:/Resources/SubTitleBar.png);
+border-color: rgb(70,70,70);
+border-bottom-color:rgb(40,40,40);
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="commsTItleBarLayout">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>4</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="commsTitleLabel">
+                <property name="font">
+                 <font>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: none;
+border:none;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Communications&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="commsContentLayout">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="spacing">
+              <number>9</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QComboBox" name="algorithmSelector">
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid rgb(85, 85, 85);
+border-radius: 0px;
+padding: 3px;</string>
+               </property>
+               <property name="currentText">
+                <string notr="true">Algorithm Name</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Algorithm Name</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="commsSendButton">
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>AvenirLTStd</family>
+                 <pointsize>-1</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(102, 102, 102);
+	border-radius: 1px;
+	padding: 3px;
+}
+
+QPushButton:hover:!pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(90, 90, 90), stop: 1 rgb(130, 130, 130));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(50, 50, 50), stop: 1 rgb(90, 90, 90));
+}</string>
+               </property>
+               <property name="text">
+                <string>Send</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
+               <property name="default">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
             </layout>

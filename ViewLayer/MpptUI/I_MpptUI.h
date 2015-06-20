@@ -83,10 +83,9 @@ public:
 	virtual QLabel& setPower6VoltageValue() = 0;
 	virtual QLabel& setPower6CurrentValue() = 0;
 
-	virtual QwtPlot& setGraph1() = 0;
-	virtual QwtPlot& setGraph2() = 0;
-	virtual QComboBox& getGraphSelector1() = 0;
-	virtual QComboBox& getGraphSelector2() = 0;
+	virtual QwtPlot& setPvGraph() = 0;
+	virtual QwtPlot& setIvGraph() = 0;
+	virtual QwtPlot& setPtGraph() = 0;
 
 	virtual QComboBox& getAlgorithmSelector() = 0;
 	virtual QPushButton& commsSendButton() = 0;

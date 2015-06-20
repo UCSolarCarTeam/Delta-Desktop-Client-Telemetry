@@ -269,21 +269,17 @@ QLabel& MpptUI::setPower6CurrentValue()
    return *ui->power6CurrentValue;
 }
 
-QwtPlot& MpptUI::setGraph1()
+QwtPlot& MpptUI::setPvGraph()
 {
-   return *ui->graph1;
+   return *ui->pvGraph;
 }
-QwtPlot& MpptUI::setGraph2()
+QwtPlot& MpptUI::setIvGraph()
 {
-   return *ui->graph2;
+   return *ui->ivGraph;
 }
-QComboBox& MpptUI::getGraphSelector1()
+QwtPlot& MpptUI::setPtGraph()
 {
-   return *ui->graphSelector1;
-}
-QComboBox& MpptUI::getGraphSelector2()
-{
-   return *ui->graphSelector2;
+   return *ui->ptGraph;
 }
 
 QComboBox& MpptUI::getAlgorithmSelector()
