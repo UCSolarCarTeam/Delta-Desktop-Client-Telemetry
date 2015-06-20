@@ -2,7 +2,7 @@
 #include "../EscapeDialog/EscapeDialog.h"
 #include <QDebug>
 #include <QApplication>
-
+#include <QFileDialog>
 EscapeDialogView::EscapeDialogView(EscapeDialog& ui)
 : ui_(ui)
 {
@@ -53,7 +53,11 @@ void EscapeDialogView::handleClosePushButtonClicked()
 
 void EscapeDialogView::handleOkPushButtonClicked()
 {
+    saveChanges();
     ui_.hide();
+}
+void EscapeDialogView::saveChanges(){
+
 }
 
 //void handleFileDialogPushButton();

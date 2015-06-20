@@ -22,4 +22,5 @@ private slots:
    void handleExitPushButtonClicked();
    void handleOkPushButtonClicked();
    void handleClosePushButtonClicked();
+   void saveChanges();
 };

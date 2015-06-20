@@ -243,15 +243,11 @@ QPushButton:pressed {
                 <bool>false</bool>
                </property>
                <property name="styleSheet">
-                <string notr="true">QLabel {
+                <string notr="true">
 	font-size: 14px;
 	border:none;
 	padding: 5px;
-}
-QWidget {
-	font-size: 14px;
-	border: none:
-}
+
 
 </string>
                </property>
