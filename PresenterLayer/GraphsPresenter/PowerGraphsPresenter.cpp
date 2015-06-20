@@ -18,25 +18,25 @@ PowerGraphsPresenter::PowerGraphsPresenter(const I_VehicleData& vehicleData,
 
 	busCurrentGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 										  NUMBER_OF_INTERVALS,
-										  BUS_CURRENT_DATA_SETS); 
+                                          BUS_CURRENT_DATA_SETS_);
 	busVoltageGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 								 		  NUMBER_OF_INTERVALS,
-								 		  BUS_VOLTAGE_DATA_SETS);
+                                          BUS_VOLTAGE_DATA_SETS_);
 	busPowerGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 										NUMBER_OF_INTERVALS,
-										BUS_POWER_DATA_SETS);
+                                        BUS_POWER_DATA_SETS_);
 	driverCurrentGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 										     NUMBER_OF_INTERVALS,
-										     DRIVER_CURRENT_DATA_SETS);
+                                             DRIVER_CURRENT_DATA_SETS_);
 	driverSpeedGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 										   NUMBER_OF_INTERVALS,
-										   DRIVER_SPEED_DATA_SETS);
+                                           DRIVER_SPEED_DATA_SETS_);
 	batteryCellTempGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 										       NUMBER_OF_INTERVALS,
-										       BATTERY_CELL_TEMP_DATA_SETS);
+                                               BATTERY_CELL_TEMP_DATA_SETS_);
 	batteryCellVoltageGraphData_ = PowerGraphData(INTERVAL_SIZE, 
 										          NUMBER_OF_INTERVALS,
-										          BATTERY_CELL_VOLTAGE_DATA_SETS);
+                                                  BATTERY_CELL_VOLTAGE_DATA_SETS_);
 }
 
 void PowerGraphsPresenter::startUpdating()
@@ -62,7 +62,7 @@ void PowerGraphsPresenter::updateGraphData()
 
 void PowerGraphsPresenter::updateBusCurrentGraphData()
 {
-	double busCurrentData [BUS_CURRENT_DATA_SETS];
+    double busCurrentData [BUS_CURRENT_DATA_SETS_];
 	busCurrentData[0] = powerData_.busCurrentA();
 
 	busCurrentGraphData_.addData(busCurrentData);
@@ -71,7 +71,7 @@ void PowerGraphsPresenter::updateBusCurrentGraphData()
 
 void PowerGraphsPresenter::updateBusVoltage()
 {
-	double busVoltageData [BUS_VOLTAGE_DATA_SETS];
+    double busVoltageData [BUS_VOLTAGE_DATA_SETS_];
 	busVoltageData[0] = powerData_.busVoltage();
 
 	busVoltageGraphData_.addData(busVoltageData);
@@ -80,7 +80,7 @@ void PowerGraphsPresenter::updateBusVoltage()
 
 void PowerGraphsPresenter::updateBusPowerGraphData()
 {
-	double busPowerData [BUS_POWER_DATA_SETS];
+    double busPowerData [BUS_POWER_DATA_SETS_];
 	busPowerData[0] = powerData_.busCurrentA() * powerData_.motorCurrentReal();
 	
 	busPowerGraphData_.addData(busPowerData);
@@ -89,7 +89,7 @@ void PowerGraphsPresenter::updateBusPowerGraphData()
 
 void PowerGraphsPresenter::updateDriverCurrentGraphData()
 {
-	double driverCurrentData [DRIVER_CURRENT_DATA_SETS];
+    double driverCurrentData [DRIVER_CURRENT_DATA_SETS_];
 	driverCurrentData[0] = vehicleData_.driverSetCurrent();
 
 	driverCurrentGraphData_.addData(driverCurrentData);
@@ -98,7 +98,7 @@ void PowerGraphsPresenter::updateDriverCurrentGraphData()
 
 void PowerGraphsPresenter::updateDriverSpeedGraphData()
 {
-	double driverSpeedData [DRIVER_SPEED_DATA_SETS];
+    double driverSpeedData [DRIVER_SPEED_DATA_SETS_];
 	driverSpeedData[0] = vehicleData_.driverSetSpeedMetersPerSecond();
 	driverSpeedData[1] = vehicleData_.vehicleVelocityMetersPerSecond();
 
@@ -111,7 +111,7 @@ void PowerGraphsPresenter::updateBatteryCellTempGraphData()
 	double maxBatteryCellTemp = batteryData_.mod0CellTemperature();
 	double avgBatteryCellTemp = 0;
 	double minBatteryCellTemp = batteryData_.mod0CellTemperature();
-	double batteryCellTempData [BATTERY_CELL_TEMP_DATA_SETS];
+    double batteryCellTempData [BATTERY_CELL_TEMP_DATA_SETS_];
 
 	QList<double> allBatteryCellTemps = QList<double>();
 	allBatteryCellTemps.append(batteryData_.mod0CellTemperature());
@@ -144,7 +144,7 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 	double maxBatteryCellVoltage = batteryData_.mod0CellVoltages()[0];
 	double avgBatteryCellVoltage = 0;
 	double minBatteryCellVoltage = batteryData_.mod0CellVoltages()[0];
-	double batteryCellVoltageData [BATTERY_CELL_VOLTAGE_DATA_SETS];
+    double batteryCellVoltageData [BATTERY_CELL_VOLTAGE_DATA_SETS_];
 
 	QList<double> allBatteryCellVoltages = QList<double>();
 	allBatteryCellVoltages.append(batteryData_.mod0CellVoltages());

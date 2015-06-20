@@ -37,12 +37,12 @@ private:
 	PowerGraphData batteryCellVoltageGraphData_;
 
     const int BUS_CURRENT_DATA_SETS_ = 2;
-	const int BUS_VOLTAGE_DATA_SETS = 2;
-	const int BUS_POWER_DATA_SETS = 2;
-	const int DRIVER_CURRENT_DATA_SETS = 1;
-	const int DRIVER_SPEED_DATA_SETS = 2;
-	const int BATTERY_CELL_TEMP_DATA_SETS = 3; 
-	const int BATTERY_CELL_VOLTAGE_DATA_SETS = 3; 
+    const int BUS_VOLTAGE_DATA_SETS_ = 2;
+    const int BUS_POWER_DATA_SETS_ = 2;
+    const int DRIVER_CURRENT_DATA_SETS_ = 1;
+    const int DRIVER_SPEED_DATA_SETS_ = 2;
+    const int BATTERY_CELL_TEMP_DATA_SETS_ = 3;
+    const int BATTERY_CELL_VOLTAGE_DATA_SETS_ = 3;
 
 	void updateBusCurrentGraphData();
 	void updateBusVoltage();
