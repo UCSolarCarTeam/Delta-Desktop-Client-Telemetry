@@ -1,4 +1,4 @@
-#include "ArrayData/ArrayData.h"
+#include "MpptData/MpptData.h"
 #include "BatteryData/BatteryData.h"
 #include "DataContainer.h"
 #include "FaultsData/FaultsData.h"
@@ -6,7 +6,7 @@
 #include "VehicleData/VehicleData.h"
 
 DataContainer::DataContainer()
-: arrayData_(new ArrayData())
+: mpptData_(new MpptData())
 , vehicleData_(new VehicleData())
 , powerData_(new PowerData())
 , batteryData_(new BatteryData())
@@ -18,9 +18,9 @@ DataContainer::~DataContainer()
 {
 }
 
-I_ArrayData& DataContainer::arrayData()
+I_MpptData& DataContainer::mpptData()
 {
-   return *arrayData_;
+   return *mpptData_;
 }
 
 I_PowerData& DataContainer::powerData()

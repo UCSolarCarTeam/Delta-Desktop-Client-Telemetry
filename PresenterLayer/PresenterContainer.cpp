@@ -16,7 +16,7 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
       communicationContainer.connectionService()))
 , batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
-, mpptPresenter_(new MpptPresenter(dataContainer.arrayData()))
+, mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
 , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
 , powerGraphsPresenter_(new PowerGraphsPresenter(dataContainer.vehicleData(),
 		dataContainer.powerData(),

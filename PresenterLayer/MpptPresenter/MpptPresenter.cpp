@@ -1,13 +1,13 @@
 #include "MpptPresenter.h"
-#include "../../DataLayer/ArrayData/I_ArrayData.h"
+#include "../../DataLayer/MpptData/I_MpptData.h"
 
-MpptPresenter::MpptPresenter(const I_ArrayData& arrayData)
-: arrayData_(arrayData)
+MpptPresenter::MpptPresenter(const I_MpptData& mpptData)
+: mpptData_(mpptData)
 {
-   relayArrayData();
+   relayMpptData();
 }
 
-void MpptPresenter::relayArrayData()
+void MpptPresenter::relayMpptData()
 {
    //nothing to connect
 }

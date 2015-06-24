@@ -64,6 +64,14 @@ public:
 	QLabel& setMppt6CurrentOut();
 	QLabel& setMppt6Efficiency();
 
+	QLabel& setMppt7PowerIn();
+	QLabel& setMppt7VoltageIn();
+	QLabel& setMppt7CurrentIn();
+	QLabel& setMppt7PowerOut();
+	QLabel& setMppt7VoltageOut();
+	QLabel& setMppt7CurrentOut();
+	QLabel& setMppt7Efficiency();
+
 	QLabel& setPower1PowerValue();
 	QLabel& setPower1VoltageValue();
 	QLabel& setPower1CurrentValue();
@@ -87,6 +95,34 @@ public:
 	QLabel& setPower6PowerValue();
 	QLabel& setPower6VoltageValue();
 	QLabel& setPower6CurrentValue();
+
+	QLabel& setPower7PowerValue();
+	QLabel& setPower7VoltageValue();
+	QLabel& setPower7CurrentValue();
+
+	QCheckBox& pvGraph1MpptCheckBox();
+	QCheckBox& pvGraph2MpptCheckBox();
+	QCheckBox& pvGraph3MpptCheckBox();
+	QCheckBox& pvGraph4MpptCheckBox();
+	QCheckBox& pvGraph5MpptCheckBox();
+	QCheckBox& pvGraph6MpptCheckBox();
+	QCheckBox& pvGraph7MpptCheckBox();
+
+	QCheckBox& ivGraph1MpptCheckBox();
+	QCheckBox& ivGraph2MpptCheckBox();
+	QCheckBox& ivGraph3MpptCheckBox();
+	QCheckBox& ivGraph4MpptCheckBox();
+	QCheckBox& ivGraph5MpptCheckBox();
+	QCheckBox& ivGraph6MpptCheckBox();
+	QCheckBox& ivGraph7MpptCheckBox();
+
+	QCheckBox& ptGraph1MpptCheckBox();
+	QCheckBox& ptGraph2MpptCheckBox();
+	QCheckBox& ptGraph3MpptCheckBox();
+	QCheckBox& ptGraph4MpptCheckBox();
+	QCheckBox& ptGraph5MpptCheckBox();
+	QCheckBox& ptGraph6MpptCheckBox();
+	QCheckBox& ptGraph7MpptCheckBox();
 
 	QwtPlot& setPvGraph();
 	QwtPlot& setIvGraph();

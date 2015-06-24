@@ -5,6 +5,7 @@
 #include <QComboBox>
 #include <QGraphicsView>
 #include <QPushButton>
+#include <QCheckBox>
 
 class I_MpptUI
 {
@@ -59,6 +60,14 @@ public:
 	virtual QLabel& setMppt6CurrentOut() = 0;
 	virtual QLabel& setMppt6Efficiency() = 0;
 
+	virtual QLabel& setMppt7PowerIn() = 0;
+	virtual QLabel& setMppt7VoltageIn() = 0;
+	virtual QLabel& setMppt7CurrentIn() = 0;
+	virtual QLabel& setMppt7PowerOut() = 0;
+	virtual QLabel& setMppt7VoltageOut() = 0;
+	virtual QLabel& setMppt7CurrentOut() = 0;
+	virtual QLabel& setMppt7Efficiency() = 0;
+
 	virtual QLabel& setPower1PowerValue() = 0;
 	virtual QLabel& setPower1VoltageValue() = 0;
 	virtual QLabel& setPower1CurrentValue() = 0;
@@ -83,9 +92,37 @@ public:
 	virtual QLabel& setPower6VoltageValue() = 0;
 	virtual QLabel& setPower6CurrentValue() = 0;
 
+	virtual QLabel& setPower7PowerValue() = 0;
+	virtual QLabel& setPower7VoltageValue() = 0;
+	virtual QLabel& setPower7CurrentValue() = 0;
+
 	virtual QwtPlot& setPvGraph() = 0;
 	virtual QwtPlot& setIvGraph() = 0;
 	virtual QwtPlot& setPtGraph() = 0;
+
+	virtual QCheckBox& pvGraph1MpptCheckBox() = 0;
+	virtual QCheckBox& pvGraph2MpptCheckBox() = 0;
+	virtual QCheckBox& pvGraph3MpptCheckBox() = 0;
+	virtual QCheckBox& pvGraph4MpptCheckBox() = 0;
+	virtual QCheckBox& pvGraph5MpptCheckBox() = 0;
+	virtual QCheckBox& pvGraph6MpptCheckBox() = 0;
+	virtual QCheckBox& pvGraph7MpptCheckBox() = 0;
+
+	virtual QCheckBox& ivGraph1MpptCheckBox() = 0;
+	virtual QCheckBox& ivGraph2MpptCheckBox() = 0;
+	virtual QCheckBox& ivGraph3MpptCheckBox() = 0;
+	virtual QCheckBox& ivGraph4MpptCheckBox() = 0;
+	virtual QCheckBox& ivGraph5MpptCheckBox() = 0;
+	virtual QCheckBox& ivGraph6MpptCheckBox() = 0;
+	virtual QCheckBox& ivGraph7MpptCheckBox() = 0;
+
+	virtual QCheckBox& ptGraph1MpptCheckBox() = 0;
+	virtual QCheckBox& ptGraph2MpptCheckBox() = 0;
+	virtual QCheckBox& ptGraph3MpptCheckBox() = 0;
+	virtual QCheckBox& ptGraph4MpptCheckBox() = 0;
+	virtual QCheckBox& ptGraph5MpptCheckBox() = 0;
+	virtual QCheckBox& ptGraph6MpptCheckBox() = 0;
+	virtual QCheckBox& ptGraph7MpptCheckBox() = 0;
 
 	virtual QComboBox& getAlgorithmSelector() = 0;
 	virtual QPushButton& commsSendButton() = 0;

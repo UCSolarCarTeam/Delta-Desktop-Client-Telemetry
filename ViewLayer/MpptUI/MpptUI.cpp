@@ -191,6 +191,35 @@ QLabel& MpptUI::setMppt6Efficiency()
    return *ui->mppt6Efficiency;
 }
 
+QLabel& MpptUI::setMppt7PowerIn()
+{
+   return *ui->mppt7PowerIn;
+}
+QLabel& MpptUI::setMppt7VoltageIn()
+{
+   return *ui->mppt7VoltageIn;
+}
+QLabel& MpptUI::setMppt7CurrentIn()
+{
+   return *ui->mppt7CurrentIn;
+}
+QLabel& MpptUI::setMppt7PowerOut()
+{
+   return *ui->mppt7PowerOut;
+}
+QLabel& MpptUI::setMppt7VoltageOut()
+{
+   return *ui->mppt7VoltageOut;
+}
+QLabel& MpptUI::setMppt7CurrentOut()
+{
+   return *ui->mppt7CurrentOut;
+}
+QLabel& MpptUI::setMppt7Efficiency()
+{
+   return *ui->mppt7Efficiency;
+}
+
 QLabel& MpptUI::setPower1PowerValue()
 {
    return *ui->power1PowerValue;
@@ -268,6 +297,107 @@ QLabel& MpptUI::setPower6CurrentValue()
 {
    return *ui->power6CurrentValue;
 }
+
+QLabel& MpptUI::setPower7PowerValue()
+{
+   return *ui->power7PowerValue;
+}
+QLabel& MpptUI::setPower7VoltageValue()
+{
+   return *ui->power7VoltageValue;
+}
+QLabel& MpptUI::setPower7CurrentValue()
+{
+   return *ui->power7CurrentValue;
+}
+
+QCheckBox& MpptUI::pvGraph1MpptCheckBox()
+{
+   return *ui->pvGraphMppt1CheckBox;
+}
+QCheckBox& MpptUI::pvGraph2MpptCheckBox()
+{
+   return *ui->pvGraphMppt2CheckBox;
+}
+QCheckBox& MpptUI::pvGraph3MpptCheckBox()
+{
+   return *ui->pvGraphMppt3CheckBox;
+}
+QCheckBox& MpptUI::pvGraph4MpptCheckBox()
+{
+   return *ui->pvGraphMppt4CheckBox;
+}
+QCheckBox& MpptUI::pvGraph5MpptCheckBox()
+{
+   return *ui->pvGraphMppt5CheckBox;
+}
+QCheckBox& MpptUI::pvGraph6MpptCheckBox()
+{
+   return *ui->pvGraphMppt6CheckBox;
+}
+QCheckBox& MpptUI::pvGraph7MpptCheckBox()
+{
+   return *ui->pvGraphMppt7CheckBox;
+}
+
+QCheckBox& MpptUI::ivGraph1MpptCheckBox()
+{
+   return *ui->ivGraphMppt1CheckBox;
+}
+QCheckBox& MpptUI::ivGraph2MpptCheckBox()
+{
+   return *ui->ivGraphMppt2CheckBox;
+}
+QCheckBox& MpptUI::ivGraph3MpptCheckBox()
+{
+   return *ui->ivGraphMppt3CheckBox;
+}
+QCheckBox& MpptUI::ivGraph4MpptCheckBox()
+{
+   return *ui->ivGraphMppt4CheckBox;
+}
+QCheckBox& MpptUI::ivGraph5MpptCheckBox()
+{
+   return *ui->ivGraphMppt5CheckBox;
+}
+QCheckBox& MpptUI::ivGraph6MpptCheckBox()
+{
+   return *ui->ivGraphMppt6CheckBox;
+}
+QCheckBox& MpptUI::ivGraph7MpptCheckBox()
+{
+   return *ui->ivGraphMppt7CheckBox;
+}
+
+QCheckBox& MpptUI::ptGraph1MpptCheckBox()
+{
+   return *ui->ptGraphMppt1CheckBox;
+}
+QCheckBox& MpptUI::ptGraph2MpptCheckBox()
+{
+   return *ui->ptGraphMppt2CheckBox;
+}
+QCheckBox& MpptUI::ptGraph3MpptCheckBox()
+{
+   return *ui->ptGraphMppt3CheckBox;
+}
+QCheckBox& MpptUI::ptGraph4MpptCheckBox()
+{
+   return *ui->ptGraphMppt4CheckBox;
+}
+QCheckBox& MpptUI::ptGraph5MpptCheckBox()
+{
+   return *ui->ptGraphMppt5CheckBox;
+}
+QCheckBox& MpptUI::ptGraph6MpptCheckBox()
+{
+   return *ui->ptGraphMppt6CheckBox;
+}
+QCheckBox& MpptUI::ptGraph7MpptCheckBox()
+{
+   return *ui->ptGraphMppt7CheckBox;
+}
+
 
 QwtPlot& MpptUI::setPvGraph()
 {

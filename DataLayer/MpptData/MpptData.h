@@ -1,13 +1,13 @@
 #pragma once
 
-#include "I_ArrayData.h"
+#include "I_MpptData.h"
 
-class ArrayData : public I_ArrayData
+class MpptData : public I_MpptData
 {
 	Q_OBJECT
 public:
-    ArrayData();
-    ~ArrayData();
+    MpptData();
+    ~MpptData();
 
 private:
     /*ArrayData "Gets"*/
