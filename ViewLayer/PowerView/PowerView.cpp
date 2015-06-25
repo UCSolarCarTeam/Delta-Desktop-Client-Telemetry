@@ -9,8 +9,8 @@
 #include <qwt_plot.h>
 #include <qwt_plot_curve.h>
 
-PowerView::PowerView(DisplayPresenter& presenter, 
-                     BatteryPresenter& batteryPresenter, 
+PowerView::PowerView(DisplayPresenter& presenter,
+                     BatteryPresenter& batteryPresenter,
                      VehiclePresenter& vehiclePresenter,
                      PowerGraphsPresenter& graphsPresenter,
                      PowerUI& ui)
@@ -80,7 +80,7 @@ PowerView::PowerView(DisplayPresenter& presenter,
             this, SLOT(handleDriverGraphButtonClicked()));
     connect(&ui.batteryGraphButton(), SIGNAL(clicked()),
             this, SLOT(handleBatteryGraphButtonClicked()));
-    
+
     connect(&presenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
     connect(&presenter_, SIGNAL(connectionSucceeded(QString)),
@@ -300,7 +300,7 @@ void PowerView::selectGraphButton(QPushButton* selectedGraph)
 void PowerView::connectionFailed(QString failureMessage)
 {
     ui_.connectButton().setText("Connect");
-    ui_.setConnectionStatus().setText(failureMessage);  
+    ui_.setConnectionStatus().setText(failureMessage);
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(255, 40, 40); background-color: rgb(70,70,70);"); // red text
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth0of5.png);");
 }
