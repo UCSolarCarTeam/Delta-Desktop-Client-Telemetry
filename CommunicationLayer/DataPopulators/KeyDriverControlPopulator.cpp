@@ -18,5 +18,4 @@ void KeyDriverControlPopulator::populateData(const KeyDriverControlTelemetry mes
    vehicleData_.setVehicleVelocityMetersPerSecond(message.speed());
    powerData_.setBusCurrentA(message.busCurrent());
    powerData_.setBusVoltage(message.busVoltage());
-
 }
