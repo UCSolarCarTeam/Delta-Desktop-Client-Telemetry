@@ -44,6 +44,18 @@ void MpptView::mppt1CurrentOutReceived(double mppt1CurrentOut)
 	ui_.setMppt1Efficiency().setNum(ui_.setMppt1PowerIn().text().toDouble() *
 		ui_.setMppt1PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::power1VoltageValueReceived(double power1VoltageValue)
+{
+	ui_.setPower1VoltageValue().setNum(power1VoltageValue);
+	ui_.setPower1PowerValue().setNum(power1VoltageValue * 
+		ui_.setPower1CurrentValue().text().toDouble());
+}
+void MpptView::power1CurrentValueReceived(double power1CurrentValue)
+{
+	ui_.setPower1CurrentValue().setNum(power1CurrentValue);
+	ui_.setPower1PowerValue().setNum(power1CurrentValue * 
+		ui_.setPower1VoltageValue().text().toDouble());
+}
 
 void MpptView::mppt2VoltageInReceived(double mppt2VoltageIn)
 {
@@ -76,6 +88,31 @@ void MpptView::mppt2CurrentOutReceived(double mppt2CurrentOut)
 		ui_.setMppt2VoltageOut().text().toDouble());
 	ui_.setMppt2Efficiency().setNum(ui_.setMppt2PowerIn().text().toDouble() *
 		ui_.setMppt2PowerOut().text().toDouble() * 100); // in percentage
+}
+void MpptView::power2VoltageValueReceived(double power2VoltageValue)
+{
+	ui_.setPower2VoltageValue().setNum(power2VoltageValue);
+	ui_.setPower2PowerValue().setNum(power2VoltageValue * 
+		ui_.setPower2CurrentValue().text().toDouble());
+}
+void MpptView::power2CurrentValueReceived(double power2CurrentValue)
+{
+	ui_.setPower2CurrentValue().setNum(power2CurrentValue);
+	ui_.setPower2PowerValue().setNum(power2CurrentValue * 
+		ui_.setPower2VoltageValue().text().toDouble());
+}
+
+void MpptView::power3VoltageValueReceived(double power3VoltageValue)
+{
+	ui_.setPower3VoltageValue().setNum(power3VoltageValue);
+	ui_.setPower3PowerValue().setNum(power3VoltageValue * 
+		ui_.setPower3CurrentValue().text().toDouble());
+}
+void MpptView::power3CurrentValueReceived(double power3CurrentValue)
+{
+	ui_.setPower3CurrentValue().setNum(power3CurrentValue);
+	ui_.setPower3PowerValue().setNum(power3CurrentValue * 
+		ui_.setPower3VoltageValue().text().toDouble());
 }
 
 void MpptView::mppt3VoltageInReceived(double mppt3VoltageIn)
@@ -143,6 +180,18 @@ void MpptView::mppt4CurrentOutReceived(double mppt4CurrentOut)
 	ui_.setMppt4Efficiency().setNum(ui_.setMppt4PowerIn().text().toDouble() *
 		ui_.setMppt4PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::power4VoltageValueReceived(double power4VoltageValue)
+{
+	ui_.setPower4VoltageValue().setNum(power4VoltageValue);
+	ui_.setPower4PowerValue().setNum(power4VoltageValue * 
+		ui_.setPower4CurrentValue().text().toDouble());
+}
+void MpptView::power4CurrentValueReceived(double power4CurrentValue)
+{
+	ui_.setPower4CurrentValue().setNum(power4CurrentValue);
+	ui_.setPower4PowerValue().setNum(power4CurrentValue * 
+		ui_.setPower4VoltageValue().text().toDouble());
+}
 
 void MpptView::mppt5VoltageInReceived(double mppt5VoltageIn)
 {
@@ -175,6 +224,18 @@ void MpptView::mppt5CurrentOutReceived(double mppt5CurrentOut)
 		ui_.setMppt5VoltageOut().text().toDouble());
 	ui_.setMppt5Efficiency().setNum(ui_.setMppt5PowerIn().text().toDouble() *
 		ui_.setMppt5PowerOut().text().toDouble() * 100); // in percentage
+}
+void MpptView::power5VoltageValueReceived(double power5VoltageValue)
+{
+	ui_.setPower5VoltageValue().setNum(power5VoltageValue);
+	ui_.setPower5PowerValue().setNum(power5VoltageValue * 
+		ui_.setPower5CurrentValue().text().toDouble());
+}
+void MpptView::power5CurrentValueReceived(double power5CurrentValue)
+{
+	ui_.setPower5CurrentValue().setNum(power5CurrentValue);
+	ui_.setPower5PowerValue().setNum(power5CurrentValue * 
+		ui_.setPower5VoltageValue().text().toDouble());
 }
 
 void MpptView::mppt6VoltageInReceived(double mppt6VoltageIn)
@@ -209,6 +270,18 @@ void MpptView::mppt6CurrentOutReceived(double mppt6CurrentOut)
 	ui_.setMppt6Efficiency().setNum(ui_.setMppt6PowerIn().text().toDouble() *
 		ui_.setMppt6PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::power6VoltageValueReceived(double power6VoltageValue)
+{
+	ui_.setPower6VoltageValue().setNum(power6VoltageValue);
+	ui_.setPower6PowerValue().setNum(power6VoltageValue * 
+		ui_.setPower6CurrentValue().text().toDouble());
+}
+void MpptView::power6CurrentValueReceived(double power6CurrentValue)
+{
+	ui_.setPower6CurrentValue().setNum(power6CurrentValue);
+	ui_.setPower6PowerValue().setNum(power6CurrentValue * 
+		ui_.setPower6VoltageValue().text().toDouble());
+}
 
 void MpptView::mppt7VoltageInReceived(double mppt7VoltageIn)
 {
@@ -242,85 +315,6 @@ void MpptView::mppt7CurrentOutReceived(double mppt7CurrentOut)
 	ui_.setMppt7Efficiency().setNum(ui_.setMppt7PowerIn().text().toDouble() *
 		ui_.setMppt7PowerOut().text().toDouble() * 100); // in percentage
 }
-
-void MpptView::power1VoltageValueReceived(double power1VoltageValue)
-{
-	ui_.setPower1VoltageValue().setNum(power1VoltageValue);
-	ui_.setPower1PowerValue().setNum(power1VoltageValue * 
-		ui_.setPower1CurrentValue().text().toDouble());
-}
-void MpptView::power1CurrentValueReceived(double power1CurrentValue)
-{
-	ui_.setPower1CurrentValue().setNum(power1CurrentValue);
-	ui_.setPower1PowerValue().setNum(power1CurrentValue * 
-		ui_.setPower1VoltageValue().text().toDouble());
-}
-
-void MpptView::power2VoltageValueReceived(double power2VoltageValue)
-{
-	ui_.setPower2VoltageValue().setNum(power2VoltageValue);
-	ui_.setPower2PowerValue().setNum(power2VoltageValue * 
-		ui_.setPower2CurrentValue().text().toDouble());
-}
-void MpptView::power2CurrentValueReceived(double power2CurrentValue)
-{
-	ui_.setPower2CurrentValue().setNum(power2CurrentValue);
-	ui_.setPower2PowerValue().setNum(power2CurrentValue * 
-		ui_.setPower2VoltageValue().text().toDouble());
-}
-
-void MpptView::power3VoltageValueReceived(double power3VoltageValue)
-{
-	ui_.setPower3VoltageValue().setNum(power3VoltageValue);
-	ui_.setPower3PowerValue().setNum(power3VoltageValue * 
-		ui_.setPower3CurrentValue().text().toDouble());
-}
-void MpptView::power3CurrentValueReceived(double power3CurrentValue)
-{
-	ui_.setPower3CurrentValue().setNum(power3CurrentValue);
-	ui_.setPower3PowerValue().setNum(power3CurrentValue * 
-		ui_.setPower3VoltageValue().text().toDouble());
-}
-
-void MpptView::power4VoltageValueReceived(double power4VoltageValue)
-{
-	ui_.setPower4VoltageValue().setNum(power4VoltageValue);
-	ui_.setPower4PowerValue().setNum(power4VoltageValue * 
-		ui_.setPower4CurrentValue().text().toDouble());
-}
-void MpptView::power4CurrentValueReceived(double power4CurrentValue)
-{
-	ui_.setPower4CurrentValue().setNum(power4CurrentValue);
-	ui_.setPower4PowerValue().setNum(power4CurrentValue * 
-		ui_.setPower4VoltageValue().text().toDouble());
-}
-
-void MpptView::power5VoltageValueReceived(double power5VoltageValue)
-{
-	ui_.setPower5VoltageValue().setNum(power5VoltageValue);
-	ui_.setPower5PowerValue().setNum(power5VoltageValue * 
-		ui_.setPower5CurrentValue().text().toDouble());
-}
-void MpptView::power5CurrentValueReceived(double power5CurrentValue)
-{
-	ui_.setPower5CurrentValue().setNum(power5CurrentValue);
-	ui_.setPower5PowerValue().setNum(power5CurrentValue * 
-		ui_.setPower5VoltageValue().text().toDouble());
-}
-
-void MpptView::power6VoltageValueReceived(double power6VoltageValue)
-{
-	ui_.setPower6VoltageValue().setNum(power6VoltageValue);
-	ui_.setPower6PowerValue().setNum(power6VoltageValue * 
-		ui_.setPower6CurrentValue().text().toDouble());
-}
-void MpptView::power6CurrentValueReceived(double power6CurrentValue)
-{
-	ui_.setPower6CurrentValue().setNum(power6CurrentValue);
-	ui_.setPower6PowerValue().setNum(power6CurrentValue * 
-		ui_.setPower6VoltageValue().text().toDouble());
-}
-
 void MpptView::power7VoltageValueReceived(double power7VoltageValue)
 {
 	ui_.setPower7VoltageValue().setNum(power7VoltageValue);
@@ -332,17 +326,4 @@ void MpptView::power7CurrentValueReceived(double power7CurrentValue)
 	ui_.setPower7CurrentValue().setNum(power7CurrentValue);
 	ui_.setPower7PowerValue().setNum(power7CurrentValue * 
 		ui_.setPower7VoltageValue().text().toDouble());
-}
-
-void MpptView::updatePvGraph()
-{
-
-}
-void MpptView::updateIvGraph()
-{
-
-}
-void MpptView::updatePtGraph()
-{
-
 }
