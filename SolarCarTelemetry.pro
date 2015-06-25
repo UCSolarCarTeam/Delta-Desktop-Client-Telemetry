@@ -50,7 +50,7 @@ SOURCES += \
     CommunicationLayer/PacketDecoder/PacketDecoder.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.cpp \
-    DataLayer/ArrayData/ArrayData.cpp \
+    DataLayer/MpptData/MpptData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/DataContainer.cpp \
     DataLayer/FaultsData/FaultsData.cpp \
@@ -112,8 +112,8 @@ HEADERS  += \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     CommunicationLayer/PacketUnstuffer/I_PacketUnstuffer.h \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.h \
-    DataLayer/ArrayData/ArrayData.h \
-    DataLayer/ArrayData/I_ArrayData.h \
+    DataLayer/MpptData/MpptData.h \
+    DataLayer/MpptData/I_MpptData.h \
     DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/DataContainer.h \
