@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>792</height>
+    <height>808</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -613,7 +613,7 @@ border-left: none;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="7">
+                  <item row="0" column="6">
                    <widget class="QLabel" name="valuesEfficiencyLabel">
                     <property name="styleSheet">
                      <string notr="true">border-top: none;
@@ -627,7 +627,7 @@ border-right: none;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="5" column="7">
+                  <item row="5" column="6">
                    <widget class="QLabel" name="mppt5Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none;</string>
@@ -637,7 +637,7 @@ border-right: none;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="6" column="7">
+                  <item row="6" column="6">
                    <widget class="QLabel" name="mppt6Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none; 
@@ -846,7 +846,7 @@ border-right: none;</string>
                     </item>
                    </layout>
                   </item>
-                  <item row="2" column="7">
+                  <item row="2" column="6">
                    <widget class="QLabel" name="mppt2Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none;</string>
@@ -856,7 +856,7 @@ border-right: none;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="3" column="7">
+                  <item row="3" column="6">
                    <widget class="QLabel" name="mppt3Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none;</string>
@@ -898,7 +898,7 @@ border-right: none;</string>
                     </item>
                    </layout>
                   </item>
-                  <item row="1" column="7">
+                  <item row="1" column="6">
                    <widget class="QLabel" name="mppt1Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none;</string>
@@ -1033,43 +1033,6 @@ padding-right: 5px;</string>
                     </item>
                    </layout>
                   </item>
-                  <item row="3" column="5">
-                   <layout class="QVBoxLayout" name="power3PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power3PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power3VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power3CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
                   <item row="5" column="4">
                    <layout class="QGridLayout" name="mppt5OutLayout">
                     <property name="spacing">
@@ -1145,7 +1108,7 @@ padding-right: 5px;</string>
                     </item>
                    </layout>
                   </item>
-                  <item row="4" column="7">
+                  <item row="4" column="6">
                    <widget class="QLabel" name="mppt4Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none;</string>
@@ -1261,81 +1224,7 @@ padding-right: 5px;</string>
                     </item>
                    </layout>
                   </item>
-                  <item row="1" column="5">
-                   <layout class="QVBoxLayout" name="power1PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power1PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power1VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power1CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="2" column="5">
-                   <layout class="QVBoxLayout" name="power2PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power2PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power2VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power2CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="7" column="7">
+                  <item row="7" column="6">
                    <widget class="QLabel" name="mppt7Efficiency">
                     <property name="styleSheet">
                      <string notr="true">border-right: none; 
@@ -1413,174 +1302,6 @@ padding-right: 5px;</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="0" column="5">
-                   <widget class="QLabel" name="powerPowerDrawLabel">
-                    <property name="minimumSize">
-                     <size>
-                      <width>100</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border-top: none;
-border-right:none;</string>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Power Draw&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="5">
-                   <layout class="QVBoxLayout" name="power4PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power4PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power4VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power4CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="5" column="5">
-                   <layout class="QVBoxLayout" name="power5PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power5PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power5VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power5CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="6" column="5">
-                   <layout class="QVBoxLayout" name="power6PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power6PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power6VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power6CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none; border-bottom:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="7" column="5">
-                   <layout class="QVBoxLayout" name="power7PowerLayout">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="power7PowerValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power7VoltageValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="power7CurrentValue">
-                      <property name="styleSheet">
-                       <string notr="true">border-right:none; border-bottom:none;</string>
-                      </property>
-                      <property name="text">
-                       <string>0</string>
                       </property>
                      </widget>
                     </item>
