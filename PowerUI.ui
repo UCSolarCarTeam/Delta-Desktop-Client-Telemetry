@@ -1845,10 +1845,11 @@ background: none;
                <property name="styleSheet">
                 <string notr="true">QWidget {
 	border: none;
+	font-size: 10px;
 }</string>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="busGraphsPage">
                 <layout class="QVBoxLayout" name="verticalLayout">

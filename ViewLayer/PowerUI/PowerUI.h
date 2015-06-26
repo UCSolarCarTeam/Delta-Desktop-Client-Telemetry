@@ -91,18 +91,18 @@ public:
     
 private:
    Ui::PowerUI *ui_;
-   QwtPlotCurve busCurrentCurve_;
-   QwtPlotCurve busVoltageCurve_;
-   QwtPlotCurve busPowerCurve_;
-   QwtPlotCurve setSpeedCurve_;
-   QwtPlotCurve actualSpeedCurve_;
-   QwtPlotCurve setCurrentCurve_;
-   QwtPlotCurve maxCellTempCurve_;
-   QwtPlotCurve avgCellTempCurve_;
-   QwtPlotCurve minCellTempCurve_;
-   QwtPlotCurve maxCellVoltageCurve_;
-   QwtPlotCurve minCellVoltageCurve_;
-   QwtPlotCurve avgCellVoltageCurve_;
+   QwtPlotCurve* busCurrentCurve_;
+   QwtPlotCurve* busVoltageCurve_;
+   QwtPlotCurve* busPowerCurve_;
+   QwtPlotCurve* setSpeedCurve_;
+   QwtPlotCurve* actualSpeedCurve_;
+   QwtPlotCurve* setCurrentCurve_;
+   QwtPlotCurve* maxCellTempCurve_;
+   QwtPlotCurve* avgCellTempCurve_;
+   QwtPlotCurve* minCellTempCurve_;
+   QwtPlotCurve* maxCellVoltageCurve_;
+   QwtPlotCurve* minCellVoltageCurve_;
+   QwtPlotCurve* avgCellVoltageCurve_;
    void setupGraphs();
 
 };
