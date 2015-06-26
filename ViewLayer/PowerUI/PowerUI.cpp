@@ -238,41 +238,54 @@ QStackedWidget& PowerUI::setGraphsStackedWidget()
 {
     return *ui_->graphsStackedWidget;
 }
-
-QwtPlot& PowerUI::setBusCurrentGraph()
+QwtPlotCurve& PowerUI::setBusCurrentCurve()
 {
-    return *ui_->busCurrentGraph;
+    return busCurrentCurve_;
 } 
-
-QwtPlot& PowerUI::setBusVoltageGraph()
+QwtPlotCurve& PowerUI::setBusVoltageCurve()
 {
-    return *ui_->busVoltageGraph;
+    return busVoltageCurve_;
 } 
-
-QwtPlot& PowerUI::setBusPowerGraph()
+QwtPlotCurve& PowerUI::setBusPowerCurve()
 {
-    return *ui_->busPowerGraph;
+    return busPowerCurve_;
 } 
-
-QwtPlot& PowerUI::setDriverCurrentGraph()
+QwtPlotCurve& PowerUI::setSetSpeedCurve()
 {
-    return *ui_->driverCurrentGraph;
+    return setSpeedCurve_;
 } 
-
-QwtPlot& PowerUI::setDriverSpeedGraph()
+QwtPlotCurve& PowerUI::setActualSpeedCurve()
 {
-    return *ui_->driverSpeedGraph;
+    return actualSpeedCurve_;
 } 
-
-QwtPlot& PowerUI::setBatteryCellTempGraph()
+QwtPlotCurve& PowerUI::setSetCurrentCurve()
 {
-    return *ui_->batteryCellTempGraph;
-} 
-
-QwtPlot& PowerUI::setBatteryCellVoltageGraph()
+    return setCurrentCurve_;
+}
+QwtPlotCurve& PowerUI::setMaxCellTempCurve()
 {
-    return *ui_->batteryCellVoltageGraph;
-} 
+    return maxCellTempCurve_;
+}
+QwtPlotCurve& PowerUI::setAvgCellTempCurve()
+{
+    return avgCellTempCurve_;
+}
+QwtPlotCurve& PowerUI::setMinCellTempCurve()
+{
+    return minCellTempCurve_;
+}
+QwtPlotCurve& PowerUI::setMaxCellVoltageCurve()
+{
+    return maxCellVoltageCurve_;
+}
+QwtPlotCurve& PowerUI::setMinCellVoltageCurve()
+{
+    return minCellVoltageCurve_;
+}
+QwtPlotCurve& PowerUI::setAvgCellVoltageCurve()
+{
+    return avgCellVoltageCurve_;
+}
 
 void PowerUI::setupGraphs()
 {
@@ -291,40 +304,64 @@ void PowerUI::setupGraphs()
     ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT/5);
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    busCurrentCurve_.setPen(*new QPen(Qt::red));
+    busCurrentCurve_.attach(ui_->busCurrentGraph);
 
     ui_->busVoltageGraph->setTitle("Bus Voltage Graph");
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (V)");
     ui_->busVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_VOLTAGE, MAX_BUS_VOLTAGE/5);
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    busVoltageCurve_.setPen(*new QPen(Qt::red));
+    busVoltageCurve_.attach(ui_->busVoltageGraph);
 
     ui_->busPowerGraph->setTitle("Bus Power Graph");
     ui_->busPowerGraph->setAxisTitle(QwtPlot::yLeft, "Power (W)");
     ui_->busPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_POWER, MAX_BUS_POWER/5);
     ui_->busPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
-
-    ui_->driverCurrentGraph->setTitle("Driver Current Graph");
-    ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
-    ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
-    ui_->driverCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
-    ui_->driverCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    busPowerCurve_.setPen(*new QPen(Qt::red));
+    busPowerCurve_.attach(ui_->busPowerGraph);
 
     ui_->driverSpeedGraph->setTitle("Driver Speed Graph");
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::yLeft, "Speed (kph)");
     ui_->driverSpeedGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_SPEED, MAX_DRIVER_SPEED/5);
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverSpeedGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    setSpeedCurve_.setPen(*new QPen(Qt::red));
+    setSpeedCurve_.attach(ui_->driverSpeedGraph);
+    actualSpeedCurve_.setPen(*new QPen(Qt::blue));
+    actualSpeedCurve_.attach(ui_->driverSpeedGraph);
+
+    ui_->driverCurrentGraph->setTitle("Driver Current Graph");
+    ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
+    ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
+    ui_->driverCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
+    ui_->driverCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    setCurrentCurve_.setPen(*new QPen(Qt::red));
+    setCurrentCurve_.attach(ui_->driverCurrentGraph);
 
     ui_->batteryCellTempGraph->setTitle("Battery Cell Temp Graph");
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::yLeft, "Temperature (C)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP/5);
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    maxCellTempCurve_.setPen(*new QPen(Qt::green));
+    maxCellTempCurve_.attach(ui_->batteryCellTempGraph);
+    avgCellTempCurve_.setPen(*new QPen(Qt::yellow));
+    avgCellTempCurve_.attach(ui_->batteryCellTempGraph);
+    minCellTempCurve_.setPen(*new QPen(Qt::red));
+    minCellTempCurve_.attach(ui_->batteryCellTempGraph);
 
     ui_->batteryCellVoltageGraph->setTitle("Battery Cell Voltage Graph");
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (mV)");
     ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_VOLTAGE, MAX_BATTERY_CELL_VOLTAGE/5);
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    maxCellVoltageCurve_.setPen(*new QPen(Qt::green));
+    maxCellVoltageCurve_.attach(ui_->batteryCellVoltageGraph);
+    avgCellVoltageCurve_.setPen(*new QPen(Qt::yellow));
+    avgCellVoltageCurve_.attach(ui_->batteryCellVoltageGraph);
+    minCellVoltageCurve_.setPen(*new QPen(Qt::red));
+    minCellVoltageCurve_.attach(ui_->batteryCellVoltageGraph);
 }

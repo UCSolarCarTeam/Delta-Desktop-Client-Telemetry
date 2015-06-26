@@ -70,8 +70,4 @@ signals:
 
 	void power7VoltageValueReceived(double);
 	void power7CurrentValueReceived(double);
-
-	void updatePvGraph();
-	void updateIvGraph();
-	void updatePtGraph(); 
 };

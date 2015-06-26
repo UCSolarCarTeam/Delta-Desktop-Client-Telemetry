@@ -186,43 +186,36 @@ void PowerView::mod3CellVoltagesReceived(QList<double> mod3CellVoltages)
 
 void PowerView::updateBusCurrentGraph(PowerGraphData graphData)
 {
-    ui_.setBusCurrentGraph().setTitle("Bus Current Graph");
-    double x[100], y1[100], y2[100];
-    QwtPlotCurve *curve1 = new QwtPlotCurve("Curve 1");
-    QwtPlotCurve *curve2 = new QwtPlotCurve("Curve 2");
-    for(int i = 1; i < 101; i ++)
-    {
-        x[i] = i;
-        y1[i] = i;
-        y2[i] = i*i;
-    }
-    curve1->setSamples(x, y1, 100);
-    curve2->setSamples(x, y2, 100);
-    curve1->setPen(*new QPen(Qt::blue));
-    curve2->setPen(*new QPen(Qt::red));
-    curve1->attach(&(ui_.setBusCurrentGraph()));
-    curve2->attach(&(ui_.setBusCurrentGraph()));
-    ui_.setBusCurrentGraph().replot();
-    curve1->setSamples(x, y2, 100);
-    ui_.setBusCurrentGraph().replot();
+    ui_.setBusCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 void PowerView::updateBusVoltageGraph(PowerGraphData graphData)
 {
+    ui_.setBusVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 void PowerView::updateBusPowerGraph(PowerGraphData graphData)
 {
-}
-void PowerView::updateDriverCurrentGraph(PowerGraphData graphData)
-{
+    ui_.setBusPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 void PowerView::updateDriverSpeedGraph(PowerGraphData graphData)
 {
+    ui_.setSetSpeedCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setActualSpeedCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
+}
+void PowerView::updateDriverCurrentGraph(PowerGraphData graphData)
+{
+    ui_.setSetCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 void PowerView::updateBatteryCellTempGraph(PowerGraphData graphData)
 {
+    ui_.setMaxCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setAvgCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
+    ui_.setMinCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
 }
 void PowerView::updateBatteryCellVoltageGraph(PowerGraphData graphData)
 {
+    ui_.setMaxCellVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setAvgCellVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
+    ui_.setMinCellVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
 }
 
 PowerView::~PowerView()

@@ -8,7 +8,7 @@
 #include <QTextEdit>
 #include <QStackedWidget>
 #include <QWidget>
-#include <qwt_plot.h>
+#include <qwt_plot_curve.h>
 
 class I_PowerUI
 {
@@ -74,11 +74,16 @@ public:
     virtual QPushButton& batteryGraphButton() = 0;
 
     virtual QStackedWidget& setGraphsStackedWidget() = 0;
-    virtual QwtPlot& setBusCurrentGraph() = 0; 
-    virtual QwtPlot& setBusVoltageGraph() = 0; 
-    virtual QwtPlot& setBusPowerGraph() = 0; 
-    virtual QwtPlot& setDriverCurrentGraph() = 0; 
-    virtual QwtPlot& setDriverSpeedGraph() = 0; 
-    virtual QwtPlot& setBatteryCellTempGraph() = 0; 
-    virtual QwtPlot& setBatteryCellVoltageGraph() = 0; 
+    virtual QwtPlotCurve& setBusCurrentCurve() = 0; 
+    virtual QwtPlotCurve& setBusVoltageCurve() = 0; 
+    virtual QwtPlotCurve& setBusPowerCurve() = 0; 
+    virtual QwtPlotCurve& setSetSpeedCurve() = 0; 
+    virtual QwtPlotCurve& setActualSpeedCurve() = 0; 
+    virtual QwtPlotCurve& setSetCurrentCurve() = 0;
+    virtual QwtPlotCurve& setMaxCellTempCurve() = 0;
+    virtual QwtPlotCurve& setAvgCellTempCurve() = 0;
+    virtual QwtPlotCurve& setMinCellTempCurve() = 0;
+    virtual QwtPlotCurve& setMaxCellVoltageCurve() = 0;
+    virtual QwtPlotCurve& setMinCellVoltageCurve() = 0;
+    virtual QwtPlotCurve& setAvgCellVoltageCurve() = 0;
 };

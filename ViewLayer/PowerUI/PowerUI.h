@@ -76,16 +76,33 @@ public:
     QPushButton& batteryGraphButton();
 
     QStackedWidget& setGraphsStackedWidget();
-    QwtPlot& setBusCurrentGraph(); 
-    QwtPlot& setBusVoltageGraph(); 
-    QwtPlot& setBusPowerGraph(); 
-    QwtPlot& setDriverCurrentGraph(); 
-    QwtPlot& setDriverSpeedGraph(); 
-    QwtPlot& setBatteryCellTempGraph(); 
-    QwtPlot& setBatteryCellVoltageGraph(); 
+    QwtPlotCurve& setBusCurrentCurve(); 
+    QwtPlotCurve& setBusVoltageCurve(); 
+    QwtPlotCurve& setBusPowerCurve(); 
+    QwtPlotCurve& setSetSpeedCurve(); 
+    QwtPlotCurve& setActualSpeedCurve(); 
+    QwtPlotCurve& setSetCurrentCurve();
+    QwtPlotCurve& setMaxCellTempCurve();
+    QwtPlotCurve& setAvgCellTempCurve();
+    QwtPlotCurve& setMinCellTempCurve();
+    QwtPlotCurve& setMaxCellVoltageCurve();
+    QwtPlotCurve& setMinCellVoltageCurve();
+    QwtPlotCurve& setAvgCellVoltageCurve();
     
 private:
    Ui::PowerUI *ui_;
+   QwtPlotCurve busCurrentCurve_;
+   QwtPlotCurve busVoltageCurve_;
+   QwtPlotCurve busPowerCurve_;
+   QwtPlotCurve setSpeedCurve_;
+   QwtPlotCurve actualSpeedCurve_;
+   QwtPlotCurve setCurrentCurve_;
+   QwtPlotCurve maxCellTempCurve_;
+   QwtPlotCurve avgCellTempCurve_;
+   QwtPlotCurve minCellTempCurve_;
+   QwtPlotCurve maxCellVoltageCurve_;
+   QwtPlotCurve minCellVoltageCurve_;
+   QwtPlotCurve avgCellVoltageCurve_;
    void setupGraphs();
 
 };
