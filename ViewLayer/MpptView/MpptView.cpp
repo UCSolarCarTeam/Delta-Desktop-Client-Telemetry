@@ -1,8 +1,8 @@
 #include "MpptView.h"
-#include "../../PresenterLayer/DisplayPresenter/DisplayPresenter.h"
+#include "../../PresenterLayer/MpptPresenter/MpptPresenter.h"
 #include "../MpptUI/MpptUI.h"
 
-MpptView::MpptView(DisplayPresenter& presenter, MpptUI& ui)
+MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 : presenter_(presenter)
 , ui_(ui)
 {

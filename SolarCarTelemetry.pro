@@ -57,8 +57,7 @@ SOURCES += \
     DataLayer/PowerData/PowerData.cpp \
     DataLayer/VehicleData/VehicleData.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
-    PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.cpp \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    PresenterLayer/CommunicationPresenter/CommunicationPresenter.cpp \
     PresenterLayer/FaultsPresenter/FaultsPresenter.cpp \
     PresenterLayer/GraphsPresenter/PowerGraphsPresenter.cpp \
     PresenterLayer/GraphsPresenter/PowerGraphData.cpp \
@@ -124,13 +123,11 @@ HEADERS  += \
     DataLayer/VehicleData/I_VehicleData.h \
     DataLayer/VehicleData/VehicleData.h \
     PresenterLayer/BatteryPresenter/BatteryPresenter.h \
-    PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.h \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    PresenterLayer/CommunicationPresenter/CommunicationPresenter.h \
     PresenterLayer/FaultsPresenter/FaultsPresenter.h \
     PresenterLayer/GraphsPresenter/I_GraphsPresenter.h \
     PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h \
     PresenterLayer/GraphsPresenter/PowerGraphData.h \    
-    # PresenterLayer/GraphsPresenter/MpptGraphsPresenter.h \
     PresenterLayer/MpptPresenter/MpptPresenter.h \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \

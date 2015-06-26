@@ -2,18 +2,18 @@
 
 #include <QObject>
 
-class DisplayPresenter;
+class MpptPresenter;
 class MpptUI;
 
 class MpptView : public QObject
 {
 	Q_OBJECT
 public:
-    MpptView(DisplayPresenter& presenter, MpptUI& ui);
+    MpptView(MpptPresenter& presenter, MpptUI& ui);
     ~MpptView();
 
 private:
-	DisplayPresenter& presenter_;
+	MpptPresenter& presenter_;
 	MpptUI& ui_;
 
 private slots:

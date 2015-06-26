@@ -1,23 +1,23 @@
 #include "PowerView.h"
-#include "../../PresenterLayer/DisplayPresenter/DisplayPresenter.h"
 #include "../../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
 #include "../../PresenterLayer/VehiclePresenter/VehiclePresenter.h"
 #include "../../PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h"
+#include "../../PresenterLayer/CommunicationPresenter/CommunicationPresenter.h"
 #include "../PowerUI/PowerUI.h"
 #include <QDebug>
 
 #include <qwt_plot.h>
 #include <qwt_plot_curve.h>
 
-PowerView::PowerView(DisplayPresenter& presenter,
-                     BatteryPresenter& batteryPresenter,
+PowerView::PowerView(BatteryPresenter& batteryPresenter,
                      VehiclePresenter& vehiclePresenter,
                      PowerGraphsPresenter& graphsPresenter,
+                     CommunicationPresenter& communicationPresenter,
                      PowerUI& ui)
-: presenter_(presenter)
-, batteryPresenter_(batteryPresenter)
+: batteryPresenter_(batteryPresenter)
 , vehiclePresenter_(vehiclePresenter)
 , graphsPresenter_(graphsPresenter)
+, communicationPresenter_(communicationPresenter)
 , ui_(ui)
 {
 
@@ -81,9 +81,9 @@ PowerView::PowerView(DisplayPresenter& presenter,
     connect(&ui.batteryGraphButton(), SIGNAL(clicked()),
             this, SLOT(handleBatteryGraphButtonClicked()));
 
-    connect(&presenter_, SIGNAL(connectionFailed(QString)),
+    connect(&communicationPresenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
-    connect(&presenter_, SIGNAL(connectionSucceeded(QString)),
+    connect(&communicationPresenter_, SIGNAL(connectionSucceeded(QString)),
             this, SLOT(connectionSucceeded(QString)));
 }
 
@@ -228,11 +228,11 @@ void PowerView::handleConnectButtonClicked()
         clearDebugLog();
         ui_.setConnectionStatus().setText("CONNECTING...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
-        presenter_.connectDataSource(ui_.getSerialPortName().text(),
+        communicationPresenter_.connectDataSource(ui_.getSerialPortName().text(),
                                      ui_.getBaudRate().text().toDouble());
     }
     else if(ui_.connectButton().text() == "Disconnect"){
-        presenter_.disconnectDataSource();
+        communicationPresenter_.disconnectDataSource();
         graphsPresenter_.stopUpdating();
     }
 }

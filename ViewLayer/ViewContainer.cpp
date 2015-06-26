@@ -19,16 +19,16 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 , faultsUI_(new FaultsUI())
 , escapeDialogView_(new EscapeDialogView(*escapeDialog_))
 , powerView_(new PowerView(
-      presenterContainer.displayPresenter(),
       presenterContainer.batteryPresenter(),
       presenterContainer.vehiclePresenter(),
       presenterContainer.powerGraphsPresenter(),
+      presenterContainer.communicationPresenter(),
       *powerUI_))
-, mpptView_(new MpptView(presenterContainer.displayPresenter(), *mpptUI_))
+, mpptView_(new MpptView(presenterContainer.mpptPresenter(), *mpptUI_))
 , faultsView_(new FaultsView(presenterContainer.faultsPresenter(), *faultsUI_))
 , overlordWidget_(new OverlordWidget(QList<I_SolarCarWindow*>() << powerUI_ << mpptUI_ << faultsUI_,
       escapeDialog_))
-, displayView_(new DisplayView(presenterContainer.displayPresenter(), *overlordWidget_))
+, displayView_(new DisplayView(*overlordWidget_))
 {
 }
 
