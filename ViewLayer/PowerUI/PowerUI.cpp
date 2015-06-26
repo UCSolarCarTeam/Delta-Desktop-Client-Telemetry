@@ -320,9 +320,8 @@ void PowerUI::setupGraphs()
     ui_->busCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busCurrentCurve_->setPen(*new QPen(Qt::yellow));
     busCurrentCurve_->attach(ui_->busCurrentGraph);
-    QwtLegend* busCurrentGraphLegend = new QwtLegend;
-    // busCurrentGraphLegend->setFrameStyle(QFrame::Box|QFrame::Sunken);
-    ui_->busCurrentGraph->insertLegend(busCurrentGraphLegend, QwtPlot::RightLegend);
+    // QwtLegend* busCurrentGraphLegend = new QwtLegend;
+    // ui_->busCurrentGraph->insertLegend(busCurrentGraphLegend, QwtPlot::RightLegend);
 
     ui_->busVoltageGraph->setTitle("Bus Voltage Graph");
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (V)");
@@ -331,8 +330,8 @@ void PowerUI::setupGraphs()
     ui_->busVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busVoltageCurve_->setPen(*new QPen(Qt::yellow));
     busVoltageCurve_->attach(ui_->busVoltageGraph);
-    QwtLegend* busVoltageGraphLegend = new QwtLegend;
-    ui_->busVoltageGraph->insertLegend(busVoltageGraphLegend, QwtPlot::RightLegend);
+    // QwtLegend* busVoltageGraphLegend = new QwtLegend;
+    // ui_->busVoltageGraph->insertLegend(busVoltageGraphLegend, QwtPlot::RightLegend);
 
     ui_->busPowerGraph->setTitle("Bus Power Graph");
     ui_->busPowerGraph->setAxisTitle(QwtPlot::yLeft, "Power (W)");
@@ -341,8 +340,8 @@ void PowerUI::setupGraphs()
     ui_->busPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busPowerCurve_->setPen(*new QPen(Qt::yellow));
     busPowerCurve_->attach(ui_->busPowerGraph);
-    QwtLegend* busPowerGraphLegend = new QwtLegend;
-    ui_->busPowerGraph->insertLegend(busPowerGraphLegend, QwtPlot::RightLegend);
+    // QwtLegend* busPowerGraphLegend = new QwtLegend;
+    // ui_->busPowerGraph->insertLegend(busPowerGraphLegend, QwtPlot::RightLegend);
 
     ui_->driverSpeedGraph->setTitle("Driver Speed Graph");
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::yLeft, "Speed (kph)");
@@ -355,7 +354,7 @@ void PowerUI::setupGraphs()
     actualSpeedCurve_->attach(ui_->driverSpeedGraph);
     QwtLegend* driverSpeedGraphLegend = new QwtLegend;
     ui_->driverSpeedGraph->insertLegend(driverSpeedGraphLegend, QwtPlot::RightLegend);
-
+    
     ui_->driverCurrentGraph->setTitle("Driver Current Graph");
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
@@ -363,8 +362,8 @@ void PowerUI::setupGraphs()
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     setCurrentCurve_->setPen(*new QPen(Qt::yellow));
     setCurrentCurve_->attach(ui_->driverCurrentGraph);
-    QwtLegend* driverCurrentGraphLegend = new QwtLegend;
-    ui_->driverCurrentGraph->insertLegend(driverCurrentGraphLegend, QwtPlot::RightLegend);
+    // QwtLegend* driverCurrentGraphLegend = new QwtLegend;
+    // ui_->driverCurrentGraph->insertLegend(driverCurrentGraphLegend, QwtPlot::RightLegend);
 
     ui_->batteryCellTempGraph->setTitle("Battery Cell Temp Graph");
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::yLeft, "Temperature (C)");
