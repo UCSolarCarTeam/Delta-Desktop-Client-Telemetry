@@ -41,18 +41,6 @@ QLabel& MpptUI::setMppt1CurrentOut()
 {  
    return *ui->mppt1CurrentOut;  
 }
-QLabel& MpptUI::setPower1PowerValue()
-{  
-   return *ui->power1PowerValue; 
-}
-QLabel& MpptUI::setPower1VoltageValue()
-{  
-   return *ui->power1VoltageValue;  
-}
-QLabel& MpptUI::setPower1CurrentValue()
-{  
-   return *ui->power1CurrentValue;  
-}
 QLabel& MpptUI::setMppt1Efficiency()
 {  
    return *ui->mppt1Efficiency;  
@@ -81,18 +69,6 @@ QLabel& MpptUI::setMppt2VoltageOut()
 QLabel& MpptUI::setMppt2CurrentOut()
 {  
    return *ui->mppt2CurrentOut;  
-}
-QLabel& MpptUI::setPower2PowerValue()
-{  
-   return *ui->power2PowerValue; 
-}
-QLabel& MpptUI::setPower2VoltageValue()
-{  
-   return *ui->power2VoltageValue;  
-}
-QLabel& MpptUI::setPower2CurrentValue()
-{  
-   return *ui->power2CurrentValue;  
 }
 QLabel& MpptUI::setMppt2Efficiency()
 {  
@@ -123,18 +99,6 @@ QLabel& MpptUI::setMppt3CurrentOut()
 {  
    return *ui->mppt3CurrentOut;  
 }
-QLabel& MpptUI::setPower3PowerValue()
-{  
-   return *ui->power3PowerValue; 
-}
-QLabel& MpptUI::setPower3VoltageValue()
-{  
-   return *ui->power3VoltageValue;  
-}
-QLabel& MpptUI::setPower3CurrentValue()
-{  
-   return *ui->power3CurrentValue;  
-}
 QLabel& MpptUI::setMppt3Efficiency()
 {  
    return *ui->mppt3Efficiency;  
@@ -163,18 +127,6 @@ QLabel& MpptUI::setMppt4VoltageOut()
 QLabel& MpptUI::setMppt4CurrentOut()
 {  
    return *ui->mppt4CurrentOut;  
-}
-QLabel& MpptUI::setPower4PowerValue()
-{  
-   return *ui->power4PowerValue; 
-}
-QLabel& MpptUI::setPower4VoltageValue()
-{  
-   return *ui->power4VoltageValue;  
-}
-QLabel& MpptUI::setPower4CurrentValue()
-{  
-   return *ui->power4CurrentValue;  
 }
 QLabel& MpptUI::setMppt4Efficiency()
 {  
@@ -205,18 +157,6 @@ QLabel& MpptUI::setMppt5CurrentOut()
 {  
    return *ui->mppt5CurrentOut;  
 }
-QLabel& MpptUI::setPower5PowerValue()
-{  
-   return *ui->power5PowerValue; 
-}
-QLabel& MpptUI::setPower5VoltageValue()
-{  
-   return *ui->power5VoltageValue;  
-}
-QLabel& MpptUI::setPower5CurrentValue()
-{  
-   return *ui->power5CurrentValue;  
-}
 QLabel& MpptUI::setMppt5Efficiency()
 {  
    return *ui->mppt5Efficiency;  
@@ -246,18 +186,6 @@ QLabel& MpptUI::setMppt6CurrentOut()
 {  
    return *ui->mppt6CurrentOut;  
 }
-QLabel& MpptUI::setPower6PowerValue()
-{  
-   return *ui->power6PowerValue; 
-}
-QLabel& MpptUI::setPower6VoltageValue()
-{  
-   return *ui->power6VoltageValue;  
-}
-QLabel& MpptUI::setPower6CurrentValue()
-{  
-   return *ui->power6CurrentValue;  
-}
 QLabel& MpptUI::setMppt6Efficiency()
 {  
    return *ui->mppt6Efficiency;  
@@ -286,18 +214,6 @@ QLabel& MpptUI::setMppt7VoltageOut()
 QLabel& MpptUI::setMppt7CurrentOut()
 {  
    return *ui->mppt7CurrentOut;  
-}
-QLabel& MpptUI::setPower7PowerValue()
-{  
-   return *ui->power7PowerValue; 
-}
-QLabel& MpptUI::setPower7VoltageValue()
-{  
-   return *ui->power7VoltageValue;  
-}
-QLabel& MpptUI::setPower7CurrentValue()
-{  
-   return *ui->power7CurrentValue;  
 }
 QLabel& MpptUI::setMppt7Efficiency()
 {  
