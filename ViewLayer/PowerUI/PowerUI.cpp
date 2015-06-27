@@ -12,15 +12,15 @@ PowerUI::PowerUI()
     busCurrentCurve_ = new QwtPlotCurve("Bus Current");
     busVoltageCurve_ = new QwtPlotCurve("Bus Voltage");
     busPowerCurve_ = new QwtPlotCurve("Bus Power");
-    setSpeedCurve_ = new QwtPlotCurve("Set Speed");
-    actualSpeedCurve_ = new QwtPlotCurve("Actual Speed");
+    setSpeedCurve_ = new QwtPlotCurve("Set");
+    actualSpeedCurve_ = new QwtPlotCurve("Actual");
     setCurrentCurve_ = new QwtPlotCurve("Set Current");
-    maxCellTempCurve_ = new QwtPlotCurve("Max Cell Temp");
-    avgCellTempCurve_ = new QwtPlotCurve("Avg Cell Temp");
-    minCellTempCurve_ = new QwtPlotCurve("Min Cell Temp");
-    maxCellVoltageCurve_ = new QwtPlotCurve("Max Cell Voltage");
-    minCellVoltageCurve_ = new QwtPlotCurve("Min Cell Voltage");
-    avgCellVoltageCurve_ = new QwtPlotCurve("Avg Cell Voltage");
+    maxCellTempCurve_ = new QwtPlotCurve("Max");
+    avgCellTempCurve_ = new QwtPlotCurve("Avg");
+    minCellTempCurve_ = new QwtPlotCurve("Min");
+    maxCellVoltageCurve_ = new QwtPlotCurve("Max");
+    minCellVoltageCurve_ = new QwtPlotCurve("Min");
+    avgCellVoltageCurve_ = new QwtPlotCurve("Avg");
     setupGraphs();
 }
 
@@ -354,7 +354,7 @@ void PowerUI::setupGraphs()
     actualSpeedCurve_->attach(ui_->driverSpeedGraph);
     QwtLegend* driverSpeedGraphLegend = new QwtLegend;
     ui_->driverSpeedGraph->insertLegend(driverSpeedGraphLegend, QwtPlot::RightLegend);
-    
+
     ui_->driverCurrentGraph->setTitle("Driver Current Graph");
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
