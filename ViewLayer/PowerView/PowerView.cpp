@@ -59,18 +59,18 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
 
     connect(&graphsPresenter_, SIGNAL(busCurrentGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBusCurrentGraph(PowerGraphData)));
-    // connect(&graphsPresenter_, SIGNAL(busVoltageGraphDataUpdated(PowerGraphData)),
-    //         this, SLOT(updateBusVoltageGraph(PowerGraphData)));
-    // connect(&graphsPresenter_, SIGNAL(busPowerGraphDataUpdated(PowerGraphData)),
-    //         this, SLOT(updateBusPowerGraph(PowerGraphData)));
-    // connect(&graphsPresenter_, SIGNAL(driverCurrentGraphDataUpdated(PowerGraphData)),
-    //         this, SLOT(updateDriverCurrentGraph(PowerGraphData)));
-    // connect(&graphsPresenter_, SIGNAL(driverSpeedGraphDataUpdated(PowerGraphData)),
-    //         this, SLOT(updateDriverSpeedGraph(PowerGraphData)));
-    // connect(&graphsPresenter_, SIGNAL(batteryCellTempGraphDataUpdated(PowerGraphData)),
-    //         this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
-    // connect(&graphsPresenter_, SIGNAL(batteryCellVoltageGraphDataUpdated(PowerGraphData)),
-    //         this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(busVoltageGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBusVoltageGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(busPowerGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBusPowerGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(driverCurrentGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateDriverCurrentGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(driverSpeedGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateDriverSpeedGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(batteryCellTempGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(batteryCellVoltageGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
             this, SLOT(handleConnectButtonClicked()));

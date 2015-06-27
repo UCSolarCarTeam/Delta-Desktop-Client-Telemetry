@@ -92,6 +92,7 @@ QString MpptDataMessage::toString() const
    QString messageString;
    messageString += QString::number(MessageDefines::MpptData) + ", ";
    messageString += MpptDefines::typeToString(type()) + ", ";
+   messageString += QString::number(mpptNumber()) + ", ";
    messageString += QString::number(validityFlags(), 16) + ", ";
    messageString += QString::number(voltageIn()) + ", ";
    messageString += QString::number(currentIn()) + ", ";

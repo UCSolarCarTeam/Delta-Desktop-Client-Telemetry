@@ -29,6 +29,7 @@ private slots:
    void handlePacketDecoded(const FaultsMessage message);
    void handlePacketDecoded(const BatteryDataMessage message);
    void handlePacketDecoded(const CmuDataMessage message);
+   void handlePacketDecoded(const MpptDataMessage message);
 
 private:
    void connectToPacketDecoder(const I_PacketDecoder& decoder);
