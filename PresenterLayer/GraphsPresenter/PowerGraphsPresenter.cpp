@@ -2,9 +2,9 @@
 
 namespace
 {
-   const int BUS_CURRENT_DATA_SETS_ = 2;
-   const int BUS_VOLTAGE_DATA_SETS_ = 2;
-   const int BUS_POWER_DATA_SETS_ = 2;
+   const int BUS_CURRENT_DATA_SETS_ = 1;
+   const int BUS_VOLTAGE_DATA_SETS_ = 1;
+   const int BUS_POWER_DATA_SETS_ = 1;
    const int DRIVER_CURRENT_DATA_SETS_ = 1;
    const int DRIVER_SPEED_DATA_SETS_ = 2;
    const int BATTERY_CELL_TEMP_DATA_SETS_ = 3;
@@ -27,26 +27,26 @@ PowerGraphsPresenter::PowerGraphsPresenter(const I_VehicleData& vehicleData,
 	connect(&graphUpdateTimer_, SIGNAL(timeout()),
 		this, SLOT(updateGraphData()));
 
-	busCurrentGraphData_ = PowerGraphData(INTERVAL_SIZE,
-										  NUMBER_OF_INTERVALS,
+	busCurrentGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										  INTERVAL_SIZE,
                                           BUS_CURRENT_DATA_SETS_);
-	busVoltageGraphData_ = PowerGraphData(INTERVAL_SIZE,
-								 		  NUMBER_OF_INTERVALS,
+	busVoltageGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+								 		  INTERVAL_SIZE,
                                           BUS_VOLTAGE_DATA_SETS_);
-	busPowerGraphData_ = PowerGraphData(INTERVAL_SIZE,
-										NUMBER_OF_INTERVALS,
+	busPowerGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										INTERVAL_SIZE,
                                         BUS_POWER_DATA_SETS_);
-	driverCurrentGraphData_ = PowerGraphData(INTERVAL_SIZE,
-										     NUMBER_OF_INTERVALS,
+	driverCurrentGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										     INTERVAL_SIZE,
                                              DRIVER_CURRENT_DATA_SETS_);
-	driverSpeedGraphData_ = PowerGraphData(INTERVAL_SIZE,
-										   NUMBER_OF_INTERVALS,
+	driverSpeedGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										   INTERVAL_SIZE,
                                            DRIVER_SPEED_DATA_SETS_);
-	batteryCellTempGraphData_ = PowerGraphData(INTERVAL_SIZE,
-										       NUMBER_OF_INTERVALS,
+	batteryCellTempGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										       INTERVAL_SIZE,
                                                BATTERY_CELL_TEMP_DATA_SETS_);
-	batteryCellVoltageGraphData_ = PowerGraphData(INTERVAL_SIZE,
-										          NUMBER_OF_INTERVALS,
+	batteryCellVoltageGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										          INTERVAL_SIZE,
                                                   BATTERY_CELL_VOLTAGE_DATA_SETS_);
 }
 

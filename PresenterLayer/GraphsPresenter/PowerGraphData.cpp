@@ -1,23 +1,24 @@
 #include "PowerGraphData.h"
+#include <QDebug>
 
 PowerGraphData::PowerGraphData()
 {
 }
 
-PowerGraphData::PowerGraphData(int numberOfIntervals, 
-                               double intervalSize, 
+PowerGraphData::PowerGraphData(int numberOfIntervals,
+                               double intervalSize,
                                int numberOfDataSets)
 {
     xData_ = QVector<double>(numberOfIntervals);
-    for(double i = 0; i < numberOfIntervals; i++)
+    for(int i = 0; i < numberOfIntervals; i++)
     {
-        xData_.prepend(i * intervalSize);
+        xData_.prepend((double)i * intervalSize);
     }
 
     yDataSets_ = QList<QVector<double> >();
-    foreach(QVector<double> dataSet, yDataSets_)
+    for(int i = 0; i < numberOfDataSets; i++)
     {
-        dataSet = QVector<double>(numberOfIntervals, 0);
+        yDataSets_.append(QVector<double>(numberOfIntervals, 0));
     }
 }
 
