@@ -34,6 +34,7 @@ SOURCES += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
     CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
+    CommunicationLayer/DataPopulators/MpptPopulator.cpp \
     CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \
     CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
     CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \
@@ -91,6 +92,7 @@ HEADERS  += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
     CommunicationLayer/DataPopulators/FaultsPopulator.h \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
+    CommunicationLayer/DataPopulators/MpptPopulator.h \
     CommunicationLayer/MessagingFramework/BatteryDataMessage.h \
     CommunicationLayer/MessagingFramework/BatteryFaults.h \
     CommunicationLayer/MessagingFramework/CmuDataMessage.h \
@@ -127,7 +129,7 @@ HEADERS  += \
     PresenterLayer/FaultsPresenter/FaultsPresenter.h \
     PresenterLayer/GraphsPresenter/I_GraphsPresenter.h \
     PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h \
-    PresenterLayer/GraphsPresenter/PowerGraphData.h \    
+    PresenterLayer/GraphsPresenter/PowerGraphData.h \
     PresenterLayer/MpptPresenter/MpptPresenter.h \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
