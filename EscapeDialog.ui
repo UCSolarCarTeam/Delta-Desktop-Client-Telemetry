@@ -532,13 +532,33 @@ padding-right: none;
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgb(255,255,255);
+                    <string notr="true">QPushButton{
+color: rgb(255,255,255);
 border: 1px solid rgb(60,60,60);
-background-image: url(:/Resources/BrowseButton.png);
-padding: 7px;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(140,140,140), stop: 1 rgb(100,100,100));padding: 7px;
 margin-top: 2px;
 margin-bottom:2px;
-font-size: 14px;</string>
+font-size: 14px;
+}
+QPushButton:hover{
+color: rgb(255,255,255);
+border: 1px solid rgb(60,60,60);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(160,160,160), stop: 1 rgb(120,120,120));padding: 7px;
+margin-top: 2px;
+margin-bottom:2px;
+font-size: 14px;
+}
+QPushButton:pressed{
+color: rgb(255,255,255);
+border: 1px solid rgb(60,60,60);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(120,120,120), stop: 1 rgb(80,80,80));padding: 7px;
+margin-top: 2px;
+margin-bottom:2px;
+font-size: 14px;
+}</string>
                    </property>
                    <property name="text">
                     <string>Browse</string>
@@ -595,14 +615,40 @@ font-size: 14px;</string>
             </property>
             <item>
              <widget class="QPushButton" name="exitPushButton">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="styleSheet">
-               <string notr="true">padding: 3px;
+               <string notr="true">QPushButton{
+padding: 3px;
 margin: 5px;
-margin-right: 260px;
+
 color: rgb(255,255,255);
 border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(140,140,140), stop: 1 rgb(100,100,100));
+}
+QPushButton:hover{
+padding: 3px;
+margin: 5px;
 
-background-image: url(:/Resources/BrowseButton.png);</string>
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(160,160,160), stop: 1 rgb(120,120,120));
+}
+QPushButton:pressed{
+padding: 3px;
+margin: 5px;
+
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(120,120,120), stop: 1 rgb(80,80,80));
+}</string>
               </property>
               <property name="text">
                <string>Exit</string>
@@ -610,10 +656,23 @@ background-image: url(:/Resources/BrowseButton.png);</string>
              </widget>
             </item>
             <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QPushButton" name="okPushButton">
               <property name="minimumSize">
                <size>
-                <width>0</width>
+                <width>150</width>
                 <height>30</height>
                </size>
               </property>
@@ -633,13 +692,33 @@ background-image: url(:/Resources/BrowseButton.png);</string>
                <enum>Qt::LeftToRight</enum>
               </property>
               <property name="styleSheet">
-               <string notr="true">padding: 3px;
+               <string notr="true">QPushButton{
+padding: 3px;
 padding-top:5px;
 margin: 5px;
-margin-left: 270px;
 color: rgb(255,255,255);
 border: 1px solid rgb(45,45,45);
-background-image: url(:/Resources/BrowseButton.png);</string>
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(140,140,140), stop: 1 rgb(100,100,100));
+}
+QPushButton:hover{
+padding: 3px;
+padding-top:5px;
+margin: 5px;
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(160,160,160), stop: 1 rgb(120,120,120));
+}
+QPushButton:pressed{
+padding: 3px;
+padding-top:5px;
+margin: 5px;
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(120,120,120), stop: 1 rgb(80,80,80));
+}</string>
               </property>
               <property name="text">
                <string>OK</string>
@@ -649,6 +728,7 @@ background-image: url(:/Resources/BrowseButton.png);</string>
            </layout>
            <zorder>okPushButton</zorder>
            <zorder>exitPushButton</zorder>
+           <zorder>horizontalSpacer</zorder>
           </widget>
          </item>
         </layout>
