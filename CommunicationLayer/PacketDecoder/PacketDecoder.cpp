@@ -23,7 +23,6 @@ void PacketDecoder::handleValidData(QByteArray messageData)
 {
    MessageDefines::Type messageType =
       static_cast<MessageDefines::Type>(messageData.at(INDEX_OF_PACKET_TYPE));
-
    if (MessageDefines::getLengthForMessage(messageType) == messageData.size())
    {
       switch(messageType)

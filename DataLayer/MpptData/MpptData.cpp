@@ -1,4 +1,5 @@
 #include "MpptData.h"
+#include <QDebug>
 
 MpptData::MpptData()
 {

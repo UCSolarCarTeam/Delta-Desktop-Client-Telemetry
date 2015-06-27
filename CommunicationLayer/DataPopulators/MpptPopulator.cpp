@@ -1,5 +1,6 @@
 #include "MpptPopulator.h"
 #include "../MessagingFramework/MpptDefines.h"
+#include <QDebug>
 
 MpptPopulator::MpptPopulator(I_PacketDecoder& packetDecoder,
 							 I_MpptData& mpptData)
