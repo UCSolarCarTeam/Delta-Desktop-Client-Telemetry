@@ -1,4 +1,5 @@
 #include "PowerGraphsPresenter.h"
+#include <QDebug>
 
 namespace
 {
@@ -119,9 +120,9 @@ void PowerGraphsPresenter::updateDriverSpeedGraphData()
 
 void PowerGraphsPresenter::updateBatteryCellTempGraphData()
 {
-	double maxBatteryCellTemp = batteryData_.mod0CellTemperature();
+	double maxBatteryCellTemp = 0;
 	double avgBatteryCellTemp = 0;
-	double minBatteryCellTemp = batteryData_.mod0CellTemperature();
+	double minBatteryCellTemp = 0;
     double batteryCellTempData [BATTERY_CELL_TEMP_DATA_SETS_];
 
 	QList<double> allBatteryCellTemps = QList<double>();
@@ -152,9 +153,9 @@ void PowerGraphsPresenter::updateBatteryCellTempGraphData()
 
 void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 {
-	double maxBatteryCellVoltage = batteryData_.mod0CellVoltages()[0];
+	double maxBatteryCellVoltage = 0;
 	double avgBatteryCellVoltage = 0;
-	double minBatteryCellVoltage = batteryData_.mod0CellVoltages()[0];
+	double minBatteryCellVoltage = 0;
     double batteryCellVoltageData [BATTERY_CELL_VOLTAGE_DATA_SETS_];
 
 	QList<double> allBatteryCellVoltages = QList<double>();
@@ -173,6 +174,7 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 		}
 		avgBatteryCellVoltage += batteryCellVoltage;
 	}
+
 	avgBatteryCellVoltage /= 32.0; // for number of batteryCellVoltages
 
 	batteryCellVoltageData[0] = maxBatteryCellVoltage;

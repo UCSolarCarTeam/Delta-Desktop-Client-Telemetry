@@ -1,4 +1,5 @@
 #include "CmuPopulator.h"
+#include <QDebug>
 
 CmuPopulator::CmuPopulator(I_PacketDecoder& packetDecoder,
                            I_BatteryData& batteryData)
@@ -37,7 +38,6 @@ void CmuPopulator::populateData(const CmuDataMessage message)
                 convertFloatListToDouble(message.cellVoltages()));
             break;
     }
-
 }
 
 QList<double> CmuPopulator::convertFloatListToDouble(QList<float> floatList)
