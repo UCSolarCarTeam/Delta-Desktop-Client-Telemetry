@@ -21,8 +21,8 @@ signals:
     virtual void busVoltageGraphDataUpdated(PowerGraphData);
     virtual void busPowerGraphDataUpdated(PowerGraphData);
 
-    virtual void drivingCurrentGraphDataUpdated(PowerGraphData);
-    virtual void drivingSpeedGraphDataUpdated(PowerGraphData);
+    virtual void driverCurrentGraphDataUpdated(PowerGraphData);
+    virtual void driverSpeedGraphDataUpdated(PowerGraphData);
 
     virtual void cellVoltageGraphDataUpdated(PowerGraphData);
     virtual void cellTemperatureGraphDataUpdated(PowerGraphData);

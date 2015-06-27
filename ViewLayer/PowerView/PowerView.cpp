@@ -63,13 +63,13 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(updateBusVoltageGraph(PowerGraphData)));
     connect(&graphsPresenter_, SIGNAL(busPowerGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBusPowerGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(driverCurrentGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(drivingCurrentGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateDriverCurrentGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(driverSpeedGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(drivingSpeedGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateDriverSpeedGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(batteryCellTempGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(cellTemperatureGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(batteryCellVoltageGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(cellVoltageGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
