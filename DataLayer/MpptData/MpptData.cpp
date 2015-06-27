@@ -25,6 +25,14 @@ double MpptData::mppt1CurrentOut() const
 {
 	return mppt1CurrentOut_;
 }
+QString MpptData::mppt1Type() const
+{
+	return mppt1Type_;
+}
+QString MpptData::mppt1Mode() const
+{
+	return mppt1Mode_;
+}
 
 double MpptData::mppt2VoltageIn() const
 {
@@ -41,6 +49,14 @@ double MpptData::mppt2VoltageOut() const
 double MpptData::mppt2CurrentOut() const
 {
 	return mppt2CurrentOut_;
+}
+QString MpptData::mppt2Type() const
+{
+	return mppt2Type_;
+}
+QString MpptData::mppt2Mode() const
+{
+	return mppt2Mode_;
 }
 
 double MpptData::mppt3VoltageIn() const
@@ -59,6 +75,14 @@ double MpptData::mppt3CurrentOut() const
 {
 	return mppt3CurrentOut_;
 }
+QString MpptData::mppt3Type() const
+{
+	return mppt3Type_;
+}
+QString MpptData::mppt3Mode() const
+{
+	return mppt3Mode_;
+}
 
 double MpptData::mppt4VoltageIn() const
 {
@@ -75,6 +99,14 @@ double MpptData::mppt4VoltageOut() const
 double MpptData::mppt4CurrentOut() const
 {
 	return mppt4CurrentOut_;
+}
+QString MpptData::mppt4Type() const
+{
+	return mppt4Type_;
+}
+QString MpptData::mppt4Mode() const
+{
+	return mppt4Mode_;
 }
 
 double MpptData::mppt5VoltageIn() const
@@ -93,6 +125,14 @@ double MpptData::mppt5CurrentOut() const
 {
 	return mppt5CurrentOut_;
 }
+QString MpptData::mppt5Type() const
+{
+	return mppt5Type_;
+}
+QString MpptData::mppt5Mode() const
+{
+	return mppt5Mode_;
+}
 
 double MpptData::mppt6VoltageIn() const
 {
@@ -110,6 +150,14 @@ double MpptData::mppt6CurrentOut() const
 {
 	return mppt6CurrentOut_;
 }
+QString MpptData::mppt6Type() const
+{
+	return mppt6Type_;
+}
+QString MpptData::mppt6Mode() const
+{
+	return mppt6Mode_;
+}
 
 double MpptData::mppt7VoltageIn() const
 {
@@ -126,6 +174,14 @@ double MpptData::mppt7VoltageOut() const
 double MpptData::mppt7CurrentOut() const
 {
 	return mppt7CurrentOut_;
+}
+QString MpptData::mppt7Type() const
+{
+	return mppt7Type_;
+}
+QString MpptData::mppt7Mode() const
+{
+	return mppt7Mode_;
 }
 
 /*ArrayData "Sets"*/
@@ -149,6 +205,16 @@ void MpptData::setMppt1CurrentOut(double mppt1CurrentOut)
 	mppt1CurrentOut_ = mppt1CurrentOut;
 	emit mppt1CurrentOutReceived(mppt1CurrentOut);	
 }
+void MpptData::setMppt1Type(QString mppt1Type)
+{
+	mppt1Type_ = mppt1Type;
+	emit mppt1TypeReceived(mppt1Type);
+}
+void MpptData::setMppt1Mode(QString mppt1Mode)
+{
+	mppt1Mode_ = mppt1Mode;
+	emit mppt1ModeReceived(mppt1Mode);
+}
 
 void MpptData::setMppt2VoltageIn(double mppt2VoltageIn)
 {
@@ -169,6 +235,16 @@ void MpptData::setMppt2CurrentOut(double mppt2CurrentOut)
 {
 	mppt2CurrentOut_ = mppt2CurrentOut;
 	emit mppt2CurrentOutReceived(mppt2CurrentOut);	
+}
+void MpptData::setMppt2Type(QString mppt2Type)
+{
+	mppt2Type_ = mppt2Type;
+	emit mppt2TypeReceived(mppt2Type);
+}
+void MpptData::setMppt2Mode(QString mppt2Mode)
+{
+	mppt2Mode_ = mppt2Mode;
+	emit mppt2ModeReceived(mppt2Mode);
 }
 
 void MpptData::setMppt3VoltageIn(double mppt3VoltageIn)
@@ -191,6 +267,16 @@ void MpptData::setMppt3CurrentOut(double mppt3CurrentOut)
 	mppt3CurrentOut_ = mppt3CurrentOut;
 	emit mppt3CurrentOutReceived(mppt3CurrentOut);	
 }
+void MpptData::setMppt3Type(QString mppt3Type)
+{
+	mppt3Type_ = mppt3Type;
+	emit mppt3TypeReceived(mppt3Type);
+}
+void MpptData::setMppt3Mode(QString mppt3Mode)
+{
+	mppt3Mode_ = mppt3Mode;
+	emit mppt3ModeReceived(mppt3Mode);
+}
 
 void MpptData::setMppt4VoltageIn(double mppt4VoltageIn)
 {
@@ -211,6 +297,16 @@ void MpptData::setMppt4CurrentOut(double mppt4CurrentOut)
 {
 	mppt4CurrentOut_ = mppt4CurrentOut;
 	emit mppt4CurrentOutReceived(mppt4CurrentOut);	
+}
+void MpptData::setMppt4Type(QString mppt4Type)
+{
+	mppt4Type_ = mppt4Type;
+	emit mppt4TypeReceived(mppt4Type);
+}
+void MpptData::setMppt4Mode(QString mppt4Mode)
+{
+	mppt4Mode_ = mppt4Mode;
+	emit mppt4ModeReceived(mppt4Mode);
 }
 
 void MpptData::setMppt5VoltageIn(double mppt5VoltageIn)
@@ -233,6 +329,16 @@ void MpptData::setMppt5CurrentOut(double mppt5CurrentOut)
 	mppt5CurrentOut_ = mppt5CurrentOut;
 	emit mppt5CurrentOutReceived(mppt5CurrentOut);	
 }
+void MpptData::setMppt5Type(QString mppt5Type)
+{
+	mppt5Type_ = mppt5Type;
+	emit mppt5TypeReceived(mppt5Type);
+}
+void MpptData::setMppt5Mode(QString mppt5Mode)
+{
+	mppt5Mode_ = mppt5Mode;
+	emit mppt5ModeReceived(mppt5Mode);
+}
 
 void MpptData::setMppt6VoltageIn(double mppt6VoltageIn)
 {
@@ -254,6 +360,16 @@ void MpptData::setMppt6CurrentOut(double mppt6CurrentOut)
 	mppt6CurrentOut_ = mppt6CurrentOut;
 	emit mppt6CurrentOutReceived(mppt6CurrentOut);	
 }
+void MpptData::setMppt6Type(QString mppt6Type)
+{
+	mppt6Type_ = mppt6Type;
+	emit mppt6TypeReceived(mppt6Type);
+}
+void MpptData::setMppt6Mode(QString mppt6Mode)
+{
+	mppt6Mode_ = mppt6Mode;
+	emit mppt6ModeReceived(mppt6Mode);
+}
 
 void MpptData::setMppt7VoltageIn(double mppt7VoltageIn)
 {
@@ -274,5 +390,15 @@ void MpptData::setMppt7CurrentOut(double mppt7CurrentOut)
 {
 	mppt7CurrentOut_ = mppt7CurrentOut;
 	emit mppt7CurrentOutReceived(mppt7CurrentOut);	
+}
+void MpptData::setMppt7Type(QString mppt7Type)
+{
+	mppt7Type_ = mppt7Type;
+	emit mppt7TypeReceived(mppt7Type);
+}
+void MpptData::setMppt7Mode(QString mppt7Mode)
+{
+	mppt7Mode_ = mppt7Mode;
+	emit mppt7ModeReceived(mppt7Mode);
 }
 

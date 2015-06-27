@@ -45,6 +45,14 @@ QLabel& MpptUI::setMppt1Efficiency()
 {  
    return *ui->mppt1Efficiency;  
 }
+QLabel& MpptUI::setMppt1Type()
+{
+   return *ui->mppt1Type;
+}
+QLabel& MpptUI::setMppt1Mode()
+{
+   return *ui->mppt1Mode;
+}
 
 QLabel& MpptUI::setMppt2PowerIn()
 {  
@@ -73,6 +81,14 @@ QLabel& MpptUI::setMppt2CurrentOut()
 QLabel& MpptUI::setMppt2Efficiency()
 {  
    return *ui->mppt2Efficiency;  
+}
+QLabel& MpptUI::setMppt2Type()
+{
+   return *ui->mppt2Type;
+}
+QLabel& MpptUI::setMppt2Mode()
+{
+   return *ui->mppt2Mode;
 }
 
 QLabel& MpptUI::setMppt3PowerIn()
@@ -103,6 +119,14 @@ QLabel& MpptUI::setMppt3Efficiency()
 {  
    return *ui->mppt3Efficiency;  
 }
+QLabel& MpptUI::setMppt3Type()
+{
+   return *ui->mppt3Type;
+}
+QLabel& MpptUI::setMppt3Mode()
+{
+   return *ui->mppt3Mode;
+}
 
 QLabel& MpptUI::setMppt4PowerIn()
 {  
@@ -131,6 +155,14 @@ QLabel& MpptUI::setMppt4CurrentOut()
 QLabel& MpptUI::setMppt4Efficiency()
 {  
    return *ui->mppt4Efficiency;  
+}
+QLabel& MpptUI::setMppt4Type()
+{
+   return *ui->mppt4Type;
+}
+QLabel& MpptUI::setMppt4Mode()
+{
+   return *ui->mppt4Mode;
 }
 
 QLabel& MpptUI::setMppt5PowerIn()
@@ -161,6 +193,14 @@ QLabel& MpptUI::setMppt5Efficiency()
 {  
    return *ui->mppt5Efficiency;  
 }
+QLabel& MpptUI::setMppt5Type()
+{
+   return *ui->mppt5Type;
+}
+QLabel& MpptUI::setMppt5Mode()
+{
+   return *ui->mppt5Mode;
+}
 
 QLabel& MpptUI::setMppt6PowerIn()
 {  
@@ -190,6 +230,14 @@ QLabel& MpptUI::setMppt6Efficiency()
 {  
    return *ui->mppt6Efficiency;  
 }
+QLabel& MpptUI::setMppt6Type()
+{
+   return *ui->mppt6Type;
+}
+QLabel& MpptUI::setMppt6Mode()
+{
+   return *ui->mppt6Mode;
+}
 
 QLabel& MpptUI::setMppt7PowerIn()
 {  
@@ -218,4 +266,12 @@ QLabel& MpptUI::setMppt7CurrentOut()
 QLabel& MpptUI::setMppt7Efficiency()
 {  
    return *ui->mppt7Efficiency;  
+}
+QLabel& MpptUI::setMppt7Type()
+{
+   return *ui->mppt7Type;
+}
+QLabel& MpptUI::setMppt7Mode()
+{
+   return *ui->mppt7Mode;
 }

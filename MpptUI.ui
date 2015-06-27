@@ -347,7 +347,6 @@ QLabel {
                      <widget class="QLabel" name="mppt6Label">
                       <property name="styleSheet">
                        <string notr="true">border-left: none;
-border-bottom:none;
 padding-right: 5px;</string>
                       </property>
                       <property name="text">
@@ -381,7 +380,7 @@ padding-right: 5px;</string>
                     <item row="2" column="1">
                      <widget class="QLabel" name="mppt6CurrentLabel">
                       <property name="styleSheet">
-                       <string notr="true">border-bottom: none;</string>
+                       <string notr="true"/>
                       </property>
                       <property name="text">
                        <string>Current (A)</string>
@@ -594,30 +593,10 @@ border-left: none;</string>
                     </item>
                    </layout>
                   </item>
-                  <item row="0" column="4">
-                   <widget class="QLabel" name="valuesOutLabel">
-                    <property name="minimumSize">
-                     <size>
-                      <width>100</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border-top: none;</string>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Out&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="0" column="6">
                    <widget class="QLabel" name="valuesEfficiencyLabel">
                     <property name="styleSheet">
-                     <string notr="true">border-top: none;
-border-right: none;</string>
+                     <string notr="true">border-top: none;</string>
                     </property>
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Efficiency&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -629,9 +608,6 @@ border-right: none;</string>
                   </item>
                   <item row="5" column="6">
                    <widget class="QLabel" name="mppt5Efficiency">
-                    <property name="styleSheet">
-                     <string notr="true">border-right: none;</string>
-                    </property>
                     <property name="text">
                      <string> 0 %</string>
                     </property>
@@ -640,8 +616,7 @@ border-right: none;</string>
                   <item row="6" column="6">
                    <widget class="QLabel" name="mppt6Efficiency">
                     <property name="styleSheet">
-                     <string notr="true">border-right: none; 
- border-bottom: none;</string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>0 %</string>
@@ -712,9 +687,6 @@ border-right: none;</string>
                     </item>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt6CurrentIn">
-                      <property name="styleSheet">
-                       <string notr="true">border-bottom: none;</string>
-                      </property>
                       <property name="text">
                        <string>0</string>
                       </property>
@@ -848,9 +820,6 @@ border-right: none;</string>
                   </item>
                   <item row="2" column="6">
                    <widget class="QLabel" name="mppt2Efficiency">
-                    <property name="styleSheet">
-                     <string notr="true">border-right: none;</string>
-                    </property>
                     <property name="text">
                      <string>0 %</string>
                     </property>
@@ -858,9 +827,6 @@ border-right: none;</string>
                   </item>
                   <item row="3" column="6">
                    <widget class="QLabel" name="mppt3Efficiency">
-                    <property name="styleSheet">
-                     <string notr="true">border-right: none;</string>
-                    </property>
                     <property name="text">
                      <string>0 %</string>
                     </property>
@@ -873,10 +839,6 @@ border-right: none;</string>
                     </property>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt6CurrentOut">
-                      <property name="styleSheet">
-                       <string notr="true">border-bottom: none;
-</string>
-                      </property>
                       <property name="text">
                        <string>0</string>
                       </property>
@@ -900,9 +862,6 @@ border-right: none;</string>
                   </item>
                   <item row="1" column="6">
                    <widget class="QLabel" name="mppt1Efficiency">
-                    <property name="styleSheet">
-                     <string notr="true">border-right: none;</string>
-                    </property>
                     <property name="text">
                      <string>0 %</string>
                     </property>
@@ -1110,9 +1069,6 @@ padding-right: 5px;</string>
                   </item>
                   <item row="4" column="6">
                    <widget class="QLabel" name="mppt4Efficiency">
-                    <property name="styleSheet">
-                     <string notr="true">border-right: none;</string>
-                    </property>
                     <property name="text">
                      <string>0 %</string>
                     </property>
@@ -1227,8 +1183,8 @@ padding-right: 5px;</string>
                   <item row="7" column="6">
                    <widget class="QLabel" name="mppt7Efficiency">
                     <property name="styleSheet">
-                     <string notr="true">border-right: none; 
- border-bottom: none;</string>
+                     <string notr="true">
+border-bottom: none;</string>
                     </property>
                     <property name="text">
                      <string>0 %</string>
@@ -1306,6 +1262,186 @@ padding-right: 5px;</string>
                      </widget>
                     </item>
                    </layout>
+                  </item>
+                  <item row="0" column="4">
+                   <widget class="QLabel" name="valuesOutLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-top: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Out&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="7">
+                   <widget class="QLabel" name="typeLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-top: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Type&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="8">
+                   <widget class="QLabel" name="modeLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-top: none;
+border-right:none;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Mode&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="7">
+                   <widget class="QLabel" name="mppt1Type">
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="8">
+                   <widget class="QLabel" name="mppt1Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="7">
+                   <widget class="QLabel" name="mppt2Type">
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="8">
+                   <widget class="QLabel" name="mppt2Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="7">
+                   <widget class="QLabel" name="mppt3Type">
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="8">
+                   <widget class="QLabel" name="mppt3Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="7">
+                   <widget class="QLabel" name="mppt4Type">
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="8">
+                   <widget class="QLabel" name="mppt4Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="7">
+                   <widget class="QLabel" name="mppt5Type">
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="8">
+                   <widget class="QLabel" name="mppt5Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="7">
+                   <widget class="QLabel" name="mppt6Type">
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="8">
+                   <widget class="QLabel" name="mppt6Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="7">
+                   <widget class="QLabel" name="mppt7Type">
+                    <property name="styleSheet">
+                     <string notr="true">border-bottom: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="8">
+                   <widget class="QLabel" name="mppt7Mode">
+                    <property name="styleSheet">
+                     <string notr="true">border-right: none;</string>
+                    </property>
+                    <property name="text">
+                     <string>N/A</string>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </item>

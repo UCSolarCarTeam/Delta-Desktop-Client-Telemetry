@@ -12,12 +12,10 @@ MpptPopulator::MpptPopulator(I_PacketDecoder& packetDecoder,
 
 void MpptPopulator::populateData(const MpptDataMessage message)
 {
-	if(message.isModeValid()){
-		mpptData_.setMode(MpptDefines::modeToString(message.mode()));
-	}
 	switch(message.mpptNumber())
 	{
 		case 0: 
+			mpptData_.setMppt1Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt1VoltageIn(message.voltageIn());
 			}
@@ -30,7 +28,11 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt1CurrentOut(message.currentOut());
 			}
+			if(message.isModeValid()){
+				mpptData_.setMppt1Mode(MpptDefines::modeToString(message.mode()));
+			}
 		case 1: 
+			mpptData_.setMppt2Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt2VoltageIn(message.voltageIn());
 			}
@@ -43,7 +45,11 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt2CurrentOut(message.currentOut());
 			}
+			if(message.isModeValid()){
+				mpptData_.setMppt2Mode(MpptDefines::modeToString(message.mode()));
+			}
 		case 2: 
+			mpptData_.setMppt3Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt3VoltageIn(message.voltageIn());
 			}
@@ -56,7 +62,11 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt3CurrentOut(message.currentOut());
 			}
+			if(message.isModeValid()){
+				mpptData_.setMppt3Mode(MpptDefines::modeToString(message.mode()));
+			}
 		case 3: 
+			mpptData_.setMppt4Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt4VoltageIn(message.voltageIn());
 			}
@@ -69,7 +79,11 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt4CurrentOut(message.currentOut());
 			}
+			if(message.isModeValid()){
+				mpptData_.setMppt4Mode(MpptDefines::modeToString(message.mode()));
+			}
 		case 4: 
+			mpptData_.setMppt5Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt5VoltageIn(message.voltageIn());
 			}
@@ -82,7 +96,11 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt5CurrentOut(message.currentOut());
 			}
+			if(message.isModeValid()){
+				mpptData_.setMppt5Mode(MpptDefines::modeToString(message.mode()));
+			}
 		case 5: 
+			mpptData_.setMppt6Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt6VoltageIn(message.voltageIn());
 			}
@@ -95,7 +113,11 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt6CurrentOut(message.currentOut());
 			}
+			if(message.isModeValid()){
+				mpptData_.setMppt6Mode(MpptDefines::modeToString(message.mode()));
+			}
 		case 6: 
+			mpptData_.setMppt7Type(MpptDefines::typeToString(message.type()));
 			if(message.isVoltageInValid()){
 				mpptData_.setMppt7VoltageIn(message.voltageIn());
 			}
@@ -107,6 +129,9 @@ void MpptPopulator::populateData(const MpptDataMessage message)
 			}
 			if(message.isCurrentOutValid()){
 				mpptData_.setMppt7CurrentOut(message.currentOut());
+			}
+			if(message.isModeValid()){
+				mpptData_.setMppt7Mode(MpptDefines::modeToString(message.mode()));
 			}
 	}
 }

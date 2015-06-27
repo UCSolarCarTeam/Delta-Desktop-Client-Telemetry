@@ -14,6 +14,10 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt1VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt1CurrentOutReceived(double)),
 		this, SIGNAL(mppt1CurrentOutReceived(double)));
+	connect(&presenter_, SIGNAL(mppt1TypeReceived(QString)),
+		this, SIGNAL(mppt1TypeReceived(QString)));
+	connect(&presenter_, SIGNAL(mppt1ModeReceived(QString)),
+		this, SIGNAL(mppt1ModeReceived(QString)));
 
 	connect(&presenter_, SIGNAL(mppt2VoltageInReceived(double)),
 		this, SIGNAL(mppt2VoltageInReceived(double)));
@@ -23,6 +27,10 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt2VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt2CurrentOutReceived(double)),
 		this, SIGNAL(mppt2CurrentOutReceived(double)));
+	connect(&presenter_, SIGNAL(mppt2TypeReceived(QString)),
+		this, SIGNAL(mppt2TypeReceived(QString)));
+	connect(&presenter_, SIGNAL(mppt2ModeReceived(QString)),
+		this, SIGNAL(mppt2ModeReceived(QString)));
 
 	connect(&presenter_, SIGNAL(mppt3VoltageInReceived(double)),
 		this, SIGNAL(mppt3VoltageInReceived(double)));
@@ -32,6 +40,10 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt3VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt3CurrentOutReceived(double)),
 		this, SIGNAL(mppt3CurrentOutReceived(double)));
+	connect(&presenter_, SIGNAL(mppt3TypeReceived(QString)),
+		this, SIGNAL(mppt3TypeReceived(QString)));
+	connect(&presenter_, SIGNAL(mppt3ModeReceived(QString)),
+		this, SIGNAL(mppt3ModeReceived(QString)));
 
 	connect(&presenter_, SIGNAL(mppt4VoltageInReceived(double)),
 		this, SIGNAL(mppt4VoltageInReceived(double)));
@@ -41,6 +53,10 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt4VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt4CurrentOutReceived(double)),
 		this, SIGNAL(mppt4CurrentOutReceived(double)));
+	connect(&presenter_, SIGNAL(mppt4TypeReceived(QString)),
+		this, SIGNAL(mppt4TypeReceived(QString)));
+	connect(&presenter_, SIGNAL(mppt4ModeReceived(QString)),
+		this, SIGNAL(mppt4ModeReceived(QString)));
 
 	connect(&presenter_, SIGNAL(mppt5VoltageInReceived(double)),
 		this, SIGNAL(mppt5VoltageInReceived(double)));
@@ -50,6 +66,10 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt5VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt5CurrentOutReceived(double)),
 		this, SIGNAL(mppt5CurrentOutReceived(double)));
+	connect(&presenter_, SIGNAL(mppt5TypeReceived(QString)),
+		this, SIGNAL(mppt5TypeReceived(QString)));
+	connect(&presenter_, SIGNAL(mppt5ModeReceived(QString)),
+		this, SIGNAL(mppt5ModeReceived(QString)));
 
 	connect(&presenter_, SIGNAL(mppt6VoltageInReceived(double)),
 		this, SIGNAL(mppt6VoltageInReceived(double)));
@@ -59,6 +79,10 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt6VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt6CurrentOutReceived(double)),
 		this, SIGNAL(mppt6CurrentOutReceived(double)));
+	connect(&presenter_, SIGNAL(mppt6TypeReceived(QString)),
+		this, SIGNAL(mppt6TypeReceived(QString)));
+	connect(&presenter_, SIGNAL(mppt6ModeReceived(QString)),
+		this, SIGNAL(mppt6ModeReceived(QString)));
 
 	connect(&presenter_, SIGNAL(mppt7VoltageInReceived(double)),
 		this, SIGNAL(mppt7VoltageInReceived(double)));
@@ -68,7 +92,11 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
 		this, SIGNAL(mppt7VoltageOutReceived(double)));
 	connect(&presenter_, SIGNAL(mppt7CurrentOutReceived(double)),
 		this, SIGNAL(mppt7CurrentOutReceived(double)));
-}
+	connect(&presenter_, SIGNAL(mppt7TypeReceived(QString)),
+		this, SIGNAL(mppt7TypeReceived(QString)));
+connect(&presenter_, SIGNAL(mpptmModeReceived(QString)),
+	this, SIGNAL(mpptmModeReceived(QString)));}
+
 
 MpptView::~MpptView()
 {
@@ -106,6 +134,14 @@ void MpptView::mppt1CurrentOutReceived(double mppt1CurrentOut)
 	ui_.setMppt1Efficiency().setNum(ui_.setMppt1PowerIn().text().toDouble() *
 		ui_.setMppt1PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::mppt1TypeReceived(QString mppt1Type)
+{
+	ui_.setMppt1Type().setText(mppt1Type);
+}
+void MpptView::mppt1ModeReceived(QString mppt1Mode)
+{
+	ui_.setMppt1Mode().setText(mppt1Mode);
+}
 
 void MpptView::mppt2VoltageInReceived(double mppt2VoltageIn)
 {
@@ -138,6 +174,14 @@ void MpptView::mppt2CurrentOutReceived(double mppt2CurrentOut)
 		ui_.setMppt2VoltageOut().text().toDouble());
 	ui_.setMppt2Efficiency().setNum(ui_.setMppt2PowerIn().text().toDouble() *
 		ui_.setMppt2PowerOut().text().toDouble() * 100); // in percentage
+}
+void MpptView::mppt2TypeReceived(QString mppt2Type)
+{
+	ui_.setMppt2Type().setText(mppt2Type);
+}
+void MpptView::mppt2ModeReceived(QString mppt2Mode)
+{
+	ui_.setMppt2Mode().setText(mppt2Mode);
 }
 
 void MpptView::mppt3VoltageInReceived(double mppt3VoltageIn)
@@ -172,6 +216,14 @@ void MpptView::mppt3CurrentOutReceived(double mppt3CurrentOut)
 	ui_.setMppt3Efficiency().setNum(ui_.setMppt3PowerIn().text().toDouble() *
 		ui_.setMppt3PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::mppt3TypeReceived(QString mppt3Type)
+{
+	ui_.setMppt3Type().setText(mppt3Type);
+}
+void MpptView::mppt3ModeReceived(QString mppt3Mode)
+{
+	ui_.setMppt3Mode().setText(mppt3Mode);
+}
 
 void MpptView::mppt4VoltageInReceived(double mppt4VoltageIn)
 {
@@ -204,6 +256,14 @@ void MpptView::mppt4CurrentOutReceived(double mppt4CurrentOut)
 		ui_.setMppt4VoltageOut().text().toDouble());
 	ui_.setMppt4Efficiency().setNum(ui_.setMppt4PowerIn().text().toDouble() *
 		ui_.setMppt4PowerOut().text().toDouble() * 100); // in percentage
+}
+void MpptView::mppt4TypeReceived(QString mppt4Type)
+{
+	ui_.setMppt4Type().setText(mppt4Type);
+}
+void MpptView::mppt4ModeReceived(QString mppt4Mode)
+{
+	ui_.setMppt4Mode().setText(mppt4Mode);
 }
 
 void MpptView::mppt5VoltageInReceived(double mppt5VoltageIn)
@@ -238,6 +298,14 @@ void MpptView::mppt5CurrentOutReceived(double mppt5CurrentOut)
 	ui_.setMppt5Efficiency().setNum(ui_.setMppt5PowerIn().text().toDouble() *
 		ui_.setMppt5PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::mppt5TypeReceived(QString mppt5Type)
+{
+	ui_.setMppt5Type().setText(mppt5Type);
+}
+void MpptView::mppt5ModeReceived(QString mppt5Mode)
+{
+	ui_.setMppt5Mode().setText(mppt5Mode);
+}
 
 void MpptView::mppt6VoltageInReceived(double mppt6VoltageIn)
 {
@@ -271,6 +339,14 @@ void MpptView::mppt6CurrentOutReceived(double mppt6CurrentOut)
 	ui_.setMppt6Efficiency().setNum(ui_.setMppt6PowerIn().text().toDouble() *
 		ui_.setMppt6PowerOut().text().toDouble() * 100); // in percentage
 }
+void MpptView::mppt6TypeReceived(QString mppt6Type)
+{
+	ui_.setMppt6Type().setText(mppt6Type);
+}
+void MpptView::mppt6ModeReceived(QString mppt6Mode)
+{
+	ui_.setMppt6Mode().setText(mppt6Mode);
+}
 
 void MpptView::mppt7VoltageInReceived(double mppt7VoltageIn)
 {
@@ -303,4 +379,12 @@ void MpptView::mppt7CurrentOutReceived(double mppt7CurrentOut)
 		ui_.setMppt7VoltageOut().text().toDouble());
 	ui_.setMppt7Efficiency().setNum(ui_.setMppt7PowerIn().text().toDouble() *
 		ui_.setMppt7PowerOut().text().toDouble() * 100); // in percentage
+}
+void MpptView::mppt7TypeReceived(QString mppt7Type)
+{
+	ui_.setMppt7Type().setText(mppt7Type);
+}
+void MpptView::mppt7ModeReceived(QString mppt7Mode)
+{
+	ui_.setMppt7Mode().setText(mppt7Mode);
 }
