@@ -34,29 +34,30 @@ SOURCES += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
     CommunicationLayer/DataPopulators/FaultsPopulator.cpp \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp \
-    CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \    
-    CommunicationLayer/MessagingFramework/BatteryFaults.cpp \         
-    CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \        
-    CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \  
-    CommunicationLayer/MessagingFramework/FaultsMessage.cpp \         
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp \
+    CommunicationLayer/MessagingFramework/BatteryFaults.cpp \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.cpp \
+    CommunicationLayer/MessagingFramework/DriverControlDetails.cpp \
+    CommunicationLayer/MessagingFramework/FaultsMessage.cpp \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp \
     CommunicationLayer/MessagingFramework/LimitFlags.cpp \
     CommunicationLayer/MessagingFramework/MessageDecodingHelpers.cpp \
     CommunicationLayer/MessagingFramework/MessageDefines.cpp \
     CommunicationLayer/MessagingFramework/MotorFaults.cpp \
+    CommunicationLayer/MessagingFramework/MpptDataMessage.cpp \
+    CommunicationLayer/MessagingFramework/MpptDefines.cpp \
     CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.cpp \
     CommunicationLayer/PacketDecoder/PacketDecoder.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.cpp \
-    DataLayer/ArrayData/ArrayData.cpp \
+    DataLayer/MpptData/MpptData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/DataContainer.cpp \
     DataLayer/FaultsData/FaultsData.cpp \
     DataLayer/PowerData/PowerData.cpp \
     DataLayer/VehicleData/VehicleData.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
-    PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.cpp \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.cpp \
+    PresenterLayer/CommunicationPresenter/CommunicationPresenter.cpp \
     PresenterLayer/FaultsPresenter/FaultsPresenter.cpp \
     PresenterLayer/GraphsPresenter/PowerGraphsPresenter.cpp \
     PresenterLayer/GraphsPresenter/PowerGraphData.cpp \
@@ -90,16 +91,18 @@ HEADERS  += \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \
     CommunicationLayer/DataPopulators/FaultsPopulator.h \
     CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h \
-    CommunicationLayer/MessagingFramework/BatteryDataMessage.h \      
-    CommunicationLayer/MessagingFramework/BatteryFaults.h \           
-    CommunicationLayer/MessagingFramework/CmuDataMessage.h \          
-    CommunicationLayer/MessagingFramework/DriverControlDetails.h \    
-    CommunicationLayer/MessagingFramework/FaultsMessage.h \           
+    CommunicationLayer/MessagingFramework/BatteryDataMessage.h \
+    CommunicationLayer/MessagingFramework/BatteryFaults.h \
+    CommunicationLayer/MessagingFramework/CmuDataMessage.h \
+    CommunicationLayer/MessagingFramework/DriverControlDetails.h \
+    CommunicationLayer/MessagingFramework/FaultsMessage.h \
     CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h \
     CommunicationLayer/MessagingFramework/LimitFlags.h \
     CommunicationLayer/MessagingFramework/MessageDecodingHelpers.h \
     CommunicationLayer/MessagingFramework/MessageDefines.h \
     CommunicationLayer/MessagingFramework/MotorFaults.h \
+    CommunicationLayer/MessagingFramework/MpptDataMessage.h \
+    CommunicationLayer/MessagingFramework/MpptDefines.h \
     CommunicationLayer/PacketChecksumChecker/I_PacketChecksumChecker.h \
     CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.h \
     CommunicationLayer/PacketDecoder/I_PacketDecoder.h \
@@ -108,8 +111,8 @@ HEADERS  += \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     CommunicationLayer/PacketUnstuffer/I_PacketUnstuffer.h \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.h \
-    DataLayer/ArrayData/ArrayData.h \
-    DataLayer/ArrayData/I_ArrayData.h \
+    DataLayer/MpptData/MpptData.h \
+    DataLayer/MpptData/I_MpptData.h \
     DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/DataContainer.h \
@@ -120,13 +123,11 @@ HEADERS  += \
     DataLayer/VehicleData/I_VehicleData.h \
     DataLayer/VehicleData/VehicleData.h \
     PresenterLayer/BatteryPresenter/BatteryPresenter.h \
-    PresenterLayer/ConnectionsPresenter/ConnectionsPresenter.h \
-    PresenterLayer/DisplayPresenter/DisplayPresenter.h \
+    PresenterLayer/CommunicationPresenter/CommunicationPresenter.h \
     PresenterLayer/FaultsPresenter/FaultsPresenter.h \
     PresenterLayer/GraphsPresenter/I_GraphsPresenter.h \
     PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h \
     PresenterLayer/GraphsPresenter/PowerGraphData.h \    
-    # PresenterLayer/GraphsPresenter/MpptGraphsPresenter.h \
     PresenterLayer/MpptPresenter/MpptPresenter.h \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \

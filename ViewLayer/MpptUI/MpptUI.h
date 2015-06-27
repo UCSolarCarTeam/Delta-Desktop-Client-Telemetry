@@ -23,6 +23,8 @@ public:
 	QLabel& setMppt1VoltageOut();
 	QLabel& setMppt1CurrentOut();
 	QLabel& setMppt1Efficiency();
+	QLabel& setMppt1Type();
+	QLabel& setMppt1Mode();
 
 	QLabel& setMppt2PowerIn();
 	QLabel& setMppt2VoltageIn();
@@ -31,6 +33,8 @@ public:
 	QLabel& setMppt2VoltageOut();
 	QLabel& setMppt2CurrentOut();
 	QLabel& setMppt2Efficiency();
+	QLabel& setMppt2Type();
+	QLabel& setMppt2Mode();
 
 	QLabel& setMppt3PowerIn();
 	QLabel& setMppt3VoltageIn();
@@ -39,6 +43,8 @@ public:
 	QLabel& setMppt3VoltageOut();
 	QLabel& setMppt3CurrentOut();
 	QLabel& setMppt3Efficiency();
+	QLabel& setMppt3Type();
+	QLabel& setMppt3Mode();
 
 	QLabel& setMppt4PowerIn();
 	QLabel& setMppt4VoltageIn();
@@ -47,6 +53,8 @@ public:
 	QLabel& setMppt4VoltageOut();
 	QLabel& setMppt4CurrentOut();
 	QLabel& setMppt4Efficiency();
+	QLabel& setMppt4Type();
+	QLabel& setMppt4Mode();
 
 	QLabel& setMppt5PowerIn();
 	QLabel& setMppt5VoltageIn();
@@ -55,6 +63,8 @@ public:
 	QLabel& setMppt5VoltageOut();
 	QLabel& setMppt5CurrentOut();
 	QLabel& setMppt5Efficiency();
+	QLabel& setMppt5Type();
+	QLabel& setMppt5Mode();
 
 	QLabel& setMppt6PowerIn();
 	QLabel& setMppt6VoltageIn();
@@ -63,37 +73,18 @@ public:
 	QLabel& setMppt6VoltageOut();
 	QLabel& setMppt6CurrentOut();
 	QLabel& setMppt6Efficiency();
+	QLabel& setMppt6Type();
+	QLabel& setMppt6Mode();
 
-	QLabel& setPower1PowerValue();
-	QLabel& setPower1VoltageValue();
-	QLabel& setPower1CurrentValue();
-
-	QLabel& setPower2PowerValue();
-	QLabel& setPower2VoltageValue();
-	QLabel& setPower2CurrentValue();
-
-	QLabel& setPower3PowerValue();
-	QLabel& setPower3VoltageValue();
-	QLabel& setPower3CurrentValue();
-
-	QLabel& setPower4PowerValue();
-	QLabel& setPower4VoltageValue();
-	QLabel& setPower4CurrentValue();
-
-	QLabel& setPower5PowerValue();
-	QLabel& setPower5VoltageValue();
-	QLabel& setPower5CurrentValue();
-
-	QLabel& setPower6PowerValue();
-	QLabel& setPower6VoltageValue();
-	QLabel& setPower6CurrentValue();
-
-	QwtPlot& setPvGraph();
-	QwtPlot& setIvGraph();
-	QwtPlot& setPtGraph();
-
-	QComboBox& getAlgorithmSelector();
-	QPushButton& commsSendButton();
+	QLabel& setMppt7PowerIn();
+	QLabel& setMppt7VoltageIn();
+	QLabel& setMppt7CurrentIn();
+	QLabel& setMppt7PowerOut();
+	QLabel& setMppt7VoltageOut();
+	QLabel& setMppt7CurrentOut();
+	QLabel& setMppt7Efficiency();
+	QLabel& setMppt7Type();
+	QLabel& setMppt7Mode();
 
 private:
 	Ui::MpptUI *ui;

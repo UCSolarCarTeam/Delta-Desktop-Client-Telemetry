@@ -7,6 +7,7 @@ namespace
    const int FAULTS_LENGTH = 7;
    const int BATTERY_DATA_LENGTH = 18;
    const int CMU_DATA_LENGTH = 42;
+   const int MPPT_DATA_LENGTH = 21;
 }
 
 int MessageDefines::getLengthForMessage(MessageDefines::Type type)
@@ -23,6 +24,8 @@ int MessageDefines::getLengthForMessage(MessageDefines::Type type)
       return BATTERY_DATA_LENGTH;
    case CmuData:
       return CMU_DATA_LENGTH;
+   case MpptData:
+      return MPPT_DATA_LENGTH;
    default:
       return 0;
    }

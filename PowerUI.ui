@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>768</height>
+    <height>828</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1573,53 +1573,6 @@ border-top: none;
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0">
-                 <widget class="QLabel" name="busVoltageLabel">
-                  <property name="text">
-                   <string>Bus Voltage (V)</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::PlainText</enum>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <property name="indent">
-                   <number>0</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="actualSpeedLabel">
-                  <property name="font">
-                   <font>
-                    <family>AvenirLTStd</family>
-                    <pointsize>-1</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="text">
-                   <string>Actual Speed (kph)</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <property name="indent">
-                   <number>0</number>
-                  </property>
-                 </widget>
-                </item>
                 <item row="1" column="1">
                  <widget class="QLabel" name="setCurrent">
                   <property name="font">
@@ -1662,20 +1615,6 @@ border-top: none;
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="busCurrentLabel">
-                  <property name="text">
-                   <string>Bus Current (mA)</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="busCurrent">
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
                 <item row="4" column="1">
                  <widget class="QLabel" name="busVoltage">
                   <property name="font">
@@ -1684,13 +1623,6 @@ border-top: none;
                     <pointsize>-1</pointsize>
                    </font>
                   </property>
-                  <property name="text">
-                   <string>0</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLabel" name="setCurrent">
                   <property name="text">
                    <string>0</string>
                   </property>
@@ -1913,6 +1845,7 @@ background: none;
                <property name="styleSheet">
                 <string notr="true">QWidget {
 	border: none;
+	font-size: 10px;
 }</string>
                </property>
                <property name="currentIndex">
@@ -1930,6 +1863,9 @@ background: none;
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
+                   </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -1967,6 +1903,9 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -2003,6 +1942,9 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -2019,6 +1961,9 @@ border: none;</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
+                   </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2056,6 +2001,9 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -2072,6 +2020,9 @@ border: none;</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
+                   </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2108,6 +2059,9 @@ border: none;</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
+                   </property>
+                   <property name="autoReplot">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>

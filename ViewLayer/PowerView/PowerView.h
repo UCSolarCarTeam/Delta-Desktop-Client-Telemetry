@@ -3,10 +3,10 @@
 #include <QObject>
 #include <QPushButton>
 
-class DisplayPresenter;
 class BatteryPresenter;
 class VehiclePresenter;
 class PowerGraphsPresenter;
+class CommunicationPresenter;
 class PowerUI;
 class PowerGraphData;
 
@@ -14,18 +14,18 @@ class PowerView : public QObject
 {
    Q_OBJECT
 public:
-   PowerView(DisplayPresenter& presenter,
-             BatteryPresenter& batteryPresenter,
+   PowerView(BatteryPresenter& batteryPresenter,
              VehiclePresenter& vehiclePresenter,
-             PowerGraphsPresenter& graphsPresenter_,
+             PowerGraphsPresenter& graphsPresenter,
+             CommunicationPresenter& communicationPresenter,
              PowerUI& ui);
    ~PowerView();
 
 private:
-   DisplayPresenter& presenter_;
    BatteryPresenter& batteryPresenter_;
    VehiclePresenter& vehiclePresenter_;
    PowerGraphsPresenter& graphsPresenter_;
+   CommunicationPresenter& communicationPresenter_;
    PowerUI& ui_;
 
 private slots:

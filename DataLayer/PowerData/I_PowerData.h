@@ -4,11 +4,11 @@
 
 class I_PowerData : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 
-public: 
-	virtual ~I_PowerData() {}
-
+public:
+    virtual ~I_PowerData() {}
+    
 	/*PowerData "Gets"*/
     virtual double busCurrentA() const = 0; 
     virtual double busVoltage() const = 0; 
@@ -29,7 +29,7 @@ signals:
 	void busCurrentAReceived(double busCurrentA);
     void busVoltageReceived(double busVoltage);
     void motorVoltageRealReceived(double motorVoltageReal);
-    void motorCurrentRealReceived(double motorCurrentReal);
+    void motorCurrentRealReceived(double motorCurrepowerntReal);
     void backEmfImaginaryReceived(double backEmfImaginary);
 	void dcBusAmpHoursReceived(double dcBusAmpHours);
 };

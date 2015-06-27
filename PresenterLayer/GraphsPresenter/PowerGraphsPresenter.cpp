@@ -1,5 +1,16 @@
 #include "PowerGraphsPresenter.h"
 
+namespace
+{
+   const int BUS_CURRENT_DATA_SETS_ = 1;
+   const int BUS_VOLTAGE_DATA_SETS_ = 1;
+   const int BUS_POWER_DATA_SETS_ = 1;
+   const int DRIVER_CURRENT_DATA_SETS_ = 1;
+   const int DRIVER_SPEED_DATA_SETS_ = 2;
+   const int BATTERY_CELL_TEMP_DATA_SETS_ = 3;
+   const int BATTERY_CELL_VOLTAGE_DATA_SETS_ = 3;
+}
+
 PowerGraphsPresenter::PowerGraphsPresenter(const I_VehicleData& vehicleData,
 										   const I_PowerData& powerData,
 										   const I_BatteryData& batteryData)
@@ -16,26 +27,26 @@ PowerGraphsPresenter::PowerGraphsPresenter(const I_VehicleData& vehicleData,
 	connect(&graphUpdateTimer_, SIGNAL(timeout()),
 		this, SLOT(updateGraphData()));
 
-	busCurrentGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-										  NUMBER_OF_INTERVALS,
+	busCurrentGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										  INTERVAL_SIZE,
                                           BUS_CURRENT_DATA_SETS_);
-	busVoltageGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-								 		  NUMBER_OF_INTERVALS,
+	busVoltageGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+								 		  INTERVAL_SIZE,
                                           BUS_VOLTAGE_DATA_SETS_);
-	busPowerGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-										NUMBER_OF_INTERVALS,
+	busPowerGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										INTERVAL_SIZE,
                                         BUS_POWER_DATA_SETS_);
-	driverCurrentGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-										     NUMBER_OF_INTERVALS,
+	driverCurrentGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										     INTERVAL_SIZE,
                                              DRIVER_CURRENT_DATA_SETS_);
-	driverSpeedGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-										   NUMBER_OF_INTERVALS,
+	driverSpeedGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										   INTERVAL_SIZE,
                                            DRIVER_SPEED_DATA_SETS_);
-	batteryCellTempGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-										       NUMBER_OF_INTERVALS,
+	batteryCellTempGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										       INTERVAL_SIZE,
                                                BATTERY_CELL_TEMP_DATA_SETS_);
-	batteryCellVoltageGraphData_ = PowerGraphData(INTERVAL_SIZE, 
-										          NUMBER_OF_INTERVALS,
+	batteryCellVoltageGraphData_ = PowerGraphData(NUMBER_OF_INTERVALS,
+										          INTERVAL_SIZE,
                                                   BATTERY_CELL_VOLTAGE_DATA_SETS_);
 }
 
@@ -82,7 +93,7 @@ void PowerGraphsPresenter::updateBusPowerGraphData()
 {
     double busPowerData [BUS_POWER_DATA_SETS_];
 	busPowerData[0] = powerData_.busCurrentA() * powerData_.motorCurrentReal();
-	
+
 	busPowerGraphData_.addData(busPowerData);
 	emit busPowerGraphDataUpdated(busPowerGraphData_);
 }
@@ -131,9 +142,9 @@ void PowerGraphsPresenter::updateBatteryCellTempGraphData()
 	}
 	avgBatteryCellTemp /= 4.0; // number of batteryCellTemps
 
-	batteryCellTempData[0] = maxBatteryCellTemp; 
-	batteryCellTempData[1] = avgBatteryCellTemp; 
-	batteryCellTempData[2] = minBatteryCellTemp; 
+	batteryCellTempData[0] = maxBatteryCellTemp;
+	batteryCellTempData[1] = avgBatteryCellTemp;
+	batteryCellTempData[2] = minBatteryCellTemp;
 
 	batteryCellTempGraphData_.addData(batteryCellTempData);
 	emit cellVoltageGraphDataUpdated(batteryCellTempGraphData_);
@@ -164,9 +175,9 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 	}
 	avgBatteryCellVoltage /= 32.0; // for number of batteryCellVoltages
 
-	batteryCellVoltageData[0] = maxBatteryCellVoltage; 
-	batteryCellVoltageData[1] = avgBatteryCellVoltage; 
-	batteryCellVoltageData[2] = minBatteryCellVoltage;	
+	batteryCellVoltageData[0] = maxBatteryCellVoltage;
+	batteryCellVoltageData[1] = avgBatteryCellVoltage;
+	batteryCellVoltageData[2] = minBatteryCellVoltage;
 
 	batteryCellVoltageGraphData_.addData(batteryCellVoltageData);
 	emit cellTemperatureGraphDataUpdated(batteryCellVoltageGraphData_);

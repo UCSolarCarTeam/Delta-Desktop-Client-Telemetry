@@ -6,6 +6,7 @@
 #include "../MessagingFramework/DriverControlDetails.h"
 #include "../MessagingFramework/FaultsMessage.h"
 #include "../MessagingFramework/KeyDriverControlTelemetry.h"
+#include "../MessagingFramework/MpptDataMessage.h"
 
 class I_PacketDecoder : public QObject
 {
@@ -19,4 +20,5 @@ signals:
    void packetDecoded(const FaultsMessage message);
    void packetDecoded(const BatteryDataMessage message);
    void packetDecoded(const CmuDataMessage message);
+   void packetDecoded(const MpptDataMessage message);
 };

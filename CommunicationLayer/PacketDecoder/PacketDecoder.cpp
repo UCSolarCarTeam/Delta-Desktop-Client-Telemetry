@@ -43,6 +43,9 @@ void PacketDecoder::handleValidData(QByteArray messageData)
       case MessageDefines::CmuData:
          emit packetDecoded(CmuDataMessage(messageData));
          return;
+      case MessageDefines::MpptData:
+         emit packetDecoded(MpptDataMessage(messageData));
+         return;
       }
    }
    else
