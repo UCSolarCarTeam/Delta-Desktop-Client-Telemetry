@@ -59,7 +59,8 @@ bool BatteryFaults::bmuIsInSetupMode() const
 
 bool BatteryFaults::cmuCanBusPowerStatus() const
 {
-   return static_cast<bool>(flags_ & CMU_CAN_BUS_POWER_STATUS_MASK);
+   // Note: This fault flag actually means everything is okay.
+   return !static_cast<bool>(flags_ & CMU_CAN_BUS_POWER_STATUS_MASK);
 }
 
 bool BatteryFaults::packIsolationTestFailure() const
