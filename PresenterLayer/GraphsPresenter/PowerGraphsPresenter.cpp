@@ -148,14 +148,14 @@ void PowerGraphsPresenter::updateBatteryCellTempGraphData()
 	batteryCellTempData[2] = minBatteryCellTemp;
 
 	batteryCellTempGraphData_.addData(batteryCellTempData);
-	emit cellVoltageGraphDataUpdated(batteryCellTempGraphData_);
+	emit cellTemperatureGraphDataUpdated(batteryCellTempGraphData_);
 }
 
 void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 {
 	double maxBatteryCellVoltage = 0;
 	double avgBatteryCellVoltage = 0;
-	double minBatteryCellVoltage = 0;
+	double minBatteryCellVoltage = 999999999999;
     double batteryCellVoltageData [BATTERY_CELL_VOLTAGE_DATA_SETS_];
 
 	QList<double> allBatteryCellVoltages = QList<double>();
@@ -166,7 +166,7 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 
 	foreach(double batteryCellVoltage, allBatteryCellVoltages)
 	{
-		if(batteryCellVoltage < maxBatteryCellVoltage){
+		if(maxBatteryCellVoltage < batteryCellVoltage){
 			maxBatteryCellVoltage = batteryCellVoltage;
 		}
 		if(minBatteryCellVoltage > batteryCellVoltage){
@@ -174,13 +174,11 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 		}
 		avgBatteryCellVoltage += batteryCellVoltage;
 	}
-
 	avgBatteryCellVoltage /= 32.0; // for number of batteryCellVoltages
 
 	batteryCellVoltageData[0] = maxBatteryCellVoltage * 1000; // convert to milliVolts from volts
 	batteryCellVoltageData[1] = avgBatteryCellVoltage * 1000; // convert to milliVolts from volts
 	batteryCellVoltageData[2] = minBatteryCellVoltage * 1000; // convert to milliVolts from volts
-
 	batteryCellVoltageGraphData_.addData(batteryCellVoltageData);
-	emit cellTemperatureGraphDataUpdated(batteryCellVoltageGraphData_);
+	emit cellVoltageGraphDataUpdated(batteryCellVoltageGraphData_);
 }

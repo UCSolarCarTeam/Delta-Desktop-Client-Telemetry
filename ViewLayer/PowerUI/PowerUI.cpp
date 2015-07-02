@@ -314,7 +314,7 @@ void PowerUI::setupGraphs()
     int MAX_DRIVER_CURRENT = 100; // Percentage
     int MAX_DRIVER_SPEED = 120; // Kilometers per hour
     int MAX_BATTERY_CELL_TEMP = 80; // Degrees Celsius
-    int MAX_BATTERY_CELL_VOLTAGE = 4000; // Millivolts
+    int MAX_BATTERY_CELL_VOLTAGE = 4500; // Millivolts
 
     int MAX_SECONDS_ELAPSED = 60; 
 
