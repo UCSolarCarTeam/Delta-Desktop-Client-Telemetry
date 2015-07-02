@@ -35,10 +35,10 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(vehicleVelocityMetersPerSecondReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
-    connect(&batteryPresenter_, SIGNAL(busCurrentAReceived(double))),
-            this, SLOT(busCurrentAReceived(double)));
-    connect(&batteryPresenter_, SIGNAL(busVoltageReceived(double)),
-            this, SLOT(busVoltageReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(batteryCurrentReceived(double)),
+            this, SLOT(batteryCurrentAReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(batteryVoltageReceived(double)),
+            this, SLOT(batteryVoltageReceived(double)));
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));

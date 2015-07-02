@@ -1548,6 +1548,13 @@ border-top: none;
                   </property>
                  </widget>
                 </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="busCurrentLabel">
+                  <property name="text">
+                   <string>Bus Current (mA)</string>
+                  </property>
+                 </widget>
+                </item>
                 <item row="0" column="0">
                  <widget class="QLabel" name="setSpeedLabel">
                   <property name="font">
@@ -1589,15 +1596,8 @@ border-top: none;
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="busCurrentLabel">
-                  <property name="text">
-                   <string>Bus Current (mA)</string>
-                  </property>
-                 </widget>
-                </item>
                 <item row="5" column="1">
-                 <widget class="QLabel" name="arrayCurrent">
+                 <widget class="QLabel" name="batteryCurrent">
                   <property name="font">
                    <font>
                     <family>AvenirLTStd</family>
@@ -1605,7 +1605,7 @@ border-top: none;
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">border-bottom: none;</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>0</string>
@@ -1648,7 +1648,57 @@ border-top: none;
                  </widget>
                 </item>
                 <item row="5" column="0">
-                 <widget class="QLabel" name="arrayCurrentLabel">
+                 <widget class="QLabel" name="batteryCurrentLabel">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">text-transform: none;</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="text">
+                   <string>Battery Current (mA)</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::PlainText</enum>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <property name="indent">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="batteryVoltage">
+                  <property name="font">
+                   <font>
+                    <family>AvenirLTStd</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-bottom: none;</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="batteryVoltageLabel_2">
                   <property name="font">
                    <font>
                     <family>AvenirLTStd</family>
@@ -1663,7 +1713,7 @@ border-bottom: none;</string>
                    <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="text">
-                   <string>Array Current (mA)</string>
+                   <string>Battery Voltage (V)</string>
                   </property>
                   <property name="textFormat">
                    <enum>Qt::PlainText</enum>
@@ -1849,7 +1899,7 @@ background: none;
 }</string>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="busGraphsPage">
                 <layout class="QVBoxLayout" name="verticalLayout">
