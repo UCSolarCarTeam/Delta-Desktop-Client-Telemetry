@@ -177,9 +177,9 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 
 	avgBatteryCellVoltage /= 32.0; // for number of batteryCellVoltages
 
-	batteryCellVoltageData[0] = maxBatteryCellVoltage;
-	batteryCellVoltageData[1] = avgBatteryCellVoltage;
-	batteryCellVoltageData[2] = minBatteryCellVoltage;
+	batteryCellVoltageData[0] = maxBatteryCellVoltage * 1000; // convert to milliVolts from volts
+	batteryCellVoltageData[1] = avgBatteryCellVoltage * 1000; // convert to milliVolts from volts
+	batteryCellVoltageData[2] = minBatteryCellVoltage * 1000; // convert to milliVolts from volts
 
 	batteryCellVoltageGraphData_.addData(batteryCellVoltageData);
 	emit cellTemperatureGraphDataUpdated(batteryCellVoltageGraphData_);
