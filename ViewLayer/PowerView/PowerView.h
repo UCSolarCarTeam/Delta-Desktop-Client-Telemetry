@@ -34,7 +34,8 @@ private slots:
    void vehicleVelocityMetersPerSecondReceived(double);
    void busCurrentAReceived(double);
    void busVoltageReceived(double);
-   void arrayCurrentReceived(double);
+   void batteryCurrentReceived(double);
+   void batteryVoltageReceived(double);
 
    void mod0CellTemperatureReceived(double);
    void mod0CellVoltagesReceived(QList<double>);

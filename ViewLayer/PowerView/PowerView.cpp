@@ -33,12 +33,12 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(driverSetCurrentReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(vehicleVelocityMetersPerSecondReceived(double)),
             this, SLOT(vehicleVelocityMetersPerSecondReceived(double)));
-    // connect(&vehiclePresenter_, SIGNAL(???)),
-            // this, SLOT(busCurrentAReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
-    // connect(&vehiclePresenter_, SIGNAL(???),
-    //         this, SLOT(arrayCurrentReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(busCurrentAReceived(double))),
+            this, SLOT(busCurrentAReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(busVoltageReceived(double)),
+            this, SLOT(busVoltageReceived(double)));
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
@@ -111,9 +111,13 @@ void PowerView::busVoltageReceived(double busVoltage)
 {
     ui_.setBusVoltage().setNum(busVoltage);
 }
-void PowerView::arrayCurrentReceived(double arrayCurrentIn)
+void PowerView::batteryCurrentReceived(double batteryCurrent)
 {
-    ui_.setArrayCurrent().setNum(arrayCurrentIn);
+    ui_.setBatteryCurrent().setNum(batteryCurrent);
+}
+void PowerView::batteryVoltageReceived(double batteryVoltage)
+{
+    ui_.setBatteryVoltage().setNum(batteryVoltage);
 }
 
 void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)

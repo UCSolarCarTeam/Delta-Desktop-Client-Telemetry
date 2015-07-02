@@ -81,10 +81,15 @@ QLabel& PowerUI::setBusVoltage()
 {
     return *ui_->busVoltage;
 }
-QLabel& PowerUI::setArrayCurrent()
+QLabel& PowerUI::setBatteryCurrent()
 {
-    return *ui_->arrayCurrent;
+    return *ui_->batteryCurrent;
 }
+QLabel& PowerUI::setBatteryVoltage()
+{
+    return *ui_->batteryVoltage;
+}
+
 
 QLabel& PowerUI::setBatteryCMU1Temp()
 {
