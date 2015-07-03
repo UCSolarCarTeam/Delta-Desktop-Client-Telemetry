@@ -81,9 +81,10 @@ public:
     virtual QwtPlotCurve& setSetSpeedCurve() = 0; 
     virtual QwtPlotCurve& setActualSpeedCurve() = 0; 
     virtual QwtPlotCurve& setSetCurrentCurve() = 0;
-    virtual QwtPlotCurve& setMaxCellTempCurve() = 0;
-    virtual QwtPlotCurve& setAvgCellTempCurve() = 0;
-    virtual QwtPlotCurve& setMinCellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod0CellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod1CellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod2CellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod3CellTempCurve() = 0;
     virtual QwtPlotCurve& setMaxCellVoltageCurve() = 0;
     virtual QwtPlotCurve& setMinCellVoltageCurve() = 0;
     virtual QwtPlotCurve& setAvgCellVoltageCurve() = 0;

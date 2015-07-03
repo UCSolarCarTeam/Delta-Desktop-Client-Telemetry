@@ -82,9 +82,10 @@ public:
     QwtPlotCurve& setSetSpeedCurve(); 
     QwtPlotCurve& setActualSpeedCurve(); 
     QwtPlotCurve& setSetCurrentCurve();
-    QwtPlotCurve& setMaxCellTempCurve();
-    QwtPlotCurve& setAvgCellTempCurve();
-    QwtPlotCurve& setMinCellTempCurve();
+    QwtPlotCurve& setMod0CellTempCurve();
+    QwtPlotCurve& setMod1CellTempCurve();
+    QwtPlotCurve& setMod2CellTempCurve();
+    QwtPlotCurve& setMod3CellTempCurve();
     QwtPlotCurve& setMaxCellVoltageCurve();
     QwtPlotCurve& setMinCellVoltageCurve();
     QwtPlotCurve& setAvgCellVoltageCurve();
@@ -97,9 +98,10 @@ private:
    QwtPlotCurve* setSpeedCurve_;
    QwtPlotCurve* actualSpeedCurve_;
    QwtPlotCurve* setCurrentCurve_;
-   QwtPlotCurve* maxCellTempCurve_;
-   QwtPlotCurve* avgCellTempCurve_;
-   QwtPlotCurve* minCellTempCurve_;
+   QwtPlotCurve* mod0CellTempCurve_;
+   QwtPlotCurve* mod1CellTempCurve_;
+   QwtPlotCurve* mod2CellTempCurve_;
+   QwtPlotCurve* mod3CellTempCurve_;
    QwtPlotCurve* maxCellVoltageCurve_;
    QwtPlotCurve* minCellVoltageCurve_;
    QwtPlotCurve* avgCellVoltageCurve_;

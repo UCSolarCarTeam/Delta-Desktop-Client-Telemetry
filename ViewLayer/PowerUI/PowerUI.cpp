@@ -15,9 +15,10 @@ PowerUI::PowerUI()
     setSpeedCurve_ = new QwtPlotCurve("Set");
     actualSpeedCurve_ = new QwtPlotCurve("Actual");
     setCurrentCurve_ = new QwtPlotCurve("Set Current");
-    maxCellTempCurve_ = new QwtPlotCurve("Max");
-    avgCellTempCurve_ = new QwtPlotCurve("Avg");
-    minCellTempCurve_ = new QwtPlotCurve("Min");
+    mod0CellTempCurve_ = new QwtPlotCurve("Mod 0");
+    mod1CellTempCurve_ = new QwtPlotCurve("Mod 1");
+    mod2CellTempCurve_ = new QwtPlotCurve("Mod 2");
+    mod3CellTempCurve_ = new QwtPlotCurve("Mod 3");
     maxCellVoltageCurve_ = new QwtPlotCurve("Max");
     minCellVoltageCurve_ = new QwtPlotCurve("Min");
     avgCellVoltageCurve_ = new QwtPlotCurve("Avg");
@@ -281,17 +282,21 @@ QwtPlotCurve& PowerUI::setSetCurrentCurve()
 {
     return *setCurrentCurve_;
 }
-QwtPlotCurve& PowerUI::setMaxCellTempCurve()
+QwtPlotCurve& PowerUI::setMod0CellTempCurve()
 {
-    return *maxCellTempCurve_;
+    return *mod0CellTempCurve_;
 }
-QwtPlotCurve& PowerUI::setAvgCellTempCurve()
+QwtPlotCurve& PowerUI::setMod1CellTempCurve()
 {
-    return *avgCellTempCurve_;
+    return *mod1CellTempCurve_;
 }
-QwtPlotCurve& PowerUI::setMinCellTempCurve()
+QwtPlotCurve& PowerUI::setMod2CellTempCurve()
 {
-    return *minCellTempCurve_;
+    return *mod2CellTempCurve_;
+}
+QwtPlotCurve& PowerUI::setMod3CellTempCurve()
+{
+    return *mod3CellTempCurve_;
 }
 QwtPlotCurve& PowerUI::setMaxCellVoltageCurve()
 {
@@ -375,12 +380,14 @@ void PowerUI::setupGraphs()
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP/5);
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
-    maxCellTempCurve_->setPen(*new QPen(Qt::green));
-    maxCellTempCurve_->attach(ui_->batteryCellTempGraph);
-    avgCellTempCurve_->setPen(*new QPen(Qt::yellow));
-    avgCellTempCurve_->attach(ui_->batteryCellTempGraph);
-    minCellTempCurve_->setPen(*new QPen(Qt::red));
-    minCellTempCurve_->attach(ui_->batteryCellTempGraph);
+    mod0CellTempCurve_->setPen(*new QPen(Qt::yellow));
+    mod0CellTempCurve_->attach(ui_->batteryCellTempGraph);
+    mod1CellTempCurve_->setPen(*new QPen(Qt::green));
+    mod1CellTempCurve_->attach(ui_->batteryCellTempGraph);
+    mod2CellTempCurve_->setPen(*new QPen(Qt::blue));
+    mod2CellTempCurve_->attach(ui_->batteryCellTempGraph);
+    mod3CellTempCurve_->setPen(*new QPen(Qt::red));
+    mod3CellTempCurve_->attach(ui_->batteryCellTempGraph);
     QwtLegend* batteryCellTempGraphLegend = new QwtLegend;
     ui_->batteryCellTempGraph->insertLegend(batteryCellTempGraphLegend, QwtPlot::RightLegend);
 

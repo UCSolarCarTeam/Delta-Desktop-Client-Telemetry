@@ -8,7 +8,7 @@ namespace
    const int BUS_POWER_DATA_SETS_ = 1;
    const int DRIVER_CURRENT_DATA_SETS_ = 1;
    const int DRIVER_SPEED_DATA_SETS_ = 2;
-   const int BATTERY_CELL_TEMP_DATA_SETS_ = 3;
+   const int BATTERY_CELL_TEMP_DATA_SETS_ = 4;
    const int BATTERY_CELL_VOLTAGE_DATA_SETS_ = 3;
 }
 
@@ -120,32 +120,11 @@ void PowerGraphsPresenter::updateDriverSpeedGraphData()
 
 void PowerGraphsPresenter::updateBatteryCellTempGraphData()
 {
-	double maxBatteryCellTemp = 0;
-	double avgBatteryCellTemp = 0;
-	double minBatteryCellTemp = 0;
     double batteryCellTempData [BATTERY_CELL_TEMP_DATA_SETS_];
-
-	QList<double> allBatteryCellTemps = QList<double>();
-	allBatteryCellTemps.append(batteryData_.mod0CellTemperature());
-	allBatteryCellTemps.append(batteryData_.mod1CellTemperature());
-	allBatteryCellTemps.append(batteryData_.mod2CellTemperature());
-	allBatteryCellTemps.append(batteryData_.mod3CellTemperature());
-
-	foreach(double batteryCellTemp, allBatteryCellTemps)
-	{
-		if(batteryCellTemp < maxBatteryCellTemp){
-			maxBatteryCellTemp = batteryCellTemp;
-		}
-		if(minBatteryCellTemp > batteryCellTemp){
-			minBatteryCellTemp = batteryCellTemp;
-		}
-		avgBatteryCellTemp += batteryCellTemp;
-	}
-	avgBatteryCellTemp /= 4.0; // number of batteryCellTemps
-
-	batteryCellTempData[0] = maxBatteryCellTemp;
-	batteryCellTempData[1] = avgBatteryCellTemp;
-	batteryCellTempData[2] = minBatteryCellTemp;
+	batteryCellTempData[0] = batteryData_.mod0CellTemperature();
+	batteryCellTempData[1] = batteryData_.mod1CellTemperature();
+	batteryCellTempData[2] = batteryData_.mod2CellTemperature();
+	batteryCellTempData[3] = batteryData_.mod3CellTemperature();
 
 	batteryCellTempGraphData_.addData(batteryCellTempData);
 	emit cellTemperatureGraphDataUpdated(batteryCellTempGraphData_);

@@ -211,9 +211,10 @@ void PowerView::updateDriverCurrentGraph(PowerGraphData graphData)
 }
 void PowerView::updateBatteryCellTempGraph(PowerGraphData graphData)
 {
-    ui_.setMaxCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
-    ui_.setAvgCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
-    ui_.setMinCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
+    ui_.setMod0CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setMod1CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
+    ui_.setMod2CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
+    ui_.setMod3CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[3]);
 }
 void PowerView::updateBatteryCellVoltageGraph(PowerGraphData graphData)
 {
