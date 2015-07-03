@@ -155,7 +155,7 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 {
 	double maxBatteryCellVoltage = 0;
 	double avgBatteryCellVoltage = 0;
-	double minBatteryCellVoltage = 999999999999;
+	double minBatteryCellVoltage = 0;
     double batteryCellVoltageData [BATTERY_CELL_VOLTAGE_DATA_SETS_];
 
 	QList<double> allBatteryCellVoltages = QList<double>();
@@ -163,6 +163,12 @@ void PowerGraphsPresenter::updateBatteryCellVoltageGraphData()
 	allBatteryCellVoltages.append(batteryData_.mod1CellVoltages());
 	allBatteryCellVoltages.append(batteryData_.mod2CellVoltages());
 	allBatteryCellVoltages.append(batteryData_.mod3CellVoltages());
+
+	if(!allBatteryCellVoltages.empty())
+	{
+		maxBatteryCellVoltage = allBatteryCellVoltages[0];
+		minBatteryCellVoltage = allBatteryCellVoltages[0];
+	}
 
 	foreach(double batteryCellVoltage, allBatteryCellVoltages)
 	{
