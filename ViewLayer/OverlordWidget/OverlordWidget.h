@@ -7,6 +7,7 @@
 
 class I_SolarCarWindow;
 class EscapeDialog;
+class CommunicationPresenter;
 
 class OverlordWidget : public QWidget, public I_OverlordWidget
 {
@@ -33,4 +34,5 @@ private:
      QList<I_SolarCarWindow*> viewWindows_;
      QString state_;
      EscapeDialog* escapeDialog_;
+     CommunicationPresenter* communicationPresenter_;
 };

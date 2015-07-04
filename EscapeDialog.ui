@@ -463,14 +463,7 @@ border:none;
                <property name="spacing">
                 <number>0</number>
                </property>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="baudrateText">
-                 <property name="styleSheet">
-                  <string notr="true">margin-top:10px;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
+               <item row="1" column="0">
                 <widget class="QLabel" name="multiWindowLabel">
                  <property name="text">
                   <string>Multi-window</string>
@@ -478,33 +471,13 @@ border:none;
                 </widget>
                </item>
                <item row="0" column="0">
-                <widget class="QLabel" name="baudrateLabel">
-                 <property name="styleSheet">
-                  <string notr="true">margin-top:10px;</string>
-                 </property>
-                 <property name="text">
-                  <string>Baudrate</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="portnameText"/>
-               </item>
-               <item row="2" column="0">
                 <widget class="QLabel" name="fullscreenLabel">
                  <property name="text">
                   <string>Fullscreen</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QCheckBox" name="multiWindowCheckBox">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
+               <item row="0" column="1">
                 <widget class="QCheckBox" name="fullscreenCheckBox">
                  <property name="text">
                   <string/>
@@ -514,21 +487,21 @@ border:none;
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="portnameLabel">
+               <item row="1" column="1">
+                <widget class="QCheckBox" name="multiWindowCheckBox">
                  <property name="text">
-                  <string>Portname</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="2" column="1">
                 <layout class="QHBoxLayout" name="fileDialogLayout">
                  <property name="spacing">
                   <number>0</number>
                  </property>
                 </layout>
                </item>
-               <item row="5" column="0">
+               <item row="3" column="0">
                 <spacer name="verticalSpacer_2">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
