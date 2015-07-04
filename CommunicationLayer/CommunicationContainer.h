@@ -16,6 +16,7 @@ class PacketChecksumChecker;
 class PacketDecoder;
 class PacketSynchronizer;
 class PacketUnstuffer;
+class MpptPopulator;
 
 class CommunicationContainer
 {
@@ -39,4 +40,5 @@ private:
    QScopedPointer<FaultsPopulator> faultsPopulator_;
    QScopedPointer<BatteryPopulator> batteryPopulator_;
    QScopedPointer<CmuPopulator> cmuPopulator_;
+   QScopedPointer<MpptPopulator> mpptPopulator_;
 };

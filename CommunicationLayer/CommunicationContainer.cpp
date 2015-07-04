@@ -8,6 +8,7 @@
 #include "DataPopulators/DriverDetailsPopulator.h"
 #include "DataPopulators/FaultsPopulator.h"
 #include "DataPopulators/KeyDriverControlPopulator.h"
+#include "DataPopulators/MpptPopulator.h"
 #include "PacketChecksumChecker/PacketChecksumChecker.h"
 #include "PacketDecoder/PacketDecoder.h"
 #include "PacketSynchronizer/PacketSynchronizer.h"
@@ -42,6 +43,9 @@ CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
 , cmuPopulator_(new CmuPopulator(
    *packetDecoder_,
    dataContainer.batteryData()))
+, mpptPopulator_(new MpptPopulator(
+   *packetDecoder_,
+   dataContainer.mpptData()))
 {
 }
 

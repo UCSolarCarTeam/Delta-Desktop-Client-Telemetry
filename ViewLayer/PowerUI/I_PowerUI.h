@@ -27,7 +27,8 @@ public:
     virtual QLabel& setActualSpeed() = 0;    
     virtual QLabel& setBusCurrent() = 0;
     virtual QLabel& setBusVoltage() = 0;
-    virtual QLabel& setArrayCurrent() = 0;
+    virtual QLabel& setBatteryCurrent() = 0;
+    virtual QLabel& setBatteryVoltage() = 0;
 
     virtual QLabel& setBatteryCMU1Temp() = 0;
     virtual QLabel& setBatteryCMU1Cell1Voltage() = 0;
@@ -80,9 +81,10 @@ public:
     virtual QwtPlotCurve& setSetSpeedCurve() = 0; 
     virtual QwtPlotCurve& setActualSpeedCurve() = 0; 
     virtual QwtPlotCurve& setSetCurrentCurve() = 0;
-    virtual QwtPlotCurve& setMaxCellTempCurve() = 0;
-    virtual QwtPlotCurve& setAvgCellTempCurve() = 0;
-    virtual QwtPlotCurve& setMinCellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod0CellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod1CellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod2CellTempCurve() = 0;
+    virtual QwtPlotCurve& setMod3CellTempCurve() = 0;
     virtual QwtPlotCurve& setMaxCellVoltageCurve() = 0;
     virtual QwtPlotCurve& setMinCellVoltageCurve() = 0;
     virtual QwtPlotCurve& setAvgCellVoltageCurve() = 0;

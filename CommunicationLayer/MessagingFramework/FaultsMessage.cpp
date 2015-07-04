@@ -27,9 +27,11 @@ LimitFlags FaultsMessage::limitFlags() const
 
 BatteryFaults FaultsMessage::batteryFaults() const
 {
+   const quint8 upperBatteryFaults = messageData_.at(BATTERY_FAULTS_INDEX + 1);
+   const quint8 lowerBatteryFaults = messageData_.at(BATTERY_FAULTS_INDEX);
    quint16 batteryFaultFlags =
-      (messageData_.at(BATTERY_FAULTS_INDEX + 1) << 8)
-      | messageData_.at(BATTERY_FAULTS_INDEX);
+      (upperBatteryFaults << 8)
+      | lowerBatteryFaults;
    return BatteryFaults(batteryFaultFlags);
 }
 

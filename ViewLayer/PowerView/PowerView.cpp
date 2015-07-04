@@ -33,12 +33,12 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(driverSetCurrentReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(vehicleVelocityMetersPerSecondReceived(double)),
             this, SLOT(vehicleVelocityMetersPerSecondReceived(double)));
-    // connect(&vehiclePresenter_, SIGNAL(???)),
-            // this, SLOT(busCurrentAReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
-    // connect(&vehiclePresenter_, SIGNAL(???),
-    //         this, SLOT(arrayCurrentReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(batteryCurrentReceived(double)),
+            this, SLOT(batteryCurrentAReceived(double)));
+    connect(&batteryPresenter_, SIGNAL(batteryVoltageReceived(double)),
+            this, SLOT(batteryVoltageReceived(double)));
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
@@ -63,13 +63,13 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(updateBusVoltageGraph(PowerGraphData)));
     connect(&graphsPresenter_, SIGNAL(busPowerGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBusPowerGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(driverCurrentGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(drivingCurrentGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateDriverCurrentGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(driverSpeedGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(drivingSpeedGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateDriverSpeedGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(batteryCellTempGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(cellTemperatureGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(batteryCellVoltageGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(cellVoltageGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
@@ -111,9 +111,13 @@ void PowerView::busVoltageReceived(double busVoltage)
 {
     ui_.setBusVoltage().setNum(busVoltage);
 }
-void PowerView::arrayCurrentReceived(double arrayCurrentIn)
+void PowerView::batteryCurrentReceived(double batteryCurrent)
 {
-    ui_.setArrayCurrent().setNum(arrayCurrentIn);
+    ui_.setBatteryCurrent().setNum(batteryCurrent);
+}
+void PowerView::batteryVoltageReceived(double batteryVoltage)
+{
+    ui_.setBatteryVoltage().setNum(batteryVoltage);
 }
 
 void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)
@@ -207,9 +211,10 @@ void PowerView::updateDriverCurrentGraph(PowerGraphData graphData)
 }
 void PowerView::updateBatteryCellTempGraph(PowerGraphData graphData)
 {
-    ui_.setMaxCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
-    ui_.setAvgCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
-    ui_.setMinCellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
+    ui_.setMod0CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setMod1CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
+    ui_.setMod2CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
+    ui_.setMod3CellTempCurve().setSamples(graphData.xData(), graphData.yDataSets()[3]);
 }
 void PowerView::updateBatteryCellVoltageGraph(PowerGraphData graphData)
 {
