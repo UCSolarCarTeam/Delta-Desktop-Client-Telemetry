@@ -12,6 +12,7 @@ public:
    EscapeDialogView(EscapeDialog& ui);
    ~EscapeDialogView();
 
+
 private:
    EscapeDialog& ui_;
 

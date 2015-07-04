@@ -26,6 +26,12 @@ public:
     QCheckBox& multiWindowCheckBox();
     QStackedWidget& optionsDisplayWidget();
 
+signals:
+    void changeWindowState(int);
+
+private slots:
+       void handleFullScreenCheckBoxStateChange(int);
+
 private:
    Ui::EscapeDialog *ui;
 };

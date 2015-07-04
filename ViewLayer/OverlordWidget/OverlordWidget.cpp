@@ -36,12 +36,29 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 
     addFonts();
 
-    setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    //setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     showFullScreen();
+
+    connect(escapeDialog_, SIGNAL(changeWindowState(int)),
+            this, SLOT(changeWindowState(int)));
 }
 
 OverlordWidget::~OverlordWidget()
 {
+}
+void OverlordWidget::changeWindowState(int state)
+{
+    qDebug() << "state changed";
+    if(state == Qt::Unchecked){
+        qDebug() << "toggled off";
+        showNormal();
+        //setWindowFlags(0);
+    }
+    else if(state == Qt::Checked){
+        qDebug() << "toggled on";
+        showFullScreen();
+        //setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    }
 }
 
 void OverlordWidget::keyPressEvent(QKeyEvent * event)

@@ -21,6 +21,7 @@ EscapeDialogView::EscapeDialogView(EscapeDialog& ui)
 EscapeDialogView::~EscapeDialogView()
 {
 }
+
 void EscapeDialogView::handleSettingsSelectionPushButtonClicked()
 {
     ui_.settingsSelectionPushButton().setStyleSheet("border-top:1px solid rgb(50,50,50);background: rgb(100,100,100);");

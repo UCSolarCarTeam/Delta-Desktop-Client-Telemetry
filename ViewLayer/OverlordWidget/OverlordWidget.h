@@ -22,6 +22,9 @@ public:
     QString changeState();
     QString getState();
 
+public slots:
+    void changeWindowState(int);
+
 private:
     void setupEscapeDialog();
     QTabWidget* createTabWidget();

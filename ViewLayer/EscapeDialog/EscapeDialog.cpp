@@ -8,6 +8,8 @@ EscapeDialog::EscapeDialog()
 : ui(new Ui::EscapeDialog)
 {
     ui->setupUi(this);
+    connect(&(this->fullscreenCheckBox()),SIGNAL(stateChanged(int)),
+            this, SLOT(handleFullScreenCheckBoxStateChange(int)));
 }
 
 EscapeDialog::~EscapeDialog()
@@ -22,6 +24,11 @@ void EscapeDialog::keyPressEvent(QKeyEvent * event){
 void EscapeDialog::hideHeaderBar()
 {
     ui->escapeTitleBarWidget->hide();
+}
+
+void EscapeDialog::handleFullScreenCheckBoxStateChange(int state)
+{
+    emit changeWindowState(state);
 }
 
 void EscapeDialog::paintEvent(QPaintEvent* e)
