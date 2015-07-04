@@ -31,10 +31,6 @@ void EscapeDialog::paintEvent(QPaintEvent* e)
     QPainter customPainter(this);
     customPainter.fillRect(rect(), backgroundColor);
 }
-QPushButton& EscapeDialog::fileDialogPushButton()
-{
-   return *ui->fileDialogPushButton;
-}
 QPushButton& EscapeDialog::settingsSelectionPushButton()
 {
    return *ui->settingsSelectionPushButton;
@@ -67,12 +63,4 @@ QCheckBox& EscapeDialog::multiWindowCheckBox()
 QStackedWidget& EscapeDialog::optionsDisplayWidget()
 {
    return *ui->optionsDisplayWidget;
-}
-QWidget& EscapeDialog::EscapeWidget()
-{
-    return *ui->EscapeWidget;
-}
-QLineEdit& EscapeDialog::fileDialogText()
-{
-    return *ui->fileDialogText;
 }

@@ -379,7 +379,6 @@ margin: 10px;</string>
                   <font>
                    <family>AvenirLTStd</family>
                    <pointsize>-1</pointsize>
-                   <underline>true</underline>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -498,22 +497,15 @@ border:none;
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="logPathLabel">
-                 <property name="text">
-                  <string>Log Path</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QCheckBox" name="fullscreenCheckBox">
+               <item row="3" column="1">
+                <widget class="QCheckBox" name="multiWindowCheckBox">
                  <property name="text">
                   <string/>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QCheckBox" name="multiWindowCheckBox">
+               <item row="2" column="1">
+                <widget class="QCheckBox" name="fullscreenCheckBox">
                  <property name="text">
                   <string/>
                  </property>
@@ -531,63 +523,6 @@ border:none;
                  <property name="spacing">
                   <number>0</number>
                  </property>
-                 <item>
-                  <widget class="QLineEdit" name="fileDialogText">
-                   <property name="styleSheet">
-                    <string notr="true">margin-right: 5px;
-padding-right: none;
-</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="fileDialogPushButton">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>33</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777210</width>
-                     <height>33</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton{
-color: rgb(255,255,255);
-border: 1px solid rgb(60,60,60);
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(140,140,140), stop: 1 rgb(100,100,100));padding: 7px;
-margin-top: 2px;
-margin-bottom:2px;
-font-size: 14px;
-}
-QPushButton:hover{
-color: rgb(255,255,255);
-border: 1px solid rgb(60,60,60);
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(160,160,160), stop: 1 rgb(120,120,120));padding: 7px;
-margin-top: 2px;
-margin-bottom:2px;
-font-size: 14px;
-}
-QPushButton:pressed{
-color: rgb(255,255,255);
-border: 1px solid rgb(60,60,60);
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(120,120,120), stop: 1 rgb(80,80,80));padding: 7px;
-margin-top: 2px;
-margin-bottom:2px;
-font-size: 14px;
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>Browse</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
                <item row="5" column="0">
