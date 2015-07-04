@@ -68,4 +68,11 @@ QStackedWidget& EscapeDialog::optionsDisplayWidget()
 {
    return *ui->optionsDisplayWidget;
 }
-
+QWidget& EscapeDialog::EscapeWidget()
+{
+    return *ui->EscapeWidget;
+}
+QLineEdit& EscapeDialog::fileDialogText()
+{
+    return *ui->fileDialogText;
+}

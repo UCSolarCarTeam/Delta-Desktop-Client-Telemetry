@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QFileDialog>
+
 EscapeDialogView::EscapeDialogView(EscapeDialog& ui)
 : ui_(ui)
 {
@@ -16,6 +17,8 @@ EscapeDialogView::EscapeDialogView(EscapeDialog& ui)
             this, SLOT(handleExitPushButtonClicked()));
     connect(&ui.okPushButton(), SIGNAL(clicked()),
             this, SLOT(handleOkPushButtonClicked()));
+    connect(&ui.fileDialogPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleFileDialogPushButtonClicked()));
 }
 
 EscapeDialogView::~EscapeDialogView()
@@ -24,6 +27,9 @@ EscapeDialogView::~EscapeDialogView()
 void EscapeDialogView::handleFileDialogPushButtonClicked()
 {
     qDebug() << "file dialog button clicked"; // placeholder code
+    QString location = QFileDialog::getExistingDirectory(0,"Log file location","/home/sam",QFileDialog::ShowDirsOnly | QFileDialog::DontUseNativeDialog);
+    ui_.fileDialogText().insert(location);
+    ui_.show();
 }
 void EscapeDialogView::handleSettingsSelectionPushButtonClicked()
 {

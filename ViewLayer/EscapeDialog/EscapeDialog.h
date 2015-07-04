@@ -18,6 +18,7 @@ public:
     void keyPressEvent(QKeyEvent * event);
     void paintEvent(QPaintEvent* e);
     QPushButton& fileDialogPushButton();
+    QLineEdit& fileDialogText();
     QPushButton& settingsSelectionPushButton();
     QPushButton& aboutSelectionPushButton();
     QPushButton& exitPushButton();
@@ -26,6 +27,7 @@ public:
     QCheckBox& fullscreenCheckBox();
     QCheckBox& multiWindowCheckBox();
     QStackedWidget& optionsDisplayWidget();
+    QWidget& EscapeWidget();
 
 private:
    Ui::EscapeDialog *ui;
