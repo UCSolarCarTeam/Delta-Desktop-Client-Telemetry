@@ -21,10 +21,6 @@ public:
              PowerUI& ui);
    ~PowerView();
 
-signals:
-   void attemptConnection();
-   void attemptDisconnection();
-
 private:
    BatteryPresenter& batteryPresenter_;
    VehiclePresenter& vehiclePresenter_;

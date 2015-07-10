@@ -233,15 +233,15 @@ void PowerView::handleConnectButtonClicked()
         clearDebugLog();
         ui_.setConnectionStatus().setText("CONNECTING...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
-        emit attemptConnection();
+        communicationPresenter_.connectDataSource(
+            ui_.getSerialPortName().text(),
+            ui_.getBaudRate().text().toDouble());
     }
     else if(ui_.connectButton().text() == "Disconnect"){
         communicationPresenter_.disconnectDataSource();
         graphsPresenter_.stopUpdating();
-        emit attemptDisconnection();
     }
 }
-
 
 void PowerView::handleBusGraphButtonClicked()
 {
