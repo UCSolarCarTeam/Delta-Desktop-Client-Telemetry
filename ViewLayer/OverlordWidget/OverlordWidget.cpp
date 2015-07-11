@@ -36,9 +36,7 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 
     addFonts();
 
-    show();
     showMaximized();
-    showFullScreen();
 
     connect(escapeDialog_, SIGNAL(changeWindowState(int)),
             this, SLOT(changeWindowState(int)));
