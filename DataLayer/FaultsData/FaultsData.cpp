@@ -17,17 +17,14 @@ MotorFaults FaultsData::motorOneFaults() const
 {
    return motorOneFaults_;
 }
-
 LimitFlags FaultsData::motorOneLimitFlags() const
 {
    return motorOneLimitFlags_;
 }
-
 MotorFaults FaultsData::motorTwoFaults() const
 {
    return motorTwoFaults_;
 }
-
 LimitFlags FaultsData::motorTwoLimitFlags() const
 {
    return motorTwoLimitFlags_;

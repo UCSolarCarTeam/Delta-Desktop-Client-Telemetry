@@ -16,15 +16,15 @@ public:
 
     void hideHeaderBar();
 
-    /* Motor Error Flags */
-	QLabel& desaturationFaultLabel();
-	QLabel& badMotorPositionHallSequenceLabel();
-	QLabel& fifteenVoltRailUnderVoltageLockoutLabel();
-	QLabel& dcBusOverVoltageLabel();
-	QLabel& configReadErrorLabel();
-	QLabel& softwareOverCurrentLabel();
-	QLabel& watchDogCausedLastResetLabel();
-	QLabel& hardwareOverCurrentLabel();
+    /* Motor One Error Flags */
+	QLabel& desaturationFaultLabel1();
+	QLabel& badMotorPositionHallSequenceLabel1();
+	QLabel& fifteenVoltRailUnderVoltageLockoutLabel1();
+	QLabel& dcBusOverVoltageLabel1();
+	QLabel& configReadErrorLabel1();
+	QLabel& softwareOverCurrentLabel1();
+	QLabel& watchDogCausedLastResetLabel1();
+	QLabel& hardwareOverCurrentLabel1();
 
     /* Motor Two Error Flags */
 	QLabel& desaturationFaultLabel2();
@@ -36,14 +36,14 @@ public:
 	QLabel& watchDogCausedLastResetLabel2();
 	QLabel& hardwareOverCurrentLabel2();
 
-	/* Motor Limit Flags */
-	QLabel& ipmTemperatureOrMotorTemperatureLabel();
-	QLabel& velocityLabel();
-	QLabel& busVoltageUpperLimitLabel();
-	QLabel& busVoltageLowerLimitLabel();
-	QLabel& motorCurrentLabel();
-	QLabel& outputVoltagePwmLabel();
-	QLabel& busCurrentLabel();
+	/* Motor One Limit Flags */
+	QLabel& ipmTemperatureOrMotorTemperatureLabel1();
+	QLabel& velocityLabel1();
+	QLabel& busVoltageUpperLimitLabel1();
+	QLabel& busVoltageLowerLimitLabel1();
+	QLabel& motorCurrentLabel1();
+	QLabel& outputVoltagePwmLabel1();
+	QLabel& busCurrentLabel1();
 
 	/* Motor Two Limit Flags */
 	QLabel& ipmTemperatureOrMotorTemperatureLabel2();

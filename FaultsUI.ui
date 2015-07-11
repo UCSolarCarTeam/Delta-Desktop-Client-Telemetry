@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>904</height>
+    <height>922</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -36,19 +36,96 @@ font-family: &quot;AvenirLTStd&quot;;
 font-size: 17px;
 </string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_5">
+  <layout class="QVBoxLayout" name="faultUILayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
-    <widget class="QLabel" name="faultTitleLabel">
+    <widget class="QWidget" name="faultsTitleBar" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>45</height>
+      </size>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background: none;
+      <string notr="true">background: url(:/Resources/MainTitleBar.png);
+border: 1px;
+border-color: rgb(40,40,40);
+</string>
+     </property>
+     <layout class="QHBoxLayout" name="faultsTitleBarLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="faultsTitleFrame">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+	background-color: rgb(51, 51, 51);
+border-width: 1px;
+border-style:1px;
+border-color: rgb(50,50,50);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <layout class="QHBoxLayout" name="faultsTitleFrameLayout">
+         <item>
+          <widget class="QLabel" name="faultTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">background: none;
 border: none;</string>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Faults&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::RichText</enum>
-     </property>
+           </property>
+           <property name="text">
+            <string>Faults</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::PlainText</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -57,836 +134,40 @@ border: none;</string>
       <string notr="true">border-image: url(:/Resources/Background1.png);
 </string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,3,2,6">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
+     <layout class="QGridLayout" name="backgroundWidgetLayout">
+      <property name="leftMargin">
+       <number>9</number>
       </property>
       <property name="topMargin">
-       <number>0</number>
+       <number>9</number>
       </property>
-      <item>
-       <widget class="QWidget" name="motorOneWindow" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>400</width>
-          <height>16777215</height>
-         </size>
+      <property name="rightMargin">
+       <number>9</number>
+      </property>
+      <property name="bottomMargin">
+       <number>9</number>
+      </property>
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="backgroundWidgetContentLayout">
+        <property name="leftMargin">
+         <number>40</number>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(40,40,40);
-	padding: 9px;
-border-image: none;
-}
-</string>
+        <property name="topMargin">
+         <number>9</number>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,10,10">
-         <item>
-          <widget class="QLabel" name="motorOneTitleLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>AvenirLTStd</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="contextMenuPolicy">
-            <enum>Qt::PreventContextMenu</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border:none;
-background: none;</string>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Motor One Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="motorErrorFlags" native="true">
-           <property name="styleSheet">
-            <string notr="true">QWidget{
-border:none;
-}
-QLabel {
-	border: 1px solid rgb(30,30,30);
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
-	padding: 5px;
-	border-radius: 1px;
-	qproperty-alignment: AlignCenter;
-	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
-	font: italic;
-	color: rgb(30,30,30)
-}
-</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_2">
-            <item row="0" column="0">
-             <widget class="QLabel" name="errorFlagsTitle">
-              <property name="styleSheet">
-               <string notr="true">background: none;
-border: none;
-border-bottom: 2px solid rgb(85,85,85);
-font: normal;
-font-size: 15px;
-color:white;</string>
-              </property>
-              <property name="text">
-               <string>Error Flags</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="desaturationFaultLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desaturation&lt;br/&gt;Fault&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="badMotorPositionHallSequenceLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bad Motor Position &lt;br/&gt;Hall Sequence&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="fifteenVoltRailUnderVoltageLockoutLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;15V Rail Under&lt;br/&gt;Voltage Lockout&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="dcBusOverVoltageLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DC Bus &lt;br/&gt;Over Voltage&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="configReadErrorLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Config &lt;br/&gt;Read Error&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QLabel" name="softwareOverCurrentLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Software&lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="watchDogCausedLastResetLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WatchDog Caused&lt;br/&gt;Last Reset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QLabel" name="hardwareOverCurrentLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hardware &lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="motorLimitFlags" native="true">
-           <property name="styleSheet">
-            <string notr="true">QWidget{
-border:none;
-}
-QLabel {
-	border: 1px solid rgb(30,30,30);
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
-	padding: 5px;
-	border-radius: 1px;
-	qproperty-alignment: AlignCenter;
-	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
-	font: italic;
-	color: rgb(30,30,30)
-}
-</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_3">
-            <item row="0" column="0">
-             <widget class="QLabel" name="limitFlagsTitle">
-              <property name="styleSheet">
-               <string notr="true">background: none;
-border: none;
-border-bottom: 2px solid rgb(85,85,85);
-font: normal;
-font-size: 15px;
-color:white;</string>
-              </property>
-              <property name="text">
-               <string>Limit Flags</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="ipmTemperatureOrMotorTemperatureLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPM Temperature or&lt;br/&gt;Motor Temperature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="velocityLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="busVoltageLowerLimitLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Lower Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="motorCurrentLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Motor&lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="busVoltageUpperLimitLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Upper Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QLabel" name="outputVoltagePwmLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Output Voltage&lt;br/&gt;PWM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="busCurrentLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus &lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-        <zorder>motorTwoWindow</zorder>
-        <zorder>motorOneTitleLabel</zorder>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="motorTwoWindow" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>400</width>
-          <height>16777215</height>
-         </size>
+        <property name="rightMargin">
+         <number>40</number>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(40,40,40);
-	padding: 9px;
-border-image: none;
-}
-</string>
+        <property name="bottomMargin">
+         <number>20</number>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,10,10">
-         <item>
-          <widget class="QLabel" name="motorTwoTitleLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>AvenirLTStd</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="contextMenuPolicy">
-            <enum>Qt::PreventContextMenu</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border:none;
-background: none;</string>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Motor Two Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="motorErrorFlags2" native="true">
-           <property name="styleSheet">
-            <string notr="true">QWidget{
-border:none;
-}
-QLabel {
-	border: 1px solid rgb(30,30,30);
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
-	padding: 5px;
-	border-radius: 1px;
-	qproperty-alignment: AlignCenter;
-	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
-	font: italic;
-	color: rgb(30,30,30)
-}
-</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout">
-            <item row="4" column="0" colspan="2">
-             <widget class="QLabel" name="watchDogCausedLastResetLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WatchDog Caused&lt;br/&gt;Last Reset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="2">
-             <widget class="QLabel" name="hardwareOverCurrentLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hardware &lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1" colspan="2">
-             <widget class="QLabel" name="badMotorPositionHallSequenceLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bad Motor Position &lt;br/&gt;Hall Sequence&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="desaturationFaultLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desaturation&lt;br/&gt;Fault&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="configReadErrorLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Config &lt;br/&gt;Read Error&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="fifteenVoltRailUnderVoltageLockoutLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;15V Rail Under&lt;br/&gt;Voltage Lockout&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2">
-             <widget class="QLabel" name="dcBusOverVoltageLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DC Bus &lt;br/&gt;Over Voltage&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="errorFlagsTitle2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background: none;
-border: none;
-border-bottom: 2px solid rgb(85,85,85);
-font: normal;
-font-size: 15px;
-color:white;</string>
-              </property>
-              <property name="text">
-               <string>Error Flags</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2">
-             <widget class="QLabel" name="softwareOverCurrentLabel2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Software&lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="motorLimitFlags2" native="true">
-           <property name="styleSheet">
-            <string notr="true">QWidget{
-border:none;
-}
-QLabel {
-	border: 1px solid rgb(30,30,30);
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
-	padding: 5px;
-	border-radius: 1px;
-	qproperty-alignment: AlignCenter;
-	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
-	font: italic;
-	color: rgb(30,30,30)
-}
-</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_4">
-            <item row="3" column="1">
-             <widget class="QLabel" name="outputVoltagePwmLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Output Voltage&lt;br/&gt;PWM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="velocityLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="motorCurrentLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Motor&lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="busVoltageUpperLimitLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Upper Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="busVoltageLowerLimitLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Lower Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="busCurrentLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus &lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="ipmTemperatureOrMotorTemperatureLabel2">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPM Temperature or&lt;br/&gt;Motor Temperature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="limitFlagsTitle2">
-              <property name="styleSheet">
-               <string notr="true">background: none;
-border: none;
-border-bottom: 2px solid rgb(85,85,85);
-font: normal;
-font-size: 15px;
-color:white;</string>
-              </property>
-              <property name="text">
-               <string>Limit Flags</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-        <zorder>motorLimitFlags2</zorder>
-        <zorder>motorErrorFlags2</zorder>
-        <zorder>faultTitleLabel</zorder>
-        <zorder>motorTwoTitleLabel</zorder>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="batteryWindow" native="true">
-        <property name="styleSheet">
-         <string notr="true">QWidget {
-	background: rgb(51, 51, 51);
-	border-style:solid;
-	border-width: 1px;
-	border-color: rgb(40,40,40);
-	padding: 9px;
-border-image: none;
-}
-
-QLabel {
-	alignment: center;
-	padding: 1px;
-}</string>
+        <property name="spacing">
+         <number>20</number>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,20">
-         <item>
-          <widget class="QLabel" name="batteryTitleLabel">
-           <property name="styleSheet">
-            <string notr="true">border-style: none;
-background: none;</string>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Battery Pack Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="widget" native="true">
-           <property name="styleSheet">
-            <string notr="true">QWidget{
-border:none;
-}
-QLabel {
-	border: 1px solid rgb(30,30,30);
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
-	padding: 5px;
-	border-radius: 1px;
-	qproperty-alignment: AlignCenter;
-	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
-	font: italic;
-	color: rgb(30,30,30)
-}
-</string>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
-             <widget class="QLabel" name="cellOverVoltageLabel">
-              <property name="text">
-               <string>Cell Over Voltage</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="cellUnderVoltageLabel">
-              <property name="text">
-               <string>Cell Under Voltage</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="cellOverTemperatureLabel">
-              <property name="text">
-               <string>Cell Over Temperature</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="measurementUntrustedLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Measurement Untrusted (Channel Mismatch)*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="cmuCommunicationsTimeoutLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CMU Communications Timeout (Lost CMU)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="vehicleCommunicationsTimeoutLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vehicle Communications Timeout (Lost EVDC)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="bmuInSetupModeLabel">
-              <property name="text">
-               <string>BMU in Setup Mode</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="cmuCanBusPowerStatusLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CMU CAN Bus Power Status&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="packIsolationTestFailureLabel">
-              <property name="text">
-               <string>Pack Isolation Test Failure</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="softwareOverCurrentMeasurementNotValidLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Software Over Current Measurement Not Valid&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="can12vSupplyLowLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Can 12V Supply Low (Shutdown Imminent)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="contactorStuckOrNotEngagedLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contactor Stuck or Not Engaged&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="cmuDetectedExtraCellLabel">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CMU Detected Extra Cell&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-        <zorder>batteryTitleLabel</zorder>
-        <zorder>contactorStuckOrNotEngagedLabel</zorder>
-        <zorder>cellOverTemperatureLabel</zorder>
-        <zorder>bmuInSetupModeLabel</zorder>
-        <zorder>cmuCommunicationsTimeoutLabel</zorder>
-        <zorder>cellOverVoltageLabel</zorder>
-        <zorder>can12vSupplyLowLabel</zorder>
-        <zorder>cmuDetectedExtraCellLabel</zorder>
-        <zorder>cellUnderVoltageLabel</zorder>
-        <zorder>cmuCanBusPowerStatusLabel</zorder>
-        <zorder>packIsolationTestFailureLabel</zorder>
-        <zorder>cellOverTemperatureLabel</zorder>
-        <zorder>softwareOverCurrentMeasurementNotValidLabel</zorder>
-        <zorder>bmuInSetupModeLabel</zorder>
-        <zorder>cmuCommunicationsTimeoutLabel</zorder>
-        <zorder>contactorStuckOrNotEngagedLabel</zorder>
-        <zorder>vehicleCommunicationsTimeoutLabel</zorder>
-        <zorder>cellOverVoltageLabel</zorder>
-        <zorder>can12vSupplyLowLabel</zorder>
-        <zorder>cmuDetectedExtraCellLabel</zorder>
-        <zorder>measurementUntrustedLabel</zorder>
-        <zorder>cmuCanBusPowerStatusLabel</zorder>
-        <zorder>widget</zorder>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="historyWindow" native="true">
-        <property name="styleSheet">
-         <string notr="true">QWidget {
+        <item row="0" column="3" rowspan="2">
+         <widget class="QWidget" name="historyWindow" native="true">
+          <property name="styleSheet">
+           <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
 	border-style:solid;
 	border-width: 1px;
@@ -899,40 +180,1490 @@ QLabel {
 	alignment: center;
 	padding: 1px;
 }</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="QLabel" name="historyTitleLabel">
-           <property name="styleSheet">
-            <string notr="true">border-style: none;
+          </property>
+          <layout class="QVBoxLayout" name="historyWindowLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="historyTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
+	padding: 2px;
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="historyTitleBarLayout">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="historyTitleLabel">
+                <property name="styleSheet">
+                 <string notr="true">border-style: none;
 background: none;</string>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fault History&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTextEdit" name="historyTextEdit">
-           <property name="styleSheet">
-            <string notr="true">border: 1px solid rgb(85, 85, 85);
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fault History&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="historyContentLayout" rowstretch="0">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>9</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QTextEdit" name="historyTextEdit">
+               <property name="styleSheet">
+                <string notr="true">border: 1px solid rgb(85, 85, 85);
 padding:9px;
 background-color: rgb(60,60,60);
 </string>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="2">
+         <widget class="QWidget" name="batteryWindow" native="true">
+          <property name="styleSheet">
+           <string notr="true">QWidget {
+	background: rgb(51, 51, 51);
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(40,40,40);
+	padding: 9px;
+border-image: none;
+}
+
+QLabel {
+	alignment: center;
+	padding: 1px;
+}</string>
+          </property>
+          <layout class="QVBoxLayout" name="batteryWindowLayout">
+           <property name="spacing">
+            <number>0</number>
            </property>
-           <property name="readOnly">
-            <bool>true</bool>
+           <property name="leftMargin">
+            <number>0</number>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="batteryTitleBar" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
+	padding: 2px;
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="batteryTitleBarLayout">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="batteryTitleLabel">
+                <property name="styleSheet">
+                 <string notr="true">border-style: none;
+background: none;</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Battery Pack Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="batteryContentLayout" rowstretch="0">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>9</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QWidget" name="batteryPackStatusFlags" native="true">
+               <property name="styleSheet">
+                <string notr="true">QWidget{
+border:none;
+}
+QLabel {
+	border: 1px solid rgb(30,30,30);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
+	padding: 5px;
+	border-radius: 1px;
+	qproperty-alignment: AlignCenter;
+	font-size: 14px;
+	margin-left: 20px;	
+	margin-right: 20px;
+	font: italic;
+	color: rgb(30,30,30)
+}
+</string>
+               </property>
+               <layout class="QGridLayout" name="batteryPackStatusFlagsLayout">
+                <property name="spacing">
+                 <number>14</number>
+                </property>
+                <item row="18" column="0">
+                 <spacer name="verticalSpacer_10">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="cellOverTemperatureLabel">
+                  <property name="text">
+                   <string>Cell Over Temperature</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="0">
+                 <spacer name="verticalSpacer_6">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QLabel" name="cmuCommunicationsTimeoutLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CMU Communications Timeout (Lost CMU)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="0">
+                 <spacer name="verticalSpacer_7">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="4" column="0">
+                 <spacer name="verticalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="8" column="0">
+                 <spacer name="verticalSpacer_5">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="measurementUntrustedLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Measurement Untrusted (Channel Mismatch)*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <spacer name="verticalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="6" column="0">
+                 <spacer name="verticalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="23" column="0">
+                 <widget class="QLabel" name="contactorStuckOrNotEngagedLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contactor Stuck or Not Engaged&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="0">
+                 <widget class="QLabel" name="vehicleCommunicationsTimeoutLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vehicle Communications Timeout (Lost EVDC)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="cellOverVoltageLabel">
+                  <property name="text">
+                   <string>Cell Over Voltage</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="21" column="0">
+                 <widget class="QLabel" name="can12vSupplyLowLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Can 12V Supply Low (Shutdown Imminent)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="19" column="0">
+                 <widget class="QLabel" name="softwareOverCurrentMeasurementNotValidLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Software Over Current Measurement Not Valid&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="25" column="0">
+                 <widget class="QLabel" name="cmuDetectedExtraCellLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CMU Detected Extra Cell&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="17" column="0">
+                 <widget class="QLabel" name="packIsolationTestFailureLabel">
+                  <property name="text">
+                   <string>Pack Isolation Test Failure</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="15" column="0">
+                 <widget class="QLabel" name="cmuCanBusPowerStatusLabel">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CMU CAN Bus Power Status&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="13" column="0">
+                 <widget class="QLabel" name="bmuInSetupModeLabel">
+                  <property name="text">
+                   <string>BMU in Setup Mode</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="cellUnderVoltageLabel">
+                  <property name="text">
+                   <string>Cell Under Voltage</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="14" column="0">
+                 <spacer name="verticalSpacer_8">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="20" column="0">
+                 <spacer name="verticalSpacer_11">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="16" column="0">
+                 <spacer name="verticalSpacer_9">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="24" column="0">
+                 <spacer name="verticalSpacer_13">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="22" column="0">
+                 <spacer name="verticalSpacer_12">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="26" column="0">
+                 <spacer name="verticalSpacer_14">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0" rowspan="2">
+         <widget class="QWidget" name="motorWindow1" native="true">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget {
+	background: rgb(51, 51, 51);
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(40,40,40);
+	padding: 9px;
+border-image: none;
+}
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="motorWindowLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="motorTitleBar1" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
+	padding: 2px;
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="motorTitleBarLayout">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="motorTitleLabel1">
+                <property name="font">
+                 <font>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
+                 </font>
+                </property>
+                <property name="contextMenuPolicy">
+                 <enum>Qt::PreventContextMenu</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:none;
+background: none;</string>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Motor Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="motorContentLayout1" columnstretch="0">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="spacing">
+              <number>9</number>
+             </property>
+             <item row="1" column="0">
+              <widget class="QWidget" name="motorLimitFlags1" native="true">
+               <property name="styleSheet">
+                <string notr="true">QWidget{
+border:none;
+}
+QLabel {
+	border: 1px solid rgb(30,30,30);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
+	padding: 5px;
+	border-radius: 1px;
+	qproperty-alignment: AlignCenter;
+	font-size: 14px;
+	margin-left: 20px;	
+	margin-right: 20px;
+	font: italic;
+	color: rgb(30,30,30)
+}
+</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <property name="spacing">
+                 <number>14</number>
+                </property>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="limitFlagsTitle1">
+                  <property name="styleSheet">
+                   <string notr="true">background: none;
+border: none;
+border-bottom: 2px solid rgb(85,85,85);
+font: normal;
+font-size: 15px;
+color:white;</string>
+                  </property>
+                  <property name="text">
+                   <string>Limit Flags</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="busVoltageUpperLimitLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Upper Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="busVoltageLowerLimitLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Lower Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="velocityLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="busCurrentLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus &lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="outputVoltagePwmLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Output Voltage&lt;br/&gt;PWM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="ipmTemperatureOrMotorTemperatureLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPM Temperature or&lt;br/&gt;Motor Temperature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="motorCurrentLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Motor&lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <spacer name="verticalSpacer_19">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="3" column="0">
+                 <spacer name="verticalSpacer_20">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="7" column="1">
+                 <spacer name="verticalSpacer_22">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="5" column="0">
+                 <spacer name="verticalSpacer_21">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="9" column="0">
+                 <spacer name="verticalSpacer_23">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="motorErrorFlags1" native="true">
+               <property name="styleSheet">
+                <string notr="true">QWidget{
+border:none;
+}
+QLabel {
+	border: 1px solid rgb(30,30,30);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
+	padding: 5px;
+	border-radius: 1px;
+	qproperty-alignment: AlignCenter;
+	font-size: 14px;
+	margin-left: 20px;	
+	margin-right: 20px;
+	font: italic;
+	color: rgb(30,30,30)
+}
+</string>
+               </property>
+               <layout class="QGridLayout" name="motorErrorFlagsLayout">
+                <property name="spacing">
+                 <number>14</number>
+                </property>
+                <item row="8" column="1">
+                 <widget class="QLabel" name="hardwareOverCurrentLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hardware &lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="softwareOverCurrentLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Software&lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="dcBusOverVoltageLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DC Bus &lt;br/&gt;Over Voltage&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="watchDogCausedLastResetLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WatchDog Caused&lt;br/&gt;Last Reset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <spacer name="verticalSpacer_15">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="configReadErrorLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Config &lt;br/&gt;Read Error&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="fifteenVoltRailUnderVoltageLockoutLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;15V Rail Under&lt;br/&gt;Voltage Lockout&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="errorFlagsTitle1">
+                  <property name="styleSheet">
+                   <string notr="true">background: none;
+border: none;
+border-bottom: 2px solid rgb(85,85,85);
+font: normal;
+font-size: 15px;
+color:white;</string>
+                  </property>
+                  <property name="text">
+                   <string>Error Flags</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="desaturationFaultLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desaturation&lt;br/&gt;Fault&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="badMotorPositionHallSequenceLabel1">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bad Motor Position &lt;br/&gt;Hall Sequence&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <spacer name="verticalSpacer_16">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="5" column="0">
+                 <spacer name="verticalSpacer_17">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="7" column="0">
+                 <spacer name="verticalSpacer_18">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QWidget" name="motorWindow2" native="true">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget {
+	background: rgb(51, 51, 51);
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(40,40,40);
+	padding: 9px;
+border-image: none;
+}
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="motorWindowLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="motorTitleBar2" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget {
+	background: url(:/Resources/SubTitleBar.png);
+	border-color: rgb(70,70,70);
+	border-bottom-color: rgb(40,40,40);
+	padding: 2px;
+}</string>
+             </property>
+             <layout class="QHBoxLayout" name="motorTitleBarLayout_2">
+              <property name="spacing">
+               <number>9</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>4</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="motorTitleLabel2">
+                <property name="font">
+                 <font>
+                  <family>AvenirLTStd</family>
+                  <pointsize>-1</pointsize>
+                 </font>
+                </property>
+                <property name="contextMenuPolicy">
+                 <enum>Qt::PreventContextMenu</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:none;
+background: none;</string>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Motor Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="motorContentLayout2" columnstretch="0">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
+             <property name="spacing">
+              <number>9</number>
+             </property>
+             <item row="1" column="0">
+              <widget class="QWidget" name="motorLimitFlags2" native="true">
+               <property name="styleSheet">
+                <string notr="true">QWidget{
+border:none;
+}
+QLabel {
+	border: 1px solid rgb(30,30,30);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
+	padding: 5px;
+	border-radius: 1px;
+	qproperty-alignment: AlignCenter;
+	font-size: 14px;
+	margin-left: 20px;	
+	margin-right: 20px;
+	font: italic;
+	color: rgb(30,30,30)
+}
+</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <property name="spacing">
+                 <number>14</number>
+                </property>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="limitFlagsTitle2">
+                  <property name="styleSheet">
+                   <string notr="true">background: none;
+border: none;
+border-bottom: 2px solid rgb(85,85,85);
+font: normal;
+font-size: 15px;
+color:white;</string>
+                  </property>
+                  <property name="text">
+                   <string>Limit Flags</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="busVoltageUpperLimitLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Upper Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="busVoltageLowerLimitLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus Voltage&lt;br/&gt;Lower Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="velocityLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="busCurrentLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bus &lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="outputVoltagePwmLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Output Voltage&lt;br/&gt;PWM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="ipmTemperatureOrMotorTemperatureLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPM Temperature or&lt;br/&gt;Motor Temperature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="motorCurrentLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Motor&lt;br/&gt;Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <spacer name="verticalSpacer_24">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="3" column="0">
+                 <spacer name="verticalSpacer_25">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="7" column="1">
+                 <spacer name="verticalSpacer_26">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="5" column="0">
+                 <spacer name="verticalSpacer_27">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="9" column="0">
+                 <spacer name="verticalSpacer_28">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="motorErrorFlags2" native="true">
+               <property name="styleSheet">
+                <string notr="true">QWidget{
+border:none;
+}
+QLabel {
+	border: 1px solid rgb(30,30,30);
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(40, 176, 13), stop: 1 green);
+	padding: 5px;
+	border-radius: 1px;
+	qproperty-alignment: AlignCenter;
+	font-size: 14px;
+	margin-left: 20px;	
+	margin-right: 20px;
+	font: italic;
+	color: rgb(30,30,30)
+}
+</string>
+               </property>
+               <layout class="QGridLayout" name="motorErrorFlagsLayout_2">
+                <property name="spacing">
+                 <number>14</number>
+                </property>
+                <item row="8" column="1">
+                 <widget class="QLabel" name="hardwareOverCurrentLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hardware &lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="softwareOverCurrentLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Software&lt;br/&gt;Over Current&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="dcBusOverVoltageLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DC Bus &lt;br/&gt;Over Voltage&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="watchDogCausedLastResetLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WatchDog Caused&lt;br/&gt;Last Reset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <spacer name="verticalSpacer_29">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="configReadErrorLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Config &lt;br/&gt;Read Error&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="fifteenVoltRailUnderVoltageLockoutLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;15V Rail Under&lt;br/&gt;Voltage Lockout&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="errorFlagsTitle2">
+                  <property name="styleSheet">
+                   <string notr="true">background: none;
+border: none;
+border-bottom: 2px solid rgb(85,85,85);
+font: normal;
+font-size: 15px;
+color:white;</string>
+                  </property>
+                  <property name="text">
+                   <string>Error Flags</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="desaturationFaultLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desaturation&lt;br/&gt;Fault&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="badMotorPositionHallSequenceLabel2">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bad Motor Position &lt;br/&gt;Hall Sequence&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <spacer name="verticalSpacer_30">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="5" column="0">
+                 <spacer name="verticalSpacer_31">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="7" column="0">
+                 <spacer name="verticalSpacer_32">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
-     <zorder>faultsTitleFrame</zorder>
-     <zorder>batteryWindow</zorder>
-     <zorder>motorOneWindow</zorder>
-     <zorder>motorTwoWindow</zorder>
     </widget>
    </item>
   </layout>
