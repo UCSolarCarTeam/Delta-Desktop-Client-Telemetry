@@ -87,11 +87,13 @@ void TestPacketDecoder::willReceiveFaultsMessage()
 
    QCOMPARE(receivedFaultsMessages_.length(), 1);
    FaultsMessage receivedMessage = receivedFaultsMessages_.first();
-   QCOMPARE(receivedMessage.motorFaults(), MotorFaults(ANONYMOUS_CHAR_1));
-   QCOMPARE(receivedMessage.limitFlags(), LimitFlags(ANONYMOUS_CHAR_2));
+   QCOMPARE(receivedMessage.motorOneFaults(), MotorFaults(ANONYMOUS_CHAR_1));
+   QCOMPARE(receivedMessage.motorOneLimitFlags(), LimitFlags(ANONYMOUS_CHAR_2));
+   QCOMPARE(receivedMessage.motorTwoFaults(), MotorFaults(ANONYMOUS_CHAR_3));
+   QCOMPARE(receivedMessage.motorTwoLimitFlags(), LimitFlags(ANONYMOUS_CHAR_4));
    QCOMPARE(receivedMessage.batteryFaults(), BatteryFaults(ANONYMOUS_SHORT_1));
-   QCOMPARE(receivedMessage.canReceivedErrorCounts(), ANONYMOUS_CHAR_3);
-   QCOMPARE(receivedMessage.canTransmittedErrorCounts(), ANONYMOUS_CHAR_4);
+   QCOMPARE(receivedMessage.canReceivedErrorCounts(), ANONYMOUS_CHAR_1);
+   QCOMPARE(receivedMessage.canTransmittedErrorCounts(), ANONYMOUS_CHAR_2);
 }
 
 void TestPacketDecoder::willReceiveBatteryDataMessage()
@@ -223,12 +225,14 @@ QByteArray TestPacketDecoder::createValidFaultsMessage() const
    messageData.append(static_cast<quint8>(MessageDefines::Faults));
    messageData.append(ANONYMOUS_CHAR_1);
    messageData.append(ANONYMOUS_CHAR_2);
+   messageData.append(ANONYMOUS_CHAR_3);
+   messageData.append(ANONYMOUS_CHAR_4);
    unsigned char upperChar = (ANONYMOUS_SHORT_1 >> 8) & 0xFF;
    unsigned char lowerChar = ANONYMOUS_SHORT_1 & 0xFF;
    messageData.append(lowerChar);
    messageData.append(upperChar);
-   messageData.append(ANONYMOUS_CHAR_3);
-   messageData.append(ANONYMOUS_CHAR_4);
+   messageData.append(ANONYMOUS_CHAR_1);
+   messageData.append(ANONYMOUS_CHAR_2);
    return messageData;
 }
 

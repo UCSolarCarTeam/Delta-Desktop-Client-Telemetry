@@ -4,7 +4,7 @@ namespace
 {
    const int KEY_DRIVER_CONTROL_LENGTH = 21;
    const int DRIVER_CONTROL_DETAILS_LENGTH = 29;
-   const int FAULTS_LENGTH = 7;
+   const int FAULTS_LENGTH = 9;
    const int BATTERY_DATA_LENGTH = 18;
    const int CMU_DATA_LENGTH = 42;
    const int MPPT_DATA_LENGTH = 21;

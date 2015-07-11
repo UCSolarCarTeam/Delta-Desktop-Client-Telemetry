@@ -11,8 +11,10 @@ class FaultsMessage
 public:
    FaultsMessage(const QByteArray& messageData);
 
-   MotorFaults motorFaults() const;
-   LimitFlags limitFlags() const;
+   MotorFaults motorOneFaults() const;
+   LimitFlags motorOneLimitFlags() const;
+   MotorFaults motorTwoFaults() const;
+   LimitFlags motorTwoLimitFlags() const;
    BatteryFaults batteryFaults() const;
 
    quint8 canReceivedErrorCounts() const;

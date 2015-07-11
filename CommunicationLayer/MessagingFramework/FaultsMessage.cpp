@@ -3,11 +3,13 @@
 
 namespace
 {
-   const int MOTOR_FAULTS_INDEX = 1;
-   const int LIMIT_FAULTS_INDEX = 2;
-   const int BATTERY_FAULTS_INDEX = 3;
-   const int CAN_RX_ERROR_COUNTS_INDEX = 5;
-   const int CAN_TX_ERROR_COUNTS_INDEX = 6;
+   const int MOTOR_ONE_FAULTS_INDEX = 1;
+   const int MOTOR_ONE_LIMIT_FAULTS_INDEX = 2;
+   const int MOTOR_TWO_FAULTS_INDEX = 3;
+   const int MOTOR_TWO_LIMIT_FAULTS_INDEX = 4;
+   const int BATTERY_FAULTS_INDEX = 5;
+   const int CAN_RX_ERROR_COUNTS_INDEX = 7;
+   const int CAN_TX_ERROR_COUNTS_INDEX = 8;
 }
 
 FaultsMessage::FaultsMessage(const QByteArray& messageData)
@@ -15,14 +17,24 @@ FaultsMessage::FaultsMessage(const QByteArray& messageData)
 {
 }
 
-MotorFaults FaultsMessage::motorFaults() const
+MotorFaults FaultsMessage::motorOneFaults() const
 {
-   return MotorFaults(messageData_.at(MOTOR_FAULTS_INDEX));
+   return MotorFaults(messageData_.at(MOTOR_ONE_FAULTS_INDEX));
 }
 
-LimitFlags FaultsMessage::limitFlags() const
+LimitFlags FaultsMessage::motorOneLimitFlags() const
 {
-   return LimitFlags(messageData_.at(LIMIT_FAULTS_INDEX));
+   return LimitFlags(messageData_.at(MOTOR_ONE_LIMIT_FAULTS_INDEX));
+}
+
+MotorFaults FaultsMessage::motorTwoFaults() const
+{
+   return MotorFaults(messageData_.at(MOTOR_TWO_FAULTS_INDEX));
+}
+
+LimitFlags FaultsMessage::motorTwoLimitFlags() const
+{
+   return LimitFlags(messageData_.at(MOTOR_TWO_LIMIT_FAULTS_INDEX));
 }
 
 BatteryFaults FaultsMessage::batteryFaults() const
@@ -49,8 +61,10 @@ QString FaultsMessage::toString() const
 {
    QString messageString;
    messageString += QString::number(MessageDefines::Faults) + ", ";
-   messageString += motorFaults().toString() + ", ";
-   messageString += limitFlags().toString() + ", ";
+   messageString += motorOneFaults().toString() + ", ";
+   messageString += motorOneLimitFlags().toString() + ", ";
+   messageString += motorTwoFaults().toString() + ", ";
+   messageString += motorTwoLimitFlags().toString() + ", ";
    messageString += batteryFaults().toString() + ", ";
    messageString += QString::number(canReceivedErrorCounts()) + ", ";
    messageString += QString::number(canTransmittedErrorCounts()) + ", ";

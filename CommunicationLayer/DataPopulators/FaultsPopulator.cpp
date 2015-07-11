@@ -11,7 +11,7 @@ FaultsPopulator::FaultsPopulator(I_PacketDecoder& packetDecoder,
 
 void FaultsPopulator::populateData(const FaultsMessage& message)
 {
-   faultsData_.setMotorFaults(message.motorFaults());
-   faultsData_.setLimitFlags(message.limitFlags());
+   faultsData_.setMotorFaults(message.motorOneFaults());
+   faultsData_.setLimitFlags(message.motorOneLimitFlags());
    faultsData_.setBatteryFaults(message.batteryFaults());
 }
