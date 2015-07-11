@@ -120,6 +120,9 @@ border: none;</string>
            <property name="textFormat">
             <enum>Qt::PlainText</enum>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
           </widget>
          </item>
         </layout>
@@ -166,6 +169,12 @@ border: none;</string>
         </property>
         <item row="0" column="3" rowspan="2">
          <widget class="QWidget" name="historyWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>2</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -242,7 +251,10 @@ QLabel {
 background: none;</string>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fault History&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Fault History</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -286,6 +298,12 @@ background-color: rgb(60,60,60);
         </item>
         <item row="0" column="2" rowspan="2">
          <widget class="QWidget" name="batteryWindow" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -362,7 +380,10 @@ QLabel {
 background: none;</string>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Battery Pack Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Battery Pack Status</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -715,6 +736,12 @@ QLabel {
         </item>
         <item row="0" column="0" rowspan="2">
          <widget class="QWidget" name="motorWindow1" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
             <width>400</width>
@@ -805,7 +832,10 @@ background: none;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Motor Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Motor One Status</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -1189,6 +1219,12 @@ color:white;</string>
         </item>
         <item row="0" column="1" rowspan="2">
          <widget class="QWidget" name="motorWindow2" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
             <width>400</width>
@@ -1279,7 +1315,10 @@ background: none;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Motor Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Motor Two Status</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>

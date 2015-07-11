@@ -186,7 +186,10 @@ border-bottom-color: rgb(40,40,40);
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Communications&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Communication</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -642,7 +645,10 @@ border-bottom:none;
 background: none;</string>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Battery&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Battery</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -1391,7 +1397,10 @@ border:none;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Main Telemetry&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Main Telemetry</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -1842,7 +1851,10 @@ background: none;
 </string>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Graphs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>Graphs</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -1914,7 +1926,7 @@ background: none;
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>
@@ -1953,7 +1965,7 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>
@@ -1992,7 +2004,7 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>
@@ -2012,7 +2024,7 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>
@@ -2051,7 +2063,7 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>
@@ -2071,7 +2083,7 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>
@@ -2110,7 +2122,7 @@ border: none;</string>
                    <property name="styleSheet">
                     <string notr="true">border: none;</string>
                    </property>
-                   <property name="autoReplot">
+                   <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
                   </widget>

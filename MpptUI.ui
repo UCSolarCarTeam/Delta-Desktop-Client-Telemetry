@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>808</height>
+    <height>828</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -278,7 +278,10 @@ border-bottom-color: rgb(40,40,40);
 background: none;</string>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MPPT Input Output Values&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>MPPT Input Output Values</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
                 </property>
                </widget>
               </item>
@@ -546,10 +549,10 @@ padding-right: 5px;</string>
 border-left: none;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MPPT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>Mppt</string>
                     </property>
                     <property name="textFormat">
-                     <enum>Qt::RichText</enum>
+                     <enum>Qt::PlainText</enum>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -599,7 +602,10 @@ border-left: none;</string>
                      <string notr="true">border-top: none;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Efficiency&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>Efficiency</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::PlainText</enum>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -1032,7 +1038,10 @@ padding-right: 5px;</string>
                      <string notr="true">border-top: none;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;In&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>In</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::PlainText</enum>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -1275,7 +1284,10 @@ border-bottom: none;</string>
                      <string notr="true">border-top: none;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Out&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>Out</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::PlainText</enum>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -1294,7 +1306,10 @@ border-bottom: none;</string>
                      <string notr="true">border-top: none;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Type&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>Type</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::PlainText</enum>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -1314,7 +1329,10 @@ border-bottom: none;</string>
 border-right:none;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Mode&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>Mode</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::PlainText</enum>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
