@@ -36,5 +36,21 @@ public:
 	virtual QLabel& softwareOverCurrentLabel() = 0;
 	virtual QLabel& hardwareOverCurrentLabel() = 0;
 
+	virtual QLabel& ipmTemperatureOrMotorTemperatureLabel2() = 0;
+	virtual QLabel& busVoltageUpperLimitLabel2() = 0;
+	virtual QLabel& motorCurrentLabel2() = 0;
+	virtual QLabel& busVoltageLowerLimitLabel2() = 0;
+	virtual QLabel& outputVoltagePwmLabel2() = 0;
+	virtual QLabel& busCurrentLabel2() = 0;
+	virtual QLabel& velocityLabel2() = 0;
+	virtual QLabel& desaturationFaultLabel2() = 0;
+	virtual QLabel& badMotorPositionHallSequenceLabel2() = 0;
+	virtual QLabel& fifteenVoltRailUnderVoltageLockoutLabel2() = 0;
+	virtual QLabel& configReadErrorLabel2() = 0;
+	virtual QLabel& watchDogCausedLastResetLabel2() = 0;
+	virtual QLabel& dcBusOverVoltageLabel2() = 0;
+	virtual QLabel& softwareOverCurrentLabel2() = 0;
+	virtual QLabel& hardwareOverCurrentLabel2() = 0;
+
 	virtual QTextEdit& historyTextEdit() = 0;
-}; 
+};

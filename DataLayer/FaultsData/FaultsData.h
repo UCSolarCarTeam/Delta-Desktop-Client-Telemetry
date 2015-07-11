@@ -2,9 +2,9 @@
 
 #include "I_FaultsData.h"
 
-class MotorFaults;	
-class LimitFlags;	
-class BatteryFaults;	
+class MotorFaults;
+class LimitFlags;
+class BatteryFaults;
 
 class FaultsData : public I_FaultsData
 {
@@ -13,17 +13,23 @@ public:
 	virtual ~FaultsData();
 
 	/* FaultData Gets */
-	virtual MotorFaults motorFaults() const;
-	virtual LimitFlags limitFlags() const;
-	virtual BatteryFaults batteryFaults() const;
+	MotorFaults motorOneFaults() const;
+	LimitFlags motorOneLimitFlags() const;
+	MotorFaults motorTwoFaults() const;
+	LimitFlags motorTwoLimitFlags() const;
+	BatteryFaults batteryFaults() const;
 
 	/* FaultData Sets */
-	virtual void setMotorFaults(MotorFaults motorFaults);	
-	virtual void setLimitFlags(LimitFlags limitFlags);
-	virtual void setBatteryFaults(BatteryFaults batteryFaults);
+	void setMotorOneFaults(MotorFaults motorFaults);
+	void setMotorOneLimitFlags(LimitFlags limitFlags);
+	void setMotorTwoFaults(MotorFaults motorFaults);
+	void setMotorTwoLimitFlags(LimitFlags limitFlags);
+	void setBatteryFaults(BatteryFaults batteryFaults);
 
 private:
-	MotorFaults motorFaults_;
-	LimitFlags limitFlags_;
+	MotorFaults motorOneFaults_;
+	LimitFlags motorOneLimitFlags_;
+	MotorFaults motorTwoFaults_;
+	LimitFlags motorTwoLimitFlags_;
 	BatteryFaults batteryFaults_;
 };

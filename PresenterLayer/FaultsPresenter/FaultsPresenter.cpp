@@ -4,15 +4,19 @@
 FaultsPresenter::FaultsPresenter(const I_FaultsData& faultsData)
 : faultsData_ (faultsData)
 {
-	relayFaultsData();
+   relayFaultsData();
 }
 
 void FaultsPresenter::relayFaultsData()
 {
-	connect(&faultsData_, SIGNAL(motorFaultsReceived(MotorFaults)),
-			this, SIGNAL(motorFaultsReceived(MotorFaults)));
-	connect(&faultsData_, SIGNAL(limitFlagsReceived(LimitFlags)),
-			this, SIGNAL(limitFlagsReceived(LimitFlags)));
-	connect(&faultsData_, SIGNAL(batteryFaultsReceived(BatteryFaults)),
-			this, SIGNAL(batteryFaultsReceived(BatteryFaults)));
+   connect(&faultsData_, SIGNAL(motorOneFaultsReceived(MotorFaults)),
+         this, SIGNAL(motorOneFaultsReceived(MotorFaults)));
+   connect(&faultsData_, SIGNAL(motorOneLimitFlagsReceived(LimitFlags)),
+         this, SIGNAL(motorOneLimitFlagsReceived(LimitFlags)));
+   connect(&faultsData_, SIGNAL(motorTwoFaultsReceived(MotorFaults)),
+         this, SIGNAL(motorTwoFaultsReceived(MotorFaults)));
+   connect(&faultsData_, SIGNAL(motorTwoLimitFlagsReceived(LimitFlags)),
+         this, SIGNAL(motorTwoLimitFlagsReceived(LimitFlags)));
+   connect(&faultsData_, SIGNAL(batteryFaultsReceived(BatteryFaults)),
+         this, SIGNAL(batteryFaultsReceived(BatteryFaults)));
 }

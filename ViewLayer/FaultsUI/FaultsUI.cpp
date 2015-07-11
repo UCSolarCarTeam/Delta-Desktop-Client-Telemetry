@@ -14,7 +14,7 @@ FaultsUI::~FaultsUI()
 
 void FaultsUI::hideHeaderBar()
 {
-   ui->faultsTitleBar->hide();
+   ui->faultTitleLabel->hide();
 }
 
 
@@ -94,6 +94,34 @@ QLabel& FaultsUI::velocityLabel()
 {
    return *ui->velocityLabel;
 }
+QLabel& FaultsUI::ipmTemperatureOrMotorTemperatureLabel2()
+{
+   return *ui->ipmTemperatureOrMotorTemperatureLabel2;
+}
+QLabel& FaultsUI::busVoltageUpperLimitLabel2()
+{
+   return *ui->busVoltageUpperLimitLabel2;
+}
+QLabel& FaultsUI::motorCurrentLabel2()
+{
+   return *ui->motorCurrentLabel2;
+}
+QLabel& FaultsUI::busVoltageLowerLimitLabel2()
+{
+   return *ui->busVoltageLowerLimitLabel2;
+}
+QLabel& FaultsUI::outputVoltagePwmLabel2()
+{
+   return *ui->outputVoltagePwmLabel2;
+}
+QLabel& FaultsUI::busCurrentLabel2()
+{
+   return *ui->busCurrentLabel2;
+}
+QLabel& FaultsUI::velocityLabel2()
+{
+   return *ui->velocityLabel2;
+}
 QLabel& FaultsUI::desaturationFaultLabel()
 {
    return *ui->desaturationFaultLabel;
@@ -125,6 +153,38 @@ QLabel& FaultsUI::softwareOverCurrentLabel()
 QLabel& FaultsUI::hardwareOverCurrentLabel()
 {
    return *ui->hardwareOverCurrentLabel;
+}
+QLabel& FaultsUI::desaturationFaultLabel2()
+{
+   return *ui->desaturationFaultLabel2;
+}
+QLabel& FaultsUI::badMotorPositionHallSequenceLabel2()
+{
+   return *ui->badMotorPositionHallSequenceLabel2;
+}
+QLabel& FaultsUI::fifteenVoltRailUnderVoltageLockoutLabel2()
+{
+   return *ui->fifteenVoltRailUnderVoltageLockoutLabel2;
+}
+QLabel& FaultsUI::configReadErrorLabel2()
+{
+   return *ui->configReadErrorLabel2;
+}
+QLabel& FaultsUI::watchDogCausedLastResetLabel2()
+{
+   return *ui->watchDogCausedLastResetLabel2;
+}
+QLabel& FaultsUI::dcBusOverVoltageLabel2()
+{
+   return *ui->dcBusOverVoltageLabel2;
+}
+QLabel& FaultsUI::softwareOverCurrentLabel2()
+{
+   return *ui->softwareOverCurrentLabel2;
+}
+QLabel& FaultsUI::hardwareOverCurrentLabel2()
+{
+   return *ui->hardwareOverCurrentLabel2;
 }
 
 QLabel& FaultsUI::cmuCommunicationsTimeoutLabel()

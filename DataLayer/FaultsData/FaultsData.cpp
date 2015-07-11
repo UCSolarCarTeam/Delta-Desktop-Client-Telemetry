@@ -1,8 +1,10 @@
 #include "FaultsData.h"
 
 FaultsData::FaultsData()
-: motorFaults_(0)
-, limitFlags_(0)
+: motorOneFaults_(0)
+, motorOneLimitFlags_(0)
+, motorTwoFaults_(0)
+, motorTwoLimitFlags_(0)
 , batteryFaults_(0)
 {
 }
@@ -11,13 +13,24 @@ FaultsData::~FaultsData()
 }
 
 /* FaultData Gets */
-MotorFaults FaultsData::motorFaults() const
+MotorFaults FaultsData::motorOneFaults() const
 {
-   return motorFaults_;
+   return motorOneFaults_;
 }
-LimitFlags FaultsData::limitFlags() const
+
+LimitFlags FaultsData::motorOneLimitFlags() const
 {
-    return limitFlags_;
+   return motorOneLimitFlags_;
+}
+
+MotorFaults FaultsData::motorTwoFaults() const
+{
+   return motorTwoFaults_;
+}
+
+LimitFlags FaultsData::motorTwoLimitFlags() const
+{
+   return motorTwoLimitFlags_;
 }
 BatteryFaults FaultsData::batteryFaults() const
 {
@@ -25,15 +38,25 @@ BatteryFaults FaultsData::batteryFaults() const
 }
 
 /* FaultData Sets */
-void FaultsData::setMotorFaults(MotorFaults motorFaults)
+void FaultsData::setMotorOneFaults(MotorFaults motorFaults)
 {
-   motorFaults_ = motorFaults;
-   emit motorFaultsReceived(motorFaults_);
+   motorOneFaults_ = motorFaults;
+   emit motorOneFaultsReceived(motorOneFaults_);
 }
-void FaultsData::setLimitFlags(LimitFlags limitFlags)
+void FaultsData::setMotorOneLimitFlags(LimitFlags limitFlags)
 {
-   limitFlags_ = limitFlags;
-   emit limitFlagsReceived(limitFlags_);
+   motorOneLimitFlags_ = limitFlags;
+   emit motorOneLimitFlagsReceived(motorOneLimitFlags_);
+}
+void FaultsData::setMotorTwoFaults(MotorFaults motorFaults)
+{
+   motorTwoFaults_ = motorFaults;
+   emit motorTwoFaultsReceived(motorTwoFaults_);
+}
+void FaultsData::setMotorTwoLimitFlags(LimitFlags limitFlags)
+{
+   motorTwoLimitFlags_ = limitFlags;
+   emit motorTwoLimitFlagsReceived(motorTwoLimitFlags_);
 }
 void FaultsData::setBatteryFaults(BatteryFaults batteryFaults)
 {
