@@ -5,6 +5,7 @@
 
 class BatteryPresenter;
 class VehiclePresenter;
+class PowerPresenter;
 class PowerGraphsPresenter;
 class CommunicationPresenter;
 class PowerUI;
@@ -16,6 +17,7 @@ class PowerView : public QObject
 public:
    PowerView(BatteryPresenter& batteryPresenter,
              VehiclePresenter& vehiclePresenter,
+             PowerPresenter& powerPresenter,
              PowerGraphsPresenter& graphsPresenter,
              CommunicationPresenter& communicationPresenter,
              PowerUI& ui);
@@ -24,6 +26,7 @@ public:
 private:
    BatteryPresenter& batteryPresenter_;
    VehiclePresenter& vehiclePresenter_;
+   PowerPresenter& powerPresenter_;
    PowerGraphsPresenter& graphsPresenter_;
    CommunicationPresenter& communicationPresenter_;
    PowerUI& ui_;

@@ -1662,7 +1662,7 @@ border-top: none;
                    <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="text">
-                   <string>Battery Current (mA)</string>
+                   <string>Battery Current (A)</string>
                   </property>
                   <property name="textFormat">
                    <enum>Qt::PlainText</enum>

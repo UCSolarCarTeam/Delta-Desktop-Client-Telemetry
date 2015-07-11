@@ -17,13 +17,13 @@ public slots:
     virtual void updateGraphData() = 0;
 
 signals:
-    virtual void busCurrentGraphDataUpdated(PowerGraphData);
-    virtual void busVoltageGraphDataUpdated(PowerGraphData);
-    virtual void busPowerGraphDataUpdated(PowerGraphData);
+    void busCurrentGraphDataUpdated(PowerGraphData);
+    void busVoltageGraphDataUpdated(PowerGraphData);
+    void busPowerGraphDataUpdated(PowerGraphData);
 
-    virtual void drivingCurrentGraphDataUpdated(PowerGraphData);
-    virtual void drivingSpeedGraphDataUpdated(PowerGraphData);
+    void drivingCurrentGraphDataUpdated(PowerGraphData);
+    void drivingSpeedGraphDataUpdated(PowerGraphData);
 
-    virtual void cellVoltageGraphDataUpdated(PowerGraphData);
-    virtual void cellTemperatureGraphDataUpdated(PowerGraphData);
+    void cellTemperatureGraphDataUpdated(PowerGraphData);
+    void cellVoltageGraphDataUpdated(PowerGraphData);
 };

@@ -21,6 +21,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 , powerView_(new PowerView(
       presenterContainer.batteryPresenter(),
       presenterContainer.vehiclePresenter(),
+      presenterContainer.powerPresenter(),
       presenterContainer.powerGraphsPresenter(),
       presenterContainer.communicationPresenter(),
       *powerUI_))

@@ -1,6 +1,7 @@
 #include "PowerView.h"
 #include "../../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
 #include "../../PresenterLayer/VehiclePresenter/VehiclePresenter.h"
+#include "../../PresenterLayer/PowerPresenter/PowerPresenter.h"
 #include "../../PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h"
 #include "../../PresenterLayer/CommunicationPresenter/CommunicationPresenter.h"
 #include "../PowerUI/PowerUI.h"
@@ -11,11 +12,13 @@
 
 PowerView::PowerView(BatteryPresenter& batteryPresenter,
                      VehiclePresenter& vehiclePresenter,
+                     PowerPresenter& powerPresenter,
                      PowerGraphsPresenter& graphsPresenter,
                      CommunicationPresenter& communicationPresenter,
                      PowerUI& ui)
 : batteryPresenter_(batteryPresenter)
 , vehiclePresenter_(vehiclePresenter)
+, powerPresenter_(powerPresenter)
 , graphsPresenter_(graphsPresenter)
 , communicationPresenter_(communicationPresenter)
 , ui_(ui)
@@ -33,10 +36,12 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(driverSetCurrentReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(vehicleVelocityMetersPerSecondReceived(double)),
             this, SLOT(vehicleVelocityMetersPerSecondReceived(double)));
-    connect(&vehiclePresenter_, SIGNAL(busVoltageReceived(double)),
+    connect(&powerPresenter_, SIGNAL(busVoltageReceived(double)),
             this, SLOT(busVoltageReceived(double)));
+    connect(&powerPresenter_, SIGNAL(busCurrentAReceived(double)),
+            this, SLOT(busCurrentAReceived(double)));
     connect(&batteryPresenter_, SIGNAL(batteryCurrentReceived(double)),
-            this, SLOT(batteryCurrentAReceived(double)));
+            this, SLOT(batteryCurrentReceived(double)));
     connect(&batteryPresenter_, SIGNAL(batteryVoltageReceived(double)),
             this, SLOT(batteryVoltageReceived(double)));
 
