@@ -59,6 +59,10 @@ QPushButton& EscapeDialog::closePushButton()
 {
    return *ui->closePushButton;
 }
+QPushButton& EscapeDialog::playbackModePushButton()
+{
+   return *ui->playbackModePushButton;
+}
 QCheckBox& EscapeDialog::fullscreenCheckBox()
 {
    return *ui->fullscreenCheckBox;

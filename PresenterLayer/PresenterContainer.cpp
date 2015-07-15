@@ -6,6 +6,7 @@
 #include "FaultsPresenter/FaultsPresenter.h"
 #include "GraphsPresenter/PowerGraphsPresenter.h"
 #include "MpptPresenter/MpptPresenter.h"
+#include "PlaybackPresenter/PlaybackPresenter.h"
 #include "PowerPresenter/PowerPresenter.h"
 #include "PresenterContainer.h"
 #include "VehiclePresenter/VehiclePresenter.h"
@@ -20,10 +21,11 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
 , powerPresenter_(new PowerPresenter(dataContainer.powerData()))
 , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
 , powerGraphsPresenter_(new PowerGraphsPresenter(dataContainer.vehicleData(),
-		dataContainer.powerData(),
-		dataContainer.batteryData()))
+   dataContainer.powerData(),
+   dataContainer.batteryData()))
+, playbackPresenter_(new PlaybackPresenter(
+   businessContainer.playbackService()))
 {
-   Q_UNUSED(businessContainer); //TODO
 }
 
 PresenterContainer::~PresenterContainer()
@@ -63,4 +65,9 @@ FaultsPresenter& PresenterContainer::faultsPresenter()
 PowerGraphsPresenter& PresenterContainer::powerGraphsPresenter()
 {
 	return *powerGraphsPresenter_;
+}
+
+PlaybackPresenter& PresenterContainer::playbackPresenter()
+{
+   return *playbackPresenter_;
 }

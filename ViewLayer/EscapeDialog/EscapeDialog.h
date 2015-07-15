@@ -22,6 +22,7 @@ public:
     QPushButton& exitPushButton();
     QPushButton& okPushButton();
     QPushButton& closePushButton();
+    QPushButton& playbackModePushButton();
     QCheckBox& fullscreenCheckBox();
     QCheckBox& multiWindowCheckBox();
     QStackedWidget& optionsDisplayWidget();

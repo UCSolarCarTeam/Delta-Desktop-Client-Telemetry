@@ -7,6 +7,8 @@
 #include "MpptUI/MpptUI.h"
 #include "MpptView/MpptView.h"
 #include "OverlordWidget/OverlordWidget.h"
+#include "PlaybackUI/PlaybackUI.h"
+#include "PlaybackView/PlaybackView.h"
 #include "PowerUI/PowerUI.h"
 #include "PowerView/PowerView.h"
 #include "PresenterLayer/PresenterContainer.h"
@@ -17,6 +19,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 , powerUI_(new PowerUI())
 , mpptUI_(new MpptUI())
 , faultsUI_(new FaultsUI())
+, playbackUI_(new PlaybackUI)
 , escapeDialogView_(new EscapeDialogView(*escapeDialog_))
 , powerView_(new PowerView(
       presenterContainer.batteryPresenter(),
@@ -30,6 +33,10 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 , overlordWidget_(new OverlordWidget(QList<I_SolarCarWindow*>() << powerUI_ << mpptUI_ << faultsUI_,
       escapeDialog_))
 , displayView_(new DisplayView(*overlordWidget_))
+, playbackView_(new PlaybackView(
+   presenterContainer.playbackPresenter(),
+   *playbackUI_,
+   *escapeDialog_))
 {
 }
 

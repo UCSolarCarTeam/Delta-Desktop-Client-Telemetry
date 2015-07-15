@@ -93,7 +93,7 @@ LoggerService::~LoggerService()
 
 void LoggerService::handleConnectionServiceDebugMessage(QString message)
 {
-   qDebug() << message;
+   qDebug() << QDateTime::currentDateTime() << message;
 }
 
 void LoggerService::handleFramedPacket(QByteArray packet)

@@ -27,7 +27,6 @@ void EscapeDialogView::handleSettingsSelectionPushButtonClicked()
     ui_.settingsSelectionPushButton().setStyleSheet("border-top:1px solid rgb(50,50,50);background: rgb(100,100,100);");
     ui_.aboutSelectionPushButton().setStyleSheet("background: rgb(50,50,50);");
     ui_.optionsDisplayWidget().setCurrentIndex(1);
-    qDebug() << "settings button clicked"; // placeholder code
 }
 
 void EscapeDialogView::handleAboutSelectionPushButtonClicked()
@@ -35,7 +34,6 @@ void EscapeDialogView::handleAboutSelectionPushButtonClicked()
     ui_.settingsSelectionPushButton().setStyleSheet("border-top:1px solid rgb(50,50,50);background: rgb(50,50,50);");
     ui_.aboutSelectionPushButton().setStyleSheet("background: rgb(100,100,100);");
     ui_.optionsDisplayWidget().setCurrentIndex(0);
-    qDebug() << "about button clicked"; // placeholder code
 }
 
 void EscapeDialogView::handleExitPushButtonClicked()

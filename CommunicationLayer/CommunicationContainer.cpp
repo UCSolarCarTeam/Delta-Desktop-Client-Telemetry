@@ -63,6 +63,11 @@ I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
    return *packetSynchronizer_;
 }
 
+I_DataInjectionService& CommunicationContainer::dataInjectionService()
+{
+   return *packetSynchronizer_;
+}
+
 I_PacketDecoder& CommunicationContainer::packetDecoder()
 {
    return *packetDecoder_;

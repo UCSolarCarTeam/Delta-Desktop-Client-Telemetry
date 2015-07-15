@@ -2,17 +2,18 @@
 
 #include <QScopedPointer>
 
-class DataContainer;
+class BatteryPresenter;
+class BusinessContainer;
 class CommunicationContainer;
 class CommunicationPresenter;
-class BusinessContainer;
+class DataContainer;
 class DisplayPresenter;
-class BatteryPresenter;
-class VehiclePresenter;
-class MpptPresenter;
-class PowerPresenter;
 class FaultsPresenter;
+class MpptPresenter;
+class PlaybackPresenter;
 class PowerGraphsPresenter;
+class PowerPresenter;
+class VehiclePresenter;
 
 class PresenterContainer
 {
@@ -29,6 +30,7 @@ public:
    PowerPresenter& powerPresenter();
    FaultsPresenter& faultsPresenter();
    PowerGraphsPresenter& powerGraphsPresenter();
+   PlaybackPresenter& playbackPresenter();
 
 private:
    QScopedPointer<BatteryPresenter> batteryPresenter_;
@@ -38,4 +40,5 @@ private:
    QScopedPointer<PowerPresenter> powerPresenter_;
    QScopedPointer<FaultsPresenter> faultsPresenter_;
    QScopedPointer<PowerGraphsPresenter> powerGraphsPresenter_;
+   QScopedPointer<PlaybackPresenter> playbackPresenter_;
 };

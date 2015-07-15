@@ -28,16 +28,25 @@ void PacketSynchronizer::handleConnectionCreated()
       this, SLOT(handleIncommingSerialData()));
 }
 
+void PacketSynchronizer::injectData(const QByteArray& data)
+{
+   handleIncommingData(data);
+}
+
 void PacketSynchronizer::handleIncommingSerialData()
 {
    QByteArray incommingSerialData = inputDevice_.readAll();
+   handleIncommingData(incommingSerialData);
+}
 
-   if (incommingSerialData.isEmpty())
+void PacketSynchronizer::handleIncommingData(const QByteArray& data)
+{
+   if (data.isEmpty())
    {
       return;
    }
 
-   buffer_.append(incommingSerialData);
+   buffer_.append(data);
    if (alignStartOfPacketToBeginningOfBuffer())
    {
       while(extractPacketIfComplete());

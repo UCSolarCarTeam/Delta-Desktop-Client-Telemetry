@@ -2,17 +2,19 @@
 
 #include <QScopedPointer>
 
-class PresenterContainer;
-class EscapeDialog;
-class PowerUI;
-class MpptUI;
-class FaultsUI;
-class EscapeDialogView;
-class PowerView;
-class MpptView;
-class FaultsView;
-class OverlordWidget;
 class DisplayView;
+class EscapeDialog;
+class EscapeDialogView;
+class FaultsUI;
+class FaultsView;
+class MpptUI;
+class MpptView;
+class OverlordWidget;
+class PlaybackUI;
+class PlaybackView;
+class PowerUI;
+class PowerView;
+class PresenterContainer;
 
 class ViewContainer
 {
@@ -25,10 +27,12 @@ private:
    PowerUI* powerUI_;
    MpptUI* mpptUI_;
    FaultsUI* faultsUI_;
+   QScopedPointer<PlaybackUI> playbackUI_;
    QScopedPointer<EscapeDialogView> escapeDialogView_;
    QScopedPointer<PowerView> powerView_;
    QScopedPointer<MpptView> mpptView_;
    QScopedPointer<FaultsView> faultsView_;
    QScopedPointer<OverlordWidget> overlordWidget_;
    QScopedPointer<DisplayView> displayView_;
+   QScopedPointer<PlaybackView> playbackView_;
 };

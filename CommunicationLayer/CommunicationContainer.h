@@ -9,6 +9,7 @@ class DataContainer;
 class DriverDetailsPopulator;
 class FaultsPopulator;
 class I_ConnectionService;
+class I_DataInjectionService;
 class I_PacketDecoder;
 class I_PacketSynchronizer;
 class KeyDriverControlPopulator;
@@ -26,6 +27,7 @@ public:
 
    I_ConnectionService& connectionService();
    I_PacketSynchronizer& packetSynchronizer();
+   I_DataInjectionService& dataInjectionService();
    I_PacketDecoder& packetDecoder();
 
 private:

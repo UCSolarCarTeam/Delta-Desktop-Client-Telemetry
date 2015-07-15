@@ -26,6 +26,7 @@ UI_DIR = ../release/.ui
 SOURCES += \
     BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/LoggerService/LoggerService.cpp \
+    BusinessLayer/PlaybackService/PlaybackService.cpp \
     CommunicationLayer/CommunicationContainer.cpp \
     CommunicationLayer/ConnectionService/RadioConnectionService.cpp \
     CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
@@ -60,9 +61,10 @@ SOURCES += \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
     PresenterLayer/CommunicationPresenter/CommunicationPresenter.cpp \
     PresenterLayer/FaultsPresenter/FaultsPresenter.cpp \
-    PresenterLayer/GraphsPresenter/PowerGraphsPresenter.cpp \
     PresenterLayer/GraphsPresenter/PowerGraphData.cpp \
+    PresenterLayer/GraphsPresenter/PowerGraphsPresenter.cpp \
     PresenterLayer/MpptPresenter/MpptPresenter.cpp \
+    PresenterLayer/PlaybackPresenter/PlaybackPresenter.cpp \
     PresenterLayer/PowerPresenter/PowerPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
@@ -76,6 +78,8 @@ SOURCES += \
     ViewLayer/MpptUI/MpptUI.cpp \
     ViewLayer/MpptView/MpptView.cpp \
     ViewLayer/OverlordWidget/OverlordWidget.cpp \
+    ViewLayer/PlaybackUI/PlaybackUI.cpp \
+    ViewLayer/PlaybackView/PlaybackView.cpp \
     ViewLayer/PowerUI/PowerUI.cpp \
     ViewLayer/PowerView/PowerView.cpp \
     ViewLayer/ViewContainer.cpp
@@ -83,6 +87,8 @@ SOURCES += \
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
     BusinessLayer/LoggerService/LoggerService.h \
+    BusinessLayer/PlaybackService/I_PlaybackService.h \
+    BusinessLayer/PlaybackService/PlaybackService.h \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/ConnectionService/I_ConnectionService.h \
     CommunicationLayer/ConnectionService/RadioConnectionService.h \
@@ -109,17 +115,18 @@ HEADERS  += \
     CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.h \
     CommunicationLayer/PacketDecoder/I_PacketDecoder.h \
     CommunicationLayer/PacketDecoder/PacketDecoder.h \
+    CommunicationLayer/PacketSynchronizer/I_DataInjectionService.h \
     CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
     CommunicationLayer/PacketUnstuffer/I_PacketUnstuffer.h \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.h \
-    DataLayer/MpptData/MpptData.h \
-    DataLayer/MpptData/I_MpptData.h \
     DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/DataContainer.h \
-    DataLayer/FaultsData/I_FaultsData.h \
     DataLayer/FaultsData/FaultsData.h \
+    DataLayer/FaultsData/I_FaultsData.h \
+    DataLayer/MpptData/I_MpptData.h \
+    DataLayer/MpptData/MpptData.h \
     DataLayer/PowerData/I_PowerData.h \
     DataLayer/PowerData/PowerData.h \
     DataLayer/VehicleData/I_VehicleData.h \
@@ -128,9 +135,10 @@ HEADERS  += \
     PresenterLayer/CommunicationPresenter/CommunicationPresenter.h \
     PresenterLayer/FaultsPresenter/FaultsPresenter.h \
     PresenterLayer/GraphsPresenter/I_GraphsPresenter.h \
-    PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h \
     PresenterLayer/GraphsPresenter/PowerGraphData.h \
+    PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h \
     PresenterLayer/MpptPresenter/MpptPresenter.h \
+    PresenterLayer/PlaybackPresenter/PlaybackPresenter.h \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
@@ -148,17 +156,21 @@ HEADERS  += \
     ViewLayer/MpptView/MpptView.h \
     ViewLayer/OverlordWidget/I_OverlordWidget.h \
     ViewLayer/OverlordWidget/OverlordWidget.h \
+    ViewLayer/PlaybackUI/I_PlaybackUI.h \
+    ViewLayer/PlaybackUI/PlaybackUI.h \
+    ViewLayer/PlaybackView/PlaybackView.h \
     ViewLayer/PowerUI/I_PowerUI.h \
     ViewLayer/PowerUI/PowerUI.h \
     ViewLayer/PowerView/PowerView.h \
     PresenterLayer/GraphsPresenter/I_PowerGraphsPresenter.h
 
 FORMS    += \
-    SolarCarTestUI.ui \
+    EscapeDialog.ui \
     FaultsUI.ui \
     MpptUI.ui \
+    PlaybackUI.ui \
     PowerUI.ui \
-    EscapeDialog.ui
+    SolarCarTestUI.ui
 
 RESOURCES += \
     uiresources.qrc
