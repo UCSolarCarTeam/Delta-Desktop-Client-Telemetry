@@ -516,6 +516,35 @@ border:none;
                </item>
                <item row="2" column="0">
                 <widget class="QPushButton" name="playbackModePushButton">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+padding: 3px;
+padding-top:5px;
+margin: 5px;
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(140,140,140), stop: 1 rgb(100,100,100));
+}
+QPushButton:hover{
+padding: 3px;
+padding-top:5px;
+margin: 5px;
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(160,160,160), stop: 1 rgb(120,120,120));
+}
+QPushButton:pressed{
+padding: 3px;
+padding-top:5px;
+margin: 5px;
+color: rgb(255,255,255);
+border: 1px solid rgb(45,45,45);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(120,120,120), stop: 1 rgb(80,80,80));
+}</string>
+                 </property>
                  <property name="text">
                   <string>Playback Mode</string>
                  </property>
