@@ -115,9 +115,9 @@ HEADERS  += \
     CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.h \
     CommunicationLayer/PacketDecoder/I_PacketDecoder.h \
     CommunicationLayer/PacketDecoder/PacketDecoder.h \
-    CommunicationLayer/PacketSynchronizer/I_DataInjectionService.h \
     CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h \
+    CommunicationLayer/PacketUnstuffer/I_DataInjectionService.h \
     CommunicationLayer/PacketUnstuffer/I_PacketUnstuffer.h \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.h \
     DataLayer/BatteryData/BatteryData.h \

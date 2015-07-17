@@ -7,5 +7,5 @@ class I_DataInjectionService
 public:
    virtual ~I_DataInjectionService() {}
 
-   virtual void injectData(const QByteArray& data) = 0;
+   virtual void injectFramedData(const QByteArray& data) = 0;
 };

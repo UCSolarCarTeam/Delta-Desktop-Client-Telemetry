@@ -18,6 +18,11 @@ PacketUnstuffer::~PacketUnstuffer()
 {
 }
 
+void PacketUnstuffer::injectFramedData(const QByteArray& data)
+{
+   handleFramedPacket(data);
+}
+
 void PacketUnstuffer::handleFramedPacket(QByteArray packet)
 {
    if (!isPacketAtLeastMinimumSize(packet))

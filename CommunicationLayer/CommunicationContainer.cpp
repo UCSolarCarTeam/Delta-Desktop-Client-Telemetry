@@ -65,7 +65,7 @@ I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
 
 I_DataInjectionService& CommunicationContainer::dataInjectionService()
 {
-   return *packetSynchronizer_;
+   return *packetUnstuffer_;
 }
 
 I_PacketDecoder& CommunicationContainer::packetDecoder()

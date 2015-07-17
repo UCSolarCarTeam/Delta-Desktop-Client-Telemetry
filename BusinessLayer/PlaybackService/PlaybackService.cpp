@@ -5,7 +5,7 @@
 #include <QFile>
 
 #include "PlaybackService.h"
-#include "../../CommunicationLayer/PacketSynchronizer/I_DataInjectionService.h"
+#include "../../CommunicationLayer/PacketUnstuffer/I_DataInjectionService.h"
 
 namespace
 {
@@ -74,6 +74,6 @@ void PlaybackService::injectPriorMessagesBeforePosition(int position)
 
    for (int i = positionOfFirstMessage; i <= position; i++)
    {
-      injectionService_.injectData(data_.at(i).second);
+      injectionService_.injectFramedData(data_.at(i).second);
    }
 }

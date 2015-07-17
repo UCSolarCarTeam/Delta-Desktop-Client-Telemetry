@@ -28,11 +28,6 @@ void PacketSynchronizer::handleConnectionCreated()
       this, SLOT(handleIncommingSerialData()));
 }
 
-void PacketSynchronizer::injectData(const QByteArray& data)
-{
-   handleIncommingData(data);
-}
-
 void PacketSynchronizer::handleIncommingSerialData()
 {
    QByteArray incommingSerialData = inputDevice_.readAll();
