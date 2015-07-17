@@ -9,7 +9,7 @@
 
 namespace
 {
-   const int NUMBER_OF_MESSAGES_TO_INJECT = 100;
+   const int NUMBER_OF_MESSAGES_TO_INJECT = 20;
 }
 
 PlaybackService::PlaybackService(I_DataInjectionService& injectionService)
@@ -38,6 +38,7 @@ void PlaybackService::loadFile(const QString& fileName)
    {
       QDateTime date;
       QByteArray data;
+
       dataStreamIn >> date >> data;
       data_ << QPair<QDateTime, QByteArray>(date, data);
    }

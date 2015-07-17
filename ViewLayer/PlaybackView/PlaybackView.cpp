@@ -1,16 +1,24 @@
 #include <QDateTime>
 #include <QFileDialog>
+#include <QTimer>
 
 #include "../../PresenterLayer/PlaybackPresenter/PlaybackPresenter.h"
 #include "../EscapeDialog/I_EscapeDialog.h"
 #include "../PlaybackUI/I_PlaybackUI.h"
 #include "PlaybackView.h"
 
+namespace
+{
+   const int SLIDER_UPDATE_FREQUENCY = 400;
+}
+
 PlaybackView::PlaybackView(PlaybackPresenter& playbackPresenter,
    I_PlaybackUI& ui,
    I_EscapeDialog& escapeDialog)
 : playbackPresenter_(playbackPresenter)
 , ui_(ui)
+, lastPosition_(0)
+, sliderUpdateTimer_(new QTimer)
 {
    connect(&ui_.openButton(), SIGNAL(clicked()), this, SLOT(handleOpenFile()));
    connect(&ui_.exitButton(), SIGNAL(clicked()), this, SLOT(handleCloseButton()));
@@ -20,6 +28,13 @@ PlaybackView::PlaybackView(PlaybackPresenter& playbackPresenter,
       this, SLOT(handleDateUpdated(const QDateTime&)));
    connect(&escapeDialog.playbackModePushButton(), SIGNAL(clicked()),
       this, SLOT(handleRequestToOpenPlaybackMode()));
+
+   sliderUpdateTimer_->setSingleShot(false);
+   sliderUpdateTimer_->setInterval(SLIDER_UPDATE_FREQUENCY);
+   sliderUpdateTimer_->start();
+
+   connect(sliderUpdateTimer_.data(), SIGNAL(timeout()),
+      this, SLOT(handleTimeout()));
 }
 
 PlaybackView::~PlaybackView()
@@ -54,4 +69,13 @@ void PlaybackView::handleSliderRangesUpdated(int min, int max)
 void PlaybackView::handleDateUpdated(const QDateTime& date)
 {
    ui_.playbackTimeLabel().setText(date.toString("Thh:mm:ss:zzz"));
+}
+
+void PlaybackView::handleTimeout()
+{
+   if (lastPosition_ != ui_.playbackPositionSlider().sliderPosition())
+   {
+      lastPosition_ = ui_.playbackPositionSlider().sliderPosition();
+      playbackPresenter_.loadPosition(lastPosition_);
+   }
 }

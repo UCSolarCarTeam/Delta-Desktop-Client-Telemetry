@@ -1,7 +1,9 @@
 #pragma once
 
 #include <QObject>
+#include <QScopedPointer>
 class QDateTime;
+class QTimer;
 
 class I_EscapeDialog;
 class I_PlaybackUI;
@@ -21,8 +23,11 @@ private slots:
    void handleCloseButton();
    void handleSliderRangesUpdated(int min, int max);
    void handleDateUpdated(const QDateTime& date);
+   void handleTimeout();
 
 private:
    PlaybackPresenter& playbackPresenter_;
    I_PlaybackUI& ui_;
+   int lastPosition_;
+   QScopedPointer<QTimer> sliderUpdateTimer_;
 };
