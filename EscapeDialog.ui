@@ -97,7 +97,7 @@ font-size: 17px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">font-family: &quot;AvenirLTStd&quot;;
-border:1px solid rgb(50,50,50);</string>
+border:1px solid rgb(40,40,40);</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
@@ -259,6 +259,7 @@ margin: 3px;
               <string notr="true">QWidget{
 background: rgb(50,50,50);
 border:1px solid rgb(50,50,50);
+border-left: 1px solid rgb(40,40,40);
 }
 QPushButton{
 border-bottom:none;
@@ -344,6 +345,7 @@ background: rgb(100,100,100);</string>
              </property>
              <property name="styleSheet">
               <string notr="true">border:1px solid rgb(50,50,50);
+border-right:1px solid rgb(40,40,40);
 border-left:none;
 background-color: rgb(70,70,70);
 
