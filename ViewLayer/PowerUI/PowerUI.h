@@ -71,6 +71,8 @@ public:
     QLabel& setBatteryCMU4Cell7Voltage();
     QLabel& setBatteryCMU4Cell8Voltage();
 
+    QList<QLabel*>& batteryCMUCellVoltageLabels();
+
     QPushButton& busGraphButton();
     QPushButton& driverGraphButton();
     QPushButton& batteryGraphButton();
@@ -93,6 +95,7 @@ public:
     
 private:
    Ui::PowerUI *ui_;
+   QList<QLabel*> batteryCMUCellVoltageLabels_;
    QwtPlotCurve* positiveBusCurrentCurve_;
    QwtPlotCurve* negativeBusCurrentCurve_;
    QwtPlotCurve* busVoltageCurve_;
