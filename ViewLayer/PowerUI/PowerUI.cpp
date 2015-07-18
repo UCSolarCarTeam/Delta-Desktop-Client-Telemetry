@@ -9,7 +9,8 @@ PowerUI::PowerUI()
 {
 
     ui_->setupUi(this);
-    busCurrentCurve_ = new QwtPlotCurve("Bus Current");
+    positiveBusCurrentCurve_ = new QwtPlotCurve("Positive Bus Current");
+    negativeBusCurrentCurve_ = new QwtPlotCurve("Negative Bus Current");
     busVoltageCurve_ = new QwtPlotCurve("Bus Voltage");
     busPowerCurve_ = new QwtPlotCurve("Bus Power");
     setSpeedCurve_ = new QwtPlotCurve("Set");
@@ -258,9 +259,13 @@ QStackedWidget& PowerUI::setGraphsStackedWidget()
 {
     return *ui_->graphsStackedWidget;
 }
-QwtPlotCurve& PowerUI::setBusCurrentCurve()
+QwtPlotCurve& PowerUI::setPositiveBusCurrentCurve()
 {
-    return *busCurrentCurve_;
+    return *positiveBusCurrentCurve_;
+} 
+QwtPlotCurve& PowerUI::setNegativeBusCurrentCurve()
+{
+    return *negativeBusCurrentCurve_;
 } 
 QwtPlotCurve& PowerUI::setBusVoltageCurve()
 {
@@ -328,10 +333,12 @@ void PowerUI::setupGraphs()
     ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT/5);
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
-    busCurrentCurve_->setPen(*new QPen(Qt::yellow));
-    busCurrentCurve_->attach(ui_->busCurrentGraph);
-    // QwtLegend* busCurrentGraphLegend = new QwtLegend;
-    // ui_->busCurrentGraph->insertLegend(busCurrentGraphLegend, QwtPlot::RightLegend);
+    positiveBusCurrentCurve_->setPen(*new QPen(Qt::green));
+    positiveBusCurrentCurve_->attach(ui_->busCurrentGraph);
+    negativeBusCurrentCurve_->setPen(*new QPen(Qt::red));
+    negativeBusCurrentCurve_->attach(ui_->busCurrentGraph);
+    QwtLegend* busCurrentGraphLegend = new QwtLegend;
+    ui_->busCurrentGraph->insertLegend(busCurrentGraphLegend, QwtPlot::RightLegend);
 
     ui_->busVoltageGraph->setTitle("Bus Voltage Graph");
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (V)");

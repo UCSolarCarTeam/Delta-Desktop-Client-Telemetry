@@ -195,7 +195,8 @@ void PowerView::mod3CellVoltagesReceived(QList<double> mod3CellVoltages)
 
 void PowerView::updateBusCurrentGraph(PowerGraphData graphData)
 {
-    ui_.setBusCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setPositiveBusCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    ui_.setNegativeBusCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
 }
 void PowerView::updateBusVoltageGraph(PowerGraphData graphData)
 {

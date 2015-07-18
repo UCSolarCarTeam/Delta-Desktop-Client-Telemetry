@@ -3,7 +3,7 @@
 
 namespace
 {
-   const int BUS_CURRENT_DATA_SETS_ = 1;
+   const int BUS_CURRENT_DATA_SETS_ = 2;
    const int BUS_VOLTAGE_DATA_SETS_ = 1;
    const int BUS_POWER_DATA_SETS_ = 1;
    const int DRIVER_CURRENT_DATA_SETS_ = 1;
@@ -76,6 +76,7 @@ void PowerGraphsPresenter::updateBusCurrentGraphData()
 {
     double busCurrentData [BUS_CURRENT_DATA_SETS_];
 	busCurrentData[0] = powerData_.busCurrentA();
+	busCurrentData[1] = powerData_.busCurrentA() * -1;
 
 	busCurrentGraphData_.addData(busCurrentData);
 	emit busCurrentGraphDataUpdated(busCurrentGraphData_);

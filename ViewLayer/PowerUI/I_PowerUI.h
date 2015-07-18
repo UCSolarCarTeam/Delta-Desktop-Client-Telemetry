@@ -75,7 +75,8 @@ public:
     virtual QPushButton& batteryGraphButton() = 0;
 
     virtual QStackedWidget& setGraphsStackedWidget() = 0;
-    virtual QwtPlotCurve& setBusCurrentCurve() = 0; 
+    virtual QwtPlotCurve& setPositiveBusCurrentCurve() = 0; 
+    virtual QwtPlotCurve& setNegativeBusCurrentCurve() = 0; 
     virtual QwtPlotCurve& setBusVoltageCurve() = 0; 
     virtual QwtPlotCurve& setBusPowerCurve() = 0; 
     virtual QwtPlotCurve& setSetSpeedCurve() = 0; 

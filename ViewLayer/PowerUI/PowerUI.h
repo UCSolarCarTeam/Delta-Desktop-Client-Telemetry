@@ -76,7 +76,8 @@ public:
     QPushButton& batteryGraphButton();
 
     QStackedWidget& setGraphsStackedWidget();
-    QwtPlotCurve& setBusCurrentCurve(); 
+    QwtPlotCurve& setPositiveBusCurrentCurve(); 
+    QwtPlotCurve& setNegativeBusCurrentCurve(); 
     QwtPlotCurve& setBusVoltageCurve(); 
     QwtPlotCurve& setBusPowerCurve(); 
     QwtPlotCurve& setSetSpeedCurve(); 
@@ -92,7 +93,8 @@ public:
     
 private:
    Ui::PowerUI *ui_;
-   QwtPlotCurve* busCurrentCurve_;
+   QwtPlotCurve* positiveBusCurrentCurve_;
+   QwtPlotCurve* negativeBusCurrentCurve_;
    QwtPlotCurve* busVoltageCurve_;
    QwtPlotCurve* busPowerCurve_;
    QwtPlotCurve* setSpeedCurve_;
