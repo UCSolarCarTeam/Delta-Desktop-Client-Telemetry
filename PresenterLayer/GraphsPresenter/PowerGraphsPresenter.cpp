@@ -94,7 +94,7 @@ void PowerGraphsPresenter::updateBusVoltage()
 void PowerGraphsPresenter::updateBusPowerGraphData()
 {
     double busPowerData [BUS_POWER_DATA_SETS_];
-	busPowerData[0] = powerData_.busCurrentA() * powerData_.motorCurrentReal();
+	busPowerData[0] = powerData_.busCurrentA() * powerData_.busVoltage();
 
 	busPowerGraphData_.addData(busPowerData);
 	emit busPowerGraphDataUpdated(busPowerGraphData_);
