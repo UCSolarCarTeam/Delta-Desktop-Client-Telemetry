@@ -49,18 +49,26 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(mod0CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
             this, SLOT(mod0CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
+            this, SLOT(highlightMinMaxVoltage()));
     connect(&batteryPresenter_, SIGNAL(mod1CellTemperatureReceived(double)),
             this, SLOT(mod1CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod1CellVoltagesReceived(QList<double>)),
             this, SLOT(mod1CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod1CellVoltagesReceived(QList<double>)),
+            this, SLOT(highlightMinMaxVoltage()));
     connect(&batteryPresenter_, SIGNAL(mod2CellTemperatureReceived(double)),
             this, SLOT(mod2CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod2CellVoltagesReceived(QList<double>)),
             this, SLOT(mod2CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod2CellVoltagesReceived(QList<double>)),
+            this, SLOT(highlightMinMaxVoltage()));
     connect(&batteryPresenter_, SIGNAL(mod3CellTemperatureReceived(double)),
             this, SLOT(mod3CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
             this, SLOT(mod3CellVoltagesReceived(QList<double>)));
+    connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
+            this, SLOT(highlightMinMaxVoltage()));
 
     connect(&graphsPresenter_, SIGNAL(busCurrentGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBusCurrentGraph(PowerGraphData)));
@@ -217,8 +225,8 @@ void PowerView::highlightMinMaxVoltage()
         }
     }
 
-    newMaxVoltageLabel->setStyleSheet("font-weight: bold");    
-    newMinVoltageLabel->setStyleSheet("font-weight: bold");
+    newMaxVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");    
+    newMinVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
 }
 
 void PowerView::updateBusCurrentGraph(PowerGraphData graphData)
