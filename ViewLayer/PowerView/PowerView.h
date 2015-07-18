@@ -1,6 +1,7 @@
 #pragma once
 #include "../../PresenterLayer/GraphsPresenter/PowerGraphData.h"
 #include <QObject>
+#include <QLabel>
 #include <QPushButton>
 
 class BatteryPresenter;
@@ -48,6 +49,7 @@ private slots:
    void mod2CellVoltagesReceived(QList<double>);
    void mod3CellTemperatureReceived(double);
    void mod3CellVoltagesReceived(QList<double>);
+   void highlightMinMaxVoltage();
 
    void updateBusCurrentGraph(PowerGraphData);
    void updateBusVoltageGraph(PowerGraphData);

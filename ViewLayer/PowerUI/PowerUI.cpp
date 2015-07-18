@@ -7,8 +7,44 @@
 PowerUI::PowerUI() 
 : ui_(new Ui::PowerUI)
 {
-
     ui_->setupUi(this);
+
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell4Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell5Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell6Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell7Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell8Voltage);
+
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell1Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell2Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell3Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell4Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell5Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell6Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell7Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell8Voltage);
+
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell1Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell2Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell3Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell4Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell5Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell6Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell7Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell8Voltage);
+
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell1Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell2Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell3Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell4Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell5Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell6Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell7Voltage);
+    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell8Voltage);
+
     positiveBusCurrentCurve_ = new QwtPlotCurve("Positive Bus Current");
     negativeBusCurrentCurve_ = new QwtPlotCurve("Negative Bus Current");
     busVoltageCurve_ = new QwtPlotCurve("Bus Voltage");
@@ -239,6 +275,11 @@ QLabel& PowerUI::setBatteryCMU4Cell7Voltage()
 QLabel& PowerUI::setBatteryCMU4Cell8Voltage()
 {
     return *ui_->batteryCMU4Cell8Voltage;
+}
+
+QList<QLabel*>& PowerUI::batteryCMUCellVoltageLabels()
+{
+    return batteryCMUCellVoltageLabels_;
 }
 
 QPushButton& PowerUI::busGraphButton()

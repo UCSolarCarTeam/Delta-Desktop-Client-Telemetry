@@ -193,6 +193,34 @@ void PowerView::mod3CellVoltagesReceived(QList<double> mod3CellVoltages)
     ui_.setBatteryCMU4Cell8Voltage().setNum(mod3CellVoltages[7]);
 }
 
+void PowerView::highlightMinMaxVoltage()
+{    
+    QLabel* newMaxVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
+    double newMaxVoltage = newMaxVoltageLabel->text().toFloat();
+    QLabel* newMinVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
+    double newMinVoltage = newMinVoltageLabel->text().toFloat();
+
+    foreach(QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
+    {
+        double cursorVoltage = cursorVoltageLabel->text().toFloat();
+        cursorVoltageLabel->setStyleSheet("");
+        
+        if(cursorVoltage > newMaxVoltage)
+        {
+            newMaxVoltageLabel = cursorVoltageLabel;
+            newMaxVoltage = cursorVoltage;
+        }
+        if(cursorVoltage < newMinVoltage)
+        {
+            newMinVoltageLabel = cursorVoltageLabel;
+            newMinVoltage = cursorVoltage;
+        }
+    }
+
+    newMaxVoltageLabel->setStyleSheet("font-weight: bold");    
+    newMinVoltageLabel->setStyleSheet("font-weight: bold");
+}
+
 void PowerView::updateBusCurrentGraph(PowerGraphData graphData)
 {
     ui_.setPositiveBusCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);

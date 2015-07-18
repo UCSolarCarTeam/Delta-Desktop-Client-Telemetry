@@ -70,6 +70,8 @@ public:
     virtual QLabel& setBatteryCMU4Cell7Voltage() = 0;
     virtual QLabel& setBatteryCMU4Cell8Voltage() = 0;
 
+    virtual QList<QLabel*>& batteryCMUCellVoltageLabels() = 0;
+
     virtual QPushButton& busGraphButton() = 0;
     virtual QPushButton& driverGraphButton() = 0;
     virtual QPushButton& batteryGraphButton() = 0;
