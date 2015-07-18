@@ -49,9 +49,11 @@ void PlaybackView::handleOpenFile()
 
 void PlaybackView::handleRequestToOpenPlaybackMode()
 {
-   Qt::WindowFlags windowFlags = Qt::Tool | Qt::WindowStaysOnTopHint;
-   ui_.setWindowFlags(windowFlags);
-   ui_.show();
+   if(!ui_.isVisible()){
+      Qt::WindowFlags windowFlags = Qt::Tool | Qt::WindowStaysOnTopHint;
+      ui_.setWindowFlags(windowFlags);
+      ui_.show();
+   }
 }
 
 void PlaybackView::handleCloseButton()
