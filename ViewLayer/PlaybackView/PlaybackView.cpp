@@ -3,7 +3,6 @@
 #include <QTimer>
 
 #include "../../PresenterLayer/PlaybackPresenter/PlaybackPresenter.h"
-#include "../EscapeDialog/I_EscapeDialog.h"
 #include "../PlaybackUI/I_PlaybackUI.h"
 #include "PlaybackView.h"
 
@@ -13,8 +12,7 @@ namespace
 }
 
 PlaybackView::PlaybackView(PlaybackPresenter& playbackPresenter,
-   I_PlaybackUI& ui,
-   I_EscapeDialog& escapeDialog)
+   I_PlaybackUI& ui)
 : playbackPresenter_(playbackPresenter)
 , ui_(ui)
 , lastPosition_(0)
@@ -26,8 +24,6 @@ PlaybackView::PlaybackView(PlaybackPresenter& playbackPresenter,
       this, SLOT(handleSliderRangesUpdated(int, int)));
    connect(&playbackPresenter_, SIGNAL(dateUpdated(const QDateTime&)),
       this, SLOT(handleDateUpdated(const QDateTime&)));
-   connect(&escapeDialog.playbackModePushButton(), SIGNAL(clicked()),
-      this, SLOT(handleRequestToOpenPlaybackMode()));
 
    sliderUpdateTimer_->setSingleShot(false);
    sliderUpdateTimer_->setInterval(SLIDER_UPDATE_FREQUENCY);
@@ -45,15 +41,6 @@ void PlaybackView::handleOpenFile()
 {
    QString fileName = QFileDialog::getOpenFileName();
    playbackPresenter_.loadFile(fileName);
-}
-
-void PlaybackView::handleRequestToOpenPlaybackMode()
-{
-   if(!ui_.isVisible()){
-      Qt::WindowFlags windowFlags = Qt::Tool | Qt::WindowStaysOnTopHint;
-      ui_.setWindowFlags(windowFlags);
-      ui_.show();
-   }
 }
 
 void PlaybackView::handleCloseButton()

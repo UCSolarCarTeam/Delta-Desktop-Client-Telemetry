@@ -20,7 +20,8 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 , mpptUI_(new MpptUI())
 , faultsUI_(new FaultsUI())
 , playbackUI_(new PlaybackUI)
-, escapeDialogView_(new EscapeDialogView(*escapeDialog_))
+, escapeDialogView_(new EscapeDialogView(
+      *escapeDialog_, *playbackUI_))
 , powerView_(new PowerView(
       presenterContainer.batteryPresenter(),
       presenterContainer.vehiclePresenter(),
@@ -35,8 +36,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 , displayView_(new DisplayView(*overlordWidget_))
 , playbackView_(new PlaybackView(
    presenterContainer.playbackPresenter(),
-   *playbackUI_,
-   *escapeDialog_))
+   *playbackUI_))
 {
 }
 

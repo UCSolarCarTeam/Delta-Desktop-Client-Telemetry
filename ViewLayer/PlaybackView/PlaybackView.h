@@ -5,7 +5,6 @@
 class QDateTime;
 class QTimer;
 
-class I_EscapeDialog;
 class I_PlaybackUI;
 class PlaybackPresenter;
 
@@ -13,13 +12,11 @@ class PlaybackView : public QObject
 {
    Q_OBJECT
 public:
-   PlaybackView(PlaybackPresenter& playbackPresenter, I_PlaybackUI& ui,
-      I_EscapeDialog& escapeDialog);
+   PlaybackView(PlaybackPresenter& playbackPresenter, I_PlaybackUI& ui);
    virtual ~PlaybackView();
 
 private slots:
    void handleOpenFile();
-   void handleRequestToOpenPlaybackMode();
    void handleCloseButton();
    void handleSliderRangesUpdated(int min, int max);
    void handleDateUpdated(const QDateTime& date);

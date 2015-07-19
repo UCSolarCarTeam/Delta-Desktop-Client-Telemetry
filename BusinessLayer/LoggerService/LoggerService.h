@@ -45,8 +45,5 @@ private:
    QFile rawDataFile_;
    QDataStream dataWriter_;
 
-   QFile readableFile_;
-   QDataStream readableFileWriter_;
-
    const I_ConnectionService& connectionService_;
 };

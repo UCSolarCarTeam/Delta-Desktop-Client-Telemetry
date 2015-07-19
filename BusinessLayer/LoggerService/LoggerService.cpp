@@ -15,6 +15,8 @@ namespace
 
    const QString LOG_DIRECTORY = "logs";
    const QString DEBUG_LOG_NAME = LOG_DIRECTORY + "/DebugLog.txt";
+
+   const int DATA_STREAM_VERSION = 20;
 }
 
 void handleQDebugMessages(QtMsgType type,
@@ -84,6 +86,7 @@ LoggerService::LoggerService(const I_ConnectionService& connectionService,
    rawDataFile_.setFileName(debugDirectory.filePath("rawMessageData.dat"));
    rawDataFile_.open(QIODevice::WriteOnly);
    dataWriter_.setDevice(&rawDataFile_);
+   dataWriter_.setVersion(DATA_STREAM_VERSION);
 }
 
 LoggerService::~LoggerService()
@@ -93,12 +96,12 @@ LoggerService::~LoggerService()
 
 void LoggerService::handleConnectionServiceDebugMessage(QString message)
 {
-   qDebug() << QDateTime::currentDateTime() << message;
+   qDebug() << message;
 }
 
 void LoggerService::handleFramedPacket(QByteArray packet)
 {
-   dataWriter_ << packet;
+   dataWriter_ << QDateTime::currentDateTime() << packet;
 }
 
 void LoggerService::handlePacketDecoded(const KeyDriverControlTelemetry message)
