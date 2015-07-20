@@ -92,6 +92,7 @@ public:
     QwtPlotCurve& setMaxCellVoltageCurve();
     QwtPlotCurve& setMinCellVoltageCurve();
     QwtPlotCurve& setAvgCellVoltageCurve();
+    QwtPlotCurve& setBatteryPowerCurve();
     
 private:
    Ui::PowerUI *ui_;
@@ -110,6 +111,7 @@ private:
    QwtPlotCurve* maxCellVoltageCurve_;
    QwtPlotCurve* minCellVoltageCurve_;
    QwtPlotCurve* avgCellVoltageCurve_;
+   QwtPlotCurve* batteryPowerCurve_;
    void setupGraphs();
 
 };

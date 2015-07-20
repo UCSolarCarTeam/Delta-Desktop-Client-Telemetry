@@ -84,6 +84,8 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
     connect(&graphsPresenter_, SIGNAL(cellVoltageGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
+    connect(&graphsPresenter_, SIGNAL(batteryPowerGraphDataUpdated(PowerGraphData)),
+            this, SLOT(updateBatteryPowerGraph(PowerGraphData)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
             this, SLOT(handleConnectButtonClicked()));
@@ -320,6 +322,10 @@ void PowerView::updateBatteryCellVoltageGraph(PowerGraphData graphData)
     ui_.setMaxCellVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
     ui_.setAvgCellVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);
     ui_.setMinCellVoltageCurve().setSamples(graphData.xData(), graphData.yDataSets()[2]);
+}
+void PowerView::updateBatteryPowerGraph(PowerGraphData graphData)
+{
+    ui_.setBatteryPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 
 PowerView::~PowerView()

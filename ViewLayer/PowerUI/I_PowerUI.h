@@ -91,4 +91,5 @@ public:
     virtual QwtPlotCurve& setMaxCellVoltageCurve() = 0;
     virtual QwtPlotCurve& setMinCellVoltageCurve() = 0;
     virtual QwtPlotCurve& setAvgCellVoltageCurve() = 0;
+    virtual QwtPlotCurve& setBatteryPowerCurve() = 0;
 };

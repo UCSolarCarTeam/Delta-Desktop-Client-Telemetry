@@ -59,6 +59,7 @@ PowerUI::PowerUI()
     maxCellVoltageCurve_ = new QwtPlotCurve("Max");
     minCellVoltageCurve_ = new QwtPlotCurve("Min");
     avgCellVoltageCurve_ = new QwtPlotCurve("Avg");
+    batteryPowerCurve_ = new QwtPlotCurve("Battery Power");
     setupGraphs();
 }
 
@@ -356,6 +357,10 @@ QwtPlotCurve& PowerUI::setAvgCellVoltageCurve()
 {
     return *avgCellVoltageCurve_;
 }
+QwtPlotCurve& PowerUI::setBatteryPowerCurve()
+{
+    return *batteryPowerCurve_;
+}
 
 void PowerUI::setupGraphs()
 {
@@ -366,6 +371,7 @@ void PowerUI::setupGraphs()
     int MAX_DRIVER_SPEED = 120; // Kilometers per hour
     int MAX_BATTERY_CELL_TEMP = 80; // Degrees Celsius
     int MAX_BATTERY_CELL_VOLTAGE = 4500; // Millivolts
+    int MAX_BATTERY_POWER = 1000;
 
     int MAX_SECONDS_ELAPSED = 60; 
 
@@ -453,4 +459,13 @@ void PowerUI::setupGraphs()
     QwtLegend* batteryCellVoltageGraphLegend = new QwtLegend;
     ui_->batteryCellVoltageGraph->insertLegend(batteryCellVoltageGraphLegend, QwtPlot::RightLegend);
 
+    ui_->batteryPowerGraph->setTitle("Battery Power Graph");
+    ui_->batteryPowerGraph->setAxisTitle(QwtPlot::yLeft, "Watts (W)");
+    ui_->batteryPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_POWER, MAX_BATTERY_POWER/5);
+    ui_->batteryPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
+    ui_->batteryPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
+    batteryPowerCurve_->setPen(*new QPen(Qt::yellow));
+    batteryPowerCurve_->attach(ui_->batteryPowerGraph);
+    // QwtLegend* batteryPowerGraphLegend = new QwtLegend;
+    // ui_->batteryPowerGraph->insertLegend(batteryPowerGraphLegend, QwtPlot::RightLegend);
 }

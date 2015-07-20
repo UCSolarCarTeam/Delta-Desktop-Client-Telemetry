@@ -61,6 +61,7 @@ private slots:
    void updateDriverSpeedGraph(PowerGraphData);
    void updateBatteryCellTempGraph(PowerGraphData);
    void updateBatteryCellVoltageGraph(PowerGraphData);
+   void updateBatteryPowerGraph(PowerGraphData);
 
    void handleConnectButtonClicked();
    void handleBusGraphButtonClicked();
