@@ -567,7 +567,7 @@ border-left: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt5PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -577,7 +577,7 @@ border-left: none;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt5VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -587,7 +587,7 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt5CurrentIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -615,7 +615,7 @@ border-left: none;</string>
                   <item row="5" column="6">
                    <widget class="QLabel" name="mppt5Efficiency">
                     <property name="text">
-                     <string> 0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
@@ -625,7 +625,7 @@ border-left: none;</string>
                      <string notr="true"/>
                     </property>
                     <property name="text">
-                     <string>0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
@@ -637,7 +637,7 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt2CurrentIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -647,7 +647,7 @@ border-left: none;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt2VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -657,7 +657,7 @@ border-left: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt2PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -674,7 +674,7 @@ border-left: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt6PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -684,7 +684,7 @@ border-left: none;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt6VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -694,7 +694,7 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt6CurrentIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -711,21 +711,21 @@ border-left: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt3PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt3VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt3CurrentOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -739,21 +739,21 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt2CurrentOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt2PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt2VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -767,7 +767,7 @@ border-left: none;</string>
                     <item row="3" column="0">
                      <widget class="QLabel" name="mppt4VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -777,7 +777,7 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt4PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -787,7 +787,7 @@ border-left: none;</string>
                     <item row="4" column="0">
                      <widget class="QLabel" name="mppt4CurrentIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -804,21 +804,21 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt1VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="3" column="0">
                      <widget class="QLabel" name="mppt1CurrentOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt1PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -827,14 +827,14 @@ border-left: none;</string>
                   <item row="2" column="6">
                    <widget class="QLabel" name="mppt2Efficiency">
                     <property name="text">
-                     <string>0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="6">
                    <widget class="QLabel" name="mppt3Efficiency">
                     <property name="text">
-                     <string>0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
@@ -846,21 +846,21 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt6CurrentOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt6PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt6VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -869,7 +869,7 @@ border-left: none;</string>
                   <item row="1" column="6">
                    <widget class="QLabel" name="mppt1Efficiency">
                     <property name="text">
-                     <string>0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
@@ -881,7 +881,7 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt3CurrentIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -891,7 +891,7 @@ border-left: none;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt3VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -901,7 +901,7 @@ border-left: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt3PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -918,7 +918,7 @@ border-left: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt1PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -928,7 +928,7 @@ border-left: none;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt1VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -938,7 +938,7 @@ border-left: none;</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt1CurrentIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1006,21 +1006,21 @@ padding-right: 5px;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt5VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt5PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt5CurrentOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -1056,21 +1056,21 @@ padding-right: 5px;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt4VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt4PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="0">
                      <widget class="QLabel" name="mppt4CurrentOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -1079,7 +1079,7 @@ padding-right: 5px;</string>
                   <item row="4" column="6">
                    <widget class="QLabel" name="mppt4Efficiency">
                     <property name="text">
-                     <string>0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
@@ -1196,7 +1196,7 @@ padding-right: 5px;</string>
 border-bottom: none;</string>
                     </property>
                     <property name="text">
-                     <string>0 %</string>
+                     <string>N/A</string>
                     </property>
                    </widget>
                   </item>
@@ -1212,21 +1212,21 @@ border-bottom: none;</string>
 </string>
                       </property>
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt7PowerOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt7VoltageOut">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                      </widget>
                     </item>
@@ -1240,7 +1240,7 @@ border-bottom: none;</string>
                     <item row="0" column="0">
                      <widget class="QLabel" name="mppt7PowerIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1250,7 +1250,7 @@ border-bottom: none;</string>
                     <item row="1" column="0">
                      <widget class="QLabel" name="mppt7VoltageIn">
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1263,7 +1263,7 @@ border-bottom: none;</string>
                        <string notr="true">border-bottom: none;</string>
                       </property>
                       <property name="text">
-                       <string>0</string>
+                       <string>N/A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
