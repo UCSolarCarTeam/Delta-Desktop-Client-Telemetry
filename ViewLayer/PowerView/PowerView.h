@@ -25,12 +25,15 @@ public:
    ~PowerView();
 
 private:
+   bool isValuesGarbage(QList<double>);
+
    BatteryPresenter& batteryPresenter_;
    VehiclePresenter& vehiclePresenter_;
    PowerPresenter& powerPresenter_;
    PowerGraphsPresenter& graphsPresenter_;
    CommunicationPresenter& communicationPresenter_;
    PowerUI& ui_;
+
 
 private slots:
    void driverSetSpeedMetersPerSecondReceived(double);
