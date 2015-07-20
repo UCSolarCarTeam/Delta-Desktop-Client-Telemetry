@@ -112,8 +112,8 @@ void PowerGraphsPresenter::updateDriverCurrentGraphData()
 void PowerGraphsPresenter::updateDriverSpeedGraphData()
 {
     double driverSpeedData [DRIVER_SPEED_DATA_SETS_];
-	driverSpeedData[0] = vehicleData_.driverSetSpeedMetersPerSecond();
-	driverSpeedData[1] = vehicleData_.vehicleVelocityMetersPerSecond();
+	driverSpeedData[0] = vehicleData_.driverSetSpeedMetersPerSecond() * 3.6; // 3.6 convert to kph
+	driverSpeedData[1] = vehicleData_.vehicleVelocityMetersPerSecond() * 3.6;
 
 	driverSpeedGraphData_.addData(driverSpeedData);
 	emit drivingSpeedGraphDataUpdated(driverSpeedGraphData_);
