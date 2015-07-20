@@ -95,8 +95,8 @@ MpptView::MpptView(MpptPresenter& presenter, MpptUI& ui)
    connect(&presenter_, SIGNAL(mppt7TypeReceived(QString)),
       this, SLOT(mppt7TypeReceived(QString)));
    connect(&presenter_, SIGNAL(mppt7ModeReceived(QString)),
-      this, SLOT(mppt7ModeReceived(QString)));}
-
+      this, SLOT(mppt7ModeReceived(QString)));
+}
 
 MpptView::~MpptView()
 {
