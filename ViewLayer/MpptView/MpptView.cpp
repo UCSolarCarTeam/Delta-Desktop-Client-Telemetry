@@ -103,12 +103,12 @@ MpptView::~MpptView()
 }
 void MpptView::updateMppt1PowerIn()
 {
-   double powerIn = ui_.setMppt1CurrentIn().text().toDouble() * ui_.setMppt1PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt1CurrentIn().text().toDouble() * ui_.setMppt1VoltageIn().text().toDouble();
    ui_.setMppt1PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt1PowerOut()
 {
-   double powerOut = ui_.setMppt1CurrentOut().text().toDouble() * ui_.setMppt1PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt1CurrentOut().text().toDouble() * ui_.setMppt1VoltageOut().text().toDouble();
    ui_.setMppt1PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt1Efficiency()
@@ -120,12 +120,12 @@ void MpptView::updateMppt1Efficiency()
 
 void MpptView::updateMppt2PowerIn()
 {
-   double powerIn = ui_.setMppt2CurrentIn().text().toDouble() * ui_.setMppt2PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt2CurrentIn().text().toDouble() * ui_.setMppt2VoltageIn().text().toDouble();
    ui_.setMppt2PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt2PowerOut()
 {
-   double powerOut = ui_.setMppt2CurrentOut().text().toDouble() * ui_.setMppt2PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt2CurrentOut().text().toDouble() * ui_.setMppt2VoltageOut().text().toDouble();
    ui_.setMppt2PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt2Efficiency()
@@ -137,12 +137,12 @@ void MpptView::updateMppt2Efficiency()
 
 void MpptView::updateMppt3PowerIn()
 {
-   double powerIn = ui_.setMppt3CurrentIn().text().toDouble() * ui_.setMppt3PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt3CurrentIn().text().toDouble() * ui_.setMppt3VoltageIn().text().toDouble();
    ui_.setMppt3PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt3PowerOut()
 {
-   double powerOut = ui_.setMppt3CurrentOut().text().toDouble() * ui_.setMppt3PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt3CurrentOut().text().toDouble() * ui_.setMppt3VoltageOut().text().toDouble();
    ui_.setMppt3PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt3Efficiency()
@@ -154,12 +154,12 @@ void MpptView::updateMppt3Efficiency()
 
 void MpptView::updateMppt4PowerIn()
 {
-   double powerIn = ui_.setMppt4CurrentIn().text().toDouble() * ui_.setMppt4PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt4CurrentIn().text().toDouble() * ui_.setMppt4VoltageIn().text().toDouble();
    ui_.setMppt4PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt4PowerOut()
 {
-   double powerOut = ui_.setMppt4CurrentOut().text().toDouble() * ui_.setMppt4PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt4CurrentOut().text().toDouble() * ui_.setMppt4VoltageOut().text().toDouble();
    ui_.setMppt4PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt4Efficiency()
@@ -171,12 +171,12 @@ void MpptView::updateMppt4Efficiency()
 
 void MpptView::updateMppt5PowerIn()
 {
-   double powerIn = ui_.setMppt5CurrentIn().text().toDouble() * ui_.setMppt5PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt5CurrentIn().text().toDouble() * ui_.setMppt5VoltageIn().text().toDouble();
    ui_.setMppt5PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt5PowerOut()
 {
-   double powerOut = ui_.setMppt5CurrentOut().text().toDouble() * ui_.setMppt5PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt5CurrentOut().text().toDouble() * ui_.setMppt5VoltageOut().text().toDouble();
    ui_.setMppt5PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt5Efficiency()
@@ -188,12 +188,12 @@ void MpptView::updateMppt5Efficiency()
 
 void MpptView::updateMppt6PowerIn()
 {
-   double powerIn = ui_.setMppt6CurrentIn().text().toDouble() * ui_.setMppt6PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt6CurrentIn().text().toDouble() * ui_.setMppt6VoltageIn().text().toDouble();
    ui_.setMppt6PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt6PowerOut()
 {
-   double powerOut = ui_.setMppt6CurrentOut().text().toDouble() * ui_.setMppt6PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt6CurrentOut().text().toDouble() * ui_.setMppt6VoltageOut().text().toDouble();
    ui_.setMppt6PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt6Efficiency()
@@ -205,12 +205,12 @@ void MpptView::updateMppt6Efficiency()
 
 void MpptView::updateMppt7PowerIn()
 {
-   double powerIn = ui_.setMppt7CurrentIn().text().toDouble() * ui_.setMppt7PowerIn().text().toDouble();
+   double powerIn = ui_.setMppt7CurrentIn().text().toDouble() * ui_.setMppt7VoltageIn().text().toDouble();
    ui_.setMppt7PowerIn().setNum(powerIn);
 }
 void MpptView::updateMppt7PowerOut()
 {
-   double powerOut = ui_.setMppt7CurrentOut().text().toDouble() * ui_.setMppt7PowerOut().text().toDouble();
+   double powerOut = ui_.setMppt7CurrentOut().text().toDouble() * ui_.setMppt7VoltageOut().text().toDouble();
    ui_.setMppt7PowerIn().setNum(powerOut);
 }
 void MpptView::updateMppt7Efficiency()
