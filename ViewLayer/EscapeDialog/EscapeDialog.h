@@ -24,7 +24,6 @@ public:
     QPushButton& closePushButton();
     QPushButton& playbackModePushButton();
     QCheckBox& fullscreenCheckBox();
-    QCheckBox& multiWindowCheckBox();
     QStackedWidget& optionsDisplayWidget();
 
 signals:

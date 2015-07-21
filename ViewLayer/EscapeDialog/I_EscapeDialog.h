@@ -18,6 +18,5 @@ public:
     virtual QPushButton& closePushButton() = 0;
     virtual QPushButton& playbackModePushButton() = 0;
     virtual QCheckBox& fullscreenCheckBox() = 0;
-    virtual QCheckBox& multiWindowCheckBox() = 0;
     virtual QStackedWidget& optionsDisplayWidget() = 0;
 };
