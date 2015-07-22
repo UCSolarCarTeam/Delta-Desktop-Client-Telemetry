@@ -9,6 +9,9 @@ PowerUI::PowerUI()
 {
     ui_->setupUi(this);
 
+    connect(ui_->connectionType, SIGNAL(currentIndexChanged(int)),
+            ui_->connectionInputWidgets, SLOT(setCurrentIndex(int)));
+
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
@@ -93,10 +96,15 @@ QLineEdit& PowerUI::getBaudRate()
 {
    return *ui_->baudrate;
 }
-QTextEdit& PowerUI::setDebugLog()
+QComboBox& PowerUI::getConnectionType()
 {
-    return *ui_->connectionOutput;
+    return *ui_->connectionType;
 }
+QLineEdit& PowerUI::getIpAddress()
+{
+    return *ui_->ipAddress;
+}
+
 
 QLabel& PowerUI::setSetSpeed()
 {

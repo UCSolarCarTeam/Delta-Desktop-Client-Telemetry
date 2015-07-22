@@ -21,7 +21,8 @@ public:
     QWidget& setConnectionHealth();
     QLineEdit& getSerialPortName();
     QLineEdit& getBaudRate();
-    QTextEdit& setDebugLog();
+    QComboBox& getConnectionType();
+    QLineEdit& getIpAddress();
 
     QLabel& setSetSpeed();
     QLabel& setSetCurrent();

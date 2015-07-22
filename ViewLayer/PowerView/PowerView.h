@@ -70,5 +70,4 @@ private slots:
    void selectGraphButton(QPushButton*);
    void connectionFailed(QString);
    void connectionSucceeded(QString);
-   void clearDebugLog();
 };

@@ -20,7 +20,8 @@ public:
     virtual QWidget& setConnectionHealth() = 0;
     virtual QLineEdit& getSerialPortName() = 0;
     virtual QLineEdit& getBaudRate() = 0;
-    virtual QTextEdit& setDebugLog() = 0;
+    virtual QComboBox& getConnectionType() = 0;
+    virtual QLineEdit& getIpAddress() = 0;
 
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;

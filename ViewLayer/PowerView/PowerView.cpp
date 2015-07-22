@@ -335,7 +335,6 @@ PowerView::~PowerView()
 void PowerView::handleConnectButtonClicked()
 {
     if(ui_.connectButton().text() == "Connect"){
-        clearDebugLog();
         ui_.setConnectionStatus().setText("CONNECTING...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
         communicationPresenter_.connectDataSource(
@@ -415,9 +414,4 @@ void PowerView::connectionSucceeded(QString successMessage)
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
     graphsPresenter_.startUpdating();
-}
-
-void PowerView::clearDebugLog()
-{
-    ui_.setDebugLog().clear();
 }
