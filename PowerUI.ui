@@ -341,7 +341,6 @@ background-color: rgb(70,70,70);
 }
 
 QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
     selection-background-color: rgb(130,130,130);
 }</string>
                   </property>

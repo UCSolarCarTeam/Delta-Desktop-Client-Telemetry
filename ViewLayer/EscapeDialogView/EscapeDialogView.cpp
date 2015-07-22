@@ -66,6 +66,7 @@ void EscapeDialogView::handleRequestToOpenPlaybackMode()
    if(!playbackUi_.isVisible()){
       Qt::WindowFlags windowFlags = Qt::Tool | Qt::WindowStaysOnTopHint;
       playbackUi_.setWindowFlags(windowFlags);
+      ui_.hide();
       playbackUi_.show();
    }
 }
