@@ -336,7 +336,7 @@ PowerView::~PowerView()
 void PowerView::handleConnectButtonClicked()
 {
     if(ui_.connectButton().text() == "Connect"){
-        ui_.setConnectionStatus().setText("CONNECTING...");
+        ui_.setConnectionStatus().setText("Connecting...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
         communicationPresenter_.setSerialParameters(ui_.getSerialPortName().text(),
             ui_.getBaudRate().text().toDouble());
@@ -412,7 +412,7 @@ void PowerView::connectionFailed(QString failureMessage)
 void PowerView::connectionSucceeded()
 {
     ui_.connectButton().setText("Disconnect");
-    ui_.setConnectionStatus().setText("Success!");
+    ui_.setConnectionStatus().setText("Connected!");
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
     graphsPresenter_.startUpdating();
