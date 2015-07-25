@@ -21,7 +21,8 @@ public:
     QWidget& setConnectionHealth();
     QLineEdit& getSerialPortName();
     QLineEdit& getBaudRate();
-    QTextEdit& setDebugLog();
+    QComboBox& getConnectionType();
+    QLineEdit& getIpAddress();
 
     QLabel& setSetSpeed();
     QLabel& setSetCurrent();
@@ -92,6 +93,7 @@ public:
     QwtPlotCurve& setMaxCellVoltageCurve();
     QwtPlotCurve& setMinCellVoltageCurve();
     QwtPlotCurve& setAvgCellVoltageCurve();
+    QwtPlotCurve& setBatteryPowerCurve();
     
 private:
    Ui::PowerUI *ui_;
@@ -110,6 +112,7 @@ private:
    QwtPlotCurve* maxCellVoltageCurve_;
    QwtPlotCurve* minCellVoltageCurve_;
    QwtPlotCurve* avgCellVoltageCurve_;
+   QwtPlotCurve* batteryPowerCurve_;
    void setupGraphs();
 
 };

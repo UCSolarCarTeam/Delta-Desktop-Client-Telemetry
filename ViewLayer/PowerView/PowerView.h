@@ -25,12 +25,15 @@ public:
    ~PowerView();
 
 private:
+   bool isValuesGarbage(QList<double>);
+
    BatteryPresenter& batteryPresenter_;
    VehiclePresenter& vehiclePresenter_;
    PowerPresenter& powerPresenter_;
    PowerGraphsPresenter& graphsPresenter_;
    CommunicationPresenter& communicationPresenter_;
    PowerUI& ui_;
+
 
 private slots:
    void driverSetSpeedMetersPerSecondReceived(double);
@@ -58,6 +61,7 @@ private slots:
    void updateDriverSpeedGraph(PowerGraphData);
    void updateBatteryCellTempGraph(PowerGraphData);
    void updateBatteryCellVoltageGraph(PowerGraphData);
+   void updateBatteryPowerGraph(PowerGraphData);
 
    void handleConnectButtonClicked();
    void handleBusGraphButtonClicked();
@@ -66,5 +70,4 @@ private slots:
    void selectGraphButton(QPushButton*);
    void connectionFailed(QString);
    void connectionSucceeded();
-   void clearDebugLog();
 };

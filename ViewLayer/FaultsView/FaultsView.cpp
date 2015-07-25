@@ -2,6 +2,7 @@
 #include "../../PresenterLayer/FaultsPresenter/FaultsPresenter.h"
 #include "../FaultsUI/FaultsUI.h"
 #include <QDateTime>
+#include <QDebug>
 
 FaultsView::FaultsView(FaultsPresenter& faultsPresenter, FaultsUI& ui)
 : faultsPresenter_(faultsPresenter)
@@ -23,9 +24,18 @@ FaultsView::~FaultsView()
 {
 }
 
+bool FaultsView::isLabelRed(QLabel& label)
+{   
+    if(label.styleSheet().contains("red")){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
 {
-   if(motorFaults.desaturationFault()){
+   if(motorFaults.desaturationFault() && !isLabelRed(ui_.desaturationFaultLabel1())){
       ui_.desaturationFaultLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Desaturation Fault - " + QDateTime::currentDateTime().toString());
    }
@@ -33,7 +43,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
       ui_.desaturationFaultLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.railUnderVoltageLockOut()){
+   if(motorFaults.railUnderVoltageLockOut() && !isLabelRed(ui_.fifteenVoltRailUnderVoltageLockoutLabel1())){
      ui_.fifteenVoltRailUnderVoltageLockoutLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
      ui_.historyTextEdit().append("Motor One Rail Under Voltage Lockout- " + QDateTime::currentDateTime().toString());
    }
@@ -41,7 +51,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
      ui_.fifteenVoltRailUnderVoltageLockoutLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.configReadError()){
+   if(motorFaults.configReadError() && !isLabelRed(ui_.configReadErrorLabel1())){
       ui_.configReadErrorLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Config Read Error- " + QDateTime::currentDateTime().toString());
    }
@@ -49,7 +59,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
       ui_.configReadErrorLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.watchdogCausedLastReset()){
+   if(motorFaults.watchdogCausedLastReset() && !isLabelRed(ui_.watchDogCausedLastResetLabel1())){
       ui_.watchDogCausedLastResetLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One WatchDog Caused Last Reset- " + QDateTime::currentDateTime().toString());
    }
@@ -57,7 +67,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
       ui_.watchDogCausedLastResetLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.badMotorPositionHallSequence()){
+   if(motorFaults.badMotorPositionHallSequence() && !isLabelRed(ui_.badMotorPositionHallSequenceLabel1())){
       ui_.badMotorPositionHallSequenceLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Bad Motor Position Hall Sequence - " + QDateTime::currentDateTime().toString());
    }
@@ -65,7 +75,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
       ui_.badMotorPositionHallSequenceLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.dcBusOverVoltage()){
+   if(motorFaults.dcBusOverVoltage() && !isLabelRed(ui_.dcBusOverVoltageLabel1())){
       ui_.dcBusOverVoltageLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One DC Bus Over Voltage- " + QDateTime::currentDateTime().toString());
    }
@@ -73,7 +83,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
       ui_.dcBusOverVoltageLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.softwareOverCurrent()){
+   if(motorFaults.softwareOverCurrent() && !isLabelRed(ui_.softwareOverCurrentLabel1())){
       ui_.softwareOverCurrentLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Software Over Current - " + QDateTime::currentDateTime().toString());
    }
@@ -81,7 +91,7 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
       ui_.softwareOverCurrentLabel1().setStyleSheet("");
    }
 
-   if(motorFaults.hardwareOverCurrent()){
+   if(motorFaults.hardwareOverCurrent() && !isLabelRed(ui_.hardwareOverCurrentLabel1())){
       ui_.hardwareOverCurrentLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Hardware Over Current - " + QDateTime::currentDateTime().toString());
    }
@@ -92,49 +102,49 @@ void FaultsView::motorOneFaultsReceived(MotorFaults motorFaults)
 
 void FaultsView::motorOneLimitFlagsReceived(LimitFlags limitFlags)
 {
-   if(limitFlags.outputVoltagePwmLimit()){
+   if(limitFlags.outputVoltagePwmLimit() && !isLabelRed(ui_.outputVoltagePwmLabel1())){
       ui_.outputVoltagePwmLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Output Voltage PWM - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.outputVoltagePwmLabel1().setStyleSheet("");
    }
-   if(limitFlags.motorCurrentLimit()){
+   if(limitFlags.motorCurrentLimit() && !isLabelRed(ui_.motorCurrentLabel1())){
       ui_.motorCurrentLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Motor Current Limit- " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.motorCurrentLabel1().setStyleSheet("");
    }
-   if(limitFlags.velocityLimit()){
+   if(limitFlags.velocityLimit() && !isLabelRed(ui_.velocityLabel1())){
       ui_.velocityLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Velocity Limit- " + QDateTime::currentDateTime().toString());
    }
    else{
       ui_.velocityLabel1().setStyleSheet("");
    }
-   if(limitFlags.busCurrentLimit()){
+   if(limitFlags.busCurrentLimit() && !isLabelRed(ui_.busCurrentLabel1())){
       ui_.busCurrentLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Bus Current Limit- " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.busCurrentLabel1().setStyleSheet("");
    }
-   if(limitFlags.busVoltageUpperLimit()){
+   if(limitFlags.busVoltageUpperLimit() && !isLabelRed(ui_.busVoltageUpperLimitLabel1())){
       ui_.busVoltageUpperLimitLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Bus Voltage Upper Limit - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.busVoltageUpperLimitLabel1().setStyleSheet("");
    }
-   if(limitFlags.busVoltageLowerLimit()){
+   if(limitFlags.busVoltageLowerLimit() && !isLabelRed(ui_.busVoltageLowerLimitLabel1())){
       ui_.busVoltageLowerLimitLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One Bus Voltage Lower Limit - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.busVoltageLowerLimitLabel1().setStyleSheet("");
    }
-   if(limitFlags.ipmOrMotorTelemetryLimit()){
+   if(limitFlags.ipmOrMotorTelemetryLimit() && !isLabelRed(ui_.ipmTemperatureOrMotorTemperatureLabel1())){
       ui_.ipmTemperatureOrMotorTemperatureLabel1().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor One IPM Temp Or Motor Temp- " + QDateTime::currentDateTime().toString());
    }
@@ -145,7 +155,7 @@ void FaultsView::motorOneLimitFlagsReceived(LimitFlags limitFlags)
 
 void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
 {
-   if(motorFaults.desaturationFault()){
+   if(motorFaults.desaturationFault() && !isLabelRed(ui_.desaturationFaultLabel2())){
       ui_.desaturationFaultLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
    ui_.historyTextEdit().append("Motor Two motorFaults - " + QDateTime::currentDateTime().toString());
    }
@@ -153,7 +163,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.desaturationFaultLabel2().setStyleSheet("");
    }
 
-    if(motorFaults.railUnderVoltageLockOut()){
+    if(motorFaults.railUnderVoltageLockOut() && !isLabelRed(ui_.fifteenVoltRailUnderVoltageLockoutLabel2())){
       ui_.fifteenVoltRailUnderVoltageLockoutLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Rail Under Voltage Lockout- " + QDateTime::currentDateTime().toString());
     }
@@ -161,7 +171,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.fifteenVoltRailUnderVoltageLockoutLabel2().setStyleSheet("");
     }
 
-    if(motorFaults.configReadError()){
+    if(motorFaults.configReadError() && !isLabelRed(ui_.configReadErrorLabel2())){
       ui_.configReadErrorLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Config Read Error- " + QDateTime::currentDateTime().toString());
     }
@@ -169,7 +179,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.configReadErrorLabel2().setStyleSheet("");
     }
 
-    if(motorFaults.watchdogCausedLastReset()){
+    if(motorFaults.watchdogCausedLastReset() && !isLabelRed(ui_.watchDogCausedLastResetLabel2())){
       ui_.watchDogCausedLastResetLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Watchdog Caused Last Reset - " + QDateTime::currentDateTime().toString());
     }
@@ -177,7 +187,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.watchDogCausedLastResetLabel2().setStyleSheet("");
     }
 
-    if(motorFaults.badMotorPositionHallSequence()){
+    if(motorFaults.badMotorPositionHallSequence() && !isLabelRed(ui_.badMotorPositionHallSequenceLabel2())){
       ui_.badMotorPositionHallSequenceLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Bad Motor Position Hall Sequence - " + QDateTime::currentDateTime().toString());
     }
@@ -185,7 +195,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.badMotorPositionHallSequenceLabel2().setStyleSheet("");
     }
 
-    if(motorFaults.dcBusOverVoltage()){
+    if(motorFaults.dcBusOverVoltage() && !isLabelRed(ui_.dcBusOverVoltageLabel2())){
       ui_.dcBusOverVoltageLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two DC Bus Over Voltage- " + QDateTime::currentDateTime().toString());
     }
@@ -193,7 +203,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.dcBusOverVoltageLabel2().setStyleSheet("");
     }
 
-    if(motorFaults.softwareOverCurrent()){
+    if(motorFaults.softwareOverCurrent() && !isLabelRed(ui_.softwareOverCurrentLabel2())){
       ui_.softwareOverCurrentLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Software Over Current - " + QDateTime::currentDateTime().toString());
     }
@@ -201,7 +211,7 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
       ui_.softwareOverCurrentLabel2().setStyleSheet("");
     }
 
-    if(motorFaults.hardwareOverCurrent()){
+    if(motorFaults.hardwareOverCurrent() && !isLabelRed(ui_.hardwareOverCurrentLabel2())){
       ui_.hardwareOverCurrentLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Hardware Over Current - " + QDateTime::currentDateTime().toString());
     }
@@ -212,49 +222,49 @@ void FaultsView::motorTwoFaultsReceived(MotorFaults motorFaults)
 
 void FaultsView::motorTwoLimitFlagsReceived(LimitFlags limitFlags)
 {
-   if(limitFlags.outputVoltagePwmLimit()){
+   if(limitFlags.outputVoltagePwmLimit() && !isLabelRed(ui_.outputVoltagePwmLabel2())){
       ui_.outputVoltagePwmLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Output Voltage PWM - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.outputVoltagePwmLabel2().setStyleSheet("");
    }
-   if(limitFlags.motorCurrentLimit()){
+   if(limitFlags.motorCurrentLimit() && !isLabelRed(ui_.motorCurrentLabel2())){
       ui_.motorCurrentLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Motor Current Limit- " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.motorCurrentLabel2().setStyleSheet("");
    }
-   if(limitFlags.velocityLimit()){
+   if(limitFlags.velocityLimit() && !isLabelRed(ui_.velocityLabel2())){
       ui_.velocityLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two velocityLimit - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.velocityLabel2().setStyleSheet("");
    }
-   if(limitFlags.busCurrentLimit()){
+   if(limitFlags.busCurrentLimit() && !isLabelRed(ui_.busCurrentLabel2())){
       ui_.busCurrentLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Bus Current Limit- " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.busCurrentLabel2().setStyleSheet("");
    }
-   if(limitFlags.busVoltageUpperLimit()){
+   if(limitFlags.busVoltageUpperLimit() && !isLabelRed(ui_.busVoltageUpperLimitLabel2())){
       ui_.busVoltageUpperLimitLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Bus Voltage Upper Limit - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.busVoltageUpperLimitLabel2().setStyleSheet("");
    }
-   if(limitFlags.busVoltageLowerLimit()){
+   if(limitFlags.busVoltageLowerLimit() && !isLabelRed(ui_.busVoltageLowerLimitLabel2())){
       ui_.busVoltageLowerLimitLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two Bus Voltage Lower Limit - " + QDateTime::currentDateTime().toString());
    }
    else{
        ui_.busVoltageLowerLimitLabel2().setStyleSheet("");
    }
-   if(limitFlags.ipmOrMotorTelemetryLimit()){
+   if(limitFlags.ipmOrMotorTelemetryLimit() && !isLabelRed(ui_.ipmTemperatureOrMotorTemperatureLabel2())){
       ui_.ipmTemperatureOrMotorTemperatureLabel2().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Motor Two IPM Temp Or Motor Temp- " + QDateTime::currentDateTime().toString());
    }
@@ -265,7 +275,7 @@ void FaultsView::motorTwoLimitFlagsReceived(LimitFlags limitFlags)
 
 void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
 {
-   if(batteryFaults.cellOverVoltage()){
+   if(batteryFaults.cellOverVoltage() && !isLabelRed(ui_.cellOverVoltageLabel())){
       ui_.cellOverVoltageLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Cell Over Voltage - " + QDateTime::currentDateTime().toString());
    }
@@ -273,7 +283,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.cellOverVoltageLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.cellUnderVoltage()){
+   if(batteryFaults.cellUnderVoltage() && !isLabelRed(ui_.cellUnderVoltageLabel())){
       ui_.cellUnderVoltageLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Cell Under Voltage - " + QDateTime::currentDateTime().toString());
    }
@@ -281,7 +291,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.cellUnderVoltageLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.cellOverTemperature()){
+   if(batteryFaults.cellOverTemperature() && !isLabelRed(ui_.cellOverTemperatureLabel())){
       ui_.cellOverTemperatureLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Cell Over Temperature - " + QDateTime::currentDateTime().toString());
    }
@@ -289,7 +299,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.cellOverTemperatureLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.measurementUntrusted()){
+   if(batteryFaults.measurementUntrusted() && !isLabelRed(ui_.measurementUntrustedLabel())){
       ui_.measurementUntrustedLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Measurement Untrusted - " + QDateTime::currentDateTime().toString());
    }
@@ -297,7 +307,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.measurementUntrustedLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.cmuCommTimeout()){
+   if(batteryFaults.cmuCommTimeout() && !isLabelRed(ui_.cmuCommunicationsTimeoutLabel())){
       ui_.cmuCommunicationsTimeoutLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery CMU Comm Timeout - " + QDateTime::currentDateTime().toString());
    }
@@ -305,7 +315,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.cmuCommunicationsTimeoutLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.vehicleCommTimeout()){
+   if(batteryFaults.vehicleCommTimeout() && !isLabelRed(ui_.vehicleCommunicationsTimeoutLabel())){
       ui_.vehicleCommunicationsTimeoutLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Vehicle Comm Timeout - " + QDateTime::currentDateTime().toString());
    }
@@ -313,7 +323,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.vehicleCommunicationsTimeoutLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.bmuIsInSetupMode()){
+   if(batteryFaults.bmuIsInSetupMode() && !isLabelRed(ui_.bmuInSetupModeLabel())){
       ui_.bmuInSetupModeLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery BMU in Setup Mode - " + QDateTime::currentDateTime().toString());
    }
@@ -321,7 +331,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.bmuInSetupModeLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.cmuCanBusPowerStatus()){
+   if(batteryFaults.cmuCanBusPowerStatus() && !isLabelRed(ui_.cmuCanBusPowerStatusLabel())){
       ui_.cmuCanBusPowerStatusLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery CMU Can Bus Power Status - " + QDateTime::currentDateTime().toString());
    }
@@ -329,7 +339,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.cmuCanBusPowerStatusLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.packIsolationTestFailure()){
+   if(batteryFaults.packIsolationTestFailure() && !isLabelRed(ui_.packIsolationTestFailureLabel())){
       ui_.packIsolationTestFailureLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Pack Isolation Test Failure - " + QDateTime::currentDateTime().toString());
    }
@@ -337,7 +347,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.packIsolationTestFailureLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.softwareOverCurrentMeasured()){
+   if(batteryFaults.softwareOverCurrentMeasured() && !isLabelRed(ui_.softwareOverCurrentMeasurementNotValidLabel())){
       ui_.softwareOverCurrentMeasurementNotValidLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Software Over Current Measured - " + QDateTime::currentDateTime().toString());
    }
@@ -345,7 +355,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.softwareOverCurrentMeasurementNotValidLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.canSupplyIsLow()){
+   if(batteryFaults.canSupplyIsLow() && !isLabelRed(ui_.can12vSupplyLowLabel())){
       ui_.can12vSupplyLowLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Can Supply is Low - " + QDateTime::currentDateTime().toString());
    }
@@ -353,7 +363,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.can12vSupplyLowLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.contactorIsStuck()){
+   if(batteryFaults.contactorIsStuck() && !isLabelRed(ui_.contactorStuckOrNotEngagedLabel())){
       ui_.contactorStuckOrNotEngagedLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery Contactor is Stuck - " + QDateTime::currentDateTime().toString());
    }
@@ -361,7 +371,7 @@ void FaultsView::batteryFaultsReceived(BatteryFaults batteryFaults)
       ui_.contactorStuckOrNotEngagedLabel().setStyleSheet("");
    }
 
-   if(batteryFaults.cmuDetectedExtraCellPresent()){
+   if(batteryFaults.cmuDetectedExtraCellPresent() && !isLabelRed(ui_.cmuDetectedExtraCellLabel())){
       ui_.cmuDetectedExtraCellLabel().setStyleSheet("background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 rgb(40, 176, 13), stop: 1 red);");
       ui_.historyTextEdit().append("Battery CMU Detected Extra Cell - " + QDateTime::currentDateTime().toString());
    }

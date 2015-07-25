@@ -35,6 +35,7 @@ private:
    PowerGraphData driverSpeedGraphData_;
    PowerGraphData batteryCellTempGraphData_;
    PowerGraphData batteryCellVoltageGraphData_;
+   PowerGraphData batteryPowerGraphData_;
 
    void updateBusCurrentGraphData();
    void updateBusVoltage();
@@ -43,6 +44,7 @@ private:
    void updateDriverSpeedGraphData();
    void updateBatteryCellTempGraphData();
    void updateBatteryCellVoltageGraphData();
+   void updateBatteryPowerGraphData();
 
 signals:
    void busCurrentGraphDataUpdated(PowerGraphData);
@@ -52,6 +54,7 @@ signals:
    void drivingCurrentGraphDataUpdated(PowerGraphData);
    void drivingSpeedGraphDataUpdated(PowerGraphData);
 
-   void cellVoltageGraphDataUpdated(PowerGraphData);
    void cellTemperatureGraphDataUpdated(PowerGraphData);
+   void cellVoltageGraphDataUpdated(PowerGraphData);
+   void batteryPowerGraphUpdated(PowerGraphData);
 };

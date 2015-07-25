@@ -13,6 +13,34 @@ public:
     ~MpptView();
 
 private:
+	void updateMppt1PowerIn();
+	void updateMppt1PowerOut();
+	void updateMppt1Efficiency();
+
+	void updateMppt2PowerIn();
+	void updateMppt2PowerOut();
+	void updateMppt2Efficiency();
+
+	void updateMppt3PowerIn();
+	void updateMppt3PowerOut();
+	void updateMppt3Efficiency();
+
+	void updateMppt4PowerIn();
+	void updateMppt4PowerOut();
+	void updateMppt4Efficiency();
+
+	void updateMppt5PowerIn();
+	void updateMppt5PowerOut();
+	void updateMppt5Efficiency();
+
+	void updateMppt6PowerIn();
+	void updateMppt6PowerOut();
+	void updateMppt6Efficiency();
+
+	void updateMppt7PowerIn();
+	void updateMppt7PowerOut();
+	void updateMppt7Efficiency();
+
 	MpptPresenter& presenter_;
 	MpptUI& ui_;
 
