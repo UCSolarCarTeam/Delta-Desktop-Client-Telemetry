@@ -8,11 +8,11 @@
 #include "CommunicationLayer/CommDeviceControl/RadioConnectionService.h"
 
 CommunicationPresenter::CommunicationPresenter(
-      UdpMessageForwarder& messageForwarder,
+      UdpMessageForwarder& udpMessageForwarder,
       ConnectionController& connectionController,
       UdpConnectionService& udpConnectionService,
       RadioConnectionService& radioConnectionService)
-: messageForwarder_(messageForwarder)
+: udpMessageForwarder_(udpMessageForwarder)
 , connectionController_(connectionController)
 , udpConnectionService_(udpConnectionService)
 , radioConnectionService_(radioConnectionService)
@@ -22,26 +22,28 @@ CommunicationPresenter::CommunicationPresenter(
 
 void CommunicationPresenter::connectToDataSource(CommDefines::Type type)
 {
-   messageForwarder_.stop();
+   udpMessageForwarder_.stop();
    connectionController_.setDeviceType(type);
    connectionController_.connectToDataSource();
 
    if (type == CommDefines::Udp)
    {
-      messageForwarder_.start();
+      udpMessageForwarder_.start();
    }
 
 }
 
 void CommunicationPresenter::disconnectFromDataSource()
 {
-   messageForwarder_.stop();
+   udpMessageForwarder_.stop();
    connectionController_.disconnectFromDataSource();
 }
 
-void CommunicationPresenter::setMulticastNetwork(const QHostAddress& groupAddress, quint16 port)
+void CommunicationPresenter::setMulticastNetwork(const QString& groupAddressString, quint16 port)
 {
-   messageForwarder_.setMulticastNetwork(groupAddress, port);
+   QHostAddress groupAddress = QHostAddress(groupAddressString);
+
+   udpMessageForwarder_.setMulticastNetwork(groupAddress, port);
    udpConnectionService_.setMulticastNetwork(groupAddress, port);
 }
 

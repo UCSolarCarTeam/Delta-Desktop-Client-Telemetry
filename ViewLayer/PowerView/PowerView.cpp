@@ -338,10 +338,22 @@ void PowerView::handleConnectButtonClicked()
     if(ui_.connectButton().text() == "Connect"){
         ui_.setConnectionStatus().setText("Connecting...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
-        communicationPresenter_.setSerialParameters(ui_.getSerialPortName().text(),
-            ui_.getBaudRate().text().toDouble());
-        // communicationPresenter_.setMulticastNetwork(,); // TODO
-        communicationPresenter_.connectToDataSource(CommDefines::Serial); // TODO
+        if(ui_.getConnectionType().currentText() == "UDP")
+        {
+            communicationPresenter_.setMulticastNetwork(ui_.getUdpGroupAddress().text(),
+                ui_.getUdpPortNumber().value());
+            communicationPresenter_.connectToDataSource((CommDefines::Udp));
+        }
+        else if(ui_.getConnectionType().currentText() == "Serial")
+        {
+            communicationPresenter_.setSerialParameters(ui_.getSerialPortName().text(),
+                ui_.getBaudRate().text().toDouble());
+            communicationPresenter_.connectToDataSource(CommDefines::Serial);
+        }
+        else
+        {
+            qDebug() << "Connect button selecting connection type error, check PowerView.cpp";
+        }
     }
     else if(ui_.connectButton().text() == "Disconnect"){
         communicationPresenter_.disconnectFromDataSource();

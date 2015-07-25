@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QSpinBox>
 #include <QStackedWidget>
 #include <QWidget>
 #include <qwt_plot_curve.h>
@@ -18,10 +19,11 @@ public:
     virtual QPushButton& connectButton() = 0;
     virtual QLabel& setConnectionStatus() = 0;
     virtual QWidget& setConnectionHealth() = 0;
+    virtual QComboBox& getConnectionType() = 0;
     virtual QLineEdit& getSerialPortName() = 0;
     virtual QLineEdit& getBaudRate() = 0;
-    virtual QComboBox& getConnectionType() = 0;
-    virtual QLineEdit& getIpAddress() = 0;
+    virtual QLineEdit& getUdpGroupAddress() = 0;
+    virtual QSpinBox& getUdpPortNumber() = 0;
 
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;

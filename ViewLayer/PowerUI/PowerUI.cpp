@@ -88,6 +88,10 @@ QWidget& PowerUI::setConnectionHealth()
 {
     return *ui_->connectionHealthImage;
 }
+QComboBox& PowerUI::getConnectionType()
+{
+    return *ui_->connectionType;
+}
 QLineEdit& PowerUI::getSerialPortName()
 {
    return *ui_->serialPortName;
@@ -96,13 +100,13 @@ QLineEdit& PowerUI::getBaudRate()
 {
    return *ui_->baudrate;
 }
-QComboBox& PowerUI::getConnectionType()
+QLineEdit& PowerUI::getUdpGroupAddress()
 {
-    return *ui_->connectionType;
+    return *ui_->udpGroupAddress;
 }
-QLineEdit& PowerUI::getIpAddress()
+QSpinBox& PowerUI::getUdpPortNumber()
 {
-    return *ui_->ipAddress;
+    return *ui_->udpPortNumber;
 }
 
 

@@ -14,7 +14,7 @@ class CommunicationPresenter : public QObject
 	Q_OBJECT
 public:
    explicit CommunicationPresenter(
-      UdpMessageForwarder& messageForwarder,
+      UdpMessageForwarder& udpMessageForwarder,
       ConnectionController& connectionController,
       UdpConnectionService& udpConnectionService,
       RadioConnectionService& radioConnectionService);
@@ -22,7 +22,7 @@ public:
    void connectToDataSource(CommDefines::Type type);
    void disconnectFromDataSource();
 
-   void setMulticastNetwork(const QHostAddress& groupAddress, quint16 port);
+   void setMulticastNetwork(const QString& groupAddress, quint16 port);
    void setSerialParameters(const QString& serialPortName, int baudRate);
 
 signals:
@@ -33,7 +33,7 @@ private:
    void relayConnectionStatus();
 
 private:
-   UdpMessageForwarder& messageForwarder_;
+   UdpMessageForwarder& udpMessageForwarder_;
    ConnectionController& connectionController_;
    UdpConnectionService& udpConnectionService_;
    RadioConnectionService& radioConnectionService_;
