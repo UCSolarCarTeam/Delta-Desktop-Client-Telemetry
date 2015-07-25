@@ -412,7 +412,7 @@ void PowerView::connectionFailed(QString failureMessage)
 void PowerView::connectionSucceeded()
 {
     ui_.connectButton().setText("Disconnect");
-    ui_.setConnectionStatus().setText("Connected!");
+    ui_.setConnectionStatus().setText("Connected");
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
     graphsPresenter_.startUpdating();
