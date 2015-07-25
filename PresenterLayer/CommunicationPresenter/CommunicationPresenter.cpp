@@ -22,6 +22,7 @@ CommunicationPresenter::CommunicationPresenter(
 
 void CommunicationPresenter::connectToDataSource(CommDefines::Type type)
 {
+   messageForwarder_.stop();
    connectionController_.setDeviceType(type);
    connectionController_.connectToDataSource();
 
@@ -29,10 +30,7 @@ void CommunicationPresenter::connectToDataSource(CommDefines::Type type)
    {
       messageForwarder_.start();
    }
-   else
-   {
-      messageForwarder_.stop();
-   }
+
 }
 
 void CommunicationPresenter::disconnectFromDataSource()
