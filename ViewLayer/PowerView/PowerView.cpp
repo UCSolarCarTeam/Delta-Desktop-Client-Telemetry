@@ -1,10 +1,11 @@
+#include "CommunicationLayer/CommDeviceControl/CommDefines.h"
 #include "PowerView.h"
-#include "../../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
-#include "../../PresenterLayer/VehiclePresenter/VehiclePresenter.h"
-#include "../../PresenterLayer/PowerPresenter/PowerPresenter.h"
-#include "../../PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h"
-#include "../../PresenterLayer/CommunicationPresenter/CommunicationPresenter.h"
-#include "../PowerUI/PowerUI.h"
+#include "PresenterLayer/BatteryPresenter/BatteryPresenter.h"
+#include "PresenterLayer/CommunicationPresenter/CommunicationPresenter.h"
+#include "PresenterLayer/GraphsPresenter/PowerGraphsPresenter.h"
+#include "PresenterLayer/PowerPresenter/PowerPresenter.h"
+#include "PresenterLayer/VehiclePresenter/VehiclePresenter.h"
+#include "ViewLayer/PowerUI/PowerUI.h"
 #include <QDebug>
 
 #include <qwt_plot.h>
@@ -94,10 +95,10 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
     connect(&ui.batteryGraphButton(), SIGNAL(clicked()),
             this, SLOT(handleBatteryGraphButtonClicked()));
 
+    connect(&communicationPresenter_, SIGNAL(connectionSucceeded()),
+            this, SLOT(connectionSucceeded()));
     connect(&communicationPresenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
-    connect(&communicationPresenter_, SIGNAL(connectionSucceeded(QString)),
-            this, SLOT(connectionSucceeded(QString)));
 }
 
 void PowerView::driverSetSpeedMetersPerSecondReceived(double driverSetSpeedMetersPerSecond)
@@ -202,7 +203,7 @@ void PowerView::mod3CellVoltagesReceived(QList<double> mod3CellVoltages)
 }
 
 void PowerView::highlightMinMaxVoltage()
-{    
+{
     QLabel* newMaxVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
     double newMaxVoltage = newMaxVoltageLabel->text().toFloat();
     QLabel* newMinVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
@@ -212,7 +213,7 @@ void PowerView::highlightMinMaxVoltage()
     {
         double cursorVoltage = cursorVoltageLabel->text().toFloat();
         cursorVoltageLabel->setStyleSheet("");
-        
+
         if(cursorVoltage > newMaxVoltage)
         {
             newMaxVoltageLabel = cursorVoltageLabel;
@@ -225,7 +226,7 @@ void PowerView::highlightMinMaxVoltage()
         }
     }
 
-    newMaxVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");    
+    newMaxVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
     newMinVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
 }
 
@@ -275,12 +276,13 @@ void PowerView::handleConnectButtonClicked()
         clearDebugLog();
         ui_.setConnectionStatus().setText("CONNECTING...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
-        communicationPresenter_.connectDataSource(
-            ui_.getSerialPortName().text(),
+        communicationPresenter_.setSerialParameters(ui_.getSerialPortName().text(),
             ui_.getBaudRate().text().toDouble());
+        // communicationPresenter_.setMulticastNetwork(,); // TODO
+        communicationPresenter_.connectToDataSource(CommDefines::Serial); // TODO
     }
     else if(ui_.connectButton().text() == "Disconnect"){
-        communicationPresenter_.disconnectDataSource();
+        communicationPresenter_.disconnectFromDataSource();
         graphsPresenter_.stopUpdating();
     }
 }
@@ -345,10 +347,10 @@ void PowerView::connectionFailed(QString failureMessage)
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth0of5.png);");
 }
 
-void PowerView::connectionSucceeded(QString successMessage)
+void PowerView::connectionSucceeded()
 {
     ui_.connectButton().setText("Disconnect");
-    ui_.setConnectionStatus().setText(successMessage);
+    ui_.setConnectionStatus().setText("Success!");
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
     ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
     graphsPresenter_.startUpdating();

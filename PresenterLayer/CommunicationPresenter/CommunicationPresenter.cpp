@@ -1,25 +1,61 @@
+#include <QHostAddress>
+
 #include "CommunicationPresenter.h"
-#include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
+#include "CommunicationLayer/CommDeviceControl/I_ConnectionService.h"
+#include "CommunicationLayer/CommDeviceControl/UdpMessageForwarder.h"
+#include "CommunicationLayer/CommDeviceControl/ConnectionController.h"
+#include "CommunicationLayer/CommDeviceControl/UdpConnectionService.h"
+#include "CommunicationLayer/CommDeviceControl/RadioConnectionService.h"
 
-CommunicationPresenter::CommunicationPresenter(I_ConnectionService& connectionService)
-: connectionService_(connectionService)
+CommunicationPresenter::CommunicationPresenter(
+      UdpMessageForwarder& messageForwarder,
+      ConnectionController& connectionController,
+      UdpConnectionService& udpConnectionService,
+      RadioConnectionService& radioConnectionService)
+: messageForwarder_(messageForwarder)
+, connectionController_(connectionController)
+, udpConnectionService_(udpConnectionService)
+, radioConnectionService_(radioConnectionService)
 {
-    relayConnectionStatus();
+   relayConnectionStatus();
 }
 
-void CommunicationPresenter::connectDataSource(QString portName, int baudRate)
+void CommunicationPresenter::connectToDataSource(CommDefines::Type type)
 {
-    connectionService_.connectDataSource(portName, baudRate);
+   connectionController_.setDeviceType(type);
+   connectionController_.connectToDataSource();
+
+   if (type == CommDefines::Udp)
+   {
+      messageForwarder_.start();
+   }
+   else
+   {
+      messageForwarder_.stop();
+   }
 }
-void CommunicationPresenter::disconnectDataSource()
+
+void CommunicationPresenter::disconnectFromDataSource()
 {
-   connectionService_.disconnectDataSource();
+   messageForwarder_.stop();
+   connectionController_.disconnectFromDataSource();
+}
+
+void CommunicationPresenter::setMulticastNetwork(const QHostAddress& groupAddress, quint16 port)
+{
+   messageForwarder_.setMulticastNetwork(groupAddress, port);
+   udpConnectionService_.setMulticastNetwork(groupAddress, port);
+}
+
+void CommunicationPresenter::setSerialParameters(const QString& serialPortName, int baudRate)
+{
+   radioConnectionService_.setSerialParameters(serialPortName, baudRate);
 }
 
 void CommunicationPresenter::relayConnectionStatus()
 {
-    connect(&connectionService_, SIGNAL(connectionFailed(QString)),
-            this, SIGNAL(connectionFailed(QString)));
-    connect(&connectionService_, SIGNAL(connectionSucceeded(QString)),
-            this, SIGNAL(connectionSucceeded(QString)));
+   connect(&connectionController_, SIGNAL(connectionSucceeded()),
+           this, SIGNAL(connectionSucceeded()));
+   connect(&connectionController_, SIGNAL(connectionFailed(QString)),
+           this, SIGNAL(connectionFailed(QString)));
 }

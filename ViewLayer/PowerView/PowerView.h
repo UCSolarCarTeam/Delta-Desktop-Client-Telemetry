@@ -65,6 +65,6 @@ private slots:
    void handleBatteryGraphButtonClicked();
    void selectGraphButton(QPushButton*);
    void connectionFailed(QString);
-   void connectionSucceeded(QString);
+   void connectionSucceeded();
    void clearDebugLog();
 };

@@ -27,9 +27,12 @@ SOURCES += \
     BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/LoggerService/LoggerService.cpp \
     BusinessLayer/PlaybackService/PlaybackService.cpp \
+    CommunicationLayer/CommDeviceControl/CommDeviceManager.cpp \
+    CommunicationLayer/CommDeviceControl/ConnectionController.cpp \
+    CommunicationLayer/CommDeviceControl/RadioConnectionService.cpp \
+    CommunicationLayer/CommDeviceControl/UdpConnectionService.cpp \
+    CommunicationLayer/CommDeviceControl/UdpMessageForwarder.cpp \
     CommunicationLayer/CommunicationContainer.cpp \
-    CommunicationLayer/ConnectionService/RadioConnectionService.cpp \
-    CommunicationLayer/ConnectionService/SerialPortConnectionService.cpp \
     CommunicationLayer/DataPopulators/BatteryPopulator.cpp \
     CommunicationLayer/DataPopulators/CmuPopulator.cpp \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp \
@@ -52,10 +55,10 @@ SOURCES += \
     CommunicationLayer/PacketDecoder/PacketDecoder.cpp \
     CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp \
     CommunicationLayer/PacketUnstuffer/PacketUnstuffer.cpp \
-    DataLayer/MpptData/MpptData.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/DataContainer.cpp \
     DataLayer/FaultsData/FaultsData.cpp \
+    DataLayer/MpptData/MpptData.cpp \
     DataLayer/PowerData/PowerData.cpp \
     DataLayer/VehicleData/VehicleData.cpp \
     PresenterLayer/BatteryPresenter/BatteryPresenter.cpp \
@@ -90,9 +93,13 @@ HEADERS  += \
     BusinessLayer/PlaybackService/I_PlaybackService.h \
     BusinessLayer/PlaybackService/PlaybackService.h \
     CommunicationLayer/CommunicationContainer.h \
-    CommunicationLayer/ConnectionService/I_ConnectionService.h \
-    CommunicationLayer/ConnectionService/RadioConnectionService.h \
-    CommunicationLayer/ConnectionService/SerialPortConnectionService.h \
+    CommunicationLayer/CommDeviceControl/CommDeviceManager.h \
+    CommunicationLayer/CommDeviceControl/ConnectionController.h \
+    CommunicationLayer/CommDeviceControl/I_CommDevice.h \
+    CommunicationLayer/CommDeviceControl/I_ConnectionService.h \
+    CommunicationLayer/CommDeviceControl/RadioConnectionService.h \
+    CommunicationLayer/CommDeviceControl/UdpConnectionService.h \
+    CommunicationLayer/CommDeviceControl/UdpMessageForwarder.h \
     CommunicationLayer/DataPopulators/BatteryPopulator.h \
     CommunicationLayer/DataPopulators/CmuPopulator.h \
     CommunicationLayer/DataPopulators/DriverDetailsPopulator.h \

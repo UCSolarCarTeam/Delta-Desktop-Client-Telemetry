@@ -1,8 +1,13 @@
 #include <QtSerialPort/QSerialPort>
+#include <QUdpSocket>
 
 #include "../DataLayer/DataContainer.h"
 #include "CommunicationContainer.h"
-#include "ConnectionService/RadioConnectionService.h"
+#include "CommDeviceControl/ConnectionController.h"
+#include "CommDeviceControl/CommDeviceManager.h"
+#include "CommDeviceControl/RadioConnectionService.h"
+#include "CommDeviceControl/UdpConnectionService.h"
+#include "CommDeviceControl/UdpMessageForwarder.h"
 #include "DataPopulators/BatteryPopulator.h"
 #include "DataPopulators/CmuPopulator.h"
 #include "DataPopulators/DriverDetailsPopulator.h"
@@ -14,38 +19,67 @@
 #include "PacketSynchronizer/PacketSynchronizer.h"
 #include "PacketUnstuffer/PacketUnstuffer.h"
 
+class CommunicationContainerPrivate
+{
+public:
+   CommunicationContainerPrivate(DataContainer& dataContainer)
+   : radioConnectionService(serialPort)
+   , udpConnectionService(udpSocket)
+   , commDeviceManager(
+      udpSocket,
+      serialPort)
+   , connectionController(
+      radioConnectionService,
+      udpConnectionService)
+   , messageForwarder(commDeviceManager)
+   , packetSynchronizer(commDeviceManager)
+   , packetUnstuffer(packetSynchronizer)
+   , packetChecksumChecker(packetUnstuffer)
+   , packetDecoder(packetChecksumChecker)
+   , keyDriverControlPopulator(
+      packetDecoder,
+      dataContainer.vehicleData(),
+      dataContainer.powerData())
+   , driverDetailsPopulator(
+      packetDecoder,
+      dataContainer.vehicleData(),
+      dataContainer.powerData())
+   , faultsPopulator(
+      packetDecoder,
+      dataContainer.faultsData())
+   , batteryPopulator(
+      packetDecoder,
+      dataContainer.batteryData())
+   , cmuPopulator(
+      packetDecoder,
+      dataContainer.batteryData())
+   , mpptPopulator(
+      packetDecoder,
+      dataContainer.mpptData())
+   {
+   }
+
+   QSerialPort serialPort;
+   QUdpSocket udpSocket;
+   RadioConnectionService radioConnectionService;
+   UdpConnectionService udpConnectionService;
+   CommDeviceManager commDeviceManager;
+   ConnectionController connectionController;
+   UdpMessageForwarder messageForwarder;
+   PacketSynchronizer packetSynchronizer;
+   PacketUnstuffer packetUnstuffer;
+   PacketChecksumChecker packetChecksumChecker;
+   PacketDecoder packetDecoder;
+   KeyDriverControlPopulator keyDriverControlPopulator;
+   DriverDetailsPopulator driverDetailsPopulator;
+   FaultsPopulator faultsPopulator;
+   BatteryPopulator batteryPopulator;
+   CmuPopulator cmuPopulator;
+   MpptPopulator mpptPopulator;
+};
+
 CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
-: port_(new QSerialPort)
-, connectionService_(new RadioConnectionService(*port_))
-, packetSynchronizer_(new PacketSynchronizer(
-   *port_,
-   *connectionService_))
-, packetUnstuffer_(new PacketUnstuffer(
-   *packetSynchronizer_))
-, packetChecksumChecker_(new PacketChecksumChecker(
-   *packetUnstuffer_))
-, packetDecoder_(new PacketDecoder(
-   *packetChecksumChecker_))
-, keyDriverControlPopulator_(new KeyDriverControlPopulator(
-   *packetDecoder_,
-   dataContainer.vehicleData(),
-   dataContainer.powerData()))
-, driverDetailsPopulator_(new DriverDetailsPopulator(
-   *packetDecoder_,
-   dataContainer.vehicleData(),
-   dataContainer.powerData()))
-, faultsPopulator_(new FaultsPopulator(
-   *packetDecoder_,
-   dataContainer.faultsData()))
-, batteryPopulator_(new BatteryPopulator(
-   *packetDecoder_,
-   dataContainer.batteryData()))
-, cmuPopulator_(new CmuPopulator(
-   *packetDecoder_,
-   dataContainer.batteryData()))
-, mpptPopulator_(new MpptPopulator(
-   *packetDecoder_,
-   dataContainer.mpptData()))
+: impl_(new CommunicationContainerPrivate(dataContainer))
 {
 }
 
@@ -53,22 +87,37 @@ CommunicationContainer::~CommunicationContainer()
 {
 }
 
-I_ConnectionService& CommunicationContainer::connectionService()
+UdpMessageForwarder& CommunicationContainer::messageForwarder()
 {
-   return *connectionService_;
+   return impl_->messageForwarder;
+}
+
+ConnectionController& CommunicationContainer::connectionController()
+{
+   return impl_->connectionController;
+}
+
+UdpConnectionService& CommunicationContainer::udpConnectionService()
+{
+   return impl_->udpConnectionService;
+}
+
+RadioConnectionService& CommunicationContainer::radioConnectionService()
+{
+   return impl_->radioConnectionService;
 }
 
 I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
 {
-   return *packetSynchronizer_;
+   return impl_->packetSynchronizer;
 }
 
 I_DataInjectionService& CommunicationContainer::dataInjectionService()
 {
-   return *packetUnstuffer_;
+   return impl_->packetUnstuffer;
 }
 
 I_PacketDecoder& CommunicationContainer::packetDecoder()
 {
-   return *packetDecoder_;
+   return impl_->packetDecoder;
 }

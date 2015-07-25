@@ -4,7 +4,7 @@
 #include "PlaybackService/PlaybackService.h"
 
 BusinessContainer::BusinessContainer(CommunicationContainer& communicationContainer)
-: loggerService_(new LoggerService(communicationContainer.connectionService(),
+: loggerService_(new LoggerService(
    communicationContainer.packetSynchronizer(),
    communicationContainer.packetDecoder()))
 , playbackService_(new PlaybackService(

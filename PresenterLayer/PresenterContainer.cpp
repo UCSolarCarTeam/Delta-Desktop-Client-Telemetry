@@ -15,7 +15,11 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
       CommunicationContainer& communicationContainer,
       BusinessContainer& businessContainer)
 : batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
-, communicationPresenter_(new CommunicationPresenter(communicationContainer.connectionService()))
+, communicationPresenter_(new CommunicationPresenter(
+   communicationContainer.messageForwarder(),
+   communicationContainer.connectionController(),
+   communicationContainer.udpConnectionService(),
+   communicationContainer.radioConnectionService()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
 , mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
 , powerPresenter_(new PowerPresenter(dataContainer.powerData()))

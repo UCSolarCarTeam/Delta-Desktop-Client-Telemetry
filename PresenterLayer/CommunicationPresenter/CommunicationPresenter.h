@@ -1,24 +1,40 @@
 #pragma once
 
 #include <QObject>
+class QHostAddress;
 
-class I_ConnectionService;
+#include "../../CommunicationLayer/CommDeviceControl/CommDefines.h"
+class ConnectionController;
+class RadioConnectionService;
+class UdpConnectionService;
+class UdpMessageForwarder;
 
 class CommunicationPresenter : public QObject
 {
 	Q_OBJECT
 public:
-   explicit CommunicationPresenter(I_ConnectionService& connectionService);
-   void connectDataSource(QString portName, int baudRate);
-   void disconnectDataSource();
+   explicit CommunicationPresenter(
+      UdpMessageForwarder& messageForwarder,
+      ConnectionController& connectionController,
+      UdpConnectionService& udpConnectionService,
+      RadioConnectionService& radioConnectionService);
 
-private:
-    void relayConnectionStatus();
+   void connectToDataSource(CommDefines::Type type);
+   void disconnectFromDataSource();
 
-private:
-   I_ConnectionService& connectionService_;
+   void setMulticastNetwork(const QHostAddress& groupAddress, quint16 port);
+   void setSerialParameters(const QString& serialPortName, int baudRate);
 
 signals:
+   void connectionSucceeded();
    void connectionFailed(QString failureMessage);
-   void connectionSucceeded(QString successMessage);
+
+private:
+   void relayConnectionStatus();
+
+private:
+   UdpMessageForwarder& messageForwarder_;
+   ConnectionController& connectionController_;
+   UdpConnectionService& udpConnectionService_;
+   RadioConnectionService& radioConnectionService_;
 };
