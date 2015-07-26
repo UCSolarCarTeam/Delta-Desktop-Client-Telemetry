@@ -11,4 +11,5 @@ public:
 
 signals:
    void validDataReceived(QByteArray data);
+   void invalidDataReceived();
 };

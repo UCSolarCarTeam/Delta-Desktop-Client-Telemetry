@@ -27,6 +27,7 @@ SOURCES += \
     BusinessLayer/BusinessContainer.cpp \
     BusinessLayer/LoggerService/LoggerService.cpp \
     BusinessLayer/PlaybackService/PlaybackService.cpp \
+    BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.cpp \
     CommunicationLayer/CommDeviceControl/CommDeviceManager.cpp \
     CommunicationLayer/CommDeviceControl/ConnectionController.cpp \
     CommunicationLayer/CommDeviceControl/RadioConnectionService.cpp \
@@ -92,6 +93,8 @@ HEADERS  += \
     BusinessLayer/LoggerService/LoggerService.h \
     BusinessLayer/PlaybackService/I_PlaybackService.h \
     BusinessLayer/PlaybackService/PlaybackService.h \
+    BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.h \
+    BusinessLayer/CommunicationsMonitoringService/I_CommunicationsMonitoringService.h \
     CommunicationLayer/CommunicationContainer.h \
     CommunicationLayer/CommDeviceControl/CommDeviceManager.h \
     CommunicationLayer/CommDeviceControl/ConnectionController.h \

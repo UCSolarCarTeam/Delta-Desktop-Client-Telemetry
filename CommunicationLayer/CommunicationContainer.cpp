@@ -121,3 +121,8 @@ I_PacketDecoder& CommunicationContainer::packetDecoder()
 {
    return impl_->packetDecoder;
 }
+
+I_PacketChecksumChecker& CommunicationContainer::packetChecksumChecker()
+{
+   return impl_->packetChecksumChecker;
+}
