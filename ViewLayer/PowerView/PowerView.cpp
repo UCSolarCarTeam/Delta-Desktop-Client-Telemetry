@@ -348,6 +348,8 @@ void PowerView::handleConnectButtonClicked()
         }
         else if(ui_.getConnectionType().currentText() == "Serial")
         {
+            communicationPresenter_.setMulticastNetwork(ui_.getUdpGroupAddress().text(),
+                ui_.getUdpPortNumber().value());
             communicationPresenter_.setSerialParameters(ui_.getSerialPortName().text(),
                 ui_.getBaudRate().text().toDouble());
             communicationPresenter_.connectToDataSource(CommDefines::Serial);
