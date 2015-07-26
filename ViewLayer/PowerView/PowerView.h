@@ -68,6 +68,7 @@ private slots:
    void handleDriverGraphButtonClicked();
    void handleBatteryGraphButtonClicked();
    void selectGraphButton(QPushButton*);
+   void toggleSerialParameters(QString);
    void connectionFailed(QString);
    void connectionSucceeded();
 };

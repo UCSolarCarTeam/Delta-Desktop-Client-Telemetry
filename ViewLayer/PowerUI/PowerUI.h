@@ -20,10 +20,11 @@ public:
     QLabel& setConnectionStatus();
     QWidget& setConnectionHealth();
     QComboBox& getConnectionType();
-    QLineEdit& getSerialPortName();
-    QLineEdit& getBaudRate();
     QLineEdit& getUdpGroupAddress();
     QSpinBox& getUdpPortNumber();
+    QWidget& getSerialParametersWidget();
+    QLineEdit& getSerialPortName();
+    QLineEdit& getBaudRate();
 
     QLabel& setSetSpeed();
     QLabel& setSetCurrent();

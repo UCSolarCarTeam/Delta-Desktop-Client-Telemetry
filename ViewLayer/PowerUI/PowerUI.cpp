@@ -8,10 +8,7 @@ PowerUI::PowerUI()
 : ui_(new Ui::PowerUI)
 {
     ui_->setupUi(this);
-
-    connect(ui_->connectionType, SIGNAL(currentIndexChanged(int)),
-            ui_->connectionInputWidgets, SLOT(setCurrentIndex(int)));
-
+ 
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
@@ -92,14 +89,6 @@ QComboBox& PowerUI::getConnectionType()
 {
     return *ui_->connectionType;
 }
-QLineEdit& PowerUI::getSerialPortName()
-{
-   return *ui_->serialPortName;
-}
-QLineEdit& PowerUI::getBaudRate()
-{
-   return *ui_->baudrate;
-}
 QLineEdit& PowerUI::getUdpGroupAddress()
 {
     return *ui_->udpGroupAddress;
@@ -107,6 +96,18 @@ QLineEdit& PowerUI::getUdpGroupAddress()
 QSpinBox& PowerUI::getUdpPortNumber()
 {
     return *ui_->udpPortNumber;
+}
+QWidget& PowerUI::getSerialParametersWidget()
+{
+    return *ui_->serialParametersWidget;
+}
+QLineEdit& PowerUI::getSerialPortName()
+{
+   return *ui_->serialPortName;
+}
+QLineEdit& PowerUI::getBaudRate()
+{
+   return *ui_->baudrate;
 }
 
 

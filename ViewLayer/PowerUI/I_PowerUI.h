@@ -20,10 +20,11 @@ public:
     virtual QLabel& setConnectionStatus() = 0;
     virtual QWidget& setConnectionHealth() = 0;
     virtual QComboBox& getConnectionType() = 0;
-    virtual QLineEdit& getSerialPortName() = 0;
-    virtual QLineEdit& getBaudRate() = 0;
     virtual QLineEdit& getUdpGroupAddress() = 0;
     virtual QSpinBox& getUdpPortNumber() = 0;
+    virtual QWidget& getSerialParametersWidget() = 0;
+    virtual QLineEdit& getSerialPortName() = 0;
+    virtual QLineEdit& getBaudRate() = 0;
 
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;

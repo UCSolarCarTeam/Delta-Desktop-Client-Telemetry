@@ -97,6 +97,8 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
     connect(&ui.batteryGraphButton(), SIGNAL(clicked()),
             this, SLOT(handleBatteryGraphButtonClicked()));
 
+    connect(&ui.getConnectionType(), SIGNAL(currentIndexChanged(QString)),
+            this, SLOT(toggleSerialParameters(QString)));
     connect(&communicationPresenter_, SIGNAL(connectionSucceeded()),
             this, SLOT(connectionSucceeded()));
     connect(&communicationPresenter_, SIGNAL(connectionFailed(QString)),
@@ -411,6 +413,18 @@ void PowerView::selectGraphButton(QPushButton* selectedGraph)
         button->setStyleSheet(GRAPH_BUTTON_UNPRESSED);
     }
     selectedGraph->setStyleSheet(GRAPH_BUTTON_PRESSED);
+}
+
+void PowerView::toggleSerialParameters(QString connectionType)
+{
+    if(connectionType == "Serial")
+    {
+        ui_.getSerialParametersWidget().show();
+    }
+    else 
+    {
+        ui_.getSerialParametersWidget().hide();
+    }
 }
 
 void PowerView::connectionFailed(QString failureMessage)
