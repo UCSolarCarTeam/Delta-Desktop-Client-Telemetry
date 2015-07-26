@@ -666,6 +666,9 @@ QComboBox QAbstractItemView {
                       <property name="styleSheet">
                        <string notr="true">background-color: rgb(130,130,130);</string>
                       </property>
+                      <property name="text">
+                       <string>239.255.43.21</string>
+                      </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
@@ -715,8 +718,14 @@ QComboBox QAbstractItemView {
                       <property name="buttonSymbols">
                        <enum>QAbstractSpinBox::NoButtons</enum>
                       </property>
+                      <property name="minimum">
+                       <number>2000</number>
+                      </property>
                       <property name="maximum">
                        <number>65535</number>
+                      </property>
+                      <property name="value">
+                       <number>44550</number>
                       </property>
                      </widget>
                     </item>
