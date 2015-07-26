@@ -110,6 +110,27 @@ QLineEdit& PowerUI::getBaudRate()
    return *ui_->baudrate;
 }
 
+QLabel& PowerUI::secondsSinceLastPacket()
+{
+    return *ui_->secondsSinceLastPacket;
+}
+QLabel& PowerUI::packetInLastMinute()
+{
+    return *ui_->packetsInLastMinute;
+}
+QLabel& PowerUI::secondsSinceLastValidPacket()
+{
+    return *ui_->secondsSinceLastValidPacket;
+}
+QLabel& PowerUI::validPacketsInLastMinute()
+{
+    return *ui_->validPacketsInLastMinute;
+}
+QLabel& PowerUI::invalidPacketsInLastMinute()
+{
+    return *ui_->invalidPacketsInLastMinute;
+}
+
 
 QLabel& PowerUI::setSetSpeed()
 {

@@ -22,7 +22,7 @@ public:
              PowerGraphsPresenter& graphsPresenter,
              CommunicationPresenter& communicationPresenter,
              PowerUI& ui);
-   ~PowerView();
+   ~PowerView() {}
 
 private:
    bool isValuesGarbage(QList<double>);
@@ -62,6 +62,12 @@ private slots:
    void updateBatteryCellTempGraph(PowerGraphData);
    void updateBatteryCellVoltageGraph(PowerGraphData);
    void updateBatteryPowerGraph(PowerGraphData);
+
+   void secondsSinceLastPacketUpdated(int);
+   void packetInLastMinuteUpdated(int);
+   void secondsSinceLastValidPacketUpdated(int);
+   void validPacketsInLastMinuteUpdated(int);
+   void invalidPacketsInLastMinuteUpdated(int);
 
    void handleConnectButtonClicked();
    void handleBusGraphButtonClicked();

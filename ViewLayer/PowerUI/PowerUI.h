@@ -26,6 +26,12 @@ public:
     QLineEdit& getSerialPortName();
     QLineEdit& getBaudRate();
 
+    QLabel& secondsSinceLastPacket();
+    QLabel& packetInLastMinute();
+    QLabel& secondsSinceLastValidPacket();
+    QLabel& validPacketsInLastMinute();
+    QLabel& invalidPacketsInLastMinute();
+
     QLabel& setSetSpeed();
     QLabel& setSetCurrent();
     QLabel& setActualSpeed();

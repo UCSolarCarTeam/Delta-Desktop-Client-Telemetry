@@ -46,6 +46,18 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
     connect(&batteryPresenter_, SIGNAL(batteryVoltageReceived(double)),
             this, SLOT(batteryVoltageReceived(double)));
 
+    connect(&communicationPresenter_, SLOT(secondsSinceLastPacketUpdated(int)),
+            this, SLOT(secondsSinceLastPacketUpdated(int)));
+    connect(&communicationPresenter_, SLOT(packetInLastMinuteUpdated(int)),
+            this, SLOT(packetInLastMinuteUpdated(int)));
+    connect(&communicationPresenter_, SLOT(secondsSinceLastValidPacketUpdated(int)),
+            this, SLOT(secondsSinceLastValidPacketUpdated(int)));
+    connect(&communicationPresenter_, SLOT(validPacketsInLastMinuteUpdated(int)),
+            this, SLOT(validPacketsInLastMinuteUpdated(int)));
+    connect(&communicationPresenter_, SLOT(invalidPacketsInLastMinuteUpdated(int)),
+            this, SLOT(invalidPacketsInLastMinuteUpdated(int)));
+
+
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
@@ -331,9 +343,51 @@ void PowerView::updateBatteryPowerGraph(PowerGraphData graphData)
     ui_.setBatteryPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 
-PowerView::~PowerView()
+void PowerView::secondsSinceLastPacketUpdated(int secondsSinceLastPacket)
 {
+    ui_.secondsSinceLastPacket().setNum(secondsSinceLastPacket);
+    if(secondsSinceLastPacket < 1)
+    {
+        ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");
+    }
+    else if(secondsSinceLastPacket < 3)
+    {
+        ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth4of5.png);");
+    }
+    else if(secondsSinceLastPacket < 5)
+    {
+        ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth3of5.png);");
+    }
+    else if(secondsSinceLastPacket < 10)
+    {
+        ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth2of5.png);");
+    }
+    else
+    {
+        ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth1of5.png);");
+    }
 }
+
+void PowerView::packetInLastMinuteUpdated(int packetInLastMinute)
+{
+    ui_.packetInLastMinute().setNum(packetInLastMinute);
+}
+
+void PowerView::secondsSinceLastValidPacketUpdated(int secondsSinceLastValidPacket)
+{
+    ui_.secondsSinceLastValidPacket().setNum(secondsSinceLastValidPacket);
+}
+
+void PowerView::validPacketsInLastMinuteUpdated(int validPacketsInLastMinute)
+{
+    ui_.validPacketsInLastMinute().setNum(validPacketsInLastMinute);
+}
+
+void PowerView::invalidPacketsInLastMinuteUpdated(int invalidPacketsInLastMinute)
+{
+    ui_.invalidPacketsInLastMinute().setNum(invalidPacketsInLastMinute);
+}
+
 
 void PowerView::handleConnectButtonClicked()
 {
@@ -442,6 +496,6 @@ void PowerView::connectionSucceeded()
     ui_.connectButton().setText("Disconnect");
     ui_.setConnectionStatus().setText("Connected");
     ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: rgb(0, 255, 0); background-color: rgb(70,70,70);");
-    ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");//placeholder code
+    ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth1of5.png);");
     graphsPresenter_.startUpdating();
 }

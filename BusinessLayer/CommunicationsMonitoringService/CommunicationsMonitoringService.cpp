@@ -19,7 +19,21 @@ CommunicationsMonitoringService::CommunicationsMonitoringService(I_PacketChecksu
 
 	updateTimer_.setInterval(1000); // update every second
 	updateTimer_.setSingleShot(false);
+}
+
+void CommunicationsMonitoringService::start()
+{
+  	secondsSinceLastPacketReceived_ = 0;
+  	packetsReceivedInLastMinute_ = 0;
+  	secondsSinceLastValidPacketReceived_ = 0;
+  	validPacketsReceivedInLastMinute_ = 0;
+  	invalidPacketsReceivedInLastMinute_ = 0;
 	updateTimer_.start();
+}
+
+void CommunicationsMonitoringService::stop()
+{
+	updateTimer_.stop();
 }
 
 void CommunicationsMonitoringService::validPacketReceived()

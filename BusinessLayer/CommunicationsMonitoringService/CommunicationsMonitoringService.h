@@ -13,6 +13,9 @@ public:
 	CommunicationsMonitoringService(I_PacketChecksumChecker& packetChecksumChecker);
     virtual ~CommunicationsMonitoringService() {}
 
+    void start();
+    void stop();
+
 private slots:
 	void validPacketReceived();
 	void invalidPacketReceived();

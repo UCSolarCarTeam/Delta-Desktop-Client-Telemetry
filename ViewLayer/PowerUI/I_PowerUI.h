@@ -26,6 +26,12 @@ public:
     virtual QLineEdit& getSerialPortName() = 0;
     virtual QLineEdit& getBaudRate() = 0;
 
+    virtual QLabel& secondsSinceLastPacket() = 0;
+    virtual QLabel& packetInLastMinute() = 0;
+    virtual QLabel& secondsSinceLastValidPacket() = 0;
+    virtual QLabel& validPacketsInLastMinute() = 0;
+    virtual QLabel& invalidPacketsInLastMinute() = 0;
+
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;
     virtual QLabel& setActualSpeed() = 0;    

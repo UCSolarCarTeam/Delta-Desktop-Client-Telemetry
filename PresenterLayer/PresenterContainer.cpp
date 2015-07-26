@@ -19,7 +19,8 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
    communicationContainer.messageForwarder(),
    communicationContainer.connectionController(),
    communicationContainer.udpConnectionService(),
-   communicationContainer.radioConnectionService()))
+   communicationContainer.radioConnectionService(),
+   businessContainer.communicationsMonitoringService()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
 , mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
 , powerPresenter_(new PowerPresenter(dataContainer.powerData()))
