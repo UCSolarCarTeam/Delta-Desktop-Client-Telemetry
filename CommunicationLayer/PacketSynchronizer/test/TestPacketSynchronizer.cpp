@@ -20,11 +20,11 @@ void TestPacketSynchronizer::cleanup()
    connectionService_.reset();
 }
 
-void TestPacketSynchronizer::willHandleIncommingSerialData()
+void TestPacketSynchronizer::willHandleIncomingSerialData()
 {
-   QFETCH(QByteArray, incommingData);
+   QFETCH(QByteArray, incomingData);
    connectionService_->emitSignalConnectionSucceeded();
-   serialPort_->setData(incommingData);
+   serialPort_->setData(incomingData);
 
    QSignalSpy spy(patient_.data(), SIGNAL(framedPacket(QByteArray)));
    serialPort_->emitReadyRead();
@@ -33,9 +33,9 @@ void TestPacketSynchronizer::willHandleIncommingSerialData()
    QTEST(spy[0][0].toByteArray(), "expectedData");
 }
 
-void TestPacketSynchronizer::willHandleIncommingSerialData_data()
+void TestPacketSynchronizer::willHandleIncomingSerialData_data()
 {
-   QTest::addColumn<QByteArray>("incommingData");
+   QTest::addColumn<QByteArray>("incomingData");
    QTest::addColumn<QByteArray>("expectedData");
    QTest::newRow("Start of packet at index 0") << QByteArray::fromHex("0023456789abcdef00")
       << QByteArray::fromHex("23456789abcdef");
@@ -48,9 +48,9 @@ void TestPacketSynchronizer::willHandleIncommingSerialData_data()
 
 void TestPacketSynchronizer::willNotEmitPacketIfNotCompletePacket()
 {
-   QFETCH(QByteArray, incommingData);
+   QFETCH(QByteArray, incomingData);
    connectionService_->emitSignalConnectionSucceeded();
-   serialPort_->setData(incommingData);
+   serialPort_->setData(incomingData);
 
    QSignalSpy spy(patient_.data(), SIGNAL(framedPacket(QByteArray)));
    serialPort_->emitReadyRead();
@@ -60,7 +60,7 @@ void TestPacketSynchronizer::willNotEmitPacketIfNotCompletePacket()
 
 void TestPacketSynchronizer::willNotEmitPacketIfNotCompletePacket_data()
 {
-   QTest::addColumn<QByteArray>("incommingData");
+   QTest::addColumn<QByteArray>("incomingData");
    QTest::newRow("No framing packets") << QByteArray::fromHex("23456789abcdef");
    QTest::newRow("One midway through") << QByteArray::fromHex("23456789ab00cdef");
 }
@@ -75,7 +75,7 @@ void TestPacketSynchronizer::willNotEmitIfNotConnected()
    QCOMPARE(spy.count(), 0);
 }
 
-void TestPacketSynchronizer::willHandleIncommingDataSplitBetweenReads()
+void TestPacketSynchronizer::willHandleIncomingDataSplitBetweenReads()
 {
    connectionService_->emitSignalConnectionSucceeded();
    serialPort_->setData(QByteArray::fromHex("45006789ab"));

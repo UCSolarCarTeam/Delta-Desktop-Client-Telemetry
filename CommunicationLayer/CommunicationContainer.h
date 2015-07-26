@@ -27,5 +27,6 @@ public:
    I_PacketDecoder& packetDecoder();
 
 private:
+   // This is using the PIMPL design pattern, refer to http://c2.com/cgi/wiki?PimplIdiom
    QScopedPointer<CommunicationContainerPrivate> impl_;
 };

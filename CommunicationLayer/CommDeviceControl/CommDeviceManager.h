@@ -17,8 +17,8 @@ public:
    void disconnectFromDevices();
 
 private slots:
-   void handleUdpDataIncomming();
-   void handleSerialDataIncomming();
+   void handleUdpDataIncoming();
+   void handleSerialDataIncoming();
 
 private:
    QUdpSocket& udpSocket_;

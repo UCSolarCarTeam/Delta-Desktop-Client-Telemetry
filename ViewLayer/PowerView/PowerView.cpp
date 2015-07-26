@@ -85,7 +85,7 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(updateBatteryCellTempGraph(PowerGraphData)));
     connect(&graphsPresenter_, SIGNAL(cellVoltageGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
-    connect(&graphsPresenter_, SIGNAL(batteryPowerGraphDataUpdated(PowerGraphData)),
+    connect(&graphsPresenter_, SIGNAL(batteryPowerGraphUpdated(PowerGraphData)),
             this, SLOT(updateBatteryPowerGraph(PowerGraphData)));
 
     connect(&ui.connectButton(), SIGNAL(clicked()),
@@ -108,7 +108,7 @@ bool PowerView::isValuesGarbage(QList<double> values)
     foreach(double value, values){
         if(value < -10000 || value > 10000){
             return true;
-        }    
+        }
     }
     return false;
 }
@@ -157,14 +157,14 @@ void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)
 void PowerView::mod0CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.setBatteryCMU1Cell1Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell2Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell3Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell4Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell5Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell6Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell7Voltage().setText("Err");    
-        ui_.setBatteryCMU1Cell8Voltage().setText("Err");    
+        ui_.setBatteryCMU1Cell1Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell2Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell3Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell4Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell5Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell6Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell7Voltage().setText("Err");
+        ui_.setBatteryCMU1Cell8Voltage().setText("Err");
     } else {
         ui_.setBatteryCMU1Cell1Voltage().setNum(cellVoltages[0]);
         ui_.setBatteryCMU1Cell2Voltage().setNum(cellVoltages[1]);
@@ -185,14 +185,14 @@ void PowerView::mod1CellTemperatureReceived(double mod1PcbTemperature)
 void PowerView::mod1CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.setBatteryCMU2Cell1Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell2Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell3Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell4Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell5Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell6Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell7Voltage().setText("Err");    
-        ui_.setBatteryCMU2Cell8Voltage().setText("Err");    
+        ui_.setBatteryCMU2Cell1Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell2Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell3Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell4Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell5Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell6Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell7Voltage().setText("Err");
+        ui_.setBatteryCMU2Cell8Voltage().setText("Err");
     } else {
         ui_.setBatteryCMU2Cell1Voltage().setNum(cellVoltages[0]);
         ui_.setBatteryCMU2Cell2Voltage().setNum(cellVoltages[1]);
@@ -213,14 +213,14 @@ void PowerView::mod2CellTemperatureReceived(double mod2PcbTemperature)
 void PowerView::mod2CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.setBatteryCMU3Cell1Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell2Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell3Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell4Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell5Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell6Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell7Voltage().setText("Err");    
-        ui_.setBatteryCMU3Cell8Voltage().setText("Err");    
+        ui_.setBatteryCMU3Cell1Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell2Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell3Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell4Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell5Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell6Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell7Voltage().setText("Err");
+        ui_.setBatteryCMU3Cell8Voltage().setText("Err");
     } else {
         ui_.setBatteryCMU3Cell1Voltage().setNum(cellVoltages[0]);
         ui_.setBatteryCMU3Cell2Voltage().setNum(cellVoltages[1]);
@@ -241,14 +241,14 @@ void PowerView::mod3CellTemperatureReceived(double mod3PcbTemperature)
 void PowerView::mod3CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.setBatteryCMU4Cell1Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell2Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell3Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell4Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell5Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell6Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell7Voltage().setText("Err");    
-        ui_.setBatteryCMU4Cell8Voltage().setText("Err");    
+        ui_.setBatteryCMU4Cell1Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell2Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell3Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell4Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell5Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell6Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell7Voltage().setText("Err");
+        ui_.setBatteryCMU4Cell8Voltage().setText("Err");
     } else {
         ui_.setBatteryCMU4Cell1Voltage().setNum(cellVoltages[0]);
         ui_.setBatteryCMU4Cell2Voltage().setNum(cellVoltages[1]);

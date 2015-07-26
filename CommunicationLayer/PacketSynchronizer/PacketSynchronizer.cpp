@@ -13,21 +13,21 @@ PacketSynchronizer::PacketSynchronizer(
 : buffer_()
 {
    connect(&inputDevice, SIGNAL(dataReceived(QByteArray)),
-      this, SLOT(handleIncommingData(QByteArray)));
+      this, SLOT(handleIncomingData(QByteArray)));
 }
 
 PacketSynchronizer::~PacketSynchronizer()
 {
 }
 
-void PacketSynchronizer::handleIncommingData(QByteArray incommingData)
+void PacketSynchronizer::handleIncomingData(QByteArray incomingData)
 {
-   if (incommingData.isEmpty())
+   if (incomingData.isEmpty())
    {
       return;
    }
 
-   buffer_.append(incommingData);
+   buffer_.append(incomingData);
    if (alignStartOfPacketToBeginningOfBuffer())
    {
       while(extractPacketIfComplete());

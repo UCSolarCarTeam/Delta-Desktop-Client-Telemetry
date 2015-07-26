@@ -11,7 +11,7 @@ public:
    virtual ~PacketSynchronizer();
 
 private slots:
-   void handleIncommingData(QByteArray incommingData);
+   void handleIncomingData(QByteArray incomingData);
 
 private:
    bool alignStartOfPacketToBeginningOfBuffer();

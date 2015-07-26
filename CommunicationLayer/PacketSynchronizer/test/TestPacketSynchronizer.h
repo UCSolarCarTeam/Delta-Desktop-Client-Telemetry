@@ -14,14 +14,14 @@ private slots:
    void init();
    void cleanup();
 
-   void willHandleIncommingSerialData();
-   void willHandleIncommingSerialData_data();
+   void willHandleIncomingSerialData();
+   void willHandleIncomingSerialData_data();
 
    void willNotEmitPacketIfNotCompletePacket();
    void willNotEmitPacketIfNotCompletePacket_data();
    void willNotEmitIfNotConnected();
 
-   void willHandleIncommingDataSplitBetweenReads();
+   void willHandleIncomingDataSplitBetweenReads();
    void willHandleMultiplePacketsInOneRead();
 
 private:

@@ -17,11 +17,11 @@ void CommDeviceManager::connectToDevice(CommDefines::Type type)
    disconnectFromDevices();
    if (type == CommDefines::Udp)
    {
-      connect(&udpSocket_, SIGNAL(readyRead()), this, SLOT(handleUdpDataIncomming()));
+      connect(&udpSocket_, SIGNAL(readyRead()), this, SLOT(handleUdpDataIncoming()));
    }
    else
    {
-      connect(&serialDevice_, SIGNAL(readyRead()), this, SLOT(handleSerialDataIncomming()));
+      connect(&serialDevice_, SIGNAL(readyRead()), this, SLOT(handleSerialDataIncoming()));
    }
 }
 
@@ -31,7 +31,7 @@ void CommDeviceManager::disconnectFromDevices()
    disconnect(&serialDevice_, 0, this, 0);
 }
 
-void CommDeviceManager::handleUdpDataIncomming()
+void CommDeviceManager::handleUdpDataIncoming()
 {
    while (udpSocket_.hasPendingDatagrams())
    {
@@ -46,12 +46,12 @@ void CommDeviceManager::handleUdpDataIncomming()
    }
 }
 
-void CommDeviceManager::handleSerialDataIncomming()
+void CommDeviceManager::handleSerialDataIncoming()
 {
-   QByteArray incommingData = serialDevice_.readAll();
-   if (incommingData.isEmpty())
+   QByteArray incomingData = serialDevice_.readAll();
+   if (incomingData.isEmpty())
    {
       return;
    }
-   emit dataReceived(incommingData);
+   emit dataReceived(incomingData);
 }

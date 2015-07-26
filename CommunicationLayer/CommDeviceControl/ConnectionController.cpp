@@ -1,10 +1,10 @@
 #include "ConnectionController.h"
 
 ConnectionController::ConnectionController(
-   I_ConnectionService& radio,
+   I_ConnectionService& serial,
    I_ConnectionService& udp)
 : type_(CommDefines::Serial)
-, radio_(radio)
+, serial_(serial)
 , udp_(udp)
 {
 }
@@ -29,17 +29,17 @@ bool ConnectionController::connectToDataSource()
    }
    else
    {
-      connectToConnectionService(radio_);
-      return radio_.connectToDataSource();
+      connectToConnectionService(serial_);
+      return serial_.connectToDataSource();
    }
 }
 
 void ConnectionController::disconnectFromDataSource()
 {
    udp_.disconnectFromDataSource();
-   radio_.disconnectFromDataSource();
+   serial_.disconnectFromDataSource();
    disconnectFromConnectionService(udp_);
-   disconnectFromConnectionService(radio_);
+   disconnectFromConnectionService(serial_);
 }
 
 void ConnectionController::connectToConnectionService(I_ConnectionService& service)
