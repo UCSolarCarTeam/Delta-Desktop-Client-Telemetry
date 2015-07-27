@@ -1375,7 +1375,7 @@ background-color: rgb(51,51,51);</string>
                    <string notr="true">border-left: none;  border-bottom: none; text-transform:none;</string>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VOLTAGES&lt;/p&gt;&lt;p&gt;(mV)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VOLTAGES&lt;/p&gt;&lt;p&gt;(V)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="textFormat">
                    <enum>Qt::RichText</enum>
@@ -2307,6 +2307,7 @@ border: none;</string>
                    <property name="autoReplot" stdset="0">
                     <bool>true</bool>
                    </property>
+                   <zorder>busVoltageGraph</zorder>
                   </widget>
                  </item>
                 </layout>
