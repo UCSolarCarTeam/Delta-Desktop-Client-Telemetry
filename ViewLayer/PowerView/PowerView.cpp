@@ -345,25 +345,29 @@ void PowerView::updateBatteryPowerGraph(PowerGraphData graphData)
 void PowerView::secondsSinceLastPacketUpdated(int secondsSinceLastPacket)
 {
     ui_.secondsSinceLastPacket().setNum(secondsSinceLastPacket);
-    if(secondsSinceLastPacket < 1)
+    if(secondsSinceLastPacket <= 1)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");
     }
-    else if(secondsSinceLastPacket < 3)
+    else if(secondsSinceLastPacket <= 2)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth4of5.png);");
     }
-    else if(secondsSinceLastPacket < 5)
+    else if(secondsSinceLastPacket <= 3)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth3of5.png);");
     }
-    else if(secondsSinceLastPacket < 10)
+    else if(secondsSinceLastPacket <= 4)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth2of5.png);");
     }
-    else
+    else if(secondsSinceLastPacket <= 10)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth1of5.png);");
+    }
+    else
+    {
+        ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth0of5.png);");
     }
 }
 
