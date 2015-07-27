@@ -1,13 +1,13 @@
 #include <QHostAddress>
 
-#include "CommunicationPresenter.h"
-#include "CommunicationLayer/CommDeviceControl/I_ConnectionService.h"
-#include "CommunicationLayer/CommDeviceControl/UdpMessageForwarder.h"
-#include "CommunicationLayer/CommDeviceControl/ConnectionController.h"
-#include "CommunicationLayer/CommDeviceControl/UdpConnectionService.h"
-#include "CommunicationLayer/CommDeviceControl/RadioConnectionService.h"
-#include "CommunicationLayer/CommDeviceControl/CommDeviceManager.h"
-#include "BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.h"
+  #include "BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.h"
+  #include "CommunicationLayer/CommDeviceControl/CommDeviceManager.h"
+  #include "CommunicationLayer/CommDeviceControl/ConnectionController.h"
+  #include "CommunicationLayer/CommDeviceControl/I_ConnectionService.h"
+  #include "CommunicationLayer/CommDeviceControl/RadioConnectionService.h"
+  #include "CommunicationLayer/CommDeviceControl/UdpConnectionService.h"
+  #include "CommunicationLayer/CommDeviceControl/UdpMessageForwarder.h"
+  #include "CommunicationPresenter.h"
 
 CommunicationPresenter::CommunicationPresenter(
       UdpMessageForwarder& udpMessageForwarder,
@@ -19,8 +19,8 @@ CommunicationPresenter::CommunicationPresenter(
 : udpMessageForwarder_(udpMessageForwarder)
 , connectionController_(connectionController)
 , udpConnectionService_(udpConnectionService)
-, commDeviceManager_(commDeviceManager)
 , radioConnectionService_(radioConnectionService)
+, commDeviceManager_(commDeviceManager)
 , communicationsMonitoringService_(communicationsMonitoringService)
 {
    relayPacketInformation();
@@ -41,7 +41,6 @@ void CommunicationPresenter::connectToDataSource(CommDefines::Type type)
          udpMessageForwarder_.start();
       }
    }
-
 }
 
 void CommunicationPresenter::disconnectFromDataSource()
