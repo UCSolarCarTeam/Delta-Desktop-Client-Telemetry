@@ -22,7 +22,7 @@ void UdpMessageForwarder::setMulticastNetwork(const QHostAddress& groupAddress, 
 void UdpMessageForwarder::start()
 {
    connect(&device_, SIGNAL(dataReceived(QByteArray)),
-      this, SLOT(const I_CommDevice&), Qt::UniqueConnection);
+      this, SLOT(forwardData(QByteArray)), Qt::UniqueConnection);
 }
 
 void UdpMessageForwarder::stop()
