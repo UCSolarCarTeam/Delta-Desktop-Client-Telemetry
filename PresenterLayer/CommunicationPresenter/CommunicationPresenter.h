@@ -8,6 +8,7 @@ class ConnectionController;
 class RadioConnectionService;
 class UdpConnectionService;
 class UdpMessageForwarder;
+class CommDeviceManager;
 class I_CommunicationsMonitoringService;
 
 class CommunicationPresenter : public QObject
@@ -19,6 +20,7 @@ public:
       ConnectionController& connectionController,
       UdpConnectionService& udpConnectionService,
       RadioConnectionService& radioConnectionService,
+      CommDeviceManager& commDeviceManager,
       I_CommunicationsMonitoringService& communicationsMonitoringService);
 
    void connectToDataSource(CommDefines::Type type);
@@ -47,5 +49,6 @@ private:
    ConnectionController& connectionController_;
    UdpConnectionService& udpConnectionService_;
    RadioConnectionService& radioConnectionService_;
+   CommDeviceManager& commDeviceManager_;
    I_CommunicationsMonitoringService& communicationsMonitoringService_;
 };

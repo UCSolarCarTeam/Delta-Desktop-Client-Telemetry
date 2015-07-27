@@ -6,6 +6,7 @@
 #include "CommunicationLayer/CommDeviceControl/ConnectionController.h"
 #include "CommunicationLayer/CommDeviceControl/UdpConnectionService.h"
 #include "CommunicationLayer/CommDeviceControl/RadioConnectionService.h"
+#include "CommunicationLayer/CommDeviceControl/CommDeviceManager.h"
 #include "BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.h"
 
 CommunicationPresenter::CommunicationPresenter(
@@ -13,10 +14,12 @@ CommunicationPresenter::CommunicationPresenter(
       ConnectionController& connectionController,
       UdpConnectionService& udpConnectionService,
       RadioConnectionService& radioConnectionService,
+      CommDeviceManager& commDeviceManager,
       I_CommunicationsMonitoringService& communicationsMonitoringService)
 : udpMessageForwarder_(udpMessageForwarder)
 , connectionController_(connectionController)
 , udpConnectionService_(udpConnectionService)
+, commDeviceManager_(commDeviceManager)
 , radioConnectionService_(radioConnectionService)
 , communicationsMonitoringService_(communicationsMonitoringService)
 {
@@ -29,13 +32,16 @@ void CommunicationPresenter::connectToDataSource(CommDefines::Type type)
 {
    udpMessageForwarder_.stop();
    connectionController_.setDeviceType(type);
-   connectionController_.connectToDataSource();
-   communicationsMonitoringService_.start();
-
-   if (type == CommDefines::Serial)
+   if(connectionController_.connectToDataSource())
    {
-      udpMessageForwarder_.start();
+      communicationsMonitoringService_.start();
+      commDeviceManager_.connectToDevice(type);
+      if (type == CommDefines::Serial)
+      {
+         udpMessageForwarder_.start();
+      }
    }
+
 }
 
 void CommunicationPresenter::disconnectFromDataSource()

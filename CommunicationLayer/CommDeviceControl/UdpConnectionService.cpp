@@ -1,5 +1,6 @@
 #include <QUdpSocket>
 #include "UdpConnectionService.h"
+#include <QDebug>
 
 UdpConnectionService::UdpConnectionService(QUdpSocket& socket)
 : port_(0)
@@ -24,7 +25,6 @@ bool UdpConnectionService::connectToDataSource()
       emit connectionFailed("Group address and port number is not set!");
       return false;
    }
-
    if (socket_.bind(QHostAddress::AnyIPv4, port_, QUdpSocket::ShareAddress) &&
       socket_.joinMulticastGroup(groupAddress_))
    {
@@ -40,7 +40,9 @@ bool UdpConnectionService::connectToDataSource()
 
 void UdpConnectionService::disconnectFromDataSource()
 {
-   socket_.leaveMulticastGroup(groupAddress_);
+   if(socket_.state() != QUdpSocket::UnconnectedState){
+      socket_.leaveMulticastGroup(groupAddress_);
+   }
    socket_.close();
 
    emit connectionFailed("DISCONNECTED");

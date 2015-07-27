@@ -20,6 +20,7 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
    communicationContainer.connectionController(),
    communicationContainer.udpConnectionService(),
    communicationContainer.radioConnectionService(),
+   communicationContainer.commDeviceManager(),
    businessContainer.communicationsMonitoringService()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
 , mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
