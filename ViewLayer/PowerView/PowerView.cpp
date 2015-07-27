@@ -46,17 +46,16 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
     connect(&batteryPresenter_, SIGNAL(batteryVoltageReceived(double)),
             this, SLOT(batteryVoltageReceived(double)));
 
-    connect(&communicationPresenter_, SLOT(secondsSinceLastPacketUpdated(int)),
+    connect(&communicationPresenter_, SIGNAL(secondsSinceLastPacketReceivedUpdated(int)),
             this, SLOT(secondsSinceLastPacketUpdated(int)));
-    connect(&communicationPresenter_, SLOT(packetInLastMinuteUpdated(int)),
+    connect(&communicationPresenter_, SIGNAL(packetsReceivedInLastMinuteUpdated(int)),
             this, SLOT(packetInLastMinuteUpdated(int)));
-    connect(&communicationPresenter_, SLOT(secondsSinceLastValidPacketUpdated(int)),
+    connect(&communicationPresenter_, SIGNAL(secondsSinceLastValidPacketReceivedUpdated(int)),
             this, SLOT(secondsSinceLastValidPacketUpdated(int)));
-    connect(&communicationPresenter_, SLOT(validPacketsInLastMinuteUpdated(int)),
+    connect(&communicationPresenter_, SIGNAL(validPacketsReceivedInLastMinuteUpdated(int)),
             this, SLOT(validPacketsInLastMinuteUpdated(int)));
-    connect(&communicationPresenter_, SLOT(invalidPacketsInLastMinuteUpdated(int)),
+    connect(&communicationPresenter_, SIGNAL(invalidPacketsReceivedInLastMinuteUpdated(int)),
             this, SLOT(invalidPacketsInLastMinuteUpdated(int)));
-
 
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));

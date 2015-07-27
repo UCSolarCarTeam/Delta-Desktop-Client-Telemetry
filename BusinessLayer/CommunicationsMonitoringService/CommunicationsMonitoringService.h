@@ -19,6 +19,10 @@ public:
 private slots:
 	void validPacketReceived();
 	void invalidPacketReceived();
+	void update();
+	void decrementPacketsReceivedInLastMinute();
+	void decrementValidPacketsReceivedInLastMinute();
+	void decrementInvalidPacketsReceivedInLastMinute();
 
 private:
 	I_PacketChecksumChecker& packetChecksumChecker_;	
@@ -30,8 +34,4 @@ private:
 	int validPacketsReceivedInLastMinute_;
 	int invalidPacketsReceivedInLastMinute_;
 
-	void update();
-	void decrementPacketsReceivedInLastMinute();
-	void decrementValidPacketsReceivedInLastMinute();
-	void decrementInvalidPacketsReceivedInLastMinute();
 };
