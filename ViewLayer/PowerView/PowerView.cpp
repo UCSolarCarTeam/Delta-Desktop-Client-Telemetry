@@ -114,6 +114,8 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(connectionSucceeded()));
     connect(&communicationPresenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
+
+    ui_.getSerialParametersWidget().hide();
 }
 
 bool PowerView::isValuesGarbage(QList<double> values)
@@ -397,13 +399,13 @@ void PowerView::handleConnectButtonClicked()
     if(ui_.connectButton().text() == "Connect"){
         ui_.setConnectionStatus().setText("Connecting...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
-        if(ui_.getConnectionType().currentText() == "UDP")
+        if(ui_.getConnectionType().currentText() == "User")
         {
             communicationPresenter_.setMulticastNetwork(ui_.getUdpGroupAddress().text(),
                 ui_.getUdpPortNumber().value());
             communicationPresenter_.connectToDataSource((CommDefines::Udp));
         }
-        else if(ui_.getConnectionType().currentText() == "Serial")
+        else if(ui_.getConnectionType().currentText() == "Host")
         {
             communicationPresenter_.setMulticastNetwork(ui_.getUdpGroupAddress().text(),
                 ui_.getUdpPortNumber().value());
@@ -476,7 +478,7 @@ void PowerView::selectGraphButton(QPushButton* selectedGraph)
 
 void PowerView::toggleSerialParameters(QString connectionType)
 {
-    if(connectionType == "Serial")
+    if(connectionType == "Host")
     {
         ui_.getSerialParametersWidget().show();
     }
