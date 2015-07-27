@@ -9,7 +9,6 @@
 #include <QDir>
 
 #include "../../CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
-class I_ConnectionService;
 class I_PacketDecoder;
 class I_PacketSynchronizer;
 
@@ -17,13 +16,11 @@ class LoggerService : public QObject
 {
    Q_OBJECT
 public:
-   LoggerService(const I_ConnectionService& connectionService,
-      const I_PacketSynchronizer& packetSynchronizer,
+   LoggerService(const I_PacketSynchronizer& packetSynchronizer,
       const I_PacketDecoder& packetDecoder);
    virtual ~LoggerService();
 
 private slots:
-   void handleConnectionServiceDebugMessage(QString message);
    void handleFramedPacket(QByteArray packet);
    void handlePacketDecoded(const KeyDriverControlTelemetry message);
    void handlePacketDecoded(const DriverControlDetails message);
@@ -44,6 +41,4 @@ private:
 
    QFile rawDataFile_;
    QDataStream dataWriter_;
-
-   const I_ConnectionService& connectionService_;
 };

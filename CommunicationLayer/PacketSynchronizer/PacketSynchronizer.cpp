@@ -1,7 +1,7 @@
 #include <QChar>
 
 #include "PacketSynchronizer.h"
-#include "../ConnectionService/I_ConnectionService.h"
+#include "CommunicationLayer/CommDeviceControl/I_CommDevice.h"
 
 namespace
 {
@@ -9,39 +9,25 @@ namespace
 }
 
 PacketSynchronizer::PacketSynchronizer(
-   QIODevice& inputDevice,
-   I_ConnectionService& connectionService)
-: inputDevice_(inputDevice)
-, buffer_()
+   I_CommDevice& inputDevice)
+: buffer_()
 {
-   connect(&connectionService, SIGNAL(connectionSucceeded(QString)),
-      this, SLOT(handleConnectionCreated()));
+   connect(&inputDevice, SIGNAL(dataReceived(QByteArray)),
+      this, SLOT(handleIncomingData(QByteArray)));
 }
 
 PacketSynchronizer::~PacketSynchronizer()
 {
 }
 
-void PacketSynchronizer::handleConnectionCreated()
+void PacketSynchronizer::handleIncomingData(QByteArray incomingData)
 {
-   connect(&inputDevice_, SIGNAL(readyRead()),
-      this, SLOT(handleIncommingSerialData()));
-}
-
-void PacketSynchronizer::handleIncommingSerialData()
-{
-   QByteArray incommingSerialData = inputDevice_.readAll();
-   handleIncommingData(incommingSerialData);
-}
-
-void PacketSynchronizer::handleIncommingData(const QByteArray& data)
-{
-   if (data.isEmpty())
+   if (incomingData.isEmpty())
    {
       return;
    }
 
-   buffer_.append(data);
+   buffer_.append(incomingData);
    if (alignStartOfPacketToBeginningOfBuffer())
    {
       while(extractPacketIfComplete());

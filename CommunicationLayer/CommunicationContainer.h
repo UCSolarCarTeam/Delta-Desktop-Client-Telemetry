@@ -1,23 +1,19 @@
 #pragma once
 
 #include <QScopedPointer>
-class QSerialPort;
 
-class BatteryPopulator;
-class CmuPopulator;
 class DataContainer;
-class DriverDetailsPopulator;
-class FaultsPopulator;
-class I_ConnectionService;
+class CommunicationContainerPrivate;
+class ConnectionController;
+
+class CommDeviceManager;
 class I_DataInjectionService;
+class I_PacketChecksumChecker;
 class I_PacketDecoder;
 class I_PacketSynchronizer;
-class KeyDriverControlPopulator;
-class PacketChecksumChecker;
-class PacketDecoder;
-class PacketSynchronizer;
-class PacketUnstuffer;
-class MpptPopulator;
+class RadioConnectionService;
+class UdpConnectionService;
+class UdpMessageForwarder;
 
 class CommunicationContainer
 {
@@ -25,22 +21,17 @@ public:
    explicit CommunicationContainer(DataContainer& dataContainer);
    ~CommunicationContainer();
 
-   I_ConnectionService& connectionService();
    I_PacketSynchronizer& packetSynchronizer();
-   I_DataInjectionService& dataInjectionService();
    I_PacketDecoder& packetDecoder();
+   I_PacketChecksumChecker& packetChecksumChecker();
+   I_DataInjectionService& dataInjectionService();
+   ConnectionController& connectionController();
+   RadioConnectionService& radioConnectionService();
+   UdpConnectionService& udpConnectionService();
+   UdpMessageForwarder& messageForwarder();
+   CommDeviceManager& commDeviceManager();
 
 private:
-   QScopedPointer<QSerialPort> port_;
-   QScopedPointer<I_ConnectionService> connectionService_;
-   QScopedPointer<PacketSynchronizer> packetSynchronizer_;
-   QScopedPointer<PacketUnstuffer> packetUnstuffer_;
-   QScopedPointer<PacketChecksumChecker> packetChecksumChecker_;
-   QScopedPointer<PacketDecoder> packetDecoder_;
-   QScopedPointer<KeyDriverControlPopulator> keyDriverControlPopulator_;
-   QScopedPointer<DriverDetailsPopulator> driverDetailsPopulator_;
-   QScopedPointer<FaultsPopulator> faultsPopulator_;
-   QScopedPointer<BatteryPopulator> batteryPopulator_;
-   QScopedPointer<CmuPopulator> cmuPopulator_;
-   QScopedPointer<MpptPopulator> mpptPopulator_;
+   // This is using the PIMPL design pattern, refer to http://c2.com/cgi/wiki?PimplIdiom
+   QScopedPointer<CommunicationContainerPrivate> impl_;
 };

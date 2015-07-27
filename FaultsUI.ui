@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>922</height>
+    <width>1363</width>
+    <height>756</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -175,6 +175,12 @@ border: none;</string>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget {
 	background: rgb(51, 51, 51);
@@ -280,6 +286,12 @@ background: none;</string>
              </property>
              <item row="0" column="0">
               <widget class="QTextEdit" name="historyTextEdit">
+               <property name="minimumSize">
+                <size>
+                 <width>200</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">border: 1px solid rgb(85, 85, 85);
 padding:9px;
@@ -421,16 +433,31 @@ QLabel {
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
 	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
+	margin-left: 0px;	
+	margin-right: 0px;
 	font: italic;
 	color: rgb(30,30,30)
 }
 </string>
                </property>
                <layout class="QGridLayout" name="batteryPackStatusFlagsLayout">
-                <property name="spacing">
-                 <number>14</number>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>15</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>9</number>
                 </property>
                 <item row="18" column="0">
                  <spacer name="verticalSpacer_10">
@@ -856,8 +883,11 @@ background: none;</string>
              <property name="bottomMargin">
               <number>9</number>
              </property>
-             <property name="spacing">
+             <property name="horizontalSpacing">
               <number>9</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>0</number>
              </property>
              <item row="1" column="0">
               <widget class="QWidget" name="motorLimitFlags1" native="true">
@@ -873,16 +903,31 @@ QLabel {
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
 	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
+	margin-left: 0px;	
+	margin-right: 0px;
 	font: italic;
 	color: rgb(30,30,30)
 }
 </string>
                </property>
                <layout class="QGridLayout" name="gridLayout_2">
-                <property name="spacing">
-                 <number>14</number>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>15</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>9</number>
                 </property>
                 <item row="0" column="0" colspan="2">
                  <widget class="QLabel" name="limitFlagsTitle1">
@@ -1041,7 +1086,7 @@ color:white;</string>
               <widget class="QWidget" name="motorErrorFlags1" native="true">
                <property name="styleSheet">
                 <string notr="true">QWidget{
-border:none;
+	border:none;
 }
 QLabel {
 	border: 1px solid rgb(30,30,30);
@@ -1051,16 +1096,31 @@ QLabel {
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
 	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
+	margin-left: 0px;	
+	margin-right: 0px;
 	font: italic;
 	color: rgb(30,30,30)
 }
 </string>
                </property>
                <layout class="QGridLayout" name="motorErrorFlagsLayout">
-                <property name="spacing">
-                 <number>14</number>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>15</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>9</number>
                 </property>
                 <item row="8" column="1">
                  <widget class="QLabel" name="hardwareOverCurrentLabel1">
@@ -1339,8 +1399,11 @@ background: none;</string>
              <property name="bottomMargin">
               <number>9</number>
              </property>
-             <property name="spacing">
+             <property name="horizontalSpacing">
               <number>9</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>0</number>
              </property>
              <item row="1" column="0">
               <widget class="QWidget" name="motorLimitFlags2" native="true">
@@ -1356,16 +1419,31 @@ QLabel {
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
 	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
+	margin-left: 0px;	
+	margin-right: 0px;
 	font: italic;
 	color: rgb(30,30,30)
 }
 </string>
                </property>
                <layout class="QGridLayout" name="gridLayout_3">
-                <property name="spacing">
-                 <number>14</number>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>15</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>9</number>
                 </property>
                 <item row="0" column="0" colspan="2">
                  <widget class="QLabel" name="limitFlagsTitle2">
@@ -1534,16 +1612,31 @@ QLabel {
 	border-radius: 1px;
 	qproperty-alignment: AlignCenter;
 	font-size: 14px;
-	margin-left: 20px;	
-	margin-right: 20px;
+	margin-left: 0px;	
+	margin-right: 0px;
 	font: italic;
 	color: rgb(30,30,30)
 }
 </string>
                </property>
                <layout class="QGridLayout" name="motorErrorFlagsLayout_2">
-                <property name="spacing">
-                 <number>14</number>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>15</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>9</number>
                 </property>
                 <item row="8" column="1">
                  <widget class="QLabel" name="hardwareOverCurrentLabel2">

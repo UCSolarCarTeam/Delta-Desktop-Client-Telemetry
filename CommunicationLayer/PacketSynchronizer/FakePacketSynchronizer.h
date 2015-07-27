@@ -9,5 +9,7 @@ public:
    FakePacketSynchronizer();
    virtual ~FakePacketSynchronizer();
 
+   void setIoDevice(QIODevice& ioDevice);
+
    void emitFramedPacket(const QByteArray& packet);
 };

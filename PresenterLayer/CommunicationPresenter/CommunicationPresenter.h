@@ -1,24 +1,54 @@
 #pragma once
 
 #include <QObject>
+class QHostAddress;
 
-class I_ConnectionService;
+#include "../../CommunicationLayer/CommDeviceControl/CommDefines.h"
+class ConnectionController;
+class RadioConnectionService;
+class UdpConnectionService;
+class UdpMessageForwarder;
+class CommDeviceManager;
+class I_CommunicationsMonitoringService;
 
 class CommunicationPresenter : public QObject
 {
 	Q_OBJECT
 public:
-   explicit CommunicationPresenter(I_ConnectionService& connectionService);
-   void connectDataSource(QString portName, int baudRate);
-   void disconnectDataSource();
+   explicit CommunicationPresenter(
+      UdpMessageForwarder& udpMessageForwarder,
+      ConnectionController& connectionController,
+      UdpConnectionService& udpConnectionService,
+      RadioConnectionService& radioConnectionService,
+      CommDeviceManager& commDeviceManager,
+      I_CommunicationsMonitoringService& communicationsMonitoringService);
 
-private:
-    void relayConnectionStatus();
+   void connectToDataSource(CommDefines::Type type);
+   void disconnectFromDataSource();
 
-private:
-   I_ConnectionService& connectionService_;
+   void setMulticastNetwork(const QString& groupAddress, quint16 port);
+   void setSerialParameters(const QString& serialPortName, int baudRate);
+
 
 signals:
+   void secondsSinceLastPacketReceivedUpdated(int secondsSinceLastPacketReceived);
+   void packetsReceivedInLastMinuteUpdated(int packetsReceivedInLastMinute);
+   void secondsSinceLastValidPacketReceivedUpdated(int secondsSinceLastValidPacketReceived);
+   void validPacketsReceivedInLastMinuteUpdated(int validPacketsReceivedInLastMinute);
+   void invalidPacketsReceivedInLastMinuteUpdated(int invalidPacketsReceivedInLastMinute);
+
+   void connectionSucceeded();
    void connectionFailed(QString failureMessage);
-   void connectionSucceeded(QString successMessage);
+
+private:
+   void relayPacketInformation();
+   void relayConnectionStatus();
+
+private:
+   UdpMessageForwarder& udpMessageForwarder_;
+   ConnectionController& connectionController_;
+   UdpConnectionService& udpConnectionService_;
+   RadioConnectionService& radioConnectionService_;
+   CommDeviceManager& commDeviceManager_;
+   I_CommunicationsMonitoringService& communicationsMonitoringService_;
 };

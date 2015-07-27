@@ -8,7 +8,7 @@ PowerUI::PowerUI()
 : ui_(new Ui::PowerUI)
 {
     ui_->setupUi(this);
-
+ 
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
@@ -85,6 +85,22 @@ QWidget& PowerUI::setConnectionHealth()
 {
     return *ui_->connectionHealthImage;
 }
+QComboBox& PowerUI::getConnectionType()
+{
+    return *ui_->connectionType;
+}
+QLineEdit& PowerUI::getUdpGroupAddress()
+{
+    return *ui_->udpGroupAddress;
+}
+QSpinBox& PowerUI::getUdpPortNumber()
+{
+    return *ui_->udpPortNumber;
+}
+QWidget& PowerUI::getSerialParametersWidget()
+{
+    return *ui_->serialParametersWidget;
+}
 QLineEdit& PowerUI::getSerialPortName()
 {
    return *ui_->serialPortName;
@@ -93,10 +109,28 @@ QLineEdit& PowerUI::getBaudRate()
 {
    return *ui_->baudrate;
 }
-QTextEdit& PowerUI::setDebugLog()
+
+QLabel& PowerUI::secondsSinceLastPacket()
 {
-    return *ui_->connectionOutput;
+    return *ui_->secondsSinceLastPacket;
 }
+QLabel& PowerUI::packetInLastMinute()
+{
+    return *ui_->packetsInLastMinute;
+}
+QLabel& PowerUI::secondsSinceLastValidPacket()
+{
+    return *ui_->secondsSinceLastValidPacket;
+}
+QLabel& PowerUI::validPacketsInLastMinute()
+{
+    return *ui_->validPacketsInLastMinute;
+}
+QLabel& PowerUI::invalidPacketsInLastMinute()
+{
+    return *ui_->invalidPacketsInLastMinute;
+}
+
 
 QLabel& PowerUI::setSetSpeed()
 {

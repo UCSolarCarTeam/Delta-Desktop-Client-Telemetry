@@ -2,9 +2,9 @@
 
 #include <QScopedPointer>
 class CommunicationContainer;
-class I_PlaybackService;
 class LoggerService;
-class PlaybackService;
+class I_PlaybackService;
+class I_CommunicationsMonitoringService;
 
 class BusinessContainer
 {
@@ -13,8 +13,10 @@ public:
    ~BusinessContainer();
 
    I_PlaybackService& playbackService();
+   I_CommunicationsMonitoringService& communicationsMonitoringService();
 
 private:
    QScopedPointer<LoggerService> loggerService_;
-   QScopedPointer<PlaybackService> playbackService_;
+   QScopedPointer<I_PlaybackService> playbackService_;
+   QScopedPointer<I_CommunicationsMonitoringService> communicationsMonitoringService_;
 };

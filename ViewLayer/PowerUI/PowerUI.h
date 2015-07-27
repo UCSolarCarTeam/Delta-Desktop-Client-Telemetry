@@ -19,9 +19,18 @@ public:
     QPushButton& connectButton();
     QLabel& setConnectionStatus();
     QWidget& setConnectionHealth();
+    QComboBox& getConnectionType();
+    QLineEdit& getUdpGroupAddress();
+    QSpinBox& getUdpPortNumber();
+    QWidget& getSerialParametersWidget();
     QLineEdit& getSerialPortName();
     QLineEdit& getBaudRate();
-    QTextEdit& setDebugLog();
+
+    QLabel& secondsSinceLastPacket();
+    QLabel& packetInLastMinute();
+    QLabel& secondsSinceLastValidPacket();
+    QLabel& validPacketsInLastMinute();
+    QLabel& invalidPacketsInLastMinute();
 
     QLabel& setSetSpeed();
     QLabel& setSetCurrent();

@@ -1,27 +1,22 @@
 #pragma once
 
-#include <QIODevice>
 #include "I_PacketSynchronizer.h"
-class I_ConnectionService;
+class I_CommDevice;
 
 class PacketSynchronizer : public I_PacketSynchronizer
 {
    Q_OBJECT
 public:
-   PacketSynchronizer(QIODevice& inputDevice,
-      I_ConnectionService& connectionService);
+   PacketSynchronizer(I_CommDevice& inputDevice);
    virtual ~PacketSynchronizer();
 
 private slots:
-   void handleConnectionCreated();
-   void handleIncommingSerialData();
+   void handleIncomingData(QByteArray incomingData);
 
 private:
-   void handleIncommingData(const QByteArray& data);
    bool alignStartOfPacketToBeginningOfBuffer();
    bool extractPacketIfComplete();
 
 private:
-   QIODevice& inputDevice_;
    QByteArray buffer_;
 };

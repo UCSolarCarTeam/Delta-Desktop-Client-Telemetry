@@ -1,7 +1,6 @@
 #include <QDebug>
 
 #include "LoggerService.h"
-#include "../../CommunicationLayer/ConnectionService/I_ConnectionService.h"
 #include "../../CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
 
 #define PIPE_DEBUG_OUTPUT_TO_FILE 0
@@ -58,13 +57,10 @@ void handleQDebugMessages(QtMsgType type,
    }
 }
 
-LoggerService::LoggerService(const I_ConnectionService& connectionService,
+LoggerService::LoggerService(
       const I_PacketSynchronizer& packetSynchronizer,
       const I_PacketDecoder& packetDecoder)
-: connectionService_(connectionService)
 {
-   connect(&connectionService, SIGNAL(sendDebugMessage(QString)),
-      this, SLOT(handleConnectionServiceDebugMessage(QString)));
    connectToPacketDecoder(packetDecoder);
    connect(&packetSynchronizer, SIGNAL(framedPacket(QByteArray)),
       this, SLOT(handleFramedPacket(QByteArray)));
@@ -92,11 +88,6 @@ LoggerService::LoggerService(const I_ConnectionService& connectionService,
 LoggerService::~LoggerService()
 {
    markEndOfDebugLog();
-}
-
-void LoggerService::handleConnectionServiceDebugMessage(QString message)
-{
-   qDebug() << message;
 }
 
 void LoggerService::handleFramedPacket(QByteArray packet)
