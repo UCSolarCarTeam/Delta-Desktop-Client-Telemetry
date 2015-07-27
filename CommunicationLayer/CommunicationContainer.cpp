@@ -126,3 +126,8 @@ I_PacketChecksumChecker& CommunicationContainer::packetChecksumChecker()
 {
    return impl_->packetChecksumChecker;
 }
+
+CommDeviceManager& CommunicationContainer::commDeviceManager()
+{
+   return impl_->commDeviceManager;
+}

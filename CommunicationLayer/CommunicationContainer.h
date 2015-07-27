@@ -6,10 +6,11 @@ class DataContainer;
 class CommunicationContainerPrivate;
 class ConnectionController;
 
-class I_PacketSynchronizer;
-class I_PacketDecoder;
-class I_PacketChecksumChecker;
+class CommDeviceManager;
 class I_DataInjectionService;
+class I_PacketChecksumChecker;
+class I_PacketDecoder;
+class I_PacketSynchronizer;
 class RadioConnectionService;
 class UdpConnectionService;
 class UdpMessageForwarder;
@@ -28,6 +29,7 @@ public:
    RadioConnectionService& radioConnectionService();
    UdpConnectionService& udpConnectionService();
    UdpMessageForwarder& messageForwarder();
+   CommDeviceManager& commDeviceManager();
 
 private:
    // This is using the PIMPL design pattern, refer to http://c2.com/cgi/wiki?PimplIdiom
