@@ -13,6 +13,12 @@ MpptPopulator::MpptPopulator(I_PacketDecoder& packetDecoder,
 
 void MpptPopulator::populateData(const MpptDataMessage message)
 {
+   qDebug () << "Mppt Number : " << message.mpptNumber();   
+   qDebug () << "Mppt Type : " << message.type();
+   qDebug () << "Mppt Voltage In : " << message.voltageIn();
+   qDebug () << "Mppt Voltage Out : " << message.voltageOut();
+   qDebug () << "Mppt Current In : " << message.currentIn();
+   qDebug () << "Mppt Current Out : " << message.currentOut();
    switch(message.mpptNumber())
    {
       case 0:
