@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>768</height>
+    <height>872</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -502,7 +502,7 @@ QPushButton:pressed {
                       <string notr="true">background-color: rgb(130,130,130);</string>
                      </property>
                      <property name="text">
-                      <string>115200</string>
+                      <string>9600</string>
                      </property>
                     </widget>
                    </item>
