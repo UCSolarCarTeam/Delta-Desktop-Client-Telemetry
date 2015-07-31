@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>872</height>
+    <height>1006</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -750,7 +750,10 @@ QComboBox QAbstractItemView {
                       <string notr="true">border-bottom: none; border-right: none; border-left: none;</string>
                      </property>
                      <property name="text">
-                      <string>Last Received Packet (s)</string>
+                      <string>Time Since Last Received Packet (seconds)</string>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
                      </property>
                     </widget>
                    </item>
@@ -776,7 +779,7 @@ QComboBox QAbstractItemView {
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="1">
+                   <item row="3" column="1">
                     <widget class="QLabel" name="packetsInLastMinute">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -798,28 +801,6 @@ QComboBox QAbstractItemView {
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="1">
-                    <widget class="QLabel" name="secondsSinceLastValidPacket">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">border-bottom: none; border-right: none;</string>
-                     </property>
-                     <property name="text">
-                      <string>N/A</string>
-                     </property>
-                    </widget>
-                   </item>
                    <item row="0" column="0" colspan="2">
                     <widget class="QLabel" name="packetInformationLabel">
                      <property name="styleSheet">
@@ -830,7 +811,7 @@ QComboBox QAbstractItemView {
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="0">
+                   <item row="3" column="0">
                     <widget class="QLabel" name="packetsInLastMinuteLabel">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -852,29 +833,7 @@ QComboBox QAbstractItemView {
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="0">
-                    <widget class="QLabel" name="secondsSinceLastValidPacketLabel">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>195</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">border-bottom: none; border-right: none; border-left: none;</string>
-                     </property>
-                     <property name="text">
-                      <string>Last Received Valid Packet (s)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="0">
+                   <item row="6" column="0">
                     <widget class="QLabel" name="invalidPacketsInLastMinuteLabel">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -896,29 +855,7 @@ QComboBox QAbstractItemView {
                      </property>
                     </widget>
                    </item>
-                   <item row="4" column="0">
-                    <widget class="QLabel" name="validPacketsInLastMinuteLabel">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>195</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">border-bottom: none; border-right: none; border-left: none;</string>
-                     </property>
-                     <property name="text">
-                      <string>Valid Packets in Last Minute</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="4" column="1">
+                   <item row="5" column="1">
                     <widget class="QLabel" name="validPacketsInLastMinute">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -940,7 +877,29 @@ QComboBox QAbstractItemView {
                      </property>
                     </widget>
                    </item>
-                   <item row="5" column="1">
+                   <item row="5" column="0">
+                    <widget class="QLabel" name="validPacketsInLastMinuteLabel">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>195</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-bottom: none; border-right: none; border-left: none;</string>
+                     </property>
+                     <property name="text">
+                      <string>Valid Packets in Last Minute</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="1">
                     <widget class="QLabel" name="invalidPacketsInLastMinute">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -959,6 +918,56 @@ QComboBox QAbstractItemView {
                      </property>
                      <property name="text">
                       <string>0</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="secondsSinceLastValidPacketLabel">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>195</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-bottom: none; border-right: none; border-left: none;</string>
+                     </property>
+                     <property name="text">
+                      <string>Time Since Last Received Valid Packet (seconds)</string>
+                     </property>
+                     <property name="textFormat">
+                      <enum>Qt::AutoText</enum>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLabel" name="secondsSinceLastValidPacket">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>50</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-bottom: none; border-right: none;</string>
+                     </property>
+                     <property name="text">
+                      <string>N/A</string>
                      </property>
                     </widget>
                    </item>
