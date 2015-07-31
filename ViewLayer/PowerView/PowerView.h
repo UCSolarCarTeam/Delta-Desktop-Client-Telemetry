@@ -52,7 +52,8 @@ private slots:
    void mod2CellVoltagesReceived(QList<double>);
    void mod3CellTemperatureReceived(double);
    void mod3CellVoltagesReceived(QList<double>);
-   void highlightMinMaxVoltage();
+   void highlightMinMaxVoltages();
+   void highlightUntrustedVoltages();
 
    void updateBusCurrentGraph(PowerGraphData);
    void updateBusVoltageGraph(PowerGraphData);

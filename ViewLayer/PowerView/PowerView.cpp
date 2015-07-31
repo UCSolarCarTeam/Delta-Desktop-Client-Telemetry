@@ -62,25 +62,25 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
             this, SLOT(mod0CellVoltagesReceived(QList<double>)));
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
-            this, SLOT(highlightMinMaxVoltage()));
+            this, SLOT(highlightMinMaxVoltages()));
     connect(&batteryPresenter_, SIGNAL(mod1CellTemperatureReceived(double)),
             this, SLOT(mod1CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod1CellVoltagesReceived(QList<double>)),
             this, SLOT(mod1CellVoltagesReceived(QList<double>)));
     connect(&batteryPresenter_, SIGNAL(mod1CellVoltagesReceived(QList<double>)),
-            this, SLOT(highlightMinMaxVoltage()));
+            this, SLOT(highlightMinMaxVoltages()));
     connect(&batteryPresenter_, SIGNAL(mod2CellTemperatureReceived(double)),
             this, SLOT(mod2CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod2CellVoltagesReceived(QList<double>)),
             this, SLOT(mod2CellVoltagesReceived(QList<double>)));
     connect(&batteryPresenter_, SIGNAL(mod2CellVoltagesReceived(QList<double>)),
-            this, SLOT(highlightMinMaxVoltage()));
+            this, SLOT(highlightMinMaxVoltages()));
     connect(&batteryPresenter_, SIGNAL(mod3CellTemperatureReceived(double)),
             this, SLOT(mod3CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
             this, SLOT(mod3CellVoltagesReceived(QList<double>)));
     connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
-            this, SLOT(highlightMinMaxVoltage()));
+            this, SLOT(highlightMinMaxVoltages()));
 
     connect(&graphsPresenter_, SIGNAL(busCurrentGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBusCurrentGraph(PowerGraphData)));
@@ -276,7 +276,7 @@ void PowerView::mod3CellVoltagesReceived(QList<double> cellVoltages)
     }
 }
 
-void PowerView::highlightMinMaxVoltage()
+void PowerView::highlightMinMaxVoltages()
 {
     QLabel* newMaxVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
     double newMaxVoltage = newMaxVoltageLabel->text().toFloat();
@@ -287,21 +287,35 @@ void PowerView::highlightMinMaxVoltage()
     {
         double cursorVoltage = cursorVoltageLabel->text().toFloat();
         cursorVoltageLabel->setStyleSheet("");
-
-        if(cursorVoltage > newMaxVoltage)
+        if(cursorVoltage > 0)
         {
-            newMaxVoltageLabel = cursorVoltageLabel;
-            newMaxVoltage = cursorVoltage;
-        }
-        if(cursorVoltage < newMinVoltage)
-        {
-            newMinVoltageLabel = cursorVoltageLabel;
-            newMinVoltage = cursorVoltage;
+            if(cursorVoltage > newMaxVoltage)
+            {
+                newMaxVoltageLabel = cursorVoltageLabel;
+                newMaxVoltage = cursorVoltage;
+            }
+            if(cursorVoltage < newMinVoltage)
+            {
+                newMinVoltageLabel = cursorVoltageLabel;
+                newMinVoltage = cursorVoltage;
+            }
         }
     }
-
     newMaxVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
     newMinVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
+    highlightUntrustedVoltages();
+}
+
+void PowerView::highlightUntrustedVoltages()
+{
+    foreach(QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
+    {
+        if(cursorVoltageLabel->text().toFloat() < 0)
+        {
+            QString stylesheet = cursorVoltageLabel->styleSheet();
+            cursorVoltageLabel->setStyleSheet(stylesheet + "color: yellow");
+        }
+    }
 }
 
 void PowerView::updateBusCurrentGraph(PowerGraphData graphData)
