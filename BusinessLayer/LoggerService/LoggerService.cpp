@@ -14,8 +14,6 @@ namespace
 
    const QString LOG_DIRECTORY = "logs";
    const QString DEBUG_LOG_NAME = LOG_DIRECTORY + "/DebugLog.txt";
-
-   const int DATA_STREAM_VERSION = 20;
 }
 
 void handleQDebugMessages(QtMsgType type,
@@ -82,7 +80,6 @@ LoggerService::LoggerService(
    rawDataFile_.setFileName(debugDirectory.filePath("rawMessageData.dat"));
    rawDataFile_.open(QIODevice::WriteOnly);
    dataWriter_.setDevice(&rawDataFile_);
-   dataWriter_.setVersion(DATA_STREAM_VERSION);
 }
 
 LoggerService::~LoggerService()

@@ -10,7 +10,6 @@
 namespace
 {
    const int NUMBER_OF_MESSAGES_TO_INJECT = 20;
-   const int DATA_STREAM_VERSION = 20;
 }
 
 PlaybackService::PlaybackService(I_DataInjectionService& injectionService)
@@ -40,12 +39,7 @@ void PlaybackService::loadFile(const QString& fileName)
       QDateTime date;
       QByteArray data;
 
-
-      if (dataStreamIn.version() >= DATA_STREAM_VERSION)
-      {
-         dataStreamIn >> date;
-      }
-      dataStreamIn >> data;
+      dataStreamIn >> date >> data;
       data_ << QPair<QDateTime, QByteArray>(date, data);
    }
 
