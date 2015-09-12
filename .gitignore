@@ -1,6 +1,6 @@
 SolarCarTelemetry.pro.*
 *.autosave
-Makefile
+Makefile*
 *.o
 moc_*
 .tags*

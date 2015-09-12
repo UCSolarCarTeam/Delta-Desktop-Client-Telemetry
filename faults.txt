@@ -1,0 +1,39 @@
+===== BATTERY PACK STATUS ==== http://tritium.com.au/wp-content/uploads/2013/07/TRI67.010v2_BMS_BMU_Communications_Protocol.pdf
+- Cell Over Voltage
+- Cell Under Voltage
+- Cell Over Temperature
+- Measurement Untrusted (channel mismatch)
+- CMU Communications Timeout (lost CMU)
+- Vehicle Communications Timeout (lost EVDC)
+- BMU is in Setup mode
+- CMU CAN bus power status
+- Pack Isolation test failure
+- SOC measurement is not valid
+- CAN 12V supply is low - about to shut down
+- A contactor is stuck / not engaged
+- A CMU has detected an extra cell present
+
+==== MOTOR STATUS ====
+Error Flags
+	- Desaturation fault 
+	- 15V rail under voltage lock out 
+	- Config read error
+	- Watchdog caused last reset
+	- Bad motor position hall sequence
+	- DC Bus over voltage
+	- Software over current
+	- Hardware over current
+Limit Flags
+	- IPM Temperature or Motor Temperature
+	- Bus Voltage Lower Limit
+	- Bus Voltage Upper Limit
+	- Bus current
+	- Velocity
+	- Motor Current
+	- Output Voltage PWM
+
+==== FAULT HISTORY ====
+New log when a fault switches from off to on
+CSV file 
+readable text file
+TIME | FAULT  format

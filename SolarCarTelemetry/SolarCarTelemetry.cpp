@@ -1,33 +1,20 @@
-#include <QtSerialPort/QSerialPort>
+#include "DataLayer/DataContainer.h"
+#include "CommunicationLayer/CommunicationContainer.h"
+#include "BusinessLayer/BusinessContainer.h"
+#include "PresenterLayer/PresenterContainer.h"
+#include "ViewLayer/ViewContainer.h"
 
-#include "../ConnectionService/SerialPortConnectionService.h"
-#include "../DataParser/DataParser.h"
-#include "../DataPopulator/DataPopulator.h"
-#include "../DebugHandler/DebugHandler.h"
-#include "../DisplayPresenter/DisplayPresenter.h"
-#include "../DisplayView/DisplayView.h"
-#include "../SolarCarTestUi/SolarCarTestUI.h"
-#include "../TelemetryData/TelemetryData.h"
 #include "SolarCarTelemetry.h"
-
-namespace
-{
-   const QString defaultPortName = "COM";
-   const int defaultBaudrate = 115200;
-   const QString defaultFilename = "SolarCarDebugLog";
-}
 
 SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 : QApplication(argc, argv)
-, port_(new QSerialPort)
-, connectionService_(new SerialPortConnectionService(defaultPortName, defaultBaudrate, *port_))
-, data_(new TelemetryData())
-, dataParser_(new DataParser(*port_, *connectionService_))
-, dataPopulator_(new DataPopulator(*dataParser_, *data_))
-, debugHandler_(new DebugHandler(*connectionService_, *dataParser_, defaultFilename))
-, displayPresenter_(new DisplayPresenter(*data_, *connectionService_, *debugHandler_))
-, mainWindow_(new SolarCarTestUI())
-, displayView_(new DisplayView(*displayPresenter_, *mainWindow_))
+, dataContainer_(new DataContainer())
+, communicationContainer_(new CommunicationContainer(*dataContainer_))
+, businessContainer_(new BusinessContainer(*communicationContainer_))
+, presenterContainer_(new PresenterContainer(*dataContainer_,
+      *communicationContainer_,
+      *businessContainer_))
+, viewContainer_(new ViewContainer(*presenterContainer_))
 {
 }
 
