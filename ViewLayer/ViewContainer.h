@@ -7,8 +7,6 @@ class EscapeDialog;
 class EscapeDialogView;
 class FaultsUI;
 class FaultsView;
-class MpptUI;
-class MpptView;
 class OverlordWidget;
 class PlaybackUI;
 class PlaybackView;
@@ -25,12 +23,10 @@ public:
 private:
    EscapeDialog* escapeDialog_;
    PowerUI* powerUI_;
-   MpptUI* mpptUI_;
    FaultsUI* faultsUI_;
    QScopedPointer<PlaybackUI> playbackUI_;
    QScopedPointer<EscapeDialogView> escapeDialogView_;
    QScopedPointer<PowerView> powerView_;
-   QScopedPointer<MpptView> mpptView_;
    QScopedPointer<FaultsView> faultsView_;
    QScopedPointer<OverlordWidget> overlordWidget_;
    QScopedPointer<DisplayView> displayView_;
