@@ -43,7 +43,7 @@ void PacketDecoder::handleValidData(QByteArray messageData)
          emit packetDecoded(CmuDataMessage(messageData));
          return;
       case MessageDefines::MpptData:
-         emit packetDecoded(MpptDataMessage(messageData));
+         // Car not sending valid MPPT data
          return;
       }
    }

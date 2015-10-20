@@ -5,7 +5,6 @@
 #include "DataLayer/DataContainer.h"
 #include "FaultsPresenter/FaultsPresenter.h"
 #include "GraphsPresenter/PowerGraphsPresenter.h"
-#include "MpptPresenter/MpptPresenter.h"
 #include "PlaybackPresenter/PlaybackPresenter.h"
 #include "PowerPresenter/PowerPresenter.h"
 #include "PresenterContainer.h"
@@ -23,7 +22,6 @@ PresenterContainer::PresenterContainer(DataContainer& dataContainer,
    communicationContainer.commDeviceManager(),
    businessContainer.communicationsMonitoringService()))
 , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
-, mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
 , powerPresenter_(new PowerPresenter(dataContainer.powerData()))
 , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
 , powerGraphsPresenter_(new PowerGraphsPresenter(dataContainer.vehicleData(),
@@ -51,11 +49,6 @@ CommunicationPresenter& PresenterContainer::communicationPresenter()
 VehiclePresenter& PresenterContainer::vehiclePresenter()
 {
    return *vehiclePresenter_;
-}
-
-MpptPresenter& PresenterContainer::mpptPresenter()
-{
-   return *mpptPresenter_;
 }
 
 PowerPresenter& PresenterContainer::powerPresenter()

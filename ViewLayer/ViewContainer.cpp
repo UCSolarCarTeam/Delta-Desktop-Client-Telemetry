@@ -4,8 +4,6 @@
 #include "FaultsUI/FaultsUI.h"
 #include "FaultsView/FaultsView.h"
 #include "I_SolarCarWindow/I_SolarCarWindow.h"
-#include "MpptUI/MpptUI.h"
-#include "MpptView/MpptView.h"
 #include "OverlordWidget/OverlordWidget.h"
 #include "PlaybackUI/PlaybackUI.h"
 #include "PlaybackView/PlaybackView.h"
