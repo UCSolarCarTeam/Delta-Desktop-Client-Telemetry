@@ -17,7 +17,9 @@ EscapeDialog::~EscapeDialog()
     delete ui;
 }
 
-void EscapeDialog::keyPressEvent(QKeyEvent * event){
+void EscapeDialog::keyPressEvent(QKeyEvent* event)
+{
+   Q_UNUSED(event);
    hide();
 }
 
@@ -33,10 +35,11 @@ void EscapeDialog::handleFullScreenCheckBoxStateChange(int state)
 
 void EscapeDialog::paintEvent(QPaintEvent* e)
 {
+   Q_UNUSED(e);
    QColor backgroundColor = palette().light().color();
-    backgroundColor.setAlpha(50);
-    QPainter customPainter(this);
-    customPainter.fillRect(rect(), backgroundColor);
+   backgroundColor.setAlpha(50);
+   QPainter customPainter(this);
+   customPainter.fillRect(rect(), backgroundColor);
 }
 QPushButton& EscapeDialog::settingsSelectionPushButton()
 {

@@ -2,7 +2,7 @@ QT += serialport widgets network
 CONFIG += c++11 debug staticlib create_prl link_prl
 
 !win32 {
-   # QMAKE_CXXFLAGS += -Werror
+   QMAKE_CXXFLAGS += -Werror
 }
 
 INCLUDEPATH += ..

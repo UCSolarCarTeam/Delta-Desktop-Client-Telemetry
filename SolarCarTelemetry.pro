@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
-config += ordered
+CONFIG += ordered
 
 message(University of Calgary Solar Car Team Delta Client Telemetry)
 
