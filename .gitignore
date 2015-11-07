@@ -7,3 +7,5 @@ moc_*
 build*
 *.user*
 *.orig
+qrc_*.cpp
+ui_*.cpp
