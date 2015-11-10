@@ -10,6 +10,8 @@ This reposi
 .	Go to the newly copied folder using `cd /usr/local/qwt-6.1.2`
 .	Compile it using `sudo make install`
 .	Add the following two lines to your bashrc +
-	export QWT=/usr/local/qwt-6.1.2
-	export LD_LIBRARY_PATH=$QWT/lib:$LD_LIBRARY_PATH
+....
+export QWT=/usr/local/qwt-6.1.2
+export LD_LIBRARY_PATH=$QWT/lib:$LD_LIBRARY_PATH
+....
 Your bashrc is located at ~/.bashrc. You may have to create a new one if you don't have one already, you can use `touch ~/.bashrc`
