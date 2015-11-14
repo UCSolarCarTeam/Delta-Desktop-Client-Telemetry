@@ -4,11 +4,11 @@
 #include <QDebug>
 
 
-PowerUI::PowerUI() 
-: ui_(new Ui::PowerUI)
+PowerUI::PowerUI()
+    : ui_(new Ui::PowerUI)
 {
     ui_->setupUi(this);
- 
+
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
@@ -75,7 +75,7 @@ void PowerUI::hideHeaderBar()
 
 QPushButton& PowerUI::connectButton()
 {
-   return *ui_->connectButton;
+    return *ui_->connectButton;
 }
 QLabel& PowerUI::connectionStatus()
 {
@@ -103,11 +103,11 @@ QWidget& PowerUI::getSerialParametersWidget()
 }
 QLineEdit& PowerUI::getSerialPortName()
 {
-   return *ui_->serialPortName;
+    return *ui_->serialPortName;
 }
 QLineEdit& PowerUI::getBaudRate()
 {
-   return *ui_->baudrate;
+    return *ui_->baudrate;
 }
 
 QLabel& PowerUI::secondsSinceLastPacket()
@@ -143,7 +143,7 @@ QLabel& PowerUI::setCurrent()
 QLabel& PowerUI::actualSpeed()
 {
     return *ui_->actualSpeed;
-}    
+}
 
 QLabel& PowerUI::busCurrent()
 {
@@ -338,27 +338,27 @@ QStackedWidget& PowerUI::graphsStackedWidget()
 QwtPlotCurve& PowerUI::positiveBusCurrentCurve()
 {
     return *positiveBusCurrentCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::negativeBusCurrentCurve()
 {
     return *negativeBusCurrentCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::busVoltageCurve()
 {
     return *busVoltageCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::busPowerCurve()
 {
     return *busPowerCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setSpeedCurve()
 {
     return *setSpeedCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::actualSpeedCurve()
 {
     return *actualSpeedCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setCurrentCurve()
 {
     return *setCurrentCurve_;
@@ -407,11 +407,11 @@ void PowerUI::setupGraphs()
     int MAX_BATTERY_CELL_VOLTAGE = 4500; // Millivolts
     int MAX_BATTERY_POWER = 1000;
 
-    int MAX_SECONDS_ELAPSED = 60; 
+    int MAX_SECONDS_ELAPSED = 60;
 
     ui_->busCurrentGraph->setTitle("Bus Current Graph");
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Current (A)");
-    ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT/5);
+    ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT / 5);
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     positiveBusCurrentCurve_->setPen(*new QPen(Qt::green));
@@ -423,7 +423,7 @@ void PowerUI::setupGraphs()
 
     ui_->busVoltageGraph->setTitle("Bus Voltage Graph");
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (V)");
-    ui_->busVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_VOLTAGE, MAX_BUS_VOLTAGE/5);
+    ui_->busVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_VOLTAGE, MAX_BUS_VOLTAGE / 5);
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busVoltageCurve_->setPen(*new QPen(Qt::yellow));
@@ -433,7 +433,7 @@ void PowerUI::setupGraphs()
 
     ui_->busPowerGraph->setTitle("Bus Power Graph");
     ui_->busPowerGraph->setAxisTitle(QwtPlot::yLeft, "Power (W)");
-    ui_->busPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_POWER, MAX_BUS_POWER/5);
+    ui_->busPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_POWER, MAX_BUS_POWER / 5);
     ui_->busPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busPowerCurve_->setPen(*new QPen(Qt::yellow));
@@ -443,7 +443,7 @@ void PowerUI::setupGraphs()
 
     ui_->driverSpeedGraph->setTitle("Driver Speed Graph");
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::yLeft, "Speed (kph)");
-    ui_->driverSpeedGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_SPEED, MAX_DRIVER_SPEED/5);
+    ui_->driverSpeedGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_SPEED, MAX_DRIVER_SPEED / 5);
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverSpeedGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     setSpeedCurve_->setPen(*new QPen(Qt::yellow));
@@ -455,7 +455,7 @@ void PowerUI::setupGraphs()
 
     ui_->driverCurrentGraph->setTitle("Driver Current Graph");
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
-    ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
+    ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT / 5);
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     setCurrentCurve_->setPen(*new QPen(Qt::yellow));
@@ -465,7 +465,7 @@ void PowerUI::setupGraphs()
 
     ui_->batteryCellTempGraph->setTitle("Battery Cell Temp Graph");
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::yLeft, "Temperature (C)");
-    ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP/5);
+    ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP / 5);
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     mod0CellTempCurve_->setPen(*new QPen(Qt::yellow));
@@ -481,7 +481,7 @@ void PowerUI::setupGraphs()
 
     ui_->batteryCellVoltageGraph->setTitle("Battery Cell Voltage Graph");
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (mV)");
-    ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_VOLTAGE, MAX_BATTERY_CELL_VOLTAGE/5);
+    ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_VOLTAGE, MAX_BATTERY_CELL_VOLTAGE / 5);
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     maxCellVoltageCurve_->setPen(*new QPen(Qt::green));
@@ -495,7 +495,7 @@ void PowerUI::setupGraphs()
 
     ui_->batteryPowerGraph->setTitle("Battery Power Graph");
     ui_->batteryPowerGraph->setAxisTitle(QwtPlot::yLeft, "Watts (W)");
-    ui_->batteryPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_POWER, MAX_BATTERY_POWER/5);
+    ui_->batteryPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_POWER, MAX_BATTERY_POWER / 5);
     ui_->batteryPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     batteryPowerCurve_->setPen(*new QPen(Qt::yellow));

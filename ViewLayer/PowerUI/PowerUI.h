@@ -4,15 +4,15 @@
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "I_PowerUI.h"
 namespace Ui {
-	class PowerUI;
+class PowerUI;
 }
 
 class PowerUI : public I_SolarCarWindow, public I_PowerUI
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit PowerUI();
-	~PowerUI();
+    explicit PowerUI();
+    ~PowerUI();
 
     void hideHeaderBar();
 
@@ -86,14 +86,14 @@ public:
     QPushButton& driverGraphButton();
     QPushButton& batteryGraphButton();
 
-    
+
     QStackedWidget& graphsStackedWidget();
-    QwtPlotCurve& positiveBusCurrentCurve(); 
-    QwtPlotCurve& negativeBusCurrentCurve(); 
-    QwtPlotCurve& busVoltageCurve(); 
-    QwtPlotCurve& busPowerCurve(); 
-    QwtPlotCurve& setSpeedCurve(); 
-    QwtPlotCurve& actualSpeedCurve(); 
+    QwtPlotCurve& positiveBusCurrentCurve();
+    QwtPlotCurve& negativeBusCurrentCurve();
+    QwtPlotCurve& busVoltageCurve();
+    QwtPlotCurve& busPowerCurve();
+    QwtPlotCurve& setSpeedCurve();
+    QwtPlotCurve& actualSpeedCurve();
     QwtPlotCurve& setCurrentCurve();
     QwtPlotCurve& mod0CellTempCurve();
     QwtPlotCurve& mod1CellTempCurve();
@@ -104,23 +104,23 @@ public:
     QwtPlotCurve& avgCellVoltageCurve();
     QwtPlotCurve& batteryPowerCurve();
 private:
-   Ui::PowerUI *ui_;
-   QList<QLabel*> batteryCMUCellVoltageLabels_;
-   QwtPlotCurve* positiveBusCurrentCurve_;
-   QwtPlotCurve* negativeBusCurrentCurve_;
-   QwtPlotCurve* busVoltageCurve_;
-   QwtPlotCurve* busPowerCurve_;
-   QwtPlotCurve* actualSpeedCurve_;
-   QwtPlotCurve* setSpeedCurve_;
-   QwtPlotCurve* mod0CellTempCurve_;
-   QwtPlotCurve* setCurrentCurve_;
-   QwtPlotCurve* mod1CellTempCurve_;
-   QwtPlotCurve* mod2CellTempCurve_;
-   QwtPlotCurve* mod3CellTempCurve_;
-   QwtPlotCurve* maxCellVoltageCurve_;
-   QwtPlotCurve* minCellVoltageCurve_;
-   QwtPlotCurve* avgCellVoltageCurve_;
-   QwtPlotCurve* batteryPowerCurve_;
+    Ui::PowerUI *ui_;
+    QList<QLabel*> batteryCMUCellVoltageLabels_;
+    QwtPlotCurve* positiveBusCurrentCurve_;
+    QwtPlotCurve* negativeBusCurrentCurve_;
+    QwtPlotCurve* busVoltageCurve_;
+    QwtPlotCurve* busPowerCurve_;
+    QwtPlotCurve* actualSpeedCurve_;
+    QwtPlotCurve* setSpeedCurve_;
+    QwtPlotCurve* mod0CellTempCurve_;
+    QwtPlotCurve* setCurrentCurve_;
+    QwtPlotCurve* mod1CellTempCurve_;
+    QwtPlotCurve* mod2CellTempCurve_;
+    QwtPlotCurve* mod3CellTempCurve_;
+    QwtPlotCurve* maxCellVoltageCurve_;
+    QwtPlotCurve* minCellVoltageCurve_;
+    QwtPlotCurve* avgCellVoltageCurve_;
+    QwtPlotCurve* batteryPowerCurve_;
 
-   void setupGraphs();
+    void setupGraphs();
 };
