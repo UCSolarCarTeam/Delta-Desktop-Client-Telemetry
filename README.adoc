@@ -4,21 +4,3 @@ This repository is owned by the University of Calgary Solar Car team.
 This program receives data through a serial port from the Schulich Delta. 
 This program was created using the Qt framework in conjunction with QwtPlot. 
 The master branch is compatible with Qt 5.5.1 and QwtPlot 6.1.2.
-
-== Installing Qt for Linux 
-
-Install the source at http://www.qt.io/download-open-source/ and follow the steps in the installer.
-
-== Installing QwtPlot for Linux
-
-.	Download the source at http://sourceforge.net/projects/qwt/
-.	Extract using `tar -xvjf qwt-6.1.2` 
-.	Copy the folder using `sudo cp -r qwt-6.1.2 /usr/local/qwt-6.1.2`
-.	Go to the newly copied folder using `cd /usr/local/qwt-6.1.2`
-.	Compile it using `sudo make install`
-.	Add the following two lines to your bashrc +
-....
-export QWT=/usr/local/qwt-6.1.2
-export LD_LIBRARY_PATH=$QWT/lib:$LD_LIBRARY_PATH
-....
-Your bashrc is located at ~/.bashrc. You may have to create a new one if you don't have one already, you can use `touch ~/.bashrc`
