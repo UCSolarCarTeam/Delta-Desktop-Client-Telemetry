@@ -167,124 +167,124 @@ void PowerView::batteryVoltageReceived(double batteryVoltage)
 
 void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)
 {
-    ui_.batteryCMU1Temp().setNum(mod0PcbTemperature);
+    ui_.batteryCmu1Temp().setNum(mod0PcbTemperature);
 }
 
 void PowerView::mod0CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.batteryCMU1Cell1Voltage().setText("Err");
-        ui_.batteryCMU1Cell2Voltage().setText("Err");
-        ui_.batteryCMU1Cell3Voltage().setText("Err");
-        ui_.batteryCMU1Cell4Voltage().setText("Err");
-        ui_.batteryCMU1Cell5Voltage().setText("Err");
-        ui_.batteryCMU1Cell6Voltage().setText("Err");
-        ui_.batteryCMU1Cell7Voltage().setText("Err");
-        ui_.batteryCMU1Cell8Voltage().setText("Err");
+        ui_.batteryCmu1Cell1Voltage().setText("Err");
+        ui_.batteryCmu1Cell2Voltage().setText("Err");
+        ui_.batteryCmu1Cell3Voltage().setText("Err");
+        ui_.batteryCmu1Cell4Voltage().setText("Err");
+        ui_.batteryCmu1Cell5Voltage().setText("Err");
+        ui_.batteryCmu1Cell6Voltage().setText("Err");
+        ui_.batteryCmu1Cell7Voltage().setText("Err");
+        ui_.batteryCmu1Cell8Voltage().setText("Err");
     } else {
-        ui_.batteryCMU1Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
-        ui_.batteryCMU1Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
-        ui_.batteryCMU1Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
-        ui_.batteryCMU1Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
-        ui_.batteryCMU1Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
-        ui_.batteryCMU1Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
-        ui_.batteryCMU1Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
-        ui_.batteryCMU1Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
+        ui_.batteryCmu1Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
+        ui_.batteryCmu1Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
+        ui_.batteryCmu1Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
+        ui_.batteryCmu1Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
+        ui_.batteryCmu1Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
+        ui_.batteryCmu1Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
+        ui_.batteryCmu1Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
+        ui_.batteryCmu1Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
     }
 }
 
 void PowerView::mod1CellTemperatureReceived(double mod1PcbTemperature)
 {
-     ui_.batteryCMU2Temp().setNum(mod1PcbTemperature);
+     ui_.batteryCmu2Temp().setNum(mod1PcbTemperature);
 }
 
 void PowerView::mod1CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.batteryCMU2Cell1Voltage().setText("Err");
-        ui_.batteryCMU2Cell2Voltage().setText("Err");
-        ui_.batteryCMU2Cell3Voltage().setText("Err");
-        ui_.batteryCMU2Cell4Voltage().setText("Err");
-        ui_.batteryCMU2Cell5Voltage().setText("Err");
-        ui_.batteryCMU2Cell6Voltage().setText("Err");
-        ui_.batteryCMU2Cell7Voltage().setText("Err");
-        ui_.batteryCMU2Cell8Voltage().setText("Err");
+        ui_.batteryCmu2Cell1Voltage().setText("Err");
+        ui_.batteryCmu2Cell2Voltage().setText("Err");
+        ui_.batteryCmu2Cell3Voltage().setText("Err");
+        ui_.batteryCmu2Cell4Voltage().setText("Err");
+        ui_.batteryCmu2Cell5Voltage().setText("Err");
+        ui_.batteryCmu2Cell6Voltage().setText("Err");
+        ui_.batteryCmu2Cell7Voltage().setText("Err");
+        ui_.batteryCmu2Cell8Voltage().setText("Err");
     } else {
-        ui_.batteryCMU2Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
-        ui_.batteryCMU2Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
-        ui_.batteryCMU2Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
-        ui_.batteryCMU2Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
-        ui_.batteryCMU2Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
-        ui_.batteryCMU2Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
-        ui_.batteryCMU2Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
-        ui_.batteryCMU2Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
+        ui_.batteryCmu2Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
+        ui_.batteryCmu2Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
+        ui_.batteryCmu2Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
+        ui_.batteryCmu2Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
+        ui_.batteryCmu2Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
+        ui_.batteryCmu2Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
+        ui_.batteryCmu2Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
+        ui_.batteryCmu2Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
     }
 }
 
 void PowerView::mod2CellTemperatureReceived(double mod2PcbTemperature)
 {
-    ui_.batteryCMU3Temp().setNum(mod2PcbTemperature);
+    ui_.batteryCmu3Temp().setNum(mod2PcbTemperature);
 }
 
 void PowerView::mod2CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.batteryCMU3Cell1Voltage().setText("Err");
-        ui_.batteryCMU3Cell2Voltage().setText("Err");
-        ui_.batteryCMU3Cell3Voltage().setText("Err");
-        ui_.batteryCMU3Cell4Voltage().setText("Err");
-        ui_.batteryCMU3Cell5Voltage().setText("Err");
-        ui_.batteryCMU3Cell6Voltage().setText("Err");
-        ui_.batteryCMU3Cell7Voltage().setText("Err");
-        ui_.batteryCMU3Cell8Voltage().setText("Err");
+        ui_.batteryCmu3Cell1Voltage().setText("Err");
+        ui_.batteryCmu3Cell2Voltage().setText("Err");
+        ui_.batteryCmu3Cell3Voltage().setText("Err");
+        ui_.batteryCmu3Cell4Voltage().setText("Err");
+        ui_.batteryCmu3Cell5Voltage().setText("Err");
+        ui_.batteryCmu3Cell6Voltage().setText("Err");
+        ui_.batteryCmu3Cell7Voltage().setText("Err");
+        ui_.batteryCmu3Cell8Voltage().setText("Err");
     } else {
-        ui_.batteryCMU3Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
-        ui_.batteryCMU3Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
-        ui_.batteryCMU3Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
-        ui_.batteryCMU3Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
-        ui_.batteryCMU3Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
-        ui_.batteryCMU3Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
-        ui_.batteryCMU3Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
-        ui_.batteryCMU3Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
+        ui_.batteryCmu3Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
+        ui_.batteryCmu3Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
+        ui_.batteryCmu3Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
+        ui_.batteryCmu3Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
+        ui_.batteryCmu3Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
+        ui_.batteryCmu3Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
+        ui_.batteryCmu3Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
+        ui_.batteryCmu3Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
     }
 }
 
 void PowerView::mod3CellTemperatureReceived(double mod3PcbTemperature)
 {
-    ui_.batteryCMU4Temp().setNum(mod3PcbTemperature);
+    ui_.batteryCmu4Temp().setNum(mod3PcbTemperature);
 }
 
 void PowerView::mod3CellVoltagesReceived(QList<double> cellVoltages)
 {
     if (isValuesGarbage(cellVoltages)){
-        ui_.batteryCMU4Cell1Voltage().setText("Err");
-        ui_.batteryCMU4Cell2Voltage().setText("Err");
-        ui_.batteryCMU4Cell3Voltage().setText("Err");
-        ui_.batteryCMU4Cell4Voltage().setText("Err");
-        ui_.batteryCMU4Cell5Voltage().setText("Err");
-        ui_.batteryCMU4Cell6Voltage().setText("Err");
-        ui_.batteryCMU4Cell7Voltage().setText("Err");
-        ui_.batteryCMU4Cell8Voltage().setText("Err");
+        ui_.batteryCmu4Cell1Voltage().setText("Err");
+        ui_.batteryCmu4Cell2Voltage().setText("Err");
+        ui_.batteryCmu4Cell3Voltage().setText("Err");
+        ui_.batteryCmu4Cell4Voltage().setText("Err");
+        ui_.batteryCmu4Cell5Voltage().setText("Err");
+        ui_.batteryCmu4Cell6Voltage().setText("Err");
+        ui_.batteryCmu4Cell7Voltage().setText("Err");
+        ui_.batteryCmu4Cell8Voltage().setText("Err");
     } else {
-        ui_.batteryCMU4Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
-        ui_.batteryCMU4Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
-        ui_.batteryCMU4Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
-        ui_.batteryCMU4Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
-        ui_.batteryCMU4Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
-        ui_.batteryCMU4Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
-        ui_.batteryCMU4Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
-        ui_.batteryCMU4Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
+        ui_.batteryCmu4Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
+        ui_.batteryCmu4Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
+        ui_.batteryCmu4Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
+        ui_.batteryCmu4Cell4Voltage().setText(QString::number(cellVoltages[3], 'f', 3));
+        ui_.batteryCmu4Cell5Voltage().setText(QString::number(cellVoltages[4], 'f', 3));
+        ui_.batteryCmu4Cell6Voltage().setText(QString::number(cellVoltages[5], 'f', 3));
+        ui_.batteryCmu4Cell7Voltage().setText(QString::number(cellVoltages[6], 'f', 3));
+        ui_.batteryCmu4Cell8Voltage().setText(QString::number(cellVoltages[7], 'f', 3));
     }
 }
 
 void PowerView::highlightMinMaxVoltages()
 {
-    QLabel* newMaxVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
+    QLabel* newMaxVoltageLabel = ui_.batteryCmuCellVoltageLabels()[0];
     double newMaxVoltage = newMaxVoltageLabel->text().toFloat();
-    QLabel* newMinVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
+    QLabel* newMinVoltageLabel = ui_.batteryCmuCellVoltageLabels()[0];
     double newMinVoltage = newMinVoltageLabel->text().toFloat();
 
-    foreach(QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
+    foreach(QLabel* cursorVoltageLabel, ui_.batteryCmuCellVoltageLabels())
     {
         double cursorVoltage = cursorVoltageLabel->text().toFloat();
         cursorVoltageLabel->setStyleSheet("");
@@ -309,7 +309,7 @@ void PowerView::highlightMinMaxVoltages()
 
 void PowerView::highlightUntrustedVoltages()
 {
-    foreach(QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
+    foreach(QLabel* cursorVoltageLabel, ui_.batteryCmuCellVoltageLabels())
     {
         if(cursorVoltageLabel->text().toFloat() < 0)
         {
