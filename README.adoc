@@ -1,0 +1,6 @@
+= Schulich Delta Client Telemetry
+
+This repository is owned by the University of Calgary Solar Car team. 
+This program receives data through a serial port from the Schulich Delta. 
+This program was created using the Qt framework in conjunction with QwtPlot. 
+The master branch is compatible with Qt 5.5.1 and QwtPlot 6.1.2.
