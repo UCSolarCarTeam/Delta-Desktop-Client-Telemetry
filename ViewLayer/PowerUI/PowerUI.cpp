@@ -4,46 +4,46 @@
 #include <QDebug>
 
 
-PowerUI::PowerUI() 
-: ui_(new Ui::PowerUI)
+PowerUI::PowerUI()
+    : ui_(new Ui::PowerUI)
 {
     ui_->setupUi(this);
- 
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell4Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell5Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell6Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell7Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell8Voltage);
 
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell1Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell2Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell3Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell4Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell5Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell6Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell7Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell8Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell1Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell2Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell3Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell4Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell5Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell6Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell7Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu1Cell8Voltage);
 
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell1Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell2Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell3Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell4Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell5Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell6Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell7Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell8Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell1Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell2Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell3Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell4Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell5Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell6Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell7Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu2Cell8Voltage);
 
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell1Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell2Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell3Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell4Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell5Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell6Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell7Voltage);
-    batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell8Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell1Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell2Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell3Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell4Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell5Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell6Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell7Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu3Cell8Voltage);
+
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell1Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell2Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell3Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell4Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell5Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell6Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell7Voltage);
+    batteryCmuCellVoltageLabels_.append(ui_->batteryCmu4Cell8Voltage);
 
     positiveBusCurrentCurve_ = new QwtPlotCurve("Positive Bus Current");
     negativeBusCurrentCurve_ = new QwtPlotCurve("Negative Bus Current");
@@ -75,13 +75,13 @@ void PowerUI::hideHeaderBar()
 
 QPushButton& PowerUI::connectButton()
 {
-   return *ui_->connectButton;
+    return *ui_->connectButton;
 }
-QLabel& PowerUI::setConnectionStatus()
+QLabel& PowerUI::connectionStatus()
 {
     return *ui_->connectionStatus;
 }
-QWidget& PowerUI::setConnectionHealth()
+QWidget& PowerUI::connectionHealth()
 {
     return *ui_->connectionHealthImage;
 }
@@ -103,11 +103,11 @@ QWidget& PowerUI::getSerialParametersWidget()
 }
 QLineEdit& PowerUI::getSerialPortName()
 {
-   return *ui_->serialPortName;
+    return *ui_->serialPortName;
 }
 QLineEdit& PowerUI::getBaudRate()
 {
-   return *ui_->baudrate;
+    return *ui_->baudrate;
 }
 
 QLabel& PowerUI::secondsSinceLastPacket()
@@ -132,189 +132,189 @@ QLabel& PowerUI::invalidPacketsInLastMinute()
 }
 
 
-QLabel& PowerUI::setSetSpeed()
+QLabel& PowerUI::setSpeed()
 {
     return *ui_->setSpeed;
 }
-QLabel& PowerUI::setSetCurrent()
+QLabel& PowerUI::setCurrent()
 {
     return *ui_->setCurrent;
 }
-QLabel& PowerUI::setActualSpeed()
+QLabel& PowerUI::actualSpeed()
 {
     return *ui_->actualSpeed;
-}    
+}
 
-QLabel& PowerUI::setBusCurrent()
+QLabel& PowerUI::busCurrent()
 {
     return *ui_->busCurrent;
 }
 
-QLabel& PowerUI::setBusVoltage()
+QLabel& PowerUI::busVoltage()
 {
     return *ui_->busVoltage;
 }
-QLabel& PowerUI::setBatteryCurrent()
+QLabel& PowerUI::batteryCurrent()
 {
     return *ui_->batteryCurrent;
 }
-QLabel& PowerUI::setBatteryVoltage()
+QLabel& PowerUI::batteryVoltage()
 {
     return *ui_->batteryVoltage;
 }
 
 
-QLabel& PowerUI::setBatteryCMU1Temp()
+QLabel& PowerUI::batteryCmu1Temp()
 {
-    return *ui_->batteryCMU1Temp;
+    return *ui_->batteryCmu1Temp;
 }
-QLabel& PowerUI::setBatteryCMU1Cell1Voltage()
+QLabel& PowerUI::batteryCmu1Cell1Voltage()
 {
-    return *ui_->batteryCMU1Cell1Voltage;
+    return *ui_->batteryCmu1Cell1Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell2Voltage()
+QLabel& PowerUI::batteryCmu1Cell2Voltage()
 {
-    return *ui_->batteryCMU1Cell2Voltage;
+    return *ui_->batteryCmu1Cell2Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell3Voltage()
+QLabel& PowerUI::batteryCmu1Cell3Voltage()
 {
-    return *ui_->batteryCMU1Cell3Voltage;
+    return *ui_->batteryCmu1Cell3Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell4Voltage()
+QLabel& PowerUI::batteryCmu1Cell4Voltage()
 {
-    return *ui_->batteryCMU1Cell4Voltage;
+    return *ui_->batteryCmu1Cell4Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell5Voltage()
+QLabel& PowerUI::batteryCmu1Cell5Voltage()
 {
-    return *ui_->batteryCMU1Cell5Voltage;
+    return *ui_->batteryCmu1Cell5Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell6Voltage()
+QLabel& PowerUI::batteryCmu1Cell6Voltage()
 {
-    return *ui_->batteryCMU1Cell6Voltage;
+    return *ui_->batteryCmu1Cell6Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell7Voltage()
+QLabel& PowerUI::batteryCmu1Cell7Voltage()
 {
-    return *ui_->batteryCMU1Cell7Voltage;
+    return *ui_->batteryCmu1Cell7Voltage;
 }
-QLabel& PowerUI::setBatteryCMU1Cell8Voltage()
+QLabel& PowerUI::batteryCmu1Cell8Voltage()
 {
-    return *ui_->batteryCMU1Cell8Voltage;
-}
-
-QLabel& PowerUI::setBatteryCMU2Temp()
-{
-    return *ui_->batteryCMU2Temp;
-}
-QLabel& PowerUI::setBatteryCMU2Cell1Voltage()
-{
-    return *ui_->batteryCMU2Cell1Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell2Voltage()
-{
-    return *ui_->batteryCMU2Cell2Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell3Voltage()
-{
-    return *ui_->batteryCMU2Cell3Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell4Voltage()
-{
-    return *ui_->batteryCMU2Cell4Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell5Voltage()
-{
-    return *ui_->batteryCMU2Cell5Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell6Voltage()
-{
-    return *ui_->batteryCMU2Cell6Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell7Voltage()
-{
-    return *ui_->batteryCMU2Cell7Voltage;
-}
-QLabel& PowerUI::setBatteryCMU2Cell8Voltage()
-{
-    return *ui_->batteryCMU2Cell8Voltage;
+    return *ui_->batteryCmu1Cell8Voltage;
 }
 
-QLabel& PowerUI::setBatteryCMU3Temp()
+QLabel& PowerUI::batteryCmu2Temp()
 {
-    return *ui_->batteryCMU3Temp;
+    return *ui_->batteryCmu2Temp;
 }
-QLabel& PowerUI::setBatteryCMU3Cell1Voltage()
+QLabel& PowerUI::batteryCmu2Cell1Voltage()
 {
-    return *ui_->batteryCMU3Cell1Voltage;
+    return *ui_->batteryCmu2Cell1Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell2Voltage()
+QLabel& PowerUI::batteryCmu2Cell2Voltage()
 {
-    return *ui_->batteryCMU3Cell2Voltage;
+    return *ui_->batteryCmu2Cell2Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell3Voltage()
+QLabel& PowerUI::batteryCmu2Cell3Voltage()
 {
-    return *ui_->batteryCMU3Cell3Voltage;
+    return *ui_->batteryCmu2Cell3Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell4Voltage()
+QLabel& PowerUI::batteryCmu2Cell4Voltage()
 {
-    return *ui_->batteryCMU3Cell4Voltage;
+    return *ui_->batteryCmu2Cell4Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell5Voltage()
+QLabel& PowerUI::batteryCmu2Cell5Voltage()
 {
-    return *ui_->batteryCMU3Cell5Voltage;
+    return *ui_->batteryCmu2Cell5Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell6Voltage()
+QLabel& PowerUI::batteryCmu2Cell6Voltage()
 {
-    return *ui_->batteryCMU3Cell6Voltage;
+    return *ui_->batteryCmu2Cell6Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell7Voltage()
+QLabel& PowerUI::batteryCmu2Cell7Voltage()
 {
-    return *ui_->batteryCMU3Cell7Voltage;
+    return *ui_->batteryCmu2Cell7Voltage;
 }
-QLabel& PowerUI::setBatteryCMU3Cell8Voltage()
+QLabel& PowerUI::batteryCmu2Cell8Voltage()
 {
-    return *ui_->batteryCMU3Cell8Voltage;
-}
-
-QLabel& PowerUI::setBatteryCMU4Temp()
-{
-    return *ui_->batteryCMU4Temp;
-}
-QLabel& PowerUI::setBatteryCMU4Cell1Voltage()
-{
-    return *ui_->batteryCMU4Cell1Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell2Voltage()
-{
-    return *ui_->batteryCMU4Cell2Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell3Voltage()
-{
-    return *ui_->batteryCMU4Cell3Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell4Voltage()
-{
-    return *ui_->batteryCMU4Cell4Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell5Voltage()
-{
-    return *ui_->batteryCMU4Cell5Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell6Voltage()
-{
-    return *ui_->batteryCMU4Cell6Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell7Voltage()
-{
-    return *ui_->batteryCMU4Cell7Voltage;
-}
-QLabel& PowerUI::setBatteryCMU4Cell8Voltage()
-{
-    return *ui_->batteryCMU4Cell8Voltage;
+    return *ui_->batteryCmu2Cell8Voltage;
 }
 
-QList<QLabel*>& PowerUI::batteryCMUCellVoltageLabels()
+QLabel& PowerUI::batteryCmu3Temp()
 {
-    return batteryCMUCellVoltageLabels_;
+    return *ui_->batteryCmu3Temp;
+}
+QLabel& PowerUI::batteryCmu3Cell1Voltage()
+{
+    return *ui_->batteryCmu3Cell1Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell2Voltage()
+{
+    return *ui_->batteryCmu3Cell2Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell3Voltage()
+{
+    return *ui_->batteryCmu3Cell3Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell4Voltage()
+{
+    return *ui_->batteryCmu3Cell4Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell5Voltage()
+{
+    return *ui_->batteryCmu3Cell5Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell6Voltage()
+{
+    return *ui_->batteryCmu3Cell6Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell7Voltage()
+{
+    return *ui_->batteryCmu3Cell7Voltage;
+}
+QLabel& PowerUI::batteryCmu3Cell8Voltage()
+{
+    return *ui_->batteryCmu3Cell8Voltage;
+}
+
+QLabel& PowerUI::batteryCmu4Temp()
+{
+    return *ui_->batteryCmu4Temp;
+}
+QLabel& PowerUI::batteryCmu4Cell1Voltage()
+{
+    return *ui_->batteryCmu4Cell1Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell2Voltage()
+{
+    return *ui_->batteryCmu4Cell2Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell3Voltage()
+{
+    return *ui_->batteryCmu4Cell3Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell4Voltage()
+{
+    return *ui_->batteryCmu4Cell4Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell5Voltage()
+{
+    return *ui_->batteryCmu4Cell5Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell6Voltage()
+{
+    return *ui_->batteryCmu4Cell6Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell7Voltage()
+{
+    return *ui_->batteryCmu4Cell7Voltage;
+}
+QLabel& PowerUI::batteryCmu4Cell8Voltage()
+{
+    return *ui_->batteryCmu4Cell8Voltage;
+}
+
+QList<QLabel*>& PowerUI::batteryCmuCellVoltageLabels()
+{
+    return batteryCmuCellVoltageLabels_;
 }
 
 QPushButton& PowerUI::busGraphButton()
@@ -331,67 +331,67 @@ QPushButton& PowerUI::batteryGraphButton()
 }
 
 
-QStackedWidget& PowerUI::setGraphsStackedWidget()
+QStackedWidget& PowerUI::graphsStackedWidget()
 {
     return *ui_->graphsStackedWidget;
 }
-QwtPlotCurve& PowerUI::setPositiveBusCurrentCurve()
+QwtPlotCurve& PowerUI::positiveBusCurrentCurve()
 {
     return *positiveBusCurrentCurve_;
-} 
-QwtPlotCurve& PowerUI::setNegativeBusCurrentCurve()
+}
+QwtPlotCurve& PowerUI::negativeBusCurrentCurve()
 {
     return *negativeBusCurrentCurve_;
-} 
-QwtPlotCurve& PowerUI::setBusVoltageCurve()
+}
+QwtPlotCurve& PowerUI::busVoltageCurve()
 {
     return *busVoltageCurve_;
-} 
-QwtPlotCurve& PowerUI::setBusPowerCurve()
+}
+QwtPlotCurve& PowerUI::busPowerCurve()
 {
     return *busPowerCurve_;
-} 
-QwtPlotCurve& PowerUI::setSetSpeedCurve()
+}
+QwtPlotCurve& PowerUI::setSpeedCurve()
 {
     return *setSpeedCurve_;
-} 
-QwtPlotCurve& PowerUI::setActualSpeedCurve()
+}
+QwtPlotCurve& PowerUI::actualSpeedCurve()
 {
     return *actualSpeedCurve_;
-} 
-QwtPlotCurve& PowerUI::setSetCurrentCurve()
+}
+QwtPlotCurve& PowerUI::setCurrentCurve()
 {
     return *setCurrentCurve_;
 }
-QwtPlotCurve& PowerUI::setMod0CellTempCurve()
+QwtPlotCurve& PowerUI::mod0CellTempCurve()
 {
     return *mod0CellTempCurve_;
 }
-QwtPlotCurve& PowerUI::setMod1CellTempCurve()
+QwtPlotCurve& PowerUI::mod1CellTempCurve()
 {
     return *mod1CellTempCurve_;
 }
-QwtPlotCurve& PowerUI::setMod2CellTempCurve()
+QwtPlotCurve& PowerUI::mod2CellTempCurve()
 {
     return *mod2CellTempCurve_;
 }
-QwtPlotCurve& PowerUI::setMod3CellTempCurve()
+QwtPlotCurve& PowerUI::mod3CellTempCurve()
 {
     return *mod3CellTempCurve_;
 }
-QwtPlotCurve& PowerUI::setMaxCellVoltageCurve()
+QwtPlotCurve& PowerUI::maxCellVoltageCurve()
 {
     return *maxCellVoltageCurve_;
 }
-QwtPlotCurve& PowerUI::setMinCellVoltageCurve()
+QwtPlotCurve& PowerUI::minCellVoltageCurve()
 {
     return *minCellVoltageCurve_;
 }
-QwtPlotCurve& PowerUI::setAvgCellVoltageCurve()
+QwtPlotCurve& PowerUI::avgCellVoltageCurve()
 {
     return *avgCellVoltageCurve_;
 }
-QwtPlotCurve& PowerUI::setBatteryPowerCurve()
+QwtPlotCurve& PowerUI::batteryPowerCurve()
 {
     return *batteryPowerCurve_;
 }
@@ -407,11 +407,11 @@ void PowerUI::setupGraphs()
     int MAX_BATTERY_CELL_VOLTAGE = 4500; // Millivolts
     int MAX_BATTERY_POWER = 1000;
 
-    int MAX_SECONDS_ELAPSED = 60; 
+    int MAX_SECONDS_ELAPSED = 60;
 
     ui_->busCurrentGraph->setTitle("Bus Current Graph");
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Current (A)");
-    ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT/5);
+    ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT / 5);
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     positiveBusCurrentCurve_->setPen(*new QPen(Qt::green));
@@ -423,7 +423,7 @@ void PowerUI::setupGraphs()
 
     ui_->busVoltageGraph->setTitle("Bus Voltage Graph");
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (V)");
-    ui_->busVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_VOLTAGE, MAX_BUS_VOLTAGE/5);
+    ui_->busVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_VOLTAGE, MAX_BUS_VOLTAGE / 5);
     ui_->busVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busVoltageCurve_->setPen(*new QPen(Qt::yellow));
@@ -433,7 +433,7 @@ void PowerUI::setupGraphs()
 
     ui_->busPowerGraph->setTitle("Bus Power Graph");
     ui_->busPowerGraph->setAxisTitle(QwtPlot::yLeft, "Power (W)");
-    ui_->busPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_POWER, MAX_BUS_POWER/5);
+    ui_->busPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_POWER, MAX_BUS_POWER / 5);
     ui_->busPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->busPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     busPowerCurve_->setPen(*new QPen(Qt::yellow));
@@ -443,7 +443,7 @@ void PowerUI::setupGraphs()
 
     ui_->driverSpeedGraph->setTitle("Driver Speed Graph");
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::yLeft, "Speed (kph)");
-    ui_->driverSpeedGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_SPEED, MAX_DRIVER_SPEED/5);
+    ui_->driverSpeedGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_SPEED, MAX_DRIVER_SPEED / 5);
     ui_->driverSpeedGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverSpeedGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     setSpeedCurve_->setPen(*new QPen(Qt::yellow));
@@ -455,7 +455,7 @@ void PowerUI::setupGraphs()
 
     ui_->driverCurrentGraph->setTitle("Driver Current Graph");
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Percent (%)");
-    ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT/5);
+    ui_->driverCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_DRIVER_CURRENT, MAX_DRIVER_CURRENT / 5);
     ui_->driverCurrentGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->driverCurrentGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     setCurrentCurve_->setPen(*new QPen(Qt::yellow));
@@ -465,7 +465,7 @@ void PowerUI::setupGraphs()
 
     ui_->batteryCellTempGraph->setTitle("Battery Cell Temp Graph");
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::yLeft, "Temperature (C)");
-    ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP/5);
+    ui_->batteryCellTempGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_TEMP, MAX_BATTERY_CELL_TEMP / 5);
     ui_->batteryCellTempGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellTempGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     mod0CellTempCurve_->setPen(*new QPen(Qt::yellow));
@@ -481,7 +481,7 @@ void PowerUI::setupGraphs()
 
     ui_->batteryCellVoltageGraph->setTitle("Battery Cell Voltage Graph");
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::yLeft, "Voltage (mV)");
-    ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_VOLTAGE, MAX_BATTERY_CELL_VOLTAGE/5);
+    ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_CELL_VOLTAGE, MAX_BATTERY_CELL_VOLTAGE / 5);
     ui_->batteryCellVoltageGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryCellVoltageGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     maxCellVoltageCurve_->setPen(*new QPen(Qt::green));
@@ -495,7 +495,7 @@ void PowerUI::setupGraphs()
 
     ui_->batteryPowerGraph->setTitle("Battery Power Graph");
     ui_->batteryPowerGraph->setAxisTitle(QwtPlot::yLeft, "Watts (W)");
-    ui_->batteryPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_POWER, MAX_BATTERY_POWER/5);
+    ui_->batteryPowerGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BATTERY_POWER, MAX_BATTERY_POWER / 5);
     ui_->batteryPowerGraph->setAxisTitle(QwtPlot::xBottom, "Time Elapsed (s)");
     ui_->batteryPowerGraph->setAxisScale(QwtPlot::xBottom, 0, MAX_SECONDS_ELAPSED, 10);
     batteryPowerCurve_->setPen(*new QPen(Qt::yellow));
