@@ -6,11 +6,18 @@ CONFIG += c++11 debug staticlib create_prl link_prl
 }
 
 INCLUDEPATH += ..
-! include ( /usr/local/qwt-6.1.2/features/qwt.prf ) {
-   error("Can not find qwt.prf!" )
+
+win32 {
+   ! include ( C:\Qwt-6.1.2\features\qwt.prf ) {
+      error("Can not find windows qwt.prf!" )
+   }
+} else {
+   ! include ( /usr/local/qwt-6.1.2/features/qwt.prf ) {
+      error("Can not find linux qwt.prf!" )
+   }
 }
 
-OBJECTS_DIR = ../../build/.obj
-MOC_DIR = ../../build/.moc
-RCC_DIR = ../../build/.rcc
-UI_DIR = ../../build/.ui
+# OBJECTS_DIR = ../../build/.obj
+# MOC_DIR = ../../build/.moc
+# RCC_DIR = ../../build/.rcc
+# UI_DIR = ../../build/.ui
