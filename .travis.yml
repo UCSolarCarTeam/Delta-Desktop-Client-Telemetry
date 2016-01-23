@@ -1,0 +1,15 @@
+sudo: required
+
+before_install:
+    - sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
+    - sudo apt-add-repository -y ppa:beineri/opt-qt542
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install g++-4.8 libc6-i386 qt54tools qt54svg qt54webkit qt54serialport
+    - PATH="/opt/qt54/bin:$PATH"
+    - qt54-env.sh 
+
+script: 
+    - qmake
+    - make
+
+language: cpp
