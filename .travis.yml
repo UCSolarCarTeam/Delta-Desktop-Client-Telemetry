@@ -8,7 +8,10 @@ before_install:
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
 
-script: 
+script:
+    - cd qwt-6.1.2
+    - qmake qwt.pro
+    - sudo make install
     - qmake
     - make
 
