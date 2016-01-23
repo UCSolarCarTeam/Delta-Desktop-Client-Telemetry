@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QLabel>
-#include "qwt_plot.h"
+//#include "qwt_plot.h"
 #include <QComboBox>
 #include <QGraphicsView>
 #include <QPushButton>
