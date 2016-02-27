@@ -13,7 +13,6 @@
 #include "DataPopulators/DriverDetailsPopulator.h"
 #include "DataPopulators/FaultsPopulator.h"
 #include "DataPopulators/KeyDriverControlPopulator.h"
-#include "DataPopulators/MpptPopulator.h"
 #include "PacketChecksumChecker/PacketChecksumChecker.h"
 #include "PacketDecoder/PacketDecoder.h"
 #include "PacketSynchronizer/PacketSynchronizer.h"
@@ -53,9 +52,6 @@ public:
    , cmuPopulator(
       packetDecoder,
       dataContainer.batteryData())
-   , mpptPopulator(
-      packetDecoder,
-      dataContainer.mpptData())
    {
    }
 
@@ -75,7 +71,6 @@ public:
    FaultsPopulator faultsPopulator;
    BatteryPopulator batteryPopulator;
    CmuPopulator cmuPopulator;
-   MpptPopulator mpptPopulator;
 };
 
 CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)

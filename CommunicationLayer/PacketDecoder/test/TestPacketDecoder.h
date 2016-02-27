@@ -18,7 +18,6 @@ private slots:
    void willReceiveFaultsMessage();
    void willReceiveBatteryDataMessage();
    void willReceiveCmuDataMessage();
-   void willReceiveMpptDataMessage();
 
 protected slots:
    void handlePacketDecoded(const KeyDriverControlTelemetry message);
@@ -26,7 +25,6 @@ protected slots:
    void handlePacketDecoded(const FaultsMessage message);
    void handlePacketDecoded(const BatteryDataMessage message);
    void handlePacketDecoded(const CmuDataMessage message);
-   void handlePacketDecoded(const MpptDataMessage message);
 
 private:
    void connectPacketDecodedSignals();
@@ -35,7 +33,6 @@ private:
    QByteArray createValidFaultsMessage() const;
    QByteArray createValidBatteryDataMessage() const;
    QByteArray createValidCmuDataMessage() const;
-   QByteArray createValidMpptDataMessage() const;
    QByteArray floatToByteArray(float value) const;
 
 private:
@@ -46,5 +43,4 @@ private:
    QList<FaultsMessage> receivedFaultsMessages_;
    QList<BatteryDataMessage> receivedBatteryDataMessages_;
    QList<CmuDataMessage> receivedCmuDataMessages_;
-   QList<MpptDataMessage> receivedMpptDataMessages_;
 };

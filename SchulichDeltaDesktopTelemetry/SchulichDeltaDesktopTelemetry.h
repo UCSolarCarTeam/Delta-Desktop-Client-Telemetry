@@ -9,11 +9,11 @@ class BusinessContainer;
 class PresenterContainer;
 class ViewContainer;
 
-class SolarCarTelemetry : public QApplication
+class SchulichDeltaDesktopTelemetry : public QApplication
 {
 public:
-   SolarCarTelemetry(int &argc, char **argv);
-   ~SolarCarTelemetry();
+   SchulichDeltaDesktopTelemetry(int &argc, char **argv);
+   ~SchulichDeltaDesktopTelemetry();
 
 private:
    QScopedPointer<DataContainer> dataContainer_;

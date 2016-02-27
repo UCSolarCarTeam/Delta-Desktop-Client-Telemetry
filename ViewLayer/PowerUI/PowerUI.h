@@ -4,22 +4,22 @@
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "I_PowerUI.h"
 namespace Ui {
-	class PowerUI;
+class PowerUI;
 }
 
 class PowerUI : public I_SolarCarWindow, public I_PowerUI
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit PowerUI();
-	~PowerUI();
+    explicit PowerUI();
+    ~PowerUI();
 
     void hideHeaderBar();
 
     QPushButton& connectButton();
-    QLabel& setConnectionStatus();
-    QWidget& setConnectionHealth();
     QComboBox& getConnectionType();
+    QLabel& connectionStatus();
+    QWidget& connectionHealth();
     QLineEdit& getUdpGroupAddress();
     QSpinBox& getUdpPortNumber();
     QWidget& getSerialParametersWidget();
@@ -32,95 +32,95 @@ public:
     QLabel& validPacketsInLastMinute();
     QLabel& invalidPacketsInLastMinute();
 
-    QLabel& setSetSpeed();
-    QLabel& setSetCurrent();
-    QLabel& setActualSpeed();
-    QLabel& setBusCurrent();
-    QLabel& setBusVoltage();
-    QLabel& setBatteryCurrent();
-    QLabel& setBatteryVoltage();
 
-    QLabel& setBatteryCMU1Temp();
-    QLabel& setBatteryCMU1Cell1Voltage();
-    QLabel& setBatteryCMU1Cell2Voltage();
-    QLabel& setBatteryCMU1Cell3Voltage();
-    QLabel& setBatteryCMU1Cell4Voltage();
-    QLabel& setBatteryCMU1Cell5Voltage();
-    QLabel& setBatteryCMU1Cell6Voltage();
-    QLabel& setBatteryCMU1Cell7Voltage();
-    QLabel& setBatteryCMU1Cell8Voltage();
+    QLabel& setSpeed();
+    QLabel& setCurrent();
+    QLabel& actualSpeed();
+    QLabel& busCurrent();
+    QLabel& busVoltage();
+    QLabel& batteryCurrent();
+    QLabel& batteryVoltage();
 
-    QLabel& setBatteryCMU2Temp();
-    QLabel& setBatteryCMU2Cell1Voltage();
-    QLabel& setBatteryCMU2Cell2Voltage();
-    QLabel& setBatteryCMU2Cell3Voltage();
-    QLabel& setBatteryCMU2Cell4Voltage();
-    QLabel& setBatteryCMU2Cell5Voltage();
-    QLabel& setBatteryCMU2Cell6Voltage();
-    QLabel& setBatteryCMU2Cell7Voltage();
-    QLabel& setBatteryCMU2Cell8Voltage();
+    QLabel& batteryCmu1Temp();
+    QLabel& batteryCmu1Cell1Voltage();
+    QLabel& batteryCmu1Cell2Voltage();
+    QLabel& batteryCmu1Cell3Voltage();
+    QLabel& batteryCmu1Cell4Voltage();
+    QLabel& batteryCmu1Cell5Voltage();
+    QLabel& batteryCmu1Cell6Voltage();
+    QLabel& batteryCmu1Cell7Voltage();
+    QLabel& batteryCmu1Cell8Voltage();
 
-    QLabel& setBatteryCMU3Temp();
-    QLabel& setBatteryCMU3Cell1Voltage();
-    QLabel& setBatteryCMU3Cell2Voltage();
-    QLabel& setBatteryCMU3Cell3Voltage();
-    QLabel& setBatteryCMU3Cell4Voltage();
-    QLabel& setBatteryCMU3Cell5Voltage();
-    QLabel& setBatteryCMU3Cell6Voltage();
-    QLabel& setBatteryCMU3Cell7Voltage();
-    QLabel& setBatteryCMU3Cell8Voltage();
+    QLabel& batteryCmu2Temp();
+    QLabel& batteryCmu2Cell1Voltage();
+    QLabel& batteryCmu2Cell2Voltage();
+    QLabel& batteryCmu2Cell3Voltage();
+    QLabel& batteryCmu2Cell4Voltage();
+    QLabel& batteryCmu2Cell5Voltage();
+    QLabel& batteryCmu2Cell6Voltage();
+    QLabel& batteryCmu2Cell7Voltage();
+    QLabel& batteryCmu2Cell8Voltage();
 
-    QLabel& setBatteryCMU4Temp();
-    QLabel& setBatteryCMU4Cell1Voltage();
-    QLabel& setBatteryCMU4Cell2Voltage();
-    QLabel& setBatteryCMU4Cell3Voltage();
-    QLabel& setBatteryCMU4Cell4Voltage();
-    QLabel& setBatteryCMU4Cell5Voltage();
-    QLabel& setBatteryCMU4Cell6Voltage();
-    QLabel& setBatteryCMU4Cell7Voltage();
-    QLabel& setBatteryCMU4Cell8Voltage();
+    QLabel& batteryCmu3Temp();
+    QLabel& batteryCmu3Cell1Voltage();
+    QLabel& batteryCmu3Cell2Voltage();
+    QLabel& batteryCmu3Cell3Voltage();
+    QLabel& batteryCmu3Cell4Voltage();
+    QLabel& batteryCmu3Cell5Voltage();
+    QLabel& batteryCmu3Cell6Voltage();
+    QLabel& batteryCmu3Cell7Voltage();
+    QLabel& batteryCmu3Cell8Voltage();
 
-    QList<QLabel*>& batteryCMUCellVoltageLabels();
+    QLabel& batteryCmu4Temp();
+    QLabel& batteryCmu4Cell1Voltage();
+    QLabel& batteryCmu4Cell2Voltage();
+    QLabel& batteryCmu4Cell3Voltage();
+    QLabel& batteryCmu4Cell4Voltage();
+    QLabel& batteryCmu4Cell5Voltage();
+    QLabel& batteryCmu4Cell6Voltage();
+    QLabel& batteryCmu4Cell7Voltage();
+    QLabel& batteryCmu4Cell8Voltage();
+    QList<QLabel*>& batteryCmuCellVoltageLabels();
 
     QPushButton& busGraphButton();
     QPushButton& driverGraphButton();
     QPushButton& batteryGraphButton();
 
-    QStackedWidget& setGraphsStackedWidget();
-    QwtPlotCurve& setPositiveBusCurrentCurve(); 
-    QwtPlotCurve& setNegativeBusCurrentCurve(); 
-    QwtPlotCurve& setBusVoltageCurve(); 
-    QwtPlotCurve& setBusPowerCurve(); 
-    QwtPlotCurve& setSetSpeedCurve(); 
-    QwtPlotCurve& setActualSpeedCurve(); 
-    QwtPlotCurve& setSetCurrentCurve();
-    QwtPlotCurve& setMod0CellTempCurve();
-    QwtPlotCurve& setMod1CellTempCurve();
-    QwtPlotCurve& setMod2CellTempCurve();
-    QwtPlotCurve& setMod3CellTempCurve();
-    QwtPlotCurve& setMaxCellVoltageCurve();
-    QwtPlotCurve& setMinCellVoltageCurve();
-    QwtPlotCurve& setAvgCellVoltageCurve();
-    QwtPlotCurve& setBatteryPowerCurve();
-    
-private:
-   Ui::PowerUI *ui_;
-   QList<QLabel*> batteryCMUCellVoltageLabels_;
-   QwtPlotCurve* positiveBusCurrentCurve_;
-   QwtPlotCurve* negativeBusCurrentCurve_;
-   QwtPlotCurve* busVoltageCurve_;
-   QwtPlotCurve* busPowerCurve_;
-   QwtPlotCurve* setSpeedCurve_;
-   QwtPlotCurve* actualSpeedCurve_;
-   QwtPlotCurve* setCurrentCurve_;
-   QwtPlotCurve* mod0CellTempCurve_;
-   QwtPlotCurve* mod1CellTempCurve_;
-   QwtPlotCurve* mod2CellTempCurve_;
-   QwtPlotCurve* mod3CellTempCurve_;
-   QwtPlotCurve* maxCellVoltageCurve_;
-   QwtPlotCurve* minCellVoltageCurve_;
-   QwtPlotCurve* avgCellVoltageCurve_;
-   QwtPlotCurve* batteryPowerCurve_;
-   void setupGraphs();
 
+    QStackedWidget& graphsStackedWidget();
+    QwtPlotCurve& positiveBusCurrentCurve();
+    QwtPlotCurve& negativeBusCurrentCurve();
+    QwtPlotCurve& busVoltageCurve();
+    QwtPlotCurve& busPowerCurve();
+    QwtPlotCurve& setSpeedCurve();
+    QwtPlotCurve& actualSpeedCurve();
+    QwtPlotCurve& setCurrentCurve();
+    QwtPlotCurve& mod0CellTempCurve();
+    QwtPlotCurve& mod1CellTempCurve();
+    QwtPlotCurve& mod2CellTempCurve();
+    QwtPlotCurve& mod3CellTempCurve();
+    QwtPlotCurve& maxCellVoltageCurve();
+    QwtPlotCurve& minCellVoltageCurve();
+    QwtPlotCurve& avgCellVoltageCurve();
+    QwtPlotCurve& batteryPowerCurve();
+private:
+    Ui::PowerUI *ui_;
+    QList<QLabel*> batteryCmuCellVoltageLabels_;
+    QwtPlotCurve* positiveBusCurrentCurve_;
+    QwtPlotCurve* negativeBusCurrentCurve_;
+    QwtPlotCurve* busVoltageCurve_;
+    QwtPlotCurve* busPowerCurve_;
+    QwtPlotCurve* actualSpeedCurve_;
+    QwtPlotCurve* setSpeedCurve_;
+    QwtPlotCurve* mod0CellTempCurve_;
+    QwtPlotCurve* setCurrentCurve_;
+    QwtPlotCurve* mod1CellTempCurve_;
+    QwtPlotCurve* mod2CellTempCurve_;
+    QwtPlotCurve* mod3CellTempCurve_;
+    QwtPlotCurve* maxCellVoltageCurve_;
+    QwtPlotCurve* minCellVoltageCurve_;
+    QwtPlotCurve* avgCellVoltageCurve_;
+    QwtPlotCurve* batteryPowerCurve_;
+
+    void setupGraphs();
 };

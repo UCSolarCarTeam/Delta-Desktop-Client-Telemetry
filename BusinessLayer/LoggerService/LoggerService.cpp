@@ -117,10 +117,6 @@ void LoggerService::handlePacketDecoded(const CmuDataMessage message)
    printReceivedMessage(message);
 }
 
-void LoggerService::handlePacketDecoded(const MpptDataMessage message)
-{
-   printReceivedMessage(message);
-}
 
 template <class T>
 void LoggerService::printReceivedMessage(const T& message)
@@ -143,20 +139,18 @@ void LoggerService::connectToPacketDecoder(const I_PacketDecoder& decoder)
       this, SLOT(handlePacketDecoded(const BatteryDataMessage)));
    connect(&decoder, SIGNAL(packetDecoded(const CmuDataMessage)),
       this, SLOT(handlePacketDecoded(const CmuDataMessage)));
-   connect(&decoder, SIGNAL(packetDecoded(const MpptDataMessage)),
-      this, SLOT(handlePacketDecoded(const MpptDataMessage)));
 }
 
 void LoggerService::markStartOfDebugLog() const
 {
-   qDebug() << "===================================================";
-   qDebug() << "             Solar Car Telemetry App Started";
-   qDebug() << "===================================================";
+   qDebug() << "=======================================================================";
+   qDebug() << "             Schulich Delta Desktop Telemetry App Started";
+   qDebug() << "=======================================================================";
 }
 
 void LoggerService::markEndOfDebugLog() const
 {
-   qDebug() << "===================================================";
-   qDebug() << "             Solar Car Telemetry App Closed";
-   qDebug() << "===================================================";
+   qDebug() << "=======================================================================";
+   qDebug() << "             Schulich Delta Desktop Telemetry App Closed";
+   qDebug() << "=======================================================================";
 }

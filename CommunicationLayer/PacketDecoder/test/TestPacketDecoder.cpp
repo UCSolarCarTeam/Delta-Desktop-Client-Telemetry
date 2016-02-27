@@ -47,7 +47,6 @@ void TestPacketDecoder::cleanup()
    receivedFaultsMessages_.clear();
    receivedBatteryDataMessages_.clear();
    receivedCmuDataMessages_.clear();
-   receivedMpptDataMessages_.clear();
 }
 
 void TestPacketDecoder::willReceiveKeyDriverControlTelemetry()
@@ -126,27 +125,6 @@ void TestPacketDecoder::willReceiveCmuDataMessage()
    }
 }
 
-void TestPacketDecoder::willReceiveMpptDataMessage()
-{
-   QByteArray messageData = createValidMpptDataMessage();
-   checksumChecker_->emitValidDataReceived(messageData);
-
-   QCOMPARE(receivedMpptDataMessages_.length(), 1);
-   MpptDataMessage receivedMessage = receivedMpptDataMessages_.first();
-   QCOMPARE(receivedMessage.mpptNumber(), ANONYMOUS_CHAR_1);
-   QCOMPARE(static_cast<quint8>(receivedMessage.type()), ANONYMOUS_CHAR_2);
-   QCOMPARE(receivedMessage.isVoltageInValid(), true);
-   QCOMPARE(receivedMessage.voltageIn(), ANONYMOUS_FLOAT_1);
-   QCOMPARE(receivedMessage.isCurrentInValid(), false);
-   QCOMPARE(receivedMessage.currentIn(), ANONYMOUS_FLOAT_2);
-   QCOMPARE(receivedMessage.isVoltageOutValid(), true);
-   QCOMPARE(receivedMessage.voltageOut(), ANONYMOUS_FLOAT_3);
-   QCOMPARE(receivedMessage.isCurrentOutValid(), true);
-   QCOMPARE(receivedMessage.currentOut(), ANONYMOUS_FLOAT_4);
-   QCOMPARE(receivedMessage.isModeValid(), false);
-   QCOMPARE(static_cast<quint8>(receivedMessage.mode()), ANONYMOUS_CHAR_4);
-}
-
 void TestPacketDecoder::handlePacketDecoded(const KeyDriverControlTelemetry message)
 {
    receivedKeyDriverControlTelemetry_.append(message);
@@ -172,11 +150,6 @@ void TestPacketDecoder::handlePacketDecoded(const CmuDataMessage message)
    receivedCmuDataMessages_.append(message);
 }
 
-void TestPacketDecoder::handlePacketDecoded(const MpptDataMessage message)
-{
-   receivedMpptDataMessages_.append(message);
-}
-
 void TestPacketDecoder::connectPacketDecodedSignals()
 {
    connect(patient_.data(), SIGNAL(packetDecoded(const KeyDriverControlTelemetry)),
@@ -189,8 +162,6 @@ void TestPacketDecoder::connectPacketDecodedSignals()
       this, SLOT(handlePacketDecoded(const BatteryDataMessage)));
    connect(patient_.data(), SIGNAL(packetDecoded(const CmuDataMessage)),
       this, SLOT(handlePacketDecoded(const CmuDataMessage)));
-   connect(patient_.data(), SIGNAL(packetDecoded(const MpptDataMessage)),
-      this, SLOT(handlePacketDecoded(const MpptDataMessage)));
 }
 
 QByteArray TestPacketDecoder::createValidKeyDriverControlTelemetry() const
@@ -259,21 +230,6 @@ QByteArray TestPacketDecoder::createValidCmuDataMessage() const
    {
       messageData.append(floatToByteArray(ANONYMOUS_FLOAT_3 + 1));
    }
-   return messageData;
-}
-
-QByteArray TestPacketDecoder::createValidMpptDataMessage() const
-{
-   QByteArray messageData;
-   messageData.append(static_cast<quint8>(MessageDefines::MpptData));
-   messageData.append(ANONYMOUS_CHAR_1);
-   messageData.append(ANONYMOUS_CHAR_2);
-   messageData.append(0x0d);
-   messageData.append(floatToByteArray(ANONYMOUS_FLOAT_1));
-   messageData.append(floatToByteArray(ANONYMOUS_FLOAT_2));
-   messageData.append(floatToByteArray(ANONYMOUS_FLOAT_3));
-   messageData.append(floatToByteArray(ANONYMOUS_FLOAT_4));
-   messageData.append(ANONYMOUS_CHAR_4);
    return messageData;
 }
 

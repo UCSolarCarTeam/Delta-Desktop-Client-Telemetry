@@ -9,7 +9,6 @@ class CommunicationPresenter;
 class DataContainer;
 class DisplayPresenter;
 class FaultsPresenter;
-class MpptPresenter;
 class PlaybackPresenter;
 class PowerGraphsPresenter;
 class PowerPresenter;
@@ -26,7 +25,6 @@ public:
    BatteryPresenter& batteryPresenter();
    CommunicationPresenter& communicationPresenter();
    VehiclePresenter& vehiclePresenter();
-   MpptPresenter& mpptPresenter();
    PowerPresenter& powerPresenter();
    FaultsPresenter& faultsPresenter();
    PowerGraphsPresenter& powerGraphsPresenter();
@@ -36,7 +34,6 @@ private:
    QScopedPointer<BatteryPresenter> batteryPresenter_;
    QScopedPointer<CommunicationPresenter> communicationPresenter_;
    QScopedPointer<VehiclePresenter> vehiclePresenter_;
-   QScopedPointer<MpptPresenter> mpptPresenter_;
    QScopedPointer<PowerPresenter> powerPresenter_;
    QScopedPointer<FaultsPresenter> faultsPresenter_;
    QScopedPointer<PowerGraphsPresenter> powerGraphsPresenter_;

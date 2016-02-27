@@ -25,8 +25,6 @@ SOURCES += \
    ../../MessagingFramework/MessageDecodingHelpers.cpp \
    ../../MessagingFramework/MessageDefines.cpp \
    ../../MessagingFramework/MotorFaults.cpp \
-   ../../MessagingFramework/MpptDataMessage.cpp \
-   ../../MessagingFramework/MpptDefines.cpp \
 
 HEADERS += \
    TestPacketDecoder.h \
@@ -44,5 +42,3 @@ HEADERS += \
    ../../MessagingFramework/MessageDecodingHelpers.h \
    ../../MessagingFramework/MessageDefines.h \
    ../../MessagingFramework/MotorFaults.h \
-   ../../MessagingFramework/MpptDataMessage.h \
-   ../../MessagingFramework/MpptDefines.h \
