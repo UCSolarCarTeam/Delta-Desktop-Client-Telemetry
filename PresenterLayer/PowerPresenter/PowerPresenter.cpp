@@ -1,5 +1,5 @@
 #include "PowerPresenter.h"
-#include "../../DataLayer/PowerData/I_PowerData.h"
+#include "DataLayer/PowerData/I_PowerData.h"
 
 PowerPresenter::PowerPresenter(const I_PowerData& powerData)
 : powerData_(powerData)

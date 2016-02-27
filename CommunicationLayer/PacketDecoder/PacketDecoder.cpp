@@ -1,8 +1,8 @@
 #include <QDebug>
 
 #include "PacketDecoder.h"
-#include "../PacketChecksumChecker/I_PacketChecksumChecker.h"
-#include "../MessagingFramework/MessageDefines.h"
+#include "CommunicationLayer/PacketChecksumChecker/I_PacketChecksumChecker.h"
+#include "CommunicationLayer/MessagingFramework/MessageDefines.h"
 
 namespace
 {

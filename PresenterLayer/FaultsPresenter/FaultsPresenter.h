@@ -1,9 +1,9 @@
 #pragma once
 
 #include <QObject>
-#include "../../CommunicationLayer/MessagingFramework/MotorFaults.h"
-#include "../../CommunicationLayer/MessagingFramework/LimitFlags.h"
-#include "../../CommunicationLayer/MessagingFramework/BatteryFaults.h"
+#include "CommunicationLayer/MessagingFramework/MotorFaults.h"
+#include "CommunicationLayer/MessagingFramework/LimitFlags.h"
+#include "CommunicationLayer/MessagingFramework/BatteryFaults.h"
 
 class I_FaultsData;
 

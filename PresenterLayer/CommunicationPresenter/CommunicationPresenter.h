@@ -3,7 +3,7 @@
 #include <QObject>
 class QHostAddress;
 
-#include "../../CommunicationLayer/CommDeviceControl/CommDefines.h"
+#include "CommunicationLayer/CommDeviceControl/CommDefines.h"
 class ConnectionController;
 class RadioConnectionService;
 class UdpConnectionService;

@@ -1,7 +1,7 @@
 #include <QDebug>
 
 #include "PacketUnstuffer.h"
-#include "../PacketSynchronizer/I_PacketSynchronizer.h"
+#include "CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
 
 namespace
 {

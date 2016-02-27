@@ -1,7 +1,7 @@
 #include <QDebug>
 
 #include "PacketChecksumChecker.h"
-#include "../PacketUnstuffer/I_PacketUnstuffer.h"
+#include "CommunicationLayer/PacketUnstuffer/I_PacketUnstuffer.h"
 
 PacketChecksumChecker::PacketChecksumChecker(const I_PacketUnstuffer& unstuffer)
 {

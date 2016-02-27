@@ -1,5 +1,5 @@
 #include "VehiclePresenter.h"
-#include "../../DataLayer/VehicleData/I_VehicleData.h"
+#include "DataLayer/VehicleData/I_VehicleData.h"
 
 VehiclePresenter::VehiclePresenter(const I_VehicleData& vehicleData)
 : vehicleData_(vehicleData)
