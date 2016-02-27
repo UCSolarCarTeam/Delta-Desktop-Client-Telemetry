@@ -10,10 +10,10 @@ install:
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
     - git clone https://github.com/osakared/qwt.git
-    - cd qwt
+    - cd qwt/qwt
     - qmake qwt.pro
     - sudo make install
-    - cd ..
+    - cd ../..
 
 script:
     - qmake
