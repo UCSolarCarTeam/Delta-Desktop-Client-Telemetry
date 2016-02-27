@@ -1,4 +1,4 @@
-#include "SolarCarTelemetry.h"
+#include "SchulichDeltaDesktopTelemetry.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

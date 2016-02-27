@@ -4,7 +4,7 @@
 #include "PresenterLayer/PresenterContainer.h"
 #include "ViewLayer/ViewContainer.h"
 
-#include "SolarCarTelemetry.h"
+#include "SchulichDeltaDesktopTelemetry.h"
 
 SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 : QApplication(argc, argv)

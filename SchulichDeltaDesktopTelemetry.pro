@@ -8,7 +8,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkitwidgets
 
-TARGET = ../release/SolarCarTelemetry
+TARGET = ../release/SchulichDeltaDesktopTelemetry
 TEMPLATE = app
 CONFIG += static
 
@@ -68,8 +68,8 @@ SOURCES += \
     PresenterLayer/PowerPresenter/PowerPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
-    SolarCarTelemetry/main.cpp \
-    SolarCarTelemetry/SolarCarTelemetry.cpp \
+    SchulichDeltaDesktopTelemetry/main.cpp \
+    SchulichDeltaDesktopTelemetry/SchulichDeltaDesktopTelemetry.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/EscapeDialog/EscapeDialog.cpp \
     ViewLayer/EscapeDialogView/EscapeDialogView.cpp \
@@ -140,7 +140,7 @@ HEADERS  += \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
-    SolarCarTelemetry/SolarCarTelemetry.h \
+    SchulichDeltaDesktopTelemetry/SchulichDeltaDesktopTelemetry.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/EscapeDialog/EscapeDialog.h \
     ViewLayer/EscapeDialog/I_EscapeDialog.h \
