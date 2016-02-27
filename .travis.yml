@@ -10,6 +10,7 @@ install:
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
     - wget https://sourceforge.net/projects/qwt/files/qwt/6.1.2/qwt-6.1.2.tar.bz2/download
+    - ls
     - tar -xvjf qwt-6.1.2.tar.bz2
     - cd qwt-6.1.2
     - qmake qwt.pro
