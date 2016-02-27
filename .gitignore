@@ -1,4 +1,4 @@
-SolarCarTelemetry.pro.*
+SchulichDeltaDesktopTelemetry.pro.*
 *.autosave
 Makefile*
 *.o
@@ -7,4 +7,4 @@ moc_*
 build*
 *.user*
 *.orig
-logs
+logs/

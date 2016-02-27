@@ -143,14 +143,14 @@ void LoggerService::connectToPacketDecoder(const I_PacketDecoder& decoder)
 
 void LoggerService::markStartOfDebugLog() const
 {
-   qDebug() << "===================================================================";
-   qDebug() << "             Schulich Delta Desktop Telemetry Started";
-   qDebug() << "===================================================================";
+   qDebug() << "=======================================================================";
+   qDebug() << "             Schulich Delta Desktop Telemetry App Started";
+   qDebug() << "=======================================================================";
 }
 
 void LoggerService::markEndOfDebugLog() const
 {
-   qDebug() << "===================================================================";
-   qDebug() << "             Schulich Delta Desktop Telemetry Closed";
-   qDebug() << "===================================================================";
+   qDebug() << "=======================================================================";
+   qDebug() << "             Schulich Delta Desktop Telemetry App Closed";
+   qDebug() << "=======================================================================";
 }

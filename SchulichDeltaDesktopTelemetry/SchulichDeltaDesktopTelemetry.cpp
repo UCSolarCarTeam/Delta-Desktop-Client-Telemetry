@@ -6,7 +6,7 @@
 
 #include "SchulichDeltaDesktopTelemetry.h"
 
-SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
+SchulichDeltaDesktopTelemetry::SchulichDeltaDesktopTelemetry(int& argc, char** argv)
 : QApplication(argc, argv)
 , dataContainer_(new DataContainer())
 , communicationContainer_(new CommunicationContainer(*dataContainer_))
@@ -18,6 +18,6 @@ SolarCarTelemetry::SolarCarTelemetry(int& argc, char** argv)
 {
 }
 
-SolarCarTelemetry::~SolarCarTelemetry()
+SchulichDeltaDesktopTelemetry::~SchulichDeltaDesktopTelemetry()
 {
 }

@@ -1,4 +1,4 @@
-= Schulich Delta DesktopClient Telemetry
+= Schulich Delta Desktop Client Telemetry
 
 This repository is owned by the University of Calgary Solar Car team. 
 This program receives data as a host through a serial port from Schulich Delta, 

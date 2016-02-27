@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-   QScopedPointer<SolarCarTelemetry> app;
-   app.reset(new SolarCarTelemetry(argc, argv));
+   QScopedPointer<SchulichDeltaDesktopTelemetry> app;
+   app.reset(new SchulichDeltaDesktopTelemetry(argc, argv));
    return app->exec();
 }
