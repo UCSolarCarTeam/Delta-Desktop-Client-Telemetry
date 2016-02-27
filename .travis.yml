@@ -4,14 +4,18 @@ before_install:
     - sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
     - sudo apt-add-repository -y ppa:beineri/opt-qt542
     - sudo apt-get -qq update
+
+install:
     - sudo apt-get -qq install g++-4.8 libc6-i386 qt54tools qt54svg qt54webkit qt54serialport
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
-
-script:
+    - git clone https://github.com/osakared/qwt.git
     - cd qwt-6.1.2
     - qmake qwt.pro
     - sudo make install
+    - cd ..
+
+script:
     - qmake
     - make
 
