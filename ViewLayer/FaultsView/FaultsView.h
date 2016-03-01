@@ -2,9 +2,9 @@
 
 #include <QObject>
 #include <QLabel>
-#include "../../CommunicationLayer/MessagingFramework/MotorFaults.h"
-#include "../../CommunicationLayer/MessagingFramework/LimitFlags.h"
-#include "../../CommunicationLayer/MessagingFramework/BatteryFaults.h"
+#include "CommunicationLayer/MessagingFramework/MotorFaults.h"
+#include "CommunicationLayer/MessagingFramework/LimitFlags.h"
+#include "CommunicationLayer/MessagingFramework/BatteryFaults.h"
 
 class FaultsPresenter;
 class FaultsUI;

@@ -5,7 +5,7 @@
 #include <QFile>
 
 #include "PlaybackService.h"
-#include "../../CommunicationLayer/PacketUnstuffer/I_DataInjectionService.h"
+#include "CommunicationLayer/PacketUnstuffer/I_DataInjectionService.h"
 
 namespace
 {

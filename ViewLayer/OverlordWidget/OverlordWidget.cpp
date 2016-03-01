@@ -8,8 +8,8 @@
 #include <QDir>
 #include <QDebug>
 #include "OverlordWidget.h"
-#include "../I_SolarCarWindow/I_SolarCarWindow.h"
-#include "../EscapeDialog/EscapeDialog.h"
+#include "ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h"
+#include "ViewLayer/EscapeDialog/EscapeDialog.h"
 
 OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
                                EscapeDialog* escapeDialog,

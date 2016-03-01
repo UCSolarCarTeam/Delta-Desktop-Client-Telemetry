@@ -8,7 +8,7 @@
 #include <QDateTime>
 #include <QDir>
 
-#include "../../CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
+#include "CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
 class I_PacketDecoder;
 class I_PacketSynchronizer;
 

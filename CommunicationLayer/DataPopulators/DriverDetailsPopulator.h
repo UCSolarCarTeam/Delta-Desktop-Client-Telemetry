@@ -1,10 +1,10 @@
 #pragma once
 
 #include <QObject>
-#include "../PacketDecoder/I_PacketDecoder.h"
-#include "../MessagingFramework/DriverControlDetails.h"
-#include "../../DataLayer/VehicleData/I_VehicleData.h"
-#include "../../DataLayer/PowerData/I_PowerData.h"
+#include "CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
+#include "CommunicationLayer/MessagingFramework/DriverControlDetails.h"
+#include "DataLayer/VehicleData/I_VehicleData.h"
+#include "DataLayer/PowerData/I_PowerData.h"
 
 class DriverDetailsPopulator : public QObject
 {

@@ -1,7 +1,7 @@
 #include <QDebug>
 
 #include "LoggerService.h"
-#include "../../CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
+#include "CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
 
 #define PIPE_DEBUG_OUTPUT_TO_FILE 0
 
@@ -143,14 +143,14 @@ void LoggerService::connectToPacketDecoder(const I_PacketDecoder& decoder)
 
 void LoggerService::markStartOfDebugLog() const
 {
-   qDebug() << "===================================================";
-   qDebug() << "             Solar Car Telemetry App Started";
-   qDebug() << "===================================================";
+   qDebug() << "=======================================================================";
+   qDebug() << "             Schulich Delta Desktop Telemetry App Started";
+   qDebug() << "=======================================================================";
 }
 
 void LoggerService::markEndOfDebugLog() const
 {
-   qDebug() << "===================================================";
-   qDebug() << "             Solar Car Telemetry App Closed";
-   qDebug() << "===================================================";
+   qDebug() << "=======================================================================";
+   qDebug() << "             Schulich Delta Desktop Telemetry App Closed";
+   qDebug() << "=======================================================================";
 }

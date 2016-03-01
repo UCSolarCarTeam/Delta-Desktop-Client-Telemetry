@@ -2,8 +2,8 @@
 #include <QFileDialog>
 #include <QTimer>
 
-#include "../../PresenterLayer/PlaybackPresenter/PlaybackPresenter.h"
-#include "../PlaybackUI/I_PlaybackUI.h"
+#include "PresenterLayer/PlaybackPresenter/PlaybackPresenter.h"
+#include "ViewLayer/PlaybackUI/I_PlaybackUI.h"
 #include "PlaybackView.h"
 
 namespace

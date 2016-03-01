@@ -10,12 +10,12 @@ LIBS += -L../../build/.lib -lViewLayer -lBusinessLayer -lCommunicationLayer -lPr
 PRE_TARGETDEPS += \
    ../../build/.lib/*
 
-TARGET = SolarCarTelemetry
-# DESTDIR = ../../build
+TARGET = SchulichDeltaDesktopTelemetry
+DESTDIR = ../../build
 
 HEADERS += \
-   SolarCarTelemetry.h
+   SchulichDeltaDesktopTelemetry.h
 
 SOURCES += \
    main.cpp \
-   SolarCarTelemetry.cpp
+   SchulichDeltaDesktopTelemetry.cpp

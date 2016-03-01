@@ -1,4 +1,4 @@
-SolarCarTelemetry.pro.*
+SchulichDeltaDesktopTelemetry.pro.*
 *.autosave
 Makefile*
 *.o
@@ -9,3 +9,4 @@ build*
 *.orig
 qrc_*.cpp
 ui_*.cpp
+logs/

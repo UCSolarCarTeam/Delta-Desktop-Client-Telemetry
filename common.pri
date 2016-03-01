@@ -1,5 +1,5 @@
-QT += serialport widgets network
-CONFIG += c++11 debug staticlib create_prl link_prl
+QT += serialport widgets network svg
+CONFIG += c++11 debug
 
 !win32 {
    QMAKE_CXXFLAGS += -Werror
@@ -17,7 +17,7 @@ win32 {
    }
 }
 
-# OBJECTS_DIR = ../../build/.obj
-# MOC_DIR = ../../build/.moc
-# RCC_DIR = ../../build/.rcc
-# UI_DIR = ../../build/.ui
+OBJECTS_DIR = ../../build/.obj
+MOC_DIR = ../../build/.moc
+RCC_DIR = ../../build/.rcc
+UI_DIR = ../../build/.ui

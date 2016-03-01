@@ -11,4 +11,4 @@ SUBDIRS = \
    BusinessLayer \
    PresenterLayer \
    ViewLayer \
-   SolarCarTelemetry
+   SchulichDeltaDesktopTelemetry
