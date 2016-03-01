@@ -1,5 +1,5 @@
 QT += serialport widgets network svg
-CONFIG += c++11 debug
+CONFIG += c++11 debug console
 
 !win32 {
    QMAKE_CXXFLAGS += -Werror
