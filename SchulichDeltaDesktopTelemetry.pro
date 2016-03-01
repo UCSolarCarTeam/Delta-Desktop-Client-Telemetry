@@ -4,16 +4,22 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport
+QT       += core gui serialport network
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkitwidgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets svg
 
 TARGET = ../release/SchulichDeltaDesktopTelemetry
 TEMPLATE = app
 CONFIG += static
 
-! include ( /usr/local/qwt-6.1.2/features/qwt.prf ) {
-   error("Can not find qwt.prf!" )
+win32 {
+  !include ( C:\Qwt-6.1.2\features\qwt.prf ) {
+    error("Can not find qwt.prf!" )
+   }
+} else {
+  !include ( /usr/local/qwt-6.1.2/features/qwt.prf ) {
+    error("Can not find qwt.prf!" )
+   }
 }
 
 QMAKE_CXXFLAGS +=

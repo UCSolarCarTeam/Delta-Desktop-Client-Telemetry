@@ -1,7 +1,7 @@
 #include <QDebug>
 
 #include "LoggerService.h"
-#include "../../CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
+#include "CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h"
 
 #define PIPE_DEBUG_OUTPUT_TO_FILE 0
 

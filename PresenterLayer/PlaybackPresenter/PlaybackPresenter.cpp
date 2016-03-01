@@ -1,5 +1,5 @@
 #include "PlaybackPresenter.h"
-#include "../../BusinessLayer/PlaybackService/I_PlaybackService.h"
+#include "BusinessLayer/PlaybackService/I_PlaybackService.h"
 
 PlaybackPresenter::PlaybackPresenter(I_PlaybackService& playbackService)
 : playbackService_(playbackService)

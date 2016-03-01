@@ -1,5 +1,5 @@
 #include "DisplayView.h"
-#include "../OverlordWidget/OverlordWidget.h"
+#include "ViewLayer/OverlordWidget/OverlordWidget.h"
 
 DisplayView::DisplayView(OverlordWidget& ui)
 : ui_(ui)

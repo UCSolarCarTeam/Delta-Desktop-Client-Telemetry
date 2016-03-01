@@ -1,5 +1,5 @@
 #include "FaultsPresenter.h"
-#include "../../DataLayer/FaultsData/I_FaultsData.h"
+#include "DataLayer/FaultsData/I_FaultsData.h"
 
 FaultsPresenter::FaultsPresenter(const I_FaultsData& faultsData)
 : faultsData_ (faultsData)

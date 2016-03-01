@@ -1,6 +1,6 @@
 #include "FaultsView.h"
-#include "../../PresenterLayer/FaultsPresenter/FaultsPresenter.h"
-#include "../FaultsUI/FaultsUI.h"
+#include "PresenterLayer/FaultsPresenter/FaultsPresenter.h"
+#include "ViewLayer/FaultsUI/FaultsUI.h"
 #include <QDateTime>
 #include <QDebug>
 

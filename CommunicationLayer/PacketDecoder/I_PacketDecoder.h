@@ -1,11 +1,11 @@
 #pragma once
 
 #include <QObject>
-#include "../MessagingFramework/BatteryDataMessage.h"
-#include "../MessagingFramework/CmuDataMessage.h"
-#include "../MessagingFramework/DriverControlDetails.h"
-#include "../MessagingFramework/FaultsMessage.h"
-#include "../MessagingFramework/KeyDriverControlTelemetry.h"
+#include "CommunicationLayer/MessagingFramework/BatteryDataMessage.h"
+#include "CommunicationLayer/MessagingFramework/CmuDataMessage.h"
+#include "CommunicationLayer/MessagingFramework/DriverControlDetails.h"
+#include "CommunicationLayer/MessagingFramework/FaultsMessage.h"
+#include "CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h"
 
 class I_PacketDecoder : public QObject
 {

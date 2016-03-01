@@ -1,5 +1,5 @@
 #include "BatteryPresenter.h"
-#include "../../DataLayer/BatteryData/I_BatteryData.h"
+#include "DataLayer/BatteryData/I_BatteryData.h"
 
 BatteryPresenter::BatteryPresenter(const I_BatteryData& batteryData)
 : batteryData_(batteryData)

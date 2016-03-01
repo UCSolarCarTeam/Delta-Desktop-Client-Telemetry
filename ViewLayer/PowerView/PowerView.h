@@ -1,5 +1,5 @@
 #pragma once
-#include "../../PresenterLayer/GraphsPresenter/PowerGraphData.h"
+#include "PresenterLayer/GraphsPresenter/PowerGraphData.h"
 #include <QObject>
 #include <QLabel>
 #include <QPushButton>

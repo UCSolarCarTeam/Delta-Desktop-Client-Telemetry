@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QObject>
-#include "../PacketDecoder/I_PacketDecoder.h"
-#include "../../DataLayer/FaultsData/I_FaultsData.h"
+#include "CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
+#include "DataLayer/FaultsData/I_FaultsData.h"
 
 class FaultsPopulator : public QObject
 {

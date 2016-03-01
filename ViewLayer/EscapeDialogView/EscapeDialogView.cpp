@@ -1,6 +1,6 @@
 #include "EscapeDialogView.h"
-#include "../EscapeDialog/EscapeDialog.h"
-#include "../PlaybackUI/I_PlaybackUI.h"
+#include "ViewLayer/EscapeDialog/EscapeDialog.h"
+#include "ViewLayer/PlaybackUI/I_PlaybackUI.h"
 #include <QDebug>
 #include <QApplication>
 

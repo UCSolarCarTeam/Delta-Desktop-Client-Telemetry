@@ -2,9 +2,9 @@
 
 #include <QObject>
 #include "I_PowerGraphsPresenter.h"
-#include "../../DataLayer/VehicleData/I_VehicleData.h"
-#include "../../DataLayer/PowerData/I_PowerData.h"
-#include "../../DataLayer/BatteryData/I_BatteryData.h"
+#include "DataLayer/VehicleData/I_VehicleData.h"
+#include "DataLayer/PowerData/I_PowerData.h"
+#include "DataLayer/BatteryData/I_BatteryData.h"
 #include <QTimer>
 #include "PowerGraphData.h"
 

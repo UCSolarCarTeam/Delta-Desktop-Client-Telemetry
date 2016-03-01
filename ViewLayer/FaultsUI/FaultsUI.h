@@ -1,7 +1,7 @@
 #pragma once
 
 #include "I_FaultsUI.h"
-#include "../I_SolarCarWindow/I_SolarCarWindow.h"
+#include "ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h"
 
 namespace Ui {
 	class FaultsUI;

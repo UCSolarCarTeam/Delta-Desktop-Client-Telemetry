@@ -1,7 +1,7 @@
 #include <QtSerialPort/QSerialPort>
 #include <QUdpSocket>
 
-#include "../DataLayer/DataContainer.h"
+#include "DataLayer/DataContainer.h"
 #include "CommunicationContainer.h"
 #include "CommDeviceControl/ConnectionController.h"
 #include "CommDeviceControl/CommDeviceManager.h"
@@ -13,10 +13,10 @@
 #include "DataPopulators/DriverDetailsPopulator.h"
 #include "DataPopulators/FaultsPopulator.h"
 #include "DataPopulators/KeyDriverControlPopulator.h"
-#include "PacketChecksumChecker/PacketChecksumChecker.h"
-#include "PacketDecoder/PacketDecoder.h"
-#include "PacketSynchronizer/PacketSynchronizer.h"
-#include "PacketUnstuffer/PacketUnstuffer.h"
+#include "CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.h"
+#include "CommunicationLayer/PacketDecoder/PacketDecoder.h"
+#include "CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h"
+#include "CommunicationLayer/PacketUnstuffer/PacketUnstuffer.h"
 
 class CommunicationContainerPrivate
 {
