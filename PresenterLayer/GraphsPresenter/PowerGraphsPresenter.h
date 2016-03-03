@@ -47,14 +47,5 @@ private:
    void updateBatteryPowerGraphData();
 
 signals:
-   void busCurrentGraphDataUpdated(PowerGraphData);
-   void busVoltageGraphDataUpdated(PowerGraphData);
-   void busPowerGraphDataUpdated(PowerGraphData);
-
-   void drivingCurrentGraphDataUpdated(PowerGraphData);
-   void drivingSpeedGraphDataUpdated(PowerGraphData);
-
-   void cellTemperatureGraphDataUpdated(PowerGraphData);
-   void cellVoltageGraphDataUpdated(PowerGraphData);
    void batteryPowerGraphUpdated(PowerGraphData);
 };

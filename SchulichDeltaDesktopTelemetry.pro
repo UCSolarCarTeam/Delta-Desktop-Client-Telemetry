@@ -1,9 +1,7 @@
 TEMPLATE = subdirs
-CONFIG += ordered
+CONFIG += ordered static
 
 message(University of Calgary Solar Car Team Delta Client Telemetry)
-
-DESTDIR = ../../build/.lib
 
 SUBDIRS = \
    DataLayer \

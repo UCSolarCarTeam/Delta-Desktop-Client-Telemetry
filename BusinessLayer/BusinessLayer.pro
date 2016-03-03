@@ -1,5 +1,5 @@
 TEMPLATE = lib
-CONFIG += create_prl link_prl staticlib
+CONFIG += staticlib
 
 ! include( ../common.pri ) {
    error( "Couldn't find the common.pri file!" )
