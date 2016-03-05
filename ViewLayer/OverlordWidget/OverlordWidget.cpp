@@ -36,6 +36,8 @@ OverlordWidget::OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
 
     addFonts();
 
+    overlordLayout->setSizeConstraint(QLayout::SetNoConstraint);
+
     showMaximized();
 
     connect(escapeDialog_, SIGNAL(changeWindowState(int)),
