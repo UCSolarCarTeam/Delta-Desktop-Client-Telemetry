@@ -9,4 +9,5 @@ SUBDIRS = \
    BusinessLayer \
    PresenterLayer \
    ViewLayer \
+   Tests \
    SchulichDeltaDesktopTelemetry
