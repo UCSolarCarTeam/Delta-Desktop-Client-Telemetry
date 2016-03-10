@@ -11,3 +11,4 @@ qrc_*.cpp
 ui_*.cpp
 logs/
 target_wrapper.bat
+*.a
