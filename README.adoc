@@ -7,3 +7,28 @@ The program also rebroadcasts the data feed via a multicast group on the local n
 you can choose to run this program as a user as well to receive the data feed on this multicast group.  
 This program was created using the Qt framework in conjunction with QwtPlot. 
 The master branch is compatible with Qt 5.5.1 and QwtPlot 6.1.2.
+
+== Testing
+
+Testing the Schulich Delta Desktop Client Telemetry is done with googletest and googlemock, the gmock and gtest header files need to be in your include path (/usr/local/include or /usr/include.
+You must compile the library that has the definitions yourself.
+Meaning you need a `libgmock.a` archive file in the test directory in order to compile the tests.
+
+To create a `libgmock.a` file in a Linux system follow these instructions in an arbitrary dir.
+
+1. Get the googletest and googlemock source code:
+    `git clone https://github.com/google/googletest.git`
+
+2. Go into the cloned directory
+    `cd googletest/`
+
+3. Compile googletest:
+    `g++ -isystem googletest/include/ -Igoogletest -isystem googlemock/include/ -Igooglemock -pthread -c googletest/src/gtest-all.cc`
+
+4. Compile googlemock:
+    `g++ -isystem googletest/include/ -Igoogletest -isystem googlemock/include/ -Igooglemock -pthread -c googlemock/src/gmock-all.cc`
+
+5. Collect both the resulting .o files into an archive file:
+    `ar -rv libgmock.a gtest-all.o gmock-all.o`
+
+Congratulations! You now have a `libgmock.a` archive file, now include it in the `Schulich-Delta-Desktop-Client-Telemetry/Tests/` directory and you should be good to go, run `make` in the test directory to check if you can compile the tests.

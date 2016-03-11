@@ -2,7 +2,7 @@ TEMPLATE = app
 QT += testlib
 CONFIG += testcase
 
-LIBS += -L../../build/.lib -LC:\gtest\lib -lViewLayer -lBusinessLayer -lCommunicationLayer -lPresenterLayer -lDataLayer -lgmock -lgtest
+LIBS += -L../../build/.lib -LC:\gtest\lib -lViewLayer -lBusinessLayer -lCommunicationLayer -lPresenterLayer -lDataLayer libgmock.a
 
 ! include( ../common.pri ) {
     error( "Couldn't find the common.pri file!" )
