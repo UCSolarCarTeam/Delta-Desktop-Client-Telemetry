@@ -12,7 +12,7 @@ public:
    UdpMessageForwarder(const I_CommDevice& device);
    virtual ~UdpMessageForwarder();
 
-   void setMulticastNetwork(const QHostAddress& groupAddress, quint16 port);
+   void setMulticastNetwork(const QHostAddress& ipAddress_, quint16 port);
    void start();
    void stop();
 
@@ -22,7 +22,7 @@ private slots:
 private:
    const I_CommDevice& device_;
 
-   QHostAddress groupAddress_;
+   QHostAddress ipAddress_;
    quint16 port_;
    QUdpSocket socket_;
 };

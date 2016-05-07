@@ -13,9 +13,9 @@ UdpMessageForwarder::~UdpMessageForwarder()
 {
 }
 
-void UdpMessageForwarder::setMulticastNetwork(const QHostAddress& groupAddress, quint16 port)
+void UdpMessageForwarder::setMulticastNetwork(const QHostAddress& ipAddress, quint16 port)
 {
-   groupAddress_ = groupAddress;
+   ipAddress_ = ipAddress;
    port_ = port;
 }
 
@@ -32,9 +32,13 @@ void UdpMessageForwarder::stop()
 
 void UdpMessageForwarder::forwardData(QByteArray data)
 {
-   const quint64 dataWritten = socket_.writeDatagram(data, groupAddress_, port_);
+   const quint64 dataWritten = socket_.writeDatagram(data, ipAddress_, port_);
    if (dataWritten != static_cast<quint64>(data.size()))
    {
       qWarning() << "Unable to forward data";
+   }
+   else
+   {
+      qDebug() << "Successfully forwarded data";
    }
 }
