@@ -6,7 +6,6 @@ UdpConnectionService::UdpConnectionService(QUdpSocket& socket)
 : port_(0)
 , socket_(socket)
 {
-   connect(&heartbeatTimer_, SIGNAL(timeout()), this, SLOT(sendHeartbeat()));
 }
 
 UdpConnectionService::~UdpConnectionService()
@@ -26,8 +25,10 @@ bool UdpConnectionService::connectToDataSource()
       emit connectionFailed("Group address and port number is not set!");
       return false;
    }
-   if (socket_.bind(ipAddress_, port_))
+   if(socket_.bind(QHostAddress::AnyIPv4, port_, QUdpSocket::ShareAddress))
    {
+      sendHeartbeat();
+      connect(&heartbeatTimer_, SIGNAL(timeout()), this, SLOT(sendHeartbeat()));
       heartbeatTimer_.setInterval(1000);
       heartbeatTimer_.start();
       emit connectionSucceeded();
@@ -36,12 +37,14 @@ bool UdpConnectionService::connectToDataSource()
    else
    {
       emit connectionFailed(socket_.errorString());
+      qDebug() << socket_.error();
       return false;
    }
 }
 
 void UdpConnectionService::disconnectFromDataSource()
 {
+   disconnect(&heartbeatTimer_, SIGNAL(timeout()), this, SLOT(sendHeartbeat()));
    heartbeatTimer_.stop();
    if (socket_.state() != QUdpSocket::UnconnectedState)
    {
@@ -52,16 +55,16 @@ void UdpConnectionService::disconnectFromDataSource()
    emit connectionFailed("DISCONNECTED");
 }
 
-void UdpConnectionService::sendHearbeat()
+bool UdpConnectionService::sendHeartbeat()
 {  
-   QByteArray data = QByteArray("Heartbeat from the desktop telemetry");
+   QByteArray data = QByteArray("Heartbeat");
    const quint64 dataWritten = socket_.writeDatagram(data, ipAddress_, port_);
    if (dataWritten != static_cast<quint64>(data.size()))
    {
-      qWarning() << "Unable to send heartbeat";
+      return false;
    }
    else
    {
-      qDebug() << "Successfully sent heartbeat" ;
+      return true;
    }
 }

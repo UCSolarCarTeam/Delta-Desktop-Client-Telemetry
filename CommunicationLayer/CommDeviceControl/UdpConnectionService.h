@@ -19,12 +19,13 @@ public:
    bool connectToDataSource();
    void disconnectFromDataSource();
 
+private slots:
+   bool sendHeartbeat();
+
 private:
    QHostAddress ipAddress_;
    quint16 port_;
    QUdpSocket& socket_;
    QTimer heartbeatTimer_;
 
-private slots:
-   void sendHearbeat();
 };
