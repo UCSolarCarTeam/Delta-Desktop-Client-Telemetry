@@ -4,6 +4,14 @@
 #
 #-------------------------------------------------
 
+QT       += core gui serialport network
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets svg
+
+CONFIG += static
+
+INCLUDEPATH += ..
+
 win32 {
   !include ( C:\Qwt-6.1.2\features\qwt.prf ) {
     error("Can not find qwt.prf!" )
@@ -14,15 +22,10 @@ win32 {
    }
 }
 
-TEMPLATE = subdirs
-CONFIG += static
-
-message(University of Calgary Solar Car Team Delta Desktop Telemetry)
-
-SUBDIRS = \
-   DataLayer \
-   CommunicationLayer \
-   BusinessLayer \
-   PresenterLayer \
-   ViewLayer \
-   SchulichDeltaDesktopTelemetry
+QMAKE_CXXFLAGS +=
+RCC_DIR= ../release
+DESTDIR = ../release
+OBJECTS_DIR = ../release/.obj
+MOC_DIR = ../release/.moc
+RCC_DIR = ../release/.rcc
+UI_DIR = ../release/.ui
