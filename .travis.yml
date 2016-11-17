@@ -9,10 +9,11 @@ install:
     - sudo apt-get -qq install g++-4.8 libc6-i386 qt54tools qt54svg qt54webkit qt54serialport
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
-    - wget https://sourceforge.net/projects/qwt/files/qwt/6.1.2/qwt-6.1.2.tar.bz2
-    - tar -xvjf qwt-6.1.2.tar.bz2
-    - cd qwt-6.1.2
+    - wget -q http://heanet.dl.sourceforge.net/project/qwt/qwt/6.1.3/qwt-6.1.3.tar.bz2
+    - tar -xvf  qwt-6.1.3.tar.bz2
+    - cd qwt-6.1.3
     - qmake qwt.pro
+    - sudo make
     - sudo make install
     - cd ../
 
