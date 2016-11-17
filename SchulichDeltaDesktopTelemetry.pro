@@ -5,11 +5,11 @@
 #-------------------------------------------------
 
 win32 {
-  !include ( C:\Qwt-6.1.2\features\qwt.prf ) {
+  !include ( C:\Qwt-6.1.3\features\qwt.prf ) {
     error("Can not find qwt.prf!" )
    }
 } else {
-  !include ( /usr/local/qwt-6.1.2/features/qwt.prf ) {
+  !include ( /usr/local/qwt-6.1.3/features/qwt.prf ) {
     error("Can not find qwt.prf!" )
    }
 }
