@@ -8,8 +8,8 @@ before_install:
 install:
     - sudo apt-get -qq install g++-4.8 libc6-i386 qt54tools qt54svg qt54webkit qt54serialport
     - PATH="/opt/qt54/bin:$PATH"
-    - qt54-env.sh 
-    - wget -q http://heanet.dl.sourceforge.net/project/qwt/qwt/6.1.3/qwt-6.1.3.tar.bz2
+    - qt54-env.sh
+    - wget 'https://sourceforge.net/projects/astyle/files/astyle/astyle%202.06/astyle_2.06_linux.tar.gz/download' 
     - tar -xvf  qwt-6.1.3.tar.bz2
     - cd qwt-6.1.3
     - qmake qwt.pro
